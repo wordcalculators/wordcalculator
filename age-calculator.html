@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Age Calculator — WordCalculator.net</title>
-  <meta name="description" content="Clean age calculator that finds the exact age or interval between two dates in years, months, weeks, days, hours, minutes, and seconds.">
+  <meta name="description" content="Clean age calculator that finds the exact age or interval between two dates in years, months, days, and more." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
   <link rel="icon" href="favicon-128x128.png" />
@@ -49,7 +49,7 @@
       text-decoration: none;
     }
 
-    /* Header (same style as tools/BMI pages) */
+    /* Header (same style as tools/BMI) */
     .wc-header {
       background: #020617;
       color: #fff;
@@ -236,7 +236,7 @@
       margin: 22px auto 40px;
       padding: 0 15px;
       display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(260px, 1.2fr);
+      grid-template-columns: minmax(0, 3fr) minmax(260px, 1.25fr);
       gap: 20px;
       align-items: flex-start;
     }
@@ -249,7 +249,7 @@
 
     .age-top-grid {
       display: grid;
-      grid-template-columns: minmax(0, 380px) minmax(0, 1.4fr);
+      grid-template-columns: minmax(0, 360px) minmax(0, 1.6fr);
       gap: 16px;
       align-items: stretch;
     }
@@ -262,154 +262,151 @@
       padding: 14px 14px 12px;
     }
 
+    /* 🔹 Card title bar (distinct header style) */
     .card-header {
+      margin: -14px -14px 12px;
+      padding: 8px 12px;
+      background: #0f172a; /* Option C */
+      color: #f9fafb;
+      border-radius: 12px 12px 0 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 10px;
-      margin-bottom: 10px;
+      box-shadow: inset 0 -1px 0 rgba(148, 163, 184, 0.35);
     }
 
     .card-header h2 {
-      font-size: 18px;
+      font-size: 15px;
       font-weight: 800;
-      letter-spacing: -0.02em;
-      color: #0f172a;
+      letter-spacing: -0.01em;
     }
 
-    .helper-bar {
-      margin: 0 -14px 10px;
-      padding: 6px 14px;
-      background: #1f2937;
+    .card-header small {
+      font-size: 11px;
+      color: #cbd5e1;
+    }
+
+    /* Print button */
+    .btn-print {
+      padding: 5px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.7);
       color: #e5e7eb;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      border-radius: 10px 10px 0 0;
+      gap: 5px;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s, transform 0.15s,
+        box-shadow 0.15s;
     }
 
-    .helper-bar i {
-      margin-right: 6px;
+    .btn-print i {
       font-size: 11px;
     }
 
-    .badge-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 4px 9px;
-      border-radius: 999px;
-      border: 1px solid transparent;
+    .btn-print:hover {
+      background: #f9fafb;
+      color: #0f172a;
+      border-color: #f9fafb;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.4);
+      transform: translateY(-1px);
     }
 
-    .badge-pill-primary {
-      background: #eff6ff;
-      border-color: #bfdbfe;
-      color: #1d4ed8;
-    }
-
-    .badge-pill-muted {
-      background: #f3f4f6;
-      border-color: #e5e7eb;
-      color: #4b5563;
-    }
-
-    /* Date rows */
-    .date-section {
-      margin-top: 6px;
-      font-size: 13px;
-      color: #374151;
-    }
-
-    .date-row {
+    /* Form fields */
+    .age-form-grid {
       display: grid;
-      grid-template-columns: 130px minmax(0, 1fr);
-      gap: 8px;
-      align-items: center;
-      margin-top: 6px;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      font-size: 13px;
     }
 
-    .date-row label {
-      font-size: 13px;
+    .field-row {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .field-row label {
+      font-size: 12px;
       font-weight: 600;
       color: #4b5563;
     }
 
-    .date-input-group {
+    .date-row {
       display: flex;
+      flex-wrap: wrap;
       gap: 6px;
       align-items: center;
-      flex-wrap: wrap;
     }
 
-    .date-input-group select,
-    .date-input-group input[type="number"],
-    .date-input-group input[type="text"] {
+    .date-select {
       padding: 7px 8px;
       border-radius: 8px;
       border: 1px solid #d1d5db;
-      background: #fff;
       font-size: 13px;
+      background: #fff;
       min-width: 70px;
+    }
+
+    .date-select:focus {
       outline: none;
-    }
-
-    .date-input-group select:focus,
-    .date-input-group input:focus {
       border-color: #2563eb;
-      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.1);
-    }
-
-    .month-select {
-      min-width: 78px;
-    }
-
-    .day-select {
-      min-width: 64px;
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.12);
     }
 
     .year-input {
-      min-width: 90px;
+      width: 90px;
+      padding: 7px 8px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font-size: 13px;
+      background: #fff;
+    }
+
+    .year-input:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.12);
     }
 
     .calendar-btn {
+      padding: 7px 9px;
       border-radius: 8px;
       border: 1px solid #d1d5db;
       background: #f9fafb;
-      padding: 7px 9px;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       font-size: 13px;
-      color: #374151;
-      transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+      color: #4b5563;
+      transition: background 0.15s, border-color 0.15s;
     }
 
     .calendar-btn:hover {
       background: #eff6ff;
       border-color: #bfdbfe;
-      box-shadow: 0 4px 10px rgba(148, 163, 184, 0.3);
+      color: #1d4ed8;
     }
 
     .hidden-date-input {
       position: absolute;
       opacity: 0;
       pointer-events: none;
-      width: 0;
       height: 0;
+      width: 0;
     }
 
     .age-actions {
-      margin-top: 12px;
+      margin-top: 6px;
       display: flex;
       gap: 8px;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .btn-primary {
@@ -425,6 +422,10 @@
       align-items: center;
       gap: 6px;
       transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn-primary i {
+      font-size: 13px;
     }
 
     .btn-primary:hover {
@@ -450,62 +451,55 @@
       border-color: #d1d5db;
     }
 
-    .age-hint {
-      margin-top: 6px;
+    .age-note {
+      margin-top: 4px;
       font-size: 11px;
       color: #6b7280;
     }
 
     .age-error {
-      margin-top: 6px;
+      margin-top: 4px;
       font-size: 12px;
       color: #b91c1c;
     }
 
     /* Result card */
     .age-result-main {
-      font-size: 15px;
-      font-weight: 700;
-      color: #111827;
-    }
-
-    .age-result-main span {
-      font-weight: 800;
       font-size: 18px;
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: 4px;
     }
 
     .age-result-sub {
       font-size: 13px;
       color: #4b5563;
-      margin-top: 4px;
+      margin-bottom: 8px;
     }
 
-    .age-result-stats {
-      margin-top: 10px;
-      padding-left: 18px;
+    .age-result-list {
       font-size: 13px;
       color: #374151;
+      padding-left: 18px;
     }
 
-    .age-result-stats li + li {
+    .age-result-list li + li {
       margin-top: 2px;
     }
 
-    .age-note {
-      margin-top: 8px;
+    .age-result-footnote {
+      margin-top: 6px;
       font-size: 11px;
       color: #6b7280;
     }
 
-    /* Info section */
+    /* Info block */
     .section-block {
       background: var(--card);
       border-radius: 12px;
       border: 1px solid #e2e8f0;
       padding: 14px 16px 12px;
       box-shadow: 0 8px 20px rgba(15, 23, 42, 0.035);
-      font-size: 13px;
-      color: #4b5563;
     }
 
     .section-block h3 {
@@ -524,7 +518,19 @@
     }
 
     .section-block p {
+      font-size: 13px;
+      color: #4b5563;
       margin-bottom: 6px;
+    }
+
+    .section-block ul {
+      padding-left: 18px;
+      font-size: 13px;
+      color: #4b5563;
+    }
+
+    .section-block ul li + li {
+      margin-top: 2px;
     }
 
     /* Sidebar */
@@ -543,11 +549,15 @@
       font-size: 13px;
     }
 
-    .sidebar-card h3 {
+    .sidebar-title-bar {
+      margin: -12px -12px 8px;
+      padding: 7px 10px;
+      background: #0f172a;
+      color: #f9fafb;
       font-size: 14px;
       font-weight: 800;
-      margin-bottom: 4px;
-      color: #111827;
+      border-radius: 12px 12px 0 0;
+      box-shadow: inset 0 -1px 0 rgba(148, 163, 184, 0.35);
     }
 
     .sidebar-card small {
@@ -585,7 +595,48 @@
       text-decoration: underline;
     }
 
-    /* Footer (same style as tools/BMI) */
+    /* Tool search in sidebar */
+    .tool-search {
+      margin-bottom: 8px;
+    }
+
+    .tool-search-input {
+      width: 100%;
+      padding: 7px 9px;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      font-size: 13px;
+      outline: none;
+    }
+
+    .tool-search-input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.12);
+    }
+
+    .tool-suggestions {
+      list-style: none;
+      margin-top: 4px;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      max-height: 180px;
+      overflow-y: auto;
+      padding: 4px 0;
+      font-size: 13px;
+      display: none;
+    }
+
+    .tool-suggestions li {
+      padding: 4px 9px;
+      cursor: pointer;
+    }
+
+    .tool-suggestions li:hover {
+      background: #e5efff;
+    }
+
+    /* Footer (same as tools/BMI) */
     .pro-footer {
       background: #020617;
       color: #cbd5e1;
@@ -710,7 +761,7 @@
       color: #e2e8f0;
     }
 
-    /* Modal */
+    /* Modal (account info) */
     .modal-overlay {
       position: fixed;
       inset: 0;
@@ -775,10 +826,6 @@
       .age-main {
         grid-template-columns: minmax(0, 1.9fr) minmax(260px, 1.2fr);
       }
-
-      .age-top-grid {
-        grid-template-columns: 1fr;
-      }
     }
 
     @media (max-width: 992px) {
@@ -807,14 +854,14 @@
       .age-sidebar {
         order: -1;
       }
+
+      .age-top-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 640px) {
       .pf-cols {
-        grid-template-columns: 1fr;
-      }
-
-      .date-row {
         grid-template-columns: 1fr;
       }
     }
@@ -880,130 +927,88 @@
     <!-- Left side -->
     <section class="age-left">
       <div class="age-top-grid">
-        <!-- Age form -->
+        <!-- Age input card -->
         <article class="card">
-          <div class="helper-bar">
-            <span><i class="fas fa-sliders-h"></i>Modify the values and click <strong>Calculate</strong> to use the age calculator.</span>
-          </div>
-
           <div class="card-header">
-            <h2>Age Calculator</h2>
-            <span class="badge-pill badge-pill-primary">
-              <i class="fas fa-clock"></i> Date Difference
-            </span>
+            <div>
+              <h2>Age Calculator</h2>
+              <small>Determine age or time passed between two dates.</small>
+            </div>
           </div>
 
-          <p class="age-intro" style="font-size:13px;color:#4b5563;margin-bottom:4px;">
-            Determine the age or interval between two calendar dates. Results are shown in years, months, days, and more.
-          </p>
-
-          <div class="date-section">
+          <div class="age-form-grid">
             <!-- Date of birth -->
-            <div class="date-row">
-              <label for="dobMonth">Date of Birth</label>
-              <div class="date-input-group">
-                <select id="dobMonth" class="month-select">
-                  <option value="1">Jan</option>
-                  <option value="2">Feb</option>
-                  <option value="3">Mar</option>
-                  <option value="4">Apr</option>
-                  <option value="5">May</option>
-                  <option value="6">Jun</option>
-                  <option value="7">Jul</option>
-                  <option value="8">Aug</option>
-                  <option value="9">Sep</option>
-                  <option value="10">Oct</option>
-                  <option value="11">Nov</option>
-                  <option value="12">Dec</option>
-                </select>
-
-                <select id="dobDay" class="day-select"></select>
-
+            <div class="field-row">
+              <label>Date of Birth</label>
+              <div class="date-row">
+                <select id="dobMonth" class="date-select"></select>
+                <select id="dobDay" class="date-select"></select>
                 <input id="dobYear" class="year-input" type="number" placeholder="Year" />
-
-                <button type="button" class="calendar-btn" data-target="dob">
+                <button type="button" class="calendar-btn" id="dobCalendarBtn" aria-label="Pick date of birth">
                   <i class="fas fa-calendar-alt"></i>
                 </button>
-
-                <input type="date" id="dobDatePicker" class="hidden-date-input">
+                <input type="date" id="dobDateInput" class="hidden-date-input" />
               </div>
             </div>
 
-            <!-- Age at date of -->
-            <div class="date-row">
-              <label for="refMonth">Age at the Date of</label>
-              <div class="date-input-group">
-                <select id="refMonth" class="month-select">
-                  <option value="1">Jan</option>
-                  <option value="2">Feb</option>
-                  <option value="3">Mar</option>
-                  <option value="4">Apr</option>
-                  <option value="5">May</option>
-                  <option value="6">Jun</option>
-                  <option value="7">Jul</option>
-                  <option value="8">Aug</option>
-                  <option value="9">Sep</option>
-                  <option value="10">Oct</option>
-                  <option value="11">Nov</option>
-                  <option value="12">Dec</option>
-                </select>
-
-                <select id="refDay" class="day-select"></select>
-
-                <input id="refYear" class="year-input" type="number" placeholder="Year" />
-
-                <button type="button" class="calendar-btn" data-target="ref">
+            <!-- Age at date -->
+            <div class="field-row">
+              <label>Age at the Date of</label>
+              <div class="date-row">
+                <select id="toMonth" class="date-select"></select>
+                <select id="toDay" class="date-select"></select>
+                <input id="toYear" class="year-input" type="number" placeholder="Year" />
+                <button type="button" class="calendar-btn" id="toCalendarBtn" aria-label="Pick target date">
                   <i class="fas fa-calendar-alt"></i>
                 </button>
-
-                <input type="date" id="refDatePicker" class="hidden-date-input">
+                <input type="date" id="toDateInput" class="hidden-date-input" />
               </div>
             </div>
           </div>
 
           <div class="age-actions">
             <button type="button" class="btn-primary" id="ageCalcBtn">
-              <i class="fas fa-calculator"></i> Calculate
+              <i class="fas fa-calculator"></i> Calculate Age
             </button>
             <button type="button" class="btn-ghost" id="ageResetBtn">Reset</button>
           </div>
 
-          <p class="age-hint">
-            Years can be typed manually with no upper limit. You can also use the calendar buttons
-            to pick each date instead of typing.
+          <p class="age-note">
+            Months are listed as short names, the year can be typed manually without any limit,
+            or you can pick both dates using the calendar buttons.
           </p>
           <p class="age-error" id="ageError" style="display:none;"></p>
         </article>
 
         <!-- Result card -->
-        <article class="card">
+        <article class="card" id="resultCard">
           <div class="card-header">
-            <h2>Result</h2>
-            <span class="badge-pill badge-pill-muted">
-              <i class="fas fa-user-clock"></i>
-              <span id="ageSummaryBadge">Exact Age</span>
-            </span>
+            <div>
+              <h2>Result</h2>
+              <small>Exact age difference between the two dates.</small>
+            </div>
+            <button type="button" class="btn-print" id="printResultBtn">
+              <i class="fas fa-print"></i> Print Result
+            </button>
           </div>
 
-          <div>
-            <p class="age-result-main" id="ageMainResult">
-              Age: <span>0 years, 0 months, 0 days</span>
+          <div id="resultBody">
+            <div class="age-result-main" id="ageMainText">
+              Age: ——
+            </div>
+            <p class="age-result-sub" id="ageSubText">
+              Select the dates above and click “Calculate Age” to see the detailed result.
             </p>
-            <p class="age-result-sub" id="ageSubResult">
-              The second date is the same as the date of birth.
-            </p>
-
-            <ul class="age-result-stats" id="ageStatsList">
-              <li><strong>Total days:</strong> 0 days</li>
-              <li><strong>Total weeks:</strong> 0 weeks</li>
-              <li><strong>Total hours:</strong> 0 hours</li>
-              <li><strong>Total minutes:</strong> 0 minutes</li>
-              <li><strong>Total seconds:</strong> 0 seconds</li>
+            <ul class="age-result-list" id="ageDetailList">
+              <li>Total time: —</li>
+              <li>Total days: —</li>
+              <li>Total hours: —</li>
+              <li>Total minutes: —</li>
+              <li>Total seconds: —</li>
             </ul>
-
-            <p class="age-note">
-              This calculator uses calendar dates and accounts for leap years. It is designed
-              for general planning and educational purposes and is not intended for official record keeping.
+            <p class="age-result-footnote">
+              This calculator uses calendar-aware calculations (including leap years) and is intended for
+              general information only.
             </p>
           </div>
         </article>
@@ -1013,27 +1018,20 @@
       <article class="section-block">
         <h3>How this age calculator works</h3>
         <p>
-          The tool calculates the time interval between a start date (often a date of birth)
-          and an end date. It first determines the complete years between the two dates, then
-          the remaining months and days after subtracting those full years.
+          The age calculator finds the exact time difference between two calendar dates. It shows the result
+          in years, months, and days, and also converts the same span into weeks, days, hours, minutes,
+          and seconds.
         </p>
-        <p>
-          The result is displayed as a combination of years, months, and days, as well as in
-          total days, weeks, hours, minutes, and seconds. Leap years and the exact number of
-          days in each month are taken into account.
-        </p>
-
-        <h4>Typical use cases</h4>
-        <ul style="padding-left:18px;">
-          <li>Checking exact age in years, months, and days.</li>
-          <li>Finding the time between two important events.</li>
-          <li>Planning project timelines or milestone dates.</li>
+        <h4>Common uses</h4>
+        <ul>
+          <li>Calculate a person’s age on a given date.</li>
+          <li>Find the time between two historical events.</li>
+          <li>Check how long you have been working at a company or on a project.</li>
         </ul>
-
         <h4>Notes</h4>
         <p>
-          If the end date is earlier than the start date, the calculator cannot compute a
-          positive age and will prompt you to adjust the dates.
+          The calculator assumes the starting moment is at midnight of the selected date. Time zones are not
+          taken into account and the result is based purely on calendar dates.
         </p>
       </article>
     </section>
@@ -1041,14 +1039,23 @@
     <!-- Sidebar -->
     <aside class="age-sidebar">
       <div class="sidebar-card">
-        <h3>Other Tools on WordCalculator.net</h3>
-        <small>Quick navigation to related calculators and writing tools.</small>
+        <div class="sidebar-title-bar">Other Calculators</div>
+        <div class="tool-search">
+          <input
+            type="search"
+            id="toolSearchInput"
+            class="tool-search-input"
+            placeholder="Search tools by name..."
+            autocomplete="off"
+          />
+          <ul id="toolSuggestions" class="tool-suggestions"></ul>
+        </div>
 
         <div class="sidebar-group">
-          <h4>Health & Fitness</h4>
+          <h4>Popular</h4>
           <ul class="sidebar-links">
-            <li><a href="bmi-calculator.html">BMI Calculator</a></li>
             <li><a href="age-calculator.html">Age Calculator</a></li>
+            <li><a href="bmi-calculator.html">BMI Calculator</a></li>
             <li><a href="calorie-calculator.html">Calorie Calculator</a></li>
           </ul>
         </div>
@@ -1056,9 +1063,9 @@
         <div class="sidebar-group">
           <h4>Text & Writing</h4>
           <ul class="sidebar-links">
-            <li><a href="https://wordcalculator.net">Word & Character Counter</a></li>
+            <li><a href="https://wordcalculator.net">Word &amp; Character Counter</a></li>
             <li><a href="case-converter.html">Case Converter</a></li>
-            <li><a href="grammar-spell-checker.html">Grammar & Spell Checker</a></li>
+            <li><a href="grammar-spell-checker.html">Grammar &amp; Spell Checker</a></li>
             <li><a href="readability-analyzer.html">Readability Analyzer</a></li>
           </ul>
         </div>
@@ -1067,15 +1074,15 @@
           <h4>SEO & Content</h4>
           <ul class="sidebar-links">
             <li><a href="keyword-density-analyzer.html">Keyword Density Analyzer</a></li>
-            <li><a href="title-meta-preview.html">Title & Meta Preview</a></li>
+            <li><a href="title-meta-preview.html">Title &amp; Meta Preview</a></li>
             <li><a href="url-slug-generator.html">URL Slug Generator</a></li>
           </ul>
         </div>
 
         <div class="sidebar-group">
-          <h4>Finance & Productivity</h4>
+          <h4>Finance & Time</h4>
           <ul class="sidebar-links">
-            <li><a href="loan-emi-calculator.html">Loan & EMI Calculator</a></li>
+            <li><a href="loan-emi-calculator.html">Loan &amp; EMI Calculator</a></li>
             <li><a href="interest-calculator.html">Interest Calculator</a></li>
             <li><a href="focus-timer.html">Focus Timer</a></li>
           </ul>
@@ -1179,20 +1186,18 @@
       initYear();
       initMobileMenu();
       initAuthModal();
-      initDateRow("dob");
-      initDateRow("ref");
-      setTodayForRef();
+      initDateControls();
       initAgeCalculator();
-      updateAgeResult(0, 0, 0, 0);
+      initToolSearch();
+      initPrintButton();
     });
 
-    /* Footer year */
     function initYear() {
       const yearEl = document.getElementById("pf-year");
       if (yearEl) yearEl.textContent = new Date().getFullYear();
     }
 
-    /* Mobile nav */
+    // Mobile nav
     function initMobileMenu() {
       const mobileMenuBtn = $("#mobileMenuBtn");
       const mobileCloseBtn = $("#mobileCloseBtn");
@@ -1229,7 +1234,7 @@
       }
     }
 
-    /* Auth modal */
+    // Auth modal
     function initAuthModal() {
       const openBtn = $("#openAuthBtn");
       const overlay = $("#authOverlay");
@@ -1267,209 +1272,378 @@
       document.body.style.overflow = "hidden";
     }
 
-    /* Date helpers */
+    // Date controls
+    function initDateControls() {
+      const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-    function initDateRow(prefix) {
-      const monthSel = document.getElementById(prefix + "Month");
-      const daySel = document.getElementById(prefix + "Day");
-      const yearInput = document.getElementById(prefix + "Year");
-      const datePicker = document.getElementById(prefix + "DatePicker");
-      const calBtn = document.querySelector('.calendar-btn[data-target="' + prefix + '"]');
+      setupDateSet("dob", monthNames);
+      setupDateSet("to", monthNames);
 
-      // Populate days 1..31 initially
-      populateDays(prefix);
-
-      // Sync days when month/year changes
-      monthSel.addEventListener("change", () => populateDays(prefix));
-      yearInput.addEventListener("input", () => populateDays(prefix));
-
-      // Calendar button triggers hidden date input
-      if (calBtn && datePicker) {
-        calBtn.addEventListener("click", () => {
-          if (typeof datePicker.showPicker === "function") {
-            datePicker.showPicker();
-          } else {
-            datePicker.click();
-          }
-        });
-
-        // When user picks a date from calendar, sync controls
-        datePicker.addEventListener("change", () => {
-          if (!datePicker.value) return;
-          const parts = datePicker.value.split("-");
-          const y = parseInt(parts[0], 10);
-          const m = parseInt(parts[1], 10);
-          const d = parseInt(parts[2], 10);
-          if (!isNaN(y)) yearInput.value = y;
-          if (!isNaN(m)) monthSel.value = String(m);
-          populateDays(prefix);
-          if (!isNaN(d)) daySel.value = String(d);
-        });
-      }
-
-      // Default initial values
-      const now = new Date();
-      if (prefix === "dob") {
-        yearInput.value = now.getFullYear() - 25;
-        monthSel.value = String(now.getMonth() + 1);
-        populateDays(prefix);
-        daySel.value = String(now.getDate());
-      }
+      // set defaults: DOB 20 years before today, target = today
+      const today = new Date();
+      const dobDefault = new Date(today.getFullYear() - 20, today.getMonth(), today.getDate());
+      setDateFields("dob", dobDefault);
+      setDateFields("to", today);
+      updateFromFields("dob");
+      updateFromFields("to");
     }
 
-    function populateDays(prefix) {
+    function setupDateSet(prefix, monthNames) {
       const monthSel = document.getElementById(prefix + "Month");
       const daySel = document.getElementById(prefix + "Day");
       const yearInput = document.getElementById(prefix + "Year");
+      const dateInput = document.getElementById(prefix + "DateInput");
+      const calendarBtn = document.getElementById(prefix + "CalendarBtn");
 
-      const m = parseInt(monthSel.value || "1", 10);
-      let y = parseInt(yearInput.value || "", 10);
-      if (isNaN(y) || y <= 0) {
-        // neutral year just for leap-year calculation
-        y = 2024;
-      }
+      if (!monthSel || !daySel || !yearInput || !dateInput || !calendarBtn) return;
 
-      const maxDay = daysInMonth(y, m);
-      const current = parseInt(daySel.value || "1", 10);
-
-      daySel.innerHTML = "";
-      for (let d = 1; d <= maxDay; d++) {
+      // Populate months
+      monthSel.innerHTML = "";
+      monthNames.forEach((name, index) => {
         const opt = document.createElement("option");
-        opt.value = String(d);
+        opt.value = index;
+        opt.textContent = name;
+        monthSel.appendChild(opt);
+      });
+
+      // Populate days 1-31 (we adjust later)
+      daySel.innerHTML = "";
+      for (let d = 1; d <= 31; d++) {
+        const opt = document.createElement("option");
+        opt.value = d;
         opt.textContent = d;
         daySel.appendChild(opt);
       }
-      if (current <= maxDay) {
-        daySel.value = String(current);
-      } else {
-        daySel.value = String(maxDay);
-      }
-    }
 
-    function daysInMonth(year, month) {
-      return new Date(year, month, 0).getDate();
-    }
+      const onFieldsChange = () => updateFromFields(prefix);
+      monthSel.addEventListener("change", onFieldsChange);
+      daySel.addEventListener("change", onFieldsChange);
+      yearInput.addEventListener("input", onFieldsChange);
 
-    function setTodayForRef() {
-      const now = new Date();
-      $("#refYear").value = now.getFullYear();
-      $("#refMonth").value = String(now.getMonth() + 1);
-      populateDays("ref");
-      $("#refDay").value = String(now.getDate());
-      $("#refDatePicker").valueAsDate = now;
-    }
+      calendarBtn.addEventListener("click", () => {
+        try {
+          if (dateInput.showPicker) {
+            dateInput.showPicker();
+          } else {
+            dateInput.focus();
+          }
+        } catch {
+          dateInput.focus();
+        }
+      });
 
-    function getDateFromControls(prefix) {
-      const year = parseInt($("#" + prefix + "Year").value, 10);
-      const month = parseInt($("#" + prefix + "Month").value, 10);
-      const day = parseInt($("#" + prefix + "Day").value, 10);
-
-      if (isNaN(year) || isNaN(month) || isNaN(day)) {
-        return null;
-      }
-      if (month < 1 || month > 12) return null;
-      const maxDay = daysInMonth(year, month);
-      if (day < 1 || day > maxDay) return null;
-
-      return { year, month, day };
-    }
-
-    /* Age calculator */
-    function initAgeCalculator() {
-      $("#ageCalcBtn").addEventListener("click", handleAgeCalc);
-      $("#ageResetBtn").addEventListener("click", () => {
-        const now = new Date();
-        $("#dobYear").value = now.getFullYear() - 25;
-        $("#dobMonth").value = String(now.getMonth() + 1);
-        populateDays("dob");
-        $("#dobDay").value = String(now.getDate());
-
-        setTodayForRef();
-        $("#ageError").style.display = "none";
-        updateAgeResult(0, 0, 0, 0);
+      dateInput.addEventListener("change", () => {
+        if (!dateInput.value) return;
+        const [year, month, day] = dateInput.value.split("-").map(Number);
+        monthSel.value = month - 1;
+        yearInput.value = year;
+        setDayOptions(daySel, year, month - 1);
+        daySel.value = day;
       });
     }
 
-    function handleAgeCalc() {
-      const errEl = $("#ageError");
-      errEl.style.display = "none";
-      errEl.textContent = "";
-
-      const dob = getDateFromControls("dob");
-      const ref = getDateFromControls("ref");
-
-      if (!dob || !ref) {
-        errEl.style.display = "block";
-        errEl.textContent = "Please provide valid calendar dates for both rows.";
-        return;
+    function setDayOptions(daySel, year, monthIndex) {
+      const maxDays = new Date(year || 2000, monthIndex + 1, 0).getDate();
+      const currentVal = parseInt(daySel.value || "1", 10);
+      daySel.innerHTML = "";
+      for (let d = 1; d <= maxDays; d++) {
+        const opt = document.createElement("option");
+        opt.value = d;
+        opt.textContent = d;
+        daySel.appendChild(opt);
       }
-
-      const start = new Date(dob.year, dob.month - 1, dob.day);
-      const end = new Date(ref.year, ref.month - 1, ref.day);
-
-      if (end < start) {
-        errEl.style.display = "block";
-        errEl.textContent = "The second date must be the same as or later than the date of birth.";
-        return;
-      }
-
-      const diff = computeCalendarAge(dob, ref);
-      const totalDays = Math.floor((end - start) / 86400000);
-      updateAgeResult(diff.years, diff.months, diff.days, totalDays);
+      daySel.value = Math.min(currentVal, maxDays);
     }
 
-    function computeCalendarAge(start, end) {
-      let years = end.year - start.year;
-      let months = end.month - start.month;
-      let days = end.day - start.day;
+    function updateFromFields(prefix) {
+      const monthSel = document.getElementById(prefix + "Month");
+      const daySel = document.getElementById(prefix + "Day");
+      const yearInput = document.getElementById(prefix + "Year");
+      const dateInput = document.getElementById(prefix + "DateInput");
+
+      if (!monthSel || !daySel || !yearInput || !dateInput) return;
+      const year = parseInt(yearInput.value || "0", 10);
+      const monthIndex = parseInt(monthSel.value || "0", 10);
+      if (year) {
+        setDayOptions(daySel, year, monthIndex);
+      }
+      const day = parseInt(daySel.value || "1", 10);
+      if (year) {
+        const month = monthIndex + 1;
+        dateInput.value = `${String(year).padStart(4, "0")}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+      } else {
+        dateInput.value = "";
+      }
+    }
+
+    function setDateFields(prefix, date) {
+      const monthSel = document.getElementById(prefix + "Month");
+      const daySel = document.getElementById(prefix + "Day");
+      const yearInput = document.getElementById(prefix + "Year");
+      const dateInput = document.getElementById(prefix + "DateInput");
+
+      if (!monthSel || !daySel || !yearInput || !dateInput) return;
+      const y = date.getFullYear();
+      const m = date.getMonth();
+      const d = date.getDate();
+      monthSel.value = m;
+      yearInput.value = y;
+      setDayOptions(daySel, y, m);
+      daySel.value = d;
+      dateInput.value = `${String(y).padStart(4, "0")}-${String(m + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+    }
+
+    // Age calculator
+    function initAgeCalculator() {
+      const calcBtn = $("#ageCalcBtn");
+      const resetBtn = $("#ageResetBtn");
+      if (calcBtn) calcBtn.addEventListener("click", calculateAge);
+      if (resetBtn) resetBtn.addEventListener("click", resetAgeForm);
+    }
+
+    function getDateFromPrefix(prefix) {
+      const yearInput = document.getElementById(prefix + "Year");
+      const monthSel = document.getElementById(prefix + "Month");
+      const daySel = document.getElementById(prefix + "Day");
+      if (!yearInput || !monthSel || !daySel) return null;
+      const year = parseInt(yearInput.value, 10);
+      const month = parseInt(monthSel.value, 10);
+      const day = parseInt(daySel.value, 10);
+      if (!year || isNaN(month) || !day) return null;
+      const d = new Date(year, month, day);
+      if (d.getFullYear() !== year || d.getMonth() !== month || d.getDate() !== day) {
+        return null;
+      }
+      return d;
+    }
+
+    function calculateAge() {
+      const errorEl = $("#ageError");
+      errorEl.style.display = "none";
+      errorEl.textContent = "";
+
+      const dob = getDateFromPrefix("dob");
+      const toDate = getDateFromPrefix("to");
+
+      if (!dob || !toDate) {
+        errorEl.style.display = "block";
+        errorEl.textContent = "Please provide valid dates for both fields.";
+        return;
+      }
+
+      if (toDate.getTime() < dob.getTime()) {
+        errorEl.style.display = "block";
+        errorEl.textContent = "The 'Age at the Date of' must be the same as or later than the date of birth.";
+        return;
+      }
+
+      const y1 = dob.getFullYear();
+      const m1 = dob.getMonth();
+      const d1 = dob.getDate();
+
+      const y2 = toDate.getFullYear();
+      const m2 = toDate.getMonth();
+      const d2 = toDate.getDate();
+
+      let years = y2 - y1;
+      let months = m2 - m1;
+      let days = d2 - d1;
 
       if (days < 0) {
-        months -= 1;
-        const prevMonth = end.month - 1 === 0 ? 12 : end.month - 1;
-        const prevYear = prevMonth === 12 ? end.year - 1 : end.year;
-        days += daysInMonth(prevYear, prevMonth);
+        const prevMonthDate = new Date(y2, m2, 0); // last day of previous month
+        days += prevMonthDate.getDate();
+        months--;
       }
 
       if (months < 0) {
-        years -= 1;
         months += 12;
+        years--;
       }
 
-      return { years, months, days };
+      const diffMs = toDate - dob;
+      const totalSeconds = Math.floor(diffMs / 1000);
+      const totalMinutes = Math.floor(totalSeconds / 60);
+      const totalHours = Math.floor(totalMinutes / 60);
+      const totalDays = Math.floor(totalHours / 24);
+      const totalWeeks = Math.floor(totalDays / 7);
+
+      const mainText = $("#ageMainText");
+      const subText = $("#ageSubText");
+      const list = $("#ageDetailList");
+
+      const parts = [];
+      if (years > 0) parts.push(years + (years === 1 ? " year" : " years"));
+      if (months > 0) parts.push(months + (months === 1 ? " month" : " months"));
+      if (days > 0 || parts.length === 0) parts.push(days + (days === 1 ? " day" : " days"));
+
+      mainText.textContent = "Age: " + parts.join(", ");
+
+      subText.textContent =
+        "From " +
+        dob.toDateString() +
+        " to " +
+        toDate.toDateString() +
+        " there are:";
+
+      list.innerHTML = `
+        <li><strong>${years}</strong> year(s), <strong>${months}</strong> month(s), <strong>${days}</strong> day(s)</li>
+        <li><strong>${totalWeeks}</strong> week(s) and <strong>${totalDays % 7}</strong> day(s)</li>
+        <li><strong>${totalDays}</strong> total day(s)</li>
+        <li><strong>${totalHours}</strong> total hour(s)</li>
+        <li><strong>${totalMinutes}</strong> total minute(s)</li>
+        <li><strong>${totalSeconds}</strong> total second(s)</li>
+      `;
     }
 
-    function updateAgeResult(years, months, days, totalDays) {
-      const mainEl = $("#ageMainResult");
-      const subEl = $("#ageSubResult");
-      const badgeEl = $("#ageSummaryBadge");
-      const statsEl = $("#ageStatsList");
+    function resetAgeForm() {
+      const today = new Date();
+      const dobDefault = new Date(today.getFullYear() - 20, today.getMonth(), today.getDate());
+      setDateFields("dob", dobDefault);
+      setDateFields("to", today);
+      updateFromFields("dob");
+      updateFromFields("to");
 
-      mainEl.innerHTML = 'Age: <span>' +
-        years + ' year' + (years !== 1 ? 's' : '') + ', ' +
-        months + ' month' + (months !== 1 ? 's' : '') + ', ' +
-        days + ' day' + (days !== 1 ? 's' : '') +
-        '</span>';
+      $("#ageError").style.display = "none";
 
-      if (years === 0 && months === 0 && days === 0) {
-        subEl.textContent = "The second date is the same as the starting date.";
-        badgeEl.textContent = "Zero Interval";
-      } else {
-        subEl.textContent = "This is the exact time elapsed between the two selected dates.";
-        badgeEl.textContent = "Exact Age";
-      }
-
-      const weeks = totalDays / 7;
-      const hours = totalDays * 24;
-      const minutes = hours * 60;
-      const seconds = minutes * 60;
-
-      statsEl.innerHTML = `
-        <li><strong>Total days:</strong> ${totalDays.toLocaleString()} day${totalDays !== 1 ? "s" : ""}</li>
-        <li><strong>Total weeks:</strong> ${weeks.toFixed(2)} weeks</li>
-        <li><strong>Total hours:</strong> ${hours.toLocaleString()} hours</li>
-        <li><strong>Total minutes:</strong> ${minutes.toLocaleString()} minutes</li>
-        <li><strong>Total seconds:</strong> ${seconds.toLocaleString()} seconds</li>
+      $("#ageMainText").textContent = "Age: ——";
+      $("#ageSubText").textContent =
+        "Select the dates above and click “Calculate Age” to see the detailed result.";
+      $("#ageDetailList").innerHTML = `
+        <li>Total time: —</li>
+        <li>Total days: —</li>
+        <li>Total hours: —</li>
+        <li>Total minutes: —</li>
+        <li>Total seconds: —</li>
       `;
+    }
+
+    // Sidebar tool search
+    function initToolSearch() {
+      const searchInput = $("#toolSearchInput");
+      const suggestionsEl = $("#toolSuggestions");
+      if (!searchInput || !suggestionsEl) return;
+
+      const tools = [
+        { name: "Age Calculator", url: "age-calculator.html" },
+        { name: "BMI Calculator", url: "bmi-calculator.html" },
+        { name: "Calorie Calculator", url: "calorie-calculator.html" },
+        { name: "Word & Character Counter", url: "https://wordcalculator.net" },
+        { name: "Case Converter", url: "case-converter.html" },
+        { name: "Grammar & Spell Checker", url: "grammar-spell-checker.html" },
+        { name: "Readability Analyzer", url: "readability-analyzer.html" },
+        { name: "Keyword Density Analyzer", url: "keyword-density-analyzer.html" },
+        { name: "Title & Meta Preview", url: "title-meta-preview.html" },
+        { name: "URL Slug Generator", url: "url-slug-generator.html" },
+        { name: "Loan & EMI Calculator", url: "loan-emi-calculator.html" },
+        { name: "Interest Calculator", url: "interest-calculator.html" },
+        { name: "Focus Timer", url: "focus-timer.html" }
+      ];
+
+      searchInput.addEventListener("input", () => {
+        const q = (searchInput.value || "").toLowerCase().trim();
+        if (!q) {
+          suggestionsEl.style.display = "none";
+          suggestionsEl.innerHTML = "";
+          return;
+        }
+        const matched = tools.filter((t) =>
+          t.name.toLowerCase().includes(q)
+        ).slice(0, 8);
+
+        if (!matched.length) {
+          suggestionsEl.style.display = "none";
+          suggestionsEl.innerHTML = "";
+          return;
+        }
+
+        suggestionsEl.innerHTML = matched
+          .map((t) => `<li data-url="${t.url}">${t.name}</li>`)
+          .join("");
+        suggestionsEl.style.display = "block";
+      });
+
+      suggestionsEl.addEventListener("click", (e) => {
+        const li = e.target.closest("li[data-url]");
+        if (!li) return;
+        const url = li.getAttribute("data-url");
+        if (url) window.location.href = url;
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!suggestionsEl.contains(e.target) && e.target !== searchInput) {
+          suggestionsEl.style.display = "none";
+        }
+      });
+    }
+
+    // Print result card only
+    function initPrintButton() {
+      const btn = $("#printResultBtn");
+      if (!btn) return;
+      btn.addEventListener("click", () => {
+        const card = document.getElementById("resultCard");
+        if (!card) return;
+
+        const win = window.open("", "_blank", "width=800,height=600");
+        if (!win) return;
+
+        win.document.write(`
+          <html>
+          <head>
+            <title>Age Calculator Result</title>
+            <style>
+              body {
+                font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+                background: #f3f4f6;
+                padding: 20px;
+              }
+              .print-card {
+                max-width: 640px;
+                margin: 0 auto;
+                background: #ffffff;
+                border-radius: 12px;
+                border: 1px solid #e5e7eb;
+                box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+                overflow: hidden;
+              }
+              .print-card-header {
+                padding: 10px 14px;
+                background: #0f172a;
+                color: #f9fafb;
+                font-size: 16px;
+                font-weight: 800;
+              }
+              .print-body {
+                padding: 14px 16px 14px;
+                font-size: 14px;
+                color: #111827;
+              }
+              .print-body ul {
+                margin-top: 8px;
+                margin-left: 18px;
+                font-size: 13px;
+              }
+              .btn-print {
+                display: none !important;
+              }
+            </style>
+          </head>
+          <body>
+            <div class="print-card">
+              <div class="print-card-header">Age Calculator Result</div>
+              <div class="print-body">
+                ${document.getElementById("resultBody").innerHTML}
+              </div>
+            </div>
+            <script>
+              window.onload = function() { window.print(); };
+            <\/script>
+          </body>
+          </html>
+        `);
+        win.document.close();
+      });
     }
   </script>
 </body>
