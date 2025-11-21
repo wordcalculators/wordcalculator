@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Age Calculator — WordCalculator.net</title>
+  <meta name="description" content="Clean age calculator that finds the exact age or interval between two dates in years, months, weeks, days, hours, minutes, and seconds.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link rel="icon" href="favicon-128x128.png" />
+
+  <style>
+    /* Base reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --blue: #3f82bd;
+      --topbar: #d9edf7;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --ok: #16a34a;
+      --warn: #f59e0b;
+      --err: #e11d48;
+      --primary: #2563eb;
+      --bg: #f7f8fb;
+      --card: #ffffff;
+    }
+
+    html {
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Header (same style as tools/BMI pages) */
+    .wc-header {
+      background: #020617;
+      color: #fff;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+    }
+
+    .wc-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .wc-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .wc-slab,
+    .slab {
+      display: inline-flex;
+      width: 24px;
+      height: 24px;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 14px;
+      border-radius: 2px;
+      color: #fff;
+    }
+
+    .slab-w,
+    .wc-slab.slab-w {
+      background: #1f2327;
+    }
+
+    .slab-o,
+    .wc-slab.slab-o {
+      background: #a7c1db;
+      color: #1e2a3a;
+    }
+
+    .slab-r,
+    .wc-slab.slab-r {
+      background: #7d96ae;
+    }
+
+    .slab-d,
+    .wc-slab.slab-d {
+      background: #2f5d8a;
+    }
+
+    .wc-brand-text {
+      display: inline-flex;
+      flex-direction: column;
+      line-height: 1.05;
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .wc-brand-text small {
+      font-size: 10px;
+      opacity: 0.95;
+    }
+
+    .wc-nav {
+      margin-left: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .wc-link {
+      color: #f4f8fc;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 6px 10px;
+      border-radius: 8px;
+      transition: 0.15s;
+      white-space: nowrap;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .wc-link:hover {
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .wc-link.active {
+      background: #fff;
+      color: #111;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .wc-signin-btn {
+      background: rgba(148, 163, 184, 0.18);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .wc-signin-btn:hover {
+      background: #38bdf8;
+      color: #020617;
+      border-color: #38bdf8;
+    }
+
+    .mobile-menu-btn {
+      margin-left: auto;
+      background: transparent;
+      border: 0;
+      color: #fff;
+      font-size: 20px;
+      display: none;
+      cursor: pointer;
+    }
+
+    /* Mobile nav */
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 320px;
+      height: 100vh;
+      background: #1f2933;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.18);
+      transition: right 0.3s;
+      z-index: 100;
+    }
+
+    .mobile-nav.active {
+      right: 0;
+    }
+
+    .mobile-nav-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      border-bottom: 1px solid #34495e;
+    }
+
+    .mobile-close-btn {
+      background: transparent;
+      border: 0;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .mobile-nav-links {
+      padding: 16px;
+    }
+
+    .mobile-link {
+      display: block;
+      color: #ecf0f1;
+      padding: 12px 0;
+      border-bottom: 1px solid #34495e;
+      font-weight: 700;
+    }
+
+    .mobile-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 90;
+    }
+
+    .mobile-overlay.active {
+      display: block;
+    }
+
+    /* Main layout */
+    .age-main {
+      max-width: 1200px;
+      margin: 22px auto 40px;
+      padding: 0 15px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(260px, 1.2fr);
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .age-left {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .age-top-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 380px) minmax(0, 1.4fr);
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+      padding: 14px 14px 12px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .card-header h2 {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #0f172a;
+    }
+
+    .helper-bar {
+      margin: 0 -14px 10px;
+      padding: 6px 14px;
+      background: #1f2937;
+      color: #e5e7eb;
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .helper-bar i {
+      margin-right: 6px;
+      font-size: 11px;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+
+    .badge-pill-primary {
+      background: #eff6ff;
+      border-color: #bfdbfe;
+      color: #1d4ed8;
+    }
+
+    .badge-pill-muted {
+      background: #f3f4f6;
+      border-color: #e5e7eb;
+      color: #4b5563;
+    }
+
+    /* Date rows */
+    .date-section {
+      margin-top: 6px;
+      font-size: 13px;
+      color: #374151;
+    }
+
+    .date-row {
+      display: grid;
+      grid-template-columns: 130px minmax(0, 1fr);
+      gap: 8px;
+      align-items: center;
+      margin-top: 6px;
+    }
+
+    .date-row label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #4b5563;
+    }
+
+    .date-input-group {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .date-input-group select,
+    .date-input-group input[type="number"],
+    .date-input-group input[type="text"] {
+      padding: 7px 8px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      background: #fff;
+      font-size: 13px;
+      min-width: 70px;
+      outline: none;
+    }
+
+    .date-input-group select:focus,
+    .date-input-group input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.1);
+    }
+
+    .month-select {
+      min-width: 78px;
+    }
+
+    .day-select {
+      min-width: 64px;
+    }
+
+    .year-input {
+      min-width: 90px;
+    }
+
+    .calendar-btn {
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      background: #f9fafb;
+      padding: 7px 9px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: #374151;
+      transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .calendar-btn:hover {
+      background: #eff6ff;
+      border-color: #bfdbfe;
+      box-shadow: 0 4px 10px rgba(148, 163, 184, 0.3);
+    }
+
+    .hidden-date-input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      width: 0;
+      height: 0;
+    }
+
+    .age-actions {
+      margin-top: 12px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid #16a34a;
+      background: #16a34a;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn-primary:hover {
+      background: #15803d;
+      box-shadow: 0 8px 18px rgba(22, 163, 74, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      font-size: 12px;
+      font-weight: 600;
+      color: #4b5563;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .btn-ghost:hover {
+      background: #e5e7eb;
+      border-color: #d1d5db;
+    }
+
+    .age-hint {
+      margin-top: 6px;
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    .age-error {
+      margin-top: 6px;
+      font-size: 12px;
+      color: #b91c1c;
+    }
+
+    /* Result card */
+    .age-result-main {
+      font-size: 15px;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .age-result-main span {
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    .age-result-sub {
+      font-size: 13px;
+      color: #4b5563;
+      margin-top: 4px;
+    }
+
+    .age-result-stats {
+      margin-top: 10px;
+      padding-left: 18px;
+      font-size: 13px;
+      color: #374151;
+    }
+
+    .age-result-stats li + li {
+      margin-top: 2px;
+    }
+
+    .age-note {
+      margin-top: 8px;
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    /* Info section */
+    .section-block {
+      background: var(--card);
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      padding: 14px 16px 12px;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.035);
+      font-size: 13px;
+      color: #4b5563;
+    }
+
+    .section-block h3 {
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: #0f172a;
+    }
+
+    .section-block h4 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-top: 10px;
+      margin-bottom: 4px;
+      color: #111827;
+    }
+
+    .section-block p {
+      margin-bottom: 6px;
+    }
+
+    /* Sidebar */
+    .age-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .sidebar-card {
+      background: var(--card);
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      padding: 12px 12px 10px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+      font-size: 13px;
+    }
+
+    .sidebar-card h3 {
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 4px;
+      color: #111827;
+    }
+
+    .sidebar-card small {
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    .sidebar-group {
+      margin-top: 8px;
+    }
+
+    .sidebar-group h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #6b7280;
+      margin-bottom: 3px;
+      font-weight: 700;
+    }
+
+    .sidebar-links {
+      list-style: none;
+      font-size: 13px;
+    }
+
+    .sidebar-links li + li {
+      margin-top: 3px;
+    }
+
+    .sidebar-links a {
+      color: #1d4ed8;
+    }
+
+    .sidebar-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer (same style as tools/BMI) */
+    .pro-footer {
+      background: #020617;
+      color: #cbd5e1;
+      margin-top: 40px;
+    }
+
+    .pf-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 34px 15px;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 26px;
+    }
+
+    .pf-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pf-brand-text {
+      font-size: 18px;
+      font-weight: 800;
+      color: #e2e8f0;
+    }
+
+    .pf-brand-text span {
+      color: #38bdf8;
+    }
+
+    .pf-tag {
+      margin-top: 8px;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    .pf-social {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .pf-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+      background: #0b1220;
+      color: #cbd5e1;
+      transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.15s,
+        box-shadow 0.15s;
+    }
+
+    .pf-social a:hover {
+      background: #38bdf8;
+      border-color: #38bdf8;
+      color: #0b1220;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4);
+    }
+
+    .pf-cols {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .pf-col h5 {
+      color: #e2e8f0;
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .pf-col ul {
+      list-style: none;
+    }
+
+    .pf-col li {
+      margin: 8px 0;
+    }
+
+    .pf-col a {
+      color: #94a3b8;
+    }
+
+    .pf-col a:hover {
+      color: #e2e8f0;
+    }
+
+    .pf-bottom {
+      border-top: 1px solid #1e293b;
+      background: #0b1220;
+    }
+
+    .pf-bottom-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: #8893a7;
+      font-size: 13px;
+    }
+
+    .pf-links {
+      display: flex;
+      gap: 10px;
+    }
+
+    .pf-links a {
+      color: #94a3b8;
+    }
+
+    .pf-links a:hover {
+      color: #e2e8f0;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.7);
+      display: none;
+      z-index: 200;
+    }
+
+    .modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 420px;
+      max-width: 96vw;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.35);
+      display: none;
+      z-index: 210;
+    }
+
+    .modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 12px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .modal-head h3 {
+      font-size: 15px;
+      font-weight: 800;
+      color: #111827;
+    }
+
+    .modal-close {
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 6px 8px;
+      cursor: pointer;
+    }
+
+    .modal-body {
+      padding: 12px;
+      font-size: 13px;
+      color: #4b5563;
+    }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .pf-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .pf-cols {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .age-main {
+        grid-template-columns: minmax(0, 1.9fr) minmax(260px, 1.2fr);
+      }
+
+      .age-top-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .wc-nav {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: inline-block;
+      }
+
+      .wc-brand-text {
+        font-size: 18px;
+      }
+
+      .wc-slab {
+        width: 22px;
+        height: 22px;
+        font-size: 13px;
+      }
+
+      .age-main {
+        grid-template-columns: 1fr;
+      }
+
+      .age-sidebar {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .pf-cols {
+        grid-template-columns: 1fr;
+      }
+
+      .date-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="wc-header">
+    <div class="wc-wrap">
+      <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+        <span class="wc-slab slab-w">W</span>
+        <span class="wc-slab slab-o">O</span>
+        <span class="wc-slab slab-r">R</span>
+        <span class="wc-slab slab-d">D</span>
+        <span class="wc-brand-text">
+          Calculator
+          <small class="wc-tagline">Every Word Counts</small>
+        </span>
+      </a>
+
+      <nav class="wc-nav" aria-label="Primary">
+        <a href="https://wordcalculator.net" class="wc-link">Home</a>
+        <a href="#" class="wc-link">Blog</a>
+        <a href="tools.html" class="wc-link">Tools</a>
+        <a href="#about" class="wc-link">About Us</a>
+        <button class="wc-link wc-signin-btn" id="openAuthBtn" type="button">
+          Sign In <i class="fa fa-right-to-bracket" aria-hidden="true"></i>
+        </button>
+      </nav>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+      <div class="mobile-nav-header">
+        <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+          <span class="wc-slab slab-w">W</span>
+          <span class="wc-slab slab-o">O</span>
+          <span class="wc-slab slab-r">R</span>
+          <span class="wc-slab slab-d">D</span>
+          <span class="wc-brand-text">Calculator</span>
+        </a>
+        <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="https://wordcalculator.net" class="nav-link mobile-link">Home</a>
+        <a href="#" class="nav-link mobile-link">Blog</a>
+        <a href="tools.html" class="nav-link mobile-link">Tools</a>
+        <a href="#about" class="nav-link mobile-link">About Us</a>
+        <button class="nav-link mobile-link" id="openAuthBtnMobile" type="button">Sign In</button>
+      </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+  </header>
+
+  <!-- Main -->
+  <main class="age-main">
+    <!-- Left side -->
+    <section class="age-left">
+      <div class="age-top-grid">
+        <!-- Age form -->
+        <article class="card">
+          <div class="helper-bar">
+            <span><i class="fas fa-sliders-h"></i>Modify the values and click <strong>Calculate</strong> to use the age calculator.</span>
+          </div>
+
+          <div class="card-header">
+            <h2>Age Calculator</h2>
+            <span class="badge-pill badge-pill-primary">
+              <i class="fas fa-clock"></i> Date Difference
+            </span>
+          </div>
+
+          <p class="age-intro" style="font-size:13px;color:#4b5563;margin-bottom:4px;">
+            Determine the age or interval between two calendar dates. Results are shown in years, months, days, and more.
+          </p>
+
+          <div class="date-section">
+            <!-- Date of birth -->
+            <div class="date-row">
+              <label for="dobMonth">Date of Birth</label>
+              <div class="date-input-group">
+                <select id="dobMonth" class="month-select">
+                  <option value="1">Jan</option>
+                  <option value="2">Feb</option>
+                  <option value="3">Mar</option>
+                  <option value="4">Apr</option>
+                  <option value="5">May</option>
+                  <option value="6">Jun</option>
+                  <option value="7">Jul</option>
+                  <option value="8">Aug</option>
+                  <option value="9">Sep</option>
+                  <option value="10">Oct</option>
+                  <option value="11">Nov</option>
+                  <option value="12">Dec</option>
+                </select>
+
+                <select id="dobDay" class="day-select"></select>
+
+                <input id="dobYear" class="year-input" type="number" placeholder="Year" />
+
+                <button type="button" class="calendar-btn" data-target="dob">
+                  <i class="fas fa-calendar-alt"></i>
+                </button>
+
+                <input type="date" id="dobDatePicker" class="hidden-date-input">
+              </div>
+            </div>
+
+            <!-- Age at date of -->
+            <div class="date-row">
+              <label for="refMonth">Age at the Date of</label>
+              <div class="date-input-group">
+                <select id="refMonth" class="month-select">
+                  <option value="1">Jan</option>
+                  <option value="2">Feb</option>
+                  <option value="3">Mar</option>
+                  <option value="4">Apr</option>
+                  <option value="5">May</option>
+                  <option value="6">Jun</option>
+                  <option value="7">Jul</option>
+                  <option value="8">Aug</option>
+                  <option value="9">Sep</option>
+                  <option value="10">Oct</option>
+                  <option value="11">Nov</option>
+                  <option value="12">Dec</option>
+                </select>
+
+                <select id="refDay" class="day-select"></select>
+
+                <input id="refYear" class="year-input" type="number" placeholder="Year" />
+
+                <button type="button" class="calendar-btn" data-target="ref">
+                  <i class="fas fa-calendar-alt"></i>
+                </button>
+
+                <input type="date" id="refDatePicker" class="hidden-date-input">
+              </div>
+            </div>
+          </div>
+
+          <div class="age-actions">
+            <button type="button" class="btn-primary" id="ageCalcBtn">
+              <i class="fas fa-calculator"></i> Calculate
+            </button>
+            <button type="button" class="btn-ghost" id="ageResetBtn">Reset</button>
+          </div>
+
+          <p class="age-hint">
+            Years can be typed manually with no upper limit. You can also use the calendar buttons
+            to pick each date instead of typing.
+          </p>
+          <p class="age-error" id="ageError" style="display:none;"></p>
+        </article>
+
+        <!-- Result card -->
+        <article class="card">
+          <div class="card-header">
+            <h2>Result</h2>
+            <span class="badge-pill badge-pill-muted">
+              <i class="fas fa-user-clock"></i>
+              <span id="ageSummaryBadge">Exact Age</span>
+            </span>
+          </div>
+
+          <div>
+            <p class="age-result-main" id="ageMainResult">
+              Age: <span>0 years, 0 months, 0 days</span>
+            </p>
+            <p class="age-result-sub" id="ageSubResult">
+              The second date is the same as the date of birth.
+            </p>
+
+            <ul class="age-result-stats" id="ageStatsList">
+              <li><strong>Total days:</strong> 0 days</li>
+              <li><strong>Total weeks:</strong> 0 weeks</li>
+              <li><strong>Total hours:</strong> 0 hours</li>
+              <li><strong>Total minutes:</strong> 0 minutes</li>
+              <li><strong>Total seconds:</strong> 0 seconds</li>
+            </ul>
+
+            <p class="age-note">
+              This calculator uses calendar dates and accounts for leap years. It is designed
+              for general planning and educational purposes and is not intended for official record keeping.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <!-- Info section -->
+      <article class="section-block">
+        <h3>How this age calculator works</h3>
+        <p>
+          The tool calculates the time interval between a start date (often a date of birth)
+          and an end date. It first determines the complete years between the two dates, then
+          the remaining months and days after subtracting those full years.
+        </p>
+        <p>
+          The result is displayed as a combination of years, months, and days, as well as in
+          total days, weeks, hours, minutes, and seconds. Leap years and the exact number of
+          days in each month are taken into account.
+        </p>
+
+        <h4>Typical use cases</h4>
+        <ul style="padding-left:18px;">
+          <li>Checking exact age in years, months, and days.</li>
+          <li>Finding the time between two important events.</li>
+          <li>Planning project timelines or milestone dates.</li>
+        </ul>
+
+        <h4>Notes</h4>
+        <p>
+          If the end date is earlier than the start date, the calculator cannot compute a
+          positive age and will prompt you to adjust the dates.
+        </p>
+      </article>
+    </section>
+
+    <!-- Sidebar -->
+    <aside class="age-sidebar">
+      <div class="sidebar-card">
+        <h3>Other Tools on WordCalculator.net</h3>
+        <small>Quick navigation to related calculators and writing tools.</small>
+
+        <div class="sidebar-group">
+          <h4>Health & Fitness</h4>
+          <ul class="sidebar-links">
+            <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+            <li><a href="age-calculator.html">Age Calculator</a></li>
+            <li><a href="calorie-calculator.html">Calorie Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Text & Writing</h4>
+          <ul class="sidebar-links">
+            <li><a href="https://wordcalculator.net">Word & Character Counter</a></li>
+            <li><a href="case-converter.html">Case Converter</a></li>
+            <li><a href="grammar-spell-checker.html">Grammar & Spell Checker</a></li>
+            <li><a href="readability-analyzer.html">Readability Analyzer</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>SEO & Content</h4>
+          <ul class="sidebar-links">
+            <li><a href="keyword-density-analyzer.html">Keyword Density Analyzer</a></li>
+            <li><a href="title-meta-preview.html">Title & Meta Preview</a></li>
+            <li><a href="url-slug-generator.html">URL Slug Generator</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Finance & Productivity</h4>
+          <ul class="sidebar-links">
+            <li><a href="loan-emi-calculator.html">Loan & EMI Calculator</a></li>
+            <li><a href="interest-calculator.html">Interest Calculator</a></li>
+            <li><a href="focus-timer.html">Focus Timer</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer class="pro-footer" id="about" aria-label="Website footer">
+    <div class="pf-wrap">
+      <div class="pf-brand">
+        <div class="pf-logo">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <div class="pf-brand-text">
+            WordCalculator<span>.net</span>
+          </div>
+        </div>
+        <p class="pf-tag">A focused, distraction-free toolkit for precise writing.</p>
+        <div class="pf-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="pf-cols">
+        <div class="pf-col">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="https://wordcalculator.net">Editor</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="#">Grammar Check</a></li>
+            <li><a href="#">Keyword Density</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Tips & Guides</a></li>
+            <li><a href="#">Changelog</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#">Report a Bug</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Security</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pf-bottom">
+      <div class="pf-bottom-wrap">
+        <div>© <span id="pf-year"></span> WordCalculator.net — All rights reserved.</div>
+        <div class="pf-links">
+          <a href="#">Sitemap</a>
+          <a href="#">Status</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Simple Auth Modal -->
+  <div class="modal-overlay" id="authOverlay" aria-hidden="true"></div>
+  <div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <div class="modal-head">
+      <h3 id="authTitle"><i class="fas fa-user-lock"></i> Account</h3>
+      <button class="modal-close" id="authCloseBtn" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body">
+      Sign-in and account features are coming soon. For now, all tools are free to use without registration.
+    </div>
+  </div>
+
+  <script>
+    const $ = (sel) => document.querySelector(sel);
+    const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+
+    document.addEventListener("DOMContentLoaded", () => {
+      initYear();
+      initMobileMenu();
+      initAuthModal();
+      initDateRow("dob");
+      initDateRow("ref");
+      setTodayForRef();
+      initAgeCalculator();
+      updateAgeResult(0, 0, 0, 0);
+    });
+
+    /* Footer year */
+    function initYear() {
+      const yearEl = document.getElementById("pf-year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    }
+
+    /* Mobile nav */
+    function initMobileMenu() {
+      const mobileMenuBtn = $("#mobileMenuBtn");
+      const mobileCloseBtn = $("#mobileCloseBtn");
+      const mobileNav = $("#mobileNav");
+      const mobileOverlay = $("#mobileOverlay");
+
+      if (!mobileMenuBtn || !mobileNav || !mobileOverlay) return;
+
+      const open = () => {
+        mobileNav.classList.add("active");
+        mobileOverlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+      };
+      const close = () => {
+        mobileNav.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+      };
+
+      mobileMenuBtn.addEventListener("click", open);
+      if (mobileCloseBtn) mobileCloseBtn.addEventListener("click", close);
+      mobileOverlay.addEventListener("click", close);
+
+      $$(".mobile-link").forEach((link) => {
+        link.addEventListener("click", close);
+      });
+
+      const openAuthBtnMobile = $("#openAuthBtnMobile");
+      if (openAuthBtnMobile) {
+        openAuthBtnMobile.addEventListener("click", () => {
+          close();
+          openAuthModal();
+        });
+      }
+    }
+
+    /* Auth modal */
+    function initAuthModal() {
+      const openBtn = $("#openAuthBtn");
+      const overlay = $("#authOverlay");
+      const modal = $("#authModal");
+      const closeBtn = $("#authCloseBtn");
+
+      if (!overlay || !modal) return;
+
+      const open = () => {
+        overlay.style.display = "block";
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden";
+      };
+
+      const close = () => {
+        overlay.style.display = "none";
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+      };
+
+      if (openBtn) openBtn.addEventListener("click", open);
+      if (closeBtn) closeBtn.addEventListener("click", close);
+      overlay.addEventListener("click", close);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") close();
+      });
+    }
+
+    function openAuthModal() {
+      const overlay = $("#authOverlay");
+      const modal = $("#authModal");
+      if (!overlay || !modal) return;
+      overlay.style.display = "block";
+      modal.style.display = "block";
+      document.body.style.overflow = "hidden";
+    }
+
+    /* Date helpers */
+
+    function initDateRow(prefix) {
+      const monthSel = document.getElementById(prefix + "Month");
+      const daySel = document.getElementById(prefix + "Day");
+      const yearInput = document.getElementById(prefix + "Year");
+      const datePicker = document.getElementById(prefix + "DatePicker");
+      const calBtn = document.querySelector('.calendar-btn[data-target="' + prefix + '"]');
+
+      // Populate days 1..31 initially
+      populateDays(prefix);
+
+      // Sync days when month/year changes
+      monthSel.addEventListener("change", () => populateDays(prefix));
+      yearInput.addEventListener("input", () => populateDays(prefix));
+
+      // Calendar button triggers hidden date input
+      if (calBtn && datePicker) {
+        calBtn.addEventListener("click", () => {
+          if (typeof datePicker.showPicker === "function") {
+            datePicker.showPicker();
+          } else {
+            datePicker.click();
+          }
+        });
+
+        // When user picks a date from calendar, sync controls
+        datePicker.addEventListener("change", () => {
+          if (!datePicker.value) return;
+          const parts = datePicker.value.split("-");
+          const y = parseInt(parts[0], 10);
+          const m = parseInt(parts[1], 10);
+          const d = parseInt(parts[2], 10);
+          if (!isNaN(y)) yearInput.value = y;
+          if (!isNaN(m)) monthSel.value = String(m);
+          populateDays(prefix);
+          if (!isNaN(d)) daySel.value = String(d);
+        });
+      }
+
+      // Default initial values
+      const now = new Date();
+      if (prefix === "dob") {
+        yearInput.value = now.getFullYear() - 25;
+        monthSel.value = String(now.getMonth() + 1);
+        populateDays(prefix);
+        daySel.value = String(now.getDate());
+      }
+    }
+
+    function populateDays(prefix) {
+      const monthSel = document.getElementById(prefix + "Month");
+      const daySel = document.getElementById(prefix + "Day");
+      const yearInput = document.getElementById(prefix + "Year");
+
+      const m = parseInt(monthSel.value || "1", 10);
+      let y = parseInt(yearInput.value || "", 10);
+      if (isNaN(y) || y <= 0) {
+        // neutral year just for leap-year calculation
+        y = 2024;
+      }
+
+      const maxDay = daysInMonth(y, m);
+      const current = parseInt(daySel.value || "1", 10);
+
+      daySel.innerHTML = "";
+      for (let d = 1; d <= maxDay; d++) {
+        const opt = document.createElement("option");
+        opt.value = String(d);
+        opt.textContent = d;
+        daySel.appendChild(opt);
+      }
+      if (current <= maxDay) {
+        daySel.value = String(current);
+      } else {
+        daySel.value = String(maxDay);
+      }
+    }
+
+    function daysInMonth(year, month) {
+      return new Date(year, month, 0).getDate();
+    }
+
+    function setTodayForRef() {
+      const now = new Date();
+      $("#refYear").value = now.getFullYear();
+      $("#refMonth").value = String(now.getMonth() + 1);
+      populateDays("ref");
+      $("#refDay").value = String(now.getDate());
+      $("#refDatePicker").valueAsDate = now;
+    }
+
+    function getDateFromControls(prefix) {
+      const year = parseInt($("#" + prefix + "Year").value, 10);
+      const month = parseInt($("#" + prefix + "Month").value, 10);
+      const day = parseInt($("#" + prefix + "Day").value, 10);
+
+      if (isNaN(year) || isNaN(month) || isNaN(day)) {
+        return null;
+      }
+      if (month < 1 || month > 12) return null;
+      const maxDay = daysInMonth(year, month);
+      if (day < 1 || day > maxDay) return null;
+
+      return { year, month, day };
+    }
+
+    /* Age calculator */
+    function initAgeCalculator() {
+      $("#ageCalcBtn").addEventListener("click", handleAgeCalc);
+      $("#ageResetBtn").addEventListener("click", () => {
+        const now = new Date();
+        $("#dobYear").value = now.getFullYear() - 25;
+        $("#dobMonth").value = String(now.getMonth() + 1);
+        populateDays("dob");
+        $("#dobDay").value = String(now.getDate());
+
+        setTodayForRef();
+        $("#ageError").style.display = "none";
+        updateAgeResult(0, 0, 0, 0);
+      });
+    }
+
+    function handleAgeCalc() {
+      const errEl = $("#ageError");
+      errEl.style.display = "none";
+      errEl.textContent = "";
+
+      const dob = getDateFromControls("dob");
+      const ref = getDateFromControls("ref");
+
+      if (!dob || !ref) {
+        errEl.style.display = "block";
+        errEl.textContent = "Please provide valid calendar dates for both rows.";
+        return;
+      }
+
+      const start = new Date(dob.year, dob.month - 1, dob.day);
+      const end = new Date(ref.year, ref.month - 1, ref.day);
+
+      if (end < start) {
+        errEl.style.display = "block";
+        errEl.textContent = "The second date must be the same as or later than the date of birth.";
+        return;
+      }
+
+      const diff = computeCalendarAge(dob, ref);
+      const totalDays = Math.floor((end - start) / 86400000);
+      updateAgeResult(diff.years, diff.months, diff.days, totalDays);
+    }
+
+    function computeCalendarAge(start, end) {
+      let years = end.year - start.year;
+      let months = end.month - start.month;
+      let days = end.day - start.day;
+
+      if (days < 0) {
+        months -= 1;
+        const prevMonth = end.month - 1 === 0 ? 12 : end.month - 1;
+        const prevYear = prevMonth === 12 ? end.year - 1 : end.year;
+        days += daysInMonth(prevYear, prevMonth);
+      }
+
+      if (months < 0) {
+        years -= 1;
+        months += 12;
+      }
+
+      return { years, months, days };
+    }
+
+    function updateAgeResult(years, months, days, totalDays) {
+      const mainEl = $("#ageMainResult");
+      const subEl = $("#ageSubResult");
+      const badgeEl = $("#ageSummaryBadge");
+      const statsEl = $("#ageStatsList");
+
+      mainEl.innerHTML = 'Age: <span>' +
+        years + ' year' + (years !== 1 ? 's' : '') + ', ' +
+        months + ' month' + (months !== 1 ? 's' : '') + ', ' +
+        days + ' day' + (days !== 1 ? 's' : '') +
+        '</span>';
+
+      if (years === 0 && months === 0 && days === 0) {
+        subEl.textContent = "The second date is the same as the starting date.";
+        badgeEl.textContent = "Zero Interval";
+      } else {
+        subEl.textContent = "This is the exact time elapsed between the two selected dates.";
+        badgeEl.textContent = "Exact Age";
+      }
+
+      const weeks = totalDays / 7;
+      const hours = totalDays * 24;
+      const minutes = hours * 60;
+      const seconds = minutes * 60;
+
+      statsEl.innerHTML = `
+        <li><strong>Total days:</strong> ${totalDays.toLocaleString()} day${totalDays !== 1 ? "s" : ""}</li>
+        <li><strong>Total weeks:</strong> ${weeks.toFixed(2)} weeks</li>
+        <li><strong>Total hours:</strong> ${hours.toLocaleString()} hours</li>
+        <li><strong>Total minutes:</strong> ${minutes.toLocaleString()} minutes</li>
+        <li><strong>Total seconds:</strong> ${seconds.toLocaleString()} seconds</li>
+      `;
+    }
+  </script>
+</body>
+</html>
