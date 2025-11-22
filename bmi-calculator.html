@@ -263,19 +263,25 @@
       padding: 14px 14px 12px;
     }
 
+    /* Common card title bar */
     .card-header {
+      margin: -14px -14px 12px;
+      padding: 8px 12px;
+      background: #0f172a;
+      color: #f9fafb;
+      border-radius: 12px 12px 0 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 10px;
-      margin-bottom: 10px;
+      box-shadow: inset 0 -1px 0 rgba(148, 163, 184, 0.35);
     }
 
     .card-header h2 {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 800;
       letter-spacing: -0.02em;
-      color: #0f172a;
+      color: #f9fafb;
     }
 
     .badge-pill {
@@ -492,12 +498,18 @@
       padding-bottom: 14px;
     }
 
+    /* 🔹 Result card title bar effect (same style, Option C) */
     .bmi-result-header {
+      margin: -14px -14px 12px;
+      padding: 8px 12px;
+      background: #0f172a;
+      color: #f9fafb;
+      border-radius: 12px 12px 0 0;
       display: flex;
       justify-content: space-between;
       gap: 12px;
       align-items: flex-start;
-      margin-bottom: 10px;
+      box-shadow: inset 0 -1px 0 rgba(148, 163, 184, 0.35);
     }
 
     .bmi-result-label {
@@ -505,14 +517,14 @@
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: #9ca3af;
+      color: #e5e7eb; /* lighter on dark bar */
       margin-bottom: 2px;
     }
 
     .bmi-result-title {
       font-size: 16px;
       font-weight: 800;
-      color: #0f172a;
+      color: #f9fafb; /* Option C on bar */
     }
 
     .bmi-result-actions {
@@ -759,11 +771,16 @@
       font-size: 13px;
     }
 
-    .sidebar-card h3 {
+    /* Sidebar title bar */
+    .sidebar-title-bar {
+      margin: -12px -12px 8px;
+      padding: 7px 10px;
+      background: #0f172a;
+      color: #f9fafb;
       font-size: 14px;
       font-weight: 800;
-      margin-bottom: 4px;
-      color: #111827;
+      border-radius: 12px 12px 0 0;
+      box-shadow: inset 0 -1px 0 rgba(148, 163, 184, 0.35);
     }
 
     .sidebar-card small {
@@ -801,7 +818,49 @@
       text-decoration: underline;
     }
 
-    /* Footer (same as tools page) */
+    /* Tool search (sidebar top) */
+    .tool-search {
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+
+    .tool-search-input {
+      width: 100%;
+      padding: 7px 9px;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      font-size: 13px;
+      outline: none;
+    }
+
+    .tool-search-input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.12);
+    }
+
+    .tool-suggestions {
+      list-style: none;
+      margin-top: 4px;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      max-height: 180px;
+      overflow-y: auto;
+      padding: 4px 0;
+      font-size: 13px;
+      display: none;
+    }
+
+    .tool-suggestions li {
+      padding: 4px 9px;
+      cursor: pointer;
+    }
+
+    .tool-suggestions li:hover {
+      background: #e5efff;
+    }
+
+    /* Footer */
     .pro-footer {
       background: #020617;
       color: #cbd5e1;
@@ -926,7 +985,7 @@
       color: #e2e8f0;
     }
 
-    /* Modal (simple account message, like tools page) */
+    /* Modal */
     .modal-overlay {
       position: fixed;
       inset: 0;
@@ -1393,8 +1452,20 @@
     <!-- Sidebar -->
     <aside class="bmi-sidebar">
       <div class="sidebar-card">
-        <h3>Writing & Calculator Tools</h3>
+        <div class="sidebar-title-bar">Writing & Calculator Tools</div>
         <small>Quick links to other tools on WordCalculator.net.</small>
+
+        <!-- Tool search -->
+        <div class="tool-search">
+          <input
+            type="search"
+            id="toolSearchInput"
+            class="tool-search-input"
+            placeholder="Search tools by name..."
+            autocomplete="off"
+          />
+          <ul id="toolSuggestions" class="tool-suggestions"></ul>
+        </div>
 
         <div class="sidebar-group">
           <h4>Health & Fitness</h4>
@@ -1524,7 +1595,6 @@
   </div>
 
   <script>
-    // Shortcuts
     const $ = (sel) => document.querySelector(sel);
     const $$ = (sel) => Array.from(document.querySelectorAll(sel));
 
@@ -1535,7 +1605,8 @@
       initUnitTabs();
       initBmiCalculator();
       initPrintButton();
-      updateHealthBar(22.5); // initial bar position
+      initToolSearch();
+      updateHealthBar(22.5);
     });
 
     function initYear() {
@@ -1543,13 +1614,11 @@
       if (yearEl) yearEl.textContent = new Date().getFullYear();
     }
 
-    // Mobile nav
     function initMobileMenu() {
       const mobileMenuBtn = $("#mobileMenuBtn");
       const mobileCloseBtn = $("#mobileCloseBtn");
       const mobileNav = $("#mobileNav");
       const mobileOverlay = $("#mobileOverlay");
-
       if (!mobileMenuBtn || !mobileNav || !mobileOverlay) return;
 
       const open = () => {
@@ -1567,9 +1636,7 @@
       if (mobileCloseBtn) mobileCloseBtn.addEventListener("click", close);
       mobileOverlay.addEventListener("click", close);
 
-      $$(".mobile-link").forEach((link) => {
-        link.addEventListener("click", close);
-      });
+      $$(".mobile-link").forEach((link) => link.addEventListener("click", close));
 
       const openAuthBtnMobile = $("#openAuthBtnMobile");
       if (openAuthBtnMobile) {
@@ -1580,13 +1647,11 @@
       }
     }
 
-    // Auth modal
     function initAuthModal() {
       const openBtn = $("#openAuthBtn");
       const overlay = $("#authOverlay");
       const modal = $("#authModal");
       const closeBtn = $("#authCloseBtn");
-
       if (!overlay || !modal) return;
 
       const open = () => {
@@ -1618,7 +1683,6 @@
       document.body.style.overflow = "hidden";
     }
 
-    // Unit tabs
     function initUnitTabs() {
       const tabs = $$("#unitTabs .tab-btn");
       tabs.forEach((btn) => {
@@ -1643,7 +1707,6 @@
       }
     }
 
-    // BMI calculator core
     function initBmiCalculator() {
       $("#calcBtn").addEventListener("click", calculateBmi);
       $("#resetBtn").addEventListener("click", resetForm);
@@ -1691,7 +1754,6 @@
           return;
         }
         const bmi = 703 * lb / (totalIn * totalIn);
-        // Convert to metric for secondary values
         heightM = totalIn * 0.0254;
         weightKg = lb * 0.45359237;
         updateResults(bmi, heightM, weightKg);
@@ -1715,7 +1777,6 @@
 
       bmiValueEl.textContent = bmiRounded;
 
-      // Classification
       let status = "Normal";
       let badgeClass = "badge-state-normal";
       let summary = "Your BMI falls in the <strong>Normal</strong> range for adults.";
@@ -1748,7 +1809,6 @@
       bmiSummaryEl.innerHTML = summary;
       inlineStatusEl.textContent = inlineStatus;
 
-      // Healthy BMI range and weight
       const healthyMin = 18.5;
       const healthyMax = 24.9;
       const healthyWeightMin = healthyMin * heightM * heightM;
@@ -1779,7 +1839,6 @@
       updateResults(22.5, 1.7, 65);
     }
 
-    // Horizontal health bar position
     function updateHealthBar(bmiValue) {
       const indicator = document.getElementById("bmiBarIndicator");
       if (!indicator) return;
@@ -1796,12 +1855,68 @@
       indicator.style.left = (ratio * 100) + "%";
     }
 
-    // Print button
     function initPrintButton() {
       const btn = document.getElementById("printBtn");
       if (!btn) return;
-      btn.addEventListener("click", () => {
-        window.print();
+      btn.addEventListener("click", () => window.print());
+    }
+
+    function initToolSearch() {
+      const searchInput = $("#toolSearchInput");
+      const suggestionsEl = $("#toolSuggestions");
+      if (!searchInput || !suggestionsEl) return;
+
+      const tools = [
+        { name: "BMI Calculator", url: "bmi-calculator.html" },
+        { name: "Age Calculator", url: "age-calculator.html" },
+        { name: "Calorie Calculator", url: "calorie-calculator.html" },
+        { name: "Word & Character Counter", url: "https://wordcalculator.net" },
+        { name: "Case Converter", url: "case-converter.html" },
+        { name: "Grammar & Spell Checker", url: "grammar-spell-checker.html" },
+        { name: "Readability Analyzer", url: "readability-analyzer.html" },
+        { name: "Keyword Density Analyzer", url: "keyword-density-analyzer.html" },
+        { name: "Title & Meta Preview", url: "title-meta-preview.html" },
+        { name: "URL Slug Generator", url: "url-slug-generator.html" },
+        { name: "Loan & EMI Calculator", url: "loan-emi-calculator.html" },
+        { name: "Interest Calculator", url: "interest-calculator.html" },
+        { name: "Focus Timer", url: "focus-timer.html" }
+      ];
+
+      searchInput.addEventListener("input", () => {
+        const q = (searchInput.value || "").toLowerCase().trim();
+        if (!q) {
+          suggestionsEl.style.display = "none";
+          suggestionsEl.innerHTML = "";
+          return;
+        }
+
+        const matched = tools.filter((t) =>
+          t.name.toLowerCase().includes(q)
+        ).slice(0, 8);
+
+        if (!matched.length) {
+          suggestionsEl.style.display = "none";
+          suggestionsEl.innerHTML = "";
+          return;
+        }
+
+        suggestionsEl.innerHTML = matched
+          .map((t) => `<li data-url="${t.url}">${t.name}</li>`)
+          .join("");
+        suggestionsEl.style.display = "block";
+      });
+
+      suggestionsEl.addEventListener("click", (e) => {
+        const li = e.target.closest("li[data-url]");
+        if (!li) return;
+        const url = li.getAttribute("data-url");
+        if (url) window.location.href = url;
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!suggestionsEl.contains(e.target) && e.target !== searchInput) {
+          suggestionsEl.style.display = "none";
+        }
       });
     }
   </script>
