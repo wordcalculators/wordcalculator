@@ -58,8 +58,10 @@
       <div class="mobile-nav-links">
         <a href="https://wordcalculator.net" class="nav-link mobile-link">Home</a>
         <a href="#" class="nav-link mobile-link">Blog</a>
-        <a href="#tools" class="nav-link mobile-link">Tools</a>
+        <!-- FIX 1: Tools now goes to tools.html on mobile -->
+        <a href="tools.html" class="nav-link mobile-link">Tools</a>
         <a href="#about" class="nav-link mobile-link">About Us</a>
+        <!-- Sign In button (same text/link logic, styling fixed in CSS) -->
         <button class="nav-link mobile-link" id="openAuthBtnMobile" type="button">Sign In</button>
       </div>
     </nav>
@@ -348,7 +350,7 @@
         </h4>
         <div class="panel-content">
           <div class="readability-panel">
-            <!-- NEW: Professional bar-style meter instead of clock/gauge -->
+            <!-- Professional bar-style meter -->
             <div class="readability-meter">
               <div class="readability-meter-header">
                 <div class="meter-label">Flesch Reading Ease</div>
@@ -602,12 +604,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
