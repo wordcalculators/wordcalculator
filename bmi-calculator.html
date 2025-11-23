@@ -230,6 +230,33 @@
       display: block;
     }
 
+    /* Breadcrumbs */
+    .breadcrumbs {
+      max-width: 1200px;
+      margin: 16px auto 0;
+      padding: 0 15px;
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .breadcrumbs a {
+      color: #1d4ed8;
+    }
+
+    .breadcrumbs a:hover {
+      text-decoration: underline;
+    }
+
+    .breadcrumbs-separator {
+      margin: 0 4px;
+      color: #9ca3af;
+    }
+
+    .breadcrumbs-current {
+      color: #111827;
+      font-weight: 600;
+    }
+
     /* Main layout */
     .bmi-main {
       max-width: 1200px;
@@ -498,7 +525,7 @@
       padding-bottom: 14px;
     }
 
-    /* 🔹 Result card title bar effect (same style, Option C) */
+    /* Result card title bar */
     .bmi-result-header {
       margin: -14px -14px 12px;
       padding: 8px 12px;
@@ -517,14 +544,14 @@
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: #e5e7eb; /* lighter on dark bar */
+      color: #e5e7eb;
       margin-bottom: 2px;
     }
 
     .bmi-result-title {
       font-size: 16px;
       font-weight: 800;
-      color: #f9fafb; /* Option C on bar */
+      color: #f9fafb;
     }
 
     .bmi-result-actions {
@@ -1176,6 +1203,15 @@
     </nav>
     <div class="mobile-overlay" id="mobileOverlay"></div>
   </header>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="https://wordcalculator.net">Home</a>
+    <span class="breadcrumbs-separator">/</span>
+    <a href="tools.html">Tools</a>
+    <span class="breadcrumbs-separator">/</span>
+    <span class="breadcrumbs-current">BMI Calculator</span>
+  </nav>
 
   <!-- Main -->
   <main class="bmi-main">
