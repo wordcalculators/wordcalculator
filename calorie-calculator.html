@@ -230,6 +230,33 @@
       display: block;
     }
 
+    /* Breadcrumbs */
+    .breadcrumbs {
+      max-width: 1200px;
+      margin: 16px auto 0;
+      padding: 0 15px;
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .breadcrumbs a {
+      color: #1d4ed8;
+    }
+
+    .breadcrumbs a:hover {
+      text-decoration: underline;
+    }
+
+    .breadcrumbs-separator {
+      margin: 0 4px;
+      color: #9ca3af;
+    }
+
+    .breadcrumbs-current {
+      color: #111827;
+      font-weight: 600;
+    }
+
     /* Main layout */
     .bmi-main {
       max-width: 1200px;
@@ -700,6 +727,54 @@
       font-weight: 700;
     }
 
+    /* Food Energy Converter */
+    .food-energy-card {
+      margin-top: 12px;
+      padding: 10px 10px 10px;
+      border-radius: 10px;
+      border: 1px solid #020617;
+      background: #020617;
+    }
+
+    .food-energy-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .food-energy-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #f9fafb;
+    }
+
+    .food-energy-tag {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #e5e7eb;
+    }
+
+    .food-energy-note {
+      font-size: 12px;
+      color: #e5e7eb;
+      margin-top: 4px;
+      margin-bottom: 8px;
+    }
+
+    .food-energy-result {
+      font-size: 12px;
+      color: #e5e7eb;
+      margin-top: 6px;
+    }
+
+    .food-energy-card .field-row label {
+      color: #e5e7eb;
+    }
+
     /* Info sections */
     .section-block {
       background: var(--card);
@@ -1137,48 +1212,6 @@
         grid-template-columns: 1fr;
       }
     }
-
-    /* Food Energy Converter small card
-       (no dark header bar, just a light sub-card like other inner content) */
-    .food-energy-card {
-      margin-top: 12px;
-      padding: 10px 10px 10px;
-      border-radius: 10px;
-      border: 1px solid #e5e7eb;
-      background: #f9fafb;
-    }
-
-    .food-energy-header {
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 4px;
-      color: #111827;
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      border-bottom: 1px solid #e5e7eb;
-      padding-bottom: 4px;
-    }
-
-    .food-energy-sub {
-      font-size: 11px;
-      color: #6b7280;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .food-energy-note {
-      font-size: 12px;
-      color: #6b7280;
-      margin-top: 6px;
-      margin-bottom: 8px;
-    }
-
-    .food-energy-result {
-      font-size: 12px;
-      color: #374151;
-      margin-top: 6px;
-    }
   </style>
 </head>
 <body>
@@ -1235,6 +1268,15 @@
     </nav>
     <div class="mobile-overlay" id="mobileOverlay"></div>
   </header>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="https://wordcalculator.net">Home</a>
+    <span class="breadcrumbs-separator">/</span>
+    <a href="tools.html">Tools</a>
+    <span class="breadcrumbs-separator">/</span>
+    <span class="breadcrumbs-current">Calorie Calculator</span>
+  </nav>
 
   <!-- Main -->
   <main class="bmi-main">
@@ -1331,58 +1373,50 @@
             This tool uses the Mifflin–St Jeor equation to estimate BMR and then multiplies it
             by your activity level to estimate daily calories to maintain your current weight.
           </p>
-          <p class="bmi-error" id="errorMsg" style="display:none"></p>
 
-          <!-- Food Energy Converter block in the blank area under the form -->
-          <div class="food-energy-card">
+          <!-- Food Energy Converter -->
+          <div class="food-energy-card" id="foodEnergyCard">
             <div class="food-energy-header">
-              <span>Food Energy Converter</span>
-              <span class="food-energy-sub">kcal ⇄ kJ</span>
+              <span class="food-energy-title">Food Energy Converter</span>
+              <span class="food-energy-tag">kcal ⇄ kJ</span>
             </div>
             <p class="food-energy-note">
-              Switch between Calories (kcal) and kilojoules (kJ) – the two energy units used on most food and drink labels.
+              Switch between Calories (kcal) and kilojoules (kJ) &mdash; the two energy units used on most food and drink labels.
             </p>
 
-            <div class="bmi-form-grid">
-              <div class="field-row">
-                <label for="foodEnergyInput">Amount</label>
-                <div class="field-inline">
-                  <input type="number" id="foodEnergyInput" min="0" step="0.1" value="100" />
-                </div>
-              </div>
-
-              <div class="field-row">
-                <label>Convert from</label>
-                <div class="field-inline">
-                  <select id="fromEnergyUnit">
-                    <option value="kcal">Calories (kcal)</option>
-                    <option value="kj">Kilojoules (kJ)</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="field-row">
-                <label>Convert to</label>
-                <div class="field-inline">
-                  <select id="toEnergyUnit">
-                    <option value="kj">Kilojoules (kJ)</option>
-                    <option value="kcal">Calories (kcal)</option>
-                  </select>
-                </div>
+            <div class="field-row">
+              <label for="feAmount">Amount</label>
+              <div class="field-inline">
+                <input type="number" id="feAmount" value="100" min="0" step="0.1" />
               </div>
             </div>
 
-            <div class="bmi-actions">
-              <button type="button" class="btn-primary" id="convertEnergyBtn">
-                <i class="fas fa-arrows-rotate"></i> Convert
-              </button>
-              <button type="button" class="btn-ghost" id="resetEnergyBtn">Reset</button>
+            <div class="field-row">
+              <label for="feFrom">Convert from</label>
+              <div class="field-inline">
+                <select id="feFrom">
+                  <option value="kcal">Calories (kcal)</option>
+                  <option value="kj">Kilojoules (kJ)</option>
+                </select>
+              </div>
             </div>
 
-            <p class="food-energy-result" id="foodEnergyResult">
-              100 Calories (kcal) ≈ 418.4 Kilojoules (kJ).
-            </p>
+            <div class="field-row">
+              <label for="feTo">Convert to</label>
+              <div class="field-inline">
+                <select id="feTo">
+                  <option value="kj">Kilojoules (kJ)</option>
+                  <option value="kcal">Calories (kcal)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="food-energy-result" id="feResult">
+              100 Calories (kcal) ≈ 418 kJ.
+            </div>
           </div>
+
+          <p class="bmi-error" id="errorMsg" style="display:none"></p>
         </article>
 
         <!-- Result card -->
@@ -1666,79 +1700,30 @@
       </article>
 
       <article class="section-block">
-        <h3>Food energy: Calories and kilojoules</h3>
+        <h3>Food energy, Calories and kilojoules</h3>
         <p>
-          Food labels around the world use two main energy units: <strong>Calories (kcal)</strong>
-          and <strong>kilojoules (kJ)</strong>. In the United States you will usually see Calories,
-          while many other countries show both values on the same package.
+          On nutrition labels in the United States, energy is usually shown as Calories, which in
+          scientific terms are actually kilocalories (kcal). Many other countries list energy in
+          both Calories and kilojoules (kJ). The two describe the same thing: how much usable
+          energy your body can get from food.
         </p>
         <p>
-          The relationship between them is fixed: <strong>1 kilocalorie is equal to about
-          4.184 kilojoules</strong>. That means a 250 kcal snack provides roughly 1,046 kJ of
-          energy. Our converter on this page uses this factor to switch accurately between the
-          two units.
+          The conversion between the units is fixed. One kilocalorie is equal to
+          approximately <strong>4.184 kilojoules</strong>. That means a 250 kcal snack contains
+          about 1,046 kJ. Likewise, a food labeled as 2,100 kJ provides roughly 502 kcal.
         </p>
         <p>
-          In everyday language people often say “calories” when they really mean kilocalories.
-          Nutrition labels in the U.S. follow the same convention, so a value listed as
-          “200 Calories” should be read as 200 kilocalories, not 200 small calories from physics
-          textbooks.
+          In day-to-day nutrition planning, most people in the U.S. find it easier to think in
+          Calories, because portion sizes, diet guidelines, and menus typically use kcal. If you
+          read research papers or international labels, you may see values only in kJ; in those
+          cases, a quick conversion helps keep your daily totals consistent.
         </p>
         <p>
-          When you are comparing products or planning meals, you can use Calories or kilojoules –
-          whichever is more familiar – as long as you stay consistent. If a recipe gives energy
-          in kJ and your tracking app uses kcal, simply plug the number into the Food Energy
-          Converter above to keep everything on the same scale.
-        </p>
-      </article>
-
-      <!-- Extra informative content about using the Food Energy Converter -->
-      <article class="section-block">
-        <h3>How to use the Food Energy Converter in everyday life</h3>
-        <p>
-          Many people track their intake in Calories, but travel or imported products often list
-          only kilojoules. The Food Energy Converter bridges that gap so you can keep a single,
-          consistent view of your daily energy budget.
-        </p>
-
-        <h4>Quick examples</h4>
-        <ul>
-          <li>
-            A snack bar shows <strong>900 kJ</strong> on the label. Enter <strong>900</strong>,
-            select “Kilojoules (kJ)” as the source unit and “Calories (kcal)” as the target. You will see
-            the bar is roughly <strong>215 kcal</strong>.
-          </li>
-          <li>
-            Your meal plan calls for <strong>600 kcal</strong> at lunch, but the restaurant menu lists
-            <strong>2,500 kJ</strong>. Converting 600 kcal to kJ lets you quickly check if the meal fits
-            your target.
-          </li>
-          <li>
-            Some sports drinks give serving sizes in very small portions. By converting their kJ value
-            to kcal you can easily compare them to the rest of your daily intake.
-          </li>
-        </ul>
-
-        <h4>Tips for reading food labels</h4>
-        <ul>
-          <li>
-            Always check whether the numbers are given <strong>per serving</strong> or
-            <strong>per 100 g / 100 mL</strong>. Convert first, then multiply by the amount you actually eat.
-          </li>
-          <li>
-            For weight management, focus on total daily energy. The converter helps you translate mixed
-            units into a single number you can track over the day or week.
-          </li>
-          <li>
-            When comparing two products, bring both into the same unit (kcal or kJ) so the difference is
-            clear at a glance.
-          </li>
-        </ul>
-
-        <p>
-          Used together with the calorie calculator, the Food Energy Converter gives you a consistent
-          language for food energy: you can estimate how much you burn, translate every label into the
-          same unit, and make informed choices without doing mental math each time.
+          The Food Energy Converter above is designed for this practical use: enter the number you
+          see on a package or in a meal plan, change the direction if needed, and you instantly get
+          the equivalent value in the other unit. This lets you compare products from different
+          regions, interpret scientific charts, or match app settings that prefer one unit over the
+          other without doing the math by hand.
         </p>
       </article>
     </section>
@@ -1904,7 +1889,6 @@
       initFoodEnergyConverter();
       // initial calculation with defaults
       calculateCalories();
-      convertFoodEnergy();
     });
 
     function initYear() {
@@ -2099,9 +2083,9 @@
       $("#extremeLossCalories").textContent = extremeLoss.toLocaleString();
 
       $("#maintainLossPercent").textContent = "100%";
-      $("#mildLossPercent").textContent = Math.round(mildLoss / tdee * 100) + "%";
-      $("#lossPercent").textContent = Math.round(loss / tdee * 100) + "%";
-      $("#extremeLossPercent").textContent = Math.round(extremeLoss / tdee * 100) + "%";
+      $("#mildLossPercent").textContent = Math.round((mildLoss / tdee) * 100) + "%";
+      $("#lossPercent").textContent = Math.round((loss / tdee) * 100) + "%";
+      $("#extremeLossPercent").textContent = Math.round((extremeLoss / tdee) * 100) + "%";
 
       // Gain group
       $("#maintainGainCalories").textContent = maintain.toLocaleString();
@@ -2110,9 +2094,9 @@
       $("#fastGainCalories").textContent = fastGain.toLocaleString();
 
       $("#maintainGainPercent").textContent = "100%";
-      $("#mildGainPercent").textContent = Math.round(mildGain / tdee * 100) + "%";
-      $("#gainPercent").textContent = Math.round(gain / tdee * 100) + "%";
-      $("#fastGainPercent").textContent = Math.round(fastGain / tdee * 100) + "%";
+      $("#mildGainPercent").textContent = Math.round((mildGain / tdee) * 100) + "%";
+      $("#gainPercent").textContent = Math.round((gain / tdee) * 100) + "%";
+      $("#fastGainPercent").textContent = Math.round((fastGain / tdee) * 100) + "%";
 
       // Badge + summary text
       const badge = $("#statusBadge");
@@ -2167,6 +2151,71 @@
           }
         });
       });
+    }
+
+    function initFoodEnergyConverter() {
+      const amountInput = document.getElementById("feAmount");
+      const fromSelect = document.getElementById("feFrom");
+      const toSelect = document.getElementById("feTo");
+
+      if (!amountInput || !fromSelect || !toSelect) return;
+
+      const handler = () => {
+        updateFoodEnergyResult();
+      };
+
+      amountInput.addEventListener("input", handler);
+      fromSelect.addEventListener("change", handler);
+      toSelect.addEventListener("change", handler);
+
+      updateFoodEnergyResult();
+    }
+
+    function formatEnergyNumber(num) {
+      if (!isFinite(num)) return "0";
+      if (num >= 1000) {
+        return Math.round(num).toLocaleString();
+      }
+      const fixed = num.toFixed(2);
+      return fixed.replace(/\.00$/, "");
+    }
+
+    function updateFoodEnergyResult() {
+      const amountEl = document.getElementById("feAmount");
+      const fromEl = document.getElementById("feFrom");
+      const toEl = document.getElementById("feTo");
+      const resultEl = document.getElementById("feResult");
+      if (!amountEl || !fromEl || !toEl || !resultEl) return;
+
+      let value = parseFloat(amountEl.value || "0");
+      if (isNaN(value) || value < 0) value = 0;
+
+      const from = fromEl.value;
+      const to = toEl.value;
+      const KJ_PER_KCAL = 4.184;
+
+      let converted = value;
+
+      if (from !== to) {
+        if (from === "kcal" && to === "kj") {
+          converted = value * KJ_PER_KCAL;
+        } else if (from === "kj" && to === "kcal") {
+          converted = value / KJ_PER_KCAL;
+        }
+      }
+
+      const fromLabel = from === "kcal" ? "Calories (kcal)" : "kilojoules (kJ)";
+      const toLabel = to === "kcal" ? "Calories (kcal)" : "kilojoules (kJ)";
+
+      resultEl.textContent =
+        formatEnergyNumber(value) +
+        " " +
+        fromLabel +
+        " ≈ " +
+        formatEnergyNumber(converted) +
+        " " +
+        toLabel +
+        ".";
     }
 
     function initPrintButton() {
@@ -2232,78 +2281,6 @@
           suggestionsEl.style.display = "none";
         }
       });
-    }
-
-    /* Food Energy Converter logic */
-    function initFoodEnergyConverter() {
-      const convertBtn = document.getElementById("convertEnergyBtn");
-      const resetBtn = document.getElementById("resetEnergyBtn");
-
-      if (convertBtn) {
-        convertBtn.addEventListener("click", convertFoodEnergy);
-      }
-      if (resetBtn) {
-        resetBtn.addEventListener("click", resetFoodEnergy);
-      }
-    }
-
-    function convertFoodEnergy() {
-      const amountInput = document.getElementById("foodEnergyInput");
-      const fromSelect = document.getElementById("fromEnergyUnit");
-      const toSelect = document.getElementById("toEnergyUnit");
-      const resultEl = document.getElementById("foodEnergyResult");
-      if (!amountInput || !fromSelect || !toSelect || !resultEl) return;
-
-      let amount = parseFloat(amountInput.value || "0");
-      if (!amount || amount < 0) {
-        resultEl.textContent = "Please enter a positive amount of energy.";
-        return;
-      }
-
-      const from = fromSelect.value;
-      const to = toSelect.value;
-
-      // 1 kcal = 4.184 kJ
-      let energyInKcal;
-      if (from === "kcal") {
-        energyInKcal = amount;
-      } else {
-        energyInKcal = amount / 4.184;
-      }
-
-      let converted;
-      if (to === "kcal") {
-        converted = energyInKcal;
-      } else {
-        converted = energyInKcal * 4.184;
-      }
-
-      const formattedIn = amount.toLocaleString(undefined, {
-        maximumFractionDigits: 2,
-        minimumFractionDigits: 0
-      });
-      const formattedOut = converted.toLocaleString(undefined, {
-        maximumFractionDigits: 2,
-        minimumFractionDigits: 1
-      });
-
-      const fromLabel = from === "kcal" ? "Calories (kcal)" : "Kilojoules (kJ)";
-      const toLabel = to === "kcal" ? "Calories (kcal)" : "Kilojoules (kJ)";
-
-      resultEl.textContent = `${formattedIn} ${fromLabel} ≈ ${formattedOut} ${toLabel}.`;
-    }
-
-    function resetFoodEnergy() {
-      const amountInput = document.getElementById("foodEnergyInput");
-      const fromSelect = document.getElementById("fromEnergyUnit");
-      const toSelect = document.getElementById("toEnergyUnit");
-      const resultEl = document.getElementById("foodEnergyResult");
-      if (!amountInput || !fromSelect || !toSelect || !resultEl) return;
-
-      amountInput.value = 100;
-      fromSelect.value = "kcal";
-      toSelect.value = "kj";
-      resultEl.textContent = "100 Calories (kcal) ≈ 418.4 Kilojoules (kJ).";
     }
   </script>
 </body>
