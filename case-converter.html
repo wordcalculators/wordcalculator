@@ -1,0 +1,2169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Converter — WordCalculator.net</title>
+  <meta
+    name="description"
+    content="Free online case converter: convert text to sentence case, Title Case, UPPERCASE, lowercase, camelCase, snake_case and more, with basic SEO-style text analysis."
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    rel="stylesheet"
+  />
+  <link rel="icon" href="favicon.ico" />
+
+  <style>
+    /* Reset */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --blue: #2563eb;
+      --text: #0f172a;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --bg: #f7f8fb;
+      --card: #ffffff;
+      --ok: #16a34a;
+      --danger: #b91c1c;
+      --accent: #0f172a;
+    }
+
+    html {
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    textarea {
+      font-family: inherit;
+    }
+
+    /* Header (shared) */
+    .wc-header {
+      background: #020617;
+      color: #fff;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+    }
+
+    .wc-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .wc-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .wc-slab,
+    .slab {
+      display: inline-flex;
+      width: 24px;
+      height: 24px;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 14px;
+      border-radius: 2px;
+      color: #fff;
+    }
+
+    .slab-w,
+    .wc-slab.slab-w {
+      background: #1f2327;
+    }
+
+    .slab-o,
+    .wc-slab.slab-o {
+      background: #a7c1db;
+      color: #1e2a3a;
+    }
+
+    .slab-r,
+    .wc-slab.slab-r {
+      background: #7d96ae;
+    }
+
+    .slab-d,
+    .wc-slab.slab-d {
+      background: #2f5d8a;
+    }
+
+    .wc-brand-text {
+      display: inline-flex;
+      flex-direction: column;
+      line-height: 1.05;
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .wc-brand-text small {
+      font-size: 10px;
+      opacity: 0.95;
+    }
+
+    .wc-nav {
+      margin-left: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .wc-link {
+      color: #f4f8fc;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 6px 10px;
+      border-radius: 8px;
+      transition: 0.15s;
+      white-space: nowrap;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .wc-link:hover {
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .wc-link.active {
+      background: #ffffff;
+      color: #111827;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .wc-signin-btn {
+      background: rgba(148, 163, 184, 0.18);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .wc-signin-btn:hover {
+      background: #38bdf8;
+      color: #020617;
+      border-color: #38bdf8;
+    }
+
+    .mobile-menu-btn {
+      margin-left: auto;
+      background: transparent;
+      border: 0;
+      color: #fff;
+      font-size: 20px;
+      display: none;
+      cursor: pointer;
+    }
+
+    /* Mobile nav */
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 320px;
+      height: 100vh;
+      background: #1f2933;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.18);
+      transition: right 0.3s;
+      z-index: 100;
+    }
+
+    .mobile-nav.active {
+      right: 0;
+    }
+
+    .mobile-nav-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      border-bottom: 1px solid #34495e;
+    }
+
+    .mobile-close-btn {
+      background: transparent;
+      border: 0;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .mobile-nav-links {
+      padding: 16px;
+    }
+
+    .mobile-link {
+      display: block;
+      color: #ecf0f1;
+      padding: 12px 0;
+      border-bottom: 1px solid #34495e;
+      font-weight: 700;
+    }
+
+    .mobile-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 90;
+    }
+
+    .mobile-overlay.active {
+      display: block;
+    }
+
+    /* Breadcrumbs */
+    .breadcrumbs {
+      max-width: 1200px;
+      margin: 12px auto 4px;
+      padding: 0 15px;
+      font-size: 13px;
+      color: #4b5563;
+    }
+
+    .breadcrumbs a {
+      color: #2563eb;
+      font-weight: 500;
+    }
+
+    .breadcrumbs a:hover {
+      text-decoration: underline;
+    }
+
+    .breadcrumbs span.current {
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .breadcrumbs-separator {
+      margin: 0 4px;
+      color: #9ca3af;
+    }
+
+    /* Main layout */
+    .case-main {
+      max-width: 1200px;
+      margin: 16px auto 40px;
+      padding: 0 15px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(260px, 1.25fr);
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .case-left {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .case-top-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 360px) minmax(0, 1.6fr);
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+      padding: 14px 14px 12px;
+    }
+
+    .card-header {
+      margin: -14px -14px 12px;
+      padding: 8px 12px;
+      background: #0f172a;
+      color: #f9fafb;
+      border-radius: 12px 12px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      box-shadow: inset 0 -1px 0 rgba(148, 163, 184, 0.35);
+    }
+
+    .card-header h2 {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .card-header small {
+      font-size: 11px;
+      color: #cbd5e1;
+    }
+
+    .btn-chip {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      font-size: 12px;
+      font-weight: 600;
+      color: #111827;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s, border-color 0.15s, box-shadow 0.15s,
+        transform 0.15s;
+    }
+
+    .btn-chip i {
+      font-size: 12px;
+    }
+
+    .btn-chip:hover {
+      background: #111827;
+      color: #f9fafb;
+      border-color: #111827;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.25);
+      transform: translateY(-1px);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      font-size: 13px;
+    }
+
+    .field-row {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .field-row label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #4b5563;
+    }
+
+    .field-inline {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .text-input,
+    .select-input {
+      padding: 7px 8px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font-size: 13px;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .text-input:focus,
+    .select-input:focus,
+    .textarea-input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.12);
+    }
+
+    .unit-label {
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .textarea-input {
+      width: 100%;
+      min-height: 190px;
+      padding: 8px 9px;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      font-size: 13px;
+      resize: vertical;
+      background: #ffffff;
+    }
+
+    .checkbox-row,
+    .radio-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 12px;
+      color: #4b5563;
+    }
+
+    .checkbox-row label,
+    .radio-row label {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .actions {
+      margin-top: 6px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--ok);
+      background: var(--ok);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn-primary:hover {
+      background: #15803d;
+      box-shadow: 0 8px 18px rgba(22, 163, 74, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      font-size: 12px;
+      font-weight: 600;
+      color: #4b5563;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .btn-ghost:hover {
+      background: #e5e7eb;
+      border-color: #d1d5db;
+    }
+
+    .note {
+      margin-top: 4px;
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    .error {
+      margin-top: 4px;
+      font-size: 12px;
+      color: #b91c1c;
+    }
+
+    /* Result */
+    .result-main-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: 4px;
+    }
+
+    .result-sub {
+      font-size: 13px;
+      color: #4b5563;
+      margin-bottom: 10px;
+    }
+
+    .output-textarea {
+      width: 100%;
+      min-height: 190px;
+      padding: 8px 9px;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      font-size: 13px;
+      resize: vertical;
+      background: #f9fafb;
+      margin-bottom: 10px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .summary-box {
+      padding: 10px 10px 8px;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      font-size: 13px;
+    }
+
+    .summary-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #6b7280;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .summary-value {
+      font-size: 16px;
+      font-weight: 800;
+      color: #111827;
+    }
+
+    .summary-muted {
+      font-size: 11px;
+      color: #6b7280;
+      margin-top: 2px;
+    }
+
+    /* Charts */
+    .case-charts {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.3fr);
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .chart-card {
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      padding: 8px 10px 6px;
+      font-size: 11px;
+    }
+
+    .chart-title {
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: #111827;
+    }
+
+    .chart-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      margin-top: 4px;
+      font-size: 11px;
+      color: #374151;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .legend-swatch {
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+      background: #9ca3af;
+    }
+
+    .swatch-length {
+      background: #2563eb;
+    }
+
+    .swatch-sentence {
+      background: #16a34a;
+    }
+
+    .swatch-uppercase {
+      background: #b91c1c;
+    }
+
+    .swatch-overall {
+      background: #0ea5e9;
+    }
+
+    canvas {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .result-footnote {
+      margin-top: 6px;
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    /* Info section */
+    .section-block {
+      background: var(--card);
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      padding: 14px 16px 12px;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.035);
+    }
+
+    .section-block h3 {
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: #0f172a;
+    }
+
+    .section-block h4 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-top: 10px;
+      margin-bottom: 4px;
+      color: #111827;
+    }
+
+    .section-block p {
+      font-size: 13px;
+      color: #4b5563;
+      margin-bottom: 6px;
+    }
+
+    .section-block ul {
+      padding-left: 18px;
+      font-size: 13px;
+      color: #4b5563;
+    }
+
+    .section-block ul li + li {
+      margin-top: 2px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .sidebar-card {
+      background: var(--card);
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      padding: 12px 12px 10px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+      font-size: 13px;
+    }
+
+    .sidebar-title-bar {
+      margin: -12px -12px 8px;
+      padding: 7px 10px;
+      background: #0f172a;
+      color: #f9fafb;
+      font-size: 14px;
+      font-weight: 800;
+      border-radius: 12px 12px 0 0;
+      box-shadow: inset 0 -1px 0 rgba(148, 163, 184, 0.35);
+    }
+
+    .sidebar-card small {
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    .sidebar-group {
+      margin-top: 8px;
+    }
+
+    .sidebar-group h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #6b7280;
+      margin-bottom: 3px;
+      font-weight: 700;
+    }
+
+    .sidebar-links {
+      list-style: none;
+      font-size: 13px;
+    }
+
+    .sidebar-links li + li {
+      margin-top: 3px;
+    }
+
+    .sidebar-links a {
+      color: #1d4ed8;
+    }
+
+    .sidebar-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Tool search */
+    .tool-search {
+      margin: 8px 0;
+    }
+
+    .tool-search-input {
+      width: 100%;
+      padding: 7px 9px;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      font-size: 13px;
+      outline: none;
+    }
+
+    .tool-search-input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.12);
+    }
+
+    .tool-suggestions {
+      list-style: none;
+      margin-top: 4px;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      max-height: 180px;
+      overflow-y: auto;
+      padding: 4px 0;
+      font-size: 13px;
+      display: none;
+    }
+
+    .tool-suggestions li {
+      padding: 4px 9px;
+      cursor: pointer;
+    }
+
+    .tool-suggestions li:hover {
+      background: #e5efff;
+    }
+
+    /* Footer */
+    .pro-footer {
+      background: #020617;
+      color: #cbd5e1;
+      margin-top: 40px;
+    }
+
+    .pf-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 34px 15px;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 26px;
+    }
+
+    .pf-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pf-brand-text {
+      font-size: 18px;
+      font-weight: 800;
+      color: #e2e8f0;
+    }
+
+    .pf-brand-text span {
+      color: #38bdf8;
+    }
+
+    .pf-tag {
+      margin-top: 8px;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    .pf-social {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .pf-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+      background: #0b1220;
+      color: #cbd5e1;
+      transition: background 0.15s, color 0.15s, border-color 0.15s,
+        transform 0.15s, box-shadow 0.15s;
+    }
+
+    .pf-social a:hover {
+      background: #38bdf8;
+      border-color: #38bdf8;
+      color: #0b1220;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4);
+    }
+
+    .pf-cols {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .pf-col h5 {
+      color: #e2e8f0;
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .pf-col ul {
+      list-style: none;
+    }
+
+    .pf-col li {
+      margin: 8px 0;
+    }
+
+    .pf-col a {
+      color: #94a3b8;
+    }
+
+    .pf-col a:hover {
+      color: #e2e8f0;
+    }
+
+    .pf-bottom {
+      border-top: 1px solid #1e293b;
+      background: #0b1220;
+    }
+
+    .pf-bottom-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: #8893a7;
+      font-size: 13px;
+    }
+
+    .pf-links {
+      display: flex;
+      gap: 10px;
+    }
+
+    .pf-links a {
+      color: #94a3b8;
+    }
+
+    .pf-links a:hover {
+      color: #e2e8f0;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.7);
+      display: none;
+      z-index: 200;
+    }
+
+    .modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 420px;
+      max-width: 96vw;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.35);
+      display: none;
+      z-index: 210;
+    }
+
+    .modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 12px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .modal-head h3 {
+      font-size: 15px;
+      font-weight: 800;
+      color: #111827;
+    }
+
+    .modal-close {
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 6px 8px;
+      cursor: pointer;
+    }
+
+    .modal-body {
+      padding: 12px;
+      font-size: 13px;
+      color: #4b5563;
+    }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .pf-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .pf-cols {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .case-main {
+        grid-template-columns: minmax(0, 1.9fr) minmax(260px, 1.2fr);
+      }
+    }
+
+    @media (max-width: 992px) {
+      .wc-nav {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: inline-block;
+      }
+
+      .wc-brand-text {
+        font-size: 18px;
+      }
+
+      .wc-slab {
+        width: 22px;
+        height: 22px;
+        font-size: 13px;
+      }
+
+      .case-main {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        order: -1;
+      }
+
+      .case-top-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .case-charts {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .pf-cols {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="wc-header">
+    <div class="wc-wrap">
+      <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+        <span class="wc-slab slab-w">W</span>
+        <span class="wc-slab slab-o">O</span>
+        <span class="wc-slab slab-r">R</span>
+        <span class="wc-slab slab-d">D</span>
+        <span class="wc-brand-text">
+          Calculator
+          <small class="wc-tagline">Every Word Counts</small>
+        </span>
+      </a>
+
+      <nav class="wc-nav" aria-label="Primary">
+        <a href="https://wordcalculator.net" class="wc-link">Home</a>
+        <a href="#" class="wc-link">Blog</a>
+        <a href="tools.html" class="wc-link">Tools</a>
+        <a href="#about" class="wc-link">About Us</a>
+        <button class="wc-link wc-signin-btn" id="openAuthBtn" type="button">
+          Sign In <i class="fa fa-right-to-bracket" aria-hidden="true"></i>
+        </button>
+      </nav>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+      <div class="mobile-nav-header">
+        <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+          <span class="wc-slab slab-w">W</span>
+          <span class="wc-slab slab-o">O</span>
+          <span class="wc-slab slab-r">R</span>
+          <span class="wc-slab slab-d">D</span>
+          <span class="wc-brand-text">Calculator</span>
+        </a>
+        <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="https://wordcalculator.net" class="nav-link mobile-link">Home</a>
+        <a href="#" class="nav-link mobile-link">Blog</a>
+        <a href="tools.html" class="nav-link mobile-link">Tools</a>
+        <a href="#about" class="nav-link mobile-link">About Us</a>
+        <button class="nav-link mobile-link" id="openAuthBtnMobile" type="button">
+          Sign In
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="https://wordcalculator.net">Home</a>
+    <span class="breadcrumbs-separator">/</span>
+    <a href="tools.html">Tools</a>
+    <span class="breadcrumbs-separator">/</span>
+    <span class="current">Case Converter</span>
+  </nav>
+
+  <!-- Main -->
+  <main class="case-main">
+    <!-- Left section -->
+    <section class="case-left">
+      <div class="case-top-grid">
+        <!-- Input card -->
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <h2>Case Converter</h2>
+              <small>
+                Convert and clean text between sentence case, Title Case,
+                UPPERCASE, lowercase, camelCase, and more.
+              </small>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="field-row">
+              <label for="inputText">Input text</label>
+              <textarea
+                id="inputText"
+                class="textarea-input"
+                placeholder="Paste or type your text here..."
+              ></textarea>
+            </div>
+
+            <div class="field-row">
+              <label>Target case</label>
+              <div class="radio-row">
+                <label><input type="radio" name="targetCase" value="sentence" checked /> Sentence case</label>
+                <label><input type="radio" name="targetCase" value="title" /> Title Case</label>
+                <label><input type="radio" name="targetCase" value="upper" /> UPPERCASE</label>
+                <label><input type="radio" name="targetCase" value="lower" /> lowercase</label>
+                <label><input type="radio" name="targetCase" value="capitalized" /> Capitalize Each Word</label>
+                <label><input type="radio" name="targetCase" value="camel" /> camelCase</label>
+                <label><input type="radio" name="targetCase" value="pascal" /> PascalCase</label>
+                <label><input type="radio" name="targetCase" value="snake" /> snake_case</label>
+                <label><input type="radio" name="targetCase" value="kebab" /> kebab-case</label>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <label>Clean-up options</label>
+              <div class="checkbox-row">
+                <label><input type="checkbox" id="trimSpaces" checked /> Trim extra spaces</label>
+                <label><input type="checkbox" id="fixSpaces" /> Fix spacing after punctuation</label>
+                <label><input type="checkbox" id="removeExtraLines" /> Remove duplicate empty lines</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button type="button" class="btn-primary" id="convertBtn">
+              <i class="fas fa-wand-magic-sparkles"></i>
+              Convert text
+            </button>
+            <button type="button" class="btn-ghost" id="swapBtn">
+              Swap input &amp; output
+            </button>
+            <button type="button" class="btn-ghost" id="clearBtn">
+              Clear
+            </button>
+          </div>
+
+          <p class="note">
+            All conversions run entirely in your browser. No text is sent to any server,
+            which is helpful for sensitive drafts, SEO content, or client documents.
+          </p>
+          <p class="error" id="caseError" style="display:none;"></p>
+        </article>
+
+        <!-- Result card -->
+        <article class="card" id="caseResultCard">
+          <div class="card-header">
+            <div>
+              <h2>Result</h2>
+              <small>
+                Converted text plus quick stats for readability and SEO-style checks.
+              </small>
+            </div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;">
+              <button type="button" class="btn-chip" id="copyBtn">
+                <i class="fas fa-copy"></i>
+                <span>Copy</span>
+              </button>
+              <button type="button" class="btn-chip" id="printResultBtn">
+                <i class="fas fa-print"></i>
+                <span>Print</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="caseResultBody">
+            <div class="result-main-title" id="caseMainTitle">
+              Converted text preview
+            </div>
+            <p class="result-sub" id="caseResultSummary">
+              Choose a case style, click “Convert text,” and you’ll see the updated
+              version here along with word counts and a simple SEO-style clarity
+              score.
+            </p>
+
+            <textarea
+              id="outputText"
+              class="output-textarea"
+              placeholder="Your converted text will appear here..."
+              readonly
+            ></textarea>
+
+            <div class="summary-grid">
+              <div class="summary-box">
+                <div class="summary-label">Length</div>
+                <div class="summary-value" id="sumChars">0</div>
+                <div class="summary-muted" id="sumWords">0 words</div>
+              </div>
+              <div class="summary-box">
+                <div class="summary-label">Sentences</div>
+                <div class="summary-value" id="sumSentences">0</div>
+                <div class="summary-muted" id="sumAvgSentence">
+                  Avg. sentence length: —
+                </div>
+              </div>
+              <div class="summary-box">
+                <div class="summary-label">SEO-style score</div>
+                <div class="summary-value" id="sumScore">—</div>
+                <div class="summary-muted" id="sumHints">
+                  Aim for clear, medium-length sentences.
+                </div>
+              </div>
+            </div>
+
+            <!-- Charts -->
+            <div class="case-charts">
+              <div class="chart-card">
+                <div class="chart-title">Uppercase vs. lowercase</div>
+                <canvas id="casePieChart" width="200" height="160"></canvas>
+                <div class="chart-legend">
+                  <span class="legend-item">
+                    <span class="legend-swatch swatch-uppercase"></span>
+                    Uppercase letters
+                  </span>
+                  <span class="legend-item">
+                    <span class="legend-swatch swatch-sentence"></span>
+                    Lowercase letters
+                  </span>
+                </div>
+              </div>
+
+              <div class="chart-card">
+                <div class="chart-title">
+                  SEO-style clarity indicators (0–100)
+                </div>
+                <canvas id="seoBarChart" width="260" height="160"></canvas>
+                <div class="chart-legend">
+                  <span class="legend-item">
+                    <span class="legend-swatch swatch-length"></span>
+                    Content length
+                  </span>
+                  <span class="legend-item">
+                    <span class="legend-swatch swatch-sentence"></span>
+                    Sentence length
+                  </span>
+                  <span class="legend-item">
+                    <span class="legend-swatch swatch-uppercase"></span>
+                    Uppercase balance
+                  </span>
+                  <span class="legend-item">
+                    <span class="legend-swatch swatch-overall"></span>
+                    Overall score
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <p class="result-footnote">
+              The SEO-style score is a simple indicator based on text length,
+              average sentence length, and how balanced the casing is. It is not
+              a replacement for full SEO tools, but it can highlight when text is
+              too short, too shouty (ALL CAPS), or hard to read in one glance.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <!-- Informational content -->
+      <article class="section-block">
+        <h3>How this case converter works</h3>
+        <p>
+          This tool normalizes your text, cleans extra spaces, and then applies
+          the case style you choose. It works completely in the browser, so you
+          can safely use it for drafts, marketing copy, product descriptions, or
+          client deliverables without sending anything to a server.
+        </p>
+
+        <h4>Core case styles</h4>
+        <ul>
+          <li><strong>Sentence case</strong> – Only the first letter of each sentence is capitalized.</li>
+          <li><strong>Title Case</strong> – Capitalizes important words, leaving small words like “of” or “and” lowercased in the middle of a title.</li>
+          <li><strong>UPPERCASE / lowercase</strong> – Helpful for headings, buttons, and quick emphasis.</li>
+          <li><strong>Capitalize Each Word</strong> – Every word starts with a capital letter, useful for short labels.</li>
+          <li><strong>camelCase / PascalCase</strong> – Common in programming and hashtags, joining words without spaces.</li>
+          <li><strong>snake_case / kebab-case</strong> – Use underscores or hyphens between words, popular in URLs and file names.</li>
+        </ul>
+
+        <h4>Cleaning text before you publish</h4>
+        <p>
+          The clean-up options can remove doubled spaces, normalize spacing
+          after punctuation, and collapse multiple blank lines. This is
+          especially helpful when you paste text from PDFs, documents, or emails
+          that carry hidden formatting.
+        </p>
+      </article>
+
+      <article class="section-block">
+        <h3>Case, readability, and SEO</h3>
+        <p>
+          Search engines don’t directly rank pages based on uppercase or
+          lowercase, but casing strongly affects human readability. Clear,
+          consistent casing helps users scan headings, meta descriptions, and
+          on-page copy quickly, which indirectly supports better engagement
+          metrics.
+        </p>
+
+        <h4>Using casing to support SEO</h4>
+        <ul>
+          <li>
+            <strong>Headline clarity:</strong> Titles in Title Case or sentence
+            case are easier to scan than ALL CAPS headlines.
+          </li>
+          <li>
+            <strong>Meta descriptions:</strong> Sentence case, with one or two
+            key phrases highlighted, is usually the easiest to read in search
+            results.
+          </li>
+          <li>
+            <strong>Button and UI text:</strong> Short labels in Title Case or
+            Capitalize Each Word often feel more polished than mixed or random
+            casing.
+          </li>
+          <li>
+            <strong>Code and URLs:</strong> camelCase, snake_case, and
+            kebab-case improve consistency when naming files, slugs, and CSS
+            classes.
+          </li>
+        </ul>
+
+        <h4>Quick workflow tips</h4>
+        <p>
+          Draft your content in whatever style is most comfortable, then drop
+          it into this converter at the end. You can generate multiple versions
+          (for example, UPPERCASE for banner text and Title Case for blog
+          headings) from the same source paragraph and keep your brand voice
+          consistent across a whole site.
+        </p>
+      </article>
+    </section>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-title-bar">Other Calculators</div>
+        <small>Quick links to more tools on WordCalculator.net.</small>
+
+        <div class="tool-search">
+          <input
+            type="search"
+            id="toolSearchInput"
+            class="tool-search-input"
+            placeholder="Search tools by name..."
+            autocomplete="off"
+          />
+          <ul id="toolSuggestions" class="tool-suggestions"></ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Popular</h4>
+          <ul class="sidebar-links">
+            <li><a href="age-calculator.html">Age Calculator</a></li>
+            <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+            <li><a href="calorie-calculator.html">Calorie Calculator</a></li>
+            <li><a href="loan-emi-calculator.html">Loan &amp; EMI Calculator</a></li>
+            <li><a href="interest-calculator.html">Interest Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Text &amp; Writing</h4>
+          <ul class="sidebar-links">
+            <li>
+              <a href="https://wordcalculator.net">Word &amp; Character Counter</a>
+            </li>
+            <li><a href="case-converter.html">Case Converter</a></li>
+            <li>
+              <a href="grammar-spell-checker.html">Grammar &amp; Spell Checker</a>
+            </li>
+            <li><a href="readability-analyzer.html">Readability Analyzer</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>SEO &amp; Content</h4>
+          <ul class="sidebar-links">
+            <li>
+              <a href="keyword-density-analyzer.html">Keyword Density Analyzer</a>
+            </li>
+            <li><a href="title-meta-preview.html">Title &amp; Meta Preview</a></li>
+            <li><a href="url-slug-generator.html">URL Slug Generator</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Finance &amp; Time</h4>
+          <ul class="sidebar-links">
+            <li><a href="focus-timer.html">Focus Timer</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer class="pro-footer" id="about" aria-label="Website footer">
+    <div class="pf-wrap">
+      <div class="pf-brand">
+        <div class="pf-logo">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <div class="pf-brand-text">
+            WordCalculator<span>.net</span>
+          </div>
+        </div>
+        <p class="pf-tag">
+          A focused, distraction-free toolkit for precise writing and clear numbers.
+        </p>
+        <div class="pf-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="pf-cols">
+        <div class="pf-col">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="https://wordcalculator.net">Editor</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="#">Grammar Check</a></li>
+            <li><a href="#">Keyword Density</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Tips &amp; Guides</a></li>
+            <li><a href="#">Changelog</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#">Report a Bug</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Security</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pf-bottom">
+      <div class="pf-bottom-wrap">
+        <div>
+          © <span id="pf-year"></span> WordCalculator.net — All rights reserved.
+        </div>
+        <div class="pf-links">
+          <a href="#">Sitemap</a>
+          <a href="#">Status</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Auth modal -->
+  <div class="modal-overlay" id="authOverlay" aria-hidden="true"></div>
+  <div
+    class="modal"
+    id="authModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="authTitle"
+  >
+    <div class="modal-head">
+      <h3 id="authTitle"><i class="fas fa-user-lock"></i> Account</h3>
+      <button class="modal-close" id="authCloseBtn" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body">
+      Sign-in, registration, and saved preferences are coming soon. For now, all
+      calculators are free to use without creating an account.
+    </div>
+  </div>
+
+  <script>
+    const $ = (sel) => document.querySelector(sel);
+    const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+
+    document.addEventListener("DOMContentLoaded", () => {
+      initYear();
+      initMobileMenu();
+      initAuthModal();
+      initCaseConverter();
+      initToolSearch();
+      initPrintButton();
+    });
+
+    function initYear() {
+      const yearEl = document.getElementById("pf-year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    }
+
+    /* Mobile nav */
+    function initMobileMenu() {
+      const mobileMenuBtn = $("#mobileMenuBtn");
+      const mobileCloseBtn = $("#mobileCloseBtn");
+      const mobileNav = $("#mobileNav");
+      const mobileOverlay = $("#mobileOverlay");
+      if (!mobileMenuBtn || !mobileNav || !mobileOverlay) return;
+
+      const open = () => {
+        mobileNav.classList.add("active");
+        mobileOverlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+      };
+      const close = () => {
+        mobileNav.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+      };
+
+      mobileMenuBtn.addEventListener("click", open);
+      if (mobileCloseBtn) mobileCloseBtn.addEventListener("click", close);
+      mobileOverlay.addEventListener("click", close);
+
+      $$(".mobile-link").forEach((link) => {
+        link.addEventListener("click", close);
+      });
+
+      const openAuthBtnMobile = $("#openAuthBtnMobile");
+      if (openAuthBtnMobile) {
+        openAuthBtnMobile.addEventListener("click", () => {
+          close();
+          openAuthModal();
+        });
+      }
+    }
+
+    /* Auth modal */
+    function initAuthModal() {
+      const openBtn = $("#openAuthBtn");
+      const overlay = $("#authOverlay");
+      const modal = $("#authModal");
+      const closeBtn = $("#authCloseBtn");
+      if (!overlay || !modal) return;
+
+      const open = () => {
+        overlay.style.display = "block";
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden";
+      };
+
+      const close = () => {
+        overlay.style.display = "none";
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+      };
+
+      if (openBtn) openBtn.addEventListener("click", open);
+      if (closeBtn) closeBtn.addEventListener("click", close);
+      overlay.addEventListener("click", close);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") close();
+      });
+    }
+
+    function openAuthModal() {
+      const overlay = $("#authOverlay");
+      const modal = $("#authModal");
+      if (!overlay || !modal) return;
+      overlay.style.display = "block";
+      modal.style.display = "block";
+      document.body.style.overflow = "hidden";
+    }
+
+    /* CASE CONVERTER LOGIC */
+    function initCaseConverter() {
+      $("#convertBtn")?.addEventListener("click", handleConvert);
+      $("#clearBtn")?.addEventListener("click", handleClear);
+      $("#swapBtn")?.addEventListener("click", handleSwap);
+      $("#copyBtn")?.addEventListener("click", handleCopy);
+
+      // live analysis as user types (optional but nice)
+      $("#inputText")?.addEventListener("input", () => {
+        const text = $("#inputText").value || "";
+        updateStatsAndCharts(text);
+      });
+    }
+
+    function handleConvert() {
+      const errorEl = $("#caseError");
+      if (errorEl) {
+        errorEl.style.display = "none";
+        errorEl.textContent = "";
+      }
+
+      let text = $("#inputText").value || "";
+      if (!text.trim()) {
+        if (errorEl) {
+          errorEl.textContent = "Please enter some text to convert.";
+          errorEl.style.display = "block";
+        }
+        $("#outputText").value = "";
+        updateStatsAndCharts("");
+        return;
+      }
+
+      const trimSpaces = $("#trimSpaces").checked;
+      const fixSpaces = $("#fixSpaces").checked;
+      const removeExtraLines = $("#removeExtraLines").checked;
+
+      if (trimSpaces) text = normalizeSpaces(text);
+      if (fixSpaces) text = fixPunctuationSpacing(text);
+      if (removeExtraLines) text = collapseEmptyLines(text);
+
+      const targetCase =
+        document.querySelector('input[name="targetCase"]:checked')?.value ||
+        "sentence";
+
+      let converted = convertToCase(text, targetCase);
+
+      $("#outputText").value = converted;
+      $("#caseMainTitle").textContent = "Converted text (" + targetCase + ")";
+      $("#caseResultSummary").textContent =
+        "You can copy, print, or re-convert this text into another style. The stats below update automatically when the output changes.";
+
+      updateStatsAndCharts(converted);
+    }
+
+    function handleClear() {
+      $("#inputText").value = "";
+      $("#outputText").value = "";
+      $("#caseMainTitle").textContent = "Converted text preview";
+      $("#caseResultSummary").textContent =
+        "Choose a case style, click “Convert text,” and you’ll see the updated version here along with word counts and a simple SEO-style clarity score.";
+      updateStatsAndCharts("");
+      const errorEl = $("#caseError");
+      if (errorEl) {
+        errorEl.style.display = "none";
+        errorEl.textContent = "";
+      }
+    }
+
+    function handleSwap() {
+      const inEl = $("#inputText");
+      const outEl = $("#outputText");
+      const temp = inEl.value;
+      inEl.value = outEl.value;
+      outEl.value = temp;
+      updateStatsAndCharts(outEl.value || "");
+    }
+
+    function handleCopy() {
+      const text = $("#outputText").value || "";
+      if (!text) return;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).catch(() => {});
+      } else {
+        // fallback
+        const temp = document.createElement("textarea");
+        temp.value = text;
+        document.body.appendChild(temp);
+        temp.select();
+        try {
+          document.execCommand("copy");
+        } catch {}
+        document.body.removeChild(temp);
+      }
+    }
+
+    /* Text clean-up helpers */
+    function normalizeSpaces(text) {
+      return text
+        .replace(/\s+/g, " ")
+        .replace(/ *\n */g, "\n")
+        .trim();
+    }
+
+    function fixPunctuationSpacing(text) {
+      // Ensure a space after . ? ! , ; : if followed by a letter/number
+      return text
+        .replace(/([.,!?;:])(?=\S)/g, "$1 ")
+        .replace(/\s{2,}/g, " ");
+    }
+
+    function collapseEmptyLines(text) {
+      return text.replace(/\n{3,}/g, "\n\n");
+    }
+
+    /* Case conversion functions */
+    function convertToCase(text, target) {
+      switch (target) {
+        case "sentence":
+          return toSentenceCase(text);
+        case "title":
+          return toTitleCase(text);
+        case "upper":
+          return text.toUpperCase();
+        case "lower":
+          return text.toLowerCase();
+        case "capitalized":
+          return text
+            .toLowerCase()
+            .replace(/\b\w+/g, (w) => w.charAt(0).toUpperCase() + w.slice(1));
+        case "camel":
+          return toCamelCase(text, false);
+        case "pascal":
+          return toCamelCase(text, true);
+        case "snake":
+          return toSeparatedCase(text, "_");
+        case "kebab":
+          return toSeparatedCase(text, "-");
+        default:
+          return text;
+      }
+    }
+
+    function toSentenceCase(text) {
+      const lower = text.toLowerCase();
+      // Split into sentences keeping delimiters
+      const parts = lower.split(/([.!?]\s+|\n+)/);
+      let result = "";
+      for (let i = 0; i < parts.length; i++) {
+        let chunk = parts[i];
+        if (i === 0 || /^[.!?]\s+|\n+$/.test(parts[i - 1] || "")) {
+          chunk = chunk.replace(/(^\s*[a-z])/, (m) => m.toUpperCase());
+        }
+        result += chunk;
+      }
+      return result;
+    }
+
+    function toTitleCase(text) {
+      const smallWords = new Set([
+        "a",
+        "an",
+        "and",
+        "as",
+        "at",
+        "but",
+        "by",
+        "for",
+        "from",
+        "in",
+        "into",
+        "of",
+        "on",
+        "or",
+        "over",
+        "the",
+        "to",
+        "with",
+        "vs",
+        "vs.",
+      ]);
+
+      return text
+        .toLowerCase()
+        .split(/\n/)
+        .map((line) => {
+          const words = line.split(/\s+/);
+          return words
+            .map((word, index) => {
+              const clean = word.replace(/^[^A-Za-z0-9]+|[^A-Za-z0-9]+$/g, "");
+              const lower = clean.toLowerCase();
+              if (!lower) return word;
+
+              const isFirstOrLast =
+                index === 0 || index === words.length - 1;
+
+              const base =
+                !isFirstOrLast && smallWords.has(lower)
+                  ? lower
+                  : lower.charAt(0).toUpperCase() + lower.slice(1);
+
+              // keep punctuation around word
+              return word.replace(clean, base);
+            })
+            .join(" ");
+        })
+        .join("\n");
+    }
+
+    function toCamelCase(text, pascal) {
+      const words = text
+        .replace(/[_\-]+/g, " ")
+        .replace(/[^\p{L}\p{N} ]+/gu, " ")
+        .split(/\s+/)
+        .filter(Boolean);
+
+      if (!words.length) return "";
+
+      return words
+        .map((w, i) => {
+          const lower = w.toLowerCase();
+          if (!pascal && i === 0) return lower;
+          return lower.charAt(0).toUpperCase() + lower.slice(1);
+        })
+        .join("");
+    }
+
+    function toSeparatedCase(text, sep) {
+      return text
+        .trim()
+        .replace(/[_\-\s]+/g, " ")
+        .replace(/[^\p{L}\p{N} ]+/gu, " ")
+        .trim()
+        .replace(/\s+/g, sep)
+        .toLowerCase();
+    }
+
+    /* Analysis + charts */
+    function analyzeText(text) {
+      const chars = text.length;
+      const wordsArr = text.match(/\b[\p{L}\p{N}']+\b/gu) || [];
+      const words = wordsArr.length;
+      const sentencesArr = text.match(/[.!?]+/g) || [];
+      const sentences = sentencesArr.length || (words > 0 ? 1 : 0);
+      const avgSentence = words && sentences ? words / sentences : 0;
+
+      const uppercaseMatches = text.match(/[A-Z]/g) || [];
+      const lowercaseMatches = text.match(/[a-z]/g) || [];
+      const uppercase = uppercaseMatches.length;
+      const lowercase = lowercaseMatches.length;
+      const letters = uppercase + lowercase;
+      const uppercaseRatio = letters ? uppercase / letters : 0;
+
+      // Length score: aim for 150–800 words
+      let lengthScore = 0;
+      if (words === 0) {
+        lengthScore = 0;
+      } else if (words <= 50) {
+        lengthScore = (words / 50) * 40;
+      } else if (words <= 150) {
+        lengthScore = 40 + ((words - 50) / 100) * 40;
+      } else if (words <= 800) {
+        lengthScore = 80 + ((words - 150) / 650) * 20;
+      } else {
+        lengthScore = 90 - Math.min(40, (words - 800) / 50);
+      }
+      lengthScore = clamp(lengthScore, 0, 100);
+
+      // Sentence score: best around 12–24 words per sentence
+      let sentenceScore = 100;
+      if (avgSentence === 0) {
+        sentenceScore = 0;
+      } else if (avgSentence < 8) {
+        sentenceScore = 80 - (8 - avgSentence) * 4;
+      } else if (avgSentence <= 24) {
+        sentenceScore = 100;
+      } else {
+        sentenceScore = 100 - (avgSentence - 24) * 3;
+      }
+      sentenceScore = clamp(sentenceScore, 0, 100);
+
+      // Uppercase balance: penalize if too shouty
+      let uppercaseScore = 100 - uppercaseRatio * 140;
+      uppercaseScore = clamp(uppercaseScore, 0, 100);
+
+      const overallScore = Math.round(
+        (lengthScore + sentenceScore + uppercaseScore) / 3
+      );
+
+      return {
+        chars,
+        words,
+        sentences,
+        avgSentence,
+        uppercase,
+        lowercase,
+        uppercaseRatio,
+        lengthScore: Math.round(lengthScore),
+        sentenceScore: Math.round(sentenceScore),
+        uppercaseScore: Math.round(uppercaseScore),
+        overallScore,
+      };
+    }
+
+    function clamp(v, min, max) {
+      return Math.min(max, Math.max(min, v));
+    }
+
+    function updateStatsAndCharts(text) {
+      const stats = analyzeText(text);
+
+      $("#sumChars").textContent = stats.chars.toLocaleString();
+      $("#sumWords").textContent = `${stats.words.toLocaleString()} word${
+        stats.words === 1 ? "" : "s"
+      }`;
+      $("#sumSentences").textContent = stats.sentences;
+      $("#sumAvgSentence").textContent =
+        stats.avgSentence > 0
+          ? `Avg. sentence length: ${stats.avgSentence.toFixed(1)} words`
+          : "Avg. sentence length: —";
+
+      const scoreText =
+        stats.overallScore > 0 ? `${stats.overallScore}/100` : "—";
+      $("#sumScore").textContent = scoreText;
+
+      let hint = "Aim for clear, medium-length sentences.";
+      if (stats.words < 50 && stats.chars > 0) {
+        hint = "Very short: consider adding more context or examples.";
+      } else if (stats.words > 800) {
+        hint = "Quite long: headings and shorter paragraphs can improve scannability.";
+      } else if (stats.uppercaseRatio > 0.2) {
+        hint = "Lots of capital letters: avoid using ALL CAPS for long phrases.";
+      } else if (stats.avgSentence > 28) {
+        hint =
+          "Sentences are long: breaking complex ideas into two sentences can help.";
+      }
+      $("#sumHints").textContent = hint;
+
+      drawCasePieChart(stats.uppercase, stats.lowercase);
+      drawSeoBarChart(
+        stats.lengthScore,
+        stats.sentenceScore,
+        stats.uppercaseScore,
+        stats.overallScore
+      );
+    }
+
+    function drawCasePieChart(upper, lower) {
+      const canvas = document.getElementById("casePieChart");
+      if (!canvas) return;
+      const ctx = canvas.getContext("2d");
+      const w = canvas.width;
+      const h = canvas.height;
+      ctx.clearRect(0, 0, w, h);
+
+      const total = upper + lower;
+      if (total <= 0) return;
+
+      const centerX = w / 2;
+      const centerY = h / 2 + 4;
+      const radius = Math.min(w, h) / 2 - 10;
+      const lineWidth = radius * 0.55;
+
+      const segments = [
+        { value: upper, color: "#b91c1c" },
+        { value: lower, color: "#16a34a" },
+      ].filter((s) => s.value > 0);
+
+      let startAngle = -Math.PI / 2;
+      segments.forEach((seg) => {
+        const angle = (seg.value / total) * Math.PI * 2;
+        ctx.beginPath();
+        ctx.strokeStyle = seg.color;
+        ctx.lineWidth = lineWidth;
+        ctx.arc(centerX, centerY, radius, startAngle, startAngle + angle);
+        ctx.stroke();
+        startAngle += angle;
+      });
+
+      ctx.beginPath();
+      ctx.fillStyle = "#f9fafb";
+      ctx.arc(centerX, centerY, radius - lineWidth / 1.2, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    function drawSeoBarChart(lengthScore, sentenceScore, upperScore, overall) {
+      const canvas = document.getElementById("seoBarChart");
+      if (!canvas) return;
+      const ctx = canvas.getContext("2d");
+      const w = canvas.width;
+      const h = canvas.height;
+      ctx.clearRect(0, 0, w, h);
+
+      const scores = [
+        { label: "Length", value: lengthScore, color: "#2563eb" },
+        { label: "Sentences", value: sentenceScore, color: "#16a34a" },
+        { label: "Uppercase", value: upperScore, color: "#b91c1c" },
+        { label: "Overall", value: overall, color: "#0ea5e9" },
+      ];
+
+      const paddingLeft = 38;
+      const paddingRight = 8;
+      const paddingTop = 8;
+      const paddingBottom = 18;
+      const chartWidth = w - paddingLeft - paddingRight;
+      const chartHeight = h - paddingTop - paddingBottom;
+
+      // Axis
+      ctx.strokeStyle = "#9ca3af";
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(paddingLeft, paddingTop);
+      ctx.lineTo(paddingLeft, h - paddingBottom);
+      ctx.lineTo(w - paddingRight, h - paddingBottom);
+      ctx.stroke();
+
+      const barWidth = chartWidth / (scores.length * 1.5);
+
+      scores.forEach((s, i) => {
+        const xCenter =
+          paddingLeft + ((i + 0.8) * chartWidth) / scores.length;
+        const barHeight = (s.value / 100) * chartHeight;
+        const baseY = h - paddingBottom;
+
+        ctx.fillStyle = s.color;
+        ctx.fillRect(
+          xCenter - barWidth / 2,
+          baseY - barHeight,
+          barWidth,
+          barHeight
+        );
+
+        ctx.fillStyle = "#4b5563";
+        ctx.font = "10px Inter, system-ui, sans-serif";
+        ctx.textAlign = "center";
+        ctx.fillText(s.label, xCenter, h - 5);
+      });
+    }
+
+    /* Sidebar tool search */
+    function initToolSearch() {
+      const searchInput = $("#toolSearchInput");
+      const suggestionsEl = $("#toolSuggestions");
+      if (!searchInput || !suggestionsEl) return;
+
+      const tools = [
+        { name: "Age Calculator", url: "age-calculator.html" },
+        { name: "BMI Calculator", url: "bmi-calculator.html" },
+        { name: "Calorie Calculator", url: "calorie-calculator.html" },
+        { name: "Loan & EMI Calculator", url: "loan-emi-calculator.html" },
+        { name: "Interest Calculator", url: "interest-calculator.html" },
+        { name: "Case Converter", url: "case-converter.html" },
+        {
+          name: "Word & Character Counter",
+          url: "https://wordcalculator.net",
+        },
+        { name: "Grammar & Spell Checker", url: "grammar-spell-checker.html" },
+        { name: "Readability Analyzer", url: "readability-analyzer.html" },
+        {
+          name: "Keyword Density Analyzer",
+          url: "keyword-density-analyzer.html",
+        },
+        { name: "Title & Meta Preview", url: "title-meta-preview.html" },
+        { name: "URL Slug Generator", url: "url-slug-generator.html" },
+        { name: "Focus Timer", url: "focus-timer.html" },
+      ];
+
+      searchInput.addEventListener("input", () => {
+        const q = (searchInput.value || "").toLowerCase().trim();
+        if (!q) {
+          suggestionsEl.style.display = "none";
+          suggestionsEl.innerHTML = "";
+          return;
+        }
+
+        const matched = tools
+          .filter((t) => t.name.toLowerCase().includes(q))
+          .slice(0, 8);
+
+        if (!matched.length) {
+          suggestionsEl.style.display = "none";
+          suggestionsEl.innerHTML = "";
+          return;
+        }
+
+        suggestionsEl.innerHTML = matched
+          .map((t) => `<li data-url="${t.url}">${t.name}</li>`)
+          .join("");
+        suggestionsEl.style.display = "block";
+      });
+
+      suggestionsEl.addEventListener("click", (e) => {
+        const li = e.target.closest("li[data-url]");
+        if (!li) return;
+        const url = li.getAttribute("data-url");
+        if (url) window.location.href = url;
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!suggestionsEl.contains(e.target) && e.target !== searchInput) {
+          suggestionsEl.style.display = "none";
+        }
+      });
+    }
+
+    /* Print result card in a separate window */
+    function initPrintButton() {
+      const btn = $("#printResultBtn");
+      if (!btn) return;
+      btn.addEventListener("click", () => {
+        const win = window.open("", "_blank", "width=900,height=700");
+        if (!win) return;
+
+        win.document.write(`
+          <html>
+          <head>
+            <title>Case Converter Result</title>
+            <style>
+              body {
+                font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+                background: #f3f4f6;
+                padding: 20px;
+              }
+              .print-card {
+                max-width: 800px;
+                margin: 0 auto;
+                background: #ffffff;
+                border-radius: 12px;
+                border: 1px solid #e5e7eb;
+                box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+                overflow: hidden;
+              }
+              .print-card-header {
+                padding: 10px 14px;
+                background: #0f172a;
+                color: #f9fafb;
+                font-size: 16px;
+                font-weight: 800;
+              }
+              .print-body {
+                padding: 14px 16px 14px;
+                font-size: 14px;
+                color: #111827;
+              }
+              .print-body pre {
+                white-space: pre-wrap;
+                word-wrap: break-word;
+              }
+              .btn-chip, canvas { display:none !important; }
+            </style>
+          </head>
+          <body>
+            <div class="print-card">
+              <div class="print-card-header">Case Converter Result</div>
+              <div class="print-body">
+                <pre>${escapeHtml(
+                  document.getElementById("outputText").value || ""
+                )}</pre>
+              </div>
+            </div>
+            <script>
+              window.onload = function() { window.print(); };
+            <\/script>
+          </body>
+          </html>
+        `);
+        win.document.close();
+      });
+    }
+
+    function escapeHtml(str) {
+      return str
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+    }
+  </script>
+</body>
+</html>
