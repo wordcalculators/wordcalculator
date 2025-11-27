@@ -6,7 +6,7 @@
   <title>Grammar &amp; Spell Checker — WordCalculator.net</title>
   <meta
     name="description"
-    content="A free grammar and spell checker that highlights spelling, grammar, and style issues in your text with simple, one-click fixes."
+    content="Free grammar and spell checker that highlights spelling, grammar, and style issues in your text with simple, one-click fixes."
   />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
@@ -19,1072 +19,456 @@
   <link rel="icon" href="favicon.ico" />
 
   <style>
-    /* Reset */
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --blue:#2563eb;--text:#0f172a;--muted:#6b7280;--border:#e5e7eb;
+      --bg:#f7f8fb;--card:#ffffff;--ok:#16a34a;--danger:#dc2626;
+      --warning:#f97316;--info:#0ea5e9;
+    }
+    html{text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+    body{
+      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:var(--bg);color:var(--text);line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    button{font-family:inherit}
+
+    /* Header */
+    .wc-header{background:#020617;color:#fff;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+    .wc-wrap{max-width:1200px;margin:0 auto;padding:10px 12px;display:flex;align-items:center;gap:14px}
+    .wc-logo{display:inline-flex;align-items:center;gap:8px}
+    .wc-slab,.slab{display:inline-flex;width:24px;height:24px;align-items:center;justify-content:center;font-weight:800;font-size:14px;border-radius:2px;color:#fff}
+    .slab-w,.wc-slab.slab-w{background:#1f2327}
+    .slab-o,.wc-slab.slab-o{background:#a7c1db;color:#1e2a3a}
+    .slab-r,.wc-slab.slab-r{background:#7d96ae}
+    .slab-d,.wc-slab.slab-d{background:#2f5d8a}
+    .wc-brand-text{display:inline-flex;flex-direction:column;line-height:1.05;font-size:19px;font-weight:800}
+    .wc-brand-text small{font-size:10px;opacity:.95}
+    .wc-nav{margin-left:10px;display:flex;align-items:center;gap:8px;flex:1}
+    .wc-link{
+      color:#f4f8fc;font-weight:700;font-size:14px;padding:6px 10px;border-radius:8px;transition:.15s;
+      white-space:nowrap;background:transparent;border:0;cursor:pointer;
+    }
+    .wc-link:hover{background:rgba(255,255,255,.14)}
+    .wc-link.active{background:#fff;color:#111827;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+    .wc-signin-btn{
+      background:rgba(148,163,184,.18);border:1px solid rgba(148,163,184,.5);
+      display:inline-flex;align-items:center;gap:6px;
+    }
+    .wc-signin-btn:hover{background:#38bdf8;color:#020617;border-color:#38bdf8}
+    .mobile-menu-btn{
+      margin-left:auto;background:transparent;border:0;color:#fff;font-size:20px;display:none;cursor:pointer;
     }
 
-    :root {
-      --blue: #2563eb;
-      --text: #0f172a;
-      --muted: #6b7280;
-      --border: #e5e7eb;
-      --bg: #f7f8fb;
-      --card: #ffffff;
-      --ok: #16a34a;
-      --danger: #dc2626;
-      --warning: #f97316;
-      --info: #0ea5e9;
+    .mobile-nav{
+      position:fixed;top:0;right:-100%;width:320px;height:100vh;background:#1f2933;
+      box-shadow:-2px 0 10px rgba(0,0,0,.18);transition:right .3s;z-index:100;
     }
-
-    html {
-      text-rendering: optimizeLegibility;
-      -webkit-font-smoothing: antialiased;
+    .mobile-nav.active{right:0}
+    .mobile-nav-header{
+      display:flex;justify-content:space-between;align-items:center;padding:16px;border-bottom:1px solid #34495e;
     }
-
-    body {
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+    .mobile-close-btn{background:transparent;border:0;color:#fff;font-size:20px;cursor:pointer}
+    .mobile-nav-links{padding:16px}
+    .mobile-link{
+      display:block;color:#ecf0f1;padding:12px 0;border-bottom:1px solid #34495e;font-weight:700;
+      background:none;border-radius:0;
     }
-
-    a {
-      color: inherit;
-      text-decoration: none;
+    .mobile-overlay{
+      position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;z-index:90;
     }
-
-    button {
-      font-family: inherit;
-    }
-
-    /* Header (shared) */
-    .wc-header {
-      background: #020617;
-      color: #fff;
-      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
-    }
-
-    .wc-wrap {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 10px 12px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .wc-logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .wc-slab,
-    .slab {
-      display: inline-flex;
-      width: 24px;
-      height: 24px;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 14px;
-      border-radius: 2px;
-      color: #fff;
-    }
-
-    .slab-w,
-    .wc-slab.slab-w {
-      background: #1f2327;
-    }
-
-    .slab-o,
-    .wc-slab.slab-o {
-      background: #a7c1db;
-      color: #1e2a3a;
-    }
-
-    .slab-r,
-    .wc-slab.slab-r {
-      background: #7d96ae;
-    }
-
-    .slab-d,
-    .wc-slab.slab-d {
-      background: #2f5d8a;
-    }
-
-    .wc-brand-text {
-      display: inline-flex;
-      flex-direction: column;
-      line-height: 1.05;
-      font-size: 19px;
-      font-weight: 800;
-    }
-
-    .wc-brand-text small {
-      font-size: 10px;
-      opacity: 0.95;
-    }
-
-    .wc-nav {
-      margin-left: 10px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex: 1;
-    }
-
-    .wc-link {
-      color: #f4f8fc;
-      font-weight: 700;
-      font-size: 14px;
-      padding: 6px 10px;
-      border-radius: 8px;
-      transition: 0.15s;
-      white-space: nowrap;
-      background: transparent;
-      border: 0;
-      cursor: pointer;
-    }
-
-    .wc-link:hover {
-      background: rgba(255, 255, 255, 0.14);
-    }
-
-    .wc-link.active {
-      background: #ffffff;
-      color: #111827;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    }
-
-    .wc-signin-btn {
-      background: rgba(148, 163, 184, 0.18);
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .wc-signin-btn:hover {
-      background: #38bdf8;
-      color: #020617;
-      border-color: #38bdf8;
-    }
-
-    .mobile-menu-btn {
-      margin-left: auto;
-      background: transparent;
-      border: 0;
-      color: #fff;
-      font-size: 20px;
-      display: none;
-      cursor: pointer;
-    }
-
-    /* Mobile nav */
-    .mobile-nav {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 320px;
-      height: 100vh;
-      background: #1f2933;
-      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.18);
-      transition: right 0.3s;
-      z-index: 100;
-    }
-
-    .mobile-nav.active {
-      right: 0;
-    }
-
-    .mobile-nav-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px;
-      border-bottom: 1px solid #34495e;
-    }
-
-    .mobile-close-btn {
-      background: transparent;
-      border: 0;
-      color: #fff;
-      font-size: 20px;
-      cursor: pointer;
-    }
-
-    .mobile-nav-links {
-      padding: 16px;
-    }
-
-    .mobile-link {
-      display: block;
-      color: #ecf0f1;
-      padding: 12px 0;
-      border-bottom: 1px solid #34495e;
-      font-weight: 700;
-    }
-
-    .mobile-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-      display: none;
-      z-index: 90;
-    }
-
-    .mobile-overlay.active {
-      display: block;
-    }
+    .mobile-overlay.active{display:block}
 
     /* Breadcrumbs */
-    .breadcrumbs {
-      max-width: 1200px;
-      margin: 12px auto 4px;
-      padding: 0 15px;
-      font-size: 13px;
-      color: #4b5563;
+    .breadcrumbs{
+      max-width:1200px;margin:12px auto 4px;padding:0 15px;font-size:13px;color:#4b5563;
     }
-
-    .breadcrumbs a {
-      color: #2563eb;
-      font-weight: 500;
-    }
-
-    .breadcrumbs a:hover {
-      text-decoration: underline;
-    }
-
-    .breadcrumbs span.current {
-      font-weight: 700;
-      color: #111827;
-    }
-
-    .breadcrumbs-separator {
-      margin: 0 4px;
-      color: #9ca3af;
-    }
+    .breadcrumbs a{color:#2563eb;font-weight:500}
+    .breadcrumbs a:hover{text-decoration:underline}
+    .breadcrumbs span.current{font-weight:700;color:#111827}
+    .breadcrumbs-separator{margin:0 4px;color:#9ca3af}
 
     /* Main layout */
-    .gs-main {
-      max-width: 1200px;
-      margin: 16px auto 40px;
-      padding: 0 15px;
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(260px, 1.25fr);
-      gap: 20px;
-      align-items: flex-start;
+    .gs-main{
+      max-width:1200px;margin:16px auto 40px;padding:0 15px;
+      display:grid;grid-template-columns:minmax(0,3fr) minmax(260px,1.25fr);gap:20px;align-items:flex-start;
+    }
+    .gs-left{display:flex;flex-direction:column;gap:18px}
+    .gs-top-grid{
+      display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.1fr);gap:16px;align-items:stretch;
     }
 
-    .gs-left {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
+    .card{
+      background:var(--card);border-radius:12px;border:1px solid #e2e8f0;
+      box-shadow:0 10px 24px rgba(15,23,42,.06);padding:14px 14px 12px;
+    }
+    .card-header{
+      margin:-14px -14px 12px;padding:8px 12px;background:#0f172a;color:#f9fafb;
+      border-radius:12px 12px 0 0;display:flex;align-items:center;justify-content:space-between;gap:10px;
+      box-shadow:inset 0 -1px 0 rgba(148,163,184,.35);
+    }
+    .card-header h2{font-size:15px;font-weight:800;letter-spacing:-.01em}
+    .card-header small{font-size:11px;color:#cbd5e1}
+
+    .btn-chip{
+      padding:6px 10px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;
+      font-size:12px;font-weight:600;color:#111827;cursor:pointer;display:inline-flex;align-items:center;gap:6px;
+      transition:background .15s,border-color .15s,box-shadow .15s,transform .15s;white-space:nowrap;
+    }
+    .btn-chip i{font-size:12px}
+    .btn-chip:hover{
+      background:#111827;color:#f9fafb;border-color:#111827;
+      box-shadow:0 8px 18px rgba(15,23,42,.25);transform:translateY(-1px);
     }
 
-    .gs-top-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
-      gap: 16px;
-      align-items: stretch;
+    .gs-actions{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    .btn-primary{
+      padding:8px 12px;border-radius:999px;border:1px solid var(--ok);background:var(--ok);
+      color:#fff;font-size:13px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:6px;
+      transition:background .15s,transform .15s,box-shadow .15s;
     }
+    .btn-primary:hover{background:#15803d;box-shadow:0 8px 18px rgba(22,163,74,.3);transform:translateY(-1px)}
+    .btn-ghost{
+      padding:8px 10px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;
+      font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;transition:background .15s,border-color .15s;
+    }
+    .btn-ghost:hover{background:#e5e7eb;border-color:#d1d5db}
+    .gs-note{margin-top:4px;font-size:11px;color:#6b7280}
+    .gs-error{margin-top:4px;font-size:12px;color:#b91c1c}
 
-    .card {
-      background: var(--card);
+    .gs-input-wrap{display:flex;flex-direction:column;gap:6px;font-size:13px}
+    .gs-input-wrap label{font-size:12px;font-weight:600;color:#4b5563}
+    .gs-textarea{
+      width:100%;min-height:260px;resize:vertical;padding:9px 10px;border-radius:10px;border:1px solid #d1d5db;
+      font-size:13px;line-height:1.6;font-family:inherit;background:#fff;
+    }
+    .gs-textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 1px rgba(37,99,235,.12)}
+
+    .gs-result-header-actions{display:flex;align-items:center;gap:8px}
+    .gs-result-main-title{font-size:18px;font-weight:800;color:#111827;margin-bottom:4px}
+    .gs-result-sub{font-size:13px;color:#4b5563;margin-bottom:10px}
+
+    .gs-summary-grid{
+      display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:8px;
+    }
+    .gs-summary-box{
+      padding:8px 9px 7px;border-radius:10px;border:1px solid #e5e7eb;background:#f9fafb;font-size:12px;
+    }
+    .gs-summary-label{
+      font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#6b7280;margin-bottom:3px;font-weight:600;
+    }
+    .gs-summary-value{font-size:15px;font-weight:800;color:#111827}
+    .gs-summary-muted{font-size:11px;color:#6b7280;margin-top:2px}
+
+    .gs-layout-two{
+      display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.1fr);gap:10px;align-items:flex-start;
+    }
+    .gs-issues{
+      border-radius:10px;border:1px solid #e5e7eb;background:#f9fafb;padding:8px 9px;max-height:200px;
+      overflow-y:auto;font-size:12px;
+    }
+    .gs-issues-title{
+      font-size:12px;font-weight:700;color:#111827;margin-bottom:4px;
+      display:flex;align-items:center;justify-content:space-between;gap:6px;
+    }
+    .gs-issue{
+      padding:5px 6px;border-radius:8px;border:1px solid #e5e7eb;background:#fff;display:flex;flex-direction:column;gap:2px;
+      cursor:pointer;
+    }
+    .gs-issue + .gs-issue{margin-top:4px}
+    .gs-issue-header{display:flex;align-items:center;justify-content:space-between;gap:6px}
+    .gs-issue-type{
+      font-size:11px;font-weight:700;padding:2px 6px;border-radius:999px;text-transform:uppercase;letter-spacing:.06em;
+    }
+    .gs-issue-type.spelling{
+      background:rgba(220,38,38,.06);color:#b91c1c;border:1px solid rgba(220,38,38,.5);
+    }
+    .gs-issue-type.grammar{
+      background:rgba(14,165,233,.06);color:#0369a1;border:1px solid rgba(56,189,248,.7);
+    }
+    .gs-issue-type.style{
+      background:rgba(249,115,22,.06);color:#c2410c;border:1px solid rgba(249,115,22,.6);
+    }
+    .gs-issue-pos{font-size:11px;color:#6b7280}
+    .gs-issue-text{font-size:12px;color:#111827}
+    .gs-issue-suggestion{font-size:11px;color:#047857}
+
+    .gs-highlight-wrap{
+      border-radius:10px;border:1px solid #e5e7eb;background:#fff;padding:8px 9px;font-size:13px;
+      line-height:1.7;max-height:200px;overflow-y:auto;white-space:pre-wrap;word-wrap:break-word;min-height:120px;
+    }
+    .gs-mark{
+      padding:0 1px;border-radius:3px;cursor:pointer;border-bottom:1px dotted currentColor;transition:background .12s;
+    }
+    .gs-mark.spelling{background:rgba(248,113,113,.2);color:#b91c1c}
+    .gs-mark.grammar{background:rgba(56,189,248,.2);color:#0369a1}
+    .gs-mark.style{background:rgba(251,146,60,.18);color:#9a3412}
+    .gs-mark-focus{outline:2px solid #0ea5e9;outline-offset:1px}
+
+    .gs-metrics-block{
+      margin-top:10px;border-radius:10px;border:1px solid #e5e7eb;background:#f9fafb;
+      padding:8px 9px;font-size:12px;
+    }
+    .gs-metrics-title{font-size:12px;font-weight:700;color:#111827;margin-bottom:4px}
+    .gs-metric-row{display:flex;align-items:center;gap:8px;margin-top:4px}
+    .gs-metric-label{width:110px;font-size:11px;color:#4b5563}
+    .gs-metric-bar-wrap{
+      flex:1;border-radius:999px;border:1px solid #e5e7eb;background:#fff;overflow:hidden;height:8px;
+    }
+    .gs-metric-bar{height:100%;border-radius:999px}
+    .gs-metric-bar.grammar{background:rgba(14,165,233,.9)}
+    .gs-metric-bar.spelling{background:rgba(220,38,38,.9)}
+    .gs-metric-bar.style{background:rgba(249,115,22,.9)}
+    .gs-metric-value{font-size:11px;color:#111827;min-width:40px;text-align:right}
+    .gs-result-footnote{margin-top:6px;font-size:11px;color:#6b7280}
+
+    /* Grammarly-style floating side panel (right side) */
+    .gs-side-panel {
+      position: fixed;
+      right: 16px;
+      top: 96px;
+      width: 280px;
+      max-width: 90vw;
       border-radius: 12px;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
-      padding: 14px 14px 12px;
+      border: 1px solid #e5e7eb;
+      background: #020617;
+      color: #e5e7eb;
+      padding: 10px 11px 9px;
+      font-size: 12px;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.65);
+      z-index: 140;
     }
-
-    .card-header {
-      margin: -14px -14px 12px;
-      padding: 8px 12px;
-      background: #0f172a;
-      color: #f9fafb;
-      border-radius: 12px 12px 0 0;
+    .gs-side-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 10px;
-      box-shadow: inset 0 -1px 0 rgba(148, 163, 184, 0.35);
+      gap: 8px;
+      margin-bottom: 6px;
     }
-
-    .card-header h2 {
-      font-size: 15px;
-      font-weight: 800;
-      letter-spacing: -0.01em;
+    .gs-side-title {
+      font-size: 13px;
+      font-weight: 700;
     }
-
-    .card-header small {
+    .gs-side-sub {
       font-size: 11px;
-      color: #cbd5e1;
+      color: #9ca3af;
     }
-
-    .btn-chip {
-      padding: 6px 10px;
+    .gs-side-score-text {
+      font-size: 12px;
+      font-weight: 700;
+      color: #bbf7d0;
+    }
+    .gs-side-score-bar-wrap {
+      margin: 4px 0 8px;
       border-radius: 999px;
-      border: 1px solid #e5e7eb;
-      background: #f9fafb;
-      font-size: 12px;
-      font-weight: 600;
-      color: #111827;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: background 0.15s, border-color 0.15s, box-shadow 0.15s,
-        transform 0.15s;
-      white-space: nowrap;
-    }
-
-    .btn-chip i {
-      font-size: 12px;
-    }
-
-    .btn-chip:hover {
       background: #111827;
-      color: #f9fafb;
-      border-color: #111827;
-      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.25);
-      transform: translateY(-1px);
+      overflow: hidden;
+      height: 6px;
     }
-
-    .gs-actions {
-      margin-top: 8px;
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      align-items: center;
+    .gs-side-score-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(to right, #22c55e, #a3e635);
+      transition: width 0.2s ease-out;
     }
-
-    .btn-primary {
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--ok);
-      background: var(--ok);
-      color: #ffffff;
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
-    }
-
-    .btn-primary:hover {
-      background: #15803d;
-      box-shadow: 0 8px 18px rgba(22, 163, 74, 0.3);
-      transform: translateY(-1px);
-    }
-
-    .btn-ghost {
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid #e5e7eb;
-      background: #f9fafb;
-      font-size: 12px;
-      font-weight: 600;
-      color: #4b5563;
-      cursor: pointer;
-      transition: background 0.15s, border-color 0.15s;
-    }
-
-    .btn-ghost:hover {
-      background: #e5e7eb;
-      border-color: #d1d5db;
-    }
-
-    .gs-note {
-      margin-top: 4px;
-      font-size: 11px;
-      color: #6b7280;
-    }
-
-    .gs-error {
-      margin-top: 4px;
-      font-size: 12px;
-      color: #b91c1c;
-    }
-
-    /* Input text area */
-    .gs-input-wrap {
+    .gs-side-category-list {
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      font-size: 13px;
+      gap: 4px;
     }
-
-    .gs-input-wrap label {
-      font-size: 12px;
-      font-weight: 600;
-      color: #4b5563;
-    }
-
-    .gs-textarea {
-      width: 100%;
-      min-height: 260px;
-      resize: vertical;
-      padding: 9px 10px;
-      border-radius: 10px;
-      border: 1px solid #d1d5db;
-      font-size: 13px;
-      line-height: 1.6;
-      font-family: inherit;
-      background: #ffffff;
-    }
-
-    .gs-textarea:focus {
-      outline: none;
-      border-color: var(--blue);
-      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.12);
-    }
-
-    /* Result card */
-    .gs-result-header-actions {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .gs-result-main-title {
-      font-size: 18px;
-      font-weight: 800;
-      color: #111827;
-      margin-bottom: 4px;
-    }
-
-    .gs-result-sub {
-      font-size: 13px;
-      color: #4b5563;
-      margin-bottom: 10px;
-    }
-
-    .gs-summary-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-
-    .gs-summary-box {
-      padding: 8px 9px 7px;
-      border-radius: 10px;
-      border: 1px solid #e5e7eb;
-      background: #f9fafb;
-      font-size: 12px;
-    }
-
-    .gs-summary-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #6b7280;
-      margin-bottom: 3px;
-      font-weight: 600;
-    }
-
-    .gs-summary-value {
-      font-size: 15px;
-      font-weight: 800;
-      color: #111827;
-    }
-
-    .gs-summary-muted {
-      font-size: 11px;
-      color: #6b7280;
-      margin-top: 2px;
-    }
-
-    /* Issue list + highlight */
-    .gs-layout-two {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
-      gap: 10px;
-      align-items: flex-start;
-    }
-
-    .gs-issues {
-      border-radius: 10px;
-      border: 1px solid #e5e7eb;
-      background: #f9fafb;
-      padding: 8px 9px;
-      max-height: 200px;
-      overflow-y: auto;
-      font-size: 12px;
-    }
-
-    .gs-issues-title {
-      font-size: 12px;
-      font-weight: 700;
-      color: #111827;
-      margin-bottom: 4px;
-    }
-
-    .gs-issue {
-      padding: 5px 6px;
-      border-radius: 8px;
-      border: 1px solid #e5e7eb;
-      background: #ffffff;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .gs-issue + .gs-issue {
-      margin-top: 4px;
-    }
-
-    .gs-issue-header {
+    .gs-side-cat {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 6px;
-    }
-
-    .gs-issue-type {
-      font-size: 11px;
-      font-weight: 700;
-      padding: 2px 6px;
-      border-radius: 999px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .gs-issue-type.spelling {
-      background: rgba(220, 38, 38, 0.06);
-      color: #b91c1c;
-      border: 1px solid rgba(220, 38, 38, 0.5);
-    }
-
-    .gs-issue-type.grammar {
-      background: rgba(14, 165, 233, 0.06);
-      color: #0369a1;
-      border: 1px solid rgba(56, 189, 248, 0.7);
-    }
-
-    .gs-issue-type.style {
-      background: rgba(249, 115, 22, 0.06);
-      color: #c2410c;
-      border: 1px solid rgba(249, 115, 22, 0.6);
-    }
-
-    .gs-issue-pos {
-      font-size: 11px;
-      color: #6b7280;
-    }
-
-    .gs-issue-text {
-      font-size: 12px;
-      color: #111827;
-    }
-
-    .gs-issue-suggestion {
-      font-size: 11px;
-      color: #047857;
-    }
-
-    .gs-highlight-wrap {
+      padding: 6px 7px;
       border-radius: 10px;
-      border: 1px solid #e5e7eb;
-      background: #ffffff;
-      padding: 8px 9px;
-      font-size: 13px;
-      line-height: 1.7;
-      max-height: 200px;
-      overflow-y: auto;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-      min-height: 120px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid transparent;
+      cursor: default;
     }
-
-    .gs-tag-word {
-      font-weight: 600;
+    .gs-side-cat.has-issue {
+      border-color: rgba(239, 68, 68, 0.7);
+      background: rgba(15, 23, 42, 0.98);
     }
-
-    .gs-mark {
-      padding: 0 1px;
-      border-radius: 3px;
-      cursor: pointer;
-      border-bottom: 1px dotted currentColor;
-    }
-
-    .gs-mark.spelling {
-      background: rgba(248, 113, 113, 0.2);
-      color: #b91c1c;
-    }
-
-    .gs-mark.grammar {
-      background: rgba(56, 189, 248, 0.2);
-      color: #0369a1;
-    }
-
-    .gs-mark.style {
-      background: rgba(251, 146, 60, 0.18);
-      color: #9a3412;
-    }
-
-    /* Tiny “graph” for clarity / issue breakdown */
-    .gs-metrics-block {
-      margin-top: 10px;
-      border-radius: 10px;
-      border: 1px solid #e5e7eb;
-      background: #f9fafb;
-      padding: 8px 9px;
-      font-size: 12px;
-    }
-
-    .gs-metrics-title {
-      font-size: 12px;
-      font-weight: 700;
-      color: #111827;
-      margin-bottom: 4px;
-    }
-
-    .gs-metric-row {
+    .gs-side-cat-main {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-top: 4px;
-    }
-
-    .gs-metric-label {
-      width: 110px;
-      font-size: 11px;
-      color: #4b5563;
-    }
-
-    .gs-metric-bar-wrap {
-      flex: 1;
-      border-radius: 999px;
-      border: 1px solid #e5e7eb;
-      background: #ffffff;
-      overflow: hidden;
-      height: 8px;
-    }
-
-    .gs-metric-bar {
-      height: 100%;
-      border-radius: 999px;
-    }
-
-    .gs-metric-bar.grammar {
-      background: rgba(14, 165, 233, 0.9);
-    }
-
-    .gs-metric-bar.spelling {
-      background: rgba(220, 38, 38, 0.9);
-    }
-
-    .gs-metric-bar.style {
-      background: rgba(249, 115, 22, 0.9);
-    }
-
-    .gs-metric-value {
-      font-size: 11px;
-      color: #111827;
-      min-width: 40px;
-      text-align: right;
-    }
-
-    .gs-result-footnote {
-      margin-top: 6px;
-      font-size: 11px;
-      color: #6b7280;
-    }
-
-    /* Info section */
-    .section-block {
-      background: var(--card);
-      border-radius: 12px;
-      border: 1px solid #e2e8f0;
-      padding: 14px 16px 12px;
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.035);
-    }
-
-    .section-block h3 {
-      font-size: 16px;
-      font-weight: 800;
-      margin-bottom: 6px;
-      color: #0f172a;
-    }
-
-    .section-block h4 {
-      font-size: 14px;
-      font-weight: 700;
-      margin-top: 10px;
-      margin-bottom: 4px;
-      color: #111827;
-    }
-
-    .section-block p {
-      font-size: 13px;
-      color: #4b5563;
-      margin-bottom: 6px;
-    }
-
-    .section-block ul {
-      padding-left: 18px;
-      font-size: 13px;
-      color: #4b5563;
-    }
-
-    .section-block ul li + li {
-      margin-top: 2px;
-    }
-
-    /* Sidebar */
-    .gs-sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .sidebar-card {
-      background: var(--card);
-      border-radius: 12px;
-      border: 1px solid #e2e8f0;
-      padding: 12px 12px 10px;
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
-      font-size: 13px;
-    }
-
-    .sidebar-title-bar {
-      margin: -12px -12px 8px;
-      padding: 7px 10px;
-      background: #0f172a;
-      color: #f9fafb;
-      font-size: 14px;
-      font-weight: 800;
-      border-radius: 12px 12px 0 0;
-      box-shadow: inset 0 -1px 0 rgba(148, 163, 184, 0.35);
-    }
-
-    .sidebar-card small {
-      font-size: 11px;
-      color: #6b7280;
-      display: block;
-      /* চেষ্টা এক লাইনে রাখার */
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .sidebar-group {
-      margin-top: 8px;
-    }
-
-    .sidebar-group h4 {
+      gap: 6px;
       font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #6b7280;
-      margin-bottom: 3px;
-      font-weight: 700;
     }
-
-    .sidebar-links {
-      list-style: none;
-      font-size: 13px;
-    }
-
-    .sidebar-links li + li {
-      margin-top: 3px;
-    }
-
-    .sidebar-links a {
-      color: #1d4ed8;
-    }
-
-    .sidebar-links a:hover {
-      text-decoration: underline;
-    }
-
-    /* Tool search */
-    .tool-search {
-      margin: 8px 0;
-    }
-
-    .tool-search-input {
-      width: 100%;
-      padding: 7px 9px;
+    .gs-side-cat-dot {
+      width: 8px;
+      height: 8px;
       border-radius: 999px;
-      border: 1px solid #d1d5db;
-      font-size: 13px;
-      outline: none;
+      background: #6b7280;
+    }
+    .gs-side-cat-dot.critical {
+      background: #f97373;
+    }
+    .gs-side-cat-dot.style {
+      background: #4ade80;
+    }
+    .gs-side-cat-label {
+      white-space: nowrap;
+    }
+    .gs-side-cat-count {
+      font-size: 12px;
+      font-weight: 600;
+      color: #e5e7eb;
     }
 
-    .tool-search-input:focus {
-      border-color: #2563eb;
-      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.12);
+    /* smaller screens: panel goes inline below Result */
+    @media (max-width: 992px){
+      .gs-side-panel{
+        position: static;
+        width:auto;
+        max-width:none;
+        margin:10px 15px 0;
+        box-shadow:0 10px 24px rgba(15,23,42,.4);
+      }
     }
 
-    .tool-suggestions {
-      list-style: none;
-      margin-top: 4px;
-      border-radius: 10px;
-      border: 1px solid #e5e7eb;
-      background: #f9fafb;
-      max-height: 180px;
-      overflow-y: auto;
-      padding: 4px 0;
-      font-size: 13px;
-      display: none;
+    /* Popover for suggestions */
+    .gs-suggestion-popover{
+      position:absolute;min-width:220px;max-width:320px;background:#020617;color:#e5e7eb;
+      border-radius:10px;box-shadow:0 14px 40px rgba(15,23,42,.55);border:1px solid #111827;
+      z-index:150;display:none;
     }
+    .gs-popover-inner{padding:8px 10px 9px;background:#020617;border-radius:10px}
+    .gs-popover-header{
+      font-size:11px;font-weight:700;display:flex;align-items:center;gap:6px;margin-bottom:6px;color:#e5e7eb;
+    }
+    .gs-popover-header .star{color:#facc15}
+    .gs-popover-main{font-size:14px;font-weight:700;color:#e5f2ff;margin-bottom:4px}
+    .gs-popover-sub{font-size:12px;color:#cbd5e1;margin-bottom:8px}
+    .gs-popover-actions{display:flex;align-items:center;gap:8px}
+    .gs-popover-apply{
+      padding:4px 10px;border-radius:999px;border:0;background:#22c55e;font-size:12px;font-weight:700;color:#022c22;
+      cursor:pointer;
+    }
+    .gs-popover-apply[disabled]{opacity:.45;cursor:not-allowed}
+    .gs-popover-dismiss{
+      border:0;background:transparent;color:#cbd5e1;font-size:12px;cursor:pointer;display:inline-flex;align-items:center;gap:4px;
+    }
+    .gs-popover-dismiss i{font-size:11px}
 
-    .tool-suggestions li {
-      padding: 4px 9px;
-      cursor: pointer;
+    /* Info section & sidebar */
+    .section-block{
+      background:var(--card);border-radius:12px;border:1px solid #e2e8f0;
+      padding:14px 16px 12px;box-shadow:0 8px 20px rgba(15,23,42,.035);
     }
+    .section-block h3{font-size:16px;font-weight:800;margin-bottom:6px;color:#0f172a}
+    .section-block h4{font-size:14px;font-weight:700;margin-top:10px;margin-bottom:4px;color:#111827}
+    .section-block p{font-size:13px;color:#4b5563;margin-bottom:6px}
+    .section-block ul{padding-left:18px;font-size:13px;color:#4b5563}
+    .section-block ul li+li{margin-top:2px}
 
-    .tool-suggestions li:hover {
-      background: #e5efff;
+    .gs-sidebar{display:flex;flex-direction:column;gap:16px}
+    .sidebar-card{
+      background:var(--card);border-radius:12px;border:1px solid #e2e8f0;
+      padding:12px 12px 10px;box-shadow:0 10px 24px rgba(15,23,42,.06);font-size:13px;
     }
+    .sidebar-title-bar{
+      margin:-12px -12px 8px;padding:7px 10px;background:#0f172a;color:#f9fafb;
+      font-size:14px;font-weight:800;border-radius:12px 12px 0 0;box-shadow:inset 0 -1px 0 rgba(148,163,184,.35);
+    }
+    .sidebar-card small{
+      font-size:11px;color:#6b7280;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+    }
+    .sidebar-group{margin-top:8px}
+    .sidebar-group h4{
+      font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:#6b7280;margin-bottom:3px;font-weight:700;
+    }
+    .sidebar-links{list-style:none;font-size:13px}
+    .sidebar-links li+li{margin-top:3px}
+    .sidebar-links a{color:#1d4ed8}
+    .sidebar-links a:hover{text-decoration:underline}
+    .tool-search{margin:8px 0}
+    .tool-search-input{
+      width:100%;padding:7px 9px;border-radius:999px;border:1px solid #d1d5db;font-size:13px;outline:none;
+    }
+    .tool-search-input:focus{border-color:#2563eb;box-shadow:0 0 0 1px rgba(37,99,235,.12)}
+    .tool-suggestions{
+      list-style:none;margin-top:4px;border-radius:10px;border:1px solid #e5e7eb;background:#f9fafb;
+      max-height:180px;overflow-y:auto;padding:4px 0;font-size:13px;display:none;
+    }
+    .tool-suggestions li{padding:4px 9px;cursor:pointer}
+    .tool-suggestions li:hover{background:#e5efff}
 
     /* Footer */
-    .pro-footer {
-      background: #020617;
-      color: #cbd5e1;
-      margin-top: 40px;
+    .pro-footer{background:#020617;color:#cbd5e1;margin-top:40px}
+    .pf-wrap{
+      max-width:1200px;margin:0 auto;padding:34px 15px;
+      display:grid;grid-template-columns:320px 1fr;gap:26px;
     }
+    .pf-logo{display:flex;align-items:center;gap:10px}
+    .pf-brand-text{font-size:18px;font-weight:800;color:#e2e8f0}
+    .pf-brand-text span{color:#38bdf8}
+    .pf-tag{margin-top:8px;color:#94a3b8;font-size:13px}
+    .pf-social{display:flex;gap:10px;margin-top:10px}
+    .pf-social a{
+      display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;
+      border:1px solid #1e293b;border-radius:10px;background:#0b1220;color:#cbd5e1;
+      transition:background .15s,color .15s,border-color .15s,transform .15s,box-shadow .15s;
+    }
+    .pf-social a:hover{
+      background:#38bdf8;border-color:#38bdf8;color:#0b1220;transform:translateY(-1px);
+      box-shadow:0 4px 12px rgba(56,189,248,.4);
+    }
+    .pf-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .pf-col h5{color:#e2e8f0;font-weight:800;font-size:14px;margin-bottom:10px}
+    .pf-col ul{list-style:none}
+    .pf-col li{margin:8px 0}
+    .pf-col a{color:#94a3b8}
+    .pf-col a:hover{color:#e2e8f0}
+    .pf-bottom{border-top:1px solid #1e293b;background:#0b1220}
+    .pf-bottom-wrap{
+      max-width:1200px;margin:0 auto;padding:12px 15px;
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      color:#8893a7;font-size:13px;
+    }
+    .pf-links{display:flex;gap:10px}
+    .pf-links a{color:#94a3b8}
+    .pf-links a:hover{color:#e2e8f0}
 
-    .pf-wrap {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 34px 15px;
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 26px;
+    /* Modal */
+    .modal-overlay{
+      position:fixed;inset:0;background:rgba(15,23,42,.7);display:none;z-index:200;
     }
-
-    .pf-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .modal{
+      position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
+      width:420px;max-width:96vw;background:#fff;border:1px solid #e5e7eb;border-radius:14px;
+      box-shadow:0 18px 40px rgba(15,23,42,.35);display:none;z-index:210;
     }
-
-    .pf-brand-text {
-      font-size: 18px;
-      font-weight: 800;
-      color: #e2e8f0;
+    .modal-head{
+      display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-bottom:1px solid #e5e7eb;
     }
-
-    .pf-brand-text span {
-      color: #38bdf8;
+    .modal-head h3{font-size:15px;font-weight:800;color:#111827}
+    .modal-close{
+      background:#f3f4f6;border:1px solid #e5e7eb;border-radius:8px;padding:6px 8px;cursor:pointer;
     }
-
-    .pf-tag {
-      margin-top: 8px;
-      color: #94a3b8;
-      font-size: 13px;
-    }
-
-    .pf-social {
-      display: flex;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .pf-social a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 34px;
-      height: 34px;
-      border: 1px solid #1e293b;
-      border-radius: 10px;
-      background: #0b1220;
-      color: #cbd5e1;
-      transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.15s,
-        box-shadow 0.15s;
-    }
-
-    .pf-social a:hover {
-      background: #38bdf8;
-      border-color: #38bdf8;
-      color: #0b1220;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4);
-    }
-
-    .pf-cols {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .pf-col h5 {
-      color: #e2e8f0;
-      font-weight: 800;
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-
-    .pf-col ul {
-      list-style: none;
-    }
-
-    .pf-col li {
-      margin: 8px 0;
-    }
-
-    .pf-col a {
-      color: #94a3b8;
-    }
-
-    .pf-col a:hover {
-      color: #e2e8f0;
-    }
-
-    .pf-bottom {
-      border-top: 1px solid #1e293b;
-      background: #0b1220;
-    }
-
-    .pf-bottom-wrap {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 12px 15px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      color: #8893a7;
-      font-size: 13px;
-    }
-
-    .pf-links {
-      display: flex;
-      gap: 10px;
-    }
-
-    .pf-links a {
-      color: #94a3b8;
-    }
-
-    .pf-links a:hover {
-      color: #e2e8f0;
-    }
-
-    /* Modal (auth placeholder) */
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(15, 23, 42, 0.7);
-      display: none;
-      z-index: 200;
-    }
-
-    .modal {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 420px;
-      max-width: 96vw;
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.35);
-      display: none;
-      z-index: 210;
-    }
-
-    .modal-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 12px;
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    .modal-head h3 {
-      font-size: 15px;
-      font-weight: 800;
-      color: #111827;
-    }
-
-    .modal-close {
-      background: #f3f4f6;
-      border: 1px solid #e5e7eb;
-      border-radius: 8px;
-      padding: 6px 8px;
-      cursor: pointer;
-    }
-
-    .modal-body {
-      padding: 12px;
-      font-size: 13px;
-      color: #4b5563;
-    }
+    .modal-body{padding:12px;font-size:13px;color:#4b5563}
 
     /* Responsive */
-    @media (max-width: 1100px) {
-      .pf-wrap {
-        grid-template-columns: 1fr;
-      }
-
-      .pf-cols {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .gs-main {
-        grid-template-columns: minmax(0, 1.9fr) minmax(260px, 1.2fr);
-      }
+    @media (max-width:1100px){
+      .pf-wrap{grid-template-columns:1fr}
+      .pf-cols{grid-template-columns:repeat(2,1fr)}
+      .gs-main{grid-template-columns:minmax(0,1.9fr) minmax(260px,1.2fr)}
     }
-
-    @media (max-width: 992px) {
-      .wc-nav {
-        display: none;
-      }
-
-      .mobile-menu-btn {
-        display: inline-block;
-      }
-
-      .wc-brand-text {
-        font-size: 18px;
-      }
-
-      .wc-slab {
-        width: 22px;
-        height: 22px;
-        font-size: 13px;
-      }
-
-      .gs-main {
-        grid-template-columns: 1fr;
-      }
-
-      .gs-sidebar {
-        order: -1;
-      }
-
-      .gs-top-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .gs-layout-two {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width:992px){
+      .wc-nav{display:none}
+      .mobile-menu-btn{display:inline-block}
+      .wc-brand-text{font-size:18px}
+      .wc-slab{width:22px;height:22px;font-size:13px}
+      .gs-main{grid-template-columns:1fr}
+      .gs-sidebar{order:-1}
+      .gs-top-grid{grid-template-columns:1fr}
+      .gs-layout-two{grid-template-columns:1fr}
     }
-
-    @media (max-width: 640px) {
-      .pf-cols {
-        grid-template-columns: 1fr;
-      }
-
-      .gs-summary-grid {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width:640px){
+      .pf-cols{grid-template-columns:1fr}
+      .gs-summary-grid{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -1165,65 +549,15 @@
             <div>
               <h2>Grammar &amp; Spell Checker</h2>
               <small>
-                Quickly spot spelling, grammar, and style issues with in-text highlights.
+                Detect spelling, grammar, and style issues with in-text highlights.
               </small>
             </div>
           </div>
 
           <div class="gs-input-wrap">
             <label for="gsInput">Paste or type your text</label>
-            <textarea
-              id="gsInput"
-              class="gs-textarea"
-              placeholder="Paste a paragraph, email, or blog intro here and click &quot;Check text&quot; to see instant feedback."
-              spellcheck="true"
-            ></textarea>
-          </div>
 
-          <div class="gs-actions">
-            <button type="button" class="btn-primary" id="gsCheckBtn">
-              <i class="fas fa-wand-magic-sparkles"></i>
-              Check text
-            </button>
-            <button type="button" class="btn-ghost" id="gsClearBtn">
-              Clear
-            </button>
-          </div>
-
-          <p class="gs-note">
-            This checker runs fully in your browser. Your text is not sent to any server or external API.
-          </p>
-          <p class="gs-error" id="gsError" style="display: none;"></p>
-        </article>
-
-        <!-- Result card -->
-        <article class="card" id="gsResultCard">
-          <div class="card-header">
-            <div>
-              <h2>Result</h2>
-              <small>Issues, suggestions, and a quick quality snapshot.</small>
-            </div>
-            <div class="gs-result-header-actions">
-              <button type="button" class="btn-chip" id="gsCopyBtn">
-                <i class="fas fa-copy"></i>
-                <span>Copy clean text</span>
-              </button>
-              <button type="button" class="btn-chip" id="gsPrintBtn">
-                <i class="fas fa-print"></i>
-                <span>Print result</span>
-              </button>
-            </div>
-          </div>
-
-          <div id="gsResultBody">
-            <div class="gs-result-main-title" id="gsMainTitle">
-              Waiting for text to check…
-            </div>
-            <p class="gs-result-sub" id="gsResultSummary">
-              Paste your content on the left and choose <strong>Check text</strong> to see
-              spelling, grammar, and style highlights, plus a quick readability snapshot.
-            </p>
-
+            <!-- SUMMARY -->
             <div class="gs-summary-grid">
               <div class="gs-summary-box">
                 <div class="gs-summary-label">Words</div>
@@ -1248,13 +582,70 @@
               </div>
             </div>
 
+            <textarea
+              id="gsInput"
+              class="gs-textarea"
+              placeholder="Paste a paragraph, email, or blog intro here and click &quot;Check text&quot; to see instant feedback."
+              spellcheck="true"
+            ></textarea>
+          </div>
+
+          <div class="gs-actions">
+            <button type="button" class="btn-primary" id="gsCheckBtn">
+              <i class="fas fa-wand-magic-sparkles"></i>
+              Check text
+            </button>
+            <button type="button" class="btn-ghost" id="gsClearBtn">
+              Clear
+            </button>
+          </div>
+
+          <p class="gs-note">
+            This tool runs fully in your browser. No text is sent to a server or external API.
+          </p>
+          <p class="gs-error" id="gsError" style="display:none;"></p>
+        </article>
+
+        <!-- Result card -->
+        <article class="card" id="gsResultCard">
+          <div class="card-header">
+            <div>
+              <h2>Result</h2>
+              <small>Issues, suggestions, and a quick quality snapshot.</small>
+            </div>
+            <div class="gs-result-header-actions">
+              <button type="button" class="btn-chip" id="gsCopyBtn">
+                <i class="fas fa-copy"></i>
+                <span>Copy</span>
+              </button>
+              <button type="button" class="btn-chip" id="gsPrintBtn">
+                <i class="fas fa-print"></i>
+                <span>Print</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="gsResultBody">
+            <div class="gs-result-main-title" id="gsMainTitle">
+              Waiting for text to check…
+            </div>
+            <p class="gs-result-sub" id="gsResultSummary">
+              Paste your content on the left and choose <strong>Check text</strong> to see
+              spelling, grammar, and style highlights, plus a quick readability snapshot.
+            </p>
+
             <div class="gs-layout-two">
               <div class="gs-issues">
                 <div class="gs-issues-title">
-                  Detected issues (<span id="gsIssueCount">0</span>)
+                  <span>Detected issues (<span id="gsIssueCount">0</span>)</span>
+                  <button type="button" id="gsFixAllBtn"
+                    class="btn-chip"
+                    style="padding:4px 10px;font-size:11px;">
+                    Fix all
+                  </button>
                 </div>
                 <div id="gsIssueList">
-                  <p style="font-size: 12px; color: #6b7280;">
+                  <p style="font-size:12px;color:#6b7280;">
                     No issues yet. Run a check to see detailed feedback on spelling,
                     grammar, and style.
                   </p>
@@ -1271,21 +662,21 @@
               <div class="gs-metric-row">
                 <div class="gs-metric-label">Spelling</div>
                 <div class="gs-metric-bar-wrap">
-                  <div class="gs-metric-bar spelling" id="gsBarSpelling" style="width: 0%;"></div>
+                  <div class="gs-metric-bar spelling" id="gsBarSpelling" style="width:0%;"></div>
                 </div>
                 <div class="gs-metric-value" id="gsValSpelling">0</div>
               </div>
               <div class="gs-metric-row">
                 <div class="gs-metric-label">Grammar</div>
                 <div class="gs-metric-bar-wrap">
-                  <div class="gs-metric-bar grammar" id="gsBarGrammar" style="width: 0%;"></div>
+                  <div class="gs-metric-bar grammar" id="gsBarGrammar" style="width:0%;"></div>
                 </div>
                 <div class="gs-metric-value" id="gsValGrammar">0</div>
               </div>
               <div class="gs-metric-row">
                 <div class="gs-metric-label">Style &amp; clarity</div>
                 <div class="gs-metric-bar-wrap">
-                  <div class="gs-metric-bar style" id="gsBarStyle" style="width: 0%;"></div>
+                  <div class="gs-metric-bar style" id="gsBarStyle" style="width:0%;"></div>
                 </div>
                 <div class="gs-metric-value" id="gsValStyle">0</div>
               </div>
@@ -1294,21 +685,21 @@
             <p class="gs-result-footnote">
               Scores are approximate. This checker uses rule-based analysis in your
               browser to avoid sending your text to remote servers. For high-stakes
-              documents, pair it with a second human review.
+              documents, combine it with a second human review.
             </p>
           </div>
         </article>
       </div>
 
-      <!-- Informational content (under tool cards) -->
+      <!-- Informational content -->
       <article class="section-block">
         <h3>How this grammar &amp; spell checker works</h3>
         <p>
           This tool runs a series of lightweight checks directly in your browser. It
           looks for common spelling mistakes, capitalization errors, missing sentence
           endings, long and hard-to-follow sentences, and small style issues such as
-          double spaces or a lowercase <em>&ldquo;i&rdquo;</em> used as the pronoun
-          <em>&ldquo;I&rdquo;</em>.
+          double spaces or informal lowercase <em>&ldquo;i&rdquo;</em> used as a
+          pronoun.
         </p>
         <p>
           Because everything happens locally, your text never leaves the page or gets
@@ -1322,7 +713,7 @@
           <li>
             <strong>Grammar:</strong> checks for missing capitalization at the start of
             sentences, missing punctuation at the end, and basic agreement problems
-            such as a lowercase <em>i</em> where it should be <em>I</em>.
+            such as lowercase <em>i</em>.
           </li>
           <li>
             <strong>Style &amp; clarity:</strong> highlights very long sentences,
@@ -1332,30 +723,20 @@
 
         <h4>SEO-style clarity score</h4>
         <p>
-          The clarity score (0–100) is a simple, SEO-inspired indicator. It starts at
-          100 and subtracts small penalties for each spelling, grammar, and style
-          issue. Text with short, clear sentences and few problems tends to score
-          higher and is usually easier for both readers and search engines to
-          understand.
+          The clarity score (0–100) starts at 100 and subtracts small penalties for each
+          spelling, grammar, and style issue.
         </p>
 
         <h4>Tips for using this tool</h4>
         <ul>
           <li>Paste a realistic section of your article, not just a single sentence.</li>
-          <li>
-            Fix spelling and grammar issues first, then review style suggestions to
-            improve clarity.
-          </li>
-          <li>
-            If the score is low because of long sentences, try splitting them into two
-            or more shorter ones.
-          </li>
+          <li>Fix spelling and grammar issues first, then review style suggestions.</li>
+          <li>Split very long sentences into two or more shorter ones.</li>
         </ul>
 
         <h4>Limitations</h4>
         <p>
-          This checker is intentionally lightweight. It does not fully replace
-          AI-powered or professional editing tools, and it may miss nuanced grammar
+          This checker is intentionally lightweight. It may miss nuanced grammar
           issues or context-specific word choices. For legal, medical, or very
           important business documents, always combine automated checks with a careful
           human review.
@@ -1426,6 +807,21 @@
       </div>
     </aside>
   </main>
+
+  <!-- Floating Grammarly-style proofreader panel -->
+  <aside class="gs-side-panel" id="gsSidePanel">
+    <div class="gs-side-header">
+      <div>
+        <div class="gs-side-title">Grammarly-style Proofreader</div>
+        <div class="gs-side-sub">Writing quality</div>
+      </div>
+      <div class="gs-side-score-text" id="gsSideScoreText">100 / 100</div>
+    </div>
+    <div class="gs-side-score-bar-wrap">
+      <div class="gs-side-score-bar" id="gsSideScoreBar"></div>
+    </div>
+    <div class="gs-side-category-list" id="gsSideCategoryList"></div>
+  </aside>
 
   <!-- Footer -->
   <footer class="pro-footer" id="about" aria-label="Website footer">
@@ -1504,15 +900,29 @@
     </div>
   </footer>
 
+  <!-- Suggestion popover -->
+  <div class="gs-suggestion-popover" id="gsSuggestionPopover" aria-hidden="true">
+    <div class="gs-popover-inner">
+      <div class="gs-popover-header">
+        <span class="star">★</span>
+        <span>Correct your spelling</span>
+      </div>
+      <div class="gs-popover-main" id="gsPopoverMain"></div>
+      <div class="gs-popover-sub" id="gsPopoverSub"></div>
+      <div class="gs-popover-actions">
+        <button type="button" class="gs-popover-apply" id="gsPopoverApplyBtn">
+          Apply
+        </button>
+        <button type="button" class="gs-popover-dismiss" id="gsPopoverDismissBtn">
+          <i class="fa fa-trash-can"></i> Dismiss
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Auth modal -->
   <div class="modal-overlay" id="authOverlay" aria-hidden="true"></div>
-  <div
-    class="modal"
-    id="authModal"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="authTitle"
-  >
+  <div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
     <div class="modal-head">
       <h3 id="authTitle"><i class="fas fa-user-lock"></i> Account</h3>
       <button class="modal-close" id="authCloseBtn" aria-label="Close">
@@ -1536,6 +946,8 @@
       initToolSearch();
       initGrammarSpellChecker();
       initCopyAndPrint();
+      initLiveStats();   // নতুন – লাইভ স্ট্যাটস
+      updateSidePanel(100, [], { spellingCount: 0, grammarCount: 0, styleCount: 0 });
     });
 
     function initYear() {
@@ -1627,20 +1039,11 @@
         { name: "Age Calculator", url: "age-calculator.html" },
         { name: "BMI Calculator", url: "bmi-calculator.html" },
         { name: "Calorie Calculator", url: "calorie-calculator.html" },
-        {
-          name: "Word & Character Counter",
-          url: "https://wordcalculator.net",
-        },
+        { name: "Word & Character Counter", url: "https://wordcalculator.net" },
         { name: "Case Converter", url: "case-converter.html" },
-        {
-          name: "Grammar & Spell Checker",
-          url: "grammar-spell-checker.html",
-        },
+        { name: "Grammar & Spell Checker", url: "grammar-spell-checker.html" },
         { name: "Readability Analyzer", url: "readability-analyzer.html" },
-        {
-          name: "Keyword Density Analyzer",
-          url: "keyword-density-analyzer.html",
-        },
+        { name: "Keyword Density Analyzer", url: "keyword-density-analyzer.html" },
         { name: "Title & Meta Preview", url: "title-meta-preview.html" },
         { name: "URL Slug Generator", url: "url-slug-generator.html" },
         { name: "Interest Calculator", url: "interest-calculator.html" },
@@ -1685,12 +1088,28 @@
       });
     }
 
-    /* Grammar & Spell checker logic (local, no API) */
+    /* Grammar & Spell checker logic */
     function initGrammarSpellChecker() {
       const checkBtn = $("#gsCheckBtn");
       const clearBtn = $("#gsClearBtn");
+      const fixAllBtn = $("#gsFixAllBtn");
+      const inputEl = $("#gsInput");
+
       if (checkBtn) checkBtn.addEventListener("click", runCheck);
       if (clearBtn) clearBtn.addEventListener("click", clearText);
+      if (fixAllBtn) fixAllBtn.addEventListener("click", applyAllFixes);
+
+      // Ctrl+Enter / Cmd+Enter শর্টকাট
+      if (inputEl) {
+        inputEl.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) {
+            e.preventDefault();
+            runCheck();
+          }
+        });
+      }
+
+      initPopoverDismiss();
     }
 
     const COMMON_SPELLING_MISTAKES = {
@@ -1714,6 +1133,9 @@
       langauge: "language",
     };
 
+    let lastCheckText = "";
+    let lastIssues = [];
+
     function runCheck() {
       const inputEl = $("#gsInput");
       const errorEl = $("#gsError");
@@ -1731,6 +1153,8 @@
 
       const { words, sentences, readTimeSeconds } = computeBasicStats(text);
       const issues = findIssues(text);
+      lastCheckText = text;
+      lastIssues = issues;
       updateResult(text, words, sentences, readTimeSeconds, issues);
     }
 
@@ -1738,6 +1162,8 @@
       $("#gsInput").value = "";
       $("#gsError").style.display = "none";
       $("#gsError").textContent = "";
+      lastCheckText = "";
+      lastIssues = [];
       resetResult();
     }
 
@@ -1788,7 +1214,7 @@
           if (!/[.!?]/.test(lastChar)) {
             issues.push({
               type: "grammar",
-              message: "Sentence may be missing a period or other ending punctuation.",
+              message: "Sentence may be missing ending punctuation.",
               suggestion: "Consider adding a period, question mark, or exclamation mark.",
               indexStart: lastNonSpaceIndex,
               indexEnd: lastNonSpaceIndex + 1,
@@ -1817,6 +1243,7 @@
           suggestion: "Replace with a single space.",
           indexStart: match.index,
           indexEnd: match.index + match[0].length,
+          replacement: " ",
         });
       }
 
@@ -1828,6 +1255,7 @@
           suggestion: "Change 'i' to 'I'.",
           indexStart: match.index,
           indexEnd: match.index + 1,
+          replacement: "I",
         });
       }
 
@@ -1842,6 +1270,7 @@
             suggestion: `Did you mean "${COMMON_SPELLING_MISTAKES[lower]}"?`,
             indexStart: match.index,
             indexEnd: match.index + rawWord.length,
+            replacement: COMMON_SPELLING_MISTAKES[lower],
           });
         }
       }
@@ -1880,35 +1309,28 @@
       return -1;
     }
 
-    function updateResult(text, words, sentences, readTimeSeconds, issues) {
-      const mainTitle = $("#gsMainTitle");
-      const resultSummary = $("#gsResultSummary");
+    /* SUMMARY আপডেট – রান চেক আর লাইভ ইনপুট দুই জায়গায় ব্যবহার হবে */
+    function updateSummary(words, sentences, readTimeSeconds) {
       const summaryWords = $("#gsSummaryWords");
       const summarySentences = $("#gsSummarySentences");
       const summaryReadTime = $("#gsSummaryReadTime");
       const summaryDensity = $("#gsSummaryDensity");
-      const summaryScore = $("#gsSummaryScore");
-      const summaryScoreNote = $("#gsSummaryScoreNote");
-      const issueList = $("#gsIssueList");
-      const issueCountEl = $("#gsIssueCount");
-      const highlightEl = $("#gsHighlight");
-
-      const spellingCount = issues.filter((i) => i.type === "spelling").length;
-      const grammarCount = issues.filter((i) => i.type === "grammar").length;
-      const styleCount = issues.filter((i) => i.type === "style").length;
-      const totalIssues = issues.length;
 
       summaryWords.textContent = words.toString();
       summarySentences.textContent =
         sentences + (sentences === 1 ? " sentence" : " sentences");
 
-      if (readTimeSeconds < 60) {
-        summaryReadTime.textContent = readTimeSeconds + "s";
+      if (readTimeSeconds != null) {
+        if (readTimeSeconds < 60) {
+          summaryReadTime.textContent = readTimeSeconds + "s";
+        } else {
+          const mins = Math.floor(readTimeSeconds / 60);
+          const secs = readTimeSeconds % 60;
+          summaryReadTime.textContent =
+            mins + " min" + (mins > 1 ? "s" : "") + (secs ? " " + secs + "s" : "");
+        }
       } else {
-        const mins = Math.floor(readTimeSeconds / 60);
-        const secs = readTimeSeconds % 60;
-        summaryReadTime.textContent =
-          mins + " min" + (mins > 1 ? "s" : "") + (secs ? " " + secs + "s" : "");
+        summaryReadTime.textContent = "0s";
       }
 
       const avgWordsPerSentence = sentences ? words / sentences : 0;
@@ -1916,12 +1338,37 @@
         avgWordsPerSentence > 0
           ? `${avgWordsPerSentence.toFixed(1)} words/sentence`
           : "—";
+    }
+
+    function updateResult(text, words, sentences, readTimeSeconds, issues) {
+      const mainTitle = $("#gsMainTitle");
+      const resultSummary = $("#gsResultSummary");
+      const summaryScore = $("#gsSummaryScore");
+      const summaryScoreNote = $("#gsSummaryScoreNote");
+      const issueList = $("#gsIssueList");
+      const issueCountEl = $("#gsIssueCount");
+      const highlightEl = $("#gsHighlight");
+      const fixAllBtn = $("#gsFixAllBtn");
+
+      // summary বক্স আপডেট
+      updateSummary(words, sentences, readTimeSeconds);
+
+      const spellingCount = issues.filter((i) => i.type === "spelling").length;
+      const grammarCount = issues.filter((i) => i.type === "grammar").length;
+      const styleCount = issues.filter((i) => i.type === "style").length;
+      const totalIssues = issues.length;
 
       let score = 100;
       score -= spellingCount * 4;
       score -= grammarCount * 3;
       score -= styleCount * 2;
       if (score < 0) score = 0;
+
+      updateSidePanel(score, issues, {
+        spellingCount,
+        grammarCount,
+        styleCount,
+      });
 
       summaryScore.textContent = score.toString();
       summaryScoreNote.textContent =
@@ -1936,14 +1383,22 @@
 
       resultSummary.innerHTML =
         totalIssues === 0
-          ? "Your text looks clean based on this lightweight checker. You can still review it manually for tone, nuance, and domain-specific phrasing."
-          : "Review the list of issues on the left, then hover or click highlights in the text preview to see where each problem appears.";
+          ? "Your text looks clean based on this lightweight checker. You can still review it manually for tone, nuance, or domain-specific phrasing."
+          : "Review the list of issues on the left, then click highlights in the text preview to see where each problem appears and optionally apply quick fixes.";
 
       issueCountEl.textContent = totalIssues.toString();
 
+      const autoFixCount = issues.filter((i) => i.replacement).length;
+      if (fixAllBtn) {
+        fixAllBtn.disabled = autoFixCount === 0;
+        fixAllBtn.textContent = autoFixCount
+          ? `Fix all (${autoFixCount})`
+          : "Fix all";
+      }
+
       if (!totalIssues) {
         issueList.innerHTML =
-          '<p style="font-size: 12px; color: #16a34a;"><strong>No issues detected.</strong> Your spelling, grammar, and basic style look good for this text sample.</p>';
+          '<p style="font-size:12px;color:#16a34a;"><strong>No issues detected.</strong> Your spelling, grammar, and basic style look good for this text sample.</p>';
       } else {
         issueList.innerHTML = issues
           .map((issue, idx) => {
@@ -1959,6 +1414,7 @@
                 : issue.type === "grammar"
                 ? "Grammar"
                 : "Style";
+            const canFix = !!issue.replacement;
             return `
               <div class="gs-issue" data-issue-index="${idx}">
                 <div class="gs-issue-header">
@@ -1972,6 +1428,11 @@
                         issue.suggestion
                       )}</div>`
                     : ""
+                }
+                ${
+                  canFix
+                    ? `<button type="button" class="btn-chip" data-fix-index="${idx}" style="padding:3px 8px;font-size:11px;margin-top:4px;">Fix</button>`
+                    : `<div style="font-size:11px;color:#9ca3af;margin-top:2px;">Review manually</div>`
                 }
               </div>
             `;
@@ -2007,12 +1468,13 @@
         valStyle.textContent = styleCount.toString();
       }
 
+      // click from list -> highlight
       $$("#gsIssueList .gs-issue").forEach((el, idx) => {
         el.addEventListener("click", () => {
           const issue = issues[idx];
           if (!issue) return;
           const highlight = highlightEl.querySelector(
-            `.gs-mark[data-range="${issue.indexStart}-${issue.indexEnd}"]`
+            `.gs-mark[data-issue-index="${idx}"]`
           );
           if (highlight) {
             highlight.scrollIntoView({ block: "center", behavior: "smooth" });
@@ -2020,24 +1482,75 @@
             setTimeout(() => {
               highlight.classList.remove("gs-mark-focus");
             }, 800);
+            openSuggestionPopoverForIssue(highlight, issue, idx);
           }
         });
       });
+
+      // per-issue Fix বাটন
+      $$("#gsIssueList button[data-fix-index]").forEach((btn) => {
+        btn.addEventListener("click", (ev) => {
+          ev.stopPropagation();
+          const idx = parseInt(btn.getAttribute("data-fix-index"), 10);
+          applyFixByIndex(idx);
+        });
+      });
+
+      attachHighlightHandlers(issues);
+    }
+
+    function updateSidePanel(score, issues, stats) {
+      const scoreTextEl = $("#gsSideScoreText");
+      const scoreBar = $("#gsSideScoreBar");
+      const listEl = $("#gsSideCategoryList");
+
+      if (!scoreTextEl || !scoreBar || !listEl) return;
+
+      scoreTextEl.textContent = `${score} / 100`;
+      scoreBar.style.width = `${score}%`;
+
+      const spellingCount = stats.spellingCount || 0;
+      const grammarCount = stats.grammarCount || 0;
+      const styleCount = stats.styleCount || 0;
+
+      const criticalCount = spellingCount + grammarCount;
+      const longSentenceCount = issues.filter(
+        (i) => i.type === "style" && i.message.startsWith("Long sentence")
+      ).length;
+      const clarifyCount = spellingCount;
+
+      const categories = [
+        { label: "Correctness", count: criticalCount, level: "critical" },
+        { label: "Shorten sentences", count: longSentenceCount, level: "style" },
+        { label: "Clarify terms", count: clarifyCount, level: "style" },
+        { label: "Style & clarity", count: styleCount, level: "style" },
+      ];
+
+      listEl.innerHTML = categories
+        .map(
+          (cat) => `
+          <div class="gs-side-cat ${cat.count ? "has-issue" : ""}">
+            <div class="gs-side-cat-main">
+              <span class="gs-side-cat-dot ${cat.level}"></span>
+              <span class="gs-side-cat-label">${cat.label}</span>
+            </div>
+            <span class="gs-side-cat-count">${cat.count}</span>
+          </div>
+        `
+        )
+        .join("");
     }
 
     function resetResult() {
       $("#gsMainTitle").textContent = "Waiting for text to check…";
       $("#gsResultSummary").innerHTML =
         'Paste your content on the left and choose <strong>Check text</strong> to see spelling, grammar, and style highlights, plus a quick readability snapshot.';
-      $("#gsSummaryWords").textContent = "0";
-      $("#gsSummarySentences").textContent = "0 sentences";
-      $("#gsSummaryReadTime").textContent = "0s";
-      $("#gsSummaryDensity").textContent = "—";
+      updateSummary(0, 0, 0);
       $("#gsSummaryScore").textContent = "100";
       $("#gsSummaryScoreNote").textContent = "0 issues found";
       $("#gsIssueCount").textContent = "0";
       $("#gsIssueList").innerHTML =
-        '<p style="font-size: 12px; color: #6b7280;">No issues yet. Run a check to see detailed feedback on spelling, grammar, and style.</p>';
+        '<p style="font-size:12px;color:#6b7280;">No issues yet. Run a check to see detailed feedback on spelling, grammar, and style.</p>';
       $("#gsHighlight").textContent =
         "Your checked text with highlights will appear here.";
       $("#gsBarSpelling").style.width = "0%";
@@ -2046,6 +1559,13 @@
       $("#gsValSpelling").textContent = "0";
       $("#gsValGrammar").textContent = "0";
       $("#gsValStyle").textContent = "0";
+      const fixAllBtn = $("#gsFixAllBtn");
+      if (fixAllBtn) {
+        fixAllBtn.disabled = true;
+        fixAllBtn.textContent = "Fix all";
+      }
+      updateSidePanel(100, [], { spellingCount: 0, grammarCount: 0, styleCount: 0 });
+      hideSuggestionPopover();
     }
 
     function buildHighlightedHtml(text, issues) {
@@ -2055,31 +1575,26 @@
 
       const parts = [];
       let cursor = 0;
-      const ranges = issues.map((i) => ({
-        start: i.indexStart,
-        end: i.indexEnd,
-        type: i.type,
-      }));
+      const indexed = issues.map((issue, idx) => ({ ...issue, idx }));
+      indexed.sort((a, b) => a.indexStart - b.indexStart);
 
-      ranges.sort((a, b) => a.start - b.start);
-
-      for (const range of ranges) {
-        if (range.start > cursor) {
-          parts.push(escapeHtml(text.slice(cursor, range.start)));
+      for (const issue of indexed) {
+        if (issue.indexStart > cursor) {
+          parts.push(escapeHtml(text.slice(cursor, issue.indexStart)));
         }
-        const rawSegment = text.slice(range.start, range.end);
+        const rawSegment = text.slice(issue.indexStart, issue.indexEnd);
         const typeClass =
-          range.type === "spelling"
+          issue.type === "spelling"
             ? "spelling"
-            : range.type === "grammar"
+            : issue.type === "grammar"
             ? "grammar"
             : "style";
         parts.push(
-          `<span class="gs-mark ${typeClass}" data-range="${range.start}-${range.end}">${escapeHtml(
+          `<span class="gs-mark ${typeClass}" data-range="${issue.indexStart}-${issue.indexEnd}" data-issue-index="${issue.idx}">${escapeHtml(
             rawSegment
           )}</span>`
         );
-        cursor = range.end;
+        cursor = issue.indexEnd;
       }
 
       if (cursor < text.length) {
@@ -2095,6 +1610,142 @@
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;");
+    }
+
+    /* Popover behaviour */
+    function attachHighlightHandlers(issues) {
+      const marks = $$(".gs-mark");
+      marks.forEach((mark) => {
+        mark.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const idx = parseInt(mark.getAttribute("data-issue-index"), 10);
+          const issue = issues[idx];
+          if (!issue) return;
+          openSuggestionPopoverForIssue(mark, issue, idx);
+        });
+      });
+    }
+
+    function openSuggestionPopoverForIssue(markEl, issue, idx) {
+      const pop = $("#gsSuggestionPopover");
+      const mainEl = $("#gsPopoverMain");
+      const subEl = $("#gsPopoverSub");
+      const applyBtn = $("#gsPopoverApplyBtn");
+
+      if (!pop || !mainEl || !subEl || !applyBtn) return;
+
+      mainEl.textContent = issue.replacement || markEl.textContent;
+      subEl.textContent =
+        issue.suggestion ||
+        (issue.replacement
+          ? "Click Apply to replace with this suggestion."
+          : "Review this part of the sentence manually.");
+
+      if (issue.replacement) {
+        applyBtn.disabled = false;
+        applyBtn.textContent = "Apply";
+      } else {
+        applyBtn.disabled = true;
+        applyBtn.textContent = "No auto-fix";
+      }
+
+      pop.dataset.issueIndex = String(idx);
+
+      const rect = markEl.getBoundingClientRect();
+      const top = window.scrollY + rect.bottom + 6;
+      const left = window.scrollX + rect.left;
+
+      pop.style.top = top + "px";
+      pop.style.left = left + "px";
+      pop.style.display = "block";
+    }
+
+    function hideSuggestionPopover() {
+      const pop = $("#gsSuggestionPopover");
+      if (pop) pop.style.display = "none";
+    }
+
+    function initPopoverDismiss() {
+      const dismissBtn = $("#gsPopoverDismissBtn");
+      const applyBtn = $("#gsPopoverApplyBtn");
+
+      if (dismissBtn) {
+        dismissBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          hideSuggestionPopover();
+        });
+      }
+
+      if (applyBtn) {
+        applyBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const popover = $("#gsSuggestionPopover");
+          if (!popover) return;
+          const idxStr = popover.dataset.issueIndex;
+          if (idxStr == null) return;
+          const idx = parseInt(idxStr, 10);
+          hideSuggestionPopover();
+          applyFixByIndex(idx);
+        });
+      }
+
+      document.addEventListener("click", (e) => {
+        const popover = $("#gsSuggestionPopover");
+        if (!popover || popover.style.display === "none") return;
+        if (!popover.contains(e.target) && !e.target.classList.contains("gs-mark")) {
+          hideSuggestionPopover();
+        }
+      });
+    }
+
+    // একেকটা ইস্যু আলাদা করে ফিক্স করার ফাংশন
+    function applyFixByIndex(idx) {
+      const issue = lastIssues[idx];
+      if (!issue || !issue.replacement) return;
+
+      const inputEl = $("#gsInput");
+      let currentText = (inputEl.value || "").replace(/\r\n/g, "\n");
+      if (currentText !== lastCheckText) {
+        alert("Text has changed. Please run ‘Check text’ again first.");
+        return;
+      }
+
+      const before = lastCheckText.slice(0, issue.indexStart);
+      const after = lastCheckText.slice(issue.indexEnd);
+      const newText = before + issue.replacement + after;
+      inputEl.value = newText;
+      runCheck();
+    }
+
+    // সব অটো-ফিক্স একসাথে
+    function applyAllFixes() {
+      if (!lastIssues || !lastIssues.length) return;
+      const inputEl = $("#gsInput");
+      let currentText = (inputEl.value || "").replace(/\r\n/g, "\n");
+      if (currentText !== lastCheckText) {
+        alert("Text has changed. Please run ‘Check text’ again first.");
+        return;
+      }
+
+      const fixable = lastIssues.filter((i) => i.replacement);
+      if (!fixable.length) return;
+
+      fixable.sort((a, b) => a.indexStart - b.indexStart);
+
+      let result = "";
+      let cursor = 0;
+      for (const iss of fixable) {
+        if (iss.indexStart < cursor) {
+          continue;
+        }
+        result += lastCheckText.slice(cursor, iss.indexStart);
+        result += iss.replacement;
+        cursor = iss.indexEnd;
+      }
+      result += lastCheckText.slice(cursor);
+
+      inputEl.value = result;
+      runCheck();
     }
 
     /* Copy + Print */
@@ -2220,6 +1871,37 @@
         </html>
       `);
       win.document.close();
+    }
+
+    /* লাইভ স্ট্যাটস – টাইপ করার সাথে সাথে উপরের summary আপডেট হবে */
+    function initLiveStats() {
+      const inputEl = $("#gsInput");
+      if (!inputEl) return;
+
+      inputEl.addEventListener("input", () => {
+        const text = (inputEl.value || "").replace(/\r\n/g, "\n");
+
+        if (!text.trim()) {
+          lastCheckText = "";
+          lastIssues = [];
+          resetResult();
+          return;
+        }
+
+        const { words, sentences, readTimeSeconds } = computeBasicStats(text);
+        updateSummary(words, sentences, readTimeSeconds);
+
+        // যদি শেষবার চেক করার পর থেকে টেক্সট বদলায়
+        if (lastCheckText && text !== lastCheckText) {
+          $("#gsMainTitle").textContent = "Text changed since last check.";
+          $("#gsResultSummary").innerHTML =
+            "Run <strong>Check text</strong> again to refresh issues and suggestions.";
+        } else if (!lastCheckText) {
+          $("#gsMainTitle").textContent = "Ready when you are.";
+          $("#gsResultSummary").innerHTML =
+            "Click <strong>Check text</strong> to see grammar, spelling, and style feedback.";
+        }
+      });
     }
   </script>
 </body>
