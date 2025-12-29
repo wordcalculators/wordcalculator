@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ==================== SEO ==================== -->
+  <title>Free AI Essay Outline Generator | Create Structured Outlines Instantly</title>
+  <meta name="description" content="Generate professional essay outlines using AI from text, websites, and YouTube videos. 100% free, no registration required." />
+  <meta name="keywords" content="AI essay outline generator, essay outline maker, thesis outline generator, academic writing tool" />
+  <meta name="author" content="WordCalculator.net" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#020617" />
+  <link rel="canonical" href="https://wordcalculator.net/ai-essay-outline-generator.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wordcalculator.net/ai-essay-outline-generator.html" />
+  <meta property="og:title" content="Free AI Essay Outline Generator | Create Structured Outlines Instantly" />
+  <meta property="og:description" content="Generate professional essay outlines using AI from text, websites, and YouTube videos. 100% free, no registration required." />
+  <meta property="og:image" content="https://wordcalculator.net/images/ai-essay-outline-generator-og.jpg" />
+  <meta property="og:site_name" content="WordCalculator.net" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <style>
+    /* ===== Base / Theme ===== */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --text:#1f2937;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --primary:#2563eb;
+      --primary-dark:#1e40af;
+      --bg:#f8fafc;
+      --card:#fff;
+      --danger:#b91c1c;
+      --success:#16a34a;
+      --header-bg:#020617;
+      --footer-bg:#020617;
+    }
+    html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    body{
+      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      font-size:14px;
+    }
+    a{color:inherit;text-decoration:none}
+
+    /* ===== Header / Nav ===== */
+    .wc-header{background:var(--header-bg);color:#fff;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+    .wc-wrap{
+      max-width:1200px;margin:0 auto;padding:10px 12px;
+      display:flex;align-items:center;gap:14px;
+    }
+    .wc-logo{display:inline-flex;align-items:center;gap:8px}
+    .slab{
+      display:inline-flex;width:24px;height:24px;align-items:center;justify-content:center;
+      font-weight:800;font-size:14px;border-radius:2px;color:#fff;
+    }
+    .slab-w{background:#1f2327}
+    .slab-o{background:#a7c1db;color:#1e2a3a}
+    .slab-r{background:#7d96ae}
+    .slab-d{background:#2f5d8a}
+    .wc-brand-text{display:inline-flex;flex-direction:column;line-height:1.05;font-size:19px;font-weight:800}
+    .wc-brand-text small{font-size:10px;opacity:.95}
+    .wc-nav{margin-left:10px;display:flex;align-items:center;gap:8px;flex:1}
+    .wc-link{
+      color:#f4f8fc;font-weight:700;font-size:14px;padding:6px 10px;border-radius:8px;
+      transition:.15s;background:transparent;border:0;cursor:pointer;
+    }
+    .wc-link:hover{background:rgba(255,255,255,.14)}
+    .mobile-menu-btn{margin-left:auto;background:transparent;border:0;color:#fff;font-size:20px;display:none;cursor:pointer}
+    .mobile-nav{
+      position:fixed;top:0;right:-100%;width:320px;height:100vh;background:#1f2933;
+      box-shadow:-2px 0 10px rgba(0,0,0,.18);transition:right .3s;z-index:100;
+    }
+    .mobile-nav.active{right:0}
+    .mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;z-index:90}
+    .mobile-overlay.active{display:block}
+    .mobile-nav-header{display:flex;justify-content:space-between;align-items:center;padding:16px;border-bottom:1px solid #34495e}
+    .mobile-close-btn{background:transparent;border:0;color:#fff;font-size:20px;cursor:pointer}
+    .mobile-nav-links{padding:16px}
+    .mobile-link{
+      display:block;color:#ecf0f1;padding:12px 0;border-bottom:1px solid #34495e;
+      font-weight:700;background:transparent;border:0;width:100%;text-align:left;cursor:pointer;
+    }
+
+    /* ===== Breadcrumb ===== */
+    .crumb-wrap{max-width:1200px;margin:8px auto 0;padding:0 15px 4px}
+    .crumbs{font-size:13px;color:#111827}
+    .crumbs a{color:#2563eb}
+    .crumbs a:hover{text-decoration:underline}
+    .crumb-separator{margin:0 4px;color:#6b7280}
+    .crumb-current{font-weight:700}
+
+    /* ===== Main Layout ===== */
+    .age-main{
+      max-width:800px;margin:22px auto 40px;padding:0 15px;
+    }
+
+    /* ===== Cards ===== */
+    .tool-card{
+      background:var(--card);
+      border-radius:8px;
+      border:1px solid #e2e8f0;
+      box-shadow:0 2px 8px rgba(0,0,0,0.06);
+      margin-bottom:20px;
+      overflow:hidden;
+    }
+
+    /* ===== Hero Section ===== */
+    .hero-section {
+      text-align:center;
+      margin-bottom:24px;
+    }
+    .hero-title {
+      font-size:28px;
+      font-weight:800;
+      color:#111827;
+      margin-bottom:8px;
+    }
+    .hero-subtitle {
+      font-size:15px;
+      color:#6b7280;
+      max-width:600px;
+      margin:0 auto 16px;
+      line-height:1.5;
+    }
+    .hero-badge {
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      background:#f0f9ff;
+      border:1px solid #bae6fd;
+      padding:6px 12px;
+      border-radius:20px;
+      font-weight:600;
+      font-size:13px;
+      color:#0369a1;
+      margin-bottom:16px;
+    }
+
+    /* ===== Converter Card ===== */
+    .converter-card{padding:0}
+    .converter-header{
+      padding:16px;background:#f8fafc;color:#111827;
+      border-bottom:1px solid #e5e7eb;
+    }
+    .converter-title{
+      font-size:18px;
+      font-weight:700;
+      margin-bottom:4px;
+      color:#111827;
+    }
+    .converter-subtitle{
+      font-size:13px;
+      color:#6b7280;
+    }
+    .converter-body{padding:16px}
+
+    /* Workspace */
+    .workspace{
+      background:#ffffff;
+    }
+
+    /* Source Selection */
+    .source-selection {
+      display:flex;
+      gap:8px;
+      margin-bottom:20px;
+    }
+    @media (max-width: 640px) {
+      .source-selection {
+        flex-direction:column;
+      }
+    }
+    .source-option {
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:12px;
+      border:1px solid #e5e7eb;
+      border-radius:8px;
+      background:#ffffff;
+      cursor:pointer;
+      transition:all 0.2s;
+      text-align:center;
+    }
+    .source-option:hover {
+      background:#f9fafb;
+      border-color:#d1d5db;
+    }
+    .source-option.active {
+      background:#f0f9ff;
+      border-color:#3b82f6;
+      box-shadow:0 0 0 1px #3b82f6;
+    }
+    .source-icon {
+      font-size:20px;
+      color:#6b7280;
+      margin-bottom:8px;
+    }
+    .source-option.active .source-icon {
+      color:#2563eb;
+    }
+    .source-title {
+      font-weight:600;
+      font-size:14px;
+      color:#374151;
+    }
+
+    /* Input Container */
+    .input-container {
+      display:none;
+    }
+    .input-container.active {
+      display:block;
+    }
+    .input-area {
+      background:#ffffff;
+      border-radius:8px;
+      padding:16px;
+      border:1px solid #e5e7eb;
+      margin-bottom:20px;
+    }
+    textarea {
+      width:100%;
+      min-height:120px;
+      border:1px solid #e5e7eb;
+      border-radius:6px;
+      padding:12px;
+      outline:none;
+      font-size:14px;
+      background:#ffffff;
+      transition:border-color .15s;
+      font-family:inherit;
+      resize:vertical;
+    }
+    textarea:focus{
+      border-color:#2563eb;
+      box-shadow:0 0 0 2px rgba(37,99,235,0.1);
+    }
+    
+    .input-wrapper {
+      position:relative;
+      display:flex;
+      align-items:center;
+    }
+    .input-wrapper i {
+      position:absolute;
+      left:12px;
+      color:#6b7280;
+      font-size:14px;
+    }
+    input[type="text"], input[type="url"] {
+      width:100%;
+      height:44px;
+      border:1px solid #e5e7eb;
+      border-radius:6px;
+      padding:0 12px 0 38px;
+      outline:none;
+      font-size:14px;
+      background:#ffffff;
+      transition:border-color .15s;
+      font-family:inherit;
+    }
+    input[type="text"]:focus, input[type="url"]:focus{
+      border-color:#2563eb;
+      box-shadow:0 0 0 2px rgba(37,99,235,0.1);
+    }
+    
+    /* Options Row */
+    .options-row {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      margin-bottom:20px;
+    }
+    @media (max-width: 480px) {
+      .options-row {
+        grid-template-columns:1fr;
+      }
+    }
+    .option-group {
+      display:flex;
+      flex-direction:column;
+    }
+    .option-label {
+      font-size:13px;
+      font-weight:600;
+      color:#374151;
+      margin-bottom:6px;
+    }
+    select {
+      width:100%;
+      height:44px;
+      border:1px solid #e5e7eb;
+      border-radius:6px;
+      padding:0 12px;
+      outline:none;
+      font-size:14px;
+      background:#ffffff;
+      font-family:inherit;
+      cursor:pointer;
+    }
+    select:focus {
+      border-color:#2563eb;
+      box-shadow:0 0 0 2px rgba(37,99,235,0.1);
+    }
+    
+    /* Generate Button */
+    .generate-btn-container {
+      text-align:center;
+      margin-top:24px;
+    }
+    .btn{
+      padding:12px 24px;
+      border-radius:8px;
+      border:1px solid transparent;
+      background:#2563eb;
+      color:#ffffff;
+      font-size:15px;
+      font-weight:600;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      transition:all .2s;
+      min-width:180px;
+    }
+    .btn:hover{
+      background:#1d4ed8;
+      transform:translateY(-1px);
+      box-shadow:0 4px 12px rgba(37,99,235,0.2);
+    }
+    .btn:active{
+      transform:translateY(0);
+    }
+    
+    /* Loading Animation */
+    .loading-container {
+      text-align:center;
+      padding:40px 20px;
+      display:none;
+    }
+    .loading-container.active {
+      display:block;
+    }
+    .ai-loading {
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:16px;
+    }
+    .ai-spinner {
+      width:50px;
+      height:50px;
+      border:3px solid #f3f3f3;
+      border-top:3px solid #2563eb;
+      border-radius:50%;
+      animation:spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform:rotate(0deg); }
+      100% { transform:rotate(360deg); }
+    }
+    .ai-thinking {
+      font-size:14px;
+      color:#6b7280;
+      font-weight:500;
+    }
+    
+    /* Outline Preview */
+    .outline-container {
+      display:none;
+    }
+    .outline-container.active {
+      display:block;
+      animation:fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity:0; }
+      to { opacity:1; }
+    }
+    
+    .outline-header {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:20px;
+      padding-bottom:16px;
+      border-bottom:1px solid #e5e7eb;
+    }
+    .outline-title {
+      font-size:16px;
+      font-weight:600;
+      color:#111827;
+    }
+    
+    .outline-preview {
+      background:#ffffff;
+      border:1px solid #e5e7eb;
+      border-radius:8px;
+      padding:24px;
+      line-height:1.6;
+      font-size:14px;
+      max-height:none;
+      overflow-y:visible;
+    }
+    
+    .outline-content {
+      max-width:100%;
+    }
+    
+    .essay-title {
+      font-size:20px;
+      font-weight:700;
+      color:#111827;
+      margin-bottom:16px;
+      text-align:center;
+      padding-bottom:16px;
+      border-bottom:1px solid #e5e7eb;
+    }
+    
+    .outline-section {
+      margin-bottom:24px;
+    }
+    
+    .section-header {
+      font-weight:600;
+      color:#1e40af;
+      margin-bottom:12px;
+      font-size:15px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    
+    .section-header .roman {
+      background:#1e40af;
+      color:white;
+      width:28px;
+      height:28px;
+      border-radius:6px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:12px;
+      font-weight:700;
+    }
+    
+    .main-point {
+      margin-left:20px;
+      margin-bottom:10px;
+    }
+    
+    .point-header {
+      font-weight:600;
+      color:#374151;
+      margin-bottom:6px;
+      display:flex;
+      align-items:flex-start;
+      gap:8px;
+    }
+    
+    .point-letter {
+      background:#dbeafe;
+      color:#1e40af;
+      min-width:24px;
+      height:24px;
+      border-radius:4px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:12px;
+      font-weight:700;
+      margin-top:1px;
+    }
+    
+    .point-content {
+      flex:1;
+    }
+    
+    .point-description {
+      color:#4b5563;
+      font-size:13px;
+      line-height:1.5;
+      margin-top:4px;
+      padding-left:32px;
+    }
+    
+    .sub-points {
+      margin-left:32px;
+      margin-top:8px;
+    }
+    
+    .sub-point {
+      display:flex;
+      gap:8px;
+      margin-bottom:6px;
+      color:#6b7280;
+      font-size:13px;
+    }
+    
+    .sub-number {
+      min-width:20px;
+      height:20px;
+      background:#f3f4f6;
+      border-radius:3px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:11px;
+      font-weight:600;
+      color:#6b7280;
+    }
+
+    /* AI Generated Content Styling */
+    .ai-generated {
+      white-space: pre-line;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.8;
+    }
+    
+    .ai-generated h1, .ai-generated h2, .ai-generated h3 {
+      color: #1e40af;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    
+    .ai-generated ul, .ai-generated ol {
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+    
+    .ai-generated li {
+      margin-bottom: 8px;
+    }
+    
+    .ai-generated strong {
+      color: #374151;
+    }
+    
+    /* Actions */
+    .actions{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-top:20px;
+      padding-top:20px;
+      border-top:1px solid #e5e7eb;
+    }
+    .btn-ghost{
+      background:#ffffff;
+      color:#374151;
+      border:1px solid #d1d5db;
+      padding:8px 16px;
+      font-size:14px;
+      min-width:auto;
+    }
+    .btn-ghost:hover{
+      background:#f9fafb;
+      border-color:#9ca3af;
+      transform:none;
+      box-shadow:none;
+    }
+
+    /* Status */
+    .status{
+      font-size:13px;
+      color:#6b7280;
+      text-align:center;
+      margin:12px 0;
+      min-height:20px;
+    }
+    .error-text{
+      color:#dc2626;
+      font-weight:500;
+    }
+    .success-text{
+      color:#16a34a;
+      font-weight:500;
+    }
+
+    /* ===== Footer ===== */
+    .pro-footer{background:var(--footer-bg);color:#cbd5e1;margin-top:40px}
+    .pf-wrap{
+      max-width:1200px;margin:0 auto;padding:34px 15px;
+      display:grid;grid-template-columns:320px 1fr;gap:26px;
+    }
+    .pf-logo{display:flex;align-items:center;gap:10px}
+    .pf-brand-text{font-size:18px;font-weight:800;color:#e2e8f0}
+    .pf-brand-text span{color:#38bdf8}
+    .pf-tag{margin-top:8px;color:#94a3b8;font-size:13px}
+    .pf-social{display:flex;gap:10px;margin-top:10px}
+    .pf-social a{
+      display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;
+      border:1px solid #1e293b;border-radius:10px;background:#0b1220;color:#cbd5e1;
+      transition:background .15s,color .15s,border-color .15s,transform .15s,box-shadow .15s;
+    }
+    .pf-social a:hover{
+      background:#38bdf8;border-color:#38bdf8;color:#0b1220;transform:translateY(-1px);
+      box-shadow:0 4px 12px rgba(56,189,248,.4);
+    }
+    .pf-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .pf-col h5{color:#e2e8f0;font-weight:900;font-size:14px;margin-bottom:10px}
+    .pf-col ul{list-style:none}
+    .pf-col li{margin:8px 0}
+    .pf-col a{color:#94a3b8}
+    .pf-col a:hover{color:#e2e8f0}
+    .pf-bottom{border-top:1px solid #1e293b;background:#0b1220}
+    .pf-bottom-wrap{
+      max-width:1200px;margin:0 auto;padding:12px 15px;
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      color:#8893a7;font-size:13px;
+    }
+    .pf-links{display:flex;gap:10px}
+    .pf-links a{color:#94a3b8}
+    .pf-links a:hover{color:#e2e8f0}
+
+    /* ===== Responsive ===== */
+    @media (max-width:1100px){
+      .pf-wrap{grid-template-columns:1fr}
+      .pf-cols{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:768px){
+      .wc-nav{display:none}
+      .mobile-menu-btn{display:inline-block}
+    }
+    @media (max-width:640px){
+      .pf-cols{grid-template-columns:1fr}
+      .age-main{max-width:100%}
+      .hero-title{font-size:24px}
+    }
+    @media (prefers-reduced-motion:reduce){
+      *{animation:none !important;transition:none !important}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== Header ===== -->
+  <header class="wc-header">
+    <div class="wc-wrap">
+      <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+        <span class="slab slab-w">W</span>
+        <span class="slab slab-o">O</span>
+        <span class="slab slab-r">R</span>
+        <span class="slab slab-d">D</span>
+        <span class="wc-brand-text">
+          Calculator
+          <small class="wc-tagline">Every Word Counts</small>
+        </span>
+      </a>
+
+      <nav class="wc-nav" aria-label="Primary">
+        <a href="https://wordcalculator.net" class="wc-link">Home</a>
+        <a href="blog.html" class="wc-link">Blog</a>
+        <a href="tools.html" class="wc-link">Tools</a>
+        <a href="about.html" class="wc-link">About Us</a>
+        <a href="signin.html" class="wc-link">Sign In</a>
+      </nav>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <div class="mobile-nav-header">
+        <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <span class="wc-brand-text">Calculator</span>
+        </a>
+        <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="https://wordcalculator.net" class="nav-link mobile-link">Home</a>
+        <a href="blog.html" class="nav-link mobile-link">Blog</a>
+        <a href="tools.html" class="nav-link mobile-link">Tools</a>
+        <a href="about.html" class="nav-link mobile-link">About Us</a>
+        <a href="signin.html" class="nav-link mobile-link">Sign In</a>
+      </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+  </header>
+
+  <!-- ===== Breadcrumbs ===== -->
+  <div class="crumb-wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="https://wordcalculator.net">Home</a>
+      <span class="crumb-separator">/</span>
+      <a href="tools.html">Tools</a>
+      <span class="crumb-separator">/</span>
+      <span class="crumb-current">AI Essay Outline Generator</span>
+    </nav>
+  </div>
+
+  <!-- ==================== MAIN ==================== -->
+  <main class="age-main">
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-crown"></i> Free & Downloadable
+        </div>
+        <h1 class="hero-title">AI Essay Outline Generator</h1>
+        <p class="hero-subtitle">Generate professional essay outlines from text, websites, and YouTube videos. <strong>100% Free, no registration required.</strong></p>
+      </div>
+    </div>
+
+    <!-- Main Tool Card -->
+    <article class="tool-card converter-card">
+      <header class="converter-header">
+        <div class="converter-header-left">
+          <h2 class="converter-title">Generate Your Essay Outline</h2>
+          <p class="converter-subtitle">Select input source and enter content to create a professional outline</p>
+        </div>
+      </header>
+
+      <div class="converter-body">
+        <section class="workspace" aria-label="Essay outline generator workspace">
+          
+          <!-- Source Selection -->
+          <div class="source-selection">
+            <div class="source-option active" data-source="text">
+              <div class="source-icon">
+                <i class="fas fa-pen-to-square"></i>
+              </div>
+              <div class="source-title">Write/Paste</div>
+            </div>
+            
+            <div class="source-option" data-source="youtube">
+              <div class="source-icon">
+                <i class="fab fa-youtube"></i>
+              </div>
+              <div class="source-title">YouTube</div>
+            </div>
+            
+            <div class="source-option" data-source="website">
+              <div class="source-icon">
+                <i class="fas fa-globe"></i>
+              </div>
+              <div class="source-title">Website</div>
+            </div>
+          </div>
+
+          <!-- Text Input -->
+          <div class="input-container active" id="textInputContainer">
+            <div class="input-area">
+              <textarea id="textInput" placeholder="Paste your text here...">The importance of Search Engine Optimization (SEO) in digital marketing. How SEO helps businesses increase visibility, drive organic traffic, and improve user experience.</textarea>
+            </div>
+          </div>
+
+          <!-- YouTube Input -->
+          <div class="input-container" id="youtubeInputContainer">
+            <div class="input-area">
+              <div class="input-wrapper">
+                <i class="fab fa-youtube"></i>
+                <input type="text" id="youtubeInput" placeholder="Enter YouTube URL or video ID">
+              </div>
+            </div>
+          </div>
+
+          <!-- Website Input -->
+          <div class="input-container" id="websiteInputContainer">
+            <div class="input-area">
+              <div class="input-wrapper">
+                <i class="fas fa-link"></i>
+                <input type="url" id="websiteInput" placeholder="Enter website URL">
+              </div>
+            </div>
+          </div>
+
+          <!-- Options -->
+          <div class="options-row">
+            <div class="option-group">
+              <div class="option-label">Language</div>
+              <select id="languageSelect">
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="it">Italian</option>
+              </select>
+            </div>
+            
+            <div class="option-group">
+              <div class="option-label">Essay Type</div>
+              <select id="essayTypeSelect">
+                <option value="research" selected>Research Essay</option>
+                <option value="argumentative">Argumentative Essay</option>
+                <option value="persuasive">Persuasive Essay</option>
+                <option value="expository">Expository Essay</option>
+                <option value="narrative">Narrative Essay</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Status Message -->
+          <div class="status" id="statusMessage">
+            <span id="statusText">Enter content and click Generate Outline</span>
+            <span id="errorText" class="error-text" style="display:none;"></span>
+            <span id="successText" class="success-text" style="display:none;"></span>
+          </div>
+
+          <!-- Generate Button -->
+          <div class="generate-btn-container">
+            <button type="button" class="btn" id="generateBtn">
+              <i class="fas fa-wand-magic-sparkles"></i> Generate Outline
+            </button>
+          </div>
+
+          <!-- Loading State -->
+          <div class="loading-container" id="loadingContainer">
+            <div class="ai-loading">
+              <div class="ai-spinner"></div>
+              <div class="ai-thinking" id="aiThinkingText">AI is analyzing your content and generating outline...</div>
+            </div>
+          </div>
+
+          <!-- Outline Preview -->
+          <div class="outline-container" id="outlineContainer">
+            <div class="outline-header">
+              <div class="outline-title">Generated Essay Outline</div>
+            </div>
+            
+            <div class="outline-preview" id="outlinePreview">
+              <!-- Outline will be inserted here by JavaScript -->
+            </div>
+
+            <div class="actions">
+              <button type="button" class="btn btn-ghost" id="copyOutlineBtn">
+                <i class="fas fa-copy"></i> Copy Outline
+              </button>
+              <button type="button" class="btn btn-ghost" id="downloadOutlineBtn">
+                <i class="fas fa-download"></i> Download
+              </button>
+              <button type="button" class="btn btn-ghost" id="newOutlineBtn">
+                <i class="fas fa-plus"></i> New Outline
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="pro-footer" id="about" aria-label="Website footer">
+    <div class="pf-wrap">
+      <div class="pf-brand">
+        <div class="pf-logo">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <div class="pf-brand-text">
+            WordCalculator<span>.net</span>
+          </div>
+        </div>
+        <p class="pf-tag">A focused, distraction-free toolkit for precise writing.</p>
+        <div class="pf-social">
+          <a href="https://facebook.com/wordcalculator" aria-label="Facebook" rel="noopener" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/wordcalculator" aria-label="X (Twitter)" rel="noopener" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://linkedin.com/company/wordcalculator" aria-label="LinkedIn" rel="noopener" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://youtube.com/@wordcalculator" aria-label="YouTube" rel="noopener" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="pf-cols">
+        <div class="pf-col">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="https://wordcalculator.net">Editor</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="grammar-spell-checker.html">Grammar Check</a></li>
+            <li><a href="ai-essay-outline-generator.html">AI Essay Outline Generator</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="guides.html">Tips &amp; Guides</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="bug-report.html">Report a Bug</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html">Cookie Policy</a></li>
+            <li><a href="security.html">Security</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pf-bottom">
+      <div class="pf-bottom-wrap">
+        <div>© <span id="pf-year"></span> WordCalculator.net — All rights reserved.</div>
+        <div class="pf-links">
+          <a href="sitemap.html">Sitemap</a>
+          <a href="status.html">Status</a>
+          <a href="accessibility.html">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== JS ==================== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      initYear();
+      initMobileMenu();
+      initAIEssayOutlineGenerator();
+    });
+
+    function initYear() {
+      const el = document.getElementById("pf-year");
+      if (el) el.textContent = new Date().getFullYear();
+    }
+
+    function initMobileMenu() {
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const mobileCloseBtn = document.getElementById("mobileCloseBtn");
+      const mobileNav = document.getElementById("mobileNav");
+      const mobileOverlay = document.getElementById("mobileOverlay");
+      if (!mobileMenuBtn || !mobileNav || !mobileOverlay) return;
+
+      const open = () => {
+        mobileNav.classList.add("active");
+        mobileOverlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+      };
+      const close = () => {
+        mobileNav.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+      };
+
+      mobileMenuBtn.addEventListener("click", open);
+      if (mobileCloseBtn) mobileCloseBtn.addEventListener("click", close);
+      mobileOverlay.addEventListener("click", close);
+      document.querySelectorAll(".mobile-link").forEach(link => link.addEventListener("click", close));
+    }
+
+    /* ===== AI Essay Outline Generator ===== */
+    function initAIEssayOutlineGenerator() {
+      // DOM Elements
+      const sourceOptions = document.querySelectorAll(".source-option");
+      const textInput = document.getElementById("textInput");
+      const youtubeInput = document.getElementById("youtubeInput");
+      const websiteInput = document.getElementById("websiteInput");
+      const textInputContainer = document.getElementById("textInputContainer");
+      const youtubeInputContainer = document.getElementById("youtubeInputContainer");
+      const websiteInputContainer = document.getElementById("websiteInputContainer");
+      
+      const languageSelect = document.getElementById("languageSelect");
+      const essayTypeSelect = document.getElementById("essayTypeSelect");
+      
+      const generateBtn = document.getElementById("generateBtn");
+      const newOutlineBtn = document.getElementById("newOutlineBtn");
+      const copyOutlineBtn = document.getElementById("copyOutlineBtn");
+      const downloadOutlineBtn = document.getElementById("downloadOutlineBtn");
+      
+      const loadingContainer = document.getElementById("loadingContainer");
+      const outlineContainer = document.getElementById("outlineContainer");
+      const outlinePreview = document.getElementById("outlinePreview");
+      const aiThinkingText = document.getElementById("aiThinkingText");
+      
+      const statusText = document.getElementById("statusText");
+      const errorText = document.getElementById("errorText");
+      const successText = document.getElementById("successText");
+      const statusMessage = document.getElementById("statusMessage");
+
+      // Current state
+      let currentSource = "text";
+      let isGenerating = false;
+      let currentOutline = null;
+
+      // Google Gemini API Configuration
+      const GEMINI_API_KEY = "AIzaSyDdHfeek9go4bsCDVh0Tw4q8JhIaPKKH9M"; // Your API Key
+      const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${GEMINI_API_KEY}`;
+
+      // Language mapping
+      const languageMap = {
+        en: "English",
+        es: "Spanish",
+        fr: "French",
+        de: "German",
+        it: "Italian"
+      };
+
+      // Essay type mapping
+      const essayTypeMap = {
+        research: "Research Essay",
+        argumentative: "Argumentative Essay",
+        persuasive: "Persuasive Essay",
+        expository: "Expository Essay",
+        narrative: "Narrative Essay"
+      };
+
+      function showError(message) {
+        errorText.textContent = message;
+        errorText.style.display = "inline";
+        successText.style.display = "none";
+        statusMessage.style.color = "#dc2626";
+        setTimeout(() => {
+          errorText.style.display = "none";
+          statusMessage.style.color = "#6b7280";
+        }, 5000);
+      }
+
+      function showSuccess(message) {
+        successText.textContent = message;
+        successText.style.display = "inline";
+        errorText.style.display = "none";
+        statusMessage.style.color = "#16a34a";
+        setTimeout(() => {
+          successText.style.display = "none";
+          statusMessage.style.color = "#6b7280";
+        }, 3000);
+      }
+
+      function switchSource(source) {
+        currentSource = source;
+        
+        sourceOptions.forEach(option => {
+          if (option.getAttribute("data-source") === source) {
+            option.classList.add("active");
+          } else {
+            option.classList.remove("active");
+          }
+        });
+        
+        textInputContainer.classList.toggle("active", source === "text");
+        youtubeInputContainer.classList.toggle("active", source === "youtube");
+        websiteInputContainer.classList.toggle("active", source === "website");
+      }
+
+      function getCurrentInput() {
+        switch (currentSource) {
+          case "text":
+            return textInput.value.trim();
+          case "youtube":
+            return youtubeInput.value.trim();
+          case "website":
+            return websiteInput.value.trim();
+          default:
+            return "";
+        }
+      }
+
+      function validateInput() {
+        const input = getCurrentInput();
+        
+        if (!input) {
+          showError("Please enter some content to generate an outline.");
+          return false;
+        }
+        
+        if (currentSource === "youtube") {
+          if (!input.includes("youtube.com") && !input.includes("youtu.be") && input.length !== 11) {
+            showError("Please enter a valid YouTube URL or video ID.");
+            return false;
+          }
+        }
+        
+        if (currentSource === "website") {
+          if (!input.startsWith("http://") && !input.startsWith("https://")) {
+            showError("Please enter a valid URL starting with http:// or https://");
+            return false;
+          }
+        }
+        
+        return true;
+      }
+
+      // Generate outline using Google Gemini API
+      async function generateOutlineWithGemini(content, essayType, language) {
+        try {
+          const languageName = languageMap[language] || "English";
+          const essayTypeName = essayTypeMap[essayType] || "Research Essay";
+          
+          const prompt = `
+            You are a professional essay writing assistant. Create a detailed, well-structured essay outline.
+            
+            ESSAY TOPIC/INPUT: ${content}
+            ESSAY TYPE: ${essayTypeName}
+            LANGUAGE: ${languageName}
+            
+            Requirements:
+            1. Create a comprehensive outline with clear sections
+            2. Use Roman numerals (I, II, III) for main sections
+            3. Use capital letters (A, B, C) for main points
+            4. Use numbers (1, 2, 3) for sub-points
+            5. Include brief descriptions for each point
+            6. Make it detailed, academic, and professional
+            7. Format the output in clean HTML with proper indentation
+            8. The outline should be at least 5 main sections
+            9. Include introduction, body paragraphs, and conclusion
+            10. Add relevant examples and evidence suggestions
+            
+            Format the response in HTML. Start with a title tag.
+          `;
+
+          const response = await fetch(GEMINI_API_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              contents: [{
+                parts: [{ text: prompt }]
+              }],
+              generationConfig: {
+                temperature: 0.7,
+                topK: 40,
+                topP: 0.95,
+                maxOutputTokens: 1500
+              }
+            })
+          });
+
+          if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(`API Error: ${errorData.error?.message || response.status}`);
+          }
+
+          const data = await response.json();
+          
+          if (data.candidates && data.candidates[0] && data.candidates[0].content) {
+            return formatOutline(data.candidates[0].content.parts[0].text, content, essayTypeName);
+          } else {
+            throw new Error("No valid response from AI");
+          }
+          
+        } catch (error) {
+          console.error('Gemini API Error:', error);
+          // Fallback to local generation if API fails
+          return generateFallbackOutline(content, essayType, languageName);
+        }
+      }
+
+      // Format the outline response
+      function formatOutline(aiResponse, topic, essayType) {
+        // Clean the AI response
+        let formatted = aiResponse
+          .replace(/```html/g, '')
+          .replace(/```/g, '')
+          .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '')
+          .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '')
+          .trim();
+        
+        // If response doesn't have HTML, wrap it in proper HTML
+        if (!formatted.includes('<') || !formatted.includes('>')) {
+          formatted = `
+            <div class="ai-generated">
+              <h2>${essayType}: ${topic.substring(0, 60)}...</h2>
+              <div style="white-space: pre-line; line-height: 1.8; font-family: 'Inter', sans-serif;">
+                ${formatted}
+              </div>
+            </div>
+          `;
+        }
+        
+        return formatted;
+      }
+
+      // Fallback outline generation (if API fails)
+      function generateFallbackOutline(content, essayType, languageName) {
+        const keywords = extractKeywords(content);
+        const title = generateEssayTitle(keywords, essayType);
+        
+        return `
+          <div class="outline-content">
+            <div class="essay-title">${title}</div>
+            
+            <div class="outline-section">
+              <div class="section-header">
+                <span class="roman">I</span>
+                <span>INTRODUCTION</span>
+              </div>
+              
+              <div class="main-point">
+                <div class="point-header">
+                  <span class="point-letter">A</span>
+                  <div class="point-content">Background and Context</div>
+                </div>
+                <div class="point-description">Provide background information about ${keywords[0] || "the topic"} and its relevance in today's context.</div>
+              </div>
+              
+              <div class="main-point">
+                <div class="point-header">
+                  <span class="point-letter">B</span>
+                  <div class="point-content">Thesis Statement</div>
+                </div>
+                <div class="point-description">State the main argument or purpose of the essay clearly and concisely.</div>
+              </div>
+            </div>
+            
+            <div class="outline-section">
+              <div class="section-header">
+                <span class="roman">II</span>
+                <span>MAIN ARGUMENTS</span>
+              </div>
+              
+              <div class="main-point">
+                <div class="point-header">
+                  <span class="point-letter">A</span>
+                  <div class="point-content">Primary Argument</div>
+                </div>
+                <div class="point-description">Discuss the main argument supporting your thesis with evidence and examples.</div>
+                <div class="sub-points">
+                  <div class="sub-point">
+                    <span class="sub-number">1</span>
+                    <span>Supporting evidence from research</span>
+                  </div>
+                  <div class="sub-point">
+                    <span class="sub-number">2</span>
+                    <span>Real-world examples</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="main-point">
+                <div class="point-header">
+                  <span class="point-letter">B</span>
+                  <div class="point-content">Secondary Argument</div>
+                </div>
+                <div class="point-description">Present additional arguments that strengthen your thesis.</div>
+              </div>
+            </div>
+            
+            <div class="outline-section">
+              <div class="section-header">
+                <span class="roman">III</span>
+                <span>CONCLUSION</span>
+              </div>
+              
+              <div class="main-point">
+                <div class="point-header">
+                  <span class="point-letter">A</span>
+                  <div class="point-content">Summary of Arguments</div>
+                </div>
+                <div class="point-description">Briefly restate the main points and arguments presented.</div>
+              </div>
+              
+              <div class="main-point">
+                <div class="point-header">
+                  <span class="point-letter">B</span>
+                  <div class="point-content">Final Thoughts</div>
+                </div>
+                <div class="point-description">Provide concluding remarks and suggest areas for further research or action.</div>
+              </div>
+            </div>
+            
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 13px;">
+              <p><strong>Note:</strong> This is a basic outline. For a more detailed and customized outline, try again or refine your input.</p>
+              <p>Essay Type: ${essayTypeMap[essayType] || "Research Essay"} | Language: ${languageName}</p>
+            </div>
+          </div>
+        `;
+      }
+
+      // Helper functions for fallback
+      function extractKeywords(text) {
+        const words = text.toLowerCase().split(/\W+/);
+        const stopWords = new Set(['the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'this', 'that']);
+        const wordFreq = {};
+        
+        words.forEach(word => {
+          word = word.replace(/[^a-z]/g, '');
+          if (word.length > 3 && !stopWords.has(word)) {
+            wordFreq[word] = (wordFreq[word] || 0) + 1;
+          }
+        });
+        
+        return Object.entries(wordFreq)
+          .sort((a, b) => b[1] - a[1])
+          .slice(0, 6)
+          .map(entry => entry[0]);
+      }
+
+      function generateEssayTitle(keywords, essayType) {
+        const prefixes = {
+          research: "Research Analysis of",
+          argumentative: "The Argument for",
+          persuasive: "A Persuasive Case for",
+          expository: "Understanding",
+          narrative: "A Narrative About"
+        };
+        
+        const prefix = prefixes[essayType] || "Essay on";
+        const mainKeywords = keywords.slice(0, 2).join(" and ") || "the topic";
+        return `${prefix} ${mainKeywords}`;
+      }
+
+      // Main generation function
+      async function generateOutline() {
+        if (isGenerating) return;
+        
+        if (!validateInput()) return;
+        
+        isGenerating = true;
+        const input = getCurrentInput();
+        const language = languageSelect.value;
+        const essayType = essayTypeSelect.value;
+        
+        // Show loading
+        loadingContainer.classList.add("active");
+        outlineContainer.classList.remove("active");
+        generateBtn.disabled = true;
+        statusText.textContent = "AI is generating your outline...";
+        
+        // Update thinking text
+        const texts = [
+          "Analyzing your content...",
+          "Identifying key themes and arguments...",
+          "Structuring the outline professionally...",
+          "Adding detailed points and subpoints...",
+          "Formatting for academic excellence...",
+          "Finalizing your comprehensive outline..."
+        ];
+        
+        let textIndex = 0;
+        aiThinkingText.textContent = texts[textIndex];
+        const thinkingInterval = setInterval(() => {
+          textIndex = (textIndex + 1) % texts.length;
+          aiThinkingText.textContent = texts[textIndex];
+        }, 1800);
+        
+        try {
+          // Call Gemini API
+          const outlineHTML = await generateOutlineWithGemini(input, essayType, language);
+          currentOutline = outlineHTML;
+          
+          // Display outline
+          outlinePreview.innerHTML = outlineHTML;
+          
+          // Scroll to outline smoothly
+          setTimeout(() => {
+            outlineContainer.classList.add("active");
+            outlineContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+          
+          // Update status
+          statusText.textContent = "Outline generated successfully!";
+          showSuccess("Professional outline created with Google Gemini AI.");
+          
+        } catch (error) {
+          console.error("Generation error:", error);
+          showError("Failed to generate outline. Please try again or check your internet connection.");
+        } finally {
+          clearInterval(thinkingInterval);
+          loadingContainer.classList.remove("active");
+          generateBtn.disabled = false;
+          isGenerating = false;
+        }
+      }
+
+      function newOutline() {
+        outlineContainer.classList.remove("active");
+        statusText.textContent = "Enter content and click Generate Outline";
+        showSuccess("Ready to create new outline");
+        
+        // Optional: Clear inputs
+        if (currentSource === "text") {
+          textInput.value = "";
+        } else if (currentSource === "youtube") {
+          youtubeInput.value = "";
+        } else if (currentSource === "website") {
+          websiteInput.value = "";
+        }
+      }
+
+      async function copyOutline() {
+        if (!currentOutline) {
+          showError("No outline to copy. Please generate an outline first.");
+          return;
+        }
+        
+        try {
+          // Extract text from HTML
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = currentOutline;
+          const textToCopy = tempDiv.textContent || tempDiv.innerText || '';
+          
+          await navigator.clipboard.writeText(textToCopy);
+          showSuccess("Outline copied to clipboard!");
+          copyOutlineBtn.innerHTML = '<i class="fas fa-check"></i> Copied';
+          setTimeout(() => {
+            copyOutlineBtn.innerHTML = '<i class="fas fa-copy"></i> Copy Outline';
+          }, 2000);
+        } catch (err) {
+          showError("Failed to copy outline. You can manually select and copy the text.");
+        }
+      }
+
+      function downloadOutline() {
+        if (!currentOutline) {
+          showError("No outline to download. Please generate an outline first.");
+          return;
+        }
+        
+        try {
+          // Create text content
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = currentOutline;
+          const textContent = tempDiv.textContent || tempDiv.innerText || '';
+          
+          // Create filename with date and topic
+          const topic = textInput.value.substring(0, 30).replace(/[^a-zA-Z0-9]/g, '-');
+          const date = new Date().toISOString().slice(0, 10);
+          const filename = `essay-outline-${topic}-${date}.txt`;
+          
+          const blob = new Blob([textContent], { type: 'text/plain;charset=utf-8' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = filename;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+          
+          showSuccess("Outline downloaded successfully!");
+        } catch (error) {
+          showError("Failed to download outline. Please try again.");
+        }
+      }
+
+      // Event Listeners
+      sourceOptions.forEach(option => {
+        option.addEventListener("click", () => {
+          const source = option.getAttribute("data-source");
+          switchSource(source);
+        });
+      });
+
+      // Allow Enter key to generate outline in text input
+      textInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && e.ctrlKey) {
+          e.preventDefault();
+          generateOutline();
+        }
+      });
+
+      generateBtn.addEventListener("click", generateOutline);
+      newOutlineBtn.addEventListener("click", newOutline);
+      copyOutlineBtn.addEventListener("click", copyOutline);
+      downloadOutlineBtn.addEventListener("click", downloadOutline);
+
+      // Initialize with sample data
+      textInput.addEventListener("input", () => {
+        if (textInput.value.trim().length > 0) {
+          statusText.textContent = "Ready to generate outline";
+        }
+      });
+    }
+  </script>
+</body>
+</html>
