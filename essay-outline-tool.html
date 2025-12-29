@@ -424,6 +424,7 @@
       font-size:14px;
       max-height:none;
       overflow-y:visible;
+      min-height:400px;
     }
     
     .outline-content {
@@ -535,7 +536,6 @@
 
     /* AI Generated Content Styling */
     .ai-generated {
-      white-space: pre-line;
       font-family: 'Inter', sans-serif;
       line-height: 1.8;
     }
@@ -546,19 +546,74 @@
       margin-bottom: 10px;
     }
     
+    .ai-generated h1 { font-size: 22px; }
+    .ai-generated h2 { font-size: 18px; }
+    .ai-generated h3 { font-size: 16px; }
+    
     .ai-generated ul, .ai-generated ol {
-      margin-left: 20px;
+      margin-left: 25px;
       margin-bottom: 15px;
     }
     
     .ai-generated li {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      padding-left: 5px;
     }
     
     .ai-generated strong {
       color: #374151;
     }
     
+    .ai-generated p {
+      margin-bottom: 15px;
+    }
+    
+    .ai-generated .section {
+      background: #f8fafc;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #2563eb;
+    }
+    
+    /* Generated Content Styles */
+    .generated-content {
+      width: 100%;
+    }
+    
+    .outline-item {
+      margin-bottom: 15px;
+      padding-left: 10px;
+    }
+    
+    .outline-item.main {
+      font-weight: 600;
+      color: #111827;
+      margin-top: 20px;
+    }
+    
+    .outline-item.sub {
+      margin-left: 20px;
+      color: #4b5563;
+    }
+    
+    .outline-item.detail {
+      margin-left: 40px;
+      color: #6b7280;
+      font-size: 13px;
+    }
+    
+    .outline-badge {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1e40af;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-right: 10px;
+    }
+
     /* Actions */
     .actions{
       display:flex;
@@ -644,11 +699,20 @@
     @media (max-width:768px){
       .wc-nav{display:none}
       .mobile-menu-btn{display:inline-block}
+      .outline-preview {
+        padding:16px;
+      }
     }
     @media (max-width:640px){
       .pf-cols{grid-template-columns:1fr}
       .age-main{max-width:100%}
       .hero-title{font-size:24px}
+      .actions {
+        flex-direction:column;
+      }
+      .btn-ghost {
+        width:100%;
+      }
     }
     @media (prefers-reduced-motion:reduce){
       *{animation:none !important;transition:none !important}
@@ -772,7 +836,7 @@
           <!-- Text Input -->
           <div class="input-container active" id="textInputContainer">
             <div class="input-area">
-              <textarea id="textInput" placeholder="Paste your text here...">The importance of Search Engine Optimization (SEO) in digital marketing. How SEO helps businesses increase visibility, drive organic traffic, and improve user experience.</textarea>
+              <textarea id="textInput" placeholder="Paste your essay topic or text here...">The importance of Search Engine Optimization (SEO) in digital marketing. How SEO helps businesses increase visibility, drive organic traffic, and improve user experience.</textarea>
             </div>
           </div>
 
@@ -1014,10 +1078,6 @@
       let isGenerating = false;
       let currentOutline = null;
 
-      // Google Gemini API Configuration
-      const GEMINI_API_KEY = "AIzaSyDdHfeek9go4bsCDVh0Tw4q8JhIaPKKH9M"; // Your API Key
-      const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${GEMINI_API_KEY}`;
-
       // Language mapping
       const languageMap = {
         en: "English",
@@ -1034,6 +1094,15 @@
         persuasive: "Persuasive Essay",
         expository: "Expository Essay",
         narrative: "Narrative Essay"
+      };
+
+      // Essay type descriptions
+      const essayTypeDescriptions = {
+        research: "A systematic investigation to establish facts and reach new conclusions",
+        argumentative: "Presents arguments for and against an issue to persuade the reader",
+        persuasive: "Aims to convince the reader to accept a particular point of view",
+        expository: "Explains or informs about a topic in a clear, concise manner",
+        narrative: "Tells a story or recounts an experience with a clear purpose"
       };
 
       function showError(message) {
@@ -1112,224 +1181,6 @@
         return true;
       }
 
-      // Generate outline using Google Gemini API
-      async function generateOutlineWithGemini(content, essayType, language) {
-        try {
-          const languageName = languageMap[language] || "English";
-          const essayTypeName = essayTypeMap[essayType] || "Research Essay";
-          
-          const prompt = `
-            You are a professional essay writing assistant. Create a detailed, well-structured essay outline.
-            
-            ESSAY TOPIC/INPUT: ${content}
-            ESSAY TYPE: ${essayTypeName}
-            LANGUAGE: ${languageName}
-            
-            Requirements:
-            1. Create a comprehensive outline with clear sections
-            2. Use Roman numerals (I, II, III) for main sections
-            3. Use capital letters (A, B, C) for main points
-            4. Use numbers (1, 2, 3) for sub-points
-            5. Include brief descriptions for each point
-            6. Make it detailed, academic, and professional
-            7. Format the output in clean HTML with proper indentation
-            8. The outline should be at least 5 main sections
-            9. Include introduction, body paragraphs, and conclusion
-            10. Add relevant examples and evidence suggestions
-            
-            Format the response in HTML. Start with a title tag.
-          `;
-
-          const response = await fetch(GEMINI_API_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              contents: [{
-                parts: [{ text: prompt }]
-              }],
-              generationConfig: {
-                temperature: 0.7,
-                topK: 40,
-                topP: 0.95,
-                maxOutputTokens: 1500
-              }
-            })
-          });
-
-          if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(`API Error: ${errorData.error?.message || response.status}`);
-          }
-
-          const data = await response.json();
-          
-          if (data.candidates && data.candidates[0] && data.candidates[0].content) {
-            return formatOutline(data.candidates[0].content.parts[0].text, content, essayTypeName);
-          } else {
-            throw new Error("No valid response from AI");
-          }
-          
-        } catch (error) {
-          console.error('Gemini API Error:', error);
-          // Fallback to local generation if API fails
-          return generateFallbackOutline(content, essayType, languageName);
-        }
-      }
-
-      // Format the outline response
-      function formatOutline(aiResponse, topic, essayType) {
-        // Clean the AI response
-        let formatted = aiResponse
-          .replace(/```html/g, '')
-          .replace(/```/g, '')
-          .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '')
-          .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '')
-          .trim();
-        
-        // If response doesn't have HTML, wrap it in proper HTML
-        if (!formatted.includes('<') || !formatted.includes('>')) {
-          formatted = `
-            <div class="ai-generated">
-              <h2>${essayType}: ${topic.substring(0, 60)}...</h2>
-              <div style="white-space: pre-line; line-height: 1.8; font-family: 'Inter', sans-serif;">
-                ${formatted}
-              </div>
-            </div>
-          `;
-        }
-        
-        return formatted;
-      }
-
-      // Fallback outline generation (if API fails)
-      function generateFallbackOutline(content, essayType, languageName) {
-        const keywords = extractKeywords(content);
-        const title = generateEssayTitle(keywords, essayType);
-        
-        return `
-          <div class="outline-content">
-            <div class="essay-title">${title}</div>
-            
-            <div class="outline-section">
-              <div class="section-header">
-                <span class="roman">I</span>
-                <span>INTRODUCTION</span>
-              </div>
-              
-              <div class="main-point">
-                <div class="point-header">
-                  <span class="point-letter">A</span>
-                  <div class="point-content">Background and Context</div>
-                </div>
-                <div class="point-description">Provide background information about ${keywords[0] || "the topic"} and its relevance in today's context.</div>
-              </div>
-              
-              <div class="main-point">
-                <div class="point-header">
-                  <span class="point-letter">B</span>
-                  <div class="point-content">Thesis Statement</div>
-                </div>
-                <div class="point-description">State the main argument or purpose of the essay clearly and concisely.</div>
-              </div>
-            </div>
-            
-            <div class="outline-section">
-              <div class="section-header">
-                <span class="roman">II</span>
-                <span>MAIN ARGUMENTS</span>
-              </div>
-              
-              <div class="main-point">
-                <div class="point-header">
-                  <span class="point-letter">A</span>
-                  <div class="point-content">Primary Argument</div>
-                </div>
-                <div class="point-description">Discuss the main argument supporting your thesis with evidence and examples.</div>
-                <div class="sub-points">
-                  <div class="sub-point">
-                    <span class="sub-number">1</span>
-                    <span>Supporting evidence from research</span>
-                  </div>
-                  <div class="sub-point">
-                    <span class="sub-number">2</span>
-                    <span>Real-world examples</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="main-point">
-                <div class="point-header">
-                  <span class="point-letter">B</span>
-                  <div class="point-content">Secondary Argument</div>
-                </div>
-                <div class="point-description">Present additional arguments that strengthen your thesis.</div>
-              </div>
-            </div>
-            
-            <div class="outline-section">
-              <div class="section-header">
-                <span class="roman">III</span>
-                <span>CONCLUSION</span>
-              </div>
-              
-              <div class="main-point">
-                <div class="point-header">
-                  <span class="point-letter">A</span>
-                  <div class="point-content">Summary of Arguments</div>
-                </div>
-                <div class="point-description">Briefly restate the main points and arguments presented.</div>
-              </div>
-              
-              <div class="main-point">
-                <div class="point-header">
-                  <span class="point-letter">B</span>
-                  <div class="point-content">Final Thoughts</div>
-                </div>
-                <div class="point-description">Provide concluding remarks and suggest areas for further research or action.</div>
-              </div>
-            </div>
-            
-            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 13px;">
-              <p><strong>Note:</strong> This is a basic outline. For a more detailed and customized outline, try again or refine your input.</p>
-              <p>Essay Type: ${essayTypeMap[essayType] || "Research Essay"} | Language: ${languageName}</p>
-            </div>
-          </div>
-        `;
-      }
-
-      // Helper functions for fallback
-      function extractKeywords(text) {
-        const words = text.toLowerCase().split(/\W+/);
-        const stopWords = new Set(['the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'this', 'that']);
-        const wordFreq = {};
-        
-        words.forEach(word => {
-          word = word.replace(/[^a-z]/g, '');
-          if (word.length > 3 && !stopWords.has(word)) {
-            wordFreq[word] = (wordFreq[word] || 0) + 1;
-          }
-        });
-        
-        return Object.entries(wordFreq)
-          .sort((a, b) => b[1] - a[1])
-          .slice(0, 6)
-          .map(entry => entry[0]);
-      }
-
-      function generateEssayTitle(keywords, essayType) {
-        const prefixes = {
-          research: "Research Analysis of",
-          argumentative: "The Argument for",
-          persuasive: "A Persuasive Case for",
-          expository: "Understanding",
-          narrative: "A Narrative About"
-        };
-        
-        const prefix = prefixes[essayType] || "Essay on";
-        const mainKeywords = keywords.slice(0, 2).join(" and ") || "the topic";
-        return `${prefix} ${mainKeywords}`;
-      }
-
       // Main generation function
       async function generateOutline() {
         if (isGenerating) return;
@@ -1340,11 +1191,14 @@
         const input = getCurrentInput();
         const language = languageSelect.value;
         const essayType = essayTypeSelect.value;
+        const languageName = languageMap[language] || "English";
+        const essayTypeName = essayTypeMap[essayType] || "Research Essay";
         
         // Show loading
         loadingContainer.classList.add("active");
         outlineContainer.classList.remove("active");
         generateBtn.disabled = true;
+        generateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating...';
         statusText.textContent = "AI is generating your outline...";
         
         // Update thinking text
@@ -1364,33 +1218,696 @@
           aiThinkingText.textContent = texts[textIndex];
         }, 1800);
         
-        try {
-          // Call Gemini API
-          const outlineHTML = await generateOutlineWithGemini(input, essayType, language);
-          currentOutline = outlineHTML;
-          
-          // Display outline
-          outlinePreview.innerHTML = outlineHTML;
-          
-          // Scroll to outline smoothly
-          setTimeout(() => {
-            outlineContainer.classList.add("active");
-            outlineContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }, 100);
-          
-          // Update status
-          statusText.textContent = "Outline generated successfully!";
-          showSuccess("Professional outline created with Google Gemini AI.");
-          
-        } catch (error) {
-          console.error("Generation error:", error);
-          showError("Failed to generate outline. Please try again or check your internet connection.");
-        } finally {
+        // Simulate AI processing (3-5 seconds)
+        setTimeout(() => {
           clearInterval(thinkingInterval);
-          loadingContainer.classList.remove("active");
-          generateBtn.disabled = false;
-          isGenerating = false;
+          
+          try {
+            // Generate outline based on input
+            const outlineHTML = generateSmartOutline(input, essayType, languageName);
+            currentOutline = outlineHTML;
+            
+            // Display outline
+            outlinePreview.innerHTML = outlineHTML;
+            
+            // Scroll to outline smoothly
+            setTimeout(() => {
+              outlineContainer.classList.add("active");
+              outlineContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+            
+            // Update status
+            statusText.textContent = "Outline generated successfully!";
+            showSuccess(`Professional ${essayTypeName.toLowerCase()} outline created.`);
+            
+          } catch (error) {
+            console.error("Generation error:", error);
+            showError("Failed to generate outline. Please try again.");
+          } finally {
+            loadingContainer.classList.remove("active");
+            generateBtn.disabled = false;
+            generateBtn.innerHTML = '<i class="fas fa-wand-magic-sparkles"></i> Generate Outline';
+            isGenerating = false;
+          }
+        }, 3500);
+      }
+
+      // Smart outline generation based on input
+      function generateSmartOutline(content, essayType, languageName) {
+        // Extract keywords and topics from content
+        const keywords = extractKeywords(content);
+        const topics = extractTopics(content);
+        const wordCount = content.split(/\s+/).length;
+        
+        // Generate title
+        const title = generateEssayTitle(content, essayType, keywords);
+        
+        // Determine outline complexity based on input
+        const complexity = determineComplexity(wordCount, content);
+        
+        // Generate outline based on essay type
+        let outlineHTML = '';
+        
+        switch(essayType) {
+          case 'research':
+            outlineHTML = generateResearchOutline(title, content, keywords, topics, complexity, languageName);
+            break;
+          case 'argumentative':
+            outlineHTML = generateArgumentativeOutline(title, content, keywords, topics, complexity, languageName);
+            break;
+          case 'persuasive':
+            outlineHTML = generatePersuasiveOutline(title, content, keywords, topics, complexity, languageName);
+            break;
+          case 'expository':
+            outlineHTML = generateExpositoryOutline(title, content, keywords, topics, complexity, languageName);
+            break;
+          case 'narrative':
+            outlineHTML = generateNarrativeOutline(title, content, keywords, topics, complexity, languageName);
+            break;
+          default:
+            outlineHTML = generateResearchOutline(title, content, keywords, topics, complexity, languageName);
         }
+        
+        return outlineHTML;
+      }
+
+      // Extract keywords from content
+      function extractKeywords(text) {
+        const words = text.toLowerCase().split(/\W+/);
+        const stopWords = new Set([
+          'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 
+          'of', 'with', 'by', 'is', 'are', 'was', 'were', 'this', 'that', 'it',
+          'as', 'be', 'been', 'being', 'have', 'has', 'had', 'do', 'does', 'did'
+        ]);
+        
+        const wordFreq = {};
+        
+        words.forEach(word => {
+          word = word.replace(/[^a-z]/g, '');
+          if (word.length > 3 && !stopWords.has(word)) {
+            wordFreq[word] = (wordFreq[word] || 0) + 1;
+          }
+        });
+        
+        // Get top keywords
+        const keywords = Object.entries(wordFreq)
+          .sort((a, b) => b[1] - a[1])
+          .slice(0, 8)
+          .map(entry => entry[0]);
+        
+        // If not enough keywords, add common ones based on content
+        if (keywords.length < 3) {
+          const commonKeywords = ['analysis', 'development', 'implementation', 'strategy', 'impact', 'benefit', 'challenge', 'solution'];
+          keywords.push(...commonKeywords.slice(0, 3 - keywords.length));
+        }
+        
+        return keywords;
+      }
+
+      // Extract topics from content
+      function extractTopics(text) {
+        const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 10);
+        const topics = [];
+        
+        sentences.forEach(sentence => {
+          const words = sentence.trim().split(/\s+/);
+          if (words.length >= 5 && words.length <= 15) {
+            topics.push(sentence.trim());
+          }
+        });
+        
+        return topics.slice(0, 5);
+      }
+
+      // Generate essay title
+      function generateEssayTitle(content, essayType, keywords) {
+        const firstSentence = content.split(/[.!?]+/)[0].trim();
+        const shortContent = content.length > 60 ? content.substring(0, 60) + '...' : content;
+        
+        if (keywords.length >= 2) {
+          const mainKeywords = keywords.slice(0, 2).join(" and ");
+          const prefixes = {
+            research: "Research Analysis of ",
+            argumentative: "The Argument for ",
+            persuasive: "A Case for ",
+            expository: "Understanding ",
+            narrative: "A Narrative About "
+          };
+          return (prefixes[essayType] || "Essay on ") + mainKeywords;
+        }
+        
+        return shortContent;
+      }
+
+      // Determine complexity level
+      function determineComplexity(wordCount, content) {
+        if (wordCount > 200) return 'high';
+        if (wordCount > 100) return 'medium';
+        return 'low';
+      }
+
+      // Generate research essay outline
+      function generateResearchOutline(title, content, keywords, topics, complexity, languageName) {
+        const sections = complexity === 'high' ? 6 : (complexity === 'medium' ? 5 : 4);
+        
+        let html = `<div class="outline-content">
+          <div class="essay-title">${title}</div>
+          <div class="section">
+            <p><strong>Essay Type:</strong> Research Essay | <strong>Complexity:</strong> ${complexity} | <strong>Language:</strong> ${languageName}</p>
+            <p><strong>Key Topics:</strong> ${keywords.slice(0, 4).join(', ')}</p>
+          </div>`;
+        
+        const sectionTitles = [
+          "I. INTRODUCTION",
+          "II. LITERATURE REVIEW",
+          "III. METHODOLOGY",
+          "IV. FINDINGS AND ANALYSIS",
+          "V. DISCUSSION",
+          "VI. CONCLUSION"
+        ];
+        
+        const sectionContents = [
+          [
+            "Background and context of the research",
+            "Research problem and significance",
+            "Research questions and objectives",
+            "Thesis statement"
+          ],
+          [
+            "Review of existing literature",
+            "Theoretical framework",
+            "Key concepts and definitions",
+            "Research gaps identified"
+          ],
+          [
+            "Research design and approach",
+            "Data collection methods",
+            "Sampling techniques",
+            "Data analysis procedures"
+          ],
+          [
+            "Presentation of research findings",
+            "Data analysis and interpretation",
+            "Key patterns and trends identified",
+            "Statistical analysis results"
+          ],
+          [
+            "Implications of findings",
+            "Comparison with existing literature",
+            "Limitations of the study",
+            "Theoretical and practical implications"
+          ],
+          [
+            "Summary of main findings",
+            "Conclusions drawn from research",
+            "Recommendations for future research",
+            "Final remarks and significance"
+          ]
+        ];
+        
+        for (let i = 0; i < sections; i++) {
+          html += `<div class="outline-section">
+            <div class="section-header">
+              <span class="roman">${i+1}</span>
+              <span>${sectionTitles[i]}</span>
+            </div>`;
+          
+          const points = sectionContents[i];
+          for (let j = 0; j < Math.min(points.length, complexity === 'low' ? 2 : 3); j++) {
+            const letter = String.fromCharCode(65 + j);
+            html += `<div class="main-point">
+              <div class="point-header">
+                <span class="point-letter">${letter}</span>
+                <div class="point-content">${points[j]}</div>
+              </div>`;
+            
+            // Add description
+            const descriptions = [
+              "Provide detailed background information and contextualize the topic within the broader field.",
+              "Explain the significance and relevance of this point to the overall research question.",
+              "Include specific examples, data, or evidence to support this section.",
+              "Discuss how this contributes to answering the research questions or achieving objectives."
+            ];
+            
+            html += `<div class="point-description">${descriptions[j % descriptions.length]}</div>`;
+            
+            // Add subpoints for medium and high complexity
+            if (complexity !== 'low' && j < 2) {
+              html += `<div class="sub-points">
+                <div class="sub-point">
+                  <span class="sub-number">1</span>
+                  <span>Supporting evidence from academic sources</span>
+                </div>
+                <div class="sub-point">
+                  <span class="sub-number">2</span>
+                  <span>Statistical data or research findings</span>
+                </div>`;
+              
+              if (complexity === 'high') {
+                html += `<div class="sub-point">
+                  <span class="sub-number">3</span>
+                  <span>Case studies or real-world examples</span>
+                </div>`;
+              }
+              
+              html += `</div>`;
+            }
+            
+            html += `</div>`;
+          }
+          
+          html += `</div>`;
+        }
+        
+        html += `</div>`;
+        return html;
+      }
+
+      // Generate argumentative essay outline
+      function generateArgumentativeOutline(title, content, keywords, topics, complexity, languageName) {
+        const sections = complexity === 'high' ? 5 : 4;
+        
+        let html = `<div class="outline-content">
+          <div class="essay-title">${title}</div>
+          <div class="section">
+            <p><strong>Essay Type:</strong> Argumentative Essay | <strong>Position:</strong> Taking a clear stance | <strong>Language:</strong> ${languageName}</p>
+            <p><strong>Main Arguments:</strong> Based on "${keywords[0] || 'key topic'}" and "${keywords[1] || 'related issue'}"</p>
+          </div>`;
+        
+        const argumentPoints = topics.length > 0 ? topics.slice(0, 3) : [
+          "Primary argument supporting the thesis",
+          "Secondary supporting evidence",
+          "Counterargument and refutation"
+        ];
+        
+        const sectionTitles = [
+          "I. INTRODUCTION",
+          "II. FIRST ARGUMENT",
+          "III. SECOND ARGUMENT",
+          "IV. COUNTERARGUMENT AND REBUTTAL",
+          "V. CONCLUSION"
+        ];
+        
+        for (let i = 0; i < sections; i++) {
+          html += `<div class="outline-section">
+            <div class="section-header">
+              <span class="roman">${i+1}</span>
+              <span>${sectionTitles[i]}</span>
+            </div>`;
+          
+          let points = [];
+          
+          switch(i) {
+            case 0: // Introduction
+              points = [
+                "Background information and context",
+                "Thesis statement with clear position",
+                "Preview of main arguments"
+              ];
+              break;
+            case 1: // First argument
+              points = [
+                argumentPoints[0] || "Present first supporting evidence",
+                "Analysis and explanation",
+                "Connection to thesis"
+              ];
+              break;
+            case 2: // Second argument
+              points = [
+                argumentPoints[1] || "Present second supporting evidence",
+                "Analysis and explanation",
+                "Connection to thesis"
+              ];
+              break;
+            case 3: // Counterargument
+              points = [
+                "Acknowledge opposing viewpoint",
+                "Present counter-evidence",
+                "Refute opposing arguments"
+              ];
+              break;
+            case 4: // Conclusion
+              points = [
+                "Restate thesis in light of arguments",
+                "Summarize main points",
+                "Final call to action or implication"
+              ];
+              break;
+          }
+          
+          for (let j = 0; j < points.length; j++) {
+            const letter = String.fromCharCode(65 + j);
+            html += `<div class="main-point">
+              <div class="point-header">
+                <span class="point-letter">${letter}</span>
+                <div class="point-content">${points[j]}</div>
+              </div>`;
+            
+            // Add description
+            const descriptions = [
+              "Provide clear evidence and logical reasoning to support this point.",
+              "Use credible sources and examples to strengthen the argument.",
+              "Connect this point back to the main thesis and overall argument.",
+              "Address potential objections and provide convincing rebuttals."
+            ];
+            
+            html += `<div class="point-description">${descriptions[j % descriptions.length]}</div>`;
+            
+            // Add subpoints for arguments
+            if ((i === 1 || i === 2) && j === 0) {
+              html += `<div class="sub-points">
+                <div class="sub-point">
+                  <span class="sub-number">1</span>
+                  <span>Statistical evidence or research findings</span>
+                </div>
+                <div class="sub-point">
+                  <span class="sub-number">2</span>
+                  <span>Expert opinions or authoritative sources</span>
+                </div>
+                <div class="sub-point">
+                  <span class="sub-number">3</span>
+                  <span>Real-world examples or case studies</span>
+                </div>
+              </div>`;
+            }
+            
+            html += `</div>`;
+          }
+          
+          html += `</div>`;
+        }
+        
+        html += `</div>`;
+        return html;
+      }
+
+      // Generate persuasive essay outline
+      function generatePersuasiveOutline(title, content, keywords, topics, complexity, languageName) {
+        // Similar to argumentative but with more emotional appeal
+        const sections = 4;
+        
+        let html = `<div class="outline-content">
+          <div class="essay-title">${title}</div>
+          <div class="section">
+            <p><strong>Essay Type:</strong> Persuasive Essay | <strong>Goal:</strong> Convince the reader | <strong>Language:</strong> ${languageName}</p>
+            <p><strong>Persuasive Techniques:</strong> Using logic, emotion, and credibility to persuade</p>
+          </div>`;
+        
+        const persuasivePoints = [
+          "Establish credibility (ethos)",
+          "Appeal to logic (logos)",
+          "Appeal to emotion (pathos)",
+          "Call to action"
+        ];
+        
+        const sectionTitles = [
+          "I. INTRODUCTION: CAPTURE ATTENTION",
+          "II. BUILD YOUR CASE",
+          "III. ADDRESS OBJECTIONS",
+          "IV. POWERFUL CONCLUSION"
+        ];
+        
+        for (let i = 0; i < sections; i++) {
+          html += `<div class="outline-section">
+            <div class="section-header">
+              <span class="roman">${i+1}</span>
+              <span>${sectionTitles[i]}</span>
+            </div>`;
+          
+          let points = [];
+          
+          switch(i) {
+            case 0:
+              points = [
+                "Attention-grabbing opening",
+                "Establish the issue and its importance",
+                "Clear thesis statement with position"
+              ];
+              break;
+            case 1:
+              points = persuasivePoints.slice(0, 3);
+              break;
+            case 2:
+              points = [
+                "Acknowledge counterarguments",
+                "Provide strong rebuttals",
+                "Strengthen your position"
+              ];
+              break;
+            case 3:
+              points = [
+                "Restate thesis powerfully",
+                "Summarize key arguments",
+                "Strong call to action"
+              ];
+              break;
+          }
+          
+          for (let j = 0; j < points.length; j++) {
+            const letter = String.fromCharCode(65 + j);
+            html += `<div class="main-point">
+              <div class="point-header">
+                <span class="point-letter">${letter}</span>
+                <div class="point-content">${points[j]}</div>
+              </div>`;
+            
+            // Add persuasive descriptions
+            const descriptions = [
+              "Use compelling statistics or shocking facts to grab attention.",
+              "Present logical arguments supported by credible evidence.",
+              "Appeal to the reader's emotions with relatable stories or examples.",
+              "Anticipate objections and provide convincing counter-arguments.",
+              "End with a powerful, memorable statement that inspires action."
+            ];
+            
+            html += `<div class="point-description">${descriptions[j % descriptions.length]}</div>`;
+            
+            html += `</div>`;
+          }
+          
+          html += `</div>`;
+        }
+        
+        html += `</div>`;
+        return html;
+      }
+
+      // Generate expository essay outline
+      function generateExpositoryOutline(title, content, keywords, topics, complexity, languageName) {
+        const sections = 5;
+        
+        let html = `<div class="outline-content">
+          <div class="essay-title">${title}</div>
+          <div class="section">
+            <p><strong>Essay Type:</strong> Expository Essay | <strong>Purpose:</strong> Explain and inform | <strong>Language:</strong> ${languageName}</p>
+            <p><strong>Explanation Focus:</strong> Clear, factual explanation of the topic</p>
+          </div>`;
+        
+        const sectionTitles = [
+          "I. INTRODUCTION: DEFINE THE TOPIC",
+          "II. HISTORICAL CONTEXT",
+          "III. KEY COMPONENTS",
+          "IV. PROCESS OR METHOD",
+          "V. CONCLUSION: SUMMARIZE AND SIGNIFICANCE"
+        ];
+        
+        for (let i = 0; i < sections; i++) {
+          html += `<div class="outline-section">
+            <div class="section-header">
+              <span class="roman">${i+1}</span>
+              <span>${sectionTitles[i]}</span>
+            </div>`;
+          
+          let points = [];
+          
+          switch(i) {
+            case 0:
+              points = [
+                "Clear definition of the topic",
+                "Background and context",
+                "Thesis statement about what will be explained"
+              ];
+              break;
+            case 1:
+              points = [
+                "Historical development",
+                "Key milestones",
+                "Evolution over time"
+              ];
+              break;
+            case 2:
+              points = [
+                "Main components or elements",
+                "How they work together",
+                "Key characteristics"
+              ];
+              break;
+            case 3:
+              points = [
+                "Step-by-step process",
+                "Methods or techniques",
+                "Best practices"
+              ];
+              break;
+            case 4:
+              points = [
+                "Summary of key points",
+                "Significance and applications",
+                "Future developments"
+              ];
+              break;
+          }
+          
+          for (let j = 0; j < points.length; j++) {
+            const letter = String.fromCharCode(65 + j);
+            html += `<div class="main-point">
+              <div class="point-header">
+                <span class="point-letter">${letter}</span>
+                <div class="point-content">${points[j]}</div>
+              </div>`;
+            
+            // Add explanatory descriptions
+            const descriptions = [
+              "Provide clear definitions and explanations using simple language.",
+              "Use examples and analogies to make complex concepts understandable.",
+              "Include relevant facts, statistics, or data to support explanations.",
+              "Break down processes into clear, sequential steps.",
+              "Connect information to real-world applications and significance."
+            ];
+            
+            html += `<div class="point-description">${descriptions[j % descriptions.length]}</div>`;
+            
+            // Add subpoints for process section
+            if (i === 3 && j === 0 && complexity !== 'low') {
+              html += `<div class="sub-points">
+                <div class="sub-point">
+                  <span class="sub-number">1</span>
+                  <span>Preparation and prerequisites</span>
+                </div>
+                <div class="sub-point">
+                  <span class="sub-number">2</span>
+                  <span>Step-by-step implementation</span>
+                </div>
+                <div class="sub-point">
+                  <span class="sub-number">3</span>
+                  <span>Quality control and verification</span>
+                </div>
+              </div>`;
+            }
+            
+            html += `</div>`;
+          }
+          
+          html += `</div>`;
+        }
+        
+        html += `</div>`;
+        return html;
+      }
+
+      // Generate narrative essay outline
+      function generateNarrativeOutline(title, content, keywords, topics, complexity, languageName) {
+        const sections = 4;
+        
+        let html = `<div class="outline-content">
+          <div class="essay-title">${title}</div>
+          <div class="section">
+            <p><strong>Essay Type:</strong> Narrative Essay | <strong>Style:</strong> Storytelling with purpose | <strong>Language:</strong> ${languageName}</p>
+            <p><strong>Narrative Elements:</strong> Plot, characters, setting, conflict, resolution</p>
+          </div>`;
+        
+        const sectionTitles = [
+          "I. INTRODUCTION: SET THE SCENE",
+          "II. RISING ACTION: DEVELOP THE STORY",
+          "III. CLIMAX: PEAK OF THE NARRATIVE",
+          "IV. CONCLUSION: RESOLUTION AND REFLECTION"
+        ];
+        
+        for (let i = 0; i < sections; i++) {
+          html += `<div class="outline-section">
+            <div class="section-header">
+              <span class="roman">${i+1}</span>
+              <span>${sectionTitles[i]}</span>
+            </div>`;
+          
+          let points = [];
+          
+          switch(i) {
+            case 0:
+              points = [
+                "Introduce characters and setting",
+                "Establish the context and mood",
+                "Hint at the central conflict or theme"
+              ];
+              break;
+            case 1:
+              points = [
+                "Develop the plot and characters",
+                "Build tension and interest",
+                "Show character development"
+              ];
+              break;
+            case 2:
+              points = [
+                "The turning point or climax",
+                "Highest emotional intensity",
+                "Resolution of main conflict"
+              ];
+              break;
+            case 3:
+              points = [
+                "Resolution of remaining issues",
+                "Character reflections or growth",
+                "Thematic conclusion and message"
+              ];
+              break;
+          }
+          
+          for (let j = 0; j < points.length; j++) {
+            const letter = String.fromCharCode(65 + j);
+            html += `<div class="main-point">
+              <div class="point-header">
+                <span class="point-letter">${letter}</span>
+                <div class="point-content">${points[j]}</div>
+              </div>`;
+            
+            // Add narrative descriptions
+            const descriptions = [
+              "Use vivid descriptions and sensory details to create atmosphere.",
+              "Develop characters through dialogue, actions, and thoughts.",
+              "Build suspense and maintain reader interest through pacing.",
+              "Show, don't tell - use actions and events to convey meaning.",
+              "Include reflective elements that reveal the story's significance."
+            ];
+            
+            html += `<div class="point-description">${descriptions[j % descriptions.length]}</div>`;
+            
+            // Add subpoints for character development
+            if (i === 1 && j === 1) {
+              html += `<div class="sub-points">
+                <div class="sub-point">
+                  <span class="sub-number">1</span>
+                  <span>Character motivations and desires</span>
+                </div>
+                <div class="sub-point">
+                  <span class="sub-number">2</span>
+                  <span>Obstacles and challenges faced</span>
+                </div>
+                <div class="sub-point">
+                  <span class="sub-number">3</span>
+                  <span>Relationships and interactions</span>
+                </div>
+              </div>`;
+            }
+            
+            html += `</div>`;
+          }
+          
+          html += `</div>`;
+        }
+        
+        html += `</div>`;
+        return html;
       }
 
       function newOutline() {
@@ -1398,13 +1915,9 @@
         statusText.textContent = "Enter content and click Generate Outline";
         showSuccess("Ready to create new outline");
         
-        // Optional: Clear inputs
-        if (currentSource === "text") {
+        // Clear inputs if needed
+        if (currentSource === "text" && textInput.value === textInput.defaultValue) {
           textInput.value = "";
-        } else if (currentSource === "youtube") {
-          youtubeInput.value = "";
-        } else if (currentSource === "website") {
-          websiteInput.value = "";
         }
       }
 
@@ -1486,11 +1999,11 @@
       downloadOutlineBtn.addEventListener("click", downloadOutline);
 
       // Initialize with sample data
-      textInput.addEventListener("input", () => {
-        if (textInput.value.trim().length > 0) {
-          statusText.textContent = "Ready to generate outline";
+      setTimeout(() => {
+        if (textInput.value.trim().length > 10) {
+          statusText.textContent = "Ready to generate outline. Click the button below.";
         }
-      });
+      }, 1000);
     }
   </script>
 </body>
