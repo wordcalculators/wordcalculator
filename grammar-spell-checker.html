@@ -1,0 +1,1998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ==================== ADVANCED SEO ==================== -->
+  <title>Grammar & Spell Checker — Check Grammar, Spelling, and Punctuation Online (Free)</title>
+  <meta name="description" content="Free Grammar & Spell Checker. Paste your text to check spelling, grammar, punctuation, repeated words, and clarity tips. Hover errors for suggestions and apply fixes. Mobile-friendly." />
+  <meta name="keywords" content="grammar checker, spell checker, punctuation checker, check grammar online, spelling checker, proofread text, grammar and spell check, writing checker" />
+  <meta name="author" content="WordCalculator.net" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#020617" />
+  <link rel="canonical" href="https://wordcalculator.net/grammar-spell-checker.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wordcalculator.net/grammar-spell-checker.html" />
+  <meta property="og:title" content="Grammar & Spell Checker — Check Grammar, Spelling, and Punctuation Online" />
+  <meta property="og:description" content="Hover errors for suggestions and apply fixes instantly. Free, fast, mobile-friendly." />
+  <meta property="og:image" content="https://wordcalculator.net/images/grammar-spell-checker-og.jpg" />
+  <meta property="og:site_name" content="WordCalculator.net" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://wordcalculator.net/grammar-spell-checker.html" />
+  <meta name="twitter:title" content="Grammar & Spell Checker — Check Grammar, Spelling, and Punctuation" />
+  <meta name="twitter:description" content="Hover errors for suggestions and apply fixes instantly." />
+  <meta name="twitter:image" content="https://wordcalculator.net/images/grammar-spell-checker-twitter.jpg" />
+
+  <!-- WebApplication schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Grammar & Spell Checker",
+    "url":"https://wordcalculator.net/grammar-spell-checker.html",
+    "description":"Free Grammar & Spell Checker to review spelling, punctuation, and grammar suggestions directly in your browser.",
+    "applicationCategory":"UtilitiesApplication",
+    "operatingSystem":"Any",
+    "browserRequirements":"Requires JavaScript",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "author":{"@type":"Organization","name":"WordCalculator.net"}
+  }
+  </script>
+
+  <!-- Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://wordcalculator.net/"},
+      {"@type":"ListItem","position":2,"name":"Tools","item":"https://wordcalculator.net/tools.html"},
+      {"@type":"ListItem","position":3,"name":"Grammar & Spell Checker","item":"https://wordcalculator.net/grammar-spell-checker.html"}
+    ]
+  }
+  </script>
+
+  <!-- FAQ schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"How do suggestions appear inside the editor?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Errors are underlined in the editor. Hover an underlined word to see a tooltip with suggestions. Click a suggestion to apply it."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Is this tool free to use?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. This page is designed for free use and runs in your browser. It can use a free public checking endpoint to generate suggestions."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"What is Deep Check?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Deep Check enables stricter rules for style and clarity. It may return more suggestions than the standard check."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- ==================== /SEO ==================== -->
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+    /* ===== Base / Theme ===== */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --text:#1f2937;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --primary:#2563eb;
+      --bg:#f7f8fb;
+      --card:#fff;
+      --danger:#b91c1c;
+      --ok:#166534;
+      --warn:#92400e;
+    }
+    html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    body{
+      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+
+    /* ===== Header / Nav ===== */
+    .wc-header{background:#020617;color:#fff;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+    .wc-wrap{
+      max-width:1200px;margin:0 auto;padding:10px 12px;
+      display:flex;align-items:center;gap:14px;
+    }
+    .wc-logo{display:inline-flex;align-items:center;gap:8px}
+    .slab{
+      display:inline-flex;width:24px;height:24px;align-items:center;justify-content:center;
+      font-weight:800;font-size:14px;border-radius:2px;color:#fff;
+    }
+    .slab-w{background:#1f2327}
+    .slab-o{background:#a7c1db;color:#1e2a3a}
+    .slab-r{background:#7d96ae}
+    .slab-d{background:#2f5d8a}
+    .wc-brand-text{display:inline-flex;flex-direction:column;line-height:1.05;font-size:19px;font-weight:800}
+    .wc-brand-text small{font-size:10px;opacity:.95}
+    .wc-nav{margin-left:10px;display:flex;align-items:center;gap:8px;flex:1}
+    .wc-link{
+      color:#f4f8fc;font-weight:700;font-size:14px;padding:6px 10px;border-radius:8px;
+      transition:.15s;background:transparent;border:0;cursor:pointer;
+    }
+    .wc-link:hover{background:rgba(255,255,255,.14)}
+    .wc-signin-btn{background:rgba(148,163,184,.18);border:1px solid rgba(148,163,184,.5)}
+    .wc-signin-btn:hover{background:#38bdf8;color:#020617;border-color:#38bdf8}
+    .mobile-menu-btn{margin-left:auto;background:transparent;border:0;color:#fff;font-size:20px;display:none;cursor:pointer}
+    .mobile-nav{
+      position:fixed;top:0;right:-100%;width:320px;height:100vh;background:#1f2933;
+      box-shadow:-2px 0 10px rgba(0,0,0,.18);transition:right .3s;z-index:100;
+    }
+    .mobile-nav.active{right:0}
+    .mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;z-index:90}
+    .mobile-overlay.active{display:block}
+    .mobile-nav-header{display:flex;justify-content:space-between;align-items:center;padding:16px;border-bottom:1px solid #34495e}
+    .mobile-close-btn{background:transparent;border:0;color:#fff;font-size:20px;cursor:pointer}
+    .mobile-nav-links{padding:16px}
+    .mobile-link{
+      display:block;color:#ecf0f1;padding:12px 0;border-bottom:1px solid #34495e;
+      font-weight:700;background:transparent;border:0;width:100%;text-align:left;cursor:pointer;
+    }
+
+    /* ===== Breadcrumb ===== */
+    .crumb-wrap{max-width:1200px;margin:8px auto 0;padding:0 15px 4px}
+    .crumbs{font-size:13px;color:#111827}
+    .crumbs a{color:#2563eb}
+    .crumbs a:hover{text-decoration:underline}
+    .crumb-separator{margin:0 4px;color:#6b7280}
+    .crumb-current{font-weight:700}
+
+    /* ===== Main Layout ===== */
+    .age-main{max-width:1200px;margin:22px auto 40px;padding:0 15px;}
+    .layout{
+      display:grid;
+      grid-template-columns:minmax(0,3fr) minmax(260px,1.2fr);
+      grid-template-areas:
+        "tool sidebar"
+        "content sidebar";
+      gap:20px;
+      align-items:flex-start;
+    }
+    .tool{grid-area:tool}
+    .sidebar{grid-area:sidebar}
+    .content{grid-area:content}
+
+    /* ===== Cards ===== */
+    .tool-card,.sidebar-card,.section-block{
+      background:var(--card);
+      border-radius:12px;
+      border:1px solid #e2e8f0;
+      box-shadow:0 10px 24px rgba(15,23,42,.06);
+    }
+
+    /* ===== Tool Card ===== */
+    .converter-card{padding:0 0 14px;overflow:hidden}
+    .converter-header{
+      padding:10px 14px;background:#020617;color:#f9fafb;
+      display:flex;justify-content:space-between;align-items:center;gap:10px;
+    }
+    .converter-header-left{display:flex;flex-direction:column;gap:2px}
+    .converter-title{font-size:18px;font-weight:800}
+    .converter-subtitle{font-size:12px;opacity:.9}
+    .badge{
+      font-size:11px;padding:3px 8px;border-radius:999px;
+      background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);
+      display:inline-flex;align-items:center;gap:6px;
+    }
+    .converter-body{padding:14px;display:flex;flex-direction:column;gap:12px}
+
+    /* Workspace */
+    .workspace{
+      border-radius:12px;border:1px solid #e5e7eb;background:#ffffff;
+      box-shadow:0 10px 24px rgba(15,23,42,.06);
+      overflow:hidden;
+    }
+    .workspace-top{
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      padding:10px 12px;background:#f8fafc;border-bottom:1px solid #e5e7eb;
+      flex-wrap:wrap;
+    }
+    .btn{
+      padding:7px 11px;border-radius:8px;border:1px solid transparent;
+      background:#2563eb;color:#f9fafb;font-size:13px;font-weight:800;
+      cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:7px;
+      transition:background .15s,box-shadow .15s,transform .1s;
+      white-space:nowrap;
+      min-height:34px;
+    }
+    .btn:hover{background:#1d4ed8;box-shadow:0 8px 18px rgba(37,99,235,.35);transform:translateY(-1px)}
+    .btn-ghost{background:#ffffff;color:#111827;border-color:#e5e7eb}
+    .btn-ghost:hover{background:#f3f4f6;box-shadow:none;transform:none}
+    .btn-warn{background:#f59e0b;color:#111827}
+    .btn-warn:hover{background:#d97706;box-shadow:0 8px 18px rgba(217,119,6,.25)}
+    .btn[disabled]{opacity:.5;cursor:not-allowed;box-shadow:none;transform:none}
+
+    .top-left{
+      display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+      font-size:12px;color:#475569;font-weight:800;
+    }
+    .pill{
+      font-size:11px;padding:3px 8px;border-radius:999px;
+      background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;
+      font-weight:900;
+      display:inline-flex;align-items:center;gap:6px;
+    }
+    .pill-ok{background:#ecfdf5;color:var(--ok);border-color:#a7f3d0}
+    .pill-warn{background:#fffbeb;color:var(--warn);border-color:#fde68a}
+    .pill-bad{background:#fef2f2;color:var(--danger);border-color:#fecaca}
+
+    .controls-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+    .select{
+      appearance:none;
+      padding:7px 10px;border-radius:8px;border:1px solid #d5d9e0;
+      background:#ffffff;font-size:13px;font-weight:800;color:#111827;
+      outline:none;
+    }
+
+    /* ====== (FIX) Workspace buttons professional on mobile (no structure change) ====== */
+    .workspace-actions{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-end;
+    }
+    .workspace-actions .btn{flex:0 1 auto}
+
+    /* Editor wrap */
+    .editor-wrap{padding:12px;position:relative;background:#ffffff}
+    .editor-label{
+      font-size:12px;color:#334155;font-weight:900;
+      display:flex;align-items:center;gap:8px;margin-bottom:8px;
+    }
+
+    /* Contenteditable editor */
+    .editor{
+      width:100%;
+      min-height:260px;
+      border-radius:12px;
+      border:1px solid #dbe3ef;
+      background:#fbfdff; /* slight attractive tint (allowed) */
+      padding:12px;
+      font-size:14px;
+      outline:none;
+      transition:border-color .15s, box-shadow .15s;
+      line-height:1.7;
+      white-space:pre-wrap;
+      word-break:break-word;
+      overflow:hidden; /* auto-grow works clean */
+    }
+    .editor:focus{border-color:#3f82bd;box-shadow:0 0 0 2px rgba(63,130,189,0.12)}
+    .editor[contenteditable="false"]{background:#f8fafc}
+
+    /* Keep pasted headings/list looking nice inside editor */
+    .editor h1{font-size:20px;font-weight:900;line-height:1.25;margin:10px 0 6px;color:#0f172a}
+    .editor h2{font-size:18px;font-weight:900;line-height:1.28;margin:10px 0 6px;color:#0f172a}
+    .editor h3{font-size:16px;font-weight:900;line-height:1.32;margin:10px 0 6px;color:#111827}
+    .editor p{margin:6px 0}
+    .editor ul,.editor ol{margin:6px 0 6px 20px}
+    .editor li{margin:3px 0}
+    .editor a{color:#2563eb;text-decoration:underline}
+    .editor blockquote{
+      margin:8px 0;padding:8px 10px;border-left:3px solid #bfdbfe;background:#eff6ff;border-radius:10px;color:#0f172a
+    }
+    .editor pre{
+      margin:8px 0;padding:10px;border:1px solid #e5e7eb;background:#0b1220;color:#e5e7eb;border-radius:12px;overflow:auto
+    }
+    .editor code{
+      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+      font-size:12.5px;
+      background:#f1f5f9;border:1px solid #e2e8f0;border-radius:8px;padding:1px 6px
+    }
+
+    /* Drag to resize handle (center bottom) */
+    .resize-handle-wrap{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      margin-top:10px;
+      user-select:none;
+    }
+    .resize-handle{
+      width:72px;
+      height:12px;
+      border-radius:999px;
+      background:linear-gradient(180deg,#eef2ff,#e5e7eb);
+      border:1px solid #d1d5db;
+      cursor:ns-resize;
+      position:relative;
+      transition:background .15s, transform .1s, box-shadow .15s, border-color .15s;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.8);
+    }
+    .resize-handle::before{
+      content:"";
+      position:absolute;left:50%;top:50%;
+      width:26px;height:4px;border-radius:999px;
+      transform:translate(-50%,-50%);
+      background:#cbd5e1;
+      box-shadow:0 6px 0 #cbd5e1, 0 -6px 0 #cbd5e1;
+      opacity:.9;
+    }
+    .resize-handle:hover{
+      background:linear-gradient(180deg,#dbeafe,#e2e8f0);
+      border-color:#bfdbfe;
+      box-shadow:0 8px 18px rgba(37,99,235,.15), inset 0 1px 0 rgba(255,255,255,.85);
+      transform:translateY(-1px);
+    }
+    .resize-handle:active{transform:none;box-shadow:none}
+
+    /* Underline like grammar tools */
+    .lt-err{
+      text-decoration-line: underline;
+      text-decoration-style: wavy;
+      text-decoration-color: #ef4444;
+      text-underline-offset: 3px;
+      cursor: help;
+    }
+    .lt-err.lt-err-warn{ text-decoration-color:#f59e0b; }
+    .lt-err.lt-err-info{ text-decoration-color:#3b82f6; }
+
+    .workspace-bottom{
+      padding:10px 12px;border-top:1px solid #e5e7eb;background:#ffffff;
+      display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+    }
+    .status{
+      font-size:12px;color:#475569;
+      display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+      font-weight:800;
+    }
+    .error-text{font-size:12px;color:var(--danger);font-weight:900;display:none}
+
+    /* Tooltip */
+    .tooltip{
+      position:fixed;
+      z-index:9999;
+      width:320px;
+      max-width:calc(100vw - 24px);
+      background:#0b1220;
+      border:1px solid rgba(148,163,184,.25);
+      color:#e5e7eb;
+      border-radius:12px;
+      box-shadow:0 18px 40px rgba(15,23,42,.35);
+      padding:10px;
+      display:none;
+    }
+    .tt-title{font-weight:900;font-size:13px;margin-bottom:6px;color:#f1f5f9}
+    .tt-msg{font-size:12px;color:#cbd5e1;margin-bottom:8px}
+    .tt-actions{display:flex;flex-wrap:wrap;gap:8px}
+    .tt-btn{
+      border:1px solid rgba(226,232,240,.18);
+      background:#111827;color:#e5e7eb;
+      border-radius:10px;
+      padding:6px 8px;
+      font-size:12px;
+      font-weight:900;
+      cursor:pointer;
+      transition:transform .1s, background .15s, box-shadow .15s;
+    }
+    .tt-btn:hover{transform:translateY(-1px);background:#1f2937;box-shadow:0 10px 20px rgba(0,0,0,.25)}
+    .tt-btn-primary{background:#2563eb;border-color:#2563eb}
+    .tt-btn-primary:hover{background:#1d4ed8}
+    .tt-btn-ghost{background:transparent}
+    .tt-small{font-size:11px;color:#94a3b8;margin-top:8px}
+
+    /* ===== Sidebar / Quick Search ===== */
+    .sidebar-card{padding:12px 12px 10px;font-size:13px}
+    .sidebar-title-bar{
+      margin:-12px -12px 8px;padding:7px 10px;background:#0f172a;color:#f9fafb;
+      font-size:14px;font-weight:900;border-radius:12px 12px 0 0;
+      box-shadow:inset 0 -1px 0 rgba(148,163,184,.35);
+      display:flex;align-items:center;justify-content:space-between;gap:8px;
+    }
+    .tool-search{margin:6px 0 4px}
+    .sidebar-search-input-wrapper{position:relative;display:flex;align-items:center;margin-top:4px}
+    .sidebar-search-icon{position:absolute;left:10px;font-size:12px;opacity:0.75}
+    .sidebar-search-input{
+      width:100%;padding:8px 10px 8px 28px;border-radius:8px;border:1px solid #d5d9e0;
+      background-color:#f9fafb;font-size:13px;outline:none;
+      transition:border-color .15s ease,background-color .15s ease,box-shadow .15s ease;
+    }
+    .sidebar-search-input:focus{border-color:#3f82bd;background-color:#ffffff;box-shadow:0 0 0 1px rgba(63,130,189,0.12)}
+    .sidebar-search-suggestions{
+      list-style:none;margin-top:8px;padding:4px 0;max-height:220px;overflow-y:auto;border-radius:10px;
+      border:1px solid #e3e7ee;background-color:#ffffff;box-shadow:0 8px 20px rgba(15,23,42,0.12);display:none;
+    }
+    .sidebar-search-suggestions.visible{display:block}
+    .sidebar-search-suggestions li{
+      font-size:13px;padding:7px 10px;cursor:pointer;display:flex;align-items:center;gap:8px;
+    }
+    .sidebar-search-suggestions li + li{border-top:1px solid #f1f3f8}
+    .sidebar-search-suggestions li span.tool-name{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .sidebar-search-suggestions li i{font-size:12px;opacity:0.8}
+    .sidebar-search-suggestions li:hover{background-color:#f3f4f8}
+    .sidebar-group{margin-top:10px}
+    .sidebar-group h4{
+      font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#6b7280;margin-bottom:3px;font-weight:800;
+    }
+    .sidebar-links{list-style:none;font-size:13px}
+    .sidebar-links li+li{margin-top:3px}
+    .sidebar-links a{color:#1d4ed8}
+    .sidebar-links a:hover{text-decoration:underline}
+
+    /* ===== Content ===== */
+    .section-block{padding:14px 16px 12px;margin-bottom:16px}
+    .section-block h2,.section-block h3{font-size:18px;font-weight:900;margin-bottom:6px;color:#0f172a}
+    .section-block h4{font-size:14px;font-weight:900;margin-top:10px;margin-bottom:4px;color:#111827}
+    .section-block p{font-size:13px;color:#4b5563;margin-bottom:6px}
+    .section-block ul{padding-left:18px;font-size:13px;color:#4b5563}
+    .section-block ul li+li{margin-top:2px}
+
+    /* ===== Footer ===== */
+    .pro-footer{background:#020617;color:#cbd5e1;margin-top:40px}
+    .pf-wrap{
+      max-width:1200px;margin:0 auto;padding:34px 15px;
+      display:grid;grid-template-columns:320px 1fr;gap:26px;
+    }
+    .pf-logo{display:flex;align-items:center;gap:10px}
+    .pf-brand-text{font-size:18px;font-weight:900;color:#e2e8f0}
+    .pf-brand-text span{color:#38bdf8}
+    .pf-tag{margin-top:8px;color:#94a3b8;font-size:13px}
+    .pf-social{display:flex;gap:10px;margin-top:10px}
+    .pf-social a{
+      display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;
+      border:1px solid #1e293b;border-radius:10px;background:#0b1220;color:#cbd5e1;
+      transition:background .15s,color .15s,border-color .15s,transform .15s,box-shadow .15s;
+    }
+    .pf-social a:hover{
+      background:#38bdf8;border-color:#38bdf8;color:#0b1220;transform:translateY(-1px);
+      box-shadow:0 4px 12px rgba(56,189,248,.4);
+    }
+    .pf-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .pf-col h5{color:#e2e8f0;font-weight:900;font-size:14px;margin-bottom:10px}
+    .pf-col ul{list-style:none}
+    .pf-col li{margin:8px 0}
+    .pf-col a{color:#94a3b8}
+    .pf-col a:hover{color:#e2e8f0}
+    .pf-bottom{border-top:1px solid #1e293b;background:#0b1220}
+    .pf-bottom-wrap{
+      max-width:1200px;margin:0 auto;padding:12px 15px;
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      color:#8893a7;font-size:13px;
+    }
+    .pf-links{display:flex;gap:10px}
+    .pf-links a{color:#94a3b8}
+    .pf-links a:hover{color:#e2e8f0}
+
+    /* ===== Modal ===== */
+    .modal-overlay{position:fixed;inset:0;background:rgba(15,23,42,0.7);display:none;z-index:200}
+    .modal{
+      position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
+      width:420px;max-width:96vw;background:#ffffff;border:1px solid #e5e7eb;
+      border-radius:14px;box-shadow:0 18px 40px rgba(15,23,42,0.35);display:none;z-index:210;
+    }
+    .modal-head{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-bottom:1px solid #e5e7eb}
+    .modal-head h3{font-size:15px;font-weight:900;color:#111827}
+    .modal-close{background:#f3f4f6;border:1px solid #e5e7eb;border-radius:8px;padding:6px 8px;cursor:pointer}
+    .modal-body{padding:12px;font-size:13px;color:#4b5563}
+
+    /* ===== Responsive ===== */
+    @media (max-width:1100px){
+      .pf-wrap{grid-template-columns:1fr}
+      .pf-cols{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:992px){
+      .wc-nav{display:none}
+      .mobile-menu-btn{display:inline-block}
+      .layout{grid-template-columns:1fr;grid-template-areas:"tool" "sidebar" "content";}
+      .tooltip{width:calc(100vw - 24px)}
+    }
+
+    /* ===== (FIX) Mobile button layout like homepage ===== */
+    @media (max-width:640px){
+      .pf-cols{grid-template-columns:1fr}
+      .editor{min-height:230px}
+
+      .workspace-top{
+        flex-direction:column;
+        align-items:stretch;
+      }
+      .top-left{
+        width:100%;
+        gap:8px;
+      }
+      .workspace-actions{
+        width:100%;
+        justify-content:stretch;
+      }
+      .workspace-actions .btn{
+        flex:1 1 calc(50% - 8px);
+        width:auto;
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== Header ===== -->
+  <header class="wc-header">
+    <div class="wc-wrap">
+      <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+        <span class="slab slab-w">W</span>
+        <span class="slab slab-o">O</span>
+        <span class="slab slab-r">R</span>
+        <span class="slab slab-d">D</span>
+        <span class="wc-brand-text">
+          Calculator
+          <small class="wc-tagline">Every Word Counts</small>
+        </span>
+      </a>
+
+      <nav class="wc-nav" aria-label="Primary">
+        <a href="https://wordcalculator.net" class="wc-link">Home</a>
+        <a href="blog.html" class="wc-link">Blog</a>
+        <a href="tools.html" class="wc-link">Tools</a>
+        <a href="about.html" class="wc-link">About Us</a>
+        <a href="signin.html" class="wc-link">Sign In</a>
+      </nav>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <div class="mobile-nav-header">
+        <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <span class="wc-brand-text">Calculator</span>
+        </a>
+        <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="https://wordcalculator.net" class="nav-link mobile-link">Home</a>
+        <a href="blog.html" class="nav-link mobile-link">Blog</a>
+        <a href="tools.html" class="nav-link mobile-link">Tools</a>
+        <a href="about.html" class="nav-link mobile-link">About Us</a>
+		<a href="signin.html" class="nav-link mobile-link">Sign In</a>
+      </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+  </header>
+
+  <!-- ===== Breadcrumbs ===== -->
+  <div class="crumb-wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="https://wordcalculator.net">Home</a>
+      <span class="crumb-separator">/</span>
+      <a href="tools.html">Tools</a>
+      <span class="crumb-separator">/</span>
+      <span class="crumb-current">Grammar &amp; Spell Checker</span>
+    </nav>
+  </div>
+
+  <!-- ==================== MAIN ==================== -->
+  <main class="age-main">
+    <div class="layout">
+      <!-- TOOL -->
+      <section class="tool" aria-label="Grammar and spell checker tool">
+        <article class="tool-card converter-card">
+          <header class="converter-header">
+            <div class="converter-header-left">
+              <h1 class="converter-title">Grammar &amp; Spell Checker</h1>
+              <p class="converter-subtitle">Underline mistakes instantly. Hover to see corrections. Click to apply fixes.</p>
+            </div>
+            <div class="badge">
+              <i class="fa-solid fa-spell-check"></i>
+              Free • Mobile-friendly
+            </div>
+          </header>
+
+          <div class="converter-body">
+            <section class="workspace" aria-label="Editor and checks">
+              <div class="workspace-top">
+                <div class="top-left" aria-label="Live stats">
+                  <span class="pill"><i class="fa-solid fa-font"></i> Words: <span id="wordsCount">0</span></span>
+                  <span class="pill"><i class="fa-solid fa-hashtag"></i> Characters: <span id="charsCount">0</span></span>
+                  <span class="pill pill-warn" id="issuesPill"><i class="fa-solid fa-triangle-exclamation"></i> Errors: <span id="issuesCount">0</span></span>
+
+                  <div class="controls-row" aria-label="Language selection">
+                    <i class="fa-solid fa-language" aria-hidden="true"></i>
+                    <select id="langSelect" class="select" aria-label="Language">
+                      <option value="en-US" selected>English (US)</option>
+                      <option value="en-GB">English (UK)</option>
+                      <option value="en">English</option>
+                      <option value="es">Spanish</option>
+                      <option value="fr">French</option>
+                      <option value="de">German</option>
+                      <option value="pt">Portuguese</option>
+                      <option value="it">Italian</option>
+                      <option value="nl">Dutch</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- (ONLY) class added, structure same -->
+                <div class="workspace-actions">
+                  <button type="button" class="btn btn-ghost" id="selectAllBtn">
+                    <i class="fa-solid fa-highlighter"></i> Select All
+                  </button>
+                  <button type="button" class="btn btn-ghost" id="copyBtn" disabled>
+                    <i class="fa-solid fa-copy"></i> Copy
+                  </button>
+                  <button type="button" class="btn" id="freeCheckBtn">
+                    <i class="fa-solid fa-circle-check"></i> Free Check
+                  </button>
+                  <button type="button" class="btn btn-ghost" id="deepCheckBtn">
+                    <i class="fa-solid fa-magnifying-glass-plus"></i> Deep Check
+                  </button>
+                  <button type="button" class="btn" id="fixAllBtn" disabled>
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Fix Errors
+                  </button>
+                  <button type="button" class="btn btn-warn" id="clearBtn" disabled>
+                    <i class="fa-solid fa-broom"></i> Clear
+                  </button>
+                </div>
+              </div>
+
+              <div class="editor-wrap">
+                <div class="editor-label">
+                  <i class="fa-solid fa-pen-nib"></i> Enter your text below (errors will be underlined after checking)
+                </div>
+
+                <div
+                  id="editor"
+                  class="editor"
+                  contenteditable="true"
+                  spellcheck="true"
+                  role="textbox"
+                  aria-multiline="true"
+                  aria-label="Grammar editor"
+                  data-placeholder="Paste or type your text here..."
+                ></div>
+
+                <!-- Drag to resize (center bottom) -->
+                <div class="resize-handle-wrap" aria-label="Resize editor">
+                  <div id="resizeHandle" class="resize-handle" role="slider" tabindex="0" aria-label="Drag to resize editor"></div>
+                </div>
+              </div>
+
+              <div class="workspace-bottom">
+                <div class="status">
+                  <span id="statusText">Type or paste text, then click “Free Check” (or “Deep Check”). Hover underlined text for suggestions.</span>
+                  <span id="errorText" class="error-text"></span>
+                </div>
+              </div>
+            </section>
+          </div>
+        </article>
+      </section>
+
+      <!-- SIDEBAR / QUICK SEARCH -->
+      <aside class="sidebar" aria-label="Quick search and related tools">
+        <div class="sidebar-card">
+          <div class="sidebar-title-bar">
+            <span>Quick Search</span>
+            <i class="fas fa-magnifying-glass"></i>
+          </div>
+
+          <div class="tool-search">
+            <small>Quick links to other tools on WordCalculator.net</small>
+            <div class="sidebar-search-input-wrapper">
+              <i class="fa-solid fa-magnifying-glass sidebar-search-icon" aria-hidden="true"></i>
+              <input
+                type="search"
+                id="toolSearchInput"
+                class="sidebar-search-input"
+                placeholder="Search tools by name..."
+                autocomplete="off"
+                aria-label="Search tools by name"
+              />
+            </div>
+            <ul id="toolSearchSuggestions" class="sidebar-search-suggestions" aria-label="Tool suggestions"></ul>
+          </div>
+
+          <div class="sidebar-group">
+            <h4>Popular</h4>
+            <ul class="sidebar-links">
+              <li><a href="age-calculator.html">Age Calculator</a></li>
+              <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+              <li><a href="calorie-calculator.html">Calorie Calculator</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-group">
+            <h4>Text &amp; Writing</h4>
+            <ul class="sidebar-links">
+              <li><a href="https://wordcalculator.net">Word &amp; Character Counter</a></li>
+              <li><a href="case-converter.html">Case Converter</a></li>
+              <li><a href="grammar-spell-checker.html">Grammar &amp; Spell Checker</a></li>
+              <li><a href="readability-analyzer.html">Readability Analyzer</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-group">
+            <h4>SEO &amp; Content</h4>
+            <ul class="sidebar-links">
+              <li><a href="keyword-density-analyzer.html">Keyword Density Analyzer</a></li>
+              <li><a href="title-meta-preview.html">Title &amp; Meta Preview</a></li>
+              <li><a href="url-slug-generator.html">URL Slug Generator</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-group">
+            <h4>Finance &amp; Time</h4>
+            <ul class="sidebar-links">
+              <li><a href="loan-emi-calculator.html">Loan &amp; EMI Calculator</a></li>
+              <li><a href="interest-calculator.html">Interest Calculator</a></li>
+              <li><a href="focus-timer.html">Focus Timer</a></li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <!-- CONTENT / SEO TEXT -->
+      <section class="content" aria-label="Grammar and spell checker guide">
+        <article class="section-block">
+          <h2>Grammar &amp; Spell Checker for fast proofreading</h2>
+          <p>
+            Writing mistakes can reduce trust, clarity, and readability. A quick grammar and spell check helps you catch typos,
+            repeated words, missing punctuation, and awkward phrasing before you publish, send an email, submit an assignment,
+            or post on social media.
+          </p>
+
+          <h3>How to use this tool</h3>
+          <ul>
+            <li><strong>Paste or type:</strong> Add your text into the editor.</li>
+            <li><strong>Free Check:</strong> Underlines common mistakes and shows suggestions on hover.</li>
+            <li><strong>Deep Check:</strong> Uses stricter rules for style and clarity (may find more issues).</li>
+            <li><strong>Fix Errors:</strong> Automatically applies the best available suggestion for each underlined issue.</li>
+            <li><strong>Copy:</strong> Copy the cleaned text to use anywhere.</li>
+          </ul>
+
+          <h3>Why it is useful</h3>
+          <ul>
+            <li><strong>Professional writing:</strong> Cleaner emails and documents look more trustworthy.</li>
+            <li><strong>Faster editing:</strong> Hover suggestions save time compared to manual proofreading.</li>
+            <li><strong>Better readability:</strong> Clear punctuation and wording helps readers understand faster.</li>
+            <li><strong>Content quality:</strong> Polished blog posts and product descriptions reduce confusion and improve user experience.</li>
+          </ul>
+
+          <h3>What the checker highlights</h3>
+          <p>
+            After checking, mistakes are underlined directly in the editor. Hover an underlined word or phrase to see a tooltip that can
+            include suggested replacements. Click a suggestion to apply it instantly.
+          </p>
+
+          <h3>Drag to resize: why this matters and how it helps</h3>
+          <p>
+            Different writing tasks need different amounts of space. A short email can be reviewed in a small editor, but longer work
+            such as blog posts, reports, academic writing, or multi-paragraph prompts often benefit from a taller workspace. That is why
+            this tool includes a <strong>Drag to resize</strong> handle under the editor.
+          </p>
+          <p>
+            To resize the editor, drag the small bar centered below the text box. Increasing the editor height helps you see more of your
+            text at once, which reduces scrolling and makes it easier to spot repeated words, missing punctuation, and inconsistent
+            capitalization across paragraphs. If you prefer a compact layout (especially on smaller screens), you can shrink the editor
+            back down to keep the page tidy.
+          </p>
+          <h4>How resizing works</h4>
+          <ul>
+            <li><strong>Drag down:</strong> Expands the editor height so you can review more text at once.</li>
+            <li><strong>Drag up:</strong> Shrinks the editor height to save screen space and reduce clutter.</li>
+            <li><strong>Safe limits:</strong> The tool keeps a minimum height for usability and a maximum height to avoid layout issues.</li>
+          </ul>
+          <p>
+            Without resizing, long documents can feel cramped and require constant scrolling, which makes proofreading slower and can
+            increase the chance of missing errors. Resizing is a small feature, but it meaningfully improves comfort and accuracy for
+            real-world editing.
+          </p>
+
+          <h3>Tips for best results</h3>
+          <ul>
+            <li>Run <strong>Free Check</strong> first, then use <strong>Deep Check</strong> for stricter improvements.</li>
+            <li>Always review suggestions using your judgment, especially for names, brand terms, and technical words.</li>
+            <li>If you changed many lines, run the checker again to refresh highlights.</li>
+            <li>For long text, expand the editor with <strong>Drag to resize</strong> to reduce scrolling and keep context visible.</li>
+          </ul>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="pro-footer" id="about" aria-label="Website footer">
+    <div class="pf-wrap">
+      <div class="pf-brand">
+        <div class="pf-logo">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <div class="pf-brand-text">
+            WordCalculator<span>.net</span>
+          </div>
+        </div>
+        <p class="pf-tag">A focused, distraction-free toolkit for precise writing.</p>
+        <div class="pf-social">
+          <a href="https://facebook.com/wordcalculator" aria-label="Facebook" rel="noopener" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/wordcalculator" aria-label="X (Twitter)" rel="noopener" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://linkedin.com/company/wordcalculator" aria-label="LinkedIn" rel="noopener" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://youtube.com/@wordcalculator" aria-label="YouTube" rel="noopener" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="pf-cols">
+        <div class="pf-col">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="https://wordcalculator.net">Editor</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="grammar-spell-checker.html">Grammar Check</a></li>
+            <li><a href="keyword-density-analyzer.html">Keyword Density</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="guides.html">Tips &amp; Guides</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="bug-report.html">Report a Bug</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html">Cookie Policy</a></li>
+            <li><a href="security.html">Security</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pf-bottom">
+      <div class="pf-bottom-wrap">
+        <div>© <span id="pf-year"></span> WordCalculator.net — All rights reserved.</div>
+        <div class="pf-links">
+          <a href="sitemap.html">Sitemap</a>
+          <a href="status.html">Status</a>
+          <a href="accessibility.html">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Auth Modal ===== -->
+  <div class="modal-overlay" id="authOverlay" aria-hidden="true"></div>
+  <div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <div class="modal-head">
+      <h3 id="authTitle"><i class="fas fa-user-lock"></i> Account</h3>
+      <button class="modal-close" id="authCloseBtn" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body">
+      Sign-in and account features are coming soon. For now, all tools are free to use without registration.
+    </div>
+  </div>
+
+  <!-- Tooltip -->
+  <div class="tooltip" id="tooltip" role="dialog" aria-hidden="true"></div>
+
+  <!-- Tools Directory Js -->
+  <script src="tools-directory.js"></script>
+  
+  <script>
+    const $  = (s)=>document.querySelector(s);
+    const $$ = (s)=>Array.from(document.querySelectorAll(s));
+
+    document.addEventListener("DOMContentLoaded", ()=>{
+      initYear();
+      initMobileMenu();
+      initAuthModal();
+      initToolQuickSearch();
+      initGrammarSpellChecker();
+    });
+
+    function initYear(){
+      const el=$("#pf-year");
+      if(el) el.textContent=new Date().getFullYear();
+    }
+
+    function initMobileMenu(){
+      const mobileMenuBtn=$("#mobileMenuBtn");
+      const mobileCloseBtn=$("#mobileCloseBtn");
+      const mobileNav=$("#mobileNav");
+      const mobileOverlay=$("#mobileOverlay");
+      if(!mobileMenuBtn||!mobileNav||!mobileOverlay) return;
+
+      const open=()=>{
+        mobileNav.classList.add("active");
+        mobileOverlay.classList.add("active");
+        document.body.style.overflow="hidden";
+      };
+      const close=()=>{
+        mobileNav.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        document.body.style.overflow="";
+      };
+
+      mobileMenuBtn.addEventListener("click",open);
+      if(mobileCloseBtn) mobileCloseBtn.addEventListener("click",close);
+      mobileOverlay.addEventListener("click",close);
+      $$(".mobile-link").forEach(link=>link.addEventListener("click",close));
+
+      const openAuthBtnMobile=$("#openAuthBtnMobile");
+      if(openAuthBtnMobile){
+        openAuthBtnMobile.addEventListener("click",()=>{
+          close();
+          openAuthModal();
+        });
+      }
+    }
+
+    function initAuthModal(){
+      const openBtn=$("#openAuthBtn");
+      const overlay=$("#authOverlay");
+      const modal=$("#authModal");
+      const closeBtn=$("#authCloseBtn");
+      if(!overlay || !modal) return;
+
+      const open=()=>{
+        overlay.style.display="block";
+        modal.style.display="block";
+        document.body.style.overflow="hidden";
+      };
+      const close=()=>{
+        overlay.style.display="none";
+        modal.style.display="none";
+        document.body.style.overflow="";
+      };
+
+      if(openBtn) openBtn.addEventListener("click",open);
+      if(closeBtn) closeBtn.addEventListener("click",close);
+      overlay.addEventListener("click",close);
+      document.addEventListener("keydown",(e)=>{
+        if(e.key==="Escape") close();
+      });
+    }
+
+    function openAuthModal(){
+      const overlay=$("#authOverlay");
+      const modal=$("#authModal");
+      if(!overlay||!modal) return;
+      overlay.style.display="block";
+      modal.style.display="block";
+      document.body.style.overflow="hidden";
+    }
+
+    /* ===== Grammar & Spell Checker (Underline + Hover Suggestions) ===== */
+    function initGrammarSpellChecker(){
+      const editor = $("#editor");
+      const langSelect = $("#langSelect");
+
+      const selectAllBtn = $("#selectAllBtn");
+      const copyBtn = $("#copyBtn");
+      const clearBtn = $("#clearBtn");
+
+      const freeCheckBtn = $("#freeCheckBtn");
+      const deepCheckBtn = $("#deepCheckBtn");
+      const fixAllBtn = $("#fixAllBtn");
+
+      const wordsCount = $("#wordsCount");
+      const charsCount = $("#charsCount");
+      const issuesCount = $("#issuesCount");
+      const issuesPill = $("#issuesPill");
+
+      const statusText = $("#statusText");
+      const errorText = $("#errorText");
+
+      const tooltip = $("#tooltip");
+
+      const resizeHandle = $("#resizeHandle");
+
+      const LT_ENDPOINT = "https://api.languagetool.org/v2/check";
+
+      let lastMatches = [];
+      let isChecking = false;
+      let deepMode = false;
+
+      /* ===== Drag to resize + Auto-grow ===== */
+      const AUTO = {
+        MIN_H: 230,
+        MAX_H: 980,
+        userResized: false
+      };
+
+      function clamp(n, a, b){ return Math.max(a, Math.min(b, n)); }
+
+      function getEditorHeight(){
+        const rect = editor.getBoundingClientRect();
+        return Math.round(rect.height);
+      }
+
+      function setEditorHeight(px){
+        const h = clamp(px, AUTO.MIN_H, AUTO.MAX_H);
+        editor.style.height = h + "px";
+        editor.style.minHeight = "0px";
+      }
+
+      function autoGrow(force=false){
+        // Always grow when content needs more space (paste/input), never force shrink.
+        // If user resized smaller, it will still expand when content exceeds.
+        const needed = clamp(editor.scrollHeight + 2, AUTO.MIN_H, AUTO.MAX_H);
+        const cur = getEditorHeight();
+        if(force || needed > cur){
+          setEditorHeight(needed);
+        }
+      }
+
+      (function initDragResize(){
+        if(!resizeHandle || !editor) return;
+
+        let dragging = false;
+        let startY = 0;
+        let startH = 0;
+
+        function onDown(clientY){
+          dragging = true;
+          startY = clientY;
+          startH = getEditorHeight();
+          AUTO.userResized = true;
+          document.body.style.userSelect = "none";
+          document.body.style.cursor = "ns-resize";
+        }
+
+        function onMove(clientY){
+          if(!dragging) return;
+          const dy = clientY - startY;
+          setEditorHeight(startH + dy);
+        }
+
+        function onUp(){
+          if(!dragging) return;
+          dragging = false;
+          document.body.style.userSelect = "";
+          document.body.style.cursor = "";
+        }
+
+        resizeHandle.addEventListener("mousedown",(e)=>{
+          e.preventDefault();
+          onDown(e.clientY);
+        });
+
+        window.addEventListener("mousemove",(e)=> onMove(e.clientY));
+        window.addEventListener("mouseup", onUp);
+
+        resizeHandle.addEventListener("touchstart",(e)=>{
+          const t = e.touches && e.touches[0];
+          if(!t) return;
+          e.preventDefault();
+          onDown(t.clientY);
+        }, {passive:false});
+
+        window.addEventListener("touchmove",(e)=>{
+          const t = e.touches && e.touches[0];
+          if(!t) return;
+          onMove(t.clientY);
+        }, {passive:true});
+
+        window.addEventListener("touchend", onUp);
+
+        resizeHandle.addEventListener("keydown",(e)=>{
+          const step = 24;
+          if(e.key === "ArrowDown"){ e.preventDefault(); AUTO.userResized = true; setEditorHeight(getEditorHeight() + step); }
+          if(e.key === "ArrowUp"){ e.preventDefault(); AUTO.userResized = true; setEditorHeight(getEditorHeight() - step); }
+        });
+
+        // Initial height for consistent auto-grow behavior
+        setEditorHeight(Math.max(AUTO.MIN_H, getEditorHeight()));
+        // On load, keep compact
+        setTimeout(()=>autoGrow(true), 0);
+      })();
+
+      function showError(msg){
+        if(!msg){
+          errorText.style.display="none";
+          errorText.textContent="";
+          return;
+        }
+        errorText.style.display="inline";
+        errorText.textContent=msg;
+      }
+
+      function setStatus(msg){
+        statusText.textContent = msg || "";
+      }
+
+      function escapeHtml(str){
+        return String(str)
+          .replaceAll("&","&amp;")
+          .replaceAll("<","&lt;")
+          .replaceAll(">","&gt;")
+          .replaceAll('"',"&quot;")
+          .replaceAll("'","&#039;");
+      }
+
+      /* ===== Rich text safe paste (remove background/cookies/styles; keep H1/H2/H3 etc) ===== */
+      const ALLOWED_TAGS = new Set([
+        "P","BR","DIV",
+        "H1","H2","H3","H4","H5","H6",
+        "STRONG","B","EM","I","U","S","SUB","SUP",
+        "UL","OL","LI",
+        "A",
+        "BLOCKQUOTE",
+        "CODE","PRE",
+        "SPAN"
+      ]);
+
+      const BLOCK_TAGS = new Set(["P","DIV","H1","H2","H3","H4","H5","H6","LI","BLOCKQUOTE","PRE"]);
+
+      function isSafeHref(href){
+        if(!href) return false;
+        const v = String(href).trim();
+        if(v.startsWith("#")) return true;
+        try{
+          const u = new URL(v, window.location.href);
+          return ["http:","https:","mailto:"].includes(u.protocol);
+        }catch(e){
+          return false;
+        }
+      }
+
+      function sanitizeNode(node, doc){
+        // Returns DocumentFragment
+        const frag = doc.createDocumentFragment();
+
+        if(!node) return frag;
+
+        if(node.nodeType === Node.TEXT_NODE){
+          frag.appendChild(doc.createTextNode(node.nodeValue || ""));
+          return frag;
+        }
+
+        if(node.nodeType !== Node.ELEMENT_NODE) return frag;
+
+        const tag = node.tagName ? node.tagName.toUpperCase() : "";
+        if(tag === "SCRIPT" || tag === "STYLE" || tag === "META" || tag === "LINK" || tag === "NOSCRIPT"){
+          return frag;
+        }
+
+        if(tag === "BR"){
+          frag.appendChild(doc.createElement("br"));
+          return frag;
+        }
+
+        if(!ALLOWED_TAGS.has(tag)){
+          // unwrap unknown tags, keep their children
+          node.childNodes.forEach(ch=>{
+            frag.appendChild(sanitizeNode(ch, doc));
+          });
+          return frag;
+        }
+
+        const el = doc.createElement(tag.toLowerCase());
+
+        // Keep only safe attributes (no styles/classes/ids)
+        if(tag === "A"){
+          const href = node.getAttribute("href");
+          if(isSafeHref(href)) el.setAttribute("href", href.trim());
+          el.setAttribute("rel","nofollow noopener");
+          el.removeAttribute("target");
+        }
+
+        // Convert DIV that has no meaning into P-like behavior (keep as div, allowed)
+        // (No extra changes needed)
+
+        node.childNodes.forEach(ch=>{
+          el.appendChild(sanitizeNode(ch, doc));
+        });
+
+        // If span becomes empty wrapper, still ok (keeps inline structure)
+        frag.appendChild(el);
+        return frag;
+      }
+
+      function insertHTMLAtCaret(html){
+        const sel = window.getSelection();
+        if(!sel || sel.rangeCount === 0){
+          editor.insertAdjacentHTML("beforeend", html);
+          return;
+        }
+        const range = sel.getRangeAt(0);
+        if(!editor.contains(range.commonAncestorContainer)) {
+          editor.insertAdjacentHTML("beforeend", html);
+          return;
+        }
+        range.deleteContents();
+        const temp = document.createElement("div");
+        temp.innerHTML = html;
+        const frag = document.createDocumentFragment();
+        while(temp.firstChild) frag.appendChild(temp.firstChild);
+        range.insertNode(frag);
+        // move caret to end of inserted content
+        sel.removeAllRanges();
+        const newRange = document.createRange();
+        newRange.selectNodeContents(editor);
+        newRange.collapse(false);
+        sel.addRange(newRange);
+      }
+
+      function handlePaste(e){
+        // Prevent source background/cookies styles
+        e.preventDefault();
+        hideTooltip();
+        showError("");
+
+        const cd = e.clipboardData;
+        if(!cd){
+          // fallback: plain
+          const text = "";
+          insertHTMLAtCaret(escapeHtml(text).replace(/\n/g,"<br>"));
+          return;
+        }
+
+        const html = cd.getData("text/html");
+        const text = cd.getData("text/plain");
+
+        if(html){
+          const parser = new DOMParser();
+          const parsed = parser.parseFromString(html, "text/html");
+          const cleanDoc = document.implementation.createHTMLDocument("");
+          const body = parsed.body;
+
+          const cleanFrag = cleanDoc.createDocumentFragment();
+          body.childNodes.forEach(n=>{
+            cleanFrag.appendChild(sanitizeNode(n, cleanDoc));
+          });
+
+          const wrap = cleanDoc.createElement("div");
+          wrap.appendChild(cleanFrag);
+          const sanitizedHTML = wrap.innerHTML;
+
+          insertHTMLAtCaret(sanitizedHTML);
+        }else{
+          // plain text -> keep line breaks
+          insertHTMLAtCaret(escapeHtml(text).replace(/\n/g,"<br>"));
+        }
+
+        removeHighlights();
+        syncPlaceholder();
+        updateStats();
+        setIssues(0);
+        fixAllBtn.disabled = true;
+        setStatus("Text pasted. Click “Free Check” (or “Deep Check”) to underline issues.");
+        setTimeout(()=>autoGrow(true), 0);
+      }
+
+      /* ===== Plain text + mapping (for accurate highlights with rich HTML) ===== */
+      function removeHighlights(){
+        const spans = editor.querySelectorAll(".lt-err");
+        spans.forEach(sp=>{
+          const parent = sp.parentNode;
+          if(!parent) return;
+          while(sp.firstChild) parent.insertBefore(sp.firstChild, sp);
+          parent.removeChild(sp);
+          parent.normalize();
+        });
+      }
+
+      function getPlainTextAndMap(){
+        // Build plain text similar to what user sees, with \n for blocks/br.
+        removeHighlights();
+
+        const map = [];
+        let out = "";
+
+        function appendTextNode(tn){
+          const val = tn.nodeValue || "";
+          if(!val) return;
+          const start = out.length;
+          out += val;
+          const end = out.length;
+          map.push({ node: tn, start, end });
+        }
+
+        function appendNewline(){
+          if(out.length === 0) return;
+          if(out.endsWith("\n")) return;
+          out += "\n";
+        }
+
+        function walk(node){
+          if(node.nodeType === Node.TEXT_NODE){
+            appendTextNode(node);
+            return;
+          }
+          if(node.nodeType !== Node.ELEMENT_NODE) return;
+
+          const tag = node.tagName ? node.tagName.toUpperCase() : "";
+          if(tag === "BR"){
+            out += "\n";
+            return;
+          }
+
+          const isBlock = BLOCK_TAGS.has(tag);
+
+          node.childNodes.forEach(ch=>walk(ch));
+
+          if(isBlock){
+            appendNewline();
+          }
+        }
+
+        editor.childNodes.forEach(ch=>walk(ch));
+
+        return { text: out.replace(/\u00A0/g,""), map };
+      }
+
+      function countWords(s){
+        const t = String(s || "").trim();
+        if(!t) return 0;
+        return t.split(/\s+/).filter(Boolean).length;
+      }
+
+      function updateStats(){
+        const { text } = getPlainTextAndMap();
+        const w = countWords(text);
+        const c = text.replace(/\n/g,"").length;
+
+        wordsCount.textContent = String(w);
+        charsCount.textContent = String(c);
+
+        const hasText = text.trim().length > 0;
+        copyBtn.disabled = !hasText;
+        clearBtn.disabled = !hasText;
+
+        if(!hasText){
+          setIssues(0);
+          fixAllBtn.disabled = true;
+        }
+      }
+
+      function setIssues(n){
+        issuesCount.textContent = String(n);
+
+        issuesPill.classList.remove("pill-ok","pill-warn","pill-bad");
+        if(n === 0){
+          issuesPill.classList.add("pill-ok");
+        }else if(n <= 3){
+          issuesPill.classList.add("pill-warn");
+        }else{
+          issuesPill.classList.add("pill-bad");
+        }
+      }
+
+      function hideTooltip(){
+        tooltip.style.display = "none";
+        tooltip.setAttribute("aria-hidden","true");
+        tooltip.innerHTML = "";
+      }
+
+      function positionTooltip(x, y){
+        const pad = 12;
+        const rect = tooltip.getBoundingClientRect();
+        let left = x + 14;
+        let top  = y + 14;
+
+        if(left + rect.width > window.innerWidth - pad){
+          left = window.innerWidth - rect.width - pad;
+        }
+        if(top + rect.height > window.innerHeight - pad){
+          top = window.innerHeight - rect.height - pad;
+        }
+        tooltip.style.left = left + "px";
+        tooltip.style.top  = top + "px";
+      }
+
+      function buildTooltip(match, mouseX, mouseY){
+        if(!match) return;
+
+        const ruleId = match.rule && match.rule.id ? match.rule.id : "Rule";
+        const message = match.message || "Suggestion available.";
+        const short = match.shortMessage || "";
+        const replacements = Array.isArray(match.replacements) ? match.replacements.slice(0, 6) : [];
+
+        const title = short ? short : ruleId;
+
+        tooltip.innerHTML = `
+          <div class="tt-title">${escapeHtml(title)}</div>
+          <div class="tt-msg">${escapeHtml(message)}</div>
+          <div class="tt-actions" id="ttActions"></div>
+          <div class="tt-small">Tip: Click a suggestion to replace text. Click “Ignore” to hide this highlight.</div>
+        `;
+
+        const actions = tooltip.querySelector("#ttActions");
+
+        if(replacements.length){
+          replacements.forEach(rep=>{
+            const b = document.createElement("button");
+            b.type = "button";
+            b.className = "tt-btn tt-btn-primary";
+            b.textContent = rep.value;
+            b.addEventListener("click",(e)=>{
+              e.preventDefault();
+              applyReplacement(match, rep.value);
+              hideTooltip();
+            });
+            actions.appendChild(b);
+          });
+        }else{
+          const no = document.createElement("button");
+          no.type = "button";
+          no.className = "tt-btn tt-btn-ghost";
+          no.textContent = "No direct replacement";
+          no.addEventListener("click",(e)=>{ e.preventDefault(); });
+          actions.appendChild(no);
+        }
+
+        const ignoreBtn = document.createElement("button");
+        ignoreBtn.type = "button";
+        ignoreBtn.className = "tt-btn tt-btn-ghost";
+        ignoreBtn.textContent = "Ignore";
+        ignoreBtn.addEventListener("click",(e)=>{
+          e.preventDefault();
+          ignoreMatch(match);
+          hideTooltip();
+        });
+        actions.appendChild(ignoreBtn);
+
+        tooltip.style.display = "block";
+        tooltip.setAttribute("aria-hidden","false");
+        positionTooltip(mouseX, mouseY);
+      }
+
+      function sortAndFilterMatches(matches){
+        const m = (matches || []).slice().sort((a,b)=>(a.offset||0)-(b.offset||0));
+        const out = [];
+        let lastEnd = -1;
+        for(const it of m){
+          const off = Number(it.offset||0);
+          const len = Number(it.length||0);
+          if(len <= 0) continue;
+          if(off < lastEnd) continue;
+          out.push(it);
+          lastEnd = off + len;
+        }
+        return out;
+      }
+
+      function severityClass(match){
+        const cat = match.rule && match.rule.category && match.rule.category.id ? String(match.rule.category.id) : "";
+        const ruleId = match.rule && match.rule.id ? String(match.rule.id) : "";
+        const msg = (match.message||"").toLowerCase();
+
+        if(cat.toLowerCase().includes("typo") || ruleId.toLowerCase().includes("spell") || msg.includes("spelling")){
+          return "lt-err";
+        }
+        if(cat.toLowerCase().includes("style") || msg.includes("style") || msg.includes("clarity") || deepMode){
+          return "lt-err lt-err-warn";
+        }
+        return "lt-err lt-err-info";
+      }
+
+      function locateFromMap(map, target){
+        // Find text-node position for a plain-text offset
+        if(!map || !map.length){
+          return null;
+        }
+        // Clamp target
+        target = Math.max(0, target);
+
+        // Linear search is ok (usually small); keeps reliability
+        for(const seg of map){
+          if(target <= seg.end){
+            const off = Math.max(0, Math.min(target - seg.start, (seg.end - seg.start)));
+            return { node: seg.node, offset: off };
+          }
+        }
+        // If beyond end, return end of last node
+        const last = map[map.length - 1];
+        return { node: last.node, offset: (last.end - last.start) };
+      }
+
+      function wrapMatch(map, match, mid){
+        const off = Number(match.offset||0);
+        const len = Number(match.length||0);
+        const start = locateFromMap(map, off);
+        const end   = locateFromMap(map, off + len);
+        if(!start || !end) return;
+
+        try{
+          const range = document.createRange();
+          range.setStart(start.node, start.offset);
+          range.setEnd(end.node, end.offset);
+
+          const span = document.createElement("span");
+          span.className = severityClass(match);
+          span.setAttribute("data-mid", String(mid));
+          span.setAttribute("aria-label", "Grammar issue");
+
+          const frag = range.extractContents();
+          span.appendChild(frag);
+          range.insertNode(span);
+          editor.normalize();
+        }catch(e){
+          // ignore rare range issues
+        }
+      }
+
+      function renderHighlights(matches){
+        hideTooltip();
+        showError("");
+
+        const { text, map } = getPlainTextAndMap();
+
+        const filtered = sortAndFilterMatches(matches);
+        lastMatches = filtered;
+
+        // Apply from end -> stable offsets
+        for(let i = filtered.length - 1; i >= 0; i--){
+          wrapMatch(map, filtered[i], i);
+        }
+
+        setTimeout(()=>autoGrow(true), 0);
+      }
+
+      async function checkText(mode){
+        showError("");
+        hideTooltip();
+
+        const { text } = getPlainTextAndMap();
+
+        updateStats();
+        syncPlaceholder();
+
+        if(!text.trim()){
+          setIssues(0);
+          fixAllBtn.disabled = true;
+          setStatus("Type or paste text, then click “Free Check” (or “Deep Check”).");
+          return;
+        }
+
+        if(isChecking) return;
+        isChecking = true;
+
+        deepMode = (mode === "deep");
+        setStatus(deepMode ? "Deep checking…" : "Checking…");
+
+        try{
+          const body = new URLSearchParams();
+          body.set("text", text);
+          body.set("language", langSelect.value || "en-US");
+          if(deepMode) body.set("level", "picky");
+
+          const res = await fetch(LT_ENDPOINT, {
+            method: "POST",
+            headers: {"Content-Type":"application/x-www-form-urlencoded"},
+            body
+          });
+
+          if(!res.ok){
+            throw new Error("Request failed");
+          }
+
+          const data = await res.json();
+          const matches = Array.isArray(data.matches) ? data.matches : [];
+
+          renderHighlights(matches);
+
+          const count = sortAndFilterMatches(matches).length;
+          setIssues(count);
+          fixAllBtn.disabled = count === 0;
+
+          if(count === 0){
+            setStatus("No errors found. You can still use your judgment for style and tone.");
+          }else{
+            setStatus(`Errors found: ${count}. Hover underlines for suggestions.`);
+          }
+        }catch(err){
+          setIssues(0);
+          fixAllBtn.disabled = true;
+          setStatus("Ready.");
+          showError("Checker service is unavailable right now (free endpoint blocked or rate-limited). Please try again later.");
+        }finally{
+          isChecking = false;
+        }
+      }
+
+      function applyReplacement(match, replacement){
+        hideTooltip();
+        showError("");
+
+        const { map } = getPlainTextAndMap();
+        const off = Number(match.offset||0);
+        const len = Number(match.length||0);
+
+        const start = locateFromMap(map, off);
+        const end   = locateFromMap(map, off + len);
+        if(!start || !end) return;
+
+        try{
+          const range = document.createRange();
+          range.setStart(start.node, start.offset);
+          range.setEnd(end.node, end.offset);
+          range.deleteContents();
+          range.insertNode(document.createTextNode(String(replacement || "")));
+          editor.normalize();
+        }catch(e){}
+
+        removeHighlights();
+        syncPlaceholder();
+        updateStats();
+        setIssues(0);
+        fixAllBtn.disabled = true;
+        setStatus("Replacement applied. Re-check to refresh highlights.");
+        setTimeout(()=>autoGrow(true), 0);
+
+        // Auto re-check (keeps previous behavior)
+        checkText(deepMode ? "deep" : "free");
+      }
+
+      function ignoreMatch(match){
+        const spans = editor.querySelectorAll(".lt-err");
+        // Find the span by matching its data-mid from lastMatches identity (best-effort)
+        const idx = lastMatches.findIndex(m => m === match);
+        if(idx === -1) return;
+
+        const target = editor.querySelector(`.lt-err[data-mid="${idx}"]`);
+        if(!target) return;
+
+        const parent = target.parentNode;
+        while(target.firstChild) parent.insertBefore(target.firstChild, target);
+        parent.removeChild(target);
+        parent.normalize();
+
+        // Update counts
+        const next = lastMatches.slice();
+        next.splice(idx, 1);
+        lastMatches = next;
+
+        setIssues(next.length);
+        fixAllBtn.disabled = next.length === 0;
+        setStatus(`Errors found: ${next.length}.`);
+        setTimeout(()=>autoGrow(true), 0);
+      }
+
+      function fixAll(){
+        hideTooltip();
+        showError("");
+
+        const { text } = getPlainTextAndMap();
+        if(!text.trim()) return;
+
+        const matches = sortAndFilterMatches(lastMatches);
+        if(!matches.length){
+          setStatus("No errors to fix.");
+          return;
+        }
+
+        // Apply from end so offsets stay stable
+        const { map } = getPlainTextAndMap();
+        const applyList = matches
+          .map(m=>{
+            const rep = (m.replacements && m.replacements[0] && m.replacements[0].value) ? m.replacements[0].value : null;
+            return { match:m, off:Number(m.offset||0), len:Number(m.length||0), rep };
+          })
+          .filter(x=>x.rep && x.len > 0)
+          .sort((a,b)=>b.off - a.off);
+
+        if(!applyList.length){
+          setStatus("No direct replacements available for these issues.");
+          return;
+        }
+
+        for(const it of applyList){
+          const start = locateFromMap(map, it.off);
+          const end   = locateFromMap(map, it.off + it.len);
+          if(!start || !end) continue;
+
+          try{
+            const range = document.createRange();
+            range.setStart(start.node, start.offset);
+            range.setEnd(end.node, end.offset);
+            range.deleteContents();
+            range.insertNode(document.createTextNode(String(it.rep)));
+          }catch(e){}
+        }
+
+        editor.normalize();
+        removeHighlights();
+        syncPlaceholder();
+        updateStats();
+        setIssues(0);
+        fixAllBtn.disabled = true;
+        setStatus("Fixes applied. Re-checking…");
+        setTimeout(()=>autoGrow(true), 0);
+
+        checkText(deepMode ? "deep" : "free");
+      }
+
+      async function copyText(){
+        showError("");
+        hideTooltip();
+
+        const { text } = getPlainTextAndMap();
+        if(!text.trim()) return;
+
+        try{
+          await navigator.clipboard.writeText(text.replace(/\n+$/,""));
+          setStatus("Copied to clipboard.");
+        }catch(e){
+          showError("Copy failed. Please select the text and copy manually.");
+        }
+      }
+
+      function clearAll(){
+        hideTooltip();
+        showError("");
+
+        editor.innerHTML = "";
+        lastMatches = [];
+        deepMode = false;
+
+        setIssues(0);
+        fixAllBtn.disabled = true;
+        updateStats();
+        syncPlaceholder();
+
+        setEditorHeight(AUTO.MIN_H);
+        AUTO.userResized = false;
+
+        setStatus("Type or paste text, then click “Free Check” (or “Deep Check”).");
+      }
+
+      function selectAll(){
+        hideTooltip();
+        const range = document.createRange();
+        range.selectNodeContents(editor);
+        const sel = window.getSelection();
+        if(sel){
+          sel.removeAllRanges();
+          sel.addRange(range);
+        }
+      }
+
+      function syncPlaceholder(){
+        const { text } = getPlainTextAndMap();
+        if(!text.trim()){
+          editor.classList.add("is-empty");
+          if(editor.innerHTML.trim() === "") editor.innerHTML = "";
+          editor.setAttribute("data-empty","true");
+        }else{
+          editor.classList.remove("is-empty");
+          editor.removeAttribute("data-empty");
+        }
+      }
+
+      const style = document.createElement("style");
+      style.textContent = `
+        #editor.is-empty:before{
+          content: attr(data-placeholder);
+          color:#94a3b8;
+          pointer-events:none;
+        }
+      `;
+      document.head.appendChild(style);
+      editor.setAttribute("data-placeholder","Paste or type your text here...");
+      editor.classList.add("is-empty");
+
+      // Tooltip on hover
+      editor.addEventListener("mousemove",(e)=>{
+        const t = e.target;
+        if(!(t instanceof HTMLElement)) return;
+        const span = t.closest(".lt-err");
+        if(!span) return;
+
+        const mid = Number(span.getAttribute("data-mid"));
+        const match = lastMatches[mid];
+        if(!match) return;
+
+        buildTooltip(match, e.clientX, e.clientY);
+      });
+
+      editor.addEventListener("mouseleave",()=>{
+        setTimeout(()=>{
+          if(!tooltip.matches(":hover")) hideTooltip();
+        }, 80);
+      });
+
+      tooltip.addEventListener("mouseleave",()=>{
+        hideTooltip();
+      });
+
+      // (FIX) paste sanitizer
+      editor.addEventListener("paste", handlePaste);
+
+      // Input handling
+      editor.addEventListener("input",()=>{
+        hideTooltip();
+        showError("");
+
+        // If user edits while highlights exist, remove highlights but keep rich structure
+        if(editor.querySelector(".lt-err")){
+          removeHighlights();
+        }
+
+        updateStats();
+        setIssues(0);
+        fixAllBtn.disabled = true;
+        setStatus("Text updated. Click “Free Check” (or “Deep Check”) to underline issues.");
+        syncPlaceholder();
+
+        // (FIX) auto grow on input too
+        setTimeout(()=>autoGrow(false), 0);
+      });
+
+      freeCheckBtn.addEventListener("click",(e)=>{
+        e.preventDefault();
+        checkText("free");
+      });
+
+      deepCheckBtn.addEventListener("click",(e)=>{
+        e.preventDefault();
+        checkText("deep");
+      });
+
+      fixAllBtn.addEventListener("click",(e)=>{
+        e.preventDefault();
+        fixAll();
+      });
+
+      copyBtn.addEventListener("click",(e)=>{
+        e.preventDefault();
+        copyText();
+      });
+
+      clearBtn.addEventListener("click",(e)=>{
+        e.preventDefault();
+        clearAll();
+      });
+
+      selectAllBtn.addEventListener("click",(e)=>{
+        e.preventDefault();
+        selectAll();
+      });
+
+      // Init
+      updateStats();
+      setIssues(0);
+      syncPlaceholder();
+      setTimeout(()=>autoGrow(true), 0);
+    }
+
+    /* ===== Tool directory & Quick Search (with icons) ===== */
+    const toolDirectory = allTools;
+
+    function initToolQuickSearch(){
+      const input=$("#toolSearchInput");
+      const suggestionsBox=$("#toolSearchSuggestions");
+      if(!input||!suggestionsBox||!Array.isArray(toolDirectory)) return;
+
+      let currentResults=[];
+
+      function renderSuggestions(query){
+        const value=(query||"").trim().toLowerCase();
+        suggestionsBox.innerHTML="";
+        if(!value){
+          suggestionsBox.classList.remove("visible");
+          return;
+        }
+
+        const allMatches=toolDirectory.filter(tool=>tool.name.toLowerCase().includes(value));
+        if(!allMatches.length){
+          const li=document.createElement("li");
+          li.textContent="No tools found";
+          suggestionsBox.appendChild(li);
+          suggestionsBox.classList.add("visible");
+          return;
+        }
+
+        function rankTool(tool){
+          const name=tool.name.toLowerCase();
+          const pos=name.indexOf(value);
+          const starts=name.startsWith(value)?0:1;
+          const lenDiff=Math.abs(name.length-value.length);
+          return starts*100 + pos*2 + lenDiff;
+        }
+
+        currentResults=allMatches.slice().sort((a,b)=>rankTool(a)-rankTool(b));
+        currentResults.slice(0,10).forEach(tool=>{
+          const li=document.createElement("li");
+          const iconEl=document.createElement("i");
+          iconEl.className=tool.icon || "fa-solid fa-wand-magic-sparkles";
+          const nameSpan=document.createElement("span");
+          nameSpan.className="tool-name";
+          nameSpan.textContent=tool.name;
+          li.appendChild(iconEl);
+          li.appendChild(nameSpan);
+          li.addEventListener("click",()=>{
+            if(tool.url) window.location.href=tool.url;
+          });
+          suggestionsBox.appendChild(li);
+        });
+
+        suggestionsBox.classList.add("visible");
+      }
+
+      input.addEventListener("input",(e)=>renderSuggestions(e.target.value));
+
+      input.addEventListener("keydown",(e)=>{
+        if(e.key==="Enter"){
+          const value=input.value.trim().toLowerCase();
+          if(!value) return;
+          const first=currentResults.length ? currentResults[0] : toolDirectory.find(
+            (tool)=>tool.name.toLowerCase().includes(value)
+          );
+          if(first && first.url) window.location.href=first.url;
+        }
+      });
+
+      document.addEventListener("click",(e)=>{
+        if(!input.contains(e.target) && !suggestionsBox.contains(e.target)){
+          suggestionsBox.classList.remove("visible");
+        }
+      });
+    }
+  </script>
+</body>
+</html>

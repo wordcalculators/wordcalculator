@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ==================== ADVANCED SEO ==================== -->
+  <title>Image Resizer — Resize Images Online for Free (Social Media & Custom Sizes)</title>
+  <meta name="description" content="Free Image Resizer tool. Upload a photo or use an image URL, choose from social media presets or custom dimensions, keep aspect ratio, and download in JPG, PNG, or WebP with adjustable quality." />
+  <meta name="keywords" content="image resizer, online image resizer, resize photo, resize image, instagram size, facebook cover size, youtube thumbnail size, tiktok size, linkedin banner size, x header size, pinterest pin size, webp jpg png resizer" />
+  <meta name="author" content="WordCalculator.net" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#020617" />
+  <link rel="canonical" href="https://wordcalculator.net/image-resizer.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wordcalculator.net/image-resizer.html" />
+  <meta property="og:title" content="Image Resizer — Resize Images Online for Free" />
+  <meta property="og:description" content="Resize images for Instagram, Facebook, YouTube and more. Upload or paste a URL, pick a preset or custom size and download optimized images instantly." />
+  <meta property="og:image" content="https://wordcalculator.net/images/image-resizer-og.jpg" />
+  <meta property="og:site_name" content="WordCalculator.net" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://wordcalculator.net/image-resizer.html" />
+  <meta name="twitter:title" content="Image Resizer — Resize Images Online for Free" />
+  <meta name="twitter:description" content="Free Image Resizer with social media presets, aspect ratio lock and quality control." />
+  <meta name="twitter:image" content="https://wordcalculator.net/images/image-resizer-twitter.jpg" />
+
+  <!-- WebApplication schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Image Resizer",
+    "url":"https://wordcalculator.net/image-resizer.html",
+    "description":"Resize JPG, PNG and WebP images online. Upload or use an image URL, choose presets for social media or set custom dimensions, then download in multiple formats.",
+    "applicationCategory":"UtilitiesApplication",
+    "operatingSystem":"Any",
+    "browserRequirements":"Requires JavaScript",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "featureList":[
+      "Upload images from your device",
+      "Load images from a public URL",
+      "Presets for popular social media sizes",
+      "Custom width and height with aspect ratio lock",
+      "Download as JPG, PNG or WebP with adjustable quality"
+    ],
+    "author":{"@type":"Organization","name":"WordCalculator.net"}
+  }
+  </script>
+
+  <!-- Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://wordcalculator.net/"},
+      {"@type":"ListItem","position":2,"name":"Tools","item":"https://wordcalculator.net/tools.html"},
+      {"@type":"ListItem","position":3,"name":"Image Resizer","item":"https://wordcalculator.net/image-resizer.html"}
+    ]
+  }
+  </script>
+
+  <!-- FAQ schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"How do I resize an image without losing quality?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Upload your image, keep the aspect ratio locked, and resize to the smallest pixel dimensions that still look sharp. Export as WebP or JPEG at 70–85% quality for most photos, or use PNG if you need transparency."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Can I resize images for Instagram, Facebook or YouTube?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. Choose a preset from the dropdown for common formats such as Instagram posts and stories, Facebook covers, YouTube thumbnails, TikTok vertical videos, Pinterest pins, and more."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Is this image resizer free to use?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. The tool is free to use in your browser. No installation is required and processing happens on your device."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- ==================== /SEO ==================== -->
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+    /* ===== Base / Theme ===== */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --text:#1f2937;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --primary:#2563eb;
+      --bg:#f7f8fb;
+      --card:#fff;
+      --danger:#b91c1c;
+      --header:#020617;
+      --header-2:#0b1220;
+      --soft:#f9fafb;
+      --ring:rgba(56,189,248,.35);
+      --panelMin:360px;
+      --previewMinH:230px;
+      --previewMaxH:420px;
+    }
+    html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    body{
+      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+
+    /* ===== Header / Nav ===== */
+    .wc-header{background:var(--header);color:#fff;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+    .wc-wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding:10px 12px;
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+    .wc-logo{display:inline-flex;align-items:center;gap:8px}
+    .slab{
+      display:inline-flex;
+      width:24px;height:24px;
+      align-items:center;justify-content:center;
+      font-weight:800;font-size:14px;
+      border-radius:2px;color:#fff;
+    }
+    .slab-w{background:#1f2327}
+    .slab-o{background:#a7c1db;color:#1e2a3a}
+    .slab-r{background:#7d96ae}
+    .slab-d{background:#2f5d8a}
+    .wc-brand-text{
+      display:inline-flex;flex-direction:column;
+      line-height:1.05;font-size:19px;font-weight:800;
+    }
+    .wc-brand-text small{font-size:10px;opacity:.95}
+    .wc-nav{
+      margin-left:10px;
+      display:flex;align-items:center;gap:8px;
+      flex:1;
+    }
+    .wc-link{
+      color:#f4f8fc;
+      font-weight:700;font-size:14px;
+      padding:6px 10px;border-radius:8px;
+      transition:.15s;background:transparent;border:0;cursor:pointer;
+    }
+    .wc-link:hover{background:rgba(255,255,255,.14)}
+    .wc-signin-btn{
+      background:rgba(148,163,184,.18);
+      border:1px solid rgba(148,163,184,.5);
+    }
+    .wc-signin-btn:hover{
+      background:#38bdf8;color:#020617;border-color:#38bdf8;
+    }
+    .mobile-menu-btn{
+      margin-left:auto;background:transparent;border:0;color:#fff;
+      font-size:20px;display:none;cursor:pointer;
+    }
+    .mobile-nav{
+      position:fixed;top:0;right:-100%;
+      width:320px;height:100vh;background:#1f2933;
+      box-shadow:-2px 0 10px rgba(0,0,0,.18);
+      transition:right .3s;z-index:100;
+    }
+    .mobile-nav.active{right:0}
+    .mobile-overlay{
+      position:fixed;inset:0;background:rgba(0,0,0,.5);
+      display:none;z-index:90;
+    }
+    .mobile-overlay.active{display:block}
+    .mobile-nav-header{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:16px;border-bottom:1px solid #34495e;
+    }
+    .mobile-close-btn{
+      background:transparent;border:0;color:#fff;font-size:20px;cursor:pointer;
+    }
+    .mobile-nav-links{padding:16px}
+    .mobile-link{
+      display:block;color:#ecf0f1;padding:12px 0;
+      border-bottom:1px solid #34495e;font-weight:700;
+      background:transparent;border:0;width:100%;text-align:left;cursor:pointer;
+    }
+
+    /* ===== Breadcrumb ===== */
+    .crumb-wrap{max-width:1200px;margin:8px auto 0;padding:0 15px 4px;}
+    .crumbs{font-size:13px;color:#111827}
+    .crumbs a{color:#2563eb}
+    .crumbs a:hover{text-decoration:underline}
+    .crumb-separator{margin:0 4px;color:#6b7280}
+    .crumb-current{font-weight:700}
+
+    /* ===== Main Layout ===== */
+    .age-main-resizer{max-width:1200px;margin:22px auto 40px;padding:0 15px;}
+    .resizer-layout{
+      display:grid;
+      grid-template-columns:minmax(0,3fr) minmax(260px,1.2fr);
+      grid-template-areas:
+        "tool sidebar"
+        "content sidebar";
+      gap:20px;align-items:flex-start;
+    }
+    .resizer-tool{grid-area:tool;}
+    .resizer-sidebar{grid-area:sidebar;}
+    .resizer-content{grid-area:content;}
+
+    /* ===== Cards ===== */
+    .tool-card,.sidebar-card,.section-block{
+      background:var(--card);
+      border-radius:12px;
+      border:1px solid #e2e8f0;
+      box-shadow:0 10px 24px rgba(15,23,42,.06);
+    }
+
+    /* ===== Tool Header ===== */
+    .resizer-card{padding:0 0 14px;overflow:hidden;}
+    .resizer-header{
+      padding:10px 14px;
+      background:linear-gradient(180deg,var(--header),var(--header-2));
+      color:#f9fafb;
+      display:flex;justify-content:space-between;align-items:center;gap:10px;
+      border-bottom:1px solid rgba(148,163,184,.18);
+    }
+    .resizer-header-left{display:flex;flex-direction:column;gap:2px;}
+    .resizer-title{font-size:18px;font-weight:800;}
+    .resizer-subtitle{font-size:12px;opacity:.9;}
+    .resizer-badge{
+      font-size:11px;padding:3px 8px;border-radius:999px;
+      background:rgba(148,163,184,.16);
+      border:1px solid rgba(148,163,184,.35);
+      display:inline-flex;align-items:center;gap:6px;white-space:nowrap;
+    }
+    .resizer-body{padding:14px;display:flex;flex-direction:column;gap:14px;}
+
+    /* Upload / URL row */
+    .upload-row{
+      display:grid;
+      grid-template-columns:minmax(0,3fr) minmax(0,2.3fr);
+      gap:12px;
+    }
+    @media (max-width:768px){.upload-row{grid-template-columns:1fr;}}
+
+    /* Upload area */
+    .upload-drop{
+      border-radius:12px;border:2px dashed #d1d5db;
+      background:var(--soft);
+      padding:16px;text-align:center;
+      transition:border-color .15s,background .15s,box-shadow .15s,transform .1s;
+      position:relative;user-select:none;
+    }
+    .upload-drop.is-dragover{
+      border-color:#38bdf8;background:#ecfeff;
+      box-shadow:0 10px 18px rgba(56,189,248,.18);
+      transform:translateY(-1px);
+    }
+    .upload-icon{font-size:26px;margin-bottom:6px;color:#38bdf8;}
+    .upload-title{font-weight:800;font-size:14px;margin-bottom:3px;color:#0f172a;}
+    .upload-hint{font-size:12px;color:#6b7280;}
+    .upload-actions{
+      margin-top:10px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap;
+    }
+    .hidden-file-input{
+      position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+      overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+    }
+
+    /* URL box */
+    .url-box{
+      border-radius:12px;border:1px solid #d1d5db;
+      background:var(--soft);
+      padding:12px;display:flex;flex-direction:column;gap:10px;
+    }
+    .url-box-title{
+      display:flex;align-items:center;gap:8px;
+      font-weight:800;font-size:13px;color:#0f172a;
+    }
+    .url-box-title i{color:#2563eb;}
+    .url-box-desc{font-size:12px;color:#6b7280;line-height:1.4;}
+    .url-row{display:flex;gap:8px;}
+    .url-input{
+      flex:1;padding:8px 10px;border-radius:10px;
+      border:1px solid #d1d5db;font-size:13px;outline:none;background:#fff;
+    }
+    .url-input:focus{border-color:#38bdf8;box-shadow:0 0 0 3px var(--ring);}
+
+    /* Buttons */
+    .btn{
+      padding:8px 12px;border-radius:10px;border:1px solid transparent;
+      background:var(--primary);color:#f9fafb;font-size:13px;font-weight:700;
+      cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:7px;
+      transition:background .15s,box-shadow .15s,transform .1s,border-color .15s,color .15s;
+      white-space:nowrap;
+    }
+    .btn:hover{background:#1d4ed8;box-shadow:0 10px 18px rgba(37,99,235,.22);transform:translateY(-1px);}
+    .btn:active{transform:translateY(0);}
+    .btn[disabled]{opacity:.55;cursor:not-allowed;box-shadow:none;transform:none;}
+    .btn-secondary{background:#111827;border-color:#111827;}
+    .btn-secondary:hover{background:#0b1220;border-color:#0b1220;box-shadow:0 10px 18px rgba(15,23,42,.22);}
+    .btn-ghost{background:#ffffff;color:#111827;border-color:#e5e7eb;}
+    .btn-ghost:hover{background:#f3f4f6;box-shadow:none;}
+    .btn-danger{background:#fee2e2;color:#991b1b;border-color:#fecaca;}
+    .btn-danger:hover{background:#fecaca;box-shadow:none;transform:translateY(-1px);}
+
+    .resizer-note{font-size:11px;color:#6b7280;margin-top:2px;}
+    .error-text{font-size:12px;color:var(--danger);margin-top:2px;}
+
+    /* Preview & controls */
+    .preview-and-controls{
+      display:grid;
+      grid-template-columns:minmax(0,2.3fr) minmax(0,2fr);
+      gap:14px;
+      align-items:stretch;
+    }
+    @media (max-width:900px){.preview-and-controls{grid-template-columns:1fr;}}
+
+    .preview-shell{
+      border-radius:12px;border:1px solid #e5e7eb;
+      background:var(--soft);
+      padding:10px;display:flex;flex-direction:column;gap:8px;
+      min-height:var(--panelMin);height:100%;
+    }
+    .preview-header{
+      display:flex;justify-content:space-between;align-items:center;
+      font-size:12px;color:#4b5563;gap:8px;
+    }
+    .preview-canvas-wrap{
+      flex:1;
+      border-radius:10px;
+      background:#111827;
+      display:flex;align-items:center;justify-content:center;
+      overflow:hidden;position:relative;
+      height:var(--previewMinH);
+      min-height:var(--previewMinH);
+      max-height:var(--previewMaxH);
+    }
+    #previewCanvas{
+      display:block;
+      max-width:100%;
+      max-height:100%;
+      width:auto;
+      height:auto;
+    }
+    .preview-placeholder{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:#9ca3af;
+      font-size:13px;
+      padding:20px 10px;
+    }
+
+    .info-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}
+    .info-pill{
+      font-size:11px;padding:3px 8px;border-radius:999px;
+      background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;
+    }
+
+    .control-panel{
+      border-radius:12px;border:1px solid #e5e7eb;
+      background:var(--soft);
+      padding:10px 12px;
+      display:flex;flex-direction:column;gap:10px;
+      height:100%;
+      min-height:var(--panelMin);
+    }
+    .control-row{
+      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;align-items:center;
+    }
+    @media (max-width:640px){.control-row{grid-template-columns:1fr;}}
+    .field-label{display:block;font-size:12px;font-weight:800;margin-bottom:3px;color:#0f172a;}
+    .number-input,.select-input{
+      width:100%;padding:8px 10px;border-radius:10px;
+      border:1px solid #d1d5db;font-size:13px;outline:none;background:#ffffff;
+    }
+    .number-input:focus,.select-input:focus{border-color:#38bdf8;box-shadow:0 0 0 3px var(--ring);}
+    .ratio-toggle{display:inline-flex;align-items:center;gap:6px;font-size:12px;margin-top:4px;color:#4b5563;}
+    .ratio-toggle input{width:14px;height:14px;}
+    .format-group{display:flex;flex-wrap:wrap;gap:8px;font-size:12px;}
+    .format-pill{
+      display:inline-flex;align-items:center;gap:6px;
+      padding:6px 10px;border-radius:999px;border:1px solid #d1d5db;
+      background:#ffffff;cursor:pointer;font-weight:800;color:#111827;
+    }
+    .format-pill input{accent-color:#2563eb;}
+    .format-pill.active{border-color:#2563eb;background:#e0ecff;color:#1d4ed8;}
+    .quality-row{margin-top:4px;font-size:12px;color:#4b5563;}
+    .quality-row input[type="range"]{width:100%;}
+    .control-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}
+
+    /* ===== Sidebar / Quick Search ===== */
+    .sidebar-card{padding:12px 12px 10px;font-size:13px;}
+    .sidebar-title-bar{
+      margin:-12px -12px 8px;padding:7px 10px;
+      background:#0f172a;color:#f9fafb;font-size:14px;font-weight:900;
+      border-radius:12px 12px 0 0;
+      box-shadow:inset 0 -1px 0 rgba(148,163,184,.35);
+      display:flex;align-items:center;justify-content:space-between;gap:8px;
+    }
+    .tool-search{margin:6px 0 4px;}
+    .sidebar-search-input-wrapper{position:relative;display:flex;align-items:center;margin-top:4px;}
+    .sidebar-search-icon{position:absolute;left:10px;font-size:12px;opacity:0.7;}
+    .sidebar-search-input{
+      width:100%;
+      padding:8px 10px 8px 28px;
+      border-radius:10px;border:1px solid #d5d9e0;
+      background-color:#f9fafb;font-size:13px;outline:none;
+      transition:border-color .15s ease,background-color .15s ease,box-shadow .15s ease;
+    }
+    .sidebar-search-input:focus{border-color:#38bdf8;background-color:#ffffff;box-shadow:0 0 0 3px var(--ring);}
+    .sidebar-search-suggestions{
+      list-style:none;margin-top:8px;padding:4px 0;
+      max-height:220px;overflow-y:auto;border-radius:10px;
+      border:1px solid #e3e7ee;background-color:#ffffff;
+      box-shadow:0 8px 20px rgba(15,23,42,0.12);
+      display:none;
+    }
+    .sidebar-search-suggestions.visible{display:block;}
+    .sidebar-search-suggestions li{
+      font-size:13px;padding:7px 10px;cursor:pointer;
+      display:flex;align-items:center;gap:6px;
+    }
+    .sidebar-search-suggestions li + li{border-top:1px solid #f1f3f8;}
+    .sidebar-search-suggestions li span.tool-name{
+      flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+    }
+    .sidebar-search-suggestions li i{font-size:11px;opacity:0.7;}
+    .sidebar-search-suggestions li:hover{background-color:#f3f4f8;}
+    .sidebar-group{margin-top:10px;}
+    .sidebar-group h4{
+      font-size:12px;text-transform:uppercase;letter-spacing:0.06em;
+      color:#6b7280;margin-bottom:3px;font-weight:800;
+    }
+    .sidebar-links{list-style:none;font-size:13px}
+    .sidebar-links li+li{margin-top:3px}
+    .sidebar-links a{color:#1d4ed8}
+    .sidebar-links a:hover{text-decoration:underline}
+
+    /* ===== Content ===== */
+    .section-block{padding:14px 16px 12px;margin-bottom:16px;}
+    .section-block h2,.section-block h3{font-size:18px;font-weight:900;margin-bottom:6px;color:#0f172a;}
+    .section-block h4{font-size:14px;font-weight:900;margin-top:10px;margin-bottom:4px;color:#111827;}
+    .section-block p{font-size:13px;color:#4b5563;margin-bottom:8px;}
+    .section-block ul{padding-left:18px;font-size:13px;color:#4b5563;}
+    .section-block ul li+li{margin-top:4px;}
+    .section-block table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px;}
+    .section-block table th,.section-block table td{border:1px solid #e5e7eb;padding:8px 10px;text-align:center;vertical-align:middle;}
+    .section-block table th{background:#f3f4f6;font-weight:900;color:#0f172a;}
+
+    /* ===== Footer ===== */
+    .pro-footer{background:var(--header);color:#cbd5e1;margin-top:40px}
+    .pf-wrap{
+      max-width:1200px;margin:0 auto;padding:34px 15px;
+      display:grid;grid-template-columns:320px 1fr;gap:26px;
+    }
+    .pf-logo{display:flex;align-items:center;gap:10px}
+    .pf-brand-text{font-size:18px;font-weight:900;color:#e2e8f0}
+    .pf-brand-text span{color:#38bdf8}
+    .pf-tag{margin-top:8px;color:#94a3b8;font-size:13px}
+    .pf-social{display:flex;gap:10px;margin-top:10px}
+    .pf-social a{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:34px;height:34px;border:1px solid #1e293b;border-radius:10px;
+      background:#0b1220;color:#cbd5e1;
+      transition:background .15s,color .15s,border-color .15s,transform .15s,box-shadow .15s;
+    }
+    .pf-social a:hover{
+      background:#38bdf8;border-color:#38bdf8;color:#0b1220;
+      transform:translateY(-1px);box-shadow:0 4px 12px rgba(56,189,248,.4);
+    }
+    .pf-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .pf-col h5{color:#e2e8f0;font-weight:900;font-size:14px;margin-bottom:10px}
+    .pf-col ul{list-style:none}
+    .pf-col li{margin:8px 0}
+    .pf-col a{color:#94a3b8}
+    .pf-col a:hover{color:#e2e8f0}
+    .pf-bottom{border-top:1px solid #1e293b;background:#0b1220}
+    .pf-bottom-wrap{
+      max-width:1200px;margin:0 auto;padding:12px 15px;
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      color:#8893a7;font-size:13px;
+    }
+    .pf-links{display:flex;gap:10px}
+    .pf-links a{color:#94a3b8}
+    .pf-links a:hover{color:#e2e8f0}
+
+    /* ===== Modal ===== */
+    .modal-overlay{position:fixed;inset:0;background:rgba(15,23,42,0.7);display:none;z-index:200;}
+    .modal{
+      position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
+      width:420px;max-width:96vw;background:#ffffff;border:1px solid #e5e7eb;
+      border-radius:14px;box-shadow:0 18px 40px rgba(15,23,42,0.35);
+      display:none;z-index:210;
+    }
+    .modal-head{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-bottom:1px solid #e5e7eb;}
+    .modal-head h3{font-size:15px;font-weight:900;color:#111827}
+    .modal-close{background:#f3f4f6;border:1px solid #e5e7eb;border-radius:10px;padding:6px 8px;cursor:pointer;}
+    .modal-body{padding:12px;font-size:13px;color:#4b5563}
+
+    /* ===== Responsive ===== */
+    @media (max-width:1100px){
+      .pf-wrap{grid-template-columns:1fr;}
+      .pf-cols{grid-template-columns:repeat(2,1fr);}
+    }
+    @media (max-width:992px){
+      .wc-nav{display:none;}
+      .mobile-menu-btn{display:inline-block;}
+      .resizer-layout{
+        grid-template-columns:1fr;
+        grid-template-areas:
+          "tool"
+          "sidebar"
+          "content";
+      }
+    }
+    @media (max-width:640px){.pf-cols{grid-template-columns:1fr;}}
+    @media (prefers-reduced-motion:reduce){
+      *{animation:none !important;transition:none !important;scroll-behavior:auto !important;}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== Header ===== -->
+  <header class="wc-header">
+    <div class="wc-wrap">
+      <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+        <span class="slab slab-w">W</span>
+        <span class="slab slab-o">O</span>
+        <span class="slab slab-r">R</span>
+        <span class="slab slab-d">D</span>
+        <span class="wc-brand-text">
+          Calculator
+          <small class="wc-tagline">Every Word Counts</small>
+        </span>
+      </a>
+
+      <nav class="wc-nav" aria-label="Primary">
+        <a href="https://wordcalculator.net" class="wc-link">Home</a>
+        <a href="blog.html" class="wc-link">Blog</a>
+        <a href="tools.html" class="wc-link">Tools</a>
+        <a href="about.html" class="wc-link">About Us</a>
+		<a href="signin.html" class="wc-link">Sign In</a>
+      </nav>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <div class="mobile-nav-header">
+        <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <span class="wc-brand-text">Calculator</span>
+        </a>
+        <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="https://wordcalculator.net" class="nav-link mobile-link">Home</a>
+        <a href="blog.html" class="nav-link mobile-link">Blog</a>
+        <a href="tools.html" class="nav-link mobile-link">Tools</a>
+        <a href="about.html" class="nav-link mobile-link">About Us</a>
+		<a href="signin.html" class="nav-link mobile-link">Sign In</a>
+      </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+  </header>
+
+  <!-- ===== Breadcrumbs ===== -->
+  <div class="crumb-wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="https://wordcalculator.net">Home</a>
+      <span class="crumb-separator">/</span>
+      <a href="tools.html">Tools</a>
+      <span class="crumb-separator">/</span>
+      <span class="crumb-current">Image Resizer</span>
+    </nav>
+  </div>
+
+  <!-- ==================== MAIN ==================== -->
+  <main class="age-main-resizer">
+    <div class="resizer-layout">
+      <!-- TOOL -->
+      <section class="resizer-tool" aria-label="Image resizer tool">
+        <article class="tool-card resizer-card">
+          <header class="resizer-header">
+            <div class="resizer-header-left">
+              <h1 class="resizer-title">Image Resizer</h1>
+              <p class="resizer-subtitle">Resize images for social media, websites and presentations in seconds.</p>
+            </div>
+            <div class="resizer-badge">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              Free • Browser-based
+            </div>
+          </header>
+
+          <div class="resizer-body">
+            <!-- Upload / URL row -->
+            <div class="upload-row">
+              <div class="upload-drop" id="dropZone" role="button" tabindex="0" aria-label="Upload images">
+                <div class="upload-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                <div class="upload-title">Drop your image here or click Upload</div>
+                <div class="upload-hint">JPG, PNG or WebP — up to ~20MB. Processing happens in your browser.</div>
+
+                <div class="upload-actions">
+                  <button type="button" class="btn" id="uploadBtn">
+                    <i class="fa-solid fa-upload"></i> Upload
+                  </button>
+                  <button type="button" class="btn btn-danger" id="clearBtn" disabled>
+                    <i class="fa-solid fa-trash"></i> Clear
+                  </button>
+                </div>
+
+                <input id="fileInput" class="hidden-file-input" type="file" accept="image/*" multiple />
+              </div>
+
+              <div class="url-box">
+                <div class="url-box-title">
+                  <i class="fa-solid fa-link"></i>
+                  Load an image from a URL
+                </div>
+                <div class="url-box-desc">
+                  Paste a direct image URL (JPG/PNG/WebP). Some hosts block cross-origin loading.
+                </div>
+
+                <div class="url-row">
+                  <input
+                    id="imageUrl"
+                    class="url-input"
+                    type="url"
+                    placeholder="https://example.com/image.jpg"
+                    autocomplete="off"
+                    aria-label="Image URL"
+                  />
+                  <button type="button" id="loadUrlBtn" class="btn btn-ghost">
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i> Load
+                  </button>
+                </div>
+
+                <p id="loadError" class="error-text" style="display:none;"></p>
+              </div>
+            </div>
+
+            <!-- Preview + controls -->
+            <div class="preview-and-controls">
+              <div class="preview-shell">
+                <div class="preview-header">
+                  <span id="originalInfo">Original: —</span>
+                  <span id="outputInfo">Resized: —</span>
+                </div>
+                <div class="preview-canvas-wrap" id="previewWrap">
+                  <canvas id="previewCanvas" aria-label="Resized image preview"></canvas>
+                  <div id="previewPlaceholder" class="preview-placeholder">
+                    Upload an image or paste a URL to see a live preview here.
+                  </div>
+                </div>
+                <div class="info-badges">
+                  <span class="info-pill" id="formatBadge">Format: —</span>
+                  <span class="info-pill" id="sizeBadge">Approx. size: —</span>
+                </div>
+              </div>
+
+              <div class="control-panel">
+                <div class="control-row">
+                  <div>
+                    <label class="field-label" for="targetWidth">Width (px)</label>
+                    <input id="targetWidth" class="number-input" type="number" min="1" step="1" />
+                  </div>
+                  <div>
+                    <label class="field-label" for="targetHeight">Height (px)</label>
+                    <input id="targetHeight" class="number-input" type="number" min="1" step="1" />
+                  </div>
+                </div>
+
+                <label class="ratio-toggle">
+                  <input id="lockRatio" type="checkbox" checked />
+                  Keep aspect ratio
+                </label>
+
+                <div class="control-row">
+                  <div>
+                    <label class="field-label" for="presetSelect">Preset sizes</label>
+                    <select id="presetSelect" class="select-input" aria-label="Preset sizes">
+                      <option value="">Select a preset…</option>
+
+                      <!-- Instagram -->
+                      <option value="ig-post-square">Instagram — Post (Square) — 1080 × 1080</option>
+                      <option value="ig-post-portrait">Instagram — Post (Portrait) — 1080 × 1350</option>
+                      <option value="ig-post-landscape">Instagram — Post (Landscape) — 1080 × 566</option>
+                      <option value="ig-story">Instagram — Story / Reel Cover — 1080 × 1920</option>
+                      <option value="ig-profile">Instagram — Profile Photo — 320 × 320</option>
+
+                      <!-- Facebook -->
+                      <option value="fb-cover">Facebook — Page Cover — 820 × 360</option>
+                      <option value="fb-post">Facebook — Post (Square) — 1200 × 1200</option>
+                      <option value="fb-link">Facebook — Link Share — 1200 × 628</option>
+                      <option value="fb-event">Facebook — Event Cover — 1920 × 1005</option>
+                      <option value="fb-profile">Facebook — Profile Photo — 400 × 400</option>
+
+                      <!-- YouTube -->
+                      <option value="yt-thumb">YouTube — Thumbnail — 1280 × 720</option>
+                      <option value="yt-channel-art">YouTube — Channel Banner — 2560 × 1440</option>
+                      <option value="yt-profile">YouTube — Profile Photo — 800 × 800</option>
+
+                      <!-- TikTok -->
+                      <option value="tiktok-video">TikTok — Vertical Video — 1080 × 1920</option>
+                      <option value="tiktok-profile">TikTok — Profile Photo — 200 × 200</option>
+
+                      <!-- X (Twitter) -->
+                      <option value="x-header">X (Twitter) — Header — 1500 × 500</option>
+                      <option value="x-post">X (Twitter) — Post Image — 1200 × 675</option>
+                      <option value="x-profile">X (Twitter) — Profile Photo — 400 × 400</option>
+
+                      <!-- LinkedIn -->
+                      <option value="linkedin-cover">LinkedIn — Profile Cover — 1584 × 396</option>
+                      <option value="linkedin-post">LinkedIn — Post Image — 1200 × 627</option>
+                      <option value="linkedin-logo">LinkedIn — Company Logo — 300 × 300</option>
+
+                      <!-- Pinterest -->
+                      <option value="pinterest-pin">Pinterest — Pin — 1000 × 1500</option>
+                      <option value="pinterest-board">Pinterest — Board Cover — 800 × 450</option>
+
+                      <!-- Snapchat -->
+                      <option value="snap-story">Snapchat — Story — 1080 × 1920</option>
+
+                      <!-- WhatsApp / Messaging -->
+                      <option value="wa-status">WhatsApp — Status — 1080 × 1920</option>
+                      <option value="wa-dp">WhatsApp — Profile Photo — 500 × 500</option>
+                      <option value="telegram-post">Telegram — Post Image — 1280 × 720</option>
+                      <option value="discord-avatar">Discord — Avatar — 512 × 512</option>
+
+                      <!-- Web / Blog -->
+                      <option value="web-hero">Website — Hero Banner — 1920 × 1080</option>
+                      <option value="web-og">Website — Open Graph — 1200 × 630</option>
+                      <option value="web-favicon">Website — Favicon (PNG) — 512 × 512</option>
+
+                      <!-- Common video / screen -->
+                      <option value="full-hd">Full HD — 1920 × 1080</option>
+                      <option value="ultra-hd">Ultra HD (4K) — 3840 × 2160</option>
+                    </select>
+
+                    <p class="resizer-note">
+                      Presets are best-effort references. Platforms may change requirements over time.
+                    </p>
+                  </div>
+
+                  <div>
+                    <label class="field-label">Output format</label>
+                    <div class="format-group" id="formatGroup">
+                      <label class="format-pill active">
+                        <input type="radio" name="outputFormat" value="image/jpeg" checked />
+                        JPG
+                      </label>
+                      <label class="format-pill">
+                        <input type="radio" name="outputFormat" value="image/png" />
+                        PNG
+                      </label>
+                      <label class="format-pill">
+                        <input type="radio" name="outputFormat" value="image/webp" />
+                        WebP
+                      </label>
+                    </div>
+                    <div class="quality-row" id="qualityRow">
+                      <span>Quality: <span id="qualityValue">85</span>%</span>
+                      <input id="qualityInput" type="range" min="40" max="100" step="1" value="85" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="control-actions">
+                  <button type="button" id="applyResizeBtn" class="btn btn-secondary" disabled>
+                    <i class="fa-solid fa-sliders"></i> Apply resize
+                  </button>
+                  <button type="button" id="downloadBtn" class="btn" disabled>
+                    <i class="fa-solid fa-download"></i> Download resized image
+                  </button>
+                </div>
+
+                <p class="resizer-note">
+                  Your image is processed locally in your browser. No uploads are required for resizing.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- SIDEBAR / QUICK SEARCH -->
+      <aside class="resizer-sidebar" aria-label="Quick search and related tools">
+        <div class="sidebar-card">
+          <div class="sidebar-title-bar">
+            <span>Quick Search</span>
+            <i class="fas fa-magnifying-glass"></i>
+          </div>
+
+          <div class="tool-search">
+            <small>Quick links to other tools on WordCalculator.net</small>
+            <div class="sidebar-search-input-wrapper">
+              <i class="fa-solid fa-magnifying-glass sidebar-search-icon" aria-hidden="true"></i>
+              <input
+                type="search"
+                id="toolSearchInput"
+                class="sidebar-search-input"
+                placeholder="Search tools by name..."
+                autocomplete="off"
+                aria-label="Search tools by name"
+              />
+            </div>
+            <ul id="toolSearchSuggestions" class="sidebar-search-suggestions" aria-label="Tool suggestions"></ul>
+          </div>
+
+          <div class="sidebar-group">
+            <h4>Popular</h4>
+            <ul class="sidebar-links">
+              <li><a href="age-calculator.html">Age Calculator</a></li>
+              <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+              <li><a href="calorie-calculator.html">Calorie Calculator</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-group">
+            <h4>Text &amp; Writing</h4>
+            <ul class="sidebar-links">
+              <li><a href="https://wordcalculator.net">Word &amp; Character Counter</a></li>
+              <li><a href="case-converter.html">Case Converter</a></li>
+              <li><a href="grammar-spell-checker.html">Grammar &amp; Spell Checker</a></li>
+              <li><a href="readability-analyzer.html">Readability Analyzer</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-group">
+            <h4>SEO &amp; Content</h4>
+            <ul class="sidebar-links">
+              <li><a href="keyword-density-analyzer.html">Keyword Density Analyzer</a></li>
+              <li><a href="title-meta-preview.html">Title &amp; Meta Preview</a></li>
+              <li><a href="url-slug-generator.html">URL Slug Generator</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-group">
+            <h4>Finance &amp; Time</h4>
+            <ul class="sidebar-links">
+              <li><a href="loan-emi-calculator.html">Loan &amp; EMI Calculator</a></li>
+              <li><a href="interest-calculator.html">Interest Calculator</a></li>
+              <li><a href="focus-timer.html">Focus Timer</a></li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <!-- CONTENT / SEO TEXT -->
+      <section class="resizer-content" aria-label="Image resizer guide and FAQ">
+        <article class="section-block">
+          <h2>How this free Image Resizer works</h2>
+          <p>
+            This Image Resizer runs entirely in your browser. When you upload an image or load one from a public URL, the file is decoded
+            locally and rendered on a canvas element. When you change width, height, or output format, the tool redraws the image at the new
+            dimensions and exports it as a downloadable file.
+          </p>
+          <p>
+            Because processing happens on your device, your image is not sent to a server for resizing. This makes the tool fast, privacy-friendly,
+            and convenient for everyday tasks like preparing social media visuals, website images, thumbnails, and presentations.
+          </p>
+
+          <h4>Common reasons to resize images</h4>
+          <ul>
+            <li>Prepare post and story images for Instagram, Facebook, TikTok, Snapchat, and WhatsApp.</li>
+            <li>Create a YouTube thumbnail that matches recommended pixel dimensions.</li>
+            <li>Reduce image dimensions for faster page load and better user experience.</li>
+            <li>Export web-ready images in JPG/WebP or keep transparency with PNG.</li>
+          </ul>
+
+          <h4>Popular preset examples</h4>
+          <table aria-label="Popular preset examples">
+            <thead>
+              <tr>
+                <th>Platform</th>
+                <th>Use case</th>
+                <th>Pixels (W × H)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Instagram</td><td>Post (Square)</td><td>1080 × 1080</td></tr>
+              <tr><td>Instagram</td><td>Story / Reel Cover</td><td>1080 × 1920</td></tr>
+              <tr><td>Facebook</td><td>Page Cover</td><td>820 × 360</td></tr>
+              <tr><td>YouTube</td><td>Thumbnail</td><td>1280 × 720</td></tr>
+              <tr><td>TikTok</td><td>Vertical Video</td><td>1080 × 1920</td></tr>
+              <tr><td>LinkedIn</td><td>Profile Cover</td><td>1584 × 396</td></tr>
+              <tr><td>Pinterest</td><td>Pin</td><td>1000 × 1500</td></tr>
+              <tr><td>Web</td><td>Open Graph Share</td><td>1200 × 630</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="section-block">
+          <h3>Step-by-step: resize an image</h3>
+
+          <h4>1) Upload or load from URL</h4>
+          <p>
+            Click <strong>Upload</strong> to choose a file from your device or drag and drop an image into the upload area. If your image is already
+            hosted online, paste a direct image URL and click <strong>Load</strong>.
+          </p>
+
+          <h4>2) Choose a preset or custom size</h4>
+          <p>
+            Use the <strong>Preset sizes</strong> dropdown to quickly pick the correct dimensions for popular platforms and placements (post, cover,
+            thumbnail, banner, profile, story). You can also enter custom width and height. Keep <strong>aspect ratio</strong> enabled to prevent
+            distortion.
+          </p>
+
+          <h4>3) Select output format and quality</h4>
+          <p>
+            Choose <strong>JPG</strong> for photos, <strong>PNG</strong> for transparency and crisp graphics, or <strong>WebP</strong> for smaller files
+            with modern compression. Adjust the quality slider for JPG/WebP to balance file size and clarity.
+          </p>
+
+          <h4>4) Apply and download</h4>
+          <p>
+            Click <strong>Apply resize</strong> to update the preview, then click <strong>Download resized image</strong>. The result is saved locally to
+            your device.
+          </p>
+
+          <h4>Best practices for better results</h4>
+          <ul>
+            <li><strong>Resize to the real display size:</strong> Avoid uploading images larger than you need.</li>
+            <li><strong>Prefer WebP when supported:</strong> It often reduces file size significantly.</li>
+            <li><strong>Use PNG for logos:</strong> Especially when you need transparency.</li>
+            <li><strong>Test on mobile:</strong> Verify clarity and framing on small screens.</li>
+          </ul>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="pro-footer" id="about" aria-label="Website footer">
+    <div class="pf-wrap">
+      <div class="pf-brand">
+        <div class="pf-logo">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <div class="pf-brand-text">
+            WordCalculator<span>.net</span>
+          </div>
+        </div>
+        <p class="pf-tag">A focused, distraction-free toolkit for precise writing.</p>
+        <div class="pf-social">
+          <a href="https://facebook.com/wordcalculator" aria-label="Facebook" rel="noopener" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/wordcalculator" aria-label="X (Twitter)" rel="noopener" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://linkedin.com/company/wordcalculator" aria-label="LinkedIn" rel="noopener" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://youtube.com/@wordcalculator" aria-label="YouTube" rel="noopener" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="pf-cols">
+        <div class="pf-col">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="https://wordcalculator.net">Editor</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="grammar-spell-checker.html">Grammar Check</a></li>
+            <li><a href="keyword-density-analyzer.html">Keyword Density</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="guides.html">Tips &amp; Guides</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="bug-report.html">Report a Bug</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html">Cookie Policy</a></li>
+            <li><a href="security.html">Security</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pf-bottom">
+      <div class="pf-bottom-wrap">
+        <div>© <span id="pf-year"></span> WordCalculator.net — All rights reserved.</div>
+        <div class="pf-links">
+          <a href="sitemap.html">Sitemap</a>
+          <a href="status.html">Status</a>
+          <a href="accessibility.html">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Auth Modal ===== -->
+  <div class="modal-overlay" id="authOverlay" aria-hidden="true"></div>
+  <div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <div class="modal-head">
+      <h3 id="authTitle"><i class="fas fa-user-lock"></i> Account</h3>
+      <button class="modal-close" id="authCloseBtn" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body">
+      Sign-in and account features are coming soon. For now, all tools are free to use without registration.
+    </div>
+  </div>
+
+  <!-- Tools Directory Js -->
+  <script src="tools-directory.js"></script>
+  
+  <script>
+    const $  = (s)=>document.querySelector(s);
+    const $$ = (s)=>Array.from(document.querySelectorAll(s));
+
+    document.addEventListener("DOMContentLoaded", ()=>{
+      initYear();
+      initMobileMenu();
+      initAuthModal();
+      initToolQuickSearch();
+      initImageResizer();
+    });
+
+    function initYear(){
+      const el=$("#pf-year");
+      if(el) el.textContent=new Date().getFullYear();
+    }
+
+    function initMobileMenu(){
+      const mobileMenuBtn=$("#mobileMenuBtn");
+      const mobileCloseBtn=$("#mobileCloseBtn");
+      const mobileNav=$("#mobileNav");
+      const mobileOverlay=$("#mobileOverlay");
+      if(!mobileMenuBtn||!mobileNav||!mobileOverlay) return;
+
+      const open=()=>{
+        mobileNav.classList.add("active");
+        mobileOverlay.classList.add("active");
+        document.body.style.overflow="hidden";
+      };
+      const close=()=>{
+        mobileNav.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        document.body.style.overflow="";
+      };
+
+      mobileMenuBtn.addEventListener("click",open);
+      if(mobileCloseBtn) mobileCloseBtn.addEventListener("click",close);
+      mobileOverlay.addEventListener("click",close);
+      $$(".mobile-link").forEach(link=>link.addEventListener("click",close));
+
+      const openAuthBtnMobile=$("#openAuthBtnMobile");
+      if(openAuthBtnMobile){
+        openAuthBtnMobile.addEventListener("click",()=>{
+          close();
+          openAuthModal();
+        });
+      }
+    }
+
+    function initAuthModal(){
+      const openBtn=$("#openAuthBtn");
+      const overlay=$("#authOverlay");
+      const modal=$("#authModal");
+      const closeBtn=$("#authCloseBtn");
+      if(!overlay || !modal) return;
+
+      const open=()=>{
+        overlay.style.display="block";
+        modal.style.display="block";
+        document.body.style.overflow="hidden";
+      };
+      const close=()=>{
+        overlay.style.display="none";
+        modal.style.display="none";
+        document.body.style.overflow="";
+      };
+
+      if(openBtn) openBtn.addEventListener("click",open);
+      if(closeBtn) closeBtn.addEventListener("click",close);
+      overlay.addEventListener("click",close);
+      document.addEventListener("keydown",(e)=>{
+        if(e.key==="Escape") close();
+      });
+    }
+    function openAuthModal(){
+      const overlay=$("#authOverlay");
+      const modal=$("#authModal");
+      if(!overlay||!modal) return;
+      overlay.style.display="block";
+      modal.style.display="block";
+      document.body.style.overflow="hidden";
+    }
+
+    /* ===== Image Resizer Logic ===== */
+    function initImageResizer(){
+      const dropZone   = $("#dropZone");
+      const fileInput  = $("#fileInput");
+      const uploadBtn  = $("#uploadBtn");
+      const clearBtn   = $("#clearBtn");
+
+      const urlInput   = $("#imageUrl");
+      const loadUrlBtn = $("#loadUrlBtn");
+      const loadError  = $("#loadError");
+
+      const previewWrap = $("#previewWrap");
+      const canvas      = $("#previewCanvas");
+      const ctx         = canvas.getContext("2d");
+      const previewPlaceholder = $("#previewPlaceholder");
+
+      const originalInfo = $("#originalInfo");
+      const outputInfo   = $("#outputInfo");
+      const formatBadge  = $("#formatBadge");
+      const sizeBadge    = $("#sizeBadge");
+
+      const widthInput   = $("#targetWidth");
+      const heightInput  = $("#targetHeight");
+      const lockRatio    = $("#lockRatio");
+      const presetSelect = $("#presetSelect");
+
+      const formatGroup  = $("#formatGroup");
+      const qualityRow   = $("#qualityRow");
+      const qualityInput = $("#qualityInput");
+      const qualityValue = $("#qualityValue");
+
+      const applyBtn     = $("#applyResizeBtn");
+      const downloadBtn  = $("#downloadBtn");
+
+      let originalImage = null;
+      let originalWidth = 0;
+      let originalHeight= 0;
+      let currentWidth  = 0;
+      let currentHeight = 0;
+      let currentFormat = "image/jpeg";
+
+      const presets = {
+        "ig-post-square":    {w:1080,h:1080},
+        "ig-post-portrait":  {w:1080,h:1350},
+        "ig-post-landscape": {w:1080,h:566},
+        "ig-story":          {w:1080,h:1920},
+        "ig-profile":        {w:320,h:320},
+
+        "fb-cover":          {w:820,h:360},
+        "fb-post":           {w:1200,h:1200},
+        "fb-link":           {w:1200,h:628},
+        "fb-event":          {w:1920,h:1005},
+        "fb-profile":        {w:400,h:400},
+
+        "yt-thumb":          {w:1280,h:720},
+        "yt-channel-art":    {w:2560,h:1440},
+        "yt-profile":        {w:800,h:800},
+
+        "tiktok-video":      {w:1080,h:1920},
+        "tiktok-profile":    {w:200,h:200},
+
+        "x-header":          {w:1500,h:500},
+        "x-post":            {w:1200,h:675},
+        "x-profile":         {w:400,h:400},
+
+        "linkedin-cover":    {w:1584,h:396},
+        "linkedin-post":     {w:1200,h:627},
+        "linkedin-logo":     {w:300,h:300},
+
+        "pinterest-pin":     {w:1000,h:1500},
+        "pinterest-board":   {w:800,h:450},
+
+        "snap-story":        {w:1080,h:1920},
+
+        "wa-status":         {w:1080,h:1920},
+        "wa-dp":             {w:500,h:500},
+        "telegram-post":     {w:1280,h:720},
+        "discord-avatar":    {w:512,h:512},
+
+        "web-hero":          {w:1920,h:1080},
+        "web-og":            {w:1200,h:630},
+        "web-favicon":       {w:512,h:512},
+
+        "full-hd":           {w:1920,h:1080},
+        "ultra-hd":          {w:3840,h:2160}
+      };
+
+      function setStatusError(msg){
+        if(!msg){
+          loadError.style.display="none";
+          loadError.textContent="";
+        }else{
+          loadError.style.display="block";
+          loadError.textContent=msg;
+        }
+      }
+
+      function shortFormat(fmt){
+        if(fmt==="image/jpeg") return "JPG";
+        if(fmt==="image/png")  return "PNG";
+        if(fmt==="image/webp") return "WebP";
+        return fmt;
+      }
+
+      function clamp(n, min, max){
+        return Math.max(min, Math.min(max, n));
+      }
+
+      function setPreviewWrapHeightFor(w, h){
+        if(!previewWrap) return;
+        const minH = 230;
+        const maxH = 420;
+
+        if(!w || !h){
+          previewWrap.style.height = minH + "px";
+          return;
+        }
+
+        // Compute height based on available width (contain-like behavior)
+        const wrapWidth = previewWrap.clientWidth || 520;
+        const ratio = h / w;
+        const desired = wrapWidth * ratio;
+        const finalH = clamp(desired, minH, maxH);
+        previewWrap.style.height = Math.round(finalH) + "px";
+      }
+
+      function resetPreview(){
+        originalImage=null;
+        originalWidth=0;
+        originalHeight=0;
+        currentWidth=0;
+        currentHeight=0;
+
+        canvas.width=0;
+        canvas.height=0;
+
+        previewPlaceholder.style.display="flex";
+        originalInfo.textContent="Original: —";
+        outputInfo.textContent="Resized: —";
+        formatBadge.textContent="Format: —";
+        sizeBadge.textContent="Approx. size: —";
+
+        widthInput.value="";
+        heightInput.value="";
+        presetSelect.value="";
+        urlInput.value="";
+
+        applyBtn.disabled=true;
+        downloadBtn.disabled=true;
+        clearBtn.disabled=true;
+
+        if(fileInput) fileInput.value="";
+        setStatusError("");
+        setPreviewWrapHeightFor(0,0);
+      }
+
+      function handleFile(file){
+        if(!file || !file.type.startsWith("image/")){
+          setStatusError("Please choose a valid image file (JPG, PNG, or WebP).");
+          return;
+        }
+        setStatusError("");
+        const reader = new FileReader();
+        reader.onload = e => loadImageFromSrc(e.target.result);
+        reader.readAsDataURL(file);
+      }
+
+      function loadImageFromSrc(src){
+        const img = new Image();
+        img.crossOrigin = "anonymous";
+        img.onload = ()=>{
+          originalImage = img;
+          originalWidth  = img.naturalWidth;
+          originalHeight = img.naturalHeight;
+
+          currentWidth   = originalWidth;
+          currentHeight  = originalHeight;
+
+          widthInput.value  = currentWidth;
+          heightInput.value = currentHeight;
+
+          previewPlaceholder.style.display="none";
+          setPreviewWrapHeightFor(currentWidth, currentHeight);
+          renderPreview();
+          updateMeta();
+
+          applyBtn.disabled=false;
+          downloadBtn.disabled=false;
+          clearBtn.disabled=false;
+        };
+        img.onerror = ()=>{
+          setStatusError("Could not load this image. The URL may be invalid or blocked by the remote server.");
+          resetPreview();
+        };
+        img.src = src;
+      }
+
+      function renderPreview(){
+        if(!originalImage) return;
+
+        // Render the resized image at actual pixel dimensions
+        canvas.width  = currentWidth;
+        canvas.height = currentHeight;
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        ctx.drawImage(originalImage,0,0,canvas.width,canvas.height);
+
+        // Keep the preview wrapper height proportional to the displayed result
+        setPreviewWrapHeightFor(currentWidth, currentHeight);
+      }
+
+      function getQuality(){
+        const q = Number(qualityInput.value||85);
+        return Math.max(0.1, Math.min(1, q/100));
+      }
+
+      function estimateSize(){
+        if(!originalImage) return;
+        canvas.toBlob(blob=>{
+          if(!blob) return;
+          const kb = blob.size/1024;
+          sizeBadge.textContent = "Approx. size: " + kb.toFixed(1) + " KB";
+        }, currentFormat, getQuality());
+      }
+
+      function updateMeta(){
+        if(!originalImage) return;
+        originalInfo.textContent = `Original: ${originalWidth}×${originalHeight}px`;
+        outputInfo.textContent   = `Resized: ${currentWidth}×${currentHeight}px`;
+        formatBadge.textContent  = "Format: " + shortFormat(currentFormat);
+        estimateSize();
+      }
+
+      function applyResize(){
+        if(!originalImage) return;
+        const w = parseInt(widthInput.value,10);
+        const h = parseInt(heightInput.value,10);
+        if(!Number.isFinite(w) || !Number.isFinite(h) || w<=0 || h<=0){
+          setStatusError("Please enter a valid width and height greater than zero.");
+          return;
+        }
+        setStatusError("");
+        currentWidth  = w;
+        currentHeight = h;
+        renderPreview();
+        updateMeta();
+      }
+
+      function downloadImage(){
+        if(!originalImage) return;
+        canvas.toBlob(blob=>{
+          if(!blob) return;
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = `resized-${Date.now()}.${shortFormat(currentFormat).toLowerCase()}`;
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          URL.revokeObjectURL(url);
+        }, currentFormat, getQuality());
+      }
+
+      /* ===== Events ===== */
+      if(uploadBtn && fileInput){
+        uploadBtn.addEventListener("click", ()=> fileInput.click());
+      }
+
+      if(clearBtn){
+        clearBtn.addEventListener("click", resetPreview);
+      }
+
+      if(fileInput){
+        fileInput.addEventListener("change", e=>{
+          const files = e.target.files;
+          if(files && files.length) handleFile(files[0]);
+        });
+      }
+
+      if(dropZone){
+        const prevent = (e)=>{e.preventDefault();e.stopPropagation();};
+
+        ["dragenter","dragover"].forEach(evt=>{
+          dropZone.addEventListener(evt, e=>{
+            prevent(e);
+            dropZone.classList.add("is-dragover");
+          });
+        });
+        ["dragleave","drop"].forEach(evt=>{
+          dropZone.addEventListener(evt, e=>{
+            prevent(e);
+            dropZone.classList.remove("is-dragover");
+          });
+        });
+        dropZone.addEventListener("drop", e=>{
+          const dt = e.dataTransfer;
+          if(dt && dt.files && dt.files[0]) handleFile(dt.files[0]);
+        });
+
+        dropZone.addEventListener("click", (e)=>{
+          const isButton = e.target.closest("button");
+          if(isButton) return;
+          if(fileInput) fileInput.click();
+        });
+
+        dropZone.addEventListener("keydown", (e)=>{
+          if(e.key==="Enter" || e.key===" "){
+            e.preventDefault();
+            if(fileInput) fileInput.click();
+          }
+        });
+      }
+
+      if(loadUrlBtn){
+        loadUrlBtn.addEventListener("click", ()=>{
+          const url = (urlInput.value||"").trim();
+          if(!url){
+            setStatusError("Please enter an image URL first.");
+            return;
+          }
+          setStatusError("");
+          loadImageFromSrc(url);
+        });
+      }
+
+      if(urlInput){
+        urlInput.addEventListener("keydown", e=>{
+          if(e.key==="Enter"){
+            e.preventDefault();
+            loadUrlBtn.click();
+          }
+        });
+      }
+
+      if(lockRatio){
+        widthInput.addEventListener("input", ()=>{
+          if(!originalImage) return;
+          const w = parseInt(widthInput.value,10);
+          if(lockRatio.checked && Number.isFinite(w) && w>0){
+            const ratio = originalHeight / originalWidth;
+            heightInput.value = Math.round(w * ratio);
+          }
+        });
+        heightInput.addEventListener("input", ()=>{
+          if(!originalImage) return;
+          const h = parseInt(heightInput.value,10);
+          if(lockRatio.checked && Number.isFinite(h) && h>0){
+            const ratio = originalWidth / originalHeight;
+            widthInput.value = Math.round(h * ratio);
+          }
+        });
+      }
+
+      if(presetSelect){
+        presetSelect.addEventListener("change", ()=>{
+          const key = presetSelect.value;
+          if(key && presets[key]){
+            widthInput.value  = presets[key].w;
+            heightInput.value = presets[key].h;
+            applyResize();
+          }
+        });
+      }
+
+      if(formatGroup){
+        formatGroup.addEventListener("change", e=>{
+          if(e.target && e.target.name==="outputFormat"){
+            currentFormat = e.target.value;
+            $$("#formatGroup .format-pill").forEach(label=>{
+              const input = label.querySelector("input");
+              if(input && input.checked) label.classList.add("active");
+              else label.classList.remove("active");
+            });
+
+            if(currentFormat==="image/png") qualityRow.style.display="none";
+            else qualityRow.style.display="block";
+
+            updateMeta();
+          }
+        });
+      }
+
+      if(qualityInput){
+        qualityInput.addEventListener("input", ()=>{
+          qualityValue.textContent = qualityInput.value;
+          updateMeta();
+        });
+      }
+
+      if(applyBtn) applyBtn.addEventListener("click", applyResize);
+      if(downloadBtn) downloadBtn.addEventListener("click", downloadImage);
+
+      // Recalculate preview wrap height on resize for a professional, proportional preview
+      window.addEventListener("resize", ()=>{
+        if(originalImage){
+          setPreviewWrapHeightFor(currentWidth, currentHeight);
+        }
+      });
+
+      resetPreview();
+    }
+
+    /* TOOL DIRECTORY – FULL LIST WITH ICONS (MATCHES HOMEPAGE/TOOLS PAGE) */
+    const toolDirectory = allTools;
+
+    function initToolQuickSearch(){
+      const input=$("#toolSearchInput");
+      const suggestionsBox=$("#toolSearchSuggestions");
+      if(!input||!suggestionsBox||!Array.isArray(toolDirectory)) return;
+
+      let currentResults=[];
+
+      function renderSuggestions(query){
+        const value=(query||"").trim().toLowerCase();
+        suggestionsBox.innerHTML="";
+        if(!value){
+          suggestionsBox.classList.remove("visible");
+          return;
+        }
+
+        const allMatches=toolDirectory.filter(tool=>tool.name.toLowerCase().includes(value));
+        if(!allMatches.length){
+          const li=document.createElement("li");
+          li.textContent="No tools found";
+          suggestionsBox.appendChild(li);
+          suggestionsBox.classList.add("visible");
+          return;
+        }
+
+        function rankTool(tool){
+          const name=tool.name.toLowerCase();
+          const pos=name.indexOf(value);
+          const starts=name.startsWith(value)?0:1;
+          const lenDiff=Math.abs(name.length-value.length);
+          return starts*100 + pos*2 + lenDiff;
+        }
+
+        currentResults=allMatches.slice().sort((a,b)=>rankTool(a)-rankTool(b));
+        currentResults.slice(0,10).forEach(tool=>{
+          const li=document.createElement("li");
+          const iconEl=document.createElement("i");
+          iconEl.className=tool.icon || "fa-solid fa-wand-magic-sparkles";
+          const nameSpan=document.createElement("span");
+          nameSpan.className="tool-name";
+          nameSpan.textContent=tool.name;
+          li.appendChild(iconEl);
+          li.appendChild(nameSpan);
+          li.addEventListener("click",()=>{
+            if(tool.url) window.location.href=tool.url;
+          });
+          suggestionsBox.appendChild(li);
+        });
+
+        suggestionsBox.classList.add("visible");
+      }
+
+      input.addEventListener("input",(e)=>renderSuggestions(e.target.value));
+
+      input.addEventListener("keydown",(e)=>{
+        if(e.key==="Enter"){
+          const value=input.value.trim().toLowerCase();
+          if(!value) return;
+          const first=currentResults.length ? currentResults[0] : toolDirectory.find(
+            (tool)=>tool.name.toLowerCase().includes(value)
+          );
+          if(first && first.url) window.location.href=first.url;
+        }
+      });
+
+      document.addEventListener("click",(e)=>{
+        if(!input.contains(e.target) && !suggestionsBox.contains(e.target)){
+          suggestionsBox.classList.remove("visible");
+        }
+      });
+    }
+  </script>
+</body>
+</html>

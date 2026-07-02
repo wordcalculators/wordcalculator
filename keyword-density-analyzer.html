@@ -1,0 +1,2246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ==================== ADVANCED SEO ==================== -->
+  <title>Keyword Density Checker — Free SEO Tool for Content Analysis</title>
+  <meta name="description" content="Free Keyword Density Checker tool for SEO optimization. Analyze keyword frequency, density percentage, and get optimization suggestions. Perfect for content writers and SEO professionals." />
+  <meta name="keywords" content="keyword density checker, SEO tool, keyword analysis, content optimization, keyword frequency, SEO analyzer, density checker, content SEO, keyword research" />
+  <meta name="author" content="WordCalculator.net" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#059669" />
+  <link rel="canonical" href="https://wordcalculator.net/keyword-density-checker.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wordcalculator.net/keyword-density-checker.html" />
+  <meta property="og:title" content="Keyword Density Checker — Free SEO Tool for Content Analysis" />
+  <meta property="og:description" content="Analyze keyword density, frequency, and get SEO optimization suggestions. Improve your content's search engine ranking." />
+  <meta property="og:image" content="https://wordcalculator.net/images/keyword-density-checker-og.jpg" />
+  <meta property="og:site_name" content="WordCalculator.net" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://wordcalculator.net/keyword-density-checker.html" />
+  <meta name="twitter:title" content="Keyword Density Checker — Free SEO Analysis Tool" />
+  <meta name="twitter:description" content="Professional keyword density checking tool for content writers and SEO specialists." />
+  <meta name="twitter:image" content="https://wordcalculator.net/images/keyword-density-checker-twitter.jpg" />
+  <meta name="twitter:creator" content="@wordcalculator" />
+
+  <!-- WebApplication schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Keyword Density Checker",
+    "url":"https://wordcalculator.net/keyword-density-checker.html",
+    "description":"Professional SEO tool for analyzing keyword density and frequency in content.",
+    "applicationCategory":"BusinessApplication",
+    "operatingSystem":"Any",
+    "browserRequirements":"Requires JavaScript",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "featureList":[
+      "Keyword density percentage calculation",
+      "Keyword frequency analysis",
+      "Stop word filtering",
+      "SEO optimization suggestions",
+      "Export results",
+      "Real-time analysis",
+      "Mobile-optimized interface"
+    ],
+    "author":{"@type":"Organization","name":"WordCalculator.net"}
+  }
+  </script>
+
+  <!-- Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://wordcalculator.net/"},
+      {"@type":"ListItem","position":2,"name":"Tools","item":"https://wordcalculator.net/tools.html"},
+      {"@type":"ListItem","position":3,"name":"Keyword Density Checker","item":"https://wordcalculator.net/keyword-density-checker.html"}
+    ]
+  }
+  </script>
+
+  <!-- FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"What is keyword density?","acceptedAnswer":{"@type":"Answer","text":"Keyword density is the percentage of times a keyword appears in your content compared to the total word count."}},
+      {"@type":"Question","name":"What is the ideal keyword density?","acceptedAnswer":{"@type":"Answer","text":"The ideal keyword density is typically between 0.5% to 2.5% for main keywords. Higher densities may trigger keyword stuffing penalties."}},
+      {"@type":"Question","name":"Does this tool support multiple keywords?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can analyze multiple keywords simultaneously. The tool shows density for each keyword."}},
+      {"@type":"Question","name":"Can I analyze competitor content?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can paste any content into the checker to see their keyword density patterns."}}
+    ]
+  }
+  </script>
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+    /* ===== Base / Theme ===== */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --primary:#059669;--secondary:#10b981;--accent:#34d399;
+      --text:#1f2937;--muted:#6b7280;--border:#e5e7eb;--light:#f0fdf4;
+      --bg:#f9fafb;--card:#ffffff;--success:#10b981;--warning:#f59e0b;--danger:#ef4444;
+      --seo-bg:linear-gradient(135deg,#d1fae5 0%,#a7f3d0 100%);
+      --seo-border:#a7f3d0;
+      --shadow-sm:0 1px 2px 0 rgba(0,0,0,0.05);
+      --shadow-md:0 4px 6px -1px rgba(0,0,0,0.1);
+      --shadow-lg:0 10px 15px -3px rgba(0,0,0,0.1);
+    }
+    html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    body{font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+
+    /* ===== Header / Nav (same as other tools) ===== */
+    .wc-header{background:#020617;color:#fff;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+    .wc-wrap{max-width:1200px;margin:0 auto;padding:10px 12px;display:flex;align-items:center;gap:14px}
+    .wc-logo{display:inline-flex;align-items:center;gap:8px}
+    .wc-slab,.slab{display:inline-flex;width:24px;height:24px;align-items:center;justify-content:center;font-weight:800;font-size:14px;border-radius:2px;color:#fff}
+    .slab-w{background:#1f2327}.slab-o{background:#a7c1db;color:#1e2a3a}.slab-r{background:#7d96ae}.slab-d{background:#2f5d8a}
+    .wc-brand-text{display:inline-flex;flex-direction:column;line-height:1.05;font-size:19px;font-weight:800}
+    .wc-brand-text small{font-size:10px;opacity:.95}
+    .wc-nav{margin-left:10px;display:flex;align-items:center;gap:8px;flex:1}
+    .wc-link{color:#f4f8fc;font-weight:700;font-size:14px;padding:6px 10px;border-radius:8px;transition:.15s;background:transparent;border:0;cursor:pointer}
+    .wc-link:hover{background:rgba(255,255,255,.14)}
+    .wc-signin-btn{background:rgba(148,163,184,.18);border:1px solid rgba(148,163,184,.5)}
+    .wc-signin-btn:hover{background:#38bdf8;color:#020617;border-color:#38bdf8}
+    .mobile-menu-btn{margin-left:auto;background:transparent;border:0;color:#fff;font-size:20px;display:none;cursor:pointer}
+    .mobile-nav{position:fixed;top:0;right:-100%;width:320px;height:100vh;background:#1f2933;box-shadow:-2px 0 10px rgba(0,0,0,.18);transition:right .3s;z-index:100}
+    .mobile-nav.active{right:0}
+    .mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;z-index:90}
+    .mobile-overlay.active{display:block}
+
+    .mobile-nav-header{display:flex;justify-content:space-between;align-items:center;padding:16px;border-bottom:1px solid #34495e}
+    .mobile-close-btn{background:transparent;border:0;color:#fff;font-size:20px;cursor:pointer}
+    .mobile-nav-links{padding:16px}
+    .mobile-link{display:block;color:#ecf0f1;padding:12px 0;border-bottom:1px solid #34495e;font-weight:700;background:transparent;border:0;width:100%;text-align:left;cursor:pointer}
+
+    /* ===== Breadcrumb ===== */
+    .crumb-wrap{max-width:1200px;margin:8px auto 0;padding:0 15px 4px}
+    .crumbs{font-size:13px;color:#111827}
+    .crumbs a{color:#2563eb}
+    .crumbs a:hover{text-decoration:underline}
+    .crumb-separator{margin:0 4px;color:#6b7280}
+    .crumb-current{font-weight:700}
+
+    /* ===== Main Layout ===== */
+    .keyword-main{max-width:1200px;margin:22px auto 40px;padding:0 15px;display:grid;grid-template-columns:minmax(0,3fr) minmax(260px,1.25fr);gap:20px;align-items:flex-start}
+    .keyword-left{display:flex;flex-direction:column;gap:18px}
+    .keyword-top-grid{display:grid;grid-template-columns:1fr;gap:16px;align-items:stretch}
+
+    .card{background:transparent;border:none;box-shadow:none;padding:0}
+
+    /* ===== Keyword Density Checker main card ===== */
+    .keyword-shell{
+      border:1px solid var(--seo-border);
+      background: var(--card);
+      padding:12px;
+      width:100%;
+      margin:0 0 10px 0;
+      border-radius:12px;
+      box-shadow:var(--shadow-lg);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .keyword-title-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin:-12px -12px 8px;
+      padding:8px 12px;
+      background: #020617;
+      color:#f9fafb;
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+
+    .keyword-title{
+      font-size:18px;
+      font-weight:800;
+      color:#f9fafb;
+      font-family:"Inter",Arial,sans-serif;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .keyword-icon{
+      color:#fffff;
+      font-size:20px;
+    }
+
+    /* ===== Input Box Section ===== */
+    .input-box-section{
+      background:white;
+      border-radius:10px;
+      border:1px solid #e2e8f0;
+      padding:20px;
+      margin-bottom:16px;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .input-box-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:16px;
+      padding-bottom:12px;
+      border-bottom:2px solid #f7fafc;
+    }
+
+    .input-box-header h3{
+      font-size:16px;
+      font-weight:700;
+      color:#1f2937;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .input-group{
+      margin-bottom:16px;
+    }
+
+    .input-group label{
+      display:block;
+      font-size:14px;
+      font-weight:600;
+      color:#374151;
+      margin-bottom:8px;
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+
+    .input-group label i{
+      color:#059669;
+      font-size:14px;
+    }
+
+    .textarea-input{
+      width:100%;
+      padding:14px;
+      border:1px solid #d1d5db;
+      border-radius:8px;
+      font-size:14px;
+      background:white;
+      transition:all 0.2s;
+      font-family:"Inter",sans-serif;
+      min-height:250px;
+      resize:vertical;
+      line-height:1.6;
+    }
+
+    .textarea-input:focus{
+      outline:none;
+      border-color:#059669;
+      box-shadow:0 0 0 3px rgba(5,150,105,0.1);
+    }
+
+    .input-hint{
+      font-size:12px;
+      color:#6b7280;
+      margin-top:6px;
+      font-style:italic;
+    }
+
+    /* ===== Stats Display ===== */
+    .stats-section{
+      background:white;
+      border-radius:10px;
+      border:1px solid #e2e8f0;
+      padding:20px;
+      margin-bottom:16px;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .stats-header{
+      font-size:16px;
+      font-weight:700;
+      color:#1f2937;
+      margin-bottom:16px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:16px;
+    }
+
+    .stat-item{
+      background:#f0fdf4;
+      border:1px solid #a7f3d0;
+      border-radius:8px;
+      padding:16px;
+      text-align:center;
+      transition:all 0.2s;
+    }
+
+    .stat-item:hover{
+      transform:translateY(-2px);
+      box-shadow:var(--shadow-md);
+      border-color:#34d399;
+    }
+
+    .stat-value{
+      font-size:32px;
+      font-weight:800;
+      color:#065f46;
+      margin-bottom:6px;
+      line-height:1;
+    }
+
+    .stat-label{
+      font-size:13px;
+      color:#047857;
+      font-weight:600;
+      text-transform:uppercase;
+      letter-spacing:0.05em;
+    }
+
+    /* ===== Advanced Options ===== */
+    .advanced-options{
+      background:white;
+      border-radius:10px;
+      border:1px solid #e2e8f0;
+      padding:20px;
+      margin-bottom:16px;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .advanced-header{
+      font-size:16px;
+      font-weight:700;
+      color:#1f2937;
+      margin-bottom:16px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      cursor:pointer;
+    }
+
+    .advanced-content{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:16px;
+    }
+
+    .option-group{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .option-label{
+      font-size:13px;
+      font-weight:600;
+      color:#374151;
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+
+    .option-label i{
+      color:#059669;
+      font-size:12px;
+    }
+
+    .range-input{
+      width:100%;
+      height:6px;
+      -webkit-appearance:none;
+      appearance:none;
+      background:#e5e7eb;
+      border-radius:3px;
+      outline:none;
+    }
+
+    .range-input::-webkit-slider-thumb{
+      -webkit-appearance:none;
+      appearance:none;
+      width:18px;
+      height:18px;
+      border-radius:50%;
+      background:#059669;
+      cursor:pointer;
+      border:2px solid white;
+      box-shadow:0 1px 3px rgba(0,0,0,0.2);
+    }
+
+    .range-value{
+      font-size:12px;
+      color:#6b7280;
+      text-align:right;
+    }
+
+    .checkbox-options{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:8px;
+    }
+
+    .checkbox-item{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      font-size:13px;
+      color:#374151;
+    }
+
+    .checkbox-item input[type="checkbox"]{
+      width:16px;
+      height:16px;
+      accent-color:#059669;
+    }
+
+    /* ===== Controls ===== */
+    .controls-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:20px;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .btn{
+      padding:12px 24px;
+      border-radius:8px;
+      font-weight:600;
+      font-size:14px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      transition:all 0.2s;
+      border:none;
+    }
+
+    .btn-primary{
+      background: #020617;
+      color:white;
+      box-shadow:0 2px 4px rgba(5,150,105,0.3);
+    }
+
+    .btn-primary:hover{
+      background:linear-gradient(135deg,#047857 0%,#065f46 100%);
+      transform:translateY(-2px);
+      box-shadow:0 4px 8px rgba(5,150,105,0.4);
+    }
+
+    .btn-secondary{
+      background:#f3f4f6;
+      color:#374151;
+      border:1px solid #d1d5db;
+    }
+
+    .btn-secondary:hover{
+      background:#e5e7eb;
+      border-color:#9ca3af;
+      transform:translateY(-2px);
+    }
+
+    .btn-export{
+      background:#d1fae5;
+      color:#065f46;
+      border:1px solid #a7f3d0;
+    }
+
+    .btn-export:hover{
+      background:#a7f3d0;
+      border-color:#34d399;
+      transform:translateY(-2px);
+    }
+
+    /* ===== Results Section ===== */
+    .results-section{
+      background:white;
+      border-radius:10px;
+      border:1px solid #e2e8f0;
+      padding:20px;
+      margin-top:16px;
+      box-shadow:var(--shadow-sm);
+      display:none;
+    }
+
+    .results-section.active{
+      display:block;
+      animation:fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn{
+      from{opacity:0;transform:translateY(-10px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    .results-header{
+      font-size:16px;
+      font-weight:700;
+      color:#1f2937;
+      margin-bottom:16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    /* ===== Density Table ===== */
+    .density-table{
+      width:100%;
+      border-collapse:collapse;
+      margin:20px 0;
+      border-radius:8px;
+      overflow:hidden;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .density-table thead{
+      background:linear-gradient(135deg,#065f46 0%,#047857 100%);
+      color:white;
+    }
+
+    .density-table th{
+      padding:14px 16px;
+      text-align:left;
+      font-weight:600;
+      font-size:13px;
+    }
+
+    .density-table tbody tr{
+      border-bottom:1px solid #e5e7eb;
+      transition:background 0.2s;
+    }
+
+    .density-table tbody tr:hover{
+      background:#f0fdf4;
+    }
+
+    .density-table td{
+      padding:14px 16px;
+      font-size:13px;
+    }
+
+    .keyword-cell{
+      font-weight:600;
+      color:#065f46;
+    }
+
+    .density-cell{
+      font-weight:700;
+    }
+
+    .optimal{
+      color:#10b981;
+    }
+
+    .low{
+      color:#f59e0b;
+    }
+
+    .high{
+      color:#ef4444;
+    }
+
+    .status-indicator{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:6px 12px;
+      border-radius:20px;
+      font-size:11px;
+      font-weight:600;
+    }
+
+    .status-optimal{
+      background:#d1fae5;
+      color:#065f46;
+    }
+
+    .status-low{
+      background:#fef3c7;
+      color:#92400e;
+    }
+
+    .status-high{
+      background:#fee2e2;
+      color:#991b1b;
+    }
+
+    /* ===== Visualization ===== */
+    .visualization-section{
+      background:white;
+      border-radius:10px;
+      border:1px solid #e2e8f0;
+      padding:20px;
+      margin-top:16px;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .viz-container{
+      height:200px;
+      display:flex;
+      align-items:flex-end;
+      gap:8px;
+      padding:20px;
+      background:#f9fafb;
+      border-radius:8px;
+      margin-top:12px;
+    }
+
+    .viz-bar{
+      flex:1;
+      background:#34d399;
+      border-radius:4px 4px 0 0;
+      position:relative;
+      transition:height 0.3s ease;
+      min-height:20px;
+    }
+
+    .viz-bar:hover{
+      background:#10b981;
+    }
+
+    .viz-label{
+      position:absolute;
+      bottom:-25px;
+      left:0;
+      right:0;
+      text-align:center;
+      font-size:11px;
+      color:#6b7280;
+      font-weight:500;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .viz-value{
+      position:absolute;
+      top:-25px;
+      left:0;
+      right:0;
+      text-align:center;
+      font-size:11px;
+      color:#065f46;
+      font-weight:700;
+    }
+
+    /* ===== Suggestions ===== */
+    .suggestions-section{
+      background:white;
+      border-radius:10px;
+      border:1px solid #e2e8f0;
+      padding:20px;
+      margin-top:16px;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .suggestion-list{
+      list-style:none;
+      margin-top:16px;
+    }
+
+    .suggestion-item{
+      padding:12px 16px;
+      margin-bottom:10px;
+      background:#f0fdf4;
+      border-left:4px solid #059669;
+      border-radius:6px;
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+    }
+
+    .suggestion-item.warning{
+      background:#fef3c7;
+      border-left-color:#f59e0b;
+    }
+
+    .suggestion-item.danger{
+      background:#fee2e2;
+      border-left-color:#ef4444;
+    }
+
+    .suggestion-icon{
+      color:#059669;
+      font-size:14px;
+      margin-top:2px;
+    }
+
+    .suggestion-item.warning .suggestion-icon{
+      color:#f59e0b;
+    }
+
+    .suggestion-item.danger .suggestion-icon{
+      color:#ef4444;
+    }
+
+    .suggestion-text{
+      flex:1;
+      font-size:13px;
+      color:#374151;
+      line-height:1.6;
+    }
+
+    /* ===== Export Section ===== */
+    .export-section{
+      background:white;
+      border-radius:10px;
+      border:1px solid #e2e8f0;
+      padding:20px;
+      margin-top:16px;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .export-options{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:12px;
+    }
+
+    .export-btn{
+      background:#f3f4f6;
+      border:1px solid #d1d5db;
+      border-radius:6px;
+      padding:10px 16px;
+      font-size:13px;
+      font-weight:500;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      transition:all 0.2s;
+    }
+
+    .export-btn:hover{
+      background:#e5e7eb;
+      border-color:#9ca3af;
+      transform:translateY(-1px);
+    }
+
+    .export-btn.pdf{
+      background:#fee2e2;
+      border-color:#fca5a5;
+      color:#b91c1c;
+    }
+
+    .export-btn.csv{
+      background:#dbeafe;
+      border-color:#93c5fd;
+      color:#1d4ed8;
+    }
+
+    .export-btn.text{
+      background:#d1fae5;
+      border-color:#a7f3d0;
+      color:#065f46;
+    }
+
+    /* ===== Info blocks ===== */
+    .section-block{
+      background:var(--card);
+      border-radius:12px;
+      border:1px solid #e2e8f0;
+      padding:20px;
+      box-shadow:0 8px 20px rgba(15,23,42,.035);
+    }
+    .section-block h3{
+      font-size:18px;
+      font-weight:800;
+      margin-bottom:12px;
+      color:#0f172a;
+      font-family:"Inter",sans-serif;
+    }
+    .section-block h4{
+      font-size:16px;
+      font-weight:700;
+      margin-top:16px;
+      margin-bottom:10px;
+      color:#111827;
+    }
+    .section-block p{
+      font-size:14px;
+      color:#4b5563;
+      margin-bottom:12px;
+      line-height:1.7;
+    }
+    .section-block ul{
+      padding-left:20px;
+      font-size:14px;
+      color:#4b5563;
+      line-height:1.7;
+    }
+    .section-block ul li+li{margin-top:8px;}
+
+    /* ===== Sidebar ===== */
+    .keyword-sidebar{display:flex;flex-direction:column;gap:16px}
+    .sidebar-card{
+      background:var(--card);
+      border-radius:12px;
+      border:1px solid #e2e8f0;
+      padding:12px 12px 10px;
+      box-shadow:0 10px 24px rgba(15,23,42,.06);
+      font-size:13px;
+    }
+    .sidebar-title-bar{
+      margin:-12px -12px 8px;
+      padding:7px 10px;
+      background:#020617;
+      color:#f9fafb;
+      font-size:14px;
+      font-weight:800;
+      border-radius:12px 12px 0 0;
+      box-shadow:inset 0 -1px 0 rgba(148,163,184,.35);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+    }
+    .sidebar-group{margin-top:10px;}
+    .sidebar-group h4{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:0.06em;
+      color:#6b7280;
+      margin-bottom:3px;
+      font-weight:700;
+    }
+    .sidebar-links{list-style:none;font-size:13px}
+    .sidebar-links li+li{margin-top:3px}
+    .sidebar-links a{color:#1d4ed8}
+    .sidebar-links a:hover{text-decoration:underline}
+
+    /* ===== QUICK SEARCH ===== */
+    .tool-search{margin:6px 0 4px;}
+    .sidebar-search-input-wrapper{
+      position:relative;
+      display:flex;
+      align-items:center;
+      margin-top:4px;
+    }
+    .sidebar-search-icon{
+      position:absolute;
+      left:10px;
+      font-size:12px;
+      opacity:0.7;
+    }
+    .sidebar-search-input{
+      width:100%;
+      padding:8px 10px 8px 28px;
+      border-radius:8px;
+      border:1px solid #d5d9e0;
+      background-color:#f9fafb;
+      font-size:13px;
+      outline:none;
+      transition:border-color .15s ease,background-color .15s ease,box-shadow .15s ease;
+    }
+    .sidebar-search-input:focus{
+      border-color:#3f82bd;
+      background-color:#ffffff;
+      box-shadow:0 0 0 1px rgba(63,130,189,0.12);
+    }
+    .sidebar-search-suggestions{
+      list-style:none;
+      margin-top:8px;
+      padding:4px 0;
+      max-height:220px;
+      overflow-y:auto;
+      border-radius:10px;
+      border:1px solid #e3e7ee;
+      background-color:#ffffff;
+      box-shadow:0 8px 20px rgba(15,23,42,0.12);
+      display:none;
+    }
+    .sidebar-search-suggestions.visible{display:block;}
+    .sidebar-search-suggestions li{
+      font-size:13px;
+      padding:7px 10px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+    .sidebar-search-suggestions li + li{
+      border-top:1px solid #f1f3f8;
+    }
+    .sidebar-search-suggestions li span.tool-name{
+      flex:1;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .sidebar-search-suggestions li i{
+      font-size:11px;
+      opacity:0.7;
+    }
+    .sidebar-search-suggestions li:hover{
+      background-color:#f3f4f8;
+    }
+
+    /* ===== Footer ===== */
+    .pro-footer{background:#020617;color:#cbd5e1;margin-top:40px}
+    .pf-wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding:34px 15px;
+      display:grid;
+      grid-template-columns:320px 1fr;
+      gap:26px;
+    }
+    .pf-logo{display:flex;align-items:center;gap:10px}
+    .pf-brand-text{font-size:18px;font-weight:800;color:#e2e8f0}
+    .pf-brand-text span{color:#38bdf8}
+    .pf-tag{margin-top:8px;color:#94a3b8;font-size:13px}
+    .pf-social{display:flex;gap:10px;margin-top:10px}
+    .pf-social a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:34px;height:34px;
+      border:1px solid #1e293b;
+      border-radius:10px;
+      background:#0b1220;
+      color:#cbd5e1;
+      transition:background .15s,color .15s,border-color .15s,transform .15s,box-shadow .15s;
+    }
+    .pf-social a:hover{
+      background:#38bdf8;
+      border-color:#38bdf8;
+      color:#0b1220;
+      transform:translateY(-1px);
+      box-shadow:0 4px 12px rgba(56,189,248,.4);
+    }
+    .pf-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .pf-col h5{color:#e2e8f0;font-weight:800;font-size:14px;margin-bottom:10px}
+    .pf-col ul{list-style:none}
+    .pf-col li{margin:8px 0}
+    .pf-col a{color:#94a3b8}
+    .pf-col a:hover{color:#e2e8f0}
+    .pf-bottom{border-top:1px solid #1e293b;background:#0b1220}
+    .pf-bottom-wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding:12px 15px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      color:#8893a7;
+      font-size:13px;
+    }
+    .pf-links{display:flex;gap:10px}
+    .pf-links a{color:#94a3b8}
+    .pf-links a:hover{color:#e2e8f0}
+
+    /* ===== Modal ===== */
+    .modal-overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(15,23,42,0.7);
+      display:none;
+      z-index:200;
+    }
+    .modal{
+      position:fixed;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      width:420px;
+      max-width:96vw;
+      background:#ffffff;
+      border:1px solid #e5e7eb;
+      border-radius:14px;
+      box-shadow:0 18px 40px rgba(15,23,42,0.35);
+      display:none;
+      z-index:210;
+    }
+    .modal-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:10px 12px;
+      border-bottom:1px solid #e5e7eb;
+    }
+    .modal-head h3{font-size:15px;font-weight:800;color:#111827}
+    .modal-close{
+      background:#f3f4f6;
+      border:1px solid #e5e7eb;
+      border-radius:8px;
+      padding:6px 8px;
+      cursor:pointer;
+    }
+    .modal-body{padding:12px;font-size:13px;color:#4b5563}
+
+    /* ===== Responsive ===== */
+    @media (max-width:1100px){
+      .pf-wrap{grid-template-columns:1fr;}
+      .pf-cols{grid-template-columns:repeat(2,1fr);}
+      .keyword-main{grid-template-columns:minmax(0,1.9fr) minmax(260px,1.2fr);}
+    }
+    @media (max-width:992px){
+      .wc-nav{display:none;}
+      .mobile-menu-btn{display:inline-block;}
+      .keyword-main{grid-template-columns:1fr;}
+      .keyword-sidebar{order:-1;}
+      .density-table{display:block;overflow-x:auto;}
+    }
+    @media (max-width:640px){
+      .pf-cols{grid-template-columns:1fr;}
+      .stats-grid{grid-template-columns:repeat(2,1fr);}
+      .controls-row{flex-direction:column;align-items:stretch;}
+      .btn{justify-content:center;}
+      .advanced-content{grid-template-columns:1fr;}
+      .export-options{flex-direction:column;}
+    }
+    @media (max-width:480px){
+      .stats-grid{grid-template-columns:1fr;}
+      .density-table th,.density-table td{padding:10px 12px;font-size:12px;}
+      .viz-container{height:150px;}
+    }
+    @media (prefers-reduced-motion:reduce){
+      *{animation:none !important;transition:none !important;scroll-behavior:auto !important;}
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="wc-header">
+    <div class="wc-wrap">
+      <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+        <span class="slab slab-w">W</span>
+        <span class="slab slab-o">O</span>
+        <span class="slab slab-r">R</span>
+        <span class="slab slab-d">D</span>
+        <span class="wc-brand-text">
+          Calculator
+          <small class="wc-tagline">Every Word Counts</small>
+        </span>
+      </a>
+
+      <nav class="wc-nav" aria-label="Primary">
+        <a href="https://wordcalculator.net" class="wc-link">Home</a>
+        <a href="blog.html" class="wc-link">Blog</a>
+        <a href="tools.html" class="wc-link">Tools</a>
+        <a href="about.html" class="wc-link">About Us</a>
+		<a href="signin.html" class="wc-link">Sign In</a>
+      </nav>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <div class="mobile-nav-header">
+        <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <span class="wc-brand-text">Calculator</span>
+        </a>
+        <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="https://wordcalculator.net" class="nav-link mobile-link">Home</a>
+        <a href="blog.html" class="nav-link mobile-link">Blog</a>
+        <a href="tools.html" class="nav-link mobile-link">Tools</a>
+        <a href="about.html" class="nav-link mobile-link">About Us</a>
+		<a href="signin.html" class="nav-link mobile-link">Sign In</a>
+      </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+  </header>
+
+  <!-- ===== Breadcrumbs ===== -->
+  <div class="crumb-wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="https://wordcalculator.net">Home</a>
+      <span class="crumb-separator">/</span>
+      <a href="tools.html">Tools</a>
+      <span class="crumb-separator">/</span>
+      <span class="crumb-current">Keyword Density Checker</span>
+    </nav>
+  </div>
+
+  <!-- ==================== MAIN ==================== -->
+  <main class="keyword-main">
+    <!-- LEFT SIDE -->
+    <section class="keyword-left">
+      <div class="keyword-top-grid">
+        <article class="card" aria-labelledby="keywordCardTitle">
+          <div class="keyword-shell">
+            <div class="keyword-title-row">
+              <h1 id="keywordCardTitle" class="keyword-title">
+                <i class="fas fa-chart-pie keyword-icon"></i>
+                KEYWORD DENSITY CHECKER
+              </h1>
+            </div>
+
+            <!-- Input Box Section -->
+            <div class="input-box-section">
+              <div class="input-box-header">
+                <h3><i class="fas fa-align-left"></i> Enter Text for Analysis</h3>
+              </div>
+
+              <div class="input-group">
+                <label for="contentInput"><i class="fas fa-keyboard"></i> Paste Your Content</label>
+                <textarea 
+                  id="contentInput" 
+                  class="textarea-input" 
+                  placeholder="Paste your article, blog post, or any text content here..."
+                  rows="12"
+                ></textarea>
+                <div class="input-hint">For best results, paste at least 100 words of content</div>
+              </div>
+
+              <!-- Stats Display -->
+              <div class="stats-section">
+                <div class="stats-header">
+                  <i class="fas fa-chart-bar"></i> Content Statistics
+                </div>
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <div class="stat-value" id="totalWords">0</div>
+                    <div class="stat-label">Total Words</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value" id="totalChars">0</div>
+                    <div class="stat-label">Total Characters</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value" id="sentenceCount">0</div>
+                    <div class="stat-label">Sentences</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value" id="paragraphCount">0</div>
+                    <div class="stat-label">Paragraphs</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Advanced Options -->
+              <div class="advanced-options">
+                <div class="advanced-header" id="advancedToggle">
+                  <i class="fas fa-sliders-h"></i> Advanced Options
+                  <span style="margin-left:auto;font-size:12px;color:#6b7280;">Click to expand</span>
+                </div>
+                
+                <div class="advanced-content" id="advancedContent" style="display:none;">
+                  <div class="option-group">
+                    <div class="option-label">
+                      <i class="fas fa-filter"></i> Minimum Keyword Length
+                    </div>
+                    <input type="range" id="minKeywordLength" class="range-input" min="2" max="10" value="3">
+                    <div class="range-value">Min Length: <span id="minLengthValue">3</span> characters</div>
+                  </div>
+                  
+                  <div class="option-group">
+                    <div class="option-label">
+                      <i class="fas fa-chart-line"></i> Density Thresholds
+                    </div>
+                    <div class="checkbox-options">
+                      <div class="checkbox-item">
+                        <input type="checkbox" id="autoExtract" checked>
+                        <label for="autoExtract">Auto-extract keywords</label>
+                      </div>
+                      <div class="checkbox-item">
+                        <input type="checkbox" id="ignoreNumbers">
+                        <label for="ignoreNumbers">Ignore numbers</label>
+                      </div>
+                      <div class="checkbox-item">
+                        <input type="checkbox" id="groupSimilar">
+                        <label for="groupSimilar">Group similar words</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="controls-row">
+                <div>
+                  <button id="analyzeBtn" class="btn btn-primary">
+                    <i class="fas fa-search"></i>
+                    Analyze Keyword Density
+                  </button>
+                  <button id="clearBtn" class="btn btn-secondary">
+                    <i class="fas fa-trash"></i>
+                    Clear All
+                  </button>
+                </div>
+                <button id="sampleBtn" class="btn btn-secondary">
+                  <i class="fas fa-vial"></i>
+                  Load Sample
+                </button>
+              </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-section" id="resultsSection">
+              <div class="results-header">
+                <span><i class="fas fa-chart-line"></i> Keyword Density Analysis</span>
+                <span style="font-size:12px;color:#6b7280;">Updated just now</span>
+              </div>
+
+              <!-- Density Table -->
+              <table class="density-table">
+                <thead>
+                  <tr>
+                    <th>Keyword</th>
+                    <th>Frequency</th>
+                    <th>Density</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="densityTableBody">
+                  <!-- Results will be populated here -->
+                </tbody>
+              </table>
+
+              <!-- Visualization -->
+              <div class="visualization-section">
+                <div class="stats-header">
+                  <i class="fas fa-chart-bar"></i> Keyword Density Visualization
+                </div>
+                <div class="viz-container" id="vizContainer">
+                  <!-- Visualization bars will be added here -->
+                </div>
+              </div>
+
+              <!-- Suggestions -->
+              <div class="suggestions-section">
+                <div class="stats-header">
+                  <i class="fas fa-lightbulb"></i> SEO Optimization Recommendations
+                </div>
+                <ul class="suggestion-list" id="suggestionList">
+                  <!-- Suggestions will be added here -->
+                </ul>
+              </div>
+
+              <!-- Export Section -->
+              <div class="export-section">
+                <div class="stats-header">
+                  <i class="fas fa-download"></i> Export Results
+                </div>
+                <div class="export-options">
+                  <button class="export-btn pdf" id="exportPdfBtn">
+                    <i class="fas fa-file-pdf"></i>
+                    Export as PDF
+                  </button>
+                  <button class="export-btn csv" id="exportCsvBtn">
+                    <i class="fas fa-file-csv"></i>
+                    Export as CSV
+                  </button>
+                  <button class="export-btn text" id="exportTextBtn">
+                    <i class="fas fa-file-alt"></i>
+                    Export as Text
+                  </button>
+                  <button class="export-btn" id="copyResultsBtn">
+                    <i class="fas fa-copy"></i>
+                    Copy Results
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick tips -->
+          <div class="section-block" style="margin-top:12px;">
+            <h4>How to Optimize Your Content</h4>
+            <ul>
+              <li>Keep primary keyword density between 1-2.5% for optimal results</li>
+              <li>Use secondary keywords naturally throughout the content</li>
+              <li>Avoid keyword stuffing - search engines penalize excessive repetition</li>
+              <li>Include keywords in headings, meta descriptions, and image alt text</li>
+              <li>Use synonyms and related terms to improve topical relevance</li>
+              <li>Regularly check density as you write and edit content</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <!-- Advanced Features Section -->
+      <article class="section-block">
+        <h3>Advanced Features for SEO Professionals</h3>
+        
+        <h4>Advanced Keyword Analysis</h4>
+        <ul>
+          <li><strong>TF-IDF Analysis:</strong> Calculate term frequency-inverse document frequency for better keyword weighting</li>
+          <li><strong>N-gram Analysis:</strong> Analyze keyword phrases (2-word, 3-word combinations)</li>
+          <li><strong>Competitor Benchmarking:</strong> Compare your density with top-ranking pages</li>
+          <li><strong>Semantic Analysis:</strong> Identify related terms and topics for comprehensive coverage</li>
+          <li><strong>Historical Tracking:</strong> Monitor density changes over time for ongoing optimization</li>
+        </ul>
+        
+        <h4>Professional SEO Features</h4>
+        <ul>
+          <li><strong>Custom Stop Words:</strong> Add domain-specific terms to ignore in analysis</li>
+          <li><strong>Keyword Grouping:</strong> Group similar keywords for consolidated analysis</li>
+          <li><strong>Export Customization:</strong> Choose specific data points for export</li>
+          <li><strong>API Access:</strong> Integrate with your SEO tools and workflow</li>
+          <li><strong>Bulk Analysis:</strong> Analyze multiple pages or articles simultaneously</li>
+        </ul>
+        
+        <h4>Advanced Reporting</h4>
+        <ul>
+          <li><strong>Detailed PDF Reports:</strong> Professional reports with charts and recommendations</li>
+          <li><strong>Comparative Analysis:</strong> Compare current vs. target density ranges</li>
+          <li><strong>Trend Analysis:</strong> Track density trends over multiple content pieces</li>
+          <li><strong>Team Collaboration:</strong> Share reports and collaborate with team members</li>
+          <li><strong>Scheduled Reports:</strong> Automate regular density analysis reports</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- RIGHT SIDE / SIDEBAR -->
+    <aside class="keyword-sidebar" aria-label="Quick search and related tools">
+      <div class="sidebar-card">
+        <div class="sidebar-title-bar">
+          <span>Quick Search</span>
+          <i class="fas fa-magnifying-glass"></i>
+        </div>
+
+        <div class="tool-search">
+          <small>Quick links to other tools on WordCalculator.net</small>
+          <div class="sidebar-search-input-wrapper">
+            <i class="fa-solid fa-magnifying-glass sidebar-search-icon" aria-hidden="true"></i>
+            <input
+              type="search"
+              id="toolSearchInput"
+              class="sidebar-search-input"
+              placeholder="Search tools by name..."
+              autocomplete="off"
+              aria-label="Search tools by name"
+            />
+          </div>
+          <ul id="toolSearchSuggestions" class="sidebar-search-suggestions" aria-label="Tool suggestions"></ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Popular Tools</h4>
+          <ul class="sidebar-links">
+            <li><a href="age-calculator.html">Age Calculator</a></li>
+            <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+            <li><a href="calorie-calculator.html">Calorie Calculator</a></li>
+            <li><a href="area-converter.html">Area Converter</a></li>
+            <li><a href="data-size-converter.html">Data Size Converter</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>SEO & Writing Tools</h4>
+          <ul class="sidebar-links">
+            <li><a href="https://wordcalculator.net">Word & Character Counter</a></li>
+            <li><a href="readability-analyzer.html">Readability Analyzer</a></li>
+            <li><a href="keyword-density-checker.html">Keyword Density Checker</a></li>
+            <li><a href="title-meta-preview.html">Title & Meta Preview</a></li>
+            <li><a href="url-slug-generator.html">URL Slug Generator</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Calculators</h4>
+          <ul class="sidebar-links">
+            <li><a href="loan-emi-calculator.html">Loan & EMI Calculator</a></li>
+            <li><a href="interest-calculator.html">Interest Calculator</a></li>
+            <li><a href="percentage-calculator.html">Percentage Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Converters</h4>
+          <ul class="sidebar-links">
+            <li><a href="length-distance-converter.html">Length Converter</a></li>
+            <li><a href="temperature-converter.html">Temperature Converter</a></li>
+            <li><a href="speed-converter.html">Speed Converter</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="pro-footer" id="about" aria-label="Website footer">
+    <div class="pf-wrap">
+      <div class="pf-brand">
+        <div class="pf-logo">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <div class="pf-brand-text">
+            WordCalculator<span>.net</span>
+          </div>
+        </div>
+        <p class="pf-tag">A focused, distraction-free toolkit for precise writing.</p>
+        <div class="pf-social">
+          <a href="https://facebook.com/wordcalculator" aria-label="Facebook" rel="noopener" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/wordcalculator" aria-label="X (Twitter)" rel="noopener" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://linkedin.com/company/wordcalculator" aria-label="LinkedIn" rel="noopener" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://youtube.com/@wordcalculator" aria-label="YouTube" rel="noopener" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="pf-cols">
+        <div class="pf-col">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="https://wordcalculator.net">Editor</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="keyword-density-checker.html">Keyword Density</a></li>
+            <li><a href="readability-analyzer.html">Readability Analyzer</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="guides.html">SEO &amp; Writing Guides</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="careers.html">Careers</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pf-bottom">
+      <div class="pf-bottom-wrap">
+        <div>© <span id="pf-year"></span> WordCalculator.net — All rights reserved.</div>
+        <div class="pf-links">
+          <a href="sitemap.html">Sitemap</a>
+          <a href="status.html">Status</a>
+          <a href="accessibility.html">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Auth Modal ===== -->
+  <div class="modal-overlay" id="authOverlay" aria-hidden="true"></div>
+  <div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <div class="modal-head">
+      <h3 id="authTitle"><i class="fas fa-user-lock"></i> Account</h3>
+      <button class="modal-close" id="authCloseBtn" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body">
+      Sign-in and account features are coming soon. For now, all tools are free to use without registration.
+    </div>
+  </div>
+
+  <!-- ==================== JS ==================== -->
+  <!-- Tools Directory Js -->
+  <script src="tools-directory.js"></script>
+
+  <script>
+    const $ = (s) => document.querySelector(s);
+    const $$ = (s) => Array.from(document.querySelectorAll(s));
+
+    document.addEventListener("DOMContentLoaded", () => {
+      initYear();
+      initMobileMenu();
+      initAuthModal();
+      initKeywordDensityChecker();
+      initToolQuickSearch();
+    });
+
+    function initYear() {
+      const el = $("#pf-year");
+      if (el) el.textContent = new Date().getFullYear();
+    }
+
+    function initMobileMenu() {
+      const mobileMenuBtn = $("#mobileMenuBtn");
+      const mobileCloseBtn = $("#mobileCloseBtn");
+      const mobileNav = $("#mobileNav");
+      const mobileOverlay = $("#mobileOverlay");
+      if (!mobileMenuBtn || !mobileNav || !mobileOverlay) return;
+
+      const open = () => {
+        mobileNav.classList.add("active");
+        mobileOverlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+      };
+      const close = () => {
+        mobileNav.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+      };
+
+      mobileMenuBtn.addEventListener("click", open);
+      if (mobileCloseBtn) mobileCloseBtn.addEventListener("click", close);
+      mobileOverlay.addEventListener("click", close);
+      $$(".mobile-link").forEach(link => link.addEventListener("click", close));
+
+      const openAuthBtnMobile = $("#openAuthBtnMobile");
+      if (openAuthBtnMobile) {
+        openAuthBtnMobile.addEventListener("click", () => {
+          close();
+          openAuthModal();
+        });
+      }
+    }
+
+    function initAuthModal() {
+      const openBtn = $("#openAuthBtn");
+      const overlay = $("#authOverlay");
+      const modal = $("#authModal");
+      const closeBtn = $("#authCloseBtn");
+      if (!overlay || !modal) return;
+
+      const open = () => {
+        overlay.style.display = "block";
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden";
+      };
+      const close = () => {
+        overlay.style.display = "none";
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+      };
+
+      if (openBtn) openBtn.addEventListener("click", open);
+      if (closeBtn) closeBtn.addEventListener("click", close);
+      overlay.addEventListener("click", close);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") close();
+      });
+    }
+
+    function openAuthModal() {
+      const overlay = $("#authOverlay");
+      const modal = $("#authModal");
+      if (!overlay || !modal) return;
+      overlay.style.display = "block";
+      modal.style.display = "block";
+      document.body.style.overflow = "hidden";
+    }
+
+    /* ===== Keyword Density Checker Core ===== */
+    let analysisResults = null;
+    let contentStats = null;
+    
+    // Common English stop words to ignore in analysis
+    const STOP_WORDS = new Set([
+      'a', 'an', 'the', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by',
+      'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'do', 'does', 'did',
+      'will', 'would', 'shall', 'should', 'may', 'might', 'must', 'can', 'could',
+      'i', 'you', 'he', 'she', 'it', 'we', 'they', 'me', 'him', 'her', 'us', 'them',
+      'my', 'your', 'his', 'her', 'its', 'our', 'their', 'mine', 'yours', 'hers', 'ours', 'theirs',
+      'this', 'that', 'these', 'those', 'am', 'are', 'is', 'was', 'were', 'be', 'been', 'being',
+      'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'shall', 'should',
+      'may', 'might', 'must', 'can', 'could', 'what', 'which', 'who', 'whom', 'whose',
+      'where', 'when', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most',
+      'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than',
+      'too', 'very', 's', 't', 'don', 'don\'t', 'ain', 'aren', 'aren\'t', 'couldn', 'couldn\'t',
+      'didn', 'didn\'t', 'doesn', 'doesn\'t', 'hadn', 'hadn\'t', 'hasn', 'hasn\'t', 'haven', 'haven\'t',
+      'isn', 'isn\'t', 'ma', 'mightn', 'mightn\'t', 'mustn', 'mustn\'t', 'needn', 'needn\'t',
+      'shan', 'shan\'t', 'shouldn', 'shouldn\'t', 'wasn', 'wasn\'t', 'weren', 'weren\'t',
+      'won', 'won\'t', 'wouldn', 'wouldn\'t'
+    ]);
+
+    function initKeywordDensityChecker() {
+      // Initialize content statistics
+      updateContentStats();
+      
+      // Advanced options toggle
+      $("#advancedToggle").addEventListener("click", function() {
+        const content = $("#advancedContent");
+        if (content.style.display === "none") {
+          content.style.display = "grid";
+          this.querySelector("span").textContent = "Click to collapse";
+        } else {
+          content.style.display = "none";
+          this.querySelector("span").textContent = "Click to expand";
+        }
+      });
+      
+      // Range input update
+      $("#minKeywordLength").addEventListener("input", function() {
+        $("#minLengthValue").textContent = this.value;
+      });
+      
+      // Event listeners
+      $("#contentInput").addEventListener("input", updateContentStats);
+      $("#analyzeBtn").addEventListener("click", analyzeContent);
+      $("#clearBtn").addEventListener("click", clearContent);
+      $("#sampleBtn").addEventListener("click", loadSampleData);
+      
+      // Export buttons
+      $("#exportPdfBtn").addEventListener("click", exportAsPdf);
+      $("#exportCsvBtn").addEventListener("click", exportAsCsv);
+      $("#exportTextBtn").addEventListener("click", exportAsText);
+      $("#copyResultsBtn").addEventListener("click", copyResultsToClipboard);
+    }
+
+    function loadSampleData() {
+      const sampleContent = `Search engine optimization is crucial for online success. SEO involves optimizing your website to rank higher in search engine results pages. 
+
+When creating content, keyword research is essential. You need to identify the right keywords that your target audience is searching for. These keywords should be naturally integrated into your content.
+
+Keyword density refers to the percentage of times a specific keyword appears in your content relative to the total word count. While important, keyword density should not be the only focus. Search engines like Google prioritize high-quality, relevant content that provides value to users.
+
+The best approach is to write naturally first, then optimize for keywords. Use your primary keywords in strategic locations like the title, headings, and first paragraph. Secondary keywords and related terms should be sprinkled throughout the content.
+
+Remember that SEO is an ongoing process. Regular analysis of your keyword density helps maintain optimal levels and avoid keyword stuffing penalties. This keyword density checker tool helps you analyze your content effectively.`;
+
+      $("#contentInput").value = sampleContent;
+      updateContentStats();
+      showToast("Sample text loaded. Click 'Analyze Keyword Density' to analyze.");
+    }
+
+    function clearContent() {
+      if (confirm("Clear all content and results?")) {
+        $("#contentInput").value = "";
+        $("#resultsSection").classList.remove("active");
+        analysisResults = null;
+        contentStats = null;
+        updateContentStats();
+        showToast("Content cleared");
+      }
+    }
+
+    function updateContentStats() {
+      const content = $("#contentInput").value.trim();
+      
+      // Calculate basic statistics
+      const words = content ? content.split(/\s+/) : [];
+      const totalWords = words.length;
+      const totalChars = content.length;
+      
+      // Count sentences (simple method)
+      const sentenceCount = content ? (content.match(/[.!?]+/g) || []).length : 0;
+      
+      // Count paragraphs
+      const paragraphCount = content ? (content.match(/\n\s*\n/g) || []).length + 1 : 0;
+      
+      // Update UI
+      $("#totalWords").textContent = totalWords.toLocaleString();
+      $("#totalChars").textContent = totalChars.toLocaleString();
+      $("#sentenceCount").textContent = sentenceCount;
+      $("#paragraphCount").textContent = paragraphCount;
+      
+      // Store stats
+      contentStats = {
+        totalWords,
+        totalChars,
+        sentenceCount,
+        paragraphCount,
+        content
+      };
+    }
+
+    function analyzeContent() {
+      const content = $("#contentInput").value.trim();
+      const minKeywordLength = parseInt($("#minKeywordLength").value);
+      const autoExtract = $("#autoExtract").checked;
+      const ignoreNumbers = $("#ignoreNumbers").checked;
+      const groupSimilar = $("#groupSimilar").checked;
+      
+      // Validation
+      if (!content) {
+        alert("Please enter some text to analyze");
+        $("#contentInput").focus();
+        return;
+      }
+      
+      if (contentStats.totalWords < 10) {
+        alert("Please enter at least 10 words for accurate analysis");
+        return;
+      }
+      
+      // Process content
+      const words = content.split(/\s+/);
+      
+      // Extract keywords based on settings
+      const wordFrequency = {};
+      words.forEach(word => {
+        const cleanWord = word.toLowerCase().replace(/[^\w]/g, '');
+        
+        // Apply filters
+        if (cleanWord.length < minKeywordLength) return;
+        if (ignoreNumbers && /^\d+$/.test(cleanWord)) return;
+        if (STOP_WORDS.has(cleanWord)) return;
+        
+        // Group similar words if enabled
+        let finalWord = cleanWord;
+        if (groupSimilar) {
+          // Simple stemming for grouping
+          if (cleanWord.endsWith('s') && cleanWord.length > 3) {
+            finalWord = cleanWord.slice(0, -1);
+          } else if (cleanWord.endsWith('ing') && cleanWord.length > 5) {
+            finalWord = cleanWord.slice(0, -3);
+          } else if (cleanWord.endsWith('ed') && cleanWord.length > 4) {
+            finalWord = cleanWord.slice(0, -2);
+          }
+        }
+        
+        wordFrequency[finalWord] = (wordFrequency[finalWord] || 0) + 1;
+      });
+      
+      // Sort by frequency and take top keywords
+      const sortedWords = Object.entries(wordFrequency)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 15); // Show top 15 keywords
+      
+      // Analyze each keyword
+      const results = sortedWords.map(([keyword, frequency]) => {
+        const searchPattern = new RegExp(`\\b${escapeRegExp(keyword)}\\b`, 'gi');
+        const matches = content.match(searchPattern) || [];
+        const actualFrequency = matches.length;
+        const density = contentStats.totalWords > 0 ? (actualFrequency / contentStats.totalWords) * 100 : 0;
+        
+        // Determine status
+        let status, statusClass, action;
+        
+        if (density < 0.3) {
+          status = "Low";
+          statusClass = "low";
+          action = "Increase usage";
+        } else if (density <= 2.5) {
+          status = "Optimal";
+          statusClass = "optimal";
+          action = "Maintain";
+        } else if (density <= 4.0) {
+          status = "High";
+          statusClass = "high";
+          action = "Reduce slightly";
+        } else {
+          status = "Too High";
+          statusClass = "high";
+          action = "Reduce significantly";
+        }
+        
+        return {
+          keyword,
+          frequency: actualFrequency,
+          density: parseFloat(density.toFixed(2)),
+          status,
+          statusClass,
+          action
+        };
+      });
+      
+      // Store results
+      analysisResults = {
+        content,
+        keywords: results,
+        totalWords: contentStats.totalWords,
+        analyzedAt: new Date().toISOString(),
+        settings: {
+          minKeywordLength,
+          autoExtract,
+          ignoreNumbers,
+          groupSimilar
+        }
+      };
+      
+      // Update UI
+      updateResultsUI();
+      $("#resultsSection").classList.add("active");
+      
+      // Scroll to results
+      $("#resultsSection").scrollIntoView({ behavior: 'smooth', block: 'start' });
+      
+      showToast("Keyword density analysis completed!");
+    }
+
+    function updateResultsUI() {
+      if (!analysisResults) return;
+      
+      const { keywords } = analysisResults;
+      
+      // Update table
+      const tableBody = $("#densityTableBody");
+      tableBody.innerHTML = "";
+      
+      keywords.forEach(result => {
+        const row = document.createElement('tr');
+        
+        row.innerHTML = `
+          <td class="keyword-cell">${escapeHtml(result.keyword)}</td>
+          <td>${result.frequency}</td>
+          <td class="density-cell ${result.statusClass}">${result.density.toFixed(2)}%</td>
+          <td>
+            <span class="status-indicator status-${result.statusClass}">
+              <i class="fas fa-${result.statusClass === 'optimal' ? 'check' : 'exclamation-triangle'}"></i>
+              ${result.status}
+            </span>
+          </td>
+          <td>${escapeHtml(result.action)}</td>
+        `;
+        
+        tableBody.appendChild(row);
+      });
+      
+      // Update visualization
+      updateVisualization();
+      
+      // Update suggestions
+      updateSuggestions();
+    }
+
+    function updateVisualization() {
+      const vizContainer = $("#vizContainer");
+      vizContainer.innerHTML = "";
+      
+      if (!analysisResults || analysisResults.keywords.length === 0) return;
+      
+      const { keywords } = analysisResults;
+      const maxDensity = Math.max(...keywords.map(k => k.density), 1);
+      
+      keywords.forEach(result => {
+        const barHeight = Math.min(100, (result.density / maxDensity) * 100);
+        
+        const bar = document.createElement('div');
+        bar.className = 'viz-bar';
+        bar.style.height = `${barHeight}%`;
+        bar.style.background = getDensityColor(result.density);
+        bar.title = `${result.keyword}: ${result.density.toFixed(2)}%`;
+        
+        const valueLabel = document.createElement('div');
+        valueLabel.className = 'viz-value';
+        valueLabel.textContent = `${result.density.toFixed(2)}%`;
+        
+        const keywordLabel = document.createElement('div');
+        keywordLabel.className = 'viz-label';
+        keywordLabel.textContent = truncateText(result.keyword, 8);
+        
+        bar.appendChild(valueLabel);
+        bar.appendChild(keywordLabel);
+        vizContainer.appendChild(bar);
+      });
+    }
+
+    function updateSuggestions() {
+      const suggestionList = $("#suggestionList");
+      suggestionList.innerHTML = "";
+      
+      if (!analysisResults) return;
+      
+      const { keywords, totalWords } = analysisResults;
+      
+      // General suggestions
+      const highDensityKeywords = keywords.filter(k => k.density > 2.5);
+      const lowDensityKeywords = keywords.filter(k => k.density < 0.3);
+      
+      if (highDensityKeywords.length > 0) {
+        addSuggestion(
+          "danger",
+          `${highDensityKeywords.length} keywords have high density. Consider reducing frequency to avoid keyword stuffing penalties.`,
+          "Keyword Density Warning"
+        );
+      }
+      
+      if (totalWords < 300) {
+        addSuggestion(
+          "warning",
+          `Content length is only ${totalWords} words. Aim for 500+ words for better SEO performance and comprehensive coverage.`,
+          "Content Length"
+        );
+      }
+      
+      if (lowDensityKeywords.length > 5) {
+        addSuggestion(
+          "warning",
+          `${lowDensityKeywords.length} keywords have very low density. Consider increasing usage of important terms naturally.`,
+          "Keyword Optimization"
+        );
+      }
+      
+      // Add positive feedback if good
+      const optimalKeywords = keywords.filter(k => k.density >= 0.5 && k.density <= 2.0);
+      if (optimalKeywords.length >= keywords.length * 0.6) {
+        addSuggestion(
+          "optimal",
+          "Excellent! Most of your keywords are in the optimal density range. Your content is well-optimized for search engines.",
+          "Great Job!"
+        );
+      }
+      
+      // Specific keyword suggestions
+      keywords.slice(0, 3).forEach(result => {
+        if (result.density > 3.0) {
+          addSuggestion(
+            "danger",
+            `"${result.keyword}" appears ${result.frequency} times (${result.density.toFixed(2)}%). This is above the recommended range - consider reducing usage.`,
+            "Keyword Overuse"
+          );
+        } else if (result.density < 0.3 && result.frequency > 0) {
+          addSuggestion(
+            "warning",
+            `"${result.keyword}" appears only ${result.frequency} times. Consider adding this keyword in strategic locations like headings or subheadings.`,
+            "Keyword Underuse"
+          );
+        }
+      });
+    }
+
+    function addSuggestion(type, text, title = "") {
+      const suggestionList = $("#suggestionList");
+      
+      const suggestion = document.createElement('li');
+      suggestion.className = `suggestion-item ${type}`;
+      
+      const icon = type === 'optimal' ? 'check-circle' : type === 'warning' ? 'exclamation-triangle' : 'exclamation-circle';
+      
+      suggestion.innerHTML = `
+        <i class="fas fa-${icon} suggestion-icon"></i>
+        <div class="suggestion-text">
+          ${title ? `<strong>${escapeHtml(title)}:</strong> ` : ''}${escapeHtml(text)}
+        </div>
+      `;
+      
+      suggestionList.appendChild(suggestion);
+    }
+
+    function exportAsPdf() {
+      if (!analysisResults) {
+        alert("No analysis results to export");
+        return;
+      }
+      
+      showToast("PDF export feature would generate a downloadable PDF report");
+      // In a real implementation, this would use a PDF generation library
+      const printContent = generateExportText();
+      const printWindow = window.open('', '_blank');
+      printWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <title>Keyword Density Analysis Report</title>
+          <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1 { color: #065f46; }
+            .report-section { margin-bottom: 30px; }
+            table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+            th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+            th { background: #065f46; color: white; }
+            .optimal { color: #10b981; }
+            .low { color: #f59e0b; }
+            .high { color: #ef4444; }
+          </style>
+        </head>
+        <body>
+          <h1>Keyword Density Analysis Report</h1>
+          <div>Generated: ${new Date().toLocaleString()}</div>
+          <div>Source: WordCalculator.net Keyword Density Checker</div>
+          <hr>
+          <pre style="white-space: pre-wrap; font-family: monospace;">${printContent}</pre>
+        </body>
+        </html>
+      `);
+      printWindow.document.close();
+      printWindow.print();
+    }
+
+    function exportAsCsv() {
+      if (!analysisResults) {
+        alert("No analysis results to export");
+        return;
+      }
+      
+      const { keywords, totalWords } = analysisResults;
+      
+      let csvContent = "Keyword,Frequency,Density(%),Status,Action\n";
+      
+      keywords.forEach(result => {
+        csvContent += `"${result.keyword}",${result.frequency},${result.density.toFixed(2)},"${result.status}","${result.action}"\n`;
+      });
+      
+      csvContent += `\nSummary\n`;
+      csvContent += `Total Words,${totalWords}\n`;
+      csvContent += `Total Keywords,${keywords.length}\n`;
+      csvContent += `Analyzed At,${new Date().toLocaleString()}\n`;
+      
+      const blob = new Blob([csvContent], { type: 'text/csv' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `keyword-density-analysis-${new Date().toISOString().split('T')[0]}.csv`;
+      a.click();
+      
+      showToast("CSV file downloaded successfully");
+    }
+
+    function exportAsText() {
+      if (!analysisResults) {
+        alert("No analysis results to export");
+        return;
+      }
+      
+      const textContent = generateExportText();
+      const blob = new Blob([textContent], { type: 'text/plain' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `keyword-density-analysis-${new Date().toISOString().split('T')[0]}.txt`;
+      a.click();
+      
+      showToast("Text file downloaded successfully");
+    }
+
+    function generateExportText() {
+      const { keywords, totalWords, settings } = analysisResults;
+      
+      let text = "KEYWORD DENSITY ANALYSIS REPORT\n";
+      text += "=".repeat(50) + "\n\n";
+      text += `Generated: ${new Date().toLocaleString()}\n`;
+      text += `Source: WordCalculator.net Keyword Density Checker\n\n`;
+      
+      text += "ANALYSIS SETTINGS\n";
+      text += "-".repeat(30) + "\n";
+      text += `Minimum Keyword Length: ${settings.minKeywordLength} characters\n`;
+      text += `Auto-extract Keywords: ${settings.autoExtract ? 'Yes' : 'No'}\n`;
+      text += `Ignore Numbers: ${settings.ignoreNumbers ? 'Yes' : 'No'}\n`;
+      text += `Group Similar Words: ${settings.groupSimilar ? 'Yes' : 'No'}\n\n`;
+      
+      text += "CONTENT STATISTICS\n";
+      text += "-".repeat(30) + "\n";
+      text += `Total Words: ${totalWords}\n`;
+      text += `Total Keywords Found: ${keywords.length}\n\n`;
+      
+      text += "KEYWORD ANALYSIS RESULTS\n";
+      text += "-".repeat(30) + "\n";
+      
+      keywords.forEach((result, index) => {
+        text += `${index + 1}. ${result.keyword}\n`;
+        text += `   Frequency: ${result.frequency}\n`;
+        text += `   Density: ${result.density.toFixed(2)}%\n`;
+        text += `   Status: ${result.status}\n`;
+        text += `   Action: ${result.action}\n\n`;
+      });
+      
+      text += "RECOMMENDATIONS\n";
+      text += "-".repeat(30) + "\n";
+      text += "1. Keep primary keyword density between 1-2.5%\n";
+      text += "2. Use keywords naturally throughout content\n";
+      text += "3. Avoid keyword stuffing above 3% density\n";
+      text += "4. Include keywords in headings and metadata\n";
+      text += "5. Use synonyms and related terms\n\n";
+      
+      text += "=".repeat(50) + "\n";
+      text += "END OF REPORT\n";
+      
+      return text;
+    }
+
+    function copyResultsToClipboard() {
+      if (!analysisResults) {
+        alert("No analysis results to copy");
+        return;
+      }
+      
+      const textContent = generateExportText();
+      
+      navigator.clipboard.writeText(textContent).then(() => {
+        showToast("Results copied to clipboard!");
+      }).catch(err => {
+        console.error('Failed to copy: ', err);
+        alert("Failed to copy results to clipboard");
+      });
+    }
+
+    /* ===== Utility Functions ===== */
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    function escapeRegExp(text) {
+      return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    function truncateText(text, maxLength) {
+      if (text.length <= maxLength) return text;
+      return text.substring(0, maxLength) + '...';
+    }
+
+    function getDensityColor(density) {
+      if (density < 0.3) return '#f59e0b'; // Low - yellow/orange
+      if (density <= 2.5) return '#10b981'; // Optimal - green
+      if (density <= 4.0) return '#f97316'; // Slightly high - orange
+      return '#ef4444'; // Too high - red
+    }
+
+    function showToast(message) {
+      // Create toast element
+      const toast = document.createElement('div');
+      toast.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #059669;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 1000;
+        animation: slideIn 0.3s ease;
+        font-size: 14px;
+        font-weight: 500;
+        max-width: 300px;
+      `;
+      
+      toast.textContent = message;
+      document.body.appendChild(toast);
+      
+      // Remove toast after 3 seconds
+      setTimeout(() => {
+        toast.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => {
+          document.body.removeChild(toast);
+        }, 300);
+      }, 3000);
+      
+      // Add CSS for animations
+      if (!document.querySelector('#toast-animations')) {
+        const style = document.createElement('style');
+        style.id = 'toast-animations';
+        style.textContent = `
+          @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+          }
+          @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+          }
+        `;
+        document.head.appendChild(style);
+      }
+    }
+
+    /* ===== Tool directory & Quick Search ===== */
+    function initToolQuickSearch() {
+      const input = $("#toolSearchInput");
+      const suggestionsBox = $("#toolSearchSuggestions");
+      if (!input || !suggestionsBox) return;
+
+      /* ===== Tool directory & Quick Search (with icons) ===== */
+      const toolDirectory = allTools;
+      
+      let currentResults = [];
+
+      function renderSuggestions(query) {
+        const value = (query || "").trim().toLowerCase();
+        suggestionsBox.innerHTML = "";
+        if (!value) {
+          suggestionsBox.classList.remove("visible");
+          return;
+        }
+
+        const allMatches = toolDirectory.filter(tool => 
+          tool.name.toLowerCase().includes(value)
+        );
+        
+        if (!allMatches.length) {
+          const li = document.createElement("li");
+          li.textContent = "No tools found";
+          suggestionsBox.appendChild(li);
+          suggestionsBox.classList.add("visible");
+          return;
+        }
+
+        function rankTool(tool) {
+          const name = tool.name.toLowerCase();
+          const pos = name.indexOf(value);
+          const starts = name.startsWith(value) ? 0 : 1;
+          const lenDiff = Math.abs(name.length - value.length);
+          return starts * 100 + pos * 2 + lenDiff;
+        }
+
+        currentResults = allMatches.slice().sort((a, b) => rankTool(a) - rankTool(b));
+        currentResults.slice(0, 10).forEach(tool => {
+          const li = document.createElement("li");
+          const iconEl = document.createElement("i");
+          iconEl.className = tool.icon || "fa-solid fa-wand-magic-sparkles";
+          const nameSpan = document.createElement("span");
+          nameSpan.className = "tool-name";
+          nameSpan.textContent = tool.name;
+          li.appendChild(iconEl);
+          li.appendChild(nameSpan);
+          li.addEventListener("click", () => {
+            if (tool.url) window.location.href = tool.url;
+          });
+          suggestionsBox.appendChild(li);
+        });
+
+        suggestionsBox.classList.add("visible");
+      }
+
+      input.addEventListener("input", (e) => renderSuggestions(e.target.value));
+
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          const value = input.value.trim().toLowerCase();
+          if (!value) return;
+          const first = currentResults.length ? currentResults[0] : toolDirectory.find(
+            (tool) => tool.name.toLowerCase().includes(value)
+          );
+          if (first && first.url) window.location.href = first.url;
+        }
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!input.contains(e.target) && !suggestionsBox.contains(e.target)) {
+          suggestionsBox.classList.remove("visible");
+        }
+      });
+    }
+  </script>
+</body>
+</html>

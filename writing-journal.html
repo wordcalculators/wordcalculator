@@ -1,0 +1,2385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ==================== ADVANCED SEO ==================== -->
+  <title>Writing Journal — Free Digital Diary & Journal App for Writers</title>
+  <meta name="description" content="Free Writing Journal & Digital Diary App. Write daily entries, track writing habits, set goals, and organize thoughts. Private, secure, and works offline. Perfect for writers, students, and journal keepers." />
+  <meta name="keywords" content="writing journal, digital diary, online journal, writing app, daily writing, journal writing, diary app, writing tracker, writing goals, private journal" />
+  <meta name="author" content="WordCalculator.net" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#1e293b" />
+  <link rel="canonical" href="https://wordcalculator.net/writing-journal.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wordcalculator.net/writing-journal.html" />
+  <meta property="og:title" content="Writing Journal — Free Digital Diary & Journal App" />
+  <meta property="og:description" content="Private digital journal for daily writing. Track habits, set goals, and organize thoughts securely in your browser." />
+  <meta property="og:image" content="https://wordcalculator.net/images/writing-journal-og.jpg" />
+  <meta property="og:site_name" content="WordCalculator.net" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://wordcalculator.net/writing-journal.html" />
+  <meta name="twitter:title" content="Writing Journal — Digital Diary for Writers" />
+  <meta name="twitter:description" content="Free private journal app with writing tracking and goal setting. Works offline, no registration required." />
+  <meta name="twitter:image" content="https://wordcalculator.net/images/writing-journal-twitter.jpg" />
+  <meta name="twitter:creator" content="@wordcalculator" />
+
+  <!-- WebApplication schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Writing Journal",
+    "url":"https://wordcalculator.net/writing-journal.html",
+    "description":"Digital writing journal and diary app for daily writing, habit tracking, and goal setting. Works offline with local storage for privacy.",
+    "applicationCategory":"ProductivityApplication",
+    "operatingSystem":"Any",
+    "browserRequirements":"Requires JavaScript",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "featureList":[
+      "Private digital journal entries",
+      "Daily writing streak tracking",
+      "Word count and statistics",
+      "Writing goal setting",
+      "Tag and categorize entries",
+      "Search and filter functionality",
+      "Export options (PDF/Text)",
+      "Works completely offline",
+      "100% private - no data leaves your browser"
+    ],
+    "author":{"@type":"Organization","name":"WordCalculator.net"}
+  }
+  </script>
+
+  <!-- Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://wordcalculator.net/"},
+      {"@type":"ListItem","position":2,"name":"Tools","item":"https://wordcalculator.net/tools.html"},
+      {"@type":"ListItem","position":3,"name":"Writing Journal","item":"https://wordcalculator.net/writing-journal.html"}
+    ]
+  }
+  </script>
+
+  <!-- FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Is my journal data private?","acceptedAnswer":{"@type":"Answer","text":"Yes. All journal entries are stored locally in your browser using localStorage. No data is sent to any server - your writing remains completely private."}},
+      {"@type":"Question","name":"Can I access my journal on multiple devices?","acceptedAnswer":{"@type":"Answer","text":"Currently, entries are stored locally on the device where you write them. For multi-device access, use the export/import feature to transfer entries."}},
+      {"@type":"Question","name":"Does it work offline?","acceptedAnswer":{"@type":"Answer","text":"Yes. The writing journal works completely offline after the initial page load. You can write, edit, and read entries without internet connection."}},
+      {"@type":"Question","name":"Can I export my journal entries?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can export entries as PDF or plain text files for backup or printing."}}
+    ]
+  }
+  </script>
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+    /* ===== Base / Theme ===== */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --primary:#2d3748;--secondary:#4a5568;--accent:#5a67d8;
+      --text:#1a202c;--muted:#718096;--border:#e2e8f0;--light:#f7fafc;
+      --bg:#f9fafb;--card:#ffffff;--success:#38a169;--warning:#d69e2e;
+      --journal-bg:linear-gradient(135deg,#fefcbf 0%,#fed7d7 100%);
+      --journal-border:#fed7d7;
+      --shadow-sm:0 1px 2px 0 rgba(0,0,0,0.05);
+      --shadow-md:0 4px 6px -1px rgba(0,0,0,0.1);
+      --shadow-lg:0 10px 15px -3px rgba(0,0,0,0.1);
+    }
+    html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    body{font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+
+    /* ===== Header / Nav (same as other tools) ===== */
+    .wc-header{background:#020617;color:#fff;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+    .wc-wrap{max-width:1200px;margin:0 auto;padding:10px 12px;display:flex;align-items:center;gap:14px}
+    .wc-logo{display:inline-flex;align-items:center;gap:8px}
+    .wc-slab,.slab{display:inline-flex;width:24px;height:24px;align-items:center;justify-content:center;font-weight:800;font-size:14px;border-radius:2px;color:#fff}
+    .slab-w{background:#1f2327}.slab-o{background:#a7c1db;color:#1e2a3a}.slab-r{background:#7d96ae}.slab-d{background:#2f5d8a}
+    .wc-brand-text{display:inline-flex;flex-direction:column;line-height:1.05;font-size:19px;font-weight:800}
+    .wc-brand-text small{font-size:10px;opacity:.95}
+    .wc-nav{margin-left:10px;display:flex;align-items:center;gap:8px;flex:1}
+    .wc-link{color:#f4f8fc;font-weight:700;font-size:14px;padding:6px 10px;border-radius:8px;transition:.15s;background:transparent;border:0;cursor:pointer}
+    .wc-link:hover{background:rgba(255,255,255,.14)}
+    .wc-signin-btn{background:rgba(148,163,184,.18);border:1px solid rgba(148,163,184,.5)}
+    .wc-signin-btn:hover{background:#38bdf8;color:#020617;border-color:#38bdf8}
+    .mobile-menu-btn{margin-left:auto;background:transparent;border:0;color:#fff;font-size:20px;display:none;cursor:pointer}
+    .mobile-nav{position:fixed;top:0;right:-100%;width:320px;height:100vh;background:#1f2933;box-shadow:-2px 0 10px rgba(0,0,0,.18);transition:right .3s;z-index:100}
+    .mobile-nav.active{right:0}
+    .mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;z-index:90}
+    .mobile-overlay.active{display:block}
+
+    .mobile-nav-header{display:flex;justify-content:space-between;align-items:center;padding:16px;border-bottom:1px solid #34495e}
+    .mobile-close-btn{background:transparent;border:0;color:#fff;font-size:20px;cursor:pointer}
+    .mobile-nav-links{padding:16px}
+    .mobile-link{display:block;color:#ecf0f1;padding:12px 0;border-bottom:1px solid #34495e;font-weight:700;background:transparent;border:0;width:100%;text-align:left;cursor:pointer}
+
+    /* ===== Breadcrumb ===== */
+    .crumb-wrap{max-width:1200px;margin:8px auto 0;padding:0 15px 4px}
+    .crumbs{font-size:13px;color:#111827}
+    .crumbs a{color:#2563eb}
+    .crumbs a:hover{text-decoration:underline}
+    .crumb-separator{margin:0 4px;color:#6b7280}
+    .crumb-current{font-weight:700}
+
+    /* ===== Main Layout ===== */
+    .journal-main{max-width:1200px;margin:22px auto 40px;padding:0 15px;display:grid;grid-template-columns:minmax(0,3fr) minmax(260px,1.25fr);gap:20px;align-items:flex-start}
+    .journal-left{display:flex;flex-direction:column;gap:18px}
+    .journal-top-grid{display:grid;grid-template-columns:1fr;gap:16px;align-items:stretch}
+
+    .card{background:transparent;border:none;box-shadow:none;padding:0}
+
+    /* ===== Writing Journal main card ===== */
+    .journal-shell{
+      border:1px solid var(--journal-border);
+      background:var(--journal-bg);
+      padding:12px;
+      width:100%;
+      margin:0 0 10px 0;
+      border-radius:12px;
+      box-shadow:var(--shadow-lg);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .journal-title-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin:-12px -12px 8px;
+      padding:8px 12px;
+      background:linear-gradient(135deg,#2d3748 0%,#1a202c 100%);
+      color:#f9fafb;
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+
+    .journal-title{
+      font-size:18px;
+      font-weight:800;
+      color:#f9fafb;
+      font-family:"Inter",Arial,sans-serif;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .journal-icon{
+      color:#fbb6ce;
+      font-size:20px;
+    }
+
+    /* ===== Stats Dashboard ===== */
+    .stats-dashboard{
+      background:white;
+      border-radius:10px;
+      border:1px solid #e2e8f0;
+      padding:16px;
+      margin-bottom:12px;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+      gap:12px;
+      margin-bottom:16px;
+    }
+
+    .stat-card{
+      background:#f7fafc;
+      border:1px solid #e2e8f0;
+      border-radius:8px;
+      padding:12px;
+      text-align:center;
+      transition:all 0.2s;
+    }
+
+    .stat-card:hover{
+      transform:translateY(-2px);
+      box-shadow:var(--shadow-md);
+      border-color:#cbd5e0;
+    }
+
+    .stat-number{
+      font-size:28px;
+      font-weight:800;
+      color:#5a67d8;
+      margin-bottom:4px;
+    }
+
+    .stat-label{
+      font-size:12px;
+      color:#718096;
+      font-weight:600;
+      text-transform:uppercase;
+      letter-spacing:0.05em;
+    }
+
+    .streak-container{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      margin-top:8px;
+    }
+
+    .streak-days{
+      font-size:20px;
+      font-weight:800;
+      color:#e53e3e;
+    }
+
+    /* ===== Quick Actions ===== */
+    .quick-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:12px;
+      justify-content:center;
+    }
+
+    .action-btn{
+      background:#ffffff;
+      border:1px solid #e2e8f0;
+      border-radius:8px;
+      padding:8px 16px;
+      font-size:13px;
+      font-weight:500;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      transition:all 0.2s;
+      color:#4a5568;
+    }
+
+    .action-btn:hover{
+      background:#f7fafc;
+      border-color:#cbd5e0;
+      transform:translateY(-1px);
+    }
+
+    .action-btn.new-entry{
+      background:linear-gradient(135deg,#5a67d8 0%,#4c51bf 100%);
+      color:white;
+      border:none;
+      box-shadow:0 2px 4px rgba(90,103,216,0.3);
+    }
+
+    .action-btn.new-entry:hover{
+      background:linear-gradient(135deg,#4c51bf 0%,#434190 100%);
+      box-shadow:0 4px 8px rgba(90,103,216,0.4);
+    }
+
+    /* ===== Journal Entry Form ===== */
+    .entry-form{
+      background:white;
+      border-radius:10px;
+      border:1px solid #e2e8f0;
+      padding:16px;
+      margin:12px 0;
+      box-shadow:var(--shadow-sm);
+      display:none;
+    }
+
+    .entry-form.active{
+      display:block;
+      animation:fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn{
+      from{opacity:0;transform:translateY(-10px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    .form-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:12px;
+      padding-bottom:8px;
+      border-bottom:2px solid #f7fafc;
+    }
+
+    .form-header h3{
+      font-size:16px;
+      font-weight:700;
+      color:#2d3748;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .entry-date{
+      font-size:14px;
+      color:#718096;
+      font-weight:500;
+    }
+
+    .form-controls{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-bottom:12px;
+    }
+
+    .form-group{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+
+    .form-group label{
+      font-size:13px;
+      font-weight:600;
+      color:#4a5568;
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+
+    .form-input,.form-select{
+      width:100%;
+      padding:8px 12px;
+      border:1px solid #e2e8f0;
+      border-radius:6px;
+      font-size:14px;
+      background:white;
+      transition:all 0.2s;
+    }
+
+    .form-input:focus,.form-select:focus{
+      outline:none;
+      border-color:#5a67d8;
+      box-shadow:0 0 0 3px rgba(90,103,216,0.1);
+    }
+
+    .entry-content{
+      width:100%;
+      min-height:200px;
+      padding:12px;
+      border:1px solid #e2e8f0;
+      border-radius:6px;
+      font-size:15px;
+      font-family:"Crimson Text",Georgia,serif;
+      line-height:1.7;
+      resize:vertical;
+      transition:all 0.2s;
+    }
+
+    .entry-content:focus{
+      outline:none;
+      border-color:#5a67d8;
+      box-shadow:0 0 0 3px rgba(90,103,216,0.1);
+    }
+
+    .word-counter{
+      text-align:right;
+      font-size:12px;
+      color:#718096;
+      margin-top:4px;
+    }
+
+    .form-actions{
+      display:flex;
+      gap:8px;
+      margin-top:12px;
+      justify-content:flex-end;
+    }
+
+    .btn{
+      padding:8px 20px;
+      border-radius:6px;
+      font-weight:600;
+      font-size:14px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      transition:all 0.2s;
+      border:none;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,#5a67d8 0%,#4c51bf 100%);
+      color:white;
+      box-shadow:0 2px 4px rgba(90,103,216,0.3);
+    }
+
+    .btn-primary:hover{
+      background:linear-gradient(135deg,#4c51bf 0%,#434190 100%);
+      transform:translateY(-1px);
+      box-shadow:0 4px 8px rgba(90,103,216,0.4);
+    }
+
+    .btn-secondary{
+      background:#f7fafc;
+      color:#4a5568;
+      border:1px solid #e2e8f0;
+    }
+
+    .btn-secondary:hover{
+      background:#edf2f7;
+      border-color:#cbd5e0;
+      transform:translateY(-1px);
+    }
+
+    .btn-danger{
+      background:linear-gradient(135deg,#e53e3e 0%,#c53030 100%);
+      color:white;
+      box-shadow:0 2px 4px rgba(229,62,62,0.3);
+    }
+
+    .btn-danger:hover{
+      background:linear-gradient(135deg,#c53030 0%,#9b2c2c 100%);
+      transform:translateY(-1px);
+      box-shadow:0 4px 8px rgba(229,62,62,0.4);
+    }
+
+    /* ===== Journal Entries List ===== */
+    .entries-section{
+      background:white;
+      border-radius:10px;
+      border:1px solid #e2e8f0;
+      padding:16px;
+      margin-top:12px;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .section-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:12px;
+      padding-bottom:8px;
+      border-bottom:2px solid #f7fafc;
+    }
+
+    .section-header h3{
+      font-size:16px;
+      font-weight:700;
+      color:#2d3748;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .filter-controls{
+      display:flex;
+      gap:8px;
+      margin-bottom:12px;
+    }
+
+    .filter-btn{
+      background:#f7fafc;
+      border:1px solid #e2e8f0;
+      border-radius:20px;
+      padding:6px 12px;
+      font-size:12px;
+      font-weight:500;
+      cursor:pointer;
+      transition:all 0.2s;
+    }
+
+    .filter-btn.active{
+      background:#5a67d8;
+      color:white;
+      border-color:#5a67d8;
+    }
+
+    .filter-btn:hover{
+      background:#edf2f7;
+      border-color:#cbd5e0;
+    }
+
+    .entries-list{
+      max-height:400px;
+      overflow-y:auto;
+      border:1px solid #e2e8f0;
+      border-radius:6px;
+    }
+
+    .entry-item{
+      padding:12px;
+      border-bottom:1px solid #f7fafc;
+      cursor:pointer;
+      transition:all 0.2s;
+    }
+
+    .entry-item:hover{
+      background:#f7fafc;
+    }
+
+    .entry-item:last-child{
+      border-bottom:none;
+    }
+
+    .entry-item.active{
+      background:#ebf8ff;
+      border-left:3px solid #5a67d8;
+    }
+
+    .entry-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:4px;
+    }
+
+    .entry-title{
+      font-weight:600;
+      color:#2d3748;
+      font-size:14px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .entry-date{
+      font-size:12px;
+      color:#718096;
+    }
+
+    .entry-preview{
+      font-size:13px;
+      color:#718096;
+      line-height:1.5;
+      display:-webkit-box;
+      -webkit-line-clamp:2;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
+    }
+
+    .entry-tags{
+      display:flex;
+      gap:4px;
+      margin-top:6px;
+      flex-wrap:wrap;
+    }
+
+    .tag{
+      background:#ebf8ff;
+      color:#2c5282;
+      padding:2px 8px;
+      border-radius:12px;
+      font-size:11px;
+      font-weight:500;
+    }
+
+    /* ===== Entry Viewer ===== */
+    .entry-viewer{
+      background:white;
+      border-radius:10px;
+      border:1px solid #e2e8f0;
+      padding:20px;
+      margin-top:12px;
+      box-shadow:var(--shadow-sm);
+      display:none;
+    }
+
+    .entry-viewer.active{
+      display:block;
+      animation:fadeIn 0.3s ease;
+    }
+
+    .viewer-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      margin-bottom:16px;
+      padding-bottom:12px;
+      border-bottom:2px solid #f7fafc;
+    }
+
+    .viewer-title{
+      font-size:20px;
+      font-weight:700;
+      color:#2d3748;
+      margin-bottom:4px;
+    }
+
+    .viewer-meta{
+      font-size:14px;
+      color:#718096;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .viewer-actions{
+      display:flex;
+      gap:6px;
+    }
+
+    .viewer-content{
+      font-size:16px;
+      line-height:1.8;
+      color:#4a5568;
+      font-family:"Crimson Text",Georgia,serif;
+      white-space:pre-wrap;
+    }
+
+    .empty-state{
+      text-align:center;
+      padding:40px 20px;
+      color:#718096;
+    }
+
+    .empty-state i{
+      font-size:48px;
+      margin-bottom:12px;
+      opacity:0.5;
+    }
+
+    .empty-state h4{
+      font-size:18px;
+      margin-bottom:8px;
+      color:#4a5568;
+    }
+
+    /* ===== Export/Import Section ===== */
+    .backup-section{
+      background:white;
+      border-radius:10px;
+      border:1px solid #e2e8f0;
+      padding:16px;
+      margin-top:12px;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .backup-actions{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:12px;
+    }
+
+    .backup-btn{
+      background:#f7fafc;
+      border:2px dashed #e2e8f0;
+      border-radius:8px;
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:8px;
+      cursor:pointer;
+      transition:all 0.2s;
+    }
+
+    .backup-btn:hover{
+      background:#edf2f7;
+      border-color:#cbd5e0;
+      transform:translateY(-2px);
+    }
+
+    .backup-btn i{
+      font-size:24px;
+      color:#5a67d8;
+    }
+
+    .backup-btn span{
+      font-size:13px;
+      font-weight:600;
+      color:#4a5568;
+      text-align:center;
+    }
+
+    /* ===== Info blocks ===== */
+    .section-block{
+      background:var(--card);
+      border-radius:12px;
+      border:1px solid #e2e8f0;
+      padding:18px 20px;
+      box-shadow:0 8px 20px rgba(15,23,42,.035);
+    }
+    .section-block h3{
+      font-size:18px;
+      font-weight:800;
+      margin-bottom:10px;
+      color:#0f172a;
+      font-family:"Crimson Text",Georgia,serif;
+    }
+    .section-block h4{
+      font-size:16px;
+      font-weight:700;
+      margin-top:16px;
+      margin-bottom:8px;
+      color:#111827;
+    }
+    .section-block p{
+      font-size:14px;
+      color:#4b5563;
+      margin-bottom:10px;
+      line-height:1.7;
+    }
+    .section-block ul{
+      padding-left:20px;
+      font-size:14px;
+      color:#4b5563;
+      line-height:1.7;
+    }
+    .section-block ul li+li{margin-top:6px;}
+
+    /* ===== Sidebar ===== */
+    .journal-sidebar{display:flex;flex-direction:column;gap:16px}
+    .sidebar-card{
+      background:var(--card);
+      border-radius:12px;
+      border:1px solid #e2e8f0;
+      padding:12px 12px 10px;
+      box-shadow:0 10px 24px rgba(15,23,42,.06);
+      font-size:13px;
+    }
+    .sidebar-title-bar{
+      margin:-12px -12px 8px;
+      padding:7px 10px;
+      background:linear-gradient(135deg,#2d3748 0%,#1a202c 100%);
+      color:#f9fafb;
+      font-size:14px;
+      font-weight:800;
+      border-radius:12px 12px 0 0;
+      box-shadow:inset 0 -1px 0 rgba(148,163,184,.35);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+    }
+    .sidebar-group{margin-top:10px;}
+    .sidebar-group h4{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:0.06em;
+      color:#6b7280;
+      margin-bottom:3px;
+      font-weight:700;
+    }
+    .sidebar-links{list-style:none;font-size:13px}
+    .sidebar-links li+li{margin-top:3px}
+    .sidebar-links a{color:#1d4ed8}
+    .sidebar-links a:hover{text-decoration:underline}
+
+    /* ===== QUICK SEARCH ===== */
+    .tool-search{margin:6px 0 4px;}
+    .sidebar-search-input-wrapper{
+      position:relative;
+      display:flex;
+      align-items:center;
+      margin-top:4px;
+    }
+    .sidebar-search-icon{
+      position:absolute;
+      left:10px;
+      font-size:12px;
+      opacity:0.7;
+    }
+    .sidebar-search-input{
+      width:100%;
+      padding:8px 10px 8px 28px;
+      border-radius:8px;
+      border:1px solid #d5d9e0;
+      background-color:#f9fafb;
+      font-size:13px;
+      outline:none;
+      transition:border-color .15s ease,background-color .15s ease,box-shadow .15s ease;
+    }
+    .sidebar-search-input:focus{
+      border-color:#3f82bd;
+      background-color:#ffffff;
+      box-shadow:0 0 0 1px rgba(63,130,189,0.12);
+    }
+    .sidebar-search-suggestions{
+      list-style:none;
+      margin-top:8px;
+      padding:4px 0;
+      max-height:220px;
+      overflow-y:auto;
+      border-radius:10px;
+      border:1px solid #e3e7ee;
+      background-color:#ffffff;
+      box-shadow:0 8px 20px rgba(15,23,42,0.12);
+      display:none;
+    }
+    .sidebar-search-suggestions.visible{display:block;}
+    .sidebar-search-suggestions li{
+      font-size:13px;
+      padding:7px 10px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+    .sidebar-search-suggestions li + li{
+      border-top:1px solid #f1f3f8;
+    }
+    .sidebar-search-suggestions li span.tool-name{
+      flex:1;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .sidebar-search-suggestions li i{
+      font-size:11px;
+      opacity:0.7;
+    }
+    .sidebar-search-suggestions li:hover{
+      background-color:#f3f4f8;
+    }
+
+    /* ===== Footer ===== */
+    .pro-footer{background:#020617;color:#cbd5e1;margin-top:40px}
+    .pf-wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding:34px 15px;
+      display:grid;
+      grid-template-columns:320px 1fr;
+      gap:26px;
+    }
+    .pf-logo{display:flex;align-items:center;gap:10px}
+    .pf-brand-text{font-size:18px;font-weight:800;color:#e2e8f0}
+    .pf-brand-text span{color:#38bdf8}
+    .pf-tag{margin-top:8px;color:#94a3b8;font-size:13px}
+    .pf-social{display:flex;gap:10px;margin-top:10px}
+    .pf-social a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:34px;height:34px;
+      border:1px solid #1e293b;
+      border-radius:10px;
+      background:#0b1220;
+      color:#cbd5e1;
+      transition:background .15s,color .15s,border-color .15s,transform .15s,box-shadow .15s;
+    }
+    .pf-social a:hover{
+      background:#38bdf8;
+      border-color:#38bdf8;
+      color:#0b1220;
+      transform:translateY(-1px);
+      box-shadow:0 4px 12px rgba(56,189,248,.4);
+    }
+    .pf-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .pf-col h5{color:#e2e8f0;font-weight:800;font-size:14px;margin-bottom:10px}
+    .pf-col ul{list-style:none}
+    .pf-col li{margin:8px 0}
+    .pf-col a{color:#94a3b8}
+    .pf-col a:hover{color:#e2e8f0}
+    .pf-bottom{border-top:1px solid #1e293b;background:#0b1220}
+    .pf-bottom-wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding:12px 15px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      color:#8893a7;
+      font-size:13px;
+    }
+    .pf-links{display:flex;gap:10px}
+    .pf-links a{color:#94a3b8}
+    .pf-links a:hover{color:#e2e8f0}
+
+    /* ===== Modal ===== */
+    .modal-overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(15,23,42,0.7);
+      display:none;
+      z-index:200;
+    }
+    .modal{
+      position:fixed;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      width:420px;
+      max-width:96vw;
+      background:#ffffff;
+      border:1px solid #e5e7eb;
+      border-radius:14px;
+      box-shadow:0 18px 40px rgba(15,23,42,0.35);
+      display:none;
+      z-index:210;
+    }
+    .modal-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:10px 12px;
+      border-bottom:1px solid #e5e7eb;
+    }
+    .modal-head h3{font-size:15px;font-weight:800;color:#111827}
+    .modal-close{
+      background:#f3f4f6;
+      border:1px solid #e5e7eb;
+      border-radius:8px;
+      padding:6px 8px;
+      cursor:pointer;
+    }
+    .modal-body{padding:12px;font-size:13px;color:#4b5563}
+
+    /* ===== Responsive ===== */
+    @media (max-width:1100px){
+      .pf-wrap{grid-template-columns:1fr;}
+      .pf-cols{grid-template-columns:repeat(2,1fr);}
+      .journal-main{grid-template-columns:minmax(0,1.9fr) minmax(260px,1.2fr);}
+    }
+    @media (max-width:992px){
+      .wc-nav{display:none;}
+      .mobile-menu-btn{display:inline-block;}
+      .journal-main{grid-template-columns:1fr;}
+      .journal-sidebar{order:-1;}
+      .form-controls{grid-template-columns:1fr;}
+      .backup-actions{grid-template-columns:1fr;}
+    }
+    @media (max-width:640px){
+      .pf-cols{grid-template-columns:1fr;}
+      .stats-grid{grid-template-columns:repeat(2,1fr);}
+      .quick-actions{flex-direction:column;}
+      .form-actions{flex-wrap:wrap;}
+      .btn{flex:1;justify-content:center;}
+    }
+    @media (max-width:480px){
+      .stats-grid{grid-template-columns:1fr;}
+      .viewer-header{flex-direction:column;gap:12px;}
+      .viewer-actions{justify-content:flex-start;}
+    }
+    @media (prefers-reduced-motion:reduce){
+      *{animation:none !important;transition:none !important;scroll-behavior:auto !important;}
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="wc-header">
+    <div class="wc-wrap">
+      <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+        <span class="slab slab-w">W</span>
+        <span class="slab slab-o">O</span>
+        <span class="slab slab-r">R</span>
+        <span class="slab slab-d">D</span>
+        <span class="wc-brand-text">
+          Calculator
+          <small class="wc-tagline">Every Word Counts</small>
+        </span>
+      </a>
+
+      <nav class="wc-nav" aria-label="Primary">
+        <a href="https://wordcalculator.net" class="wc-link">Home</a>
+        <a href="blog.html" class="wc-link">Blog</a>
+        <a href="tools.html" class="wc-link">Tools</a>
+        <a href="about.html" class="wc-link">About Us</a>
+        <a href="signin.html" class="wc-link">Sign In</a>
+      </nav>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <div class="mobile-nav-header">
+        <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <span class="wc-brand-text">Calculator</span>
+        </a>
+        <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="https://wordcalculator.net" class="nav-link mobile-link">Home</a>
+        <a href="blog.html" class="nav-link mobile-link">Blog</a>
+        <a href="tools.html" class="nav-link mobile-link">Tools</a>
+        <a href="about.html" class="nav-link mobile-link">About Us</a>
+        <a href="signin.html" class="nav-link mobile-link">Sign In</a>
+      </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+  </header>
+
+  <!-- ===== Breadcrumbs ===== -->
+  <div class="crumb-wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="https://wordcalculator.net">Home</a>
+      <span class="crumb-separator">/</span>
+      <a href="tools.html">Tools</a>
+      <span class="crumb-separator">/</span>
+      <span class="crumb-current">Writing Journal</span>
+    </nav>
+  </div>
+
+  <!-- ==================== MAIN ==================== -->
+  <main class="journal-main">
+    <!-- LEFT SIDE -->
+    <section class="journal-left">
+      <div class="journal-top-grid">
+        <article class="card" aria-labelledby="journalCardTitle">
+          <div class="journal-shell">
+            <div class="journal-title-row">
+              <h1 id="journalCardTitle" class="journal-title">
+                <i class="fas fa-book journal-icon"></i>
+                Writing Journal
+              </h1>
+            </div>
+
+            <!-- Stats Dashboard -->
+            <div class="stats-dashboard">
+              <div class="stats-grid">
+                <div class="stat-card">
+                  <div class="stat-number" id="totalEntries">0</div>
+                  <div class="stat-label">Total Entries</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-number" id="totalWords">0</div>
+                  <div class="stat-label">Words Written</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-number" id="avgWords">0</div>
+                  <div class="stat-label">Avg. Words/Entry</div>
+                </div>
+                <div class="stat-card">
+                  <div class="streak-container">
+                    <i class="fas fa-fire" style="color:#e53e3e;"></i>
+                    <div class="streak-days" id="streakDays">0</div>
+                    <div class="stat-label">Day Streak</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="quick-actions">
+                <button id="newEntryBtn" class="action-btn new-entry">
+                  <i class="fas fa-plus"></i>
+                  New Journal Entry
+                </button>
+                <button id="exportBtn" class="action-btn">
+                  <i class="fas fa-download"></i>
+                  Export All
+                </button>
+                <button id="importBtn" class="action-btn">
+                  <i class="fas fa-upload"></i>
+                  Import
+                </button>
+                <button id="clearAllBtn" class="action-btn">
+                  <i class="fas fa-trash"></i>
+                  Clear All
+                </button>
+              </div>
+            </div>
+
+            <!-- Journal Entry Form -->
+            <div class="entry-form" id="entryForm">
+              <div class="form-header">
+                <h3><i class="fas fa-edit"></i> New Journal Entry</h3>
+                <div class="entry-date" id="entryDate"></div>
+              </div>
+
+              <div class="form-controls">
+                <div class="form-group">
+                  <label for="entryTitle"><i class="fas fa-heading"></i> Title</label>
+                  <input type="text" id="entryTitle" class="form-input" placeholder="Entry title..." maxlength="100" />
+                </div>
+                <div class="form-group">
+                  <label for="entryMood"><i class="fas fa-smile"></i> Mood</label>
+                  <select id="entryMood" class="form-select">
+                    <option value="">Select mood...</option>
+                    <option value="happy">😊 Happy</option>
+                    <option value="excited">😃 Excited</option>
+                    <option value="calm">😌 Calm</option>
+                    <option value="thoughtful">🤔 Thoughtful</option>
+                    <option value="sad">😔 Sad</option>
+                    <option value="anxious">😰 Anxious</option>
+                    <option value="tired">😴 Tired</option>
+                    <option value="inspired">💡 Inspired</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="entryContent"><i class="fas fa-align-left"></i> Your Journal Entry</label>
+                <textarea id="entryContent" class="entry-content" placeholder="Write your thoughts here..."></textarea>
+                <div class="word-counter">
+                  Words: <span id="wordCount">0</span> | Characters: <span id="charCount">0</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="entryTags"><i class="fas fa-tags"></i> Tags (comma separated)</label>
+                <input type="text" id="entryTags" class="form-input" placeholder="journal, reflection, ideas, personal..." />
+              </div>
+
+              <div class="form-actions">
+                <button id="cancelEntryBtn" class="btn btn-secondary">
+                  <i class="fas fa-times"></i>
+                  Cancel
+                </button>
+                <button id="saveEntryBtn" class="btn btn-primary">
+                  <i class="fas fa-save"></i>
+                  Save Entry
+                </button>
+              </div>
+            </div>
+
+            <!-- Journal Entries List -->
+            <div class="entries-section">
+              <div class="section-header">
+                <h3><i class="fas fa-history"></i> Recent Entries</h3>
+                <div class="filter-controls">
+                  <button class="filter-btn active" data-filter="all">All</button>
+                  <button class="filter-btn" data-filter="today">Today</button>
+                  <button class="filter-btn" data-filter="week">This Week</button>
+                  <button class="filter-btn" data-filter="month">This Month</button>
+                </div>
+              </div>
+
+              <div class="entries-list" id="entriesList">
+                <!-- Entries will be loaded here -->
+                <div class="empty-state">
+                  <i class="fas fa-book-open"></i>
+                  <h4>No journal entries yet</h4>
+                  <p>Click "New Journal Entry" to start your writing journey</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Entry Viewer -->
+            <div class="entry-viewer" id="entryViewer">
+              <div class="viewer-header">
+                <div>
+                  <div class="viewer-title" id="viewerTitle">Entry Title</div>
+                  <div class="viewer-meta">
+                    <span id="viewerDate">Date</span>
+                    <span id="viewerMood">Mood</span>
+                    <span id="viewerWords">0 words</span>
+                  </div>
+                </div>
+                <div class="viewer-actions">
+                  <button id="editEntryBtn" class="action-btn">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button id="deleteEntryBtn" class="action-btn">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="viewer-content" id="viewerContent">
+                Entry content will appear here...
+              </div>
+              <div class="entry-tags" id="viewerTags">
+                <!-- Tags will appear here -->
+              </div>
+            </div>
+
+            <!-- Export/Import Section -->
+            <div class="backup-section">
+              <div class="section-header">
+                <h3><i class="fas fa-database"></i> Backup & Restore</h3>
+              </div>
+              <p style="font-size:13px;color:#718096;margin-bottom:12px;">
+                Your journal entries are stored locally in your browser. Use these tools to backup or transfer your data.
+              </p>
+              <div class="backup-actions">
+                <div class="backup-btn" id="exportJsonBtn">
+                  <i class="fas fa-file-export"></i>
+                  <span>Export as JSON</span>
+                  <small style="font-size:11px;color:#a0aec0;">For backup</small>
+                </div>
+                <div class="backup-btn" id="exportTextBtn">
+                  <i class="fas fa-file-alt"></i>
+                  <span>Export as Text</span>
+                  <small style="font-size:11px;color:#a0aec0;">For printing</small>
+                </div>
+                <div class="backup-btn" id="importJsonBtn">
+                  <i class="fas fa-file-import"></i>
+                  <span>Import JSON</span>
+                  <small style="font-size:11px;color:#a0aec0;">Restore backup</small>
+                </div>
+                <div class="backup-btn" id="printJournalBtn">
+                  <i class="fas fa-print"></i>
+                  <span>Print Journal</span>
+                  <small style="font-size:11px;color:#a0aec0;">Physical copy</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick tips -->
+          <div class="section-block" style="margin-top:12px;">
+            <h4>How to use this writing journal</h4>
+            <ul>
+              <li>Click <strong>"New Journal Entry"</strong> to start writing.</li>
+              <li>Add a title, select your mood, and write your thoughts.</li>
+              <li>Use <strong>tags</strong> to organize entries (e.g., #reflection, #ideas, #personal).</li>
+              <li>Click on any entry in the list to view or edit it.</li>
+              <li>Use <strong>Export</strong> to backup your journal or <strong>Import</strong> to restore.</li>
+              <li>All data is stored locally in your browser - completely private.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <!-- SEO content -->
+      <article class="section-block">
+        <h3>Why Keep a Writing Journal?</h3>
+        <p>
+          A writing journal is more than just a diary - it's a tool for self-discovery, creative expression,
+          and personal growth. This digital writing journal provides a private, secure space to document
+          your thoughts, ideas, and experiences without the limitations of physical notebooks.
+        </p>
+        
+        <h4>Benefits of Journal Writing</h4>
+        <ul>
+          <li><strong>Mental clarity:</strong> Organize your thoughts and reduce mental clutter</li>
+          <li><strong>Emotional processing:</strong> Understand and process emotions through writing</li>
+          <li><strong>Memory preservation:</strong> Document important moments and reflections</li>
+          <li><strong>Creative development:</strong> Capture ideas, inspirations, and creative thoughts</li>
+          <li><strong>Goal tracking:</strong> Monitor progress on personal and writing goals</li>
+          <li><strong>Stress reduction:</strong> Writing about worries can reduce anxiety</li>
+          <li><strong>Self-awareness:</strong> Gain insights into patterns, habits, and personal growth</li>
+        </ul>
+        
+        <h4>Features of This Digital Journal</h4>
+        <p>
+          This writing journal tool combines the convenience of digital tools with the privacy of traditional
+          journaling. Key features include:
+        </p>
+        <ul>
+          <li><strong>Complete privacy:</strong> All entries stored locally in your browser</li>
+          <li><strong>Offline access:</strong> Write anytime, anywhere - no internet required</li>
+          <li><strong>Word tracking:</strong> Automatic word and character counts</li>
+          <li><strong>Writing streak:</strong> Motivation through daily writing streaks</li>
+          <li><strong>Search & filter:</strong> Easily find past entries by date or tags</li>
+          <li><strong>Export options:</strong> Backup or print your journal as needed</li>
+          <li><strong>Mood tracking:</strong> Record emotional states alongside entries</li>
+          <li><strong>Tag organization:</strong> Categorize entries for easy retrieval</li>
+        </ul>
+        
+        <h4>Who Can Benefit?</h4>
+        <ul>
+          <li><strong>Writers:</strong> Capture ideas, drafts, and writing exercises</li>
+          <li><strong>Students:</strong> Document learning experiences and reflections</li>
+          <li><strong>Professionals:</strong> Track career development and work insights</li>
+          <li><strong>Travelers:</strong> Record experiences and observations</li>
+          <li><strong>Anyone seeking self-improvement:</strong> Track habits, goals, and personal growth</li>
+          <li><strong>Therapy clients:</strong> Supplement therapy with private reflection</li>
+          <li><strong>Creative individuals:</strong> Store inspirations and creative thoughts</li>
+        </ul>
+        
+        <h4>Journaling Prompts to Get Started</h4>
+        <p>
+          If you're unsure what to write about, try these prompts:
+        </p>
+        <ul>
+          <li>What are three things I'm grateful for today?</li>
+          <li>What challenged me today, and what did I learn from it?</li>
+          <li>Describe a moment that made me smile today</li>
+          <li>What am I looking forward to this week?</li>
+          <li>What's one thing I'd like to improve about myself?</li>
+          <li>Write about a recent accomplishment, no matter how small</li>
+          <li>What's on my mind right now, without filtering?</li>
+        </ul>
+        
+        <h4>Privacy & Security</h4>
+        <p>
+          Your privacy is our priority. This writing journal:
+        </p>
+        <ul>
+          <li>Stores all data locally in your browser using localStorage</li>
+          <li>Never sends your entries to any server</li>
+          <li>Requires no registration or personal information</li>
+          <li>Allows complete deletion of all data at any time</li>
+          <li>Provides export options so you control your data</li>
+        </ul>
+        
+        <h4>Tips for Effective Journaling</h4>
+        <ul>
+          <li><strong>Write regularly:</strong> Even a few sentences daily builds the habit</li>
+          <li><strong>Be honest:</strong> Your journal is for you - no need to impress anyone</li>
+          <li><strong>Don't edit as you write:</strong> Let thoughts flow freely first</li>
+          <li><strong>Use tags:</strong> Make entries searchable for future reference</li>
+          <li><strong>Review periodically:</strong> Read past entries to track growth</li>
+          <li><strong>Backup regularly:</strong> Use export feature to protect your entries</li>
+          <li><strong>Experiment with formats:</strong> Try lists, stream of consciousness, or structured entries</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- RIGHT SIDE / SIDEBAR -->
+    <aside class="journal-sidebar" aria-label="Quick search and related tools">
+      <div class="sidebar-card">
+        <div class="sidebar-title-bar">
+          <span>Quick Search</span>
+          <i class="fas fa-magnifying-glass"></i>
+        </div>
+
+        <div class="tool-search">
+          <small>Quick links to other tools on WordCalculator.net</small>
+          <div class="sidebar-search-input-wrapper">
+            <i class="fa-solid fa-magnifying-glass sidebar-search-icon" aria-hidden="true"></i>
+            <input
+              type="search"
+              id="toolSearchInput"
+              class="sidebar-search-input"
+              placeholder="Search tools by name..."
+              autocomplete="off"
+              aria-label="Search tools by name"
+            />
+          </div>
+          <ul id="toolSearchSuggestions" class="sidebar-search-suggestions" aria-label="Tool suggestions"></ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Popular Tools</h4>
+          <ul class="sidebar-links">
+            <li><a href="age-calculator.html">Age Calculator</a></li>
+            <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+            <li><a href="calorie-calculator.html">Calorie Calculator</a></li>
+            <li><a href="area-converter.html">Area Converter</a></li>
+            <li><a href="data-size-converter.html">Data Size Converter</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Writing Tools</h4>
+          <ul class="sidebar-links">
+            <li><a href="https://wordcalculator.net">Word & Character Counter</a></li>
+            <li><a href="case-converter.html">Case Converter</a></li>
+            <li><a href="readability-analyzer.html">Readability Analyzer</a></li>
+            <li><a href="writing-prompt-generator.html">Writing Prompt Generator</a></li>
+            <li><a href="writing-journal.html">Writing Journal</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Calculators</h4>
+          <ul class="sidebar-links">
+            <li><a href="loan-emi-calculator.html">Loan & EMI Calculator</a></li>
+            <li><a href="interest-calculator.html">Interest Calculator</a></li>
+            <li><a href="percentage-calculator.html">Percentage Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Converters</h4>
+          <ul class="sidebar-links">
+            <li><a href="length-distance-converter.html">Length Converter</a></li>
+            <li><a href="temperature-converter.html">Temperature Converter</a></li>
+            <li><a href="speed-converter.html">Speed Converter</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="pro-footer" id="about" aria-label="Website footer">
+    <div class="pf-wrap">
+      <div class="pf-brand">
+        <div class="pf-logo">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <div class="pf-brand-text">
+            WordCalculator<span>.net</span>
+          </div>
+        </div>
+        <p class="pf-tag">A focused, distraction-free toolkit for precise writing.</p>
+        <div class="pf-social">
+          <a href="https://facebook.com/wordcalculator" aria-label="Facebook" rel="noopener" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/wordcalculator" aria-label="X (Twitter)" rel="noopener" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://linkedin.com/company/wordcalculator" aria-label="LinkedIn" rel="noopener" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://youtube.com/@wordcalculator" aria-label="YouTube" rel="noopener" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="pf-cols">
+        <div class="pf-col">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="https://wordcalculator.net">Editor</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="writing-journal.html">Writing Journal</a></li>
+            <li><a href="writing-prompt-generator.html">Writing Prompts</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="guides.html">Tips &amp; Guides</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="careers.html">Careers</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pf-bottom">
+      <div class="pf-bottom-wrap">
+        <div>© <span id="pf-year"></span> WordCalculator.net — All rights reserved.</div>
+        <div class="pf-links">
+          <a href="sitemap.html">Sitemap</a>
+          <a href="status.html">Status</a>
+          <a href="accessibility.html">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Auth Modal ===== -->
+  <div class="modal-overlay" id="authOverlay" aria-hidden="true"></div>
+  <div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <div class="modal-head">
+      <h3 id="authTitle"><i class="fas fa-user-lock"></i> Account</h3>
+      <button class="modal-close" id="authCloseBtn" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body">
+      Sign-in and account features are coming soon. For now, all tools are free to use without registration.
+    </div>
+  </div>
+
+  <!-- ==================== JS ==================== -->
+
+  <!-- Tools Directory Js -->
+  <script src="tools-directory.js"></script>
+
+  <script>
+    const $ = (s) => document.querySelector(s);
+    const $$ = (s) => Array.from(document.querySelectorAll(s));
+
+    document.addEventListener("DOMContentLoaded", () => {
+      initYear();
+      initMobileMenu();
+      initAuthModal();
+      initWritingJournal();
+      initToolQuickSearch();
+    });
+
+    function initYear() {
+      const el = $("#pf-year");
+      if (el) el.textContent = new Date().getFullYear();
+    }
+
+    function initMobileMenu() {
+      const mobileMenuBtn = $("#mobileMenuBtn");
+      const mobileCloseBtn = $("#mobileCloseBtn");
+      const mobileNav = $("#mobileNav");
+      const mobileOverlay = $("#mobileOverlay");
+      if (!mobileMenuBtn || !mobileNav || !mobileOverlay) return;
+
+      const open = () => {
+        mobileNav.classList.add("active");
+        mobileOverlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+      };
+      const close = () => {
+        mobileNav.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+      };
+
+      mobileMenuBtn.addEventListener("click", open);
+      if (mobileCloseBtn) mobileCloseBtn.addEventListener("click", close);
+      mobileOverlay.addEventListener("click", close);
+      $$(".mobile-link").forEach(link => link.addEventListener("click", close));
+
+      const openAuthBtnMobile = $("#openAuthBtnMobile");
+      if (openAuthBtnMobile) {
+        openAuthBtnMobile.addEventListener("click", () => {
+          close();
+          openAuthModal();
+        });
+      }
+    }
+
+    function initAuthModal() {
+      const openBtn = $("#openAuthBtn");
+      const overlay = $("#authOverlay");
+      const modal = $("#authModal");
+      const closeBtn = $("#authCloseBtn");
+      if (!overlay || !modal) return;
+
+      const open = () => {
+        overlay.style.display = "block";
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden";
+      };
+      const close = () => {
+        overlay.style.display = "none";
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+      };
+
+      if (openBtn) openBtn.addEventListener("click", open);
+      if (closeBtn) closeBtn.addEventListener("click", close);
+      overlay.addEventListener("click", close);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") close();
+      });
+    }
+
+    function openAuthModal() {
+      const overlay = $("#authOverlay");
+      const modal = $("#authModal");
+      if (!overlay || !modal) return;
+      overlay.style.display = "block";
+      modal.style.display = "block";
+      document.body.style.overflow = "hidden";
+    }
+
+    /* ===== Writing Journal Core ===== */
+    let journalEntries = [];
+    let currentEntryId = null;
+    let isEditing = false;
+    let currentFilter = "all";
+
+    // Mood emoji mapping
+    const moodEmoji = {
+      "happy": "😊",
+      "excited": "😃",
+      "calm": "😌",
+      "thoughtful": "🤔",
+      "sad": "😔",
+      "anxious": "😰",
+      "tired": "😴",
+      "inspired": "💡"
+    };
+
+    // Mood labels
+    const moodLabels = {
+      "happy": "Happy",
+      "excited": "Excited",
+      "calm": "Calm",
+      "thoughtful": "Thoughtful",
+      "sad": "Sad",
+      "anxious": "Anxious",
+      "tired": "Tired",
+      "inspired": "Inspired"
+    };
+
+    function initWritingJournal() {
+      // Load saved entries
+      loadEntries();
+      
+      // Set current date
+      updateEntryDate();
+      
+      // Event listeners
+      $("#newEntryBtn").addEventListener("click", showEntryForm);
+      $("#cancelEntryBtn").addEventListener("click", hideEntryForm);
+      $("#saveEntryBtn").addEventListener("click", saveEntry);
+      $("#exportBtn").addEventListener("click", exportAllEntries);
+      $("#importBtn").addEventListener("click", importEntries);
+      $("#clearAllBtn").addEventListener("click", clearAllEntries);
+      
+      // Entry content tracking
+      $("#entryContent").addEventListener("input", updateWordCount);
+      
+      // Filter buttons
+      $$(".filter-btn").forEach(btn => {
+        btn.addEventListener("click", function() {
+          $$(".filter-btn").forEach(b => b.classList.remove("active"));
+          this.classList.add("active");
+          currentFilter = this.getAttribute("data-filter");
+          renderEntriesList();
+        });
+      });
+      
+      // Backup actions
+      $("#exportJsonBtn").addEventListener("click", exportAsJson);
+      $("#exportTextBtn").addEventListener("click", exportAsText);
+      $("#importJsonBtn").addEventListener("click", importFromJson);
+      $("#printJournalBtn").addEventListener("click", printJournal);
+      
+      // Viewer actions
+      $("#editEntryBtn").addEventListener("click", editCurrentEntry);
+      $("#deleteEntryBtn").addEventListener("click", deleteCurrentEntry);
+      
+      // Initial render
+      renderEntriesList();
+      updateStats();
+    }
+
+    function updateEntryDate() {
+      const now = new Date();
+      const options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+      };
+      $("#entryDate").textContent = now.toLocaleDateString('en-US', options);
+    }
+
+    function updateWordCount() {
+      const content = $("#entryContent").value;
+      const words = content.trim().split(/\s+/).filter(word => word.length > 0);
+      const characters = content.length;
+      
+      $("#wordCount").textContent = words.length;
+      $("#charCount").textContent = characters;
+    }
+
+    function loadEntries() {
+      const saved = localStorage.getItem('writingJournalEntries');
+      if (saved) {
+        try {
+          journalEntries = JSON.parse(saved);
+          // Ensure each entry has an ID
+          journalEntries.forEach((entry, index) => {
+            if (!entry.id) {
+              entry.id = Date.now() + index;
+            }
+          });
+        } catch (e) {
+          console.log("Error loading entries, starting fresh");
+          journalEntries = [];
+        }
+      }
+    }
+
+    function saveEntries() {
+      localStorage.setItem('writingJournalEntries', JSON.stringify(journalEntries));
+      updateStats();
+    }
+
+    function showEntryForm(entryId = null) {
+      $("#entryForm").classList.add("active");
+      $("#entryViewer").classList.remove("active");
+      
+      if (entryId) {
+        // Editing existing entry
+        const entry = journalEntries.find(e => e.id === entryId);
+        if (entry) {
+          isEditing = true;
+          currentEntryId = entryId;
+          
+          $("#entryTitle").value = entry.title || "";
+          $("#entryMood").value = entry.mood || "";
+          $("#entryContent").value = entry.content || "";
+          $("#entryTags").value = entry.tags ? entry.tags.join(", ") : "";
+          
+          $("#saveEntryBtn").innerHTML = '<i class="fas fa-save"></i> Update Entry';
+          updateWordCount();
+        }
+      } else {
+        // New entry
+        isEditing = false;
+        currentEntryId = null;
+        
+        $("#entryTitle").value = "";
+        $("#entryMood").value = "";
+        $("#entryContent").value = "";
+        $("#entryTags").value = "";
+        
+        $("#saveEntryBtn").innerHTML = '<i class="fas fa-save"></i> Save Entry';
+        updateEntryDate();
+        updateWordCount();
+      }
+      
+      // Scroll to form
+      $("#entryForm").scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function hideEntryForm() {
+      $("#entryForm").classList.remove("active");
+      isEditing = false;
+      currentEntryId = null;
+    }
+
+    function saveEntry() {
+      const title = $("#entryTitle").value.trim();
+      const mood = $("#entryMood").value;
+      const content = $("#entryContent").value.trim();
+      const tagsInput = $("#entryTags").value.trim();
+      
+      // Validate
+      if (!title) {
+        alert("Please enter a title for your journal entry");
+        $("#entryTitle").focus();
+        return;
+      }
+      
+      if (!content) {
+        alert("Please write something in your journal entry");
+        $("#entryContent").focus();
+        return;
+      }
+      
+      // Process tags
+      const tags = tagsInput 
+        ? tagsInput.split(',').map(tag => tag.trim()).filter(tag => tag.length > 0)
+        : [];
+      
+      const now = new Date();
+      const dateString = now.toISOString();
+      
+      if (isEditing && currentEntryId) {
+        // Update existing entry
+        const entryIndex = journalEntries.findIndex(e => e.id === currentEntryId);
+        if (entryIndex !== -1) {
+          journalEntries[entryIndex] = {
+            ...journalEntries[entryIndex],
+            title,
+            mood,
+            content,
+            tags,
+            updatedAt: dateString
+          };
+        }
+      } else {
+        // Create new entry
+        const newEntry = {
+          id: Date.now(),
+          title,
+          mood,
+          content,
+          tags,
+          createdAt: dateString,
+          updatedAt: dateString,
+          wordCount: content.trim().split(/\s+/).filter(word => word.length > 0).length
+        };
+        
+        journalEntries.unshift(newEntry);
+      }
+      
+      // Save and update UI
+      saveEntries();
+      hideEntryForm();
+      renderEntriesList();
+      showToast(isEditing ? "Entry updated successfully!" : "Entry saved successfully!");
+    }
+
+    function renderEntriesList() {
+      const entriesList = $("#entriesList");
+      if (!entriesList) return;
+      
+      // Filter entries
+      let filteredEntries = [...journalEntries];
+      
+      if (currentFilter !== "all") {
+        const now = new Date();
+        const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        const weekAgo = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+        const monthAgo = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
+        
+        filteredEntries = journalEntries.filter(entry => {
+          const entryDate = new Date(entry.createdAt);
+          
+          switch(currentFilter) {
+            case "today":
+              return entryDate >= today;
+            case "week":
+              return entryDate >= weekAgo;
+            case "month":
+              return entryDate >= monthAgo;
+            default:
+              return true;
+          }
+        });
+      }
+      
+      if (filteredEntries.length === 0) {
+        entriesList.innerHTML = `
+          <div class="empty-state">
+            <i class="fas fa-book-open"></i>
+            <h4>No entries found</h4>
+            <p>Try changing the filter or create a new entry</p>
+          </div>
+        `;
+        return;
+      }
+      
+      entriesList.innerHTML = "";
+      
+      filteredEntries.forEach(entry => {
+        const entryDate = new Date(entry.createdAt);
+        const dateStr = entryDate.toLocaleDateString('en-US', { 
+          month: 'short', 
+          day: 'numeric',
+          year: entryDate.getFullYear() !== new Date().getFullYear() ? 'numeric' : undefined
+        });
+        
+        const timeStr = entryDate.toLocaleTimeString('en-US', { 
+          hour: '2-digit', 
+          minute: '2-digit' 
+        });
+        
+        const preview = entry.content.length > 100 
+          ? entry.content.substring(0, 100) + "..." 
+          : entry.content;
+        
+        const moodEmoji = entry.mood && moodEmoji[entry.mood] ? moodEmoji[entry.mood] : "📝";
+        
+        const entryElement = document.createElement('div');
+        entryElement.className = 'entry-item';
+        entryElement.dataset.id = entry.id;
+        
+        entryElement.innerHTML = `
+          <div class="entry-header">
+            <div class="entry-title">${moodEmoji} ${entry.title}</div>
+            <div class="entry-date">${dateStr} ${timeStr}</div>
+          </div>
+          <div class="entry-preview">${preview}</div>
+          ${entry.tags && entry.tags.length > 0 ? `
+            <div class="entry-tags">
+              ${entry.tags.map(tag => `<span class="tag">#${tag}</span>`).join('')}
+            </div>
+          ` : ''}
+        `;
+        
+        entryElement.addEventListener('click', () => {
+          viewEntry(entry.id);
+        });
+        
+        entriesList.appendChild(entryElement);
+      });
+    }
+
+    function viewEntry(entryId) {
+      const entry = journalEntries.find(e => e.id === entryId);
+      if (!entry) return;
+      
+      // Update active state in list
+      $$(".entry-item").forEach(item => {
+        item.classList.remove("active");
+        if (parseInt(item.dataset.id) === entryId) {
+          item.classList.add("active");
+        }
+      });
+      
+      // Format date
+      const entryDate = new Date(entry.createdAt);
+      const dateStr = entryDate.toLocaleDateString('en-US', { 
+        weekday: 'long',
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+      });
+      const timeStr = entryDate.toLocaleTimeString('en-US', { 
+        hour: '2-digit', 
+        minute: '2-digit' 
+      });
+      
+      // Update viewer
+      $("#viewerTitle").textContent = entry.title;
+      $("#viewerDate").textContent = `${dateStr} at ${timeStr}`;
+      $("#viewerMood").textContent = entry.mood ? `${moodEmoji[entry.mood]} ${moodLabels[entry.mood]}` : "No mood set";
+      $("#viewerWords").textContent = `${entry.wordCount || entry.content.trim().split(/\s+/).filter(w => w.length > 0).length} words`;
+      $("#viewerContent").textContent = entry.content;
+      
+      // Update tags
+      const viewerTags = $("#viewerTags");
+      viewerTags.innerHTML = "";
+      if (entry.tags && entry.tags.length > 0) {
+        entry.tags.forEach(tag => {
+          const tagSpan = document.createElement('span');
+          tagSpan.className = 'tag';
+          tagSpan.textContent = `#${tag}`;
+          viewerTags.appendChild(tagSpan);
+        });
+      }
+      
+      // Show viewer
+      $("#entryForm").classList.remove("active");
+      $("#entryViewer").classList.add("active");
+      currentEntryId = entryId;
+      
+      // Scroll to viewer
+      $("#entryViewer").scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function editCurrentEntry() {
+      if (currentEntryId) {
+        showEntryForm(currentEntryId);
+      }
+    }
+
+    function deleteCurrentEntry() {
+      if (!currentEntryId) return;
+      
+      if (confirm("Are you sure you want to delete this journal entry? This cannot be undone.")) {
+        journalEntries = journalEntries.filter(entry => entry.id !== currentEntryId);
+        saveEntries();
+        renderEntriesList();
+        $("#entryViewer").classList.remove("active");
+        currentEntryId = null;
+        showToast("Entry deleted successfully!");
+      }
+    }
+
+    function updateStats() {
+      const totalEntries = journalEntries.length;
+      const totalWords = journalEntries.reduce((sum, entry) => sum + (entry.wordCount || 0), 0);
+      const avgWords = totalEntries > 0 ? Math.round(totalWords / totalEntries) : 0;
+      
+      // Calculate streak
+      const streak = calculateStreak();
+      
+      $("#totalEntries").textContent = totalEntries;
+      $("#totalWords").textContent = totalWords.toLocaleString();
+      $("#avgWords").textContent = avgWords.toLocaleString();
+      $("#streakDays").textContent = streak;
+    }
+
+    function calculateStreak() {
+      if (journalEntries.length === 0) return 0;
+      
+      // Sort entries by date (newest first)
+      const sortedEntries = [...journalEntries].sort((a, b) => 
+        new Date(b.createdAt) - new Date(a.createdAt)
+      );
+      
+      let streak = 0;
+      let currentDate = new Date();
+      currentDate.setHours(0, 0, 0, 0);
+      
+      // Check today
+      const hasToday = sortedEntries.some(entry => {
+        const entryDate = new Date(entry.createdAt);
+        entryDate.setHours(0, 0, 0, 0);
+        return entryDate.getTime() === currentDate.getTime();
+      });
+      
+      if (!hasToday) {
+        // If no entry today, check yesterday
+        currentDate.setDate(currentDate.getDate() - 1);
+        const hasYesterday = sortedEntries.some(entry => {
+          const entryDate = new Date(entry.createdAt);
+          entryDate.setHours(0, 0, 0, 0);
+          return entryDate.getTime() === currentDate.getTime();
+        });
+        
+        if (!hasYesterday) return 0;
+        streak = 1;
+        currentDate.setDate(currentDate.getDate() - 1);
+      } else {
+        streak = 1;
+        currentDate.setDate(currentDate.getDate() - 1);
+      }
+      
+      // Continue checking previous days
+      while (true) {
+        const hasEntry = sortedEntries.some(entry => {
+          const entryDate = new Date(entry.createdAt);
+          entryDate.setHours(0, 0, 0, 0);
+          return entryDate.getTime() === currentDate.getTime();
+        });
+        
+        if (hasEntry) {
+          streak++;
+          currentDate.setDate(currentDate.getDate() - 1);
+        } else {
+          break;
+        }
+      }
+      
+      return streak;
+    }
+
+    function exportAllEntries() {
+      if (journalEntries.length === 0) {
+        alert("No entries to export");
+        return;
+      }
+      
+      // Create export data
+      const exportData = {
+        version: "1.0",
+        exportedAt: new Date().toISOString(),
+        totalEntries: journalEntries.length,
+        entries: journalEntries
+      };
+      
+      // Create and download JSON file
+      const dataStr = JSON.stringify(exportData, null, 2);
+      const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+      
+      const exportFileDefaultName = `writing-journal-backup-${new Date().toISOString().split('T')[0]}.json`;
+      
+      const linkElement = document.createElement('a');
+      linkElement.setAttribute('href', dataUri);
+      linkElement.setAttribute('download', exportFileDefaultName);
+      linkElement.click();
+      
+      showToast("Journal exported successfully!");
+    }
+
+    function importEntries() {
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = '.json';
+      
+      input.addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+        
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          try {
+            const importedData = JSON.parse(e.target.result);
+            
+            // Validate imported data
+            if (!importedData.entries || !Array.isArray(importedData.entries)) {
+              throw new Error("Invalid journal file format");
+            }
+            
+            if (confirm(`Import ${importedData.entries.length} journal entries? This will add to your existing entries.`)) {
+              // Add imported entries
+              importedData.entries.forEach(entry => {
+                // Ensure unique ID
+                entry.id = Date.now() + Math.random();
+                journalEntries.unshift(entry);
+              });
+              
+              saveEntries();
+              renderEntriesList();
+              showToast(`${importedData.entries.length} entries imported successfully!`);
+            }
+          } catch (error) {
+            alert("Error importing journal: " + error.message);
+          }
+        };
+        
+        reader.readAsText(file);
+      });
+      
+      input.click();
+    }
+
+    function clearAllEntries() {
+      if (journalEntries.length === 0) {
+        alert("No entries to clear");
+        return;
+      }
+      
+      if (confirm("Are you sure you want to delete ALL journal entries? This cannot be undone!")) {
+        journalEntries = [];
+        saveEntries();
+        renderEntriesList();
+        $("#entryViewer").classList.remove("active");
+        currentEntryId = null;
+        showToast("All entries cleared!");
+      }
+    }
+
+    function exportAsJson() {
+      exportAllEntries(); // Same as exportAllEntries
+    }
+
+    function exportAsText() {
+      if (journalEntries.length === 0) {
+        alert("No entries to export");
+        return;
+      }
+      
+      let textContent = "MY WRITING JOURNAL\n";
+      textContent += "==================\n\n";
+      textContent += `Exported: ${new Date().toLocaleString()}\n`;
+      textContent += `Total Entries: ${journalEntries.length}\n\n`;
+      textContent += "=".repeat(50) + "\n\n";
+      
+      journalEntries.forEach((entry, index) => {
+        const entryDate = new Date(entry.createdAt);
+        const dateStr = entryDate.toLocaleDateString('en-US', { 
+          weekday: 'long',
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+        
+        textContent += `ENTRY ${index + 1}: ${entry.title}\n`;
+        textContent += `Date: ${dateStr}\n`;
+        if (entry.mood) {
+          textContent += `Mood: ${moodLabels[entry.mood] || entry.mood}\n`;
+        }
+        if (entry.tags && entry.tags.length > 0) {
+          textContent += `Tags: ${entry.tags.join(', ')}\n`;
+        }
+        textContent += "-".repeat(40) + "\n";
+        textContent += entry.content + "\n\n";
+        textContent += "=".repeat(50) + "\n\n";
+      });
+      
+      // Create and download text file
+      const dataUri = 'data:text/plain;charset=utf-8,'+ encodeURIComponent(textContent);
+      const exportFileDefaultName = `writing-journal-${new Date().toISOString().split('T')[0]}.txt`;
+      
+      const linkElement = document.createElement('a');
+      linkElement.setAttribute('href', dataUri);
+      linkElement.setAttribute('download', exportFileDefaultName);
+      linkElement.click();
+      
+      showToast("Journal exported as text!");
+    }
+
+    function importFromJson() {
+      importEntries(); // Same as importEntries
+    }
+
+    function printJournal() {
+      if (journalEntries.length === 0) {
+        alert("No entries to print");
+        return;
+      }
+      
+      // Create print content
+      let printContent = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <title>My Writing Journal</title>
+          <style>
+            body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+            h1 { color: #333; border-bottom: 2px solid #333; padding-bottom: 10px; }
+            .entry { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #ccc; }
+            .entry-title { font-size: 18px; font-weight: bold; color: #2d3748; }
+            .entry-meta { color: #718096; font-size: 14px; margin-bottom: 10px; }
+            .entry-content { white-space: pre-wrap; margin-top: 10px; }
+            .entry-tags { margin-top: 10px; }
+            .tag { background: #ebf8ff; color: #2c5282; padding: 2px 8px; border-radius: 12px; font-size: 12px; margin-right: 5px; }
+            @media print {
+              body { margin: 0; }
+              .no-print { display: none; }
+            }
+          </style>
+        </head>
+        <body>
+          <h1>My Writing Journal</h1>
+          <div class="meta no-print">
+            <p>Exported: ${new Date().toLocaleString()}</p>
+            <p>Total Entries: ${journalEntries.length}</p>
+          </div>
+      `;
+      
+      journalEntries.forEach(entry => {
+        const entryDate = new Date(entry.createdAt);
+        const dateStr = entryDate.toLocaleDateString('en-US', { 
+          weekday: 'long',
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+        
+        printContent += `
+          <div class="entry">
+            <div class="entry-title">${entry.title}</div>
+            <div class="entry-meta">
+              ${dateStr}
+              ${entry.mood ? ` • Mood: ${moodLabels[entry.mood] || entry.mood}` : ''}
+            </div>
+            <div class="entry-content">${entry.content}</div>
+            ${entry.tags && entry.tags.length > 0 ? `
+              <div class="entry-tags">
+                ${entry.tags.map(tag => `<span class="tag">#${tag}</span>`).join('')}
+              </div>
+            ` : ''}
+          </div>
+        `;
+      });
+      
+      printContent += `
+          <div class="no-print" style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ccc; text-align: center;">
+            <p>Generated by WordCalculator.net Writing Journal</p>
+            <p>https://wordcalculator.net/writing-journal.html</p>
+          </div>
+        </body>
+        </html>
+      `;
+      
+      // Open print window
+      const printWindow = window.open('', '_blank');
+      printWindow.document.write(printContent);
+      printWindow.document.close();
+      printWindow.focus();
+      
+      // Wait for content to load, then print
+      setTimeout(() => {
+        printWindow.print();
+      }, 500);
+    }
+
+    function showToast(message) {
+      // Create toast element
+      const toast = document.createElement('div');
+      toast.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #5a67d8;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 1000;
+        animation: slideIn 0.3s ease;
+        font-size: 14px;
+        font-weight: 500;
+      `;
+      
+      toast.textContent = message;
+      document.body.appendChild(toast);
+      
+      // Remove toast after 3 seconds
+      setTimeout(() => {
+        toast.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => {
+          document.body.removeChild(toast);
+        }, 300);
+      }, 3000);
+      
+      // Add CSS for animations
+      if (!document.querySelector('#toast-animations')) {
+        const style = document.createElement('style');
+        style.id = 'toast-animations';
+        style.textContent = `
+          @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+          }
+          @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+          }
+        `;
+        document.head.appendChild(style);
+      }
+    }
+
+    /* ===== Tool directory & Quick Search ===== */
+    
+    /* ===== Tool directory & Quick Search (with icons) ===== */
+    const toolDirectory = allTools;
+
+    function initToolQuickSearch() {
+      const input = $("#toolSearchInput");
+      const suggestionsBox = $("#toolSearchSuggestions");
+      if (!input || !suggestionsBox || !Array.isArray(toolDirectory)) return;
+
+      let currentResults = [];
+
+      function renderSuggestions(query) {
+        const value = (query || "").trim().toLowerCase();
+        suggestionsBox.innerHTML = "";
+        if (!value) {
+          suggestionsBox.classList.remove("visible");
+          return;
+        }
+
+        const allMatches = toolDirectory.filter(tool => tool.name.toLowerCase().includes(value));
+        if (!allMatches.length) {
+          const li = document.createElement("li");
+          li.textContent = "No tools found";
+          suggestionsBox.appendChild(li);
+          suggestionsBox.classList.add("visible");
+          return;
+        }
+
+        function rankTool(tool) {
+          const name = tool.name.toLowerCase();
+          const pos = name.indexOf(value);
+          const starts = name.startsWith(value) ? 0 : 1;
+          const lenDiff = Math.abs(name.length - value.length);
+          return starts * 100 + pos * 2 + lenDiff;
+        }
+
+        currentResults = allMatches.slice().sort((a, b) => rankTool(a) - rankTool(b));
+        currentResults.slice(0, 10).forEach(tool => {
+          const li = document.createElement("li");
+          const iconEl = document.createElement("i");
+          iconEl.className = tool.icon || "fa-solid fa-wand-magic-sparkles";
+          const nameSpan = document.createElement("span");
+          nameSpan.className = "tool-name";
+          nameSpan.textContent = tool.name;
+          li.appendChild(iconEl);
+          li.appendChild(nameSpan);
+          li.addEventListener("click", () => {
+            if (tool.url) window.location.href = tool.url;
+          });
+          suggestionsBox.appendChild(li);
+        });
+
+        suggestionsBox.classList.add("visible");
+      }
+
+      input.addEventListener("input", (e) => renderSuggestions(e.target.value));
+
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          const value = input.value.trim().toLowerCase();
+          if (!value) return;
+          const first = currentResults.length ? currentResults[0] : toolDirectory.find(
+            (tool) => tool.name.toLowerCase().includes(value)
+          );
+          if (first && first.url) window.location.href = first.url;
+        }
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!input.contains(e.target) && !suggestionsBox.contains(e.target)) {
+          suggestionsBox.classList.remove("visible");
+        }
+      });
+    }
+  </script>
+</body>
+</html>

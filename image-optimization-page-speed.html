@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ========================================== -->
+  <!-- ADVANCED SEO & META DATA START -->
+  <!-- ========================================== -->
+
+  <!-- Primary Meta Tags -->
+  <title>How Proper Image Optimization Can Improve Your Page Speed | WordCalculator</title>
+  <meta name="description" content="Learn how image optimization directly impacts page speed, Core Web Vitals, and SEO rankings. Discover free tools and techniques to reduce image file sizes by 80% without quality loss." />
+  <meta name="keywords" content="image optimization, page speed, Core Web Vitals, website performance, image compression, SEO, web performance, lazy loading" />
+  <meta name="author" content="David Kim, WordCalculator" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#020617" />
+  
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://wordcalculator.net/image-optimization-page-speed.html" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://wordcalculator.net/image-optimization-page-speed.html" />
+  <meta property="og:title" content="How Proper Image Optimization Can Improve Your Page Speed" />
+  <meta property="og:description" content="Learn how image optimization directly impacts page speed, Core Web Vitals, and SEO rankings. Discover free tools to reduce image file sizes by 80% without quality loss." />
+  <meta property="og:image" content="https://wordcalculator.net/images/image-optimization-guide-og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="WordCalculator" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="article:published_time" content="2025-03-05T14:00:00+00:00" />
+  <meta property="article:author" content="https://wordcalculator.net/about#david" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://wordcalculator.net/image-optimization-page-speed.html" />
+  <meta name="twitter:title" content="How Proper Image Optimization Can Improve Your Page Speed" />
+  <meta name="twitter:description" content="Learn how image optimization directly impacts page speed, Core Web Vitals, and SEO rankings. Discover free tools to reduce image file sizes by 80% without quality loss." />
+  <meta name="twitter:image" content="https://wordcalculator.net/images/image-optimization-guide-twitter.jpg" />
+  <meta name="twitter:creator" content="@wordcalculator" />
+
+  <!-- STRUCTURED DATA: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How Proper Image Optimization Can Improve Your Page Speed",
+    "description": "Learn how image optimization directly impacts page speed, Core Web Vitals, and SEO rankings. Discover free tools and techniques to reduce image file sizes by 80% without quality loss.",
+    "image": "https://wordcalculator.net/images/image-optimization-guide-og.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "David Kim",
+      "url": "https://wordcalculator.net/about#david"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "WordCalculator",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://wordcalculator.net/logo.png"
+      }
+    },
+    "datePublished": "2025-03-05T14:00:00+00:00",
+    "dateModified": "2025-03-05T14:00:00+00:00",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://wordcalculator.net/image-optimization-page-speed.html"
+    },
+    "articleSection": "Image & File Optimization",
+    "keywords": ["image optimization", "page speed", "Core Web Vitals", "website performance", "image compression"]
+  }
+  </script>
+
+  <!-- ========================================== -->
+  <!-- ADVANCED SEO END -->
+  <!-- ========================================== -->
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+    /* RESET & BASE STYLES */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --primary-dark: #020617;
+      --primary: #1E293B;
+      --primary-light: #334155;
+      --accent: #3B82F6;
+      --accent-hover: #2563EB;
+      --accent-dark: #1D4ED8;
+      --green: #10B981;
+      --green-light: #D1FAE5;
+      --yellow: #F59E0B;
+      --yellow-light: #FEF3C7;
+      --red: #EF4444;
+      --red-light: #FEE2E2;
+      --purple: #8B5CF6;
+      --purple-light: #EDE9FE;
+      --teal: #0D9488;
+      --teal-light: #CCFBF1;
+      --blue: #3B82F6;
+      --blue-light: #DBEAFE;
+      --indigo: #6366F1;
+      --indigo-light: #E0E7FF;
+      --gray-50: #F9FAFB;
+      --gray-100: #F3F4F6;
+      --gray-200: #E5E7EB;
+      --gray-300: #D1D5DB;
+      --gray-400: #9CA3AF;
+      --gray-500: #6B7280;
+      --gray-600: #4B5563;
+      --gray-700: #374151;
+      --gray-800: #1F2937;
+      --gray-900: #111827;
+      --bg: #ffffff;
+      --card: #ffffff;
+      --border: #E5E7EB;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    html {
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: var(--bg);
+      color: var(--gray-900);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, select {
+      font-family: inherit;
+      font-size: inherit;
+    }
+
+    /* HEADER - WordCalculator Style */
+    .wc-header {
+      background: #020617;
+      color: #fff;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+    }
+
+    .wc-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .wc-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .wc-slab {
+      display: inline-flex;
+      width: 24px;
+      height: 24px;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 14px;
+      border-radius: 2px;
+      color: #fff;
+    }
+
+    .slab-w { background: #1f2327; }
+    .slab-o { background: #a7c1db; color: #1e2a3a; }
+    .slab-r { background: #7d96ae; }
+    .slab-d { background: #2f5d8a; }
+
+    .wc-brand-text {
+      display: inline-flex;
+      flex-direction: column;
+      line-height: 1.05;
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .wc-brand-text small {
+      font-size: 10px;
+      opacity: 0.95;
+    }
+
+    .wc-nav {
+      margin-left: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .wc-link {
+      color: #f4f8fc;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 6px 10px;
+      border-radius: 8px;
+      transition: 0.15s;
+      white-space: nowrap;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .wc-link:hover {
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .wc-link.active {
+      background: #fff;
+      color: #111;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .mobile-menu-btn {
+      margin-left: auto;
+      background: transparent;
+      border: 0;
+      color: #fff;
+      font-size: 20px;
+      display: none;
+      cursor: pointer;
+    }
+
+    /* Mobile Navigation */
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 320px;
+      height: 100vh;
+      background: #1f2933;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.18);
+      transition: right 0.3s;
+      z-index: 100;
+    }
+
+    .mobile-nav.active { right: 0; }
+    .mobile-nav-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      border-bottom: 1px solid #34495e;
+    }
+    .mobile-close-btn {
+      background: transparent;
+      border: 0;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .mobile-nav-links { padding: 16px; }
+    .mobile-link {
+      display: block;
+      color: #ecf0f1;
+      padding: 12px 0;
+      border-bottom: 1px solid #34495e;
+      font-weight: 700;
+      background: transparent;
+      border: 0;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+    }
+    .mobile-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 90;
+    }
+    .mobile-overlay.active { display: block; }
+
+    /* Breadcrumbs */
+    .crumb-wrap {
+      max-width: 1200px;
+      margin: 8px auto 0;
+      padding: 0 15px 4px;
+    }
+    .crumbs {
+      font-size: 13px;
+      color: #111827;
+    }
+    .crumbs a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    .crumbs a:hover { text-decoration: underline; }
+    .crumb-separator { margin: 0 4px; color: #6b7280; }
+    .crumb-current { font-weight: 700; }
+
+    /* ARTICLE CONTENT STYLES */
+    .article-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .article-header {
+      margin-bottom: 40px;
+    }
+    .article-category {
+      display: inline-block;
+      background: var(--indigo);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+    }
+    .article-title {
+      font-size: 42px;
+      font-weight: 900;
+      line-height: 1.2;
+      color: var(--gray-900);
+      margin-bottom: 20px;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--gray-600);
+      font-size: 15px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .article-author, .article-date, .article-read-time {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .article-author-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--gray-300);
+    }
+    .article-hero-image {
+      width: 100%;
+      height: 400px;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    .article-hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .article-content {
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--gray-800);
+    }
+    .article-content h2 {
+      font-size: 32px;
+      font-weight: 800;
+      margin: 50px 0 20px;
+      color: var(--gray-900);
+      line-height: 1.3;
+    }
+    .article-content h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 40px 0 15px;
+      color: var(--gray-800);
+    }
+    .article-content p {
+      margin-bottom: 24px;
+    }
+    .article-content ul, .article-content ol {
+      margin-bottom: 24px;
+      padding-left: 30px;
+    }
+    .article-content li {
+      margin-bottom: 10px;
+    }
+    .article-content blockquote {
+      border-left: 4px solid var(--indigo);
+      padding-left: 24px;
+      margin: 30px 0;
+      font-style: italic;
+      color: var(--gray-700);
+      font-size: 20px;
+      line-height: 1.6;
+    }
+    .content-tip, .content-warning, .content-note {
+      padding: 20px;
+      border-radius: 12px;
+      margin: 30px 0;
+      border-left: 4px solid;
+    }
+    .content-tip { background: var(--indigo-light); border-left-color: var(--indigo); }
+    .content-warning { background: var(--red-light); border-left-color: var(--red); }
+    .content-note { background: var(--green-light); border-left-color: var(--green); }
+    .optimization-step {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 30px;
+      margin: 30px 0;
+      position: relative;
+    }
+    .optimization-step h4 {
+      font-size: 20px;
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: var(--gray-900);
+    }
+    .file-size-comparison {
+      background: var(--blue-light);
+      border-radius: 12px;
+      padding: 25px;
+      margin: 25px 0;
+    }
+    .file-size-comparison h5 {
+      margin-top: 0;
+      color: var(--blue);
+      font-size: 18px;
+    }
+    .comparison-bar {
+      height: 30px;
+      background: var(--gray-200);
+      border-radius: 15px;
+      margin: 15px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .comparison-fill {
+      height: 100%;
+      border-radius: 15px;
+      transition: width 0.5s ease;
+    }
+    .fill-original { background: var(--red); }
+    .fill-optimized { background: var(--green); }
+    .comparison-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    .image-format-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    .image-format-table th {
+      background: var(--gray-50);
+      color: var(--gray-700);
+      font-weight: 700;
+      padding: 16px;
+      text-align: left;
+      border-bottom: 2px solid var(--gray-200);
+    }
+    .image-format-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .image-format-table tr:last-child td {
+      border-bottom: none;
+    }
+    .image-format-table tr:hover {
+      background: var(--gray-50);
+    }
+    .format-recommended { color: var(--green); font-weight: 600; }
+    .format-avoid { color: var(--red); font-weight: 600; }
+    .tool-reference {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-300);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 25px 0;
+    }
+    .tool-reference h4 {
+      margin-top: 0;
+      color: var(--indigo);
+    }
+    .cta-box {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: white;
+      padding: 40px;
+      border-radius: 16px;
+      text-align: center;
+      margin: 50px 0;
+    }
+    .cta-box h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: white;
+    }
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 50px 0 30px;
+      padding-top: 30px;
+      border-top: 1px solid var(--gray-200);
+    }
+    .article-tag {
+      background: var(--gray-100);
+      color: var(--gray-700);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .article-tag:hover {
+      background: var(--indigo);
+      color: white;
+    }
+    .article-navigation {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 60px;
+      padding-top: 30px;
+      border-top: 1px solid var(--gray-200);
+    }
+    .nav-prev, .nav-next {
+      flex: 1;
+    }
+    .nav-next {
+      text-align: right;
+    }
+    .nav-label {
+      font-size: 14px;
+      color: var(--gray-500);
+      margin-bottom: 5px;
+    }
+    .nav-title {
+      font-weight: 700;
+      color: var(--gray-900);
+    }
+    .newsletter-btn {
+      background: var(--indigo);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+    .newsletter-btn:hover {
+      background: #4f46e5;
+    }
+
+    /* Footer - WordCalculator Style */
+    .pro-footer {
+      background: #020617;
+      color: #cbd5e1;
+      margin-top: 60px;
+    }
+
+    .pf-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 34px 15px;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 26px;
+    }
+
+    .pf-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pf-brand-text {
+      font-size: 18px;
+      font-weight: 800;
+      color: #e2e8f0;
+    }
+
+    .pf-brand-text span {
+      color: #38bdf8;
+    }
+
+    .pf-tag {
+      margin-top: 8px;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    .pf-social {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .pf-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+      background: #0b1220;
+      color: #cbd5e1;
+      transition: all 0.15s;
+    }
+
+    .pf-social a:hover {
+      background: #38bdf8;
+      border-color: #38bdf8;
+      color: #0b1220;
+    }
+
+    .pf-cols {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .pf-col h5 {
+      color: #e2e8f0;
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .pf-col ul {
+      list-style: none;
+    }
+
+    .pf-col li {
+      margin: 8px 0;
+    }
+
+    .pf-col a {
+      color: #94a3b8;
+    }
+
+    .pf-col a:hover {
+      color: #e2e8f0;
+    }
+
+    .pf-bottom {
+      border-top: 1px solid #1e293b;
+      background: #0b1220;
+    }
+
+    .pf-bottom-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: #8893a7;
+      font-size: 13px;
+    }
+
+    .pf-links {
+      display: flex;
+      gap: 10px;
+    }
+
+    .pf-links a {
+      color: #94a3b8;
+    }
+
+    .pf-links a:hover {
+      color: #e2e8f0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1100px) {
+      .pf-wrap {
+        grid-template-columns: 1fr;
+      }
+      .pf-cols {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 992px) {
+      .wc-nav {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: inline-block;
+      }
+      .article-title {
+        font-size: 36px;
+      }
+      .pf-cols {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .article-title {
+        font-size: 32px;
+      }
+      .article-hero-image {
+        height: 250px;
+      }
+      .article-content {
+        font-size: 17px;
+      }
+      .article-content h2 {
+        font-size: 26px;
+      }
+      .article-content h3 {
+        font-size: 22px;
+      }
+      .article-meta {
+        gap: 15px;
+      }
+      .article-navigation {
+        flex-direction: column;
+        gap: 30px;
+      }
+      .nav-next {
+        text-align: left;
+      }
+      .pf-cols {
+        grid-template-columns: 1fr;
+      }
+      .image-format-table {
+        display: block;
+        overflow-x: auto;
+      }
+      .optimization-step {
+        padding: 25px 20px;
+      }
+      .file-size-comparison {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .article-title {
+        font-size: 28px;
+      }
+      .cta-box {
+        padding: 30px 20px;
+      }
+      .cta-box h3 {
+        font-size: 24px;
+      }
+    }
+
+    /* Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header - WordCalculator Style -->
+  <header class="wc-header">
+    <div class="wc-wrap">
+      <a class="wc-logo" href="https://wordcalculator.net" aria-label="WordCalculator Home">
+        <span class="wc-slab slab-w">W</span>
+        <span class="wc-slab slab-o">O</span>
+        <span class="wc-slab slab-r">R</span>
+        <span class="wc-slab slab-d">D</span>
+        <span class="wc-brand-text">
+          Calculator
+          <small class="wc-tagline">Every Word Counts</small>
+        </span>
+      </a>
+
+      <nav class="wc-nav" aria-label="Primary Navigation">
+        <a href="https://wordcalculator.net" class="wc-link">Home</a>
+        <a href="blog.html" class="wc-link active">Blog</a>
+        <a href="tools.html" class="wc-link">Tools</a>
+        <a href="about.html" class="wc-link">About Us</a>
+        <a href="signin.html" class="wc-link">Sign In</a>  
+      </nav>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+      <div class="mobile-nav-header">
+        <a class="wc-logo" href="https://wordcalculator.net">
+          <span class="wc-slab slab-w">W</span>
+          <span class="wc-slab slab-o">O</span>
+          <span class="wc-slab slab-r">R</span>
+          <span class="wc-slab slab-d">D</span>
+          <span class="wc-brand-text">Calculator</span>
+        </a>
+        <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="https://wordcalculator.net" class="mobile-link">Home</a>
+        <a href="blog.html" class="mobile-link active">Blog</a>
+        <a href="tools.html" class="mobile-link">Tools</a>
+        <a href="about.html" class="mobile-link">About Us</a>
+        <a href="signin.html" class="mobile-link">Sign In</a>
+      </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="crumb-wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="https://wordcalculator.net">Home</a>
+      <span class="crumb-separator">/</span>
+      <a href="blog.html">Blog</a>
+      <span class="crumb-separator">/</span>
+      <span class="crumb-current">Image Optimization Guide</span>
+    </nav>
+  </div>
+
+  <!-- Main Article Content -->
+  <main class="article-container">
+    <article class="article-content-wrapper">
+      <header class="article-header">
+        <span class="article-category">Image & File Optimization</span>
+        <h1 class="article-title">How Proper Image Optimization Can Improve Your Page Speed</h1>
+        <div class="article-meta">
+          <div class="article-author">
+            <span class="article-author-img"></span>
+            <span>By <strong>David Kim</strong></span>
+          </div>
+          <div class="article-date">
+            <i class="far fa-calendar"></i> March 5, 2025
+          </div>
+          <div class="article-read-time">
+            <i class="far fa-clock"></i> 4 min read
+          </div>
+        </div>
+      </header>
+
+      <div class="article-hero-image">
+        <img src="image-optimization-and-page-speed-analysis.jpg" alt="Image Optimization and Page Speed Analysis">
+      </div>
+
+      <div class="article-content">
+        <p>Images account for more than 50% of the average webpage's total size. On content-rich sites like blogs, e-commerce stores, and portfolios, this percentage can exceed 80%. Unoptimized images are the single biggest cause of slow page loading times, which directly impacts user experience, Core Web Vitals scores, and ultimately, your search rankings.</p>
+        <p>The good news? Proper image optimization can reduce file sizes by 60-80% without noticeable quality loss. This guide will show you exactly how image optimization works, why it matters for page speed, and how to implement it using completely free tools.</p>
+
+        <div class="content-warning">
+          <p><strong>Critical Impact:</strong> A 1-second delay in page load time can reduce conversions by 7%, decrease page views by 11%, and negatively affect customer satisfaction by 16%.</p>
+        </div>
+
+        <h2>The Direct Connection: Images → Page Speed → SEO</h2>
+        <p>Google's Page Experience update made Core Web Vitals official ranking factors. Images directly affect all three Core Web Vitals metrics:</p>
+        
+        <div class="optimization-step">
+          <h4>1. Largest Contentful Paint (LCP)</h4>
+          <p>LCP measures loading performance. The largest image on your page is often the LCP element. If that image is unoptimized, your LCP score suffers.</p>
+          <div class="file-size-comparison">
+            <h5>Real-World Impact:</h5>
+            <p>A typical hero image on a blog:</p>
+            <div class="comparison-bar">
+              <div class="comparison-fill fill-original" style="width: 100%"></div>
+            </div>
+            <div class="comparison-label">
+              <span>Original: 1.2MB JPEG</span>
+              <span>Loads in 3.8 seconds (Poor)</span>
+            </div>
+            
+            <div class="comparison-bar">
+              <div class="comparison-fill fill-optimized" style="width: 20%"></div>
+            </div>
+            <div class="comparison-label">
+              <span>Optimized: 240KB WebP</span>
+              <span>Loads in 0.9 seconds (Good)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="optimization-step">
+          <h4>2. Cumulative Layout Shift (CLS)</h4>
+          <p>CLS measures visual stability. Images without dimensions cause layout shifts as they load, pushing content down the page.</p>
+          <div class="content-tip">
+            <p><strong>Simple Fix:</strong> Always include <code>width</code> and <code>height</code> attributes on your <code>&lt;img&gt;</code> tags. This reserves space before the image loads, preventing layout shifts.</p>
+          </div>
+        </div>
+
+        <div class="optimization-step">
+          <h4>3. First Input Delay (FID)</h4>
+          <p>FID measures interactivity. Large images consume bandwidth and processing power, delaying JavaScript execution and user interactions.</p>
+          <p>When browsers spend time downloading and decoding large images, they have fewer resources available to respond to user clicks, taps, or keyboard inputs.</p>
+        </div>
+
+        <h2>The 5-Step Image Optimization Framework</h2>
+        <p>Follow this systematic approach to optimize every image on your website:</p>
+
+        <div class="optimization-step">
+          <h4>Step 1: Choose the Right Format</h4>
+          <p>Different image formats serve different purposes. Using the wrong format can double or triple file size unnecessarily.</p>
+          
+          <table class="image-format-table">
+            <thead>
+              <tr>
+                <th>Format</th>
+                <th>Best For</th>
+                <th>Compression</th>
+                <th>Browser Support</th>
+                <th>Recommendation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>WebP</strong></td>
+                <td>All modern websites</td>
+                <td>Lossless & Lossy</td>
+                <td>96%+ (modern browsers)</td>
+                <td class="format-recommended">★ Primary choice</td>
+              </tr>
+              <tr>
+                <td><strong>AVIF</strong></td>
+                <td>Next-generation sites</td>
+                <td>Superior compression</td>
+                <td>85%+ (growing)</td>
+                <td class="format-recommended">★ Future-proof</td>
+              </tr>
+              <tr>
+                <td><strong>JPEG</strong></td>
+                <td>Photographs</td>
+                <td>Lossy (good)</td>
+                <td>100%</td>
+                <td>Fallback for WebP</td>
+              </tr>
+              <tr>
+                <td><strong>PNG</strong></td>
+                <td>Graphics, logos, transparency</td>
+                <td>Lossless</td>
+                <td>100%</td>
+                <td>When transparency needed</td>
+              </tr>
+              <tr>
+                <td><strong>SVG</strong></td>
+                <td>Icons, logos, simple graphics</td>
+                <td>Vector (infinite scaling)</td>
+                <td>100%</td>
+                <td class="format-recommended">★ Icons & logos</td>
+              </tr>
+              <tr>
+                <td><strong>GIF</strong></td>
+                <td>Simple animations</td>
+                <td>Poor</td>
+                <td>100%</td>
+                <td class="format-avoid">Use video instead</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div class="content-note">
+            <p><strong>Modern Approach:</strong> Use WebP as your primary format with JPEG fallbacks for older browsers. The <code>&lt;picture&gt;</code> element makes this easy to implement.</p>
+          </div>
+        </div>
+
+        <div class="optimization-step">
+          <h4>Step 2: Resize to Actual Display Dimensions</h4>
+          <p>Uploading 4000px wide images that display at 800px wide wastes bandwidth and processing power.</p>
+          
+          <div class="tool-reference">
+            <h4><i class="fas fa-ruler"></i> Display vs. File Dimensions</h4>
+            <p><strong>Common Mistake:</strong> Uploading full camera resolution images (6000×4000px) that display at 1200×800px.</p>
+            <p><strong>Solution:</strong> Resize images to their maximum display size:</p>
+            <ul>
+              <li>Hero images: 1200-1600px width</li>
+              <li>Content images: 800-1200px width</li>
+              <li>Thumbnails: 300-400px width</li>
+              <li>Icons: Exact display size (24px, 32px, etc.)</li>
+            </ul>
+          </div>
+          
+          <p><strong>Quick Calculation:</strong> A 4000×3000px image (12 megapixels) resized to 1200×900px (1.08 megapixels) is <strong>11 times smaller</strong> in file size.</p>
+        </div>
+
+        <div class="optimization-step">
+          <h4>Step 3: Compress Intelligently</h4>
+          <p>Compression reduces file size by removing unnecessary data. There are two approaches:</p>
+          
+          <div class="file-size-comparison">
+            <h5>Compression Comparison (Same 1200px Image)</h5>
+            <div class="comparison-bar">
+              <div class="comparison-fill fill-original" style="width: 100%"></div>
+            </div>
+            <div class="comparison-label">
+              <span>Uncompressed: 1.8MB</span>
+              <span>Quality: 100%</span>
+            </div>
+            
+            <div class="comparison-bar">
+              <div class="comparison-fill" style="width: 45%; background: var(--yellow)"></div>
+            </div>
+            <div class="comparison-label">
+              <span>Lossless: 810KB</span>
+              <span>Quality: 100% (identical)</span>
+            </div>
+            
+            <div class="comparison-bar">
+              <div class="comparison-fill fill-optimized" style="width: 20%"></div>
+            </div>
+            <div class="comparison-label">
+              <span>Lossy (WebP 85%): 360KB</span>
+              <span>Quality: Visually identical</span>
+            </div>
+          </div>
+          
+          <div class="tool-reference">
+            <h4><i class="fas fa-compress-alt"></i> Free Compression Tools</h4>
+            <ul>
+              <li><strong>Squoosh.app</strong> (Google) - Browser-based, excellent control</li>
+              <li><strong>TinyPNG</strong> - Simple drag-and-drop, 500 images/month free</li>
+              <li><strong>ImageOptim</strong> (Mac) - Desktop app with batch processing</li>
+              <li><strong>GIMP</strong> - Open-source Photoshop alternative</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="optimization-step">
+          <h4>Step 4: Implement Modern Loading Techniques</h4>
+          <p>How you load images matters as much as how you optimize them.</p>
+          
+          <div class="tool-reference">
+            <h4><i class="fas fa-truck-loading"></i> Loading Strategies</h4>
+            <p><strong>1. Lazy Loading:</strong> Load images only when they enter the viewport</p>
+            <pre><code>&lt;img src="image.jpg" loading="lazy" alt="..."&gt;</code></pre>
+            
+            <p><strong>2. Responsive Images:</strong> Serve different sizes for different devices</p>
+            <pre><code>&lt;img srcset="small.jpg 400w, medium.jpg 800w, large.jpg 1200w"
+     sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
+     src="medium.jpg" alt="..."&gt;</code></pre>
+            
+            <p><strong>3. Content Delivery Network (CDN):</strong> Serve images from geographically close servers</p>
+          </div>
+        </div>
+
+        <div class="optimization-step">
+          <h4>Step 5: Add Proper Image SEO Attributes</h4>
+          <p>Optimized images should also be search-engine friendly.</p>
+          
+          <div class="content-tip">
+            <p><strong>Complete Image Tag Example:</strong></p>
+            <pre><code>&lt;img src="optimized-image.webp"
+     srcset="optimized-image-400.webp 400w, 
+             optimized-image-800.webp 800w,
+             optimized-image-1200.webp 1200w"
+     sizes="(max-width: 600px) 400px, 
+            (max-width: 1200px) 800px, 
+            1200px"
+     width="1200"
+     height="800"
+     loading="lazy"
+     alt="Clear description with primary keyword"
+     title="Additional context for tooltip"
+     class="responsive-image"&gt;</code></pre>
+          </div>
+          
+          <p><strong>Alt Text Best Practices:</strong></p>
+          <ul>
+            <li>Describe the image content and function</li>
+            <li>Include primary keyword naturally</li>
+            <li>Keep it under 125 characters</li>
+            <li>Don't start with "Image of..." or "Picture of..."</li>
+          </ul>
+        </div>
+
+        <h2>Real-World Impact: Before and After Optimization</h2>
+        
+        <table class="image-format-table">
+          <thead>
+            <tr>
+              <th>Website Type</th>
+              <th>Before Optimization</th>
+              <th>After Optimization</th>
+              <th>Improvement</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>E-commerce Product Page</strong></td>
+              <td>12MB total, 4.8s load time</td>
+              <td>2.4MB total, 1.2s load time</td>
+              <td class="format-recommended">80% faster</td>
+            </tr>
+            <tr>
+              <td><strong>Blog Article (10 images)</strong></td>
+              <td>6.5MB total, 3.2s load time</td>
+              <td>1.3MB total, 0.9s load time</td>
+              <td class="format-recommended">72% smaller</td>
+            </tr>
+            <tr>
+              <td><strong>Portfolio Gallery</strong></td>
+              <td>18MB total, 7.1s load time</td>
+              <td>3.6MB total, 1.8s load time</td>
+              <td class="format-recommended">75% reduction</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <blockquote>
+          "Optimizing images is the single most effective speed optimization for most websites. You can achieve 70-80% of possible performance gains just by fixing images."
+        </blockquote>
+
+        <div class="cta-box">
+          <h3>Need Help With Content Optimization?</h3>
+          <p>While image optimization handles visual elements, text content needs optimization too. Use our free tools to ensure your written content performs as well as your images.</p>
+          <a href="https://wordcalculator.net/text-analyzer.html" class="newsletter-btn" style="margin-top: 20px; display: inline-block;">
+            Analyze Your Content Now <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <h2>Maintaining Image Optimization Over Time</h2>
+        <p>Image optimization isn't a one-time task. Implement these ongoing practices:</p>
+        
+        <div class="optimization-step">
+          <h4>Automated Optimization Workflow</h4>
+          <ol>
+            <li><strong>Pre-upload:</strong> Resize and compress images before uploading to your CMS</li>
+            <li><strong>CMS Plugins:</strong> Use optimization plugins (like Smush for WordPress) for automatic compression</li>
+            <li><strong>CDN Optimization:</strong> Implement a CDN with automatic image optimization (Cloudinary, Imgix, or Cloudflare Images)</li>
+            <li><strong>Regular Audits:</strong> Use Google PageSpeed Insights monthly to catch new unoptimized images</li>
+          </ol>
+        </div>
+
+        <div class="content-warning">
+          <p><strong>Common Pitfall:</strong> Don't over-optimize. Extreme compression (below 60-70% quality for WebP/JPEG) creates visible artifacts. Test different quality settings and view images on various devices before finalizing.</p>
+        </div>
+
+        <h2>Conclusion: The Compounding Benefits of Image Optimization</h2>
+        <p>Proper image optimization creates a virtuous cycle of improvements:</p>
+        <ol>
+          <li><strong>Faster loading</strong> improves user experience and reduces bounce rates</li>
+          <li><strong>Better Core Web Vitals</strong> boost search rankings</li>
+          <li><strong>Reduced bandwidth</strong> lowers hosting costs (especially important for high-traffic sites)</li>
+          <li><strong>Improved accessibility</strong> through proper alt text benefits all users</li>
+          <li><strong>Enhanced mobile performance</strong> captures the growing mobile audience</li>
+        </ol>
+        <p>Start today by auditing your most important pages using Google PageSpeed Insights. Identify the largest images, optimize them using the 5-step framework, and measure the improvements. The process becomes faster with practice, and the benefits compound over time.</p>
+        <p>Remember: In the race for better page speed, image optimization isn't just one tactic—it's often the deciding factor between a fast, successful website and a slow, struggling one.</p>
+
+        <div class="article-tags">
+          <a href="blog.html?tag=image-seo" class="article-tag">Image SEO</a>
+          <a href="blog.html?tag=page-speed" class="article-tag">Page Speed</a>
+          <a href="blog.html?tag=web-performance" class="article-tag">Web Performance</a>
+          <a href="blog.html?tag=core-web-vitals" class="article-tag">Core Web Vitals</a>
+          <a href="blog.html?tag=wordcalculator" class="article-tag">WordCalculator</a>
+          <a href="blog.html?tag=optimization" class="article-tag">Optimization</a>
+        </div>
+      </div>
+
+      <div class="article-navigation">
+        <div class="nav-prev">
+          <div class="nav-label"><i class="fas fa-arrow-left"></i> Previous Article</div>
+          <a href="technical-seo-checks-free.html" class="nav-title">Essential Technical SEO Checks You Can Do for Free</a>
+        </div>
+        <div class="nav-next">
+          <div class="nav-label">Next Article <i class="fas fa-arrow-right"></i></div>
+          <a href="seo-content-optimization-guide.html" class="nav-title">How to Use WordCalculator Tools for Advanced SEO Content Optimization</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer - WordCalculator Style -->
+  <footer class="pro-footer">
+    <div class="pf-wrap">
+      <div class="pf-brand">
+        <div class="pf-logo">
+          <span class="wc-slab slab-w">W</span>
+          <span class="wc-slab slab-o">O</span>
+          <span class="wc-slab slab-r">R</span>
+          <span class="wc-slab slab-d">D</span>
+          <div class="pf-brand-text">
+            WordCalculator<span>.net</span>
+          </div>
+        </div>
+        <p class="pf-tag">A focused, distraction-free toolkit for precise writing and SEO.</p>
+        <div class="pf-social">
+          <a href="https://facebook.com/wordcalculator" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/wordcalculator" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://linkedin.com/company/wordcalculator" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://youtube.com/@wordcalculator" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="pf-cols">
+        <div class="pf-col">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="https://wordcalculator.net">Editor</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="grammar-spell-checker.html">Grammar Check</a></li>
+            <li><a href="seo-keyword-ideas.html">SEO Keyword Ideas</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="guides.html">SEO Tips & Guides</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="bug-report.html">Report a Bug</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html">Cookie Policy</a></li>
+            <li><a href="security.html">Security</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pf-bottom">
+      <div class="pf-bottom-wrap">
+        <div>© <span id="pf-year">2025</span> WordCalculator.net — All rights reserved.</div>
+        <div class="pf-links">
+          <a href="sitemap.html">Sitemap</a>
+          <a href="status.html">Status</a>
+          <a href="accessibility.html">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // DOM Elements
+    const elements = {
+      mobileMenuBtn: document.getElementById('mobileMenuBtn'),
+      mobileNav: document.getElementById('mobileNav'),
+      mobileCloseBtn: document.getElementById('mobileCloseBtn'),
+      mobileOverlay: document.getElementById('mobileOverlay'),
+      pfYear: document.getElementById('pf-year')
+    };
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      initMobileNavigation();
+      initCurrentYear();
+    });
+
+    // Mobile Navigation
+    function initMobileNavigation() {
+      if (!elements.mobileMenuBtn) return;
+
+      elements.mobileMenuBtn.addEventListener('click', () => {
+        elements.mobileNav.classList.add('active');
+        elements.mobileOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+
+      elements.mobileCloseBtn.addEventListener('click', closeMobileNav);
+      elements.mobileOverlay.addEventListener('click', closeMobileNav);
+
+      function closeMobileNav() {
+        elements.mobileNav.classList.remove('active');
+        elements.mobileOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Initialize Current Year
+    function initCurrentYear() {
+      if (elements.pfYear) {
+        elements.pfYear.textContent = new Date().getFullYear();
+      }
+    }
+  </script>
+</body>
+</html>

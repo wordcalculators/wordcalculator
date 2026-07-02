@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - WordCalculator</title>
+    <link rel="canonical" href="https://wordcalculator.net/dashboard.html" />
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Base Styles - Match your tools.css structure */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --blue: #3f82bd;
+            --topbar: #d9edf7;
+            --text: #1f2937;
+            --muted: #6b7280;
+            --border: #e5e7eb;
+            --ok: #16a34a;
+            --warn: #f59e0b;
+            --err: #e11d48;
+            --primary: #2563eb;
+            --bg: #f7f8fb;
+            --card: #ffffff;
+            --shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.08);
+        }
+
+        body {
+            font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Top Bar (Dashboard Header) */
+        .dashboard-topbar {
+            background: var(--topbar);
+            padding: 12px 24px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dashboard-info h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+
+        .dashboard-info p {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .user-controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .user-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .user-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .user-name {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .user-status {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .premium-badge {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .logout-btn {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: var(--text);
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logout-btn:hover {
+            background: #f3f4f6;
+            border-color: var(--primary);
+        }
+
+        /* Main Dashboard Layout */
+        .dashboard-container {
+            display: flex;
+            min-height: calc(100vh - 80px);
+        }
+
+        /* Left Sidebar - Categories */
+        .dashboard-sidebar {
+            width: 250px;
+            background: var(--card);
+            border-right: 1px solid var(--border);
+            padding: 24px;
+            overflow-y: auto;
+        }
+
+        .category-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+
+        .category-list {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .category-item {
+            padding: 10px 12px;
+            margin-bottom: 6px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text);
+        }
+
+        .category-item:hover {
+            background: #f3f4f6;
+        }
+
+        .category-item.active {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+
+        .category-item i {
+            font-size: 16px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Active Resources Section */
+        .active-resources {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        .resource-item {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .resource-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: #e0f2fe;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 20px;
+        }
+
+        .resource-info h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .resource-info p {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        /* Main Content Area */
+        .dashboard-main {
+            flex: 1;
+            padding: 24px;
+            overflow-y: auto;
+        }
+
+        /* Search Bar */
+        .tools-search-container {
+            margin-bottom: 24px;
+        }
+
+        .tools-search {
+            position: relative;
+            max-width: 400px;
+        }
+
+        .tools-search input {
+            width: 100%;
+            padding: 12px 16px 12px 40px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+            background: var(--card);
+            color: var(--text);
+        }
+
+        .tools-search input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .tools-search i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+        }
+
+        /* Tools Grid */
+        .tools-grid-section {
+            margin-top: 20px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .section-header h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .tools-count {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        /* Tool Card - Match your tools.css style */
+        .tool-card {
+            background: var(--card);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            padding: 20px;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+            border-color: var(--primary);
+        }
+
+        .tool-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .tool-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e0f2fe;
+            color: var(--primary);
+            font-size: 24px;
+        }
+
+        .tool-badge {
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        .badge-free {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #22c55e;
+        }
+
+        .badge-premium {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .badge-popular {
+            background: #fef3c7;
+            color: #92400e;
+            border: 1px solid #facc15;
+        }
+
+        .tool-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .tool-description {
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .tool-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .tool-category {
+            background: #f3f4f6;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        /* Empty State */
+        .tools-empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--muted);
+        }
+
+        .tools-empty-state i {
+            font-size: 48px;
+            margin-bottom: 16px;
+            opacity: 0.5;
+        }
+
+        /* Loading State */
+        .loading-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            font-size: 16px;
+            color: var(--muted);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .dashboard-container {
+                flex-direction: column;
+            }
+
+            .dashboard-sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                padding: 16px;
+            }
+
+            .category-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .category-item {
+                flex: 1;
+                min-width: 120px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .tools-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+
+            .dashboard-topbar {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .user-controls {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar (Dashboard Header) -->
+    <div class="dashboard-topbar">
+        <div class="dashboard-info">
+            <h1>Premium Dashboard</h1>
+            <p>Access all your premium tools in one place</p>
+        </div>
+        <div class="user-controls">
+            <div class="user-profile">
+                <div class="user-avatar" id="userAvatar">U</div>
+                <div class="user-details">
+                    <div class="user-name" id="userName">User Name</div>
+                    <div class="user-status">
+                        <span class="premium-badge">Premium Member</span>
+                    </div>
+                </div>
+            </div>
+            <button class="logout-btn" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Dashboard Layout -->
+    <div class="dashboard-container">
+        <!-- Left Sidebar - Categories -->
+        <div class="dashboard-sidebar">
+            <h3 class="category-title">Categories</h3>
+            <ul class="category-list">
+                <li class="category-item active" data-category="all">
+                    <i class="fas fa-layer-group"></i> All Tools
+                </li>
+                <li class="category-item" data-category="calculator">
+                    <i class="fas fa-calculator"></i> Calculators
+                </li>
+                <li class="category-item" data-category="converter">
+                    <i class="fas fa-arrows-rotate"></i> Converters
+                </li>
+                <li class="category-item" data-category="media">
+                    <i class="fas fa-image"></i> Image Tools
+                </li>
+                <li class="category-item" data-category="text">
+                    <i class="fas fa-font"></i> Text & Writing
+                </li>
+                <li class="category-item" data-category="seo">
+                    <i class="fas fa-chart-line"></i> SEO & Content
+                </li>
+                <li class="category-item" data-category="productivity">
+                    <i class="fas fa-clock"></i> Productivity
+                </li>
+                <li class="category-item" data-category="finance">
+                    <i class="fas fa-coins"></i> Finance
+                </li>
+            </ul>
+
+            <!-- Active Resources Section -->
+            <div class="active-resources">
+                <h3 class="category-title">Active Resources</h3>
+                <div class="resource-item">
+                    <div class="resource-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="resource-info">
+                        <h4>All in One Package</h4>
+                        <p>Active until 03/16/26</p>
+                    </div>
+                </div>
+                <div class="resource-item">
+                    <div class="resource-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="resource-info">
+                        <h4>SSV: Truck Access</h4>
+                        <p>Premium Access</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="dashboard-main">
+            <!-- Search Bar -->
+            <div class="tools-search-container">
+                <div class="tools-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="toolSearchInput" placeholder="Search Any Tool...">
+                </div>
+            </div>
+
+            <!-- Tools Grid Section -->
+            <div class="tools-grid-section">
+                <div class="section-header">
+                    <h2>Available Tools</h2>
+                    <div class="tools-count" id="toolsCount">30 tools</div>
+                </div>
+
+                <div class="tools-grid" id="toolsGrid">
+                    <!-- Loading state -->
+                    <div class="loading-container" id="loadingMessage">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <span style="margin-left: 10px;">Loading tools...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Firebase Configuration - YOUR ACTUAL CONFIG
+        const firebaseConfig = {
+            apiKey: "AIzaSyDY9hE_5GHs33j1uV884r7bg6LzoAvGTYY",
+            authDomain: "wordcalculatordb.firebaseapp.com",
+            projectId: "wordcalculatordb",
+            storageBucket: "wordcalculatordb.firebasestorage.app",
+            messagingSenderId: "663973180006",
+            appId: "1:663973180006:web:6936d7cfa3aea9ff14b3a7",
+            measurementId: "G-5G0FGRQL35"
+        };
+
+        // Initialize Firebase
+        if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+        }
+        const auth = firebase.auth();
+
+        // Prevent multiple redirects
+        let redirectAttempted = false;
+
+        // Tools Data - All your tools from tools.html
+        const toolsData = [
+            {
+                id: 1,
+                name: "Word & Character Counter",
+                description: "Real-time counts, readability, keyword density, and grammar hints.",
+                icon: "fas fa-text-width",
+                category: "text",
+                page: "index.html",
+                premium: false,
+                badge: "popular"
+            },
+            {
+                id: 2,
+                name: "Age Calculator",
+                description: "Calculate exact age from date of birth in years, months, and days.",
+                icon: "fas fa-user-clock",
+                category: "calculator",
+                page: "age-calculator.html",
+                premium: false,
+                badge: "popular"
+            },
+            {
+                id: 3,
+                name: "BMI Calculator",
+                description: "Find your Body Mass Index (BMI) and weight category.",
+                icon: "fas fa-heartbeat",
+                category: "calculator",
+                page: "bmi-calculator.html",
+                premium: false
+            },
+            {
+                id: 4,
+                name: "Calorie Calculator",
+                description: "Estimate daily calorie needs (TDEE) using activity multipliers.",
+                icon: "fas fa-fire-alt",
+                category: "calculator",
+                page: "calorie-calculator.html",
+                premium: true
+            },
+            {
+                id: 5,
+                name: "Loan & EMI Calculator",
+                description: "Compute EMI, interest, and amortization schedule for loans.",
+                icon: "fas fa-coins",
+                category: "finance",
+                page: "loan-emi-calculator.html",
+                premium: true
+            },
+            {
+                id: 6,
+                name: "Length & Distance Converter",
+                description: "Convert between cm, inch, feet, meter, and kilometers.",
+                icon: "fas fa-ruler-combined",
+                category: "converter",
+                page: "length-distance-converter.html",
+                premium: false,
+                badge: "popular"
+            },
+            {
+                id: 7,
+                name: "Image Compressor",
+                description: "Compress JPG, PNG, and WebP images in your browser.",
+                icon: "fas fa-compress",
+                category: "media",
+                page: "image-compressor.html",
+                premium: false,
+                badge: "popular"
+            },
+            {
+                id: 8,
+                name: "Grammar & Spell Checker",
+                description: "Detect spelling, grammar, and style issues.",
+                icon: "fas fa-spell-check",
+                category: "text",
+                page: "grammar-spell-checker.html",
+                premium: true
+            },
+            {
+                id: 9,
+                name: "Keyword Density Analyzer",
+                description: "Analyze keyword frequency with density suggestions.",
+                icon: "fas fa-percentage",
+                category: "seo",
+                page: "keyword-density-analyzer.html",
+                premium: true
+            },
+            {
+                id: 10,
+                name: "Focus Timer (Pomodoro)",
+                description: "Run structured focus sessions with short breaks.",
+                icon: "fas fa-hourglass-start",
+                category: "productivity",
+                page: "focus-timer.html",
+                premium: false
+            },
+            {
+                id: 11,
+                name: "Reading Time Calculator",
+                description: "Estimate reading time for articles and blog posts.",
+                icon: "fas fa-book-reader",
+                category: "text",
+                page: "reading-time-calculator.html",
+                premium: false
+            },
+            {
+                id: 12,
+                name: "Typing Speed Test",
+                description: "Measure typing speed and accuracy with WPM metrics.",
+                icon: "fas fa-keyboard",
+                category: "productivity",
+                page: "typing-speed-test.html",
+                premium: false
+            },
+            {
+                id: 13,
+                name: "Case Converter",
+                description: "Convert text between uppercase, lowercase, and title case.",
+                icon: "fas fa-text-height",
+                category: "text",
+                page: "case-converter.html",
+                premium: false
+            },
+            {
+                id: 14,
+                name: "PNG to JPG Converter",
+                description: "Convert PNG images to JPG/JPEG format.",
+                icon: "fas fa-file-image",
+                category: "media",
+                page: "png-to-jpg-converter.html",
+                premium: false
+            },
+            {
+                id: 15,
+                name: "JPG to PNG Converter",
+                description: "Convert JPG/JPEG images to PNG format.",
+                icon: "fas fa-file-image",
+                category: "media",
+                page: "jpg-to-png-converter.html",
+                premium: false
+            },
+            {
+                id: 16,
+                name: "Image Resizer",
+                description: "Resize photos to exact width and height or by percentage.",
+                icon: "fas fa-expand-arrows-alt",
+                category: "media",
+                page: "image-resizer.html",
+                premium: false
+            },
+            {
+                id: 17,
+                name: "Temperature Converter",
+                description: "Convert between Celsius, Fahrenheit, and Kelvin.",
+                icon: "fas fa-temperature-half",
+                category: "converter",
+                page: "temperature-converter.html",
+                premium: false
+            },
+            {
+                id: 18,
+                name: "Area Converter",
+                description: "Convert square feet, square meters, acres, and hectares.",
+                icon: "fas fa-vector-square",
+                category: "converter",
+                page: "area-converter.html",
+                premium: false
+            },
+            {
+                id: 19,
+                name: "Speed Converter",
+                description: "Convert speed between km/h, mph, and m/s.",
+                icon: "fas fa-tachometer-alt",
+                category: "converter",
+                page: "speed-converter.html",
+                premium: false
+            },
+            {
+                id: 20,
+                name: "Data Size Converter",
+                description: "Convert bytes, KB, MB, GB, and TB.",
+                icon: "fas fa-database",
+                category: "converter",
+                page: "data-size-converter.html",
+                premium: false
+            },
+            {
+                id: 21,
+                name: "Interest Calculator",
+                description: "Compare simple vs compound interest and visualize growth.",
+                icon: "fas fa-chart-pie",
+                category: "finance",
+                page: "interest-calculator.html",
+                premium: false
+            },
+            {
+                id: 22,
+                name: "Writing Goal Tracker",
+                description: "Track daily word targets, streaks, and long-term progress.",
+                icon: "fas fa-bullseye",
+                category: "productivity",
+                page: "writing-goal-tracker.html",
+                premium: false
+            },
+            {
+                id: 23,
+                name: "Title & Meta Preview",
+                description: "Preview how titles and meta descriptions look in search results.",
+                icon: "fas fa-heading",
+                category: "seo",
+                page: "title-meta-preview.html",
+                premium: true
+            },
+            {
+                id: 24,
+                name: "SEO Keyword Ideas",
+                description: "Generate related keyword ideas and variations.",
+                icon: "fas fa-lightbulb",
+                category: "seo",
+                page: "seo-keyword-ideas.html",
+                premium: true
+            },
+            {
+                id: 25,
+                name: "Plagiarism Checker",
+                description: "Scan for duplicate phrases and potential plagiarism.",
+                icon: "fas fa-fingerprint",
+                category: "seo",
+                page: "plagiarism-checker.html",
+                premium: true
+            },
+            {
+                id: 26,
+                name: "Million & Billion Converter",
+                description: "Convert between thousands, millions, billions, and trillions.",
+                icon: "fas fa-sort-numeric-up-alt",
+                category: "converter",
+                page: "million-billion-converter.html",
+                premium: false
+            },
+            {
+                id: 27,
+                name: "Writing Journal",
+                description: "Keep quick notes and reflections about your writing sessions.",
+                icon: "fas fa-pen-nib",
+                category: "productivity",
+                page: "writing-journal.html",
+                premium: false
+            },
+            {
+                id: 28,
+                name: "Daily Writing Prompt",
+                description: "Get a fresh writing prompt every day to beat writer's block.",
+                icon: "fas fa-lightbulb",
+                category: "productivity",
+                page: "writing-prompt-generator.html",
+                premium: false
+            },
+            {
+                id: 29,
+                name: "Session History",
+                description: "Keep a log of recent documents, stats, and edits.",
+                icon: "fas fa-history",
+                category: "productivity",
+                page: "session-history.html",
+                premium: false
+            },
+            {
+                id: 30,
+                name: "Long-Tail Keyword Finder",
+                description: "Discover long-tail keyword phrases for blog posts.",
+                icon: "fas fa-stream",
+                category: "seo",
+                page: "long-tail-keyword-finder.html",
+                premium: true
+            }
+        ];
+
+        // DOM Elements
+        const userAvatar = document.getElementById('userAvatar');
+        const userName = document.getElementById('userName');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const toolSearchInput = document.getElementById('toolSearchInput');
+        const toolsGrid = document.getElementById('toolsGrid');
+        const toolsCount = document.getElementById('toolsCount');
+        const loadingMessage = document.getElementById('loadingMessage');
+        const categoryItems = document.querySelectorAll('.category-item');
+
+        // Check Authentication State - FIXED VERSION (NO INFINITE LOOP)
+        auth.onAuthStateChanged((user) => {
+            console.log('Dashboard: Auth state changed. User:', user ? user.email : 'No user');
+            
+            if (user) {
+                // User is logged in - CHECK EMAIL VERIFICATION
+                if (user.emailVerified) {
+                    // Email is verified - show dashboard
+                    console.log('Email verified, loading dashboard...');
+                    
+                    const displayName = user.displayName || user.email.split('@')[0];
+                    const initials = displayName.charAt(0).toUpperCase();
+                    
+                    userAvatar.textContent = initials;
+                    userName.textContent = displayName;
+                    
+                    // Load tools
+                    loadTools();
+                    
+                } else {
+                    // Email NOT verified - show message and redirect
+                    console.log('Email NOT verified, redirecting...');
+                    if (!redirectAttempted) {
+                        redirectAttempted = true;
+                        alert('Please verify your email before accessing the dashboard. Check your email for verification link.');
+                        auth.signOut().then(() => {
+                            setTimeout(() => {
+                                window.location.href = 'signin.html';
+                            }, 1000);
+                        });
+                    }
+                }
+                
+            } else {
+                // User is NOT logged in - redirect to signin
+                console.log('No user found, redirecting to signin...');
+                
+                if (!redirectAttempted) {
+                    redirectAttempted = true;
+                    
+                    // Check if we're already on signin page
+                    const currentPage = window.location.pathname;
+                    if (!currentPage.includes('signin.html')) {
+                        setTimeout(() => {
+                            window.location.href = 'signin.html';
+                        }, 500);
+                    }
+                }
+            }
+        });
+
+        // Load Tools Function
+        function loadTools(filteredTools = toolsData) {
+            loadingMessage.style.display = 'none';
+            toolsGrid.innerHTML = '';
+            
+            if (filteredTools.length === 0) {
+                toolsGrid.innerHTML = `
+                    <div class="tools-empty-state">
+                        <i class="fas fa-search"></i>
+                        <p>No tools found. Try a different search or category.</p>
+                    </div>
+                `;
+                toolsCount.textContent = '0 tools';
+                return;
+            }
+            
+            filteredTools.forEach(tool => {
+                const toolCard = document.createElement('a');
+                toolCard.href = tool.page;
+                toolCard.className = 'tool-card';
+                
+                let badgeHTML = '';
+                if (tool.badge === 'popular') {
+                    badgeHTML = '<span class="tool-badge badge-popular">Popular</span>';
+                }
+                
+                if (tool.premium) {
+                    badgeHTML = '<span class="tool-badge badge-premium">Premium</span>';
+                } else if (!badgeHTML) {
+                    badgeHTML = '<span class="tool-badge badge-free">Free</span>';
+                }
+                
+                toolCard.innerHTML = `
+                    <div class="tool-card-header">
+                        <div class="tool-icon">
+                            <i class="${tool.icon}"></i>
+                        </div>
+                        ${badgeHTML}
+                    </div>
+                    <h3>${tool.name}</h3>
+                    <p class="tool-description">${tool.description}</p>
+                    <div class="tool-meta">
+                        <span class="tool-category">${tool.category}</span>
+                        <span><i class="far fa-clock"></i> ${tool.premium ? 'Premium' : 'Free Access'}</span>
+                    </div>
+                `;
+                
+                toolsGrid.appendChild(toolCard);
+            });
+            
+            toolsCount.textContent = `${filteredTools.length} tools`;
+            
+            // Add animation to cards
+            setTimeout(() => {
+                const cards = document.querySelectorAll('.tool-card');
+                cards.forEach((card, index) => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, index * 50);
+                });
+            }, 100);
+        }
+
+        // Category Filter
+        categoryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Remove active class from all items
+                categoryItems.forEach(i => i.classList.remove('active'));
+                // Add active class to clicked item
+                item.classList.add('active');
+                
+                const category = item.getAttribute('data-category');
+                filterTools(category, toolSearchInput.value);
+            });
+        });
+
+        // Search Filter
+        toolSearchInput.addEventListener('input', () => {
+            const activeCategory = document.querySelector('.category-item.active');
+            const category = activeCategory ? activeCategory.getAttribute('data-category') : 'all';
+            filterTools(category, toolSearchInput.value);
+        });
+
+        // Filter Tools Function
+        function filterTools(category, searchTerm) {
+            let filteredTools = toolsData;
+            
+            // Filter by category
+            if (category !== 'all') {
+                filteredTools = filteredTools.filter(tool => tool.category === category);
+            }
+            
+            // Filter by search term
+            if (searchTerm) {
+                const term = searchTerm.toLowerCase();
+                filteredTools = filteredTools.filter(tool => 
+                    tool.name.toLowerCase().includes(term) || 
+                    tool.description.toLowerCase().includes(term) ||
+                    tool.category.toLowerCase().includes(term)
+                );
+            }
+            
+            loadTools(filteredTools);
+        }
+
+        // Logout Function
+        logoutBtn.addEventListener('click', () => {
+            if (confirm('Are you sure you want to logout?')) {
+                auth.signOut().then(() => {
+                    console.log('User logged out');
+                    window.location.href = 'signin.html';
+                }).catch((error) => {
+                    console.error('Logout error:', error);
+                    alert('Error during logout. Please try again.');
+                });
+            }
+        });
+
+        // Initial page load
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Dashboard loaded');
+            
+            // Show loading state initially
+            loadingMessage.style.display = 'flex';
+            
+            // Check immediate auth state
+            const currentUser = auth.currentUser;
+            console.log('Immediate currentUser check:', currentUser ? currentUser.email : 'No user');
+            
+            // If somehow no auth state change triggers, check after 2 seconds
+            setTimeout(() => {
+                if (!auth.currentUser && !redirectAttempted) {
+                    console.log('Fallback: No user after 2 seconds, redirecting...');
+                    redirectAttempted = true;
+                    window.location.href = 'signin.html';
+                }
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

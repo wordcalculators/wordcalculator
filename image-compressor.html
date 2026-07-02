@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ==================== ADVANCED SEO ==================== -->
+  <title>Image Compressor — Compress JPG, PNG & WebP Online (Free & Secure)</title>
+  <meta name="description" content="Free online image compressor with drag and drop. Compress JPG, PNG and WebP images, control quality with a slider and download single files or a ZIP of all compressed images. 100% browser based and secure." />
+  <meta name="keywords" content="image compressor, compress jpg, compress png, online image optimizer, reduce image size, image quality slider, bulk image compression, webp compressor" />
+  <meta name="author" content="WordCalculator.net" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#020617" />
+  <link rel="canonical" href="https://wordcalculator.net/image-compressor.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wordcalculator.net/image-compressor.html" />
+  <meta property="og:title" content="Image Compressor — Compress JPG, PNG & WebP Online" />
+  <meta property="og:description" content="Drag and drop up to 20 images and compress them in your browser. Adjustable quality slider, instant preview and bulk download as ZIP." />
+  <meta property="og:image" content="https://wordcalculator.net/images/image-compressor-og.jpg" />
+  <meta property="og:site_name" content="WordCalculator.net" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://wordcalculator.net/image-compressor.html" />
+  <meta name="twitter:title" content="Image Compressor — Compress JPG, PNG & WebP Online" />
+  <meta name="twitter:description" content="Simple, free and secure image compressor. Compress multiple images with quality control and download all as a ZIP." />
+  <meta name="twitter:image" content="https://wordcalculator.net/images/image-compressor-twitter.jpg" />
+  <meta name="twitter:creator" content="@wordcalculator" />
+
+  <!-- WebApplication schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Image Compressor",
+    "url": "https://wordcalculator.net/image-compressor.html",
+    "description": "Compress JPG, PNG and WebP images directly in your browser with adjustable quality and bulk ZIP download.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "featureList": [
+      "Client-side image compression",
+      "Drag and drop upload",
+      "Quality slider for each image",
+      "Bulk ZIP download",
+      "Support for JPG, PNG and WebP"
+    ],
+    "author": { "@type": "Organization", "name": "WordCalculator.net" }
+  }
+  </script>
+
+  <!-- FAQ schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is this image compressor safe to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. All compression happens directly in your browser. Your images are not uploaded to any external server, so you keep full control over your files."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which image formats are supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The tool is designed for JPG, PNG and WebP images. Other formats may be converted to JPG during compression to keep file sizes small."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will the compressed images lose quality?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Some loss of quality is normal when using lossy compression such as JPG or WebP. You can control the quality level with the slider and choose the smallest file size that still looks good for your project."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- ==================== /SEO ==================== -->
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- JSZip + FileSaver for bulk download -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --blue:#3f82bd;
+      --primary:#2563eb;
+      --primary-soft:#dbeafe;
+      --text:#111827;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --bg:#f7f8fb;
+      --card:#ffffff;
+    }
+    html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    body{
+      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+
+    /* ===== Header / Nav (same as other tools) ===== */
+    .wc-header{background:#020617;color:#fff;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+    .wc-wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding:10px 12px;
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+    .wc-logo{display:inline-flex;align-items:center;gap:8px}
+    .slab{
+      display:inline-flex;
+      width:24px;height:24px;
+      align-items:center;justify-content:center;
+      font-weight:800;font-size:14px;
+      border-radius:2px;color:#fff;
+    }
+    .slab-w{background:#1f2327}
+    .slab-o{background:#a7c1db;color:#1e2a3a}
+    .slab-r{background:#7d96ae}
+    .slab-d{background:#2f5d8a}
+    .wc-brand-text{
+      display:inline-flex;
+      flex-direction:column;
+      line-height:1.05;
+      font-size:19px;
+      font-weight:800;
+    }
+    .wc-brand-text small{font-size:10px;opacity:.95}
+    .wc-nav{
+      margin-left:10px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex:1;
+    }
+    .wc-link{
+      color:#f4f8fc;
+      font-weight:700;
+      font-size:14px;
+      padding:6px 10px;
+      border-radius:8px;
+      transition:.15s;
+      background:transparent;
+      border:0;
+      cursor:pointer;
+    }
+    .wc-link:hover{background:rgba(255,255,255,.14)}
+    .wc-signin-btn{
+      background:rgba(148,163,184,.18);
+      border:1px solid rgba(148,163,184,.5);
+    }
+    .wc-signin-btn:hover{
+      background:#38bdf8;
+      color:#020617;
+      border-color:#38bdf8;
+    }
+    .mobile-menu-btn{
+      margin-left:auto;
+      background:transparent;
+      border:0;
+      color:#fff;
+      font-size:20px;
+      display:none;
+      cursor:pointer;
+    }
+    .mobile-nav{
+      position:fixed;
+      top:0;right:-100%;
+      width:320px;height:100vh;
+      background:#1f2933;
+      box-shadow:-2px 0 10px rgba(0,0,0,.18);
+      transition:right .3s;
+      z-index:100;
+    }
+    .mobile-nav.active{right:0}
+    .mobile-overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.5);
+      display:none;
+      z-index:90;
+    }
+    .mobile-overlay.active{display:block}
+    .mobile-nav-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:16px;
+      border-bottom:1px solid #34495e;
+    }
+    .mobile-close-btn{
+      background:transparent;
+      border:0;
+      color:#fff;
+      font-size:20px;
+      cursor:pointer;
+    }
+    .mobile-nav-links{padding:16px}
+    .mobile-link{
+      display:block;
+      color:#ecf0f1;
+      padding:12px 0;
+      border-bottom:1px solid #34495e;
+      font-weight:700;
+      background:transparent;
+      border:0;
+      width:100%;
+      text-align:left;
+      cursor:pointer;
+    }
+
+    /* ===== Breadcrumb ===== */
+    .crumb-wrap{
+      max-width:1200px;
+      margin:8px auto 0;
+      padding:0 15px 4px;
+    }
+    .crumbs{font-size:13px;color:#111827}
+    .crumbs a{color:#2563eb}
+    .crumbs a:hover{text-decoration:underline}
+    .crumb-separator{margin:0 4px;color:#6b7280}
+    .crumb-current{font-weight:700}
+
+    /* ===== Main Layout ===== */
+    .page-main{
+      max-width:1200px;
+      margin:22px auto 40px;
+      padding:0 15px;
+      display:grid;
+      grid-template-columns:minmax(0,3fr) minmax(260px,1.25fr);
+      gap:20px;
+      align-items:flex-start;
+    }
+    .page-left{display:flex;flex-direction:column;gap:18px}
+    .page-top-grid{display:grid;grid-template-columns:1fr;gap:16px;align-items:stretch}
+    .card{
+      background:transparent;
+      border:none;
+      box-shadow:none;
+      padding:0;
+    }
+
+    /* ===== Image compressor card ===== */
+    .tool-shell{
+      border:1px solid #e2e8f0;
+      background:#f4f4f4;
+      padding:12px;
+      border-radius:12px;
+      box-shadow:0 10px 24px rgba(15,23,42,0.06);
+      overflow:hidden;
+    }
+    .tool-title-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin:-12px -12px 8px;
+      padding:8px 12px;
+      background:#0f172a;
+      color:#f9fafb;
+      border-bottom:1px solid #1f2937;
+    }
+    .tool-title{
+      font-size:18px;
+      font-weight:800;
+      font-family:Arial,Helvetica,sans-serif;
+    }
+    .tool-subtitle{
+      font-size:12px;
+      color:#e5e7eb;
+      margin-top:2px;
+    }
+
+    .compress-layout{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      margin-top:4px;
+    }
+
+    .upload-bar{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .upload-buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      align-items:center;
+    }
+
+    .btn{
+      border-radius:999px;
+      border:1px solid #2563eb;
+      background:#2563eb;
+      color:#f9fafb;
+      font-size:13px;
+      padding:7px 14px;
+      font-weight:600;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      box-shadow:0 4px 10px rgba(37,99,235,0.35);
+      transition:background .12s,transform .1s,box-shadow .12s;
+    }
+    .btn.secondary{
+      border-color:#cbd5e1;
+      background:#e5e7eb;
+      color:#111827;
+      box-shadow:none;
+    }
+    .btn.danger{
+      border-color:#f97373;
+      background:#fee2e2;
+      color:#b91c1c;
+      box-shadow:none;
+    }
+    .btn:disabled{
+      opacity:.55;
+      cursor:not-allowed;
+      box-shadow:none;
+      transform:none;
+    }
+    .btn:hover:not(:disabled){
+      transform:translateY(-1px);
+      box-shadow:0 6px 18px rgba(37,99,235,0.45);
+      background:#1d4ed8;
+    }
+    .btn.secondary:hover:not(:disabled){
+      background:#f9fafb;
+      box-shadow:0 3px 10px rgba(15,23,42,.15);
+      transform:translateY(-1px);
+    }
+    .btn.danger:hover:not(:disabled){
+      background:#fecaca;
+      box-shadow:0 3px 10px rgba(248,113,113,.35);
+      transform:translateY(-1px);
+    }
+
+    .upload-help{
+      font-size:12px;
+      color:#4b5563;
+    }
+
+    .drop-zone{
+      margin-top:4px;
+      border-radius:12px;
+      border:2px dashed #cbd5e1;
+      background:repeating-linear-gradient(
+        135deg,
+        #ffffff,
+        #ffffff 12px,
+        #f9fafb 12px,
+        #f9fafb 24px
+      );
+      padding:26px 14px;
+      text-align:center;
+      position:relative;
+      transition:border-color .16s,background-color .16s,box-shadow .16s;
+      cursor:pointer;
+    }
+    .drop-zone.dragover{
+      border-color:#2563eb;
+      background:#eff6ff;
+      box-shadow:0 0 0 1px rgba(37,99,235,.25);
+    }
+    .drop-zone-icon{
+      font-size:28px;
+      margin-bottom:4px;
+      color:#2563eb;
+    }
+    .drop-zone-title{
+      font-weight:700;
+      font-size:14px;
+    }
+    .drop-zone-sub{
+      font-size:12px;
+      color:#6b7280;
+      margin-top:2px;
+    }
+    .drop-zone input[type="file"]{
+      position:absolute;
+      inset:0;
+      opacity:0;
+      cursor:pointer;
+    }
+
+    .info-banner{
+      margin-top:6px;
+      padding:6px 10px;
+      border-radius:8px;
+      background:#ecfdf5;
+      border:1px solid #bbf7d0;
+      font-size:12px;
+      color:#166534;
+    }
+
+    /* Image list */
+    .image-list{
+      margin-top:6px;
+      border-radius:12px;
+      border:1px solid #e2e8f0;
+      background:#ffffff;
+      padding:10px;
+      max-height:420px;
+      overflow-y:auto;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .image-empty{
+      font-size:13px;
+      color:#6b7280;
+      text-align:center;
+      padding:10px 0;
+    }
+    .image-item{
+      display:grid;
+      grid-template-columns:72px minmax(0,1fr) auto;
+      gap:10px;
+      align-items:center;
+      padding:8px 6px;
+      border-radius:10px;
+      border:1px solid #e5e7eb;
+      background:#f9fafb;
+    }
+    .thumb{
+      width:64px;height:64px;
+      border-radius:8px;
+      object-fit:cover;
+      background:#e5e7eb;
+      border:1px solid #d1d5db;
+    }
+    .image-meta{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      font-size:12px;
+    }
+    .image-name{
+      font-weight:600;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .image-size-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      color:#4b5563;
+    }
+    .size-pill{
+      padding:2px 7px;
+      border-radius:999px;
+      background:#e5e7eb;
+      font-size:11px;
+    }
+    .saving-pill{
+      background:#dcfce7;
+      color:#166534;
+    }
+    .quality-row{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      margin-top:4px;
+    }
+    .quality-row label{
+      font-size:11px;
+      color:#6b7280;
+      white-space:nowrap;
+    }
+    .quality-row input[type="range"]{
+      flex:1;
+      accent-color:#2563eb;
+    }
+    .quality-value{
+      font-size:11px;
+      min-width:34px;
+      text-align:right;
+      color:#111827;
+    }
+    .image-actions{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+    .btn-sm{
+      padding:5px 10px;
+      font-size:12px;
+      border-radius:999px;
+      border:1px solid #d1d5db;
+      background:#ffffff;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:5px;
+      transition:background .12s,box-shadow .12s,transform .1s;
+    }
+    .btn-sm.primary{
+      border-color:#2563eb;
+      background:#2563eb;
+      color:#f9fafb;
+    }
+    .btn-sm:disabled{
+      opacity:.55;
+      cursor:not-allowed;
+    }
+    .btn-sm:hover:not(:disabled){
+      background:#f9fafb;
+      box-shadow:0 3px 8px rgba(15,23,42,.18);
+      transform:translateY(-1px);
+    }
+    .btn-sm.primary:hover:not(:disabled){
+      background:#1d4ed8;
+      box-shadow:0 4px 12px rgba(37,99,235,.45);
+    }
+
+    .tool-footer-note{
+      font-size:11px;
+      color:#6b7280;
+      margin-top:4px;
+    }
+
+    /* ===== Info / SEO blocks ===== */
+    .section-block{
+      background:var(--card);
+      border-radius:12px;
+      border:1px solid #e2e8f0;
+      padding:14px 16px 12px;
+      box-shadow:0 8px 20px rgba(15,23,42,.035);
+    }
+    .section-block h2{
+      font-size:18px;
+      font-weight:800;
+      margin-bottom:8px;
+      color:#0f172a;
+    }
+    .section-block h3{
+      font-size:16px;
+      font-weight:700;
+      margin-top:12px;
+      margin-bottom:6px;
+      color:#111827;
+    }
+    .section-block p{
+      font-size:13px;
+      color:#4b5563;
+      margin-bottom:8px;
+    }
+    .section-block ul{
+      padding-left:18px;
+      font-size:13px;
+      color:#4b5563;
+    }
+    .section-block ul li+li{margin-top:3px;}
+    .info-highlight{
+      padding:8px 10px;
+      border-radius:8px;
+      background:#eff6ff;
+      border:1px solid #bfdbfe;
+      font-size:13px;
+      color:#1d4ed8;
+      margin-bottom:8px;
+    }
+    .comparison-table{
+      width:100%;
+      border-collapse:collapse;
+      margin:10px 0 6px;
+      font-size:13px;
+    }
+    .comparison-table th,
+    .comparison-table td{
+      border:1px solid #e5e7eb;
+      padding:6px 8px;
+      text-align:center;
+    }
+    .comparison-table thead{
+      background:#f3f4f6;
+      font-weight:700;
+    }
+
+    /* ===== Sidebar ===== */
+    .page-sidebar{display:flex;flex-direction:column;gap:16px}
+    .sidebar-card{
+      background:var(--card);
+      border-radius:12px;
+      border:1px solid #e2e8f0;
+      padding:12px 12px 10px;
+      box-shadow:0 10px 24px rgba(15,23,42,.06);
+      font-size:13px;
+    }
+    .sidebar-title-bar{
+      margin:-12px -12px 8px;
+      padding:7px 10px;
+      background:#0f172a;
+      color:#f9fafb;
+      font-size:14px;
+      font-weight:800;
+      border-radius:12px 12px 0 0;
+      box-shadow:inset 0 -1px 0 rgba(148,163,184,.35);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+    }
+    .sidebar-group{margin-top:10px;}
+    .sidebar-group h4{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:0.06em;
+      color:#6b7280;
+      margin-bottom:3px;
+      font-weight:700;
+    }
+    .sidebar-links{list-style:none;font-size:13px}
+    .sidebar-links li+li{margin-top:3px}
+    .sidebar-links a{color:#1d4ed8}
+    .sidebar-links a:hover{text-decoration:underline}
+
+    /* Quick Search */
+    .tool-search{margin:6px 0 4px;}
+    .sidebar-search-input-wrapper{
+      position:relative;
+      display:flex;
+      align-items:center;
+      margin-top:4px;
+    }
+    .sidebar-search-icon{
+      position:absolute;
+      left:10px;
+      font-size:12px;
+      opacity:0.7;
+    }
+    .sidebar-search-input{
+      width:100%;
+      padding:8px 10px 8px 28px;
+      border-radius:8px;
+      border:1px solid #d5d9e0;
+      background-color:#f9fafb;
+      font-size:13px;
+      outline:none;
+      transition:border-color .15s ease,background-color .15s ease,box-shadow .15s ease;
+    }
+    .sidebar-search-input:focus{
+      border-color:#3f82bd;
+      background-color:#ffffff;
+      box-shadow:0 0 0 1px rgba(63,130,189,0.12);
+    }
+    .sidebar-search-suggestions{
+      list-style:none;
+      margin-top:8px;
+      padding:4px 0;
+      max-height:220px;
+      overflow-y:auto;
+      border-radius:10px;
+      border:1px solid #e3e7ee;
+      background-color:#ffffff;
+      box-shadow:0 8px 20px rgba(15,23,42,0.12);
+      display:none;
+    }
+    .sidebar-search-suggestions.visible{display:block;}
+    .sidebar-search-suggestions li{
+      font-size:13px;
+      padding:7px 10px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+    .sidebar-search-suggestions li + li{
+      border-top:1px solid #f1f3f8;
+    }
+    .sidebar-search-suggestions li span.tool-name{
+      flex:1;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .sidebar-search-suggestions li i{
+      font-size:11px;
+      opacity:0.7;
+    }
+    .sidebar-search-suggestions li:hover{
+      background-color:#f3f4f8;
+    }
+
+    /* ===== Footer ===== */
+    .pro-footer{background:#020617;color:#cbd5e1;margin-top:40px}
+    .pf-wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding:34px 15px;
+      display:grid;
+      grid-template-columns:320px 1fr;
+      gap:26px;
+    }
+    .pf-logo{display:flex;align-items:center;gap:10px}
+    .pf-brand-text{font-size:18px;font-weight:800;color:#e2e8f0}
+    .pf-brand-text span{color:#38bdf8}
+    .pf-tag{margin-top:8px;color:#94a3b8;font-size:13px}
+    .pf-social{display:flex;gap:10px;margin-top:10px}
+    .pf-social a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:34px;height:34px;
+      border:1px solid #1e293b;
+      border-radius:10px;
+      background:#0b1220;
+      color:#cbd5e1;
+      transition:background .15s,color .15s,border-color .15s,transform .15s,box-shadow .15s;
+    }
+    .pf-social a:hover{
+      background:#38bdf8;
+      border-color:#38bdf8;
+      color:#0b1220;
+      transform:translateY(-1px);
+      box-shadow:0 4px 12px rgba(56,189,248,.4);
+    }
+    .pf-cols{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+    .pf-col h5{
+      color:#e2e8f0;
+      font-weight:800;
+      font-size:14px;
+      margin-bottom:10px;
+    }
+    .pf-col ul{list-style:none}
+    .pf-col li{margin:8px 0}
+    .pf-col a{color:#94a3b8}
+    .pf-col a:hover{color:#e2e8f0}
+    .pf-bottom{border-top:1px solid #1e293b;background:#0b1220}
+    .pf-bottom-wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding:12px 15px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      color:#8893a7;
+      font-size:13px;
+    }
+    .pf-links{display:flex;gap:10px}
+    .pf-links a{color:#94a3b8}
+    .pf-links a:hover{color:#e2e8f0}
+
+    /* ===== Modal ===== */
+    .modal-overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(15,23,42,0.7);
+      display:none;
+      z-index:200;
+    }
+    .modal{
+      position:fixed;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      width:420px;
+      max-width:96vw;
+      background:#ffffff;
+      border:1px solid #e5e7eb;
+      border-radius:14px;
+      box-shadow:0 18px 40px rgba(15,23,42,0.35);
+      display:none;
+      z-index:210;
+    }
+    .modal-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:10px 12px;
+      border-bottom:1px solid #e5e7eb;
+    }
+    .modal-head h3{font-size:15px;font-weight:800;color:#111827}
+    .modal-close{
+      background:#f3f4f6;
+      border:1px solid #e5e7eb;
+      border-radius:8px;
+      padding:6px 8px;
+      cursor:pointer;
+    }
+    .modal-body{padding:12px;font-size:13px;color:#4b5563}
+
+    /* ===== Responsive ===== */
+    @media (max-width:1100px){
+      .pf-wrap{grid-template-columns:1fr;}
+      .pf-cols{grid-template-columns:repeat(2,1fr);}
+      .page-main{grid-template-columns:minmax(0,1.9fr) minmax(260px,1.2fr);}
+    }
+    @media (max-width:992px){
+      .wc-nav{display:none;}
+      .mobile-menu-btn{display:inline-block;}
+      .page-main{grid-template-columns:1fr;}
+      .page-sidebar{order:-1;}
+    }
+    @media (max-width:640px){
+      .pf-cols{grid-template-columns:1fr;}
+      .image-item{
+        grid-template-columns:60px minmax(0,1fr);
+        grid-template-rows:auto auto;
+      }
+      .image-actions{
+        flex-direction:row;
+        justify-content:flex-start;
+        grid-column:1 / -1;
+      }
+    }
+    @media (prefers-reduced-motion:reduce){
+      *{animation:none !important;transition:none !important;scroll-behavior:auto !important;}
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="wc-header">
+    <div class="wc-wrap">
+      <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+        <span class="slab slab-w">W</span>
+        <span class="slab slab-o">O</span>
+        <span class="slab slab-r">R</span>
+        <span class="slab slab-d">D</span>
+        <span class="wc-brand-text">
+          Calculator
+          <small class="wc-tagline">Every Word Counts</small>
+        </span>
+      </a>
+
+      <nav class="wc-nav" aria-label="Primary">
+        <a href="https://wordcalculator.net" class="wc-link">Home</a>
+        <a href="blog.html" class="wc-link">Blog</a>
+        <a href="tools.html" class="wc-link">Tools</a>
+        <a href="about.html" class="wc-link">About Us</a>
+		<a href="signin.html" class="wc-link">Sign In</a>
+      </nav>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <div class="mobile-nav-header">
+        <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <span class="wc-brand-text">Calculator</span>
+        </a>
+        <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="https://wordcalculator.net" class="nav-link mobile-link">Home</a>
+        <a href="blog.html" class="nav-link mobile-link">Blog</a>
+        <a href="tools.html" class="nav-link mobile-link">Tools</a>
+        <a href="about.html" class="nav-link mobile-link">About Us</a>
+		<a href="signin.html" class="nav-link mobile-link">Sign In</a>
+      </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+  </header>
+
+  <!-- ===== Breadcrumbs ===== -->
+  <div class="crumb-wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="https://wordcalculator.net">Home</a>
+      <span class="crumb-separator">/</span>
+      <a href="tools.html">Tools</a>
+      <span class="crumb-separator">/</span>
+      <span class="crumb-current">Image Compressor</span>
+    </nav>
+  </div>
+
+  <!-- ==================== MAIN ==================== -->
+  <main class="page-main">
+    <!-- LEFT SIDE -->
+    <section class="page-left">
+      <div class="page-top-grid">
+        <article class="card" aria-labelledby="toolTitle">
+          <div class="tool-shell">
+            <div class="tool-title-row">
+              <div>
+                <h1 id="toolTitle" class="tool-title">Image Compressor</h1>
+                <div class="tool-subtitle">Compress JPG, PNG and WebP images directly in your browser.</div>
+              </div>
+              <i class="fa-solid fa-images"></i>
+            </div>
+
+            <div class="compress-layout">
+              <div class="upload-bar">
+                <div class="upload-buttons">
+                  <button type="button" class="btn" id="uploadBtn">
+                    <i class="fa-solid fa-upload"></i> Upload Images
+                  </button>
+                  <button type="button" class="btn secondary" id="downloadAllBtn" disabled>
+                    <i class="fa-solid fa-download"></i> Download All (ZIP)
+                  </button>
+                  <button type="button" class="btn danger" id="clearBtn" disabled>
+                    <i class="fa-solid fa-trash-can"></i> Clear Queue
+                  </button>
+                </div>
+                <p class="upload-help">
+                  Up to 20 images. Larger images may take a little longer to process.
+                </p>
+              </div>
+
+              <div class="drop-zone" id="dropZone">
+                <input type="file" id="imageInput" accept="image/*" multiple aria-label="Upload images" />
+                <div class="drop-zone-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                <div class="drop-zone-title">Drop your files here</div>
+                <div class="drop-zone-sub">or click to choose images from your device</div>
+              </div>
+
+              <div class="info-banner">
+                This compressor runs entirely in your browser. Images are processed locally and never leave your device.
+              </div>
+
+              <div class="image-list" id="imageList">
+                <div class="image-empty">No images added yet. Upload or drop some files to begin.</div>
+              </div>
+
+              <div class="tool-footer-note">
+                Tip: Start with a quality level between 0.6 and 0.8 for a good balance between file size and visual clarity.
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick tips -->
+          <div class="section-block" style="margin-top:12px;">
+            <h3>Quick tips for using this image compressor</h3>
+            <ul>
+              <li>Upload multiple images at once and fine-tune the quality for each file with the slider.</li>
+              <li>Use the size savings indicator to see how much space you are reclaiming in real time.</li>
+              <li>When you are happy with the results, click “Download all” to save a ZIP archive with your compressed images.</li>
+              <li>If you want to start again from scratch, use the “Clear queue” button to remove all images.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <!-- Long SEO content block -->
+      <article class="section-block">
+        <h2>Why compress images before publishing them online?</h2>
+        <p>
+          Every pixel in a digital photo carries data. Modern smartphones and cameras capture images with
+          millions of pixels, which quickly adds up to multi-megabyte files. Those large files look great,
+          but they can slow down websites, email attachments and online forms. An image compressor reduces
+          the amount of data in each file so that the picture loads faster while still looking sharp to the
+          human eye.
+        </p>
+        <p class="info-highlight">
+          In many real-world projects you can cut image file sizes by 60–90% with only a small and often
+          unnoticeable impact on quality. That means faster pages, happier visitors and better search engine
+          performance.
+        </p>
+
+        <h3>Lossy vs lossless compression</h3>
+        <p>
+          There are two broad families of compression. <strong>Lossless compression</strong> rearranges the data
+          inside the file so that it takes up less space without changing a single pixel. Formats such as PNG
+          are typically lossless. <strong>Lossy compression</strong> goes a step further. It throws away data that
+          the eye does not really need, especially in areas of subtle detail. JPG and WebP are lossy formats.
+        </p>
+        <p>
+          This tool focuses on lossy compression because it gives the biggest size reductions with very
+          little visible difference at typical website resolutions. When you move the quality slider, you are
+          choosing how aggressive that lossy compression should be.
+        </p>
+
+        <h3>What actually changes when you move the quality slider?</h3>
+        <p>
+          The quality slider controls how precisely the image is stored inside the compressed file. A high
+          value such as 0.9 keeps more detail and produces a larger file. A lower value such as 0.5 discards
+          more subtle variations in color and texture, which can introduce small artifacts if you zoom in
+          closely. For social media, blogs and product listings a value between 0.6 and 0.8 is usually a
+          good starting point.
+        </p>
+
+        <table class="comparison-table" aria-label="Example of file size savings when compressing images">
+          <thead>
+          <tr>
+            <th>Example image</th>
+            <th>Original size</th>
+            <th>Compressed size (0.7)</th>
+            <th>Space saved</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Portrait photo (2000 × 3000)</td>
+            <td>4.8 MB</td>
+            <td>920 KB</td>
+            <td>81%</td>
+          </tr>
+          <tr>
+            <td>Blog illustration (1600 × 900)</td>
+            <td>1.3 MB</td>
+            <td>260 KB</td>
+            <td>80%</td>
+          </tr>
+          <tr>
+            <td>Product shot on white background</td>
+            <td>2.1 MB</td>
+            <td>390 KB</td>
+            <td>81%</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <h3>When should you keep images uncompressed?</h3>
+        <p>
+          Some situations demand pixel-perfect accuracy. If you are preparing images for high-end printing,
+          scientific publications, legal documents or archival storage, you may want to preserve the original
+          files at full quality. In those cases a lossless format such as PNG or TIFF is often recommended.
+          You can still keep a compressed copy for fast sharing, but do not discard your originals.
+        </p>
+
+        <h3>Benefits for SEO and performance</h3>
+        <p>
+          Search engines increasingly measure how quickly a page becomes usable for visitors. Large, heavy
+          images are one of the most common causes of slow loading times. Compressing your graphics helps you:
+        </p>
+        <ul>
+          <li><strong>Improve Core Web Vitals</strong> such as Largest Contentful Paint (LCP) and First Input Delay.</li>
+          <li><strong>Reduce bandwidth costs</strong> for both you and your users, especially on mobile networks.</li>
+          <li><strong>Keep visitors engaged</strong> by avoiding layouts that jump around while images are still loading.</li>
+          <li><strong>Deliver a smoother experience</strong> on older devices and slower connections.</li>
+        </ul>
+
+        <h3>How this image compressor works behind the scenes</h3>
+        <p>
+          The tool uses modern browser APIs rather than a remote server. When you add files, the browser reads
+          them using the FileReader API and renders each image onto a hidden canvas element. The canvas is then
+          encoded as a new JPG or WebP image at your chosen quality setting. Because everything happens locally,
+          the original files never leave your computer, and the compressed versions exist only in your browser
+          until you download or clear them.
+        </p>
+        <p>
+          For most photos the compressor keeps the original pixel dimensions. The size reduction comes from
+          smarter encoding, not from shrinking the image on screen. If you want even smaller files, you can
+          combine this compressor with an image resizer and export at the exact dimensions required by your
+          design.
+        </p>
+
+        <h3>Practical tips for real projects</h3>
+        <ul>
+          <li>For hero banners and large header images, test a few quality levels and pick the lowest one that still looks crisp.</li>
+          <li>For thumbnails and small UI icons, you can often use more aggressive compression without any noticeable blur.</li>
+          <li>Always keep a backup of the original high-resolution images, especially if they were expensive or difficult to capture.</li>
+          <li>Use descriptive filenames when saving compressed images so that analytics and audits remain easy to understand.</li>
+        </ul>
+
+        <h3>Privacy and security</h3>
+        <p>
+          Because the compressor is completely client-side, it does not store or log your images on a central
+          server. Once you close the browser tab or clear the queue, the compressed images are gone. This makes
+          the tool suitable for handling private photos, internal documents and design assets that you do not
+          want to upload to third-party services.
+        </p>
+
+        <h3>Final note</h3>
+        <p>
+          Efficient images are one of the simplest upgrades you can make to a website, newsletter or presentation.
+          With this free image compressor you can prepare assets in a few clicks, without installing additional
+          software or sending files across the internet. Use it whenever you publish new content and you will
+          quickly build a faster, lighter and more enjoyable experience for your audience.
+        </p>
+      </article>
+    </section>
+
+    <!-- RIGHT SIDE / SIDEBAR -->
+    <aside class="page-sidebar" aria-label="Quick search and related tools">
+      <div class="sidebar-card">
+        <div class="sidebar-title-bar">
+          <span>Quick Search</span>
+          <i class="fas fa-magnifying-glass"></i>
+        </div>
+
+        <div class="tool-search">
+          <small>Quick links to other tools on WordCalculator.net</small>
+          <div class="sidebar-search-input-wrapper">
+            <i class="fa-solid fa-magnifying-glass sidebar-search-icon" aria-hidden="true"></i>
+            <input
+              type="search"
+              id="toolSearchInput"
+              class="sidebar-search-input"
+              placeholder="Search tools by name..."
+              autocomplete="off"
+              aria-label="Search tools by name"
+            />
+          </div>
+          <ul id="toolSearchSuggestions" class="sidebar-search-suggestions" aria-label="Tool suggestions"></ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Popular</h4>
+          <ul class="sidebar-links">
+            <li><a href="age-calculator.html">Age Calculator</a></li>
+            <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+            <li><a href="calorie-calculator.html">Calorie Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Text &amp; Writing</h4>
+          <ul class="sidebar-links">
+            <li><a href="https://wordcalculator.net">Word &amp; Character Counter</a></li>
+            <li><a href="case-converter.html">Case Converter</a></li>
+            <li><a href="grammar-spell-checker.html">Grammar &amp; Spell Checker</a></li>
+            <li><a href="readability-analyzer.html">Readability Analyzer</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>SEO &amp; Content</h4>
+          <ul class="sidebar-links">
+            <li><a href="keyword-density-analyzer.html">Keyword Density Analyzer</a></li>
+            <li><a href="title-meta-preview.html">Title &amp; Meta Preview</a></li>
+            <li><a href="url-slug-generator.html">URL Slug Generator</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Finance &amp; Time</h4>
+          <ul class="sidebar-links">
+            <li><a href="loan-emi-calculator.html">Loan &amp; EMI Calculator</a></li>
+            <li><a href="interest-calculator.html">Interest Calculator</a></li>
+            <li><a href="focus-timer.html">Focus Timer</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="pro-footer" id="about" aria-label="Website footer">
+    <div class="pf-wrap">
+      <div class="pf-brand">
+        <div class="pf-logo">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <div class="pf-brand-text">
+            WordCalculator<span>.net</span>
+          </div>
+        </div>
+        <p class="pf-tag">A focused, distraction-free toolkit for precise writing.</p>
+        <div class="pf-social">
+          <a href="https://facebook.com/wordcalculator" aria-label="Facebook" rel="noopener" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/wordcalculator" aria-label="X (Twitter)" rel="noopener" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://linkedin.com/company/wordcalculator" aria-label="LinkedIn" rel="noopener" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://youtube.com/@wordcalculator" aria-label="YouTube" rel="noopener" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="pf-cols">
+        <div class="pf-col">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="https://wordcalculator.net">Editor</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="grammar-spell-checker.html">Grammar Check</a></li>
+            <li><a href="keyword-density-analyzer.html">Keyword Density</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="guides.html">Tips &amp; Guides</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="bug-report.html">Report a Bug</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html">Cookie Policy</a></li>
+            <li><a href="security.html">Security</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pf-bottom">
+      <div class="pf-bottom-wrap">
+        <div>© <span id="pf-year"></span> WordCalculator.net — All rights reserved.</div>
+        <div class="pf-links">
+          <a href="sitemap.html">Sitemap</a>
+          <a href="status.html">Status</a>
+          <a href="accessibility.html">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Auth Modal ===== -->
+  <div class="modal-overlay" id="authOverlay" aria-hidden="true"></div>
+  <div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <div class="modal-head">
+      <h3 id="authTitle"><i class="fas fa-user-lock"></i> Account</h3>
+      <button class="modal-close" id="authCloseBtn" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body">
+      Sign-in and account features are coming soon. For now, all tools are free to use without registration.
+    </div>
+  </div>
+
+  <!-- ==================== JS ==================== -->
+  <script src="tools-directory.js"></script>
+  <script>
+    const $  = (s)=>document.querySelector(s);
+    const $$ = (s)=>Array.from(document.querySelectorAll(s));
+
+    document.addEventListener("DOMContentLoaded", ()=>{
+      initYear();
+      initMobileMenu();
+      initAuthModal();
+      initToolQuickSearch();
+      initImageCompressor();
+    });
+
+    function initYear(){
+      const el=$("#pf-year");
+      if(el) el.textContent=new Date().getFullYear();
+    }
+
+    function initMobileMenu(){
+      const mobileMenuBtn=$("#mobileMenuBtn");
+      const mobileCloseBtn=$("#mobileCloseBtn");
+      const mobileNav=$("#mobileNav");
+      const mobileOverlay=$("#mobileOverlay");
+      if(!mobileMenuBtn||!mobileNav||!mobileOverlay) return;
+
+      const open=()=>{
+        mobileNav.classList.add("active");
+        mobileOverlay.classList.add("active");
+        document.body.style.overflow="hidden";
+      };
+      const close=()=>{
+        mobileNav.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        document.body.style.overflow="";
+      };
+
+      mobileMenuBtn.addEventListener("click",open);
+      if(mobileCloseBtn) mobileCloseBtn.addEventListener("click",close);
+      mobileOverlay.addEventListener("click",close);
+      $$(".mobile-link").forEach(link=>link.addEventListener("click",close));
+
+      const openAuthBtnMobile=$("#openAuthBtnMobile");
+      if(openAuthBtnMobile){
+        openAuthBtnMobile.addEventListener("click",()=>{
+          close();
+          openAuthModal();
+        });
+      }
+    }
+
+    function initAuthModal(){
+      const openBtn=$("#openAuthBtn");
+      const overlay=$("#authOverlay");
+      const modal=$("#authModal");
+      const closeBtn=$("#authCloseBtn");
+      if(!overlay || !modal) return;
+
+      const open=()=>{
+        overlay.style.display="block";
+        modal.style.display="block";
+        document.body.style.overflow="hidden";
+      };
+      const close=()=>{
+        overlay.style.display="none";
+        modal.style.display="none";
+        document.body.style.overflow="";
+      };
+
+      if(openBtn) openBtn.addEventListener("click",open);
+      if(closeBtn) closeBtn.addEventListener("click",close);
+      overlay.addEventListener("click",close);
+      document.addEventListener("keydown",(e)=>{
+        if(e.key==="Escape") close();
+      });
+    }
+    function openAuthModal(){
+      const overlay=$("#authOverlay");
+      const modal=$("#authModal");
+      if(!overlay||!modal) return;
+      overlay.style.display="block";
+      modal.style.display="block";
+      document.body.style.overflow="hidden";
+    }
+
+    /* ===== Tool directory & Quick Search ===== */
+    ];
+
+    const toolDirectory = allTools;
+
+    function initToolQuickSearch(){
+      const input=$("#toolSearchInput");
+      const suggestionsBox=$("#toolSearchSuggestions");
+      if(!input||!suggestionsBox||!Array.isArray(toolDirectory)) return;
+
+      let currentResults=[];
+
+      function renderSuggestions(query){
+        const value=(query||"").trim().toLowerCase();
+        suggestionsBox.innerHTML="";
+        if(!value){
+          suggestionsBox.classList.remove("visible");
+          return;
+        }
+
+        const allMatches=toolDirectory.filter(tool=>tool.name.toLowerCase().includes(value));
+        if(!allMatches.length){
+          const li=document.createElement("li");
+          li.textContent="No tools found";
+          suggestionsBox.appendChild(li);
+          suggestionsBox.classList.add("visible");
+          return;
+        }
+
+        function rankTool(tool){
+          const name=tool.name.toLowerCase();
+          const pos=name.indexOf(value);
+          const starts=name.startsWith(value)?0:1;
+          const lenDiff=Math.abs(name.length-value.length);
+          return starts*100 + pos*2 + lenDiff;
+        }
+
+        currentResults=allMatches.slice().sort((a,b)=>rankTool(a)-rankTool(b));
+        currentResults.slice(0,10).forEach(tool=>{
+          const li=document.createElement("li");
+          const iconEl=document.createElement("i");
+          iconEl.className=tool.icon || "fa-solid fa-wand-magic-sparkles";
+          const nameSpan=document.createElement("span");
+          nameSpan.className="tool-name";
+          nameSpan.textContent=tool.name;
+          li.appendChild(iconEl);
+          li.appendChild(nameSpan);
+          li.addEventListener("click",()=>{
+            if(tool.url) window.location.href=tool.url;
+          });
+          suggestionsBox.appendChild(li);
+        });
+
+        suggestionsBox.classList.add("visible");
+      }
+
+      input.addEventListener("input",(e)=>renderSuggestions(e.target.value));
+
+      input.addEventListener("keydown",(e)=>{
+        if(e.key==="Enter"){
+          const value=input.value.trim().toLowerCase();
+          if(!value) return;
+          const first=currentResults.length ? currentResults[0] : toolDirectory.find(
+            (tool)=>tool.name.toLowerCase().includes(value)
+          );
+          if(first && first.url) window.location.href=first.url;
+        }
+      });
+
+      document.addEventListener("click",(e)=>{
+        if(!input.contains(e.target) && !suggestionsBox.contains(e.target)){
+          suggestionsBox.classList.remove("visible");
+        }
+      });
+    }
+
+    /* ===== Image compressor logic ===== */
+    function initImageCompressor(){
+      const input=$("#imageInput");
+      const dropZone=$("#dropZone");
+      const uploadBtn=$("#uploadBtn");
+      const list=$("#imageList");
+      const clearBtn=$("#clearBtn");
+      const downloadAllBtn=$("#downloadAllBtn");
+
+      if(!input || !dropZone || !list) return;
+
+      const maxFiles=20;
+      const images=[]; // store item objects
+
+      uploadBtn.addEventListener("click",()=>input.click());
+
+      input.addEventListener("change",(e)=>{
+        handleFiles(Array.from(e.target.files));
+        input.value="";
+      });
+
+      ["dragenter","dragover"].forEach(evt=>{
+        dropZone.addEventListener(evt,(e)=>{
+          e.preventDefault();
+          e.stopPropagation();
+          dropZone.classList.add("dragover");
+        });
+      });
+      ["dragleave","dragend","drop"].forEach(evt=>{
+        dropZone.addEventListener(evt,(e)=>{
+          e.preventDefault();
+          e.stopPropagation();
+          dropZone.classList.remove("dragover");
+        });
+      });
+      dropZone.addEventListener("drop",(e)=>{
+        const files=Array.from(e.dataTransfer.files || []);
+        handleFiles(files);
+      });
+
+      clearBtn.addEventListener("click",()=>{
+        images.splice(0,images.length);
+        renderList();
+      });
+
+      downloadAllBtn.addEventListener("click",async ()=>{
+        if(!images.length) return;
+        const zip=new JSZip();
+        let hasContent=false;
+
+        for(const item of images){
+          if(item.blob){
+            const name=getCompressedName(item.file);
+            zip.file(name,item.blob);
+            hasContent=true;
+          }
+        }
+        if(!hasContent) return;
+        downloadAllBtn.disabled=true;
+        downloadAllBtn.innerHTML='<i class="fa-solid fa-rotate"></i> Building ZIP...';
+        try{
+          const blob=await zip.generateAsync({type:"blob"});
+          saveAs(blob,"compressed-images.zip");
+        }finally{
+          downloadAllBtn.innerHTML='<i class="fa-solid fa-download"></i> Download All (ZIP)';
+          updateButtonsState();
+        }
+      });
+
+      function handleFiles(files){
+        if(!files.length) return;
+        const imageFiles=files.filter(f=>f.type.startsWith("image/"));
+        if(!imageFiles.length) return;
+
+        const remaining=maxFiles-images.length;
+        if(remaining<=0) return;
+
+        const slice=imageFiles.slice(0,remaining);
+        slice.forEach(file=>{
+          const item={
+            id:crypto.randomUUID(),
+            file,
+            originalSize:file.size,
+            originalType:file.type || "image/jpeg",
+            quality:0.75,
+            blob:null,
+            thumbUrl:null,
+            img:null,
+            isProcessing:false
+          };
+          images.push(item);
+          prepareImage(item);
+        });
+        renderList();
+      }
+
+      function prepareImage(item){
+        item.isProcessing=true;
+        const reader=new FileReader();
+        reader.onload=()=>{
+          const img=new Image();
+          img.onload=()=>{
+            item.img=img;
+            item.thumbUrl=reader.result;
+            compressItem(item);
+          };
+          img.onerror=()=>{
+            item.isProcessing=false;
+            renderList();
+          };
+          img.src=reader.result;
+        };
+        reader.onerror=()=>{
+          item.isProcessing=false;
+          renderList();
+        };
+        reader.readAsDataURL(item.file);
+      }
+
+      function compressItem(item){
+        if(!item.img) return;
+        item.isProcessing=true;
+        const canvas=document.createElement("canvas");
+        canvas.width=item.img.naturalWidth;
+        canvas.height=item.img.naturalHeight;
+        const ctx=canvas.getContext("2d");
+        ctx.drawImage(item.img,0,0,canvas.width,canvas.height);
+
+        const targetType = chooseMimeType(item.originalType);
+        canvas.toBlob(blob=>{
+          item.isProcessing=false;
+          if(blob){
+            item.blob=blob;
+          }
+          renderList();
+        },targetType,item.quality);
+      }
+
+      function chooseMimeType(original){
+        if(original && (original.includes("jpeg") || original.includes("jpg"))){
+          return "image/jpeg";
+        }
+        if(original && original.includes("webp")){
+          return "image/webp";
+        }
+        // Default to JPEG for broad compatibility and strong compression
+        return "image/jpeg";
+      }
+
+      function getCompressedName(file){
+        const base=file.name.replace(/\.[^.]+$/,"");
+        return base + "-compressed.jpg";
+      }
+
+      function renderList(){
+        list.innerHTML="";
+        if(!images.length){
+          const empty=document.createElement("div");
+          empty.className="image-empty";
+          empty.textContent="No images added yet. Upload or drop some files to begin.";
+          list.appendChild(empty);
+          updateButtonsState();
+          return;
+        }
+
+        images.forEach(item=>{
+          const row=document.createElement("div");
+          row.className="image-item";
+
+          const thumb=document.createElement("img");
+          thumb.className="thumb";
+          thumb.alt=item.file.name;
+          thumb.src=item.thumbUrl || "";
+          row.appendChild(thumb);
+
+          const meta=document.createElement("div");
+          meta.className="image-meta";
+
+          const name=document.createElement("div");
+          name.className="image-name";
+          name.textContent=item.file.name;
+          meta.appendChild(name);
+
+          const sizeRow=document.createElement("div");
+          sizeRow.className="image-size-row";
+
+          const originalSize=document.createElement("span");
+          originalSize.className="size-pill";
+          originalSize.textContent="Original: " + formatBytes(item.originalSize);
+          sizeRow.appendChild(originalSize);
+
+          const compressedSize=document.createElement("span");
+          compressedSize.className="size-pill";
+          compressedSize.textContent="Compressed: " + (item.blob ? formatBytes(item.blob.size) : "processing...");
+          sizeRow.appendChild(compressedSize);
+
+          if(item.blob){
+            const savedPercent=100 - (item.blob.size / item.originalSize * 100);
+            const saving=document.createElement("span");
+            saving.className="size-pill saving-pill";
+            saving.textContent="Saved: " + savedPercent.toFixed(1) + "%";
+            sizeRow.appendChild(saving);
+          }
+
+          meta.appendChild(sizeRow);
+
+          const qualityRow=document.createElement("div");
+          qualityRow.className="quality-row";
+
+          const label=document.createElement("label");
+          label.textContent="Quality";
+          qualityRow.appendChild(label);
+
+          const slider=document.createElement("input");
+          slider.type="range";
+          slider.min="0.2";
+          slider.max="1";
+          slider.step="0.01";
+          slider.value=String(item.quality);
+          slider.disabled=item.isProcessing;
+          qualityRow.appendChild(slider);
+
+          const qVal=document.createElement("span");
+          qVal.className="quality-value";
+          qVal.textContent=Math.round(item.quality*100) + "%";
+          qualityRow.appendChild(qVal);
+
+          slider.addEventListener("input",()=>{
+            item.quality=parseFloat(slider.value);
+            qVal.textContent=Math.round(item.quality*100)+"%";
+          });
+          slider.addEventListener("change",()=>{
+            compressItem(item);
+          });
+
+          meta.appendChild(qualityRow);
+          row.appendChild(meta);
+
+          const actions=document.createElement("div");
+          actions.className="image-actions";
+
+          const downloadBtn=document.createElement("button");
+          downloadBtn.type="button";
+          downloadBtn.className="btn-sm primary";
+          downloadBtn.disabled=!item.blob;
+          downloadBtn.innerHTML='<i class="fa-solid fa-download"></i> Download';
+          downloadBtn.addEventListener("click",()=>{
+            if(!item.blob) return;
+            const name=getCompressedName(item.file);
+            const url=URL.createObjectURL(item.blob);
+            const a=document.createElement("a");
+            a.href=url;
+            a.download=name;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            URL.revokeObjectURL(url);
+          });
+          actions.appendChild(downloadBtn);
+
+          const removeBtn=document.createElement("button");
+          removeBtn.type="button";
+          removeBtn.className="btn-sm";
+          removeBtn.innerHTML='<i class="fa-solid fa-xmark"></i> Remove';
+          removeBtn.addEventListener("click",()=>{
+            const index=images.findIndex(x=>x.id===item.id);
+            if(index>-1){
+              images.splice(index,1);
+              renderList();
+            }
+          });
+          actions.appendChild(removeBtn);
+
+          row.appendChild(actions);
+          list.appendChild(row);
+        });
+
+        updateButtonsState();
+      }
+
+      function updateButtonsState(){
+        const hasImages=images.length>0;
+        $("#clearBtn").disabled=!hasImages;
+        $("#downloadAllBtn").disabled=!hasImages || !images.some(i=>i.blob);
+      }
+
+      function formatBytes(bytes){
+        if(bytes===0) return "0 B";
+        const k=1024;
+        const sizes=["B","KB","MB","GB"];
+        const i=Math.floor(Math.log(bytes)/Math.log(k));
+        const val=(bytes/Math.pow(k,i)).toFixed(1);
+        return val + " " + sizes[i];
+      }
+    }
+  </script>
+</body>
+</html>

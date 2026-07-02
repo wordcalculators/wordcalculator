@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ==================== ADVANCED SEO ==================== -->
+  <title>Typing Speed Test — Free WPM & Accuracy Test with Levels, Timer & Instant Results</title>
+  <meta name="description" content="Free Typing Speed Test to measure WPM, accuracy, and mistakes. Practice with a level system that gets harder over time, customizable timers, and instant result popups. 100% mobile-friendly." />
+  <meta name="keywords" content="typing speed test, wpm test, typing test, words per minute test, typing practice, typing accuracy test, online typing test, free typing test, typing levels" />
+  <meta name="author" content="WordCalculator.net" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#020617" />
+  <link rel="canonical" href="https://wordcalculator.net/typing-speed-test.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wordcalculator.net/typing-speed-test.html" />
+  <meta property="og:title" content="Typing Speed Test — WPM & Accuracy with Levels" />
+  <meta property="og:description" content="Measure typing speed (WPM), accuracy, and mistakes. Level up with harder tests and get instant result popups." />
+  <meta property="og:image" content="https://wordcalculator.net/images/typing-speed-test-og.jpg" />
+  <meta property="og:site_name" content="WordCalculator.net" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://wordcalculator.net/typing-speed-test.html" />
+  <meta name="twitter:title" content="Typing Speed Test — WPM & Accuracy with Levels" />
+  <meta name="twitter:description" content="Free online typing speed test with levels, timers, and instant results." />
+  <meta name="twitter:image" content="https://wordcalculator.net/images/typing-speed-test-twitter.jpg" />
+  <meta name="twitter:creator" content="@wordcalculator" />
+
+  <!-- WebApplication schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Typing Speed Test",
+    "url":"https://wordcalculator.net/typing-speed-test.html",
+    "description":"Measure typing speed (WPM), accuracy, and mistakes using a timed typing test with a progressive level system.",
+    "applicationCategory":"UtilitiesApplication",
+    "operatingSystem":"Any",
+    "browserRequirements":"Requires JavaScript",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "featureList":[
+      "WPM, accuracy, and mistake tracking",
+      "Timer presets (15s, 30s, 60s, 120s)",
+      "Progressive levels that increase difficulty",
+      "Instant result popup with improvement tips",
+      "Mobile-first responsive layout"
+    ],
+    "author":{"@type":"Organization","name":"WordCalculator.net"}
+  }
+  </script>
+
+  <!-- Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://wordcalculator.net/"},
+      {"@type":"ListItem","position":2,"name":"Tools","item":"https://wordcalculator.net/tools.html"},
+      {"@type":"ListItem","position":3,"name":"Typing Speed Test","item":"https://wordcalculator.net/typing-speed-test.html"}
+    ]
+  }
+  </script>
+
+  <!-- FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"How is WPM calculated in a typing test?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"WPM (words per minute) is commonly calculated as (typed characters ÷ 5) ÷ minutes. This test also tracks accuracy and mistakes in real time."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"What is a good typing speed?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Many people type around 35–55 WPM for everyday tasks. Higher speeds (60+ WPM) can be helpful for professional work, especially when accuracy stays high."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"How do typing levels work here?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Each level increases targets and text complexity. If you meet the WPM and accuracy goals, you level up to a harder test."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- ==================== /SEO ==================== -->
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+    /* ===== Base / Theme ===== */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --blue:#3f82bd;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --primary:#2563eb;
+      --bg:#f7f8fb;
+      --card:#fff;
+      --danger:#b91c1c;
+    }
+    html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    body{
+      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6
+    }
+    a{color:inherit;text-decoration:none}
+
+    /* ===== Header / Nav ===== */
+    .wc-header{background:#020617;color:#fff;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+    .wc-wrap{
+      max-width:1200px;margin:0 auto;padding:10px 12px;
+      display:flex;align-items:center;gap:14px
+    }
+    .wc-logo{display:inline-flex;align-items:center;gap:8px}
+    .wc-slab,.slab{
+      display:inline-flex;width:24px;height:24px;align-items:center;justify-content:center;
+      font-weight:800;font-size:14px;border-radius:2px;color:#fff
+    }
+    .slab-w{background:#1f2327}
+    .slab-o{background:#a7c1db;color:#1e2a3a}
+    .slab-r{background:#7d96ae}
+    .slab-d{background:#2f5d8a}
+    .wc-brand-text{
+      display:inline-flex;flex-direction:column;line-height:1.05;
+      font-size:19px;font-weight:800
+    }
+    .wc-brand-text small{font-size:10px;opacity:.95}
+    .wc-nav{margin-left:10px;display:flex;align-items:center;gap:8px;flex:1}
+    .wc-link{
+      color:#f4f8fc;font-weight:700;font-size:14px;padding:6px 10px;border-radius:8px;
+      transition:.15s;background:transparent;border:0;cursor:pointer
+    }
+    .wc-link:hover{background:rgba(255,255,255,.14)}
+    .wc-signin-btn{background:rgba(148,163,184,.18);border:1px solid rgba(148,163,184,.5)}
+    .wc-signin-btn:hover{background:#38bdf8;color:#020617;border-color:#38bdf8}
+    .mobile-menu-btn{
+      margin-left:auto;background:transparent;border:0;color:#fff;
+      font-size:20px;display:none;cursor:pointer
+    }
+    .mobile-nav{
+      position:fixed;top:0;right:-100%;
+      width:320px;height:100vh;background:#1f2933;
+      box-shadow:-2px 0 10px rgba(0,0,0,.18);
+      transition:right .3s;z-index:100
+    }
+    .mobile-nav.active{right:0}
+    .mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;z-index:90}
+    .mobile-overlay.active{display:block}
+    .mobile-nav-header{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:16px;border-bottom:1px solid #34495e
+    }
+    .mobile-close-btn{background:transparent;border:0;color:#fff;font-size:20px;cursor:pointer}
+    .mobile-nav-links{padding:16px}
+    .mobile-link{
+      display:block;color:#ecf0f1;padding:12px 0;border-bottom:1px solid #34495e;
+      font-weight:700;background:transparent;border:0;width:100%;text-align:left;cursor:pointer
+    }
+
+    /* ===== Breadcrumb ===== */
+    .crumb-wrap{max-width:1200px;margin:8px auto 0;padding:0 15px 4px}
+    .crumbs{font-size:13px;color:#111827}
+    .crumbs a{color:#2563eb}
+    .crumbs a:hover{text-decoration:underline}
+    .crumb-separator{margin:0 4px;color:#6b7280}
+    .crumb-current{font-weight:700}
+
+    /* ===== Main Layout ===== */
+    .age-main{
+      max-width:1200px;margin:22px auto 40px;padding:0 15px;
+      display:grid;grid-template-columns:minmax(0,3fr) minmax(260px,1.25fr);
+      gap:20px;align-items:flex-start
+    }
+    .age-left{display:flex;flex-direction:column;gap:18px}
+    .age-top-grid{display:grid;grid-template-columns:1fr;gap:16px;align-items:stretch}
+    .card{background:transparent;border:none;box-shadow:none;padding:0}
+
+    /* ===== Tool Shell ===== */
+    .area-shell{
+      border:1px solid #e2e8f0;background:#f4f4f4;padding:12px;width:100%;
+      margin:0 0 10px 0;border-radius:12px;box-shadow:0 10px 24px rgba(15,23,42,0.06);
+      overflow:hidden
+    }
+    .area-title-row{
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      margin:-12px -12px 8px;padding:8px 12px;background:#0f172a;color:#f9fafb;
+      border-bottom:1px solid #1f2937
+    }
+    .area-title{
+      font-size:18px;font-weight:800;color:#f9fafb;font-family:Arial,Helvetica,sans-serif
+    }
+    .rt-pill{
+      display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;
+      background:rgba(148,163,184,0.16);
+      border:1px solid rgba(148,163,184,0.45);
+      font-size:11px;text-transform:uppercase;letter-spacing:0.06em
+    }
+    .rt-pill i{font-size:12px}
+
+    .ts-intro{
+      font-size:13px;color:#4b5563;margin:6px 2px 10px;
+      font-family:Arial,Helvetica,sans-serif
+    }
+
+    /* ===== Typing Layout ===== */
+    .ts-layout{display:flex;flex-direction:column;gap:10px;margin-top:4px}
+
+    .ts-top-row{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(280px,0.55fr);
+      gap:14px;
+      align-items:stretch;
+    }
+
+    .ts-box{
+      background:#ffffff;border-radius:10px;border:1px solid #e2e8f0;
+      padding:10px 12px;box-shadow:0 6px 16px rgba(15,23,42,0.05)
+    }
+    .ts-box-title{font-size:14px;font-weight:800;margin-bottom:4px;color:#0f172a}
+    .ts-box-sub{font-size:12px;color:#6b7280;margin-bottom:8px}
+
+    /* Left: test text + input */
+    .ts-test-text{
+      border:1px solid #e5e7eb;border-radius:10px;background:#f9fafb;
+      padding:10px 12px;
+      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+      font-size:13px;line-height:1.55;
+      min-height:118px;
+      overflow:auto;
+    }
+    .ts-test-text .done{color:#94a3b8}
+    .ts-test-text .good{background:rgba(34,197,94,0.12);border-radius:4px}
+    .ts-test-text .bad{background:rgba(239,68,68,0.14);border-radius:4px}
+    .ts-test-text .cursor{
+      display:inline-block;
+      width:1px;
+      height:1.2em;
+      background:#0f172a;
+      vertical-align:-0.15em;
+      margin-left:1px;
+      opacity:0.9;
+    }
+
+    .ts-label{
+      font-size:12px;font-weight:700;font-family:Arial,Helvetica,sans-serif;margin-top:10px;margin-bottom:4px
+    }
+    .ts-input-wrap{position:relative}
+    .ts-textarea{
+      width:100%;
+      border-radius:10px;
+      border:1px solid #a0a0a0;
+      background:#ffffff;
+      font-size:14px;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      line-height:1.5;
+      padding:10px 12px;
+      resize:none; /* custom resizer handle */
+      min-height:200px;
+    }
+    .ts-textarea:focus{
+      outline:none;
+      border-color:#3f82bd;
+      box-shadow:0 0 0 1px rgba(63,130,189,0.18);
+      background:#ffffff
+    }
+
+    /* Custom bottom-center resizer handle */
+    .ts-resizer{
+      width:54px;height:14px;border-radius:999px;
+      border:1px solid #e5e7eb;background:#f3f4f6;
+      display:flex;align-items:center;justify-content:center;
+      margin:10px auto 0;
+      cursor:ns-resize;
+      box-shadow:0 2px 6px rgba(15,23,42,0.08);
+      user-select:none;
+      touch-action:none;
+    }
+    .ts-resizer i{font-size:11px;opacity:0.7}
+
+    /* Action row */
+    .ts-actions{
+      display:flex;gap:8px;flex-wrap:wrap;margin-top:10px
+    }
+    .ts-btn{
+      border-radius:999px;border:1px solid #cbd5e1;background:#f9fafb;
+      padding:6px 12px;font-size:12px;cursor:pointer;
+      font-family:Arial,Helvetica,sans-serif;
+      display:inline-flex;align-items:center;gap:6px;
+      box-shadow:0 1px 2px rgba(15,23,42,0.08);
+      transition:background .12s,border-color .12s,transform .1s,box-shadow .12s
+    }
+    .ts-btn:hover{
+      background:#ffffff;border-color:#3f82bd;transform:translateY(-1px);
+      box-shadow:0 3px 8px rgba(15,23,42,0.14)
+    }
+    .ts-btn.primary{
+      background:#0f172a;color:#f9fafb;border-color:#0f172a;
+      box-shadow:0 3px 10px rgba(15,23,42,0.22)
+    }
+    .ts-btn.primary:hover{background:#111c34}
+    .ts-btn.danger{
+      border-color:#e11d48;background:#fee2e2;color:#7f1d1d
+    }
+    .ts-btn.danger:hover{border-color:#b91c1c;background:#fecaca}
+
+    /* Right: settings + live stats (two equal style cards) */
+    .ts-side{display:flex;flex-direction:column;gap:14px}
+    .ts-row{
+      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:8px
+    }
+    .ts-stat{
+      padding:6px 8px;border-radius:8px;background:#f9fafb;border:1px solid #e5e7eb
+    }
+    .ts-stat-label{font-size:11px;color:#6b7280;margin-bottom:2px}
+    .ts-stat-value{font-size:14px;font-weight:800;color:#111827}
+
+    .ts-select, .ts-readonly{
+      width:100%;
+      padding:7px 10px;
+      border-radius:10px;
+      border:1px solid #d5d9e0;
+      background:#f9fafb;
+      font-size:13px;
+      outline:none;
+      transition:border-color .15s ease,background-color .15s ease,box-shadow .15s ease;
+      font-family:Arial,Helvetica,sans-serif;
+    }
+    .ts-select:focus{
+      border-color:#3f82bd;background:#ffffff;
+      box-shadow:0 0 0 1px rgba(63,130,189,0.12)
+    }
+    .ts-field{margin-top:8px}
+    .ts-field label{display:block;font-size:12px;font-weight:800;margin-bottom:4px;color:#111827;font-family:Arial,Helvetica,sans-serif}
+    .ts-target-line{
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      margin-top:8px;padding:8px 10px;border-radius:10px;border:1px solid #e5e7eb;background:#f9fafb;
+      font-size:12px;font-family:Arial,Helvetica,sans-serif;color:#111827
+    }
+    .ts-level-badge{
+      display:inline-flex;align-items:center;gap:6px;
+      padding:3px 10px;border-radius:999px;border:1px solid #e5e7eb;background:#f3f4f6;
+      font-size:11px;font-weight:800;color:#111827
+    }
+
+    /* Small progress bar */
+    .ts-progress{
+      margin-top:10px;
+      height:10px;border-radius:999px;border:1px solid #e5e7eb;background:#f3f4f6;
+      overflow:hidden
+    }
+    .ts-progress > div{
+      height:100%;
+      width:0%;
+      background:#0f172a;
+      transition:width .12s linear
+    }
+
+    /* ===== Info blocks ===== */
+    .section-block{
+      background:var(--card);
+      border-radius:12px;
+      border:1px solid #e2e8f0;
+      padding:14px 16px 12px;
+      box-shadow:0 8px 20px rgba(15,23,42,.035)
+    }
+    .section-block h3{
+      font-size:16px;
+      font-weight:800;
+      margin-bottom:6px;
+      color:#0f172a
+    }
+    .section-block h4{
+      font-size:14px;
+      font-weight:700;
+      margin-top:10px;
+      margin-bottom:4px;
+      color:#111827
+    }
+    .section-block p{
+      font-size:13px;
+      color:#4b5563;
+      margin-bottom:6px
+    }
+    .section-block ul{
+      padding-left:18px;
+      font-size:13px;
+      color:#4b5563
+    }
+    .section-block ul li+li{margin-top:2px}
+
+    /* ===== Sidebar ===== */
+    .age-sidebar{display:flex;flex-direction:column;gap:16px}
+    .sidebar-card{
+      background:var(--card);
+      border-radius:12px;
+      border:1px solid #e2e8f0;
+      padding:12px 12px 10px;
+      box-shadow:0 10px 24px rgba(15,23,42,.06);
+      font-size:13px
+    }
+    .sidebar-title-bar{
+      margin:-12px -12px 8px;
+      padding:7px 10px;
+      background:#0f172a;
+      color:#f9fafb;
+      font-size:14px;
+      font-weight:800;
+      border-radius:12px 12px 0 0;
+      box-shadow:inset 0 -1px 0 rgba(148,163,184,.35);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px
+    }
+    .sidebar-group{margin-top:10px}
+    .sidebar-group h4{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:0.06em;
+      color:#6b7280;
+      margin-bottom:3px;
+      font-weight:700
+    }
+    .sidebar-links{list-style:none;font-size:13px}
+    .sidebar-links li+li{margin-top:3px}
+    .sidebar-links a{color:#1d4ed8}
+    .sidebar-links a:hover{text-decoration:underline}
+
+    /* ===== QUICK SEARCH ===== */
+    .tool-search{margin:6px 0 4px}
+    .sidebar-search-input-wrapper{
+      position:relative;
+      display:flex;
+      align-items:center;
+      margin-top:4px
+    }
+    .sidebar-search-icon{
+      position:absolute;
+      left:10px;
+      font-size:12px;
+      opacity:0.7
+    }
+    .sidebar-search-input{
+      width:100%;
+      padding:8px 10px 8px 28px;
+      border-radius:8px;
+      border:1px solid #d5d9e0;
+      background-color:#f9fafb;
+      font-size:13px;
+      outline:none;
+      transition:border-color .15s ease,background-color .15s ease,box-shadow .15s ease
+    }
+    .sidebar-search-input:focus{
+      border-color:#3f82bd;
+      background-color:#ffffff;
+      box-shadow:0 0 0 1px rgba(63,130,189,0.12)
+    }
+    .sidebar-search-suggestions{
+      list-style:none;
+      margin-top:8px;
+      padding:4px 0;
+      max-height:220px;
+      overflow-y:auto;
+      border-radius:10px;
+      border:1px solid #e3e7ee;
+      background-color:#ffffff;
+      box-shadow:0 8px 20px rgba(15,23,42,0.12);
+      display:none
+    }
+    .sidebar-search-suggestions.visible{display:block}
+    .sidebar-search-suggestions li{
+      font-size:13px;
+      padding:7px 10px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      gap:8px
+    }
+    .sidebar-search-suggestions li + li{border-top:1px solid #f1f3f8}
+    .sidebar-search-suggestions li span.tool-name{
+      flex:1;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis
+    }
+    .sidebar-search-suggestions li i{
+      font-size:12px;
+      opacity:0.8
+    }
+    .sidebar-search-suggestions li:hover{background-color:#f3f4f8}
+
+    /* ===== Footer ===== */
+    .pro-footer{background:#020617;color:#cbd5e1;margin-top:40px}
+    .pf-wrap{
+      max-width:1200px;margin:0 auto;padding:34px 15px;
+      display:grid;grid-template-columns:320px 1fr;gap:26px
+    }
+    .pf-logo{display:flex;align-items:center;gap:10px}
+    .pf-brand-text{font-size:18px;font-weight:800;color:#e2e8f0}
+    .pf-brand-text span{color:#38bdf8}
+    .pf-tag{margin-top:8px;color:#94a3b8;font-size:13px}
+    .pf-social{display:flex;gap:10px;margin-top:10px}
+    .pf-social a{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:34px;height:34px;border:1px solid #1e293b;border-radius:10px;
+      background:#0b1220;color:#cbd5e1;
+      transition:background .15s,color .15s,border-color .15s,transform .15s,box-shadow .15s
+    }
+    .pf-social a:hover{
+      background:#38bdf8;border-color:#38bdf8;color:#0b1220;
+      transform:translateY(-1px);
+      box-shadow:0 4px 12px rgba(56,189,248,.4)
+    }
+    .pf-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .pf-col h5{color:#e2e8f0;font-weight:800;font-size:14px;margin-bottom:10px}
+    .pf-col ul{list-style:none}
+    .pf-col li{margin:8px 0}
+    .pf-col a{color:#94a3b8}
+    .pf-col a:hover{color:#e2e8f0}
+    .pf-bottom{border-top:1px solid #1e293b;background:#0b1220}
+    .pf-bottom-wrap{
+      max-width:1200px;margin:0 auto;padding:12px 15px;
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      color:#8893a7;font-size:13px
+    }
+    .pf-links{display:flex;gap:10px}
+    .pf-links a{color:#94a3b8}
+    .pf-links a:hover{color:#e2e8f0}
+
+    /* ===== Auth Modal ===== */
+    .modal-overlay{
+      position:fixed;inset:0;background:rgba(15,23,42,0.7);
+      display:none;z-index:200
+    }
+    .modal{
+      position:fixed;top:50%;left:50%;
+      transform:translate(-50%,-50%);
+      width:420px;max-width:96vw;background:#ffffff;
+      border:1px solid #e5e7eb;border-radius:14px;
+      box-shadow:0 18px 40px rgba(15,23,42,0.35);
+      display:none;z-index:210
+    }
+    .modal-head{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:10px 12px;border-bottom:1px solid #e5e7eb
+    }
+    .modal-head h3{font-size:15px;font-weight:800;color:#111827}
+    .modal-close{
+      background:#f3f4f6;border:1px solid #e5e7eb;border-radius:8px;
+      padding:6px 8px;cursor:pointer
+    }
+    .modal-body{padding:12px;font-size:13px;color:#4b5563}
+
+    /* ===== Result Popup ===== */
+    .ts-popup-overlay{
+      position:fixed;inset:0;background:rgba(15,23,42,0.65);
+      display:none;z-index:9999
+    }
+    .ts-popup-overlay.active{display:block}
+    .ts-popup{
+      position:fixed;top:50%;left:50%;
+      transform:translate(-50%,-50%);
+      width:520px;max-width:94vw;background:#ffffff;
+      border:1px solid #e5e7eb;border-radius:14px;
+      box-shadow:0 18px 48px rgba(15,23,42,0.35);
+      display:none;z-index:10000;overflow:hidden;
+      font-family:Arial,Helvetica,sans-serif
+    }
+    .ts-popup.active{display:block}
+    .ts-popup-head{
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      padding:10px 12px;background:#0f172a;color:#f9fafb;border-bottom:1px solid #1f2937
+    }
+    .ts-popup-head .title{
+      display:flex;align-items:center;gap:8px;font-weight:900;font-size:14px
+    }
+    .ts-popup-close{
+      background:#f3f4f6;border:1px solid #e5e7eb;border-radius:10px;
+      padding:6px 10px;cursor:pointer;font-weight:800
+    }
+    .ts-popup-body{padding:12px 12px 10px}
+    .ts-popup-body p{font-size:12.5px;color:#4b5563;margin-bottom:10px}
+    .ts-popup-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+    .ts-popup-item{
+      border:1px solid #e5e7eb;border-radius:12px;background:#f9fafb;padding:8px 10px
+    }
+    .ts-popup-item small{display:block;font-size:11px;color:#6b7280;margin-bottom:2px}
+    .ts-popup-item b{font-size:15px;color:#111827}
+    .ts-popup-tips{
+      margin-top:10px;border-top:1px solid #eef2f7;padding-top:8px;display:grid;gap:6px
+    }
+    .ts-popup-tips .tip{
+      display:flex;align-items:flex-start;gap:8px;font-size:12px;color:#334155
+    }
+    .ts-popup-tips .tip i{margin-top:2px;opacity:.85}
+    .ts-popup-actions{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+    .ts-popup-btn{
+      border-radius:999px;border:1px solid #2563eb;background:#2563eb;color:#f9fafb;
+      padding:7px 12px;font-size:12px;cursor:pointer;
+      display:inline-flex;align-items:center;gap:6px;
+      box-shadow:0 4px 10px rgba(37,99,235,0.25)
+    }
+    .ts-popup-btn:hover{background:#1d4ed8}
+    .ts-popup-btn.secondary{
+      border-color:#e5e7eb;background:#f3f4f6;color:#111827;box-shadow:none
+    }
+    .ts-popup-btn.secondary:hover{background:#e5e7eb}
+    .ts-popup-badge{
+      display:inline-flex;align-items:center;gap:6px;
+      padding:3px 10px;border-radius:999px;border:1px solid #e5e7eb;background:#f3f4f6;
+      font-size:11px;color:#111827;margin-left:6px
+    }
+    .ts-popup-good .ts-popup-head{background:linear-gradient(90deg,#0f172a,#14532d)}
+    .ts-popup-bad  .ts-popup-head{background:linear-gradient(90deg,#0f172a,#7f1d1d)}
+
+    /* ===== Responsive ===== */
+    @media (max-width:1100px){
+      .pf-wrap{grid-template-columns:1fr}
+      .pf-cols{grid-template-columns:repeat(2,1fr)}
+      .age-main{grid-template-columns:minmax(0,1.9fr) minmax(260px,1.2fr)}
+    }
+    @media (max-width:992px){
+      .wc-nav{display:none}
+      .mobile-menu-btn{display:inline-block}
+      .age-main{grid-template-columns:1fr}
+      .age-left{order:1}
+      .age-sidebar{order:2} /* default mobile: sidebar after tool unless moved by JS */
+      .ts-top-row{grid-template-columns:1fr}
+    }
+    @media (max-width:520px){
+      .ts-popup-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:640px){
+      .pf-cols{grid-template-columns:1fr}
+    }
+    @media (prefers-reduced-motion:reduce){
+      *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== Header ===== -->
+  <header class="wc-header">
+    <div class="wc-wrap">
+      <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+        <span class="slab slab-w">W</span>
+        <span class="slab slab-o">O</span>
+        <span class="slab slab-r">R</span>
+        <span class="slab slab-d">D</span>
+        <span class="wc-brand-text">
+          Calculator
+          <small class="wc-tagline">Every Word Counts</small>
+        </span>
+      </a>
+
+      <nav class="wc-nav" aria-label="Primary">
+        <a href="https://wordcalculator.net" class="wc-link">Home</a>
+        <a href="blog.html" class="wc-link">Blog</a>
+        <a href="tools.html" class="wc-link">Tools</a>
+        <a href="about.html" class="wc-link">About Us</a>
+		    <a href="signin.html" class="wc-link">Sign In</a>
+      </nav>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <div class="mobile-nav-header">
+        <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <span class="wc-brand-text">Calculator</span>
+        </a>
+        <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="https://wordcalculator.net" class="nav-link mobile-link">Home</a>
+        <a href="blog.html" class="nav-link mobile-link">Blog</a>
+        <a href="tools.html" class="nav-link mobile-link">Tools</a>
+        <a href="about.html" class="nav-link mobile-link">About Us</a>
+        <a href="signin.html" class="nav-link mobile-link">Sign In</a>
+      </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+  </header>
+
+  <!-- ===== Breadcrumbs ===== -->
+  <div class="crumb-wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="https://wordcalculator.net">Home</a>
+      <span class="crumb-separator">/</span>
+      <a href="tools.html">Tools</a>
+      <span class="crumb-separator">/</span>
+      <span class="crumb-current">Typing Speed Test</span>
+    </nav>
+  </div>
+
+  <!-- ==================== MAIN ==================== -->
+  <main class="age-main">
+    <!-- LEFT SIDE -->
+    <section class="age-left">
+      <div class="age-top-grid">
+        <article class="card" aria-labelledby="typingCardTitle">
+          <div class="area-shell">
+            <div class="area-title-row">
+              <h1 id="typingCardTitle" class="area-title">Typing Speed Test</h1>
+              <span class="rt-pill">
+                <i class="fa-solid fa-keyboard" aria-hidden="true"></i>
+                WPM & accuracy test
+              </span>
+            </div>
+
+            <p class="ts-intro">
+              Start the timer and type the text exactly as shown. This test tracks WPM, accuracy, and mistakes, and uses a level system that gets harder over time.
+            </p>
+
+            <div class="ts-layout" aria-label="Typing speed test interface">
+              <div class="ts-top-row">
+                <!-- LEFT MAIN -->
+                <div class="ts-box" id="tsMainCard">
+                  <h2 class="ts-box-title">Test text</h2>
+                  <p class="ts-box-sub">Type the text below. Your progress is highlighted in real time.</p>
+
+                  <div class="ts-test-text" id="tsTargetText" aria-label="Test text area"></div>
+
+                  <div class="ts-label">Typing input</div>
+                  <div class="ts-input-wrap">
+                    <textarea
+                      id="tsInput"
+                      class="ts-textarea"
+                      placeholder="Start typing here..."
+                      spellcheck="false"
+                      autocomplete="off"
+                      autocapitalize="off"
+                      autocorrect="off"
+                      aria-label="Typing input"
+                    ></textarea>
+                  </div>
+
+                  <div class="ts-resizer" id="tsResizer" title="Drag to resize typing box" aria-label="Resize typing box">
+                    <i class="fa-solid fa-grip-lines" aria-hidden="true"></i>
+                  </div>
+
+                  <div class="ts-actions">
+                    <button type="button" class="ts-btn primary" id="tsStartBtn">
+                      <i class="fa-solid fa-play" aria-hidden="true"></i> Start
+                    </button>
+                    <button type="button" class="ts-btn" id="tsNewTextBtn">
+                      <i class="fa-solid fa-shuffle" aria-hidden="true"></i> New text
+                    </button>
+                    <button type="button" class="ts-btn danger" id="tsRestartBtn">
+                      <i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Restart
+                    </button>
+                  </div>
+                </div>
+
+                <!-- RIGHT SIDE -->
+                <div class="ts-side">
+                  <div class="ts-box" id="tsSettingsCard">
+                    <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+                      <h2 class="ts-box-title" style="margin:0;">Test settings</h2>
+                      <span class="ts-level-badge" id="tsLevelBadge">
+                        <i class="fa-solid fa-medal" aria-hidden="true"></i>
+                        Level 1
+                      </span>
+                    </div>
+                    <p class="ts-box-sub">Choose a timer. Levels and targets update automatically.</p>
+
+                    <div class="ts-field">
+                      <label for="tsDuration">Timer</label>
+                      <select id="tsDuration" class="ts-select">
+                        <option value="15">15 seconds</option>
+                        <option value="30">30 seconds</option>
+                        <option value="60" selected>60 seconds</option>
+                        <option value="120">120 seconds</option>
+                      </select>
+                    </div>
+
+                    <div class="ts-field">
+                      <label>Targets (for this level)</label>
+                      <div class="ts-target-line">
+                        <span><i class="fa-solid fa-gauge-high" aria-hidden="true"></i> WPM target</span>
+                        <strong id="tsTargetWpm">20</strong>
+                      </div>
+                      <div class="ts-target-line" style="margin-top:8px;">
+                        <span><i class="fa-solid fa-bullseye" aria-hidden="true"></i> Accuracy target</span>
+                        <strong id="tsTargetAcc">90%</strong>
+                      </div>
+                    </div>
+
+                    <div class="ts-progress" aria-label="Level progress">
+                      <div id="tsProgressFill"></div>
+                    </div>
+                  </div>
+
+                  <div class="ts-box">
+                    <h2 class="ts-box-title">Live stats</h2>
+                    <p class="ts-box-sub">Updates while you type. Final feedback appears in a popup.</p>
+
+                    <div class="ts-row">
+                      <div class="ts-stat">
+                        <div class="ts-stat-label">Time left</div>
+                        <div class="ts-stat-value" id="tsTimeLeft">60s</div>
+                      </div>
+                      <div class="ts-stat">
+                        <div class="ts-stat-label">WPM</div>
+                        <div class="ts-stat-value" id="tsWpm">0</div>
+                      </div>
+                      <div class="ts-stat">
+                        <div class="ts-stat-label">Accuracy</div>
+                        <div class="ts-stat-value" id="tsAcc">100%</div>
+                      </div>
+                      <div class="ts-stat">
+                        <div class="ts-stat-label">Mistakes</div>
+                        <div class="ts-stat-value" id="tsMistakes">0</div>
+                      </div>
+                    </div>
+
+                    <div class="ts-row" style="margin-top:8px;">
+                      <div class="ts-stat">
+                        <div class="ts-stat-label">Typed chars</div>
+                        <div class="ts-stat-value" id="tsTyped">0</div>
+                      </div>
+                      <div class="ts-stat">
+                        <div class="ts-stat-label">Correct chars</div>
+                        <div class="ts-stat-value" id="tsCorrect">0</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick tips block (kept as-is style) -->
+              <div class="section-block" id="tsQuickTips" style="margin-top:12px;">
+                <h4>Quick tips</h4>
+                <ul>
+                  <li>Focus on accuracy first. Speed improves naturally with clean repetition.</li>
+                  <li>Type what you see. Do not skip punctuation or extra spaces.</li>
+                  <li>Use the level system to build consistency and confidence over time.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Usage + Explanation Content -->
+      <article class="section-block" id="how-it-works">
+        <h3>How to use this typing speed test</h3>
+        <p>
+          Choose a timer (15, 30, 60, or 120 seconds), press <strong>Start</strong>, and type the test text exactly as shown.
+          Your <strong>WPM</strong>, <strong>accuracy</strong>, and <strong>mistakes</strong> update live while you type.
+          When the timer ends (or you complete the text), you will see a result popup with feedback and improvement tips.
+        </p>
+
+        <h4>How it works</h4>
+        <p>
+          The test measures your speed using a standard approach: it estimates words as <strong>5 characters</strong>.
+          WPM is calculated from your typed characters over the elapsed time. Accuracy is calculated by comparing each typed
+          character against the target text. Mistakes reflect characters that do not match.
+        </p>
+
+        <h4>Why this test is useful</h4>
+        <ul>
+          <li><strong>Build real-world typing skill</strong> for work, study, messaging, and content creation.</li>
+          <li><strong>Improve accuracy</strong> so your speed stays stable under pressure.</li>
+          <li><strong>Level up gradually</strong> with harder text and higher targets to keep practice engaging.</li>
+          <li><strong>Get actionable feedback</strong> after each attempt via the result popup.</li>
+        </ul>
+
+        <h4>What improves when you practice regularly?</h4>
+        <ul>
+          <li>Fewer mistakes and less backspacing</li>
+          <li>More consistent rhythm and smoother typing flow</li>
+          <li>Better control when typing punctuation and mixed-case text</li>
+          <li>Higher WPM without sacrificing accuracy</li>
+        </ul>
+      </article>
+
+      <!-- Extra SEO block -->
+      <article class="section-block">
+        <h3>Typing levels and progressive difficulty</h3>
+        <p>
+          This tool uses a level system that increases difficulty step by step. Early levels use shorter, simpler sentences
+          to help you build confidence. Later levels introduce longer texts, punctuation, numbers, and more complex structure.
+          If you meet the WPM and accuracy targets, you level up. If not, the result popup shows what to improve next.
+        </p>
+        <p>
+          The goal is to help you improve in a controlled way: small challenges, clear feedback, and repeatable practice.
+          Over time, you can raise both speed and accuracy while keeping errors low.
+        </p>
+      </article>
+    </section>
+
+    <!-- RIGHT SIDE / SIDEBAR -->
+    <aside class="age-sidebar" aria-label="Quick search and related tools" id="tsSidebar">
+      <div class="sidebar-card" id="tsSidebarCard">
+        <div class="sidebar-title-bar">
+          <span>Quick Search</span>
+          <i class="fas fa-magnifying-glass"></i>
+        </div>
+
+        <div class="tool-search">
+          <small>Quick links to other tools on WordCalculator.net</small>
+          <div class="sidebar-search-input-wrapper">
+            <i class="fa-solid fa-magnifying-glass sidebar-search-icon" aria-hidden="true"></i>
+            <input
+              type="search"
+              id="toolSearchInput"
+              class="sidebar-search-input"
+              placeholder="Search tools by name..."
+              autocomplete="off"
+              aria-label="Search tools by name"
+            />
+          </div>
+          <ul id="toolSearchSuggestions" class="sidebar-search-suggestions" aria-label="Tool suggestions"></ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Popular</h4>
+          <ul class="sidebar-links">
+            <li><a href="age-calculator.html">Age Calculator</a></li>
+            <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+            <li><a href="calorie-calculator.html">Calorie Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Text &amp; Writing</h4>
+          <ul class="sidebar-links">
+            <li><a href="https://wordcalculator.net">Word &amp; Character Counter</a></li>
+            <li><a href="case-converter.html">Case Converter</a></li>
+            <li><a href="grammar-spell-checker.html">Grammar &amp; Spell Checker</a></li>
+            <li><a href="readability-analyzer.html">Readability Analyzer</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>SEO &amp; Content</h4>
+          <ul class="sidebar-links">
+            <li><a href="keyword-density-analyzer.html">Keyword Density Analyzer</a></li>
+            <li><a href="title-meta-preview.html">Title &amp; Meta Preview</a></li>
+            <li><a href="url-slug-generator.html">URL Slug Generator</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Finance &amp; Time</h4>
+          <ul class="sidebar-links">
+            <li><a href="loan-emi-calculator.html">Loan &amp; EMI Calculator</a></li>
+            <li><a href="interest-calculator.html">Interest Calculator</a></li>
+            <li><a href="focus-timer.html">Focus Timer</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="pro-footer" id="about" aria-label="Website footer">
+    <div class="pf-wrap">
+      <div class="pf-brand">
+        <div class="pf-logo">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <div class="pf-brand-text">
+            WordCalculator<span>.net</span>
+          </div>
+        </div>
+        <p class="pf-tag">A focused, distraction-free toolkit for precise writing.</p>
+        <div class="pf-social">
+          <a href="https://facebook.com/wordcalculator" aria-label="Facebook" rel="noopener" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/wordcalculator" aria-label="X (Twitter)" rel="noopener" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://linkedin.com/company/wordcalculator" aria-label="LinkedIn" rel="noopener" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://youtube.com/@wordcalculator" aria-label="YouTube" rel="noopener" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="pf-cols">
+        <div class="pf-col">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="https://wordcalculator.net">Editor</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="grammar-spell-checker.html">Grammar Check</a></li>
+            <li><a href="keyword-density-analyzer.html">Keyword Density</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="guides.html">Tips &amp; Guides</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="bug-report.html">Report a Bug</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html">Cookie Policy</a></li>
+            <li><a href="security.html">Security</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pf-bottom">
+      <div class="pf-bottom-wrap">
+        <div>© <span id="pf-year"></span> WordCalculator.net — All rights reserved.</div>
+        <div class="pf-links">
+          <a href="sitemap.html">Sitemap</a>
+          <a href="status.html">Status</a>
+          <a href="accessibility.html">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Auth Modal ===== -->
+  <div class="modal-overlay" id="authOverlay" aria-hidden="true"></div>
+  <div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <div class="modal-head">
+      <h3 id="authTitle"><i class="fas fa-user-lock"></i> Account</h3>
+      <button class="modal-close" id="authCloseBtn" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body">
+      Sign-in and account features are coming soon. For now, all tools are free to use without registration.
+    </div>
+  </div>
+
+  <!-- ===== Result Popup ===== -->
+  <div class="ts-popup-overlay" id="tsPopupOverlay" aria-hidden="true"></div>
+  <div class="ts-popup" id="tsPopup" role="dialog" aria-modal="true" aria-labelledby="tsPopupTitle">
+    <div class="ts-popup-head" id="tsPopupHead">
+      <div class="title" id="tsPopupTitle">
+        <i class="fa-solid fa-flag-checkered" aria-hidden="true"></i>
+        <span id="tsPopupTitleText">Result</span>
+        <span class="ts-popup-badge" id="tsPopupBadge">Level</span>
+      </div>
+      <button type="button" class="ts-popup-close" id="tsPopupClose" aria-label="Close">×</button>
+    </div>
+    <div class="ts-popup-body">
+      <p id="tsPopupDesc">—</p>
+
+      <div class="ts-popup-grid" aria-label="Result summary">
+        <div class="ts-popup-item"><small>WPM</small><b id="tsPopWpm">0</b></div>
+        <div class="ts-popup-item"><small>Accuracy</small><b id="tsPopAcc">0%</b></div>
+        <div class="ts-popup-item"><small>Mistakes</small><b id="tsPopMist">0</b></div>
+        <div class="ts-popup-item"><small>Words</small><b id="tsPopWords">0</b></div>
+      </div>
+
+      <div class="ts-popup-tips" id="tsPopupTips" aria-label="Improvement tips"></div>
+
+      <div class="ts-popup-actions">
+        <button type="button" class="ts-popup-btn" id="tsPopupRestart">
+          <i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Restart
+        </button>
+        <button type="button" class="ts-popup-btn secondary" id="tsPopupNewText">
+          <i class="fa-solid fa-shuffle" aria-hidden="true"></i> New text
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== JS ==================== -->
+
+  <!-- Tools Directory Js -->
+  <script src="tools-directory.js"></script>
+
+  <script>
+    const $  = (s)=>document.querySelector(s);
+    const $$ = (s)=>Array.from(document.querySelectorAll(s));
+
+    document.addEventListener("DOMContentLoaded", ()=>{
+      initYear();
+      initMobileMenu();
+      initAuthModal();
+      initToolQuickSearch();
+
+      initTypingTest();
+      initMobileSidebarPlacement();
+    });
+
+    function initYear(){
+      const el=$("#pf-year");
+      if(el) el.textContent=new Date().getFullYear();
+    }
+
+    function initMobileMenu(){
+      const mobileMenuBtn=$("#mobileMenuBtn");
+      const mobileCloseBtn=$("#mobileCloseBtn");
+      const mobileNav=$("#mobileNav");
+      const mobileOverlay=$("#mobileOverlay");
+      if(!mobileMenuBtn||!mobileNav||!mobileOverlay) return;
+
+      const open=()=>{
+        mobileNav.classList.add("active");
+        mobileOverlay.classList.add("active");
+        document.body.style.overflow="hidden";
+      };
+      const close=()=>{
+        mobileNav.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        document.body.style.overflow="";
+      };
+
+      mobileMenuBtn.addEventListener("click",open);
+      if(mobileCloseBtn) mobileCloseBtn.addEventListener("click",close);
+      mobileOverlay.addEventListener("click",close);
+      $$(".mobile-link").forEach(link=>link.addEventListener("click",close));
+
+      const openAuthBtnMobile=$("#openAuthBtnMobile");
+      if(openAuthBtnMobile){
+        openAuthBtnMobile.addEventListener("click",()=>{
+          close();
+          openAuthModal();
+        });
+      }
+    }
+
+    function initAuthModal(){
+      const openBtn=$("#openAuthBtn");
+      const overlay=$("#authOverlay");
+      const modal=$("#authModal");
+      const closeBtn=$("#authCloseBtn");
+      if(!overlay || !modal) return;
+
+      const open=()=>{
+        overlay.style.display="block";
+        modal.style.display="block";
+        document.body.style.overflow="hidden";
+      };
+      const close=()=>{
+        overlay.style.display="none";
+        modal.style.display="none";
+        document.body.style.overflow="";
+      };
+
+      if(openBtn) openBtn.addEventListener("click",open);
+      if(closeBtn) closeBtn.addEventListener("click",close);
+      overlay.addEventListener("click",close);
+      document.addEventListener("keydown",(e)=>{
+        if(e.key==="Escape") close();
+      });
+    }
+    function openAuthModal(){
+      const overlay=$("#authOverlay");
+      const modal=$("#authModal");
+      if(!overlay||!modal) return;
+      overlay.style.display="block";
+      modal.style.display="block";
+      document.body.style.overflow="hidden";
+    }
+
+    /* ==================== Typing Speed Test ==================== */
+    const STORAGE_KEY_LEVEL = "wc_typing_level_v1";
+
+    const LEVELS = [
+      {wpm:20, acc:90, pool:"easy"},
+      {wpm:25, acc:91, pool:"easy"},
+      {wpm:30, acc:92, pool:"easy"},
+      {wpm:35, acc:93, pool:"medium"},
+      {wpm:40, acc:94, pool:"medium"},
+      {wpm:45, acc:94, pool:"medium"},
+      {wpm:50, acc:95, pool:"hard"},
+      {wpm:55, acc:95, pool:"hard"},
+      {wpm:60, acc:96, pool:"hard"},
+      {wpm:65, acc:96, pool:"expert"},
+      {wpm:70, acc:97, pool:"expert"},
+      {wpm:75, acc:97, pool:"expert"}
+    ];
+
+    const TEXT_BANK = {
+      easy: [
+        "Small steps every day create big results over time.",
+        "Practice makes progress, and progress builds confidence.",
+        "Stay calm, keep your eyes on the text, and type smoothly.",
+        "Clear typing is better than fast typing with lots of errors.",
+        "Good habits grow when you repeat them consistently."
+      ],
+      medium: [
+        "When you write quickly, your focus matters more than your speed; accuracy keeps your rhythm stable.",
+        "Typing with confidence means fewer pauses, fewer corrections, and a steady pace from start to finish.",
+        "A simple trick: relax your shoulders, keep your wrists neutral, and let your fingers do the work.",
+        "Consistency is the real goal: aim for clean lines, correct punctuation, and controlled speed.",
+        "Speed improves naturally when you stop rushing and start typing correctly, one character at a time."
+      ],
+      hard: [
+        "A strong typing rhythm is built on precision: commas, periods, quotes, and parentheses all count (even small details).",
+        "If your accuracy drops, reduce speed slightly and recover control; then increase pace again without panic.",
+        "Numbers and punctuation increase difficulty: 7 days, 3 goals, 2 minutes, and 1 clear plan—typed perfectly.",
+        "Try not to look at the keyboard; trust the layout, keep your gaze forward, and correct fewer times.",
+        "Complex sentences demand focus: keep spacing exact, match case correctly, and avoid extra characters."
+      ],
+      expert: [
+        "Advanced practice includes symbols and structure: use \"quotes\", (parentheses), and dashes—without missing spaces.",
+        "Typing well is a skill: control speed, maintain accuracy, and minimize correction loops that break momentum.",
+        "Precision drill: Type this line exactly: {alpha: 12, beta: 3.5, note: \"keep it clean\"}.",
+        "Challenge: Maintain flow while typing punctuation-heavy text; avoid skipping characters or adding extras.",
+        "High-level typing feels effortless because the work is done by muscle memory, not by visual hunting."
+      ]
+    };
+
+    function initTypingTest(){
+      const input = $("#tsInput");
+      const targetBox = $("#tsTargetText");
+
+      const startBtn = $("#tsStartBtn");
+      const newTextBtn = $("#tsNewTextBtn");
+      const restartBtn = $("#tsRestartBtn");
+
+      const durationSel = $("#tsDuration");
+
+      const levelBadge = $("#tsLevelBadge");
+      const targetWpmEl = $("#tsTargetWpm");
+      const targetAccEl = $("#tsTargetAcc");
+      const progressFill = $("#tsProgressFill");
+
+      const timeLeftEl = $("#tsTimeLeft");
+      const wpmEl = $("#tsWpm");
+      const accEl = $("#tsAcc");
+      const mistakesEl = $("#tsMistakes");
+      const typedEl = $("#tsTyped");
+      const correctEl = $("#tsCorrect");
+
+      const settingsCard = $("#tsSettingsCard");
+      const resizer = $("#tsResizer");
+
+      if(!input || !targetBox || !startBtn || !durationSel) return;
+
+      let currentLevel = loadLevel();
+      currentLevel = clamp(currentLevel, 1, LEVELS.length);
+
+      let targetText = "";
+      let started = false;
+      let finished = false;
+
+      let duration = parseInt(durationSel.value,10) || 60;
+      let startTime = 0;
+      let timerId = null;
+
+      function setLevelUI(){
+        const lv = LEVELS[currentLevel - 1];
+        if(levelBadge) levelBadge.innerHTML = `<i class="fa-solid fa-medal" aria-hidden="true"></i> Level ${currentLevel}`;
+        if(targetWpmEl) targetWpmEl.textContent = String(lv.wpm);
+        if(targetAccEl) targetAccEl.textContent = String(lv.acc) + "%";
+        if(progressFill){
+          const p = Math.round((currentLevel - 1) / (LEVELS.length - 1) * 100);
+          progressFill.style.width = (isFinite(p) ? p : 0) + "%";
+        }
+      }
+
+      function pickText(){
+        const lv = LEVELS[currentLevel - 1];
+        const pool = TEXT_BANK[lv.pool] || TEXT_BANK.easy;
+        const candidate = pool[Math.floor(Math.random() * pool.length)];
+
+        // Slightly scale length by level without changing design: concatenate a second sentence on higher levels.
+        if(currentLevel >= 7){
+          const extra = (TEXT_BANK[lv.pool] || pool)[Math.floor(Math.random() * pool.length)];
+          return candidate + " " + extra;
+        }
+        if(currentLevel >= 10){
+          const extra2 = (TEXT_BANK[lv.pool] || pool)[Math.floor(Math.random() * pool.length)];
+          return candidate + " " + extra2;
+        }
+        return candidate;
+      }
+
+      function renderTargetWithHighlight(typed){
+        const t = targetText;
+        const v = typed || "";
+
+        const safe = (s)=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+
+        const len = Math.min(v.length, t.length);
+        let html = "";
+
+        if(len > 0){
+          for(let i=0;i<len;i++){
+            const ch = t[i];
+            const typedCh = v[i];
+            const cls = (typedCh === ch) ? "good" : "bad";
+            html += `<span class="${cls}">${safe(ch)}</span>`;
+          }
+        }
+
+        if(len < t.length){
+          html += `<span class="cursor" aria-hidden="true"></span>`;
+          html += safe(t.slice(len));
+        }
+
+        if(len >= t.length){
+          html += `<span class="cursor" aria-hidden="true"></span>`;
+        }
+
+        targetBox.innerHTML = html;
+      }
+
+      function countWords(text){
+        const cleaned = (text||"").replace(/[\n\r]+/g," ").trim().replace(/\s+/g," ");
+        if(!cleaned) return 0;
+        return cleaned.split(" ").length;
+      }
+
+      function getStats(){
+        const typed = input.value || "";
+        const elapsed = started ? Math.max((Date.now() - startTime) / 1000, 0.001) : 0.001;
+
+        const compareLen = Math.min(typed.length, targetText.length);
+        let correctChars = 0;
+        for(let i=0;i<compareLen;i++){
+          if(typed[i] === targetText[i]) correctChars++;
+        }
+
+        const typedChars = typed.length;
+        const mistakes = Math.max(typedChars - correctChars, 0);
+        const accuracy = typedChars > 0 ? Math.round((correctChars / typedChars) * 100) : 100;
+
+        const minutes = elapsed / 60;
+        const wpm = minutes > 0 ? Math.round((typedChars / 5) / minutes) : 0;
+
+        return {
+          typedChars,
+          correctChars,
+          mistakes,
+          accuracy,
+          wpm,
+          words: countWords(typed)
+        };
+      }
+
+      function updateLive(){
+        const stats = getStats();
+        if(wpmEl) wpmEl.textContent = String(stats.wpm);
+        if(accEl) accEl.textContent = String(stats.accuracy) + "%";
+        if(mistakesEl) mistakesEl.textContent = String(stats.mistakes);
+        if(typedEl) typedEl.textContent = String(stats.typedChars);
+        if(correctEl) correctEl.textContent = String(stats.correctChars);
+      }
+
+      function updateTime(){
+        if(!started || finished) return;
+        const elapsed = (Date.now() - startTime) / 1000;
+        const left = Math.max(Math.ceil(duration - elapsed), 0);
+        if(timeLeftEl) timeLeftEl.textContent = left + "s";
+        if(left <= 0){
+          finishRun("time");
+        }
+      }
+
+      function resetRun(keepText){
+        clearInterval(timerId);
+        timerId = null;
+        started = false;
+        finished = false;
+
+        duration = parseInt(durationSel.value,10) || 60;
+        if(timeLeftEl) timeLeftEl.textContent = duration + "s";
+
+        input.value = "";
+        input.disabled = false;
+
+        if(!keepText){
+          targetText = pickText();
+        }
+        renderTargetWithHighlight("");
+
+        updateLive();
+        syncTextareaHeightToSettings();
+      }
+
+      function startRun(){
+        if(started || finished) return;
+        started = true;
+        finished = false;
+        startTime = Date.now();
+
+        input.focus();
+
+        clearInterval(timerId);
+        timerId = setInterval(()=>{
+          updateTime();
+          updateLive();
+          checkCompletion();
+        }, 120);
+
+        updateTime();
+        updateLive();
+      }
+
+      function checkCompletion(){
+        if(!started || finished) return;
+        const typed = input.value || "";
+        if(typed.length >= targetText.length){
+          finishRun("complete");
+        }
+      }
+
+      function finishRun(reason){
+        if(finished) return;
+        finished = true;
+        started = false;
+
+        clearInterval(timerId);
+        timerId = null;
+
+        input.disabled = true;
+
+        const stats = getStats();
+        const lv = LEVELS[currentLevel - 1];
+
+        const pass = (stats.wpm >= lv.wpm) && (stats.accuracy >= lv.acc);
+        const attemptedLevel = currentLevel;
+
+        if(pass && currentLevel < LEVELS.length){
+          currentLevel++;
+          saveLevel(currentLevel);
+        }else if(pass && currentLevel === LEVELS.length){
+          saveLevel(currentLevel);
+        }
+
+        setLevelUI();
+
+        showResultPopup({
+          pass,
+          reason,
+          stats,
+          target: { wpm: lv.wpm, acc: lv.acc },
+          levelNow: attemptedLevel,
+          levelMax: LEVELS.length,
+          leveledUpTo: pass ? currentLevel : attemptedLevel
+        });
+      }
+
+      function showResultPopup({ pass, reason, stats, target, levelNow, levelMax, leveledUpTo }){
+        const overlay = $("#tsPopupOverlay");
+        const popup   = $("#tsPopup");
+        if(!overlay || !popup) return;
+
+        popup.classList.remove("ts-popup-good","ts-popup-bad");
+        popup.classList.add(pass ? "ts-popup-good" : "ts-popup-bad");
+
+        const titleText = $("#tsPopupTitleText");
+        const badge = $("#tsPopupBadge");
+        const desc = $("#tsPopupDesc");
+        const wpmOut = $("#tsPopWpm");
+        const accOut = $("#tsPopAcc");
+        const misOut = $("#tsPopMist");
+        const wrdOut = $("#tsPopWords");
+        const tipsWrap = $("#tsPopupTips");
+
+        if(titleText) titleText.textContent = pass ? "Congratulations!" : "Needs improvement";
+        if(badge) badge.textContent = `Level ${levelNow} / ${levelMax}`;
+
+        if(wpmOut) wpmOut.textContent = String(stats.wpm);
+        if(accOut) accOut.textContent = String(stats.accuracy) + "%";
+        if(misOut) misOut.textContent = String(stats.mistakes);
+        if(wrdOut) wrdOut.textContent = String(stats.words);
+
+        const baseReason = (reason === "time") ? "Time is up." : "Text completed.";
+        if(desc){
+          if(pass){
+            const upMsg = (leveledUpTo > levelNow) ? ` You unlocked Level ${leveledUpTo}.` : " You cleared the highest level.";
+            desc.textContent = `${baseReason} You met the targets (${target.wpm} WPM and ${target.acc}% accuracy).${upMsg}`;
+          }else{
+            desc.textContent = `${baseReason} Target: ${target.wpm} WPM and ${target.acc}% accuracy. Improve the points below and try again.`;
+          }
+        }
+
+        if(tipsWrap){
+          tipsWrap.innerHTML = "";
+          const tips = [];
+
+          if(stats.wpm < target.wpm){
+            tips.push({icon:"fa-solid fa-gauge-high", text:"Increase speed: aim for a steady rhythm. Type smoothly without pausing after each word."});
+          }else{
+            tips.push({icon:"fa-solid fa-bolt", text:"Speed target achieved: keep your pace consistent to avoid late-test slowdowns."});
+          }
+
+          if(stats.accuracy < target.acc){
+            tips.push({icon:"fa-solid fa-bullseye", text:"Improve accuracy: slow down slightly and focus on correct characters before pushing speed."});
+          }else{
+            tips.push({icon:"fa-solid fa-circle-check", text:"Accuracy target achieved: maintain clean typing while increasing speed gradually."});
+          }
+
+          if(stats.mistakes > 0){
+            tips.push({icon:"fa-solid fa-triangle-exclamation", text:"Mistakes detected: keep fingers on home row and avoid overusing backspace loops."});
+          }else{
+            tips.push({icon:"fa-solid fa-star", text:"Perfect run: no mistakes. Try a longer timer or the next level for a stronger challenge."});
+          }
+
+          tips.forEach(t=>{
+            const row = document.createElement("div");
+            row.className = "tip";
+            row.innerHTML = `<i class="${t.icon}" aria-hidden="true"></i><span>${t.text}</span>`;
+            tipsWrap.appendChild(row);
+          });
+        }
+
+        overlay.classList.add("active");
+        popup.classList.add("active");
+        overlay.setAttribute("aria-hidden","false");
+        document.body.style.overflow="hidden";
+      }
+
+      function closeResultPopup(){
+        const overlay = $("#tsPopupOverlay");
+        const popup   = $("#tsPopup");
+        if(!overlay || !popup) return;
+        overlay.classList.remove("active");
+        popup.classList.remove("active");
+        overlay.setAttribute("aria-hidden","true");
+        document.body.style.overflow="";
+      }
+
+      /* Popup wiring */
+      const popClose = $("#tsPopupClose");
+      const popOverlay = $("#tsPopupOverlay");
+      const popRestart = $("#tsPopupRestart");
+      const popNewText = $("#tsPopupNewText");
+
+      if(popClose) popClose.addEventListener("click", closeResultPopup);
+      if(popOverlay) popOverlay.addEventListener("click", closeResultPopup);
+      document.addEventListener("keydown",(e)=>{ if(e.key==="Escape") closeResultPopup(); });
+
+      if(popRestart) popRestart.addEventListener("click", ()=>{
+        closeResultPopup();
+        input.disabled = false;
+        resetRun(true);
+      });
+
+      if(popNewText) popNewText.addEventListener("click", ()=>{
+        closeResultPopup();
+        input.disabled = false;
+        resetRun(false);
+      });
+
+      /* Events */
+      durationSel.addEventListener("change", ()=>{
+        duration = parseInt(durationSel.value,10) || 60;
+        if(!started && !finished){
+          if(timeLeftEl) timeLeftEl.textContent = duration + "s";
+        }
+      });
+
+      input.addEventListener("input", ()=>{
+        if(!started || finished) return;
+        renderTargetWithHighlight(input.value || "");
+        updateLive();
+        checkCompletion();
+      });
+
+      startBtn.addEventListener("click", ()=>{
+        if(finished){
+          input.disabled = false;
+          resetRun(true);
+        }
+        if(!started) startRun();
+      });
+
+      if(newTextBtn) newTextBtn.addEventListener("click", ()=>{
+        if(started) return;
+        resetRun(false);
+      });
+
+      if(restartBtn) restartBtn.addEventListener("click", ()=>{
+        closeResultPopup();
+        input.disabled = false;
+        resetRun(true);
+      });
+
+      /* Custom resizer (bottom-center) */
+      let dragActive = false;
+      let startY = 0;
+      let startH = 0;
+
+      function onDragStart(e){
+        dragActive = true;
+        startY = (e.touches ? e.touches[0].clientY : e.clientY);
+        startH = input.getBoundingClientRect().height;
+        document.body.style.userSelect = "none";
+      }
+      function onDragMove(e){
+        if(!dragActive) return;
+        const y = (e.touches ? e.touches[0].clientY : e.clientY);
+        const dy = y - startY;
+        const newH = clamp(startH + dy, 140, 720);
+        input.style.height = newH + "px";
+      }
+      function onDragEnd(){
+        if(!dragActive) return;
+        dragActive = false;
+        document.body.style.userSelect = "";
+      }
+
+      if(resizer){
+        resizer.addEventListener("mousedown", onDragStart);
+        resizer.addEventListener("touchstart", onDragStart, {passive:true});
+        window.addEventListener("mousemove", onDragMove);
+        window.addEventListener("touchmove", onDragMove, {passive:true});
+        window.addEventListener("mouseup", onDragEnd);
+        window.addEventListener("touchend", onDragEnd);
+      }
+
+      function syncTextareaHeightToSettings(){
+        if(!settingsCard) return;
+        const h = Math.round(settingsCard.getBoundingClientRect().height);
+        if(h > 0){
+          input.style.height = Math.max(200, h) + "px";
+        }
+      }
+
+      function initDefault(){
+        setLevelUI();
+        targetText = pickText();
+        renderTargetWithHighlight("");
+        duration = parseInt(durationSel.value,10) || 60;
+        if(timeLeftEl) timeLeftEl.textContent = duration + "s";
+        updateLive();
+        syncTextareaHeightToSettings();
+      }
+
+      window.addEventListener("resize", ()=>{
+        if(!started && !finished){
+          syncTextareaHeightToSettings();
+        }
+      });
+
+      initDefault();
+    }
+
+    function clamp(n,min,max){
+      return Math.max(min, Math.min(max, n));
+    }
+    function loadLevel(){
+      try{
+        const v = parseInt(localStorage.getItem(STORAGE_KEY_LEVEL) || "1", 10);
+        return isFinite(v) ? v : 1;
+      }catch{
+        return 1;
+      }
+    }
+    function saveLevel(v){
+      try{ localStorage.setItem(STORAGE_KEY_LEVEL, String(v)); }catch{}
+    }
+
+    /* Mobile placement: move sidebar card above Quick tips only on mobile */
+    function initMobileSidebarPlacement(){
+      const sidebarCard = $("#tsSidebarCard");
+      const quickTips = $("#tsQuickTips");
+      const leftContainer = $(".age-left");
+
+      if(!sidebarCard || !quickTips || !leftContainer) return;
+
+      const mq = window.matchMedia("(max-width: 992px)");
+      const originalParent = sidebarCard.parentElement;
+
+      function apply(){
+        if(mq.matches){
+          if(sidebarCard.parentElement !== leftContainer){
+            leftContainer.insertBefore(sidebarCard, quickTips);
+          }
+        }else{
+          if(originalParent && sidebarCard.parentElement !== originalParent){
+            originalParent.appendChild(sidebarCard);
+          }
+        }
+      }
+
+      mq.addEventListener ? mq.addEventListener("change", apply) : mq.addListener(apply);
+      apply();
+    }
+
+    /* ===== Tool directory & Quick Search (with icons) ===== */
+    const toolDirectory = allTools;
+    
+    function initToolQuickSearch(){
+      const input=$("#toolSearchInput");
+      const suggestionsBox=$("#toolSearchSuggestions");
+      if(!input||!suggestionsBox||!Array.isArray(toolDirectory)) return;
+
+      let currentResults=[];
+
+      function renderSuggestions(query){
+        const value=(query||"").trim().toLowerCase();
+        suggestionsBox.innerHTML="";
+        if(!value){
+          suggestionsBox.classList.remove("visible");
+          return;
+        }
+
+        const allMatches=toolDirectory.filter(tool=>tool.name.toLowerCase().includes(value));
+        if(!allMatches.length){
+          const li=document.createElement("li");
+          li.textContent="No tools found";
+          suggestionsBox.appendChild(li);
+          suggestionsBox.classList.add("visible");
+          return;
+        }
+
+        function rankTool(tool){
+          const name=tool.name.toLowerCase();
+          const pos=name.indexOf(value);
+          const starts=name.startsWith(value)?0:1;
+          const lenDiff=Math.abs(name.length-value.length);
+          return starts*100 + pos*2 + lenDiff;
+        }
+
+        currentResults=allMatches.slice().sort((a,b)=>rankTool(a)-rankTool(b));
+        currentResults.slice(0,10).forEach(tool=>{
+          const li=document.createElement("li");
+          const iconEl=document.createElement("i");
+          iconEl.className=tool.icon || "fa-solid fa-wand-magic-sparkles";
+          const nameSpan=document.createElement("span");
+          nameSpan.className="tool-name";
+          nameSpan.textContent=tool.name;
+          li.appendChild(iconEl);
+          li.appendChild(nameSpan);
+          li.addEventListener("click",()=>{
+            if(tool.url) window.location.href=tool.url;
+          });
+          suggestionsBox.appendChild(li);
+        });
+
+        suggestionsBox.classList.add("visible");
+      }
+
+      input.addEventListener("input",(e)=>renderSuggestions(e.target.value));
+
+      input.addEventListener("keydown",(e)=>{
+        if(e.key==="Enter"){
+          const value=input.value.trim().toLowerCase();
+          if(!value) return;
+          const first=currentResults.length ? currentResults[0] : toolDirectory.find(
+            (tool)=>tool.name.toLowerCase().includes(value)
+          );
+          if(first && first.url) window.location.href=first.url;
+        }
+      });
+
+      document.addEventListener("click",(e)=>{
+        if(!input.contains(e.target) && !suggestionsBox.contains(e.target)){
+          suggestionsBox.classList.remove("visible");
+        }
+      });
+    }
+  </script>
+</body>
+</html>

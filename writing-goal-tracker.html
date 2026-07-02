@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ==================== ADVANCED SEO ==================== -->
+  <title>Writing Goal Tracker — Daily Word Count Goal, Streak & Deadline Planner</title>
+  <meta name="description" content="Free Writing Goal Tracker. Set a daily word goal, track writing sessions, build a streak, and plan a project deadline with required words per day. Fast, private and mobile-friendly." />
+  <meta name="keywords" content="writing goal tracker, daily word goal, word count tracker, writing streak, writing planner, deadline word count, writing habit tracker, writing productivity" />
+  <meta name="author" content="WordCalculator.net" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#020617" />
+  <link rel="canonical" href="https://wordcalculator.net/writing-goal-tracker.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wordcalculator.net/writing-goal-tracker.html" />
+  <meta property="og:title" content="Writing Goal Tracker — Daily Word Goal, Streak & Deadline Planner" />
+  <meta property="og:description" content="Set a daily writing goal, track sessions, build streaks, and calculate required words/day to hit your deadline." />
+  <meta property="og:image" content="https://wordcalculator.net/images/writing-goal-tracker-og.jpg" />
+  <meta property="og:site_name" content="WordCalculator.net" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://wordcalculator.net/writing-goal-tracker.html" />
+  <meta name="twitter:title" content="Writing Goal Tracker — Daily Word Goal, Streak & Deadline Planner" />
+  <meta name="twitter:description" content="Free writing goal tracker with daily goals, streaks, session logs and deadline planning." />
+  <meta name="twitter:image" content="https://wordcalculator.net/images/writing-goal-tracker-twitter.jpg" />
+  <meta name="twitter:creator" content="@wordcalculator" />
+
+  <!-- WebApplication schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Writing Goal Tracker",
+    "url":"https://wordcalculator.net/writing-goal-tracker.html",
+    "description":"Track daily writing goals, log sessions, build streaks, and plan deadlines by calculating required words per day.",
+    "applicationCategory":"UtilitiesApplication",
+    "operatingSystem":"Any",
+    "browserRequirements":"Requires JavaScript",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "featureList":[
+      "Daily writing goal tracking",
+      "Progress bar and stats",
+      "Project goal and deadline planner",
+      "Session log and streak tracking",
+      "Private on-device storage (localStorage)"
+    ],
+    "author":{"@type":"Organization","name":"WordCalculator.net"}
+  }
+  </script>
+
+  <!-- Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://wordcalculator.net/"},
+      {"@type":"ListItem","position":2,"name":"Tools","item":"https://wordcalculator.net/tools.html"},
+      {"@type":"ListItem","position":3,"name":"Writing Goal Tracker","item":"https://wordcalculator.net/writing-goal-tracker.html"}
+    ]
+  }
+  </script>
+
+  <!-- FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"How do I set a daily writing goal?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Enter your target number of words in the Daily Goal field. As you type or log sessions, the tracker updates your progress percentage and remaining words."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"How does the deadline planner work?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Enter a total project word goal and a deadline date. The tool calculates remaining days and the required words per day to finish on time based on your current progress."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Is my writing data private?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. Your progress is saved locally in your browser using localStorage. It is not sent to a server."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- ==================== /SEO ==================== -->
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+    /* ===== Base / Theme ===== */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --blue:#3f82bd;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --primary:#2563eb;
+      --bg:#f7f8fb;
+      --card:#fff;
+      --danger:#b91c1c;
+      --good:#166534;
+      --warn:#92400e;
+    }
+    html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    body{
+      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6
+    }
+    a{color:inherit;text-decoration:none}
+
+    /* ===== Header / Nav ===== */
+    .wc-header{background:#020617;color:#fff;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+    .wc-wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding:10px 12px;
+      display:flex;
+      align-items:center;
+      gap:14px
+    }
+    .wc-logo{display:inline-flex;align-items:center;gap:8px}
+    .wc-slab,.slab{
+      display:inline-flex;width:24px;height:24px;align-items:center;justify-content:center;
+      font-weight:800;font-size:14px;border-radius:2px;color:#fff
+    }
+    .slab-w{background:#1f2327}
+    .slab-o{background:#a7c1db;color:#1e2a3a}
+    .slab-r{background:#7d96ae}
+    .slab-d{background:#2f5d8a}
+    .wc-brand-text{
+      display:inline-flex;flex-direction:column;line-height:1.05;font-size:19px;font-weight:800
+    }
+    .wc-brand-text small{font-size:10px;opacity:.95}
+    .wc-nav{margin-left:10px;display:flex;align-items:center;gap:8px;flex:1}
+    .wc-link{
+      color:#f4f8fc;font-weight:700;font-size:14px;padding:6px 10px;border-radius:8px;
+      transition:.15s;background:transparent;border:0;cursor:pointer
+    }
+    .wc-link:hover{background:rgba(255,255,255,.14)}
+    .wc-signin-btn{background:rgba(148,163,184,.18);border:1px solid rgba(148,163,184,.5)}
+    .wc-signin-btn:hover{background:#38bdf8;color:#020617;border-color:#38bdf8}
+    .mobile-menu-btn{
+      margin-left:auto;background:transparent;border:0;color:#fff;font-size:20px;display:none;cursor:pointer
+    }
+    .mobile-nav{
+      position:fixed;top:0;right:-100%;
+      width:320px;height:100vh;background:#1f2933;
+      box-shadow:-2px 0 10px rgba(0,0,0,.18);
+      transition:right .3s;z-index:100
+    }
+    .mobile-nav.active{right:0}
+    .mobile-overlay{
+      position:fixed;inset:0;background:rgba(0,0,0,.5);
+      display:none;z-index:90
+    }
+    .mobile-overlay.active{display:block}
+    .mobile-nav-header{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:16px;border-bottom:1px solid #34495e
+    }
+    .mobile-close-btn{background:transparent;border:0;color:#fff;font-size:20px;cursor:pointer}
+    .mobile-nav-links{padding:16px}
+    .mobile-link{
+      display:block;color:#ecf0f1;padding:12px 0;border-bottom:1px solid #34495e;
+      font-weight:700;background:transparent;border:0;width:100%;text-align:left;cursor:pointer
+    }
+
+    /* ===== Breadcrumb ===== */
+    .crumb-wrap{max-width:1200px;margin:8px auto 0;padding:0 15px 4px}
+    .crumbs{font-size:13px;color:#111827}
+    .crumbs a{color:#2563eb}
+    .crumbs a:hover{text-decoration:underline}
+    .crumb-separator{margin:0 4px;color:#6b7280}
+    .crumb-current{font-weight:700}
+
+    /* ===== Main Layout ===== */
+    .age-main{
+      max-width:1200px;margin:22px auto 40px;padding:0 15px;
+      display:grid;grid-template-columns:minmax(0,3fr) minmax(260px,1.25fr);
+      gap:20px;align-items:flex-start
+    }
+    .age-left{display:flex;flex-direction:column;gap:18px}
+    .age-top-grid{display:grid;grid-template-columns:1fr;gap:16px;align-items:stretch}
+    .card{background:transparent;border:none;box-shadow:none;padding:0}
+
+    /* ===== Shell ===== */
+    .area-shell{
+      border:1px solid #e2e8f0;background:#f4f4f4;padding:12px;width:100%;
+      margin:0 0 10px 0;border-radius:12px;
+      box-shadow:0 10px 24px rgba(15,23,42,0.06);
+      overflow:hidden
+    }
+    .area-title-row{
+      display:flex;align-items:center;justify-content:space-between;
+      margin:-12px -12px 8px;padding:8px 12px;background:#0f172a;color:#f9fafb;
+      border-bottom:1px solid #1f2937;gap:10px
+    }
+    .area-title{
+      font-size:18px;font-weight:800;color:#f9fafb;font-family:Arial,Helvetica,sans-serif
+    }
+
+    .wg-pill{
+      display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;
+      background:rgba(148,163,184,0.16);border:1px solid rgba(148,163,184,0.45);
+      font-size:11px;text-transform:uppercase;letter-spacing:0.06em;white-space:nowrap
+    }
+    .wg-pill i{font-size:12px}
+
+    .wg-intro{
+      font-size:13px;color:#4b5563;margin:6px 2px 10px;font-family:Arial,Helvetica,sans-serif
+    }
+
+    /* ===== Tracker Layout ===== */
+    .wg-layout{display:flex;flex-direction:column;gap:10px;margin-top:4px}
+    .wg-controls-row{
+      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;align-items:stretch;margin-top:4px;margin-bottom:2px
+    }
+    .wg-box{
+      background:#ffffff;border-radius:10px;border:1px solid #e2e8f0;padding:10px 12px;
+      box-shadow:0 6px 16px rgba(15,23,42,0.05)
+    }
+    .wg-box-title{
+      font-size:14px;font-weight:800;margin-bottom:4px;color:#0f172a
+    }
+    .wg-box-sub{
+      font-size:12px;color:#6b7280;margin-bottom:8px
+    }
+
+    .wg-field{margin-top:8px}
+    .wg-field label{
+      display:block;font-size:12px;font-weight:800;margin-bottom:2px;font-family:Arial,Helvetica,sans-serif
+    }
+    .wg-input{
+      width:100%;padding:8px 10px;border-radius:8px;border:1px solid #a0a0a0;background:#ffffff;
+      font-size:13px;font-family:Consolas,monospace
+    }
+    .wg-input:focus{outline:none;border-color:#3f82bd;box-shadow:0 0 0 1px rgba(63,130,189,0.18)}
+    .wg-hint{display:block;margin-top:3px;font-size:11px;color:#6b7280;font-family:Arial,Helvetica,sans-serif}
+
+    .wg-progress-wrap{
+      border:1px solid #e5e7eb;border-radius:999px;background:#f9fafb;overflow:hidden;
+      height:12px;box-shadow:inset 0 1px 2px rgba(15,23,42,0.06)
+    }
+    .wg-progress-bar{
+      height:100%;width:0%;
+      background:#0f172a;
+      transition:width .2s ease
+    }
+
+    .wg-kpi{
+      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px
+    }
+    .wg-stat{
+      padding:6px 8px;border-radius:8px;background:#f9fafb;border:1px solid #e5e7eb
+    }
+    .wg-stat-label{font-size:11px;color:#6b7280;margin-bottom:2px}
+    .wg-stat-value{font-size:14px;font-weight:800;color:#111827}
+
+    .wg-actions{
+      margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center
+    }
+    .wg-btn{
+      border-radius:999px;border:1px solid #cbd5e1;background:#f9fafb;
+      padding:6px 10px;font-size:12px;cursor:pointer;font-family:Arial,Helvetica,sans-serif;
+      display:inline-flex;align-items:center;gap:6px;box-shadow:0 1px 2px rgba(15,23,42,0.08)
+    }
+    .wg-btn:hover{background:#ffffff;border-color:#3f82bd}
+    .wg-btn.primary{
+      background:#2563eb;border-color:#2563eb;color:#f9fafb;
+      box-shadow:0 4px 10px rgba(37,99,235,0.35)
+    }
+    .wg-btn.primary:hover{background:#1d4ed8;border-color:#1d4ed8}
+    .wg-btn.danger{
+      background:#fee2e2;border-color:#e11d48;color:#7f1d1d;
+      box-shadow:0 3px 8px rgba(248,113,113,0.3)
+    }
+    .wg-btn.danger:hover{background:#fecaca;border-color:#b91c1c}
+
+    /* ===== Session Log ===== */
+    .wg-log{
+      margin-top:10px;border-radius:10px;border:1px solid #e5e7eb;background:#ffffff;overflow:hidden
+    }
+    .wg-log-head{
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      padding:8px 10px;background:#0f172a;color:#f9fafb
+    }
+    .wg-log-head span{font-weight:800;font-size:12px}
+    .wg-log-body{max-height:220px;overflow:auto}
+    .wg-log-item{
+      display:flex;justify-content:space-between;gap:10px;
+      padding:8px 10px;font-size:12px;border-top:1px solid #f1f3f8
+    }
+    .wg-log-item strong{font-weight:800}
+    .wg-log-muted{color:#6b7280}
+
+    /* ===== Search under tracker (with icon, like your other tools) ===== */
+    .wg-bottom-row{
+      margin-top:6px;margin-bottom:4px;
+      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;align-items:flex-end
+    }
+    .wg-search-inline{min-width:180px;max-width:340px}
+    .sidebar-search-input-wrapper{
+      position:relative;display:flex;align-items:center;margin-top:4px
+    }
+    .sidebar-search-icon{
+      position:absolute;left:10px;font-size:12px;opacity:0.7
+    }
+    .sidebar-search-input{
+      width:100%;padding:8px 10px 8px 28px;border-radius:8px;border:1px solid #d5d9e0;
+      background-color:#f9fafb;font-size:13px;outline:none;
+      transition:border-color .15s ease,background-color .15s ease,box-shadow .15s ease
+    }
+    .sidebar-search-input:focus{
+      border-color:#3f82bd;background-color:#ffffff;box-shadow:0 0 0 1px rgba(63,130,189,0.12)
+    }
+    .wg-search-count{
+      display:block;margin-top:2px;font-size:10px;color:#6b7280;font-family:Arial,Helvetica,sans-serif
+    }
+    .wg-bottom-right{display:flex;justify-content:flex-end;align-items:flex-end}
+
+    /* ===== Info blocks ===== */
+    .section-block{
+      background:var(--card);border-radius:12px;border:1px solid #e2e8f0;padding:14px 16px 12px;
+      box-shadow:0 8px 20px rgba(15,23,42,.035)
+    }
+    .section-block h3{font-size:16px;font-weight:800;margin-bottom:6px;color:#0f172a}
+    .section-block h4{font-size:14px;font-weight:700;margin-top:10px;margin-bottom:4px;color:#111827}
+    .section-block p{font-size:13px;color:#4b5563;margin-bottom:6px}
+    .section-block ul{padding-left:18px;font-size:13px;color:#4b5563}
+    .section-block ul li+li{margin-top:2px}
+
+    /* ===== Sidebar ===== */
+    .age-sidebar{display:flex;flex-direction:column;gap:16px}
+    .sidebar-card{
+      background:var(--card);border-radius:12px;border:1px solid #e2e8f0;padding:12px 12px 10px;
+      box-shadow:0 10px 24px rgba(15,23,42,.06);font-size:13px
+    }
+    .sidebar-title-bar{
+      margin:-12px -12px 8px;padding:7px 10px;background:#0f172a;color:#f9fafb;
+      font-size:14px;font-weight:800;border-radius:12px 12px 0 0;
+      box-shadow:inset 0 -1px 0 rgba(148,163,184,.35);
+      display:flex;align-items:center;justify-content:space-between;gap:8px
+    }
+    .tool-search{margin:6px 0 4px}
+    .sidebar-search-suggestions{
+      list-style:none;margin-top:8px;padding:4px 0;max-height:220px;overflow-y:auto;
+      border-radius:10px;border:1px solid #e3e7ee;background-color:#ffffff;
+      box-shadow:0 8px 20px rgba(15,23,42,0.12);display:none
+    }
+    .sidebar-search-suggestions.visible{display:block}
+    .sidebar-search-suggestions li{
+      font-size:13px;padding:7px 10px;cursor:pointer;display:flex;align-items:center;gap:6px
+    }
+    .sidebar-search-suggestions li + li{border-top:1px solid #f1f3f8}
+    .sidebar-search-suggestions li span.tool-name{
+      flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis
+    }
+    .sidebar-search-suggestions li i{font-size:11px;opacity:0.7}
+    .sidebar-search-suggestions li:hover{background-color:#f3f4f8}
+    .sidebar-group{margin-top:10px}
+    .sidebar-group h4{
+      font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#6b7280;
+      margin-bottom:3px;font-weight:700
+    }
+    .sidebar-links{list-style:none;font-size:13px}
+    .sidebar-links li+li{margin-top:3px}
+    .sidebar-links a{color:#1d4ed8}
+    .sidebar-links a:hover{text-decoration:underline}
+
+    /* ===== Footer ===== */
+    .pro-footer{background:#020617;color:#cbd5e1;margin-top:40px}
+    .pf-wrap{
+      max-width:1200px;margin:0 auto;padding:34px 15px;display:grid;grid-template-columns:320px 1fr;gap:26px
+    }
+    .pf-logo{display:flex;align-items:center;gap:10px}
+    .pf-brand-text{font-size:18px;font-weight:800;color:#e2e8f0}
+    .pf-brand-text span{color:#38bdf8}
+    .pf-tag{margin-top:8px;color:#94a3b8;font-size:13px}
+    .pf-social{display:flex;gap:10px;margin-top:10px}
+    .pf-social a{
+      display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;
+      border:1px solid #1e293b;border-radius:10px;background:#0b1220;color:#cbd5e1;
+      transition:background .15s,color .15s,border-color .15s,transform .15s,box-shadow .15s
+    }
+    .pf-social a:hover{
+      background:#38bdf8;border-color:#38bdf8;color:#0b1220;transform:translateY(-1px);
+      box-shadow:0 4px 12px rgba(56,189,248,.4)
+    }
+    .pf-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .pf-col h5{color:#e2e8f0;font-weight:800;font-size:14px;margin-bottom:10px}
+    .pf-col ul{list-style:none}
+    .pf-col li{margin:8px 0}
+    .pf-col a{color:#94a3b8}
+    .pf-col a:hover{color:#e2e8f0}
+    .pf-bottom{border-top:1px solid #1e293b;background:#0b1220}
+    .pf-bottom-wrap{
+      max-width:1200px;margin:0 auto;padding:12px 15px;display:flex;align-items:center;justify-content:space-between;
+      gap:10px;color:#8893a7;font-size:13px
+    }
+    .pf-links{display:flex;gap:10px}
+    .pf-links a{color:#94a3b8}
+    .pf-links a:hover{color:#e2e8f0}
+
+    /* ===== Modals ===== */
+    .modal-overlay{
+      position:fixed;inset:0;background:rgba(15,23,42,0.7);display:none;z-index:200
+    }
+    .modal{
+      position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
+      width:440px;max-width:96vw;background:#ffffff;border:1px solid #e5e7eb;border-radius:14px;
+      box-shadow:0 18px 40px rgba(15,23,42,0.35);display:none;z-index:210
+    }
+    .modal-head{
+      display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-bottom:1px solid #e5e7eb
+    }
+    .modal-head h3{font-size:15px;font-weight:800;color:#111827}
+    .modal-close{
+      background:#f3f4f6;border:1px solid #e5e7eb;border-radius:8px;padding:6px 8px;cursor:pointer
+    }
+    .modal-body{padding:12px;font-size:13px;color:#4b5563}
+    .notice-tag{
+      display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;
+      border:1px solid #e5e7eb;background:#f9fafb;font-size:11px;margin-bottom:10px
+    }
+    .notice-tag.good{border-color:#bbf7d0;background:#f0fdf4;color:#14532d}
+    .notice-tag.warn{border-color:#fed7aa;background:#fffbeb;color:#7c2d12}
+    .notice-actions{margin-top:10px;display:flex;justify-content:flex-end}
+    .notice-actions button{
+      border-radius:999px;border:1px solid #cbd5e1;background:#f9fafb;padding:6px 10px;font-size:12px;cursor:pointer
+    }
+    .notice-actions button:hover{background:#ffffff;border-color:#3f82bd}
+
+    /* ===== Responsive ===== */
+    @media (max-width:1100px){
+      .pf-wrap{grid-template-columns:1fr}
+      .pf-cols{grid-template-columns:repeat(2,1fr)}
+      .age-main{grid-template-columns:minmax(0,1.9fr) minmax(260px,1.2fr)}
+    }
+    @media (max-width:992px){
+      .wc-nav{display:none}
+      .mobile-menu-btn{display:inline-block}
+      .age-main{grid-template-columns:1fr}
+      .age-left{order:1}
+      .age-sidebar{order:2}
+    }
+    @media (max-width:768px){
+      .wg-controls-row{grid-template-columns:1fr}
+      .wg-kpi{grid-template-columns:1fr}
+      .wg-bottom-row{grid-template-columns:1fr;gap:8px}
+      .wg-bottom-right{justify-content:flex-start}
+      .pf-cols{grid-template-columns:1fr}
+    }
+    @media (prefers-reduced-motion:reduce){
+      *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="wc-header">
+    <div class="wc-wrap">
+      <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+        <span class="slab slab-w">W</span>
+        <span class="slab slab-o">O</span>
+        <span class="slab slab-r">R</span>
+        <span class="slab slab-d">D</span>
+        <span class="wc-brand-text">
+          Calculator
+          <small class="wc-tagline">Every Word Counts</small>
+        </span>
+      </a>
+
+      <nav class="wc-nav" aria-label="Primary">
+        <a href="https://wordcalculator.net" class="wc-link">Home</a>
+        <a href="blog.html" class="wc-link">Blog</a>
+        <a href="tools.html" class="wc-link">Tools</a>
+        <a href="about.html" class="wc-link">About Us</a>
+        <a href="signin.html" class="wc-link">Sign In</a>
+      </nav>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <div class="mobile-nav-header">
+        <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <span class="wc-brand-text">Calculator</span>
+        </a>
+        <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="https://wordcalculator.net" class="nav-link mobile-link">Home</a>
+        <a href="blog.html" class="nav-link mobile-link">Blog</a>
+        <a href="tools.html" class="nav-link mobile-link">Tools</a>
+        <a href="about.html" class="nav-link mobile-link">About Us</a>
+        <a href="signin.html" class="nav-link mobile-link">Sign In</a>
+      </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+  </header>
+
+  <!-- ===== Breadcrumbs ===== -->
+  <div class="crumb-wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="https://wordcalculator.net">Home</a>
+      <span class="crumb-separator">/</span>
+      <a href="tools.html">Tools</a>
+      <span class="crumb-separator">/</span>
+      <span class="crumb-current">Writing Goal Tracker</span>
+    </nav>
+  </div>
+
+  <!-- ==================== MAIN ==================== -->
+  <main class="age-main">
+    <!-- LEFT SIDE -->
+    <section class="age-left">
+      <div class="age-top-grid">
+        <article class="card" aria-labelledby="wgCardTitle">
+          <div class="area-shell">
+            <div class="area-title-row">
+              <h1 id="wgCardTitle" class="area-title">Writing Goal Tracker</h1>
+              <span class="wg-pill">
+                <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+                Goal & streak tracker
+              </span>
+            </div>
+
+            <p class="wg-intro">
+              Set a daily word goal, track progress, log sessions, and plan your writing deadline with a simple, private, on-device tracker.
+            </p>
+
+            <div class="wg-layout" aria-label="Writing goal tracker interface">
+              <div class="wg-controls-row">
+                <!-- SETTINGS -->
+                <div class="wg-box">
+                  <h2 class="wg-box-title">Goal settings</h2>
+                  <p class="wg-box-sub">Define daily and project goals. Add a deadline to calculate required words/day.</p>
+
+                  <div class="wg-field">
+                    <label for="wgDailyGoal">Daily goal (words)</label>
+                    <input id="wgDailyGoal" class="wg-input" type="number" min="1" step="50" value="500" inputmode="numeric" />
+                    <small class="wg-hint">A realistic daily target helps you stay consistent without burnout.</small>
+                  </div>
+
+                  <div class="wg-field">
+                    <label for="wgProjectGoal">Project goal (total words)</label>
+                    <input id="wgProjectGoal" class="wg-input" type="number" min="0" step="100" value="0" inputmode="numeric" />
+                    <small class="wg-hint">Optional. Use this for long projects like a book, thesis, or campaign.</small>
+                  </div>
+
+                  <div class="wg-field">
+                    <label for="wgDeadline">Deadline</label>
+                    <input id="wgDeadline" class="wg-input" type="date" />
+                    <small class="wg-hint">Optional. Used to estimate the words/day needed to finish on time.</small>
+                  </div>
+
+                  <div class="wg-actions">
+                    <button type="button" class="wg-btn primary" id="wgSaveBtn">
+                      <i class="fa-solid fa-floppy-disk"></i> Save settings
+                    </button>
+                    <button type="button" class="wg-btn" id="wgTodayResetBtn">
+                      <i class="fa-solid fa-rotate-left"></i> Reset today
+                    </button>
+                    <button type="button" class="wg-btn danger" id="wgClearAllBtn">
+                      <i class="fa-solid fa-trash-can"></i> Clear all
+                    </button>
+                  </div>
+                </div>
+
+                <!-- PROGRESS -->
+                <div class="wg-box">
+                  <h2 class="wg-box-title">Today’s progress</h2>
+                  <p class="wg-box-sub">Track today’s words, remaining words, streak, and planning metrics.</p>
+
+                  <div class="wg-field">
+                    <label for="wgWordsToday">Words written today</label>
+                    <input id="wgWordsToday" class="wg-input" type="number" min="0" step="10" value="0" inputmode="numeric" />
+                    <small class="wg-hint">Tip: You can log a session below to add words automatically.</small>
+                  </div>
+
+                  <div class="wg-field">
+                    <label>Daily goal completion</label>
+                    <div class="wg-progress-wrap" aria-label="Daily goal progress bar">
+                      <div id="wgProgressBar" class="wg-progress-bar"></div>
+                    </div>
+                    <small id="wgProgressText" class="wg-hint">0% completed</small>
+                  </div>
+
+                  <div class="wg-kpi">
+                    <div class="wg-stat">
+                      <div class="wg-stat-label">Remaining today</div>
+                      <div class="wg-stat-value" id="wgRemaining">0</div>
+                    </div>
+                    <div class="wg-stat">
+                      <div class="wg-stat-label">Current streak (days)</div>
+                      <div class="wg-stat-value" id="wgStreak">0</div>
+                    </div>
+                    <div class="wg-stat">
+                      <div class="wg-stat-label">Required words/day</div>
+                      <div class="wg-stat-value" id="wgReqPerDay">—</div>
+                    </div>
+                    <div class="wg-stat">
+                      <div class="wg-stat-label">Project progress</div>
+                      <div class="wg-stat-value" id="wgProjectProgress">—</div>
+                    </div>
+                  </div>
+
+                  <div class="wg-log">
+                    <div class="wg-log-head">
+                      <span>Session log</span>
+                      <span class="wg-log-muted" id="wgLogSummary">0 sessions</span>
+                    </div>
+                    <div class="wg-log-body" id="wgLogBody"></div>
+                  </div>
+
+                  <div class="wg-field" style="margin-top:10px;">
+                    <label for="wgSessionWords">Log a writing session (words)</label>
+                    <input id="wgSessionWords" class="wg-input" type="number" min="1" step="10" placeholder="e.g., 250" inputmode="numeric" />
+                    <small class="wg-hint">Logging sessions helps track momentum and builds a streak.</small>
+                  </div>
+
+                  <div class="wg-actions" style="margin-top:8px;">
+                    <button type="button" class="wg-btn primary" id="wgAddSessionBtn">
+                      <i class="fa-solid fa-plus"></i> Add session
+                    </button>
+                    <button type="button" class="wg-btn" id="wgUndoBtn">
+                      <i class="fa-solid fa-arrow-rotate-left"></i> Undo last
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- bottom row under cards: 1) search (left) 2) evaluate (right) -->
+              <div class="wg-bottom-row">
+                <div class="wg-bottom-left">
+                  <div class="wg-search-inline">
+                    <div class="sidebar-search-input-wrapper">
+                      <i class="fa-solid fa-magnifying-glass sidebar-search-icon" aria-hidden="true"></i>
+                      <input
+                        type="search"
+                        id="wgInsightSearch"
+                        class="sidebar-search-input"
+                        placeholder="Search insights (e.g., focus, time, streak)..."
+                        autocomplete="off"
+                        aria-label="Search insights"
+                      />
+                    </div>
+                    <small id="wgInsightCount" class="wg-search-count"></small>
+                  </div>
+                </div>
+                <div class="wg-bottom-right">
+                  <button type="button" class="wg-btn" id="wgEvaluateBtn">
+                    <i class="fa-solid fa-circle-check"></i> Evaluate today
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Small helper block -->
+          <div class="section-block" style="margin-top:12px;">
+            <h4>Quick tips</h4>
+            <ul>
+              <li>Start with an achievable daily goal (for example 300–800 words) and increase gradually.</li>
+              <li>Log sessions instead of manually updating totals to keep tracking consistent.</li>
+              <li>Add a project goal and deadline to see the required words/day to finish on time.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <!-- ==================== Professional content (usage + why + how it helps customers) ==================== -->
+      <article class="section-block" id="writing-goal-usage">
+        <h3>How to use the Writing Goal Tracker</h3>
+        <p>
+          The Writing Goal Tracker helps you turn writing into a measurable routine. Instead of guessing whether you are
+          making progress, you can set a daily word goal, log short sessions, and track a streak so you stay consistent.
+          This is useful for bloggers, copywriters, students, editors, marketers, and anyone working on long writing projects.
+        </p>
+
+        <h4>What customers typically need (and why this tool solves it)</h4>
+        <ul>
+          <li><strong>Consistency:</strong> Many writers struggle to write daily. A clear goal and streak system makes consistency easier.</li>
+          <li><strong>Clarity:</strong> “How much should I write today?” is answered instantly with remaining words and completion percent.</li>
+          <li><strong>Planning:</strong> If there is a deadline, the tool calculates required words/day so the plan feels realistic.</li>
+          <li><strong>Motivation:</strong> Visible progress and session history helps maintain momentum across days and weeks.</li>
+          <li><strong>Focus:</strong> Logging small sessions encourages practical progress even on busy days.</li>
+        </ul>
+
+        <h4>Step-by-step workflow</h4>
+        <ul>
+          <li><strong>Set your daily goal:</strong> Choose a word target that is realistic for your schedule.</li>
+          <li><strong>Write in sessions:</strong> After each writing session, log the words you produced.</li>
+          <li><strong>Track progress:</strong> Watch your daily completion percentage and remaining words update instantly.</li>
+          <li><strong>Plan a deadline:</strong> If you are writing a long project, add your project goal and deadline to see the required words/day.</li>
+          <li><strong>Evaluate your day:</strong> Use the “Evaluate today” button for an instant success or improvement message.</li>
+        </ul>
+
+        <h4>How it works</h4>
+        <p>
+          The tracker stores your goal, today’s word count, and session log in your browser (localStorage) so it stays private
+          and fast. The daily completion is calculated from your words written today divided by your daily goal. If you add a project
+          goal and deadline, the tool estimates remaining words and divides them by remaining days to calculate required words/day.
+        </p>
+
+        <h4>Where it is most useful</h4>
+        <ul>
+          <li><strong>Blog publishing:</strong> Maintain a weekly or daily publishing schedule.</li>
+          <li><strong>Academic writing:</strong> Break a thesis or report into daily targets to reduce stress.</li>
+          <li><strong>Marketing teams:</strong> Track copywriting output for campaigns and landing pages.</li>
+          <li><strong>Book writing:</strong> Finish drafts with a clear daily plan and streak tracking.</li>
+        </ul>
+
+        <h4>Best practices for better results</h4>
+        <ul>
+          <li><strong>Start small:</strong> A smaller goal completed daily beats a large goal missed repeatedly.</li>
+          <li><strong>Increase gradually:</strong> Increase your goal by 5–10% after a stable streak.</li>
+          <li><strong>Use session logging:</strong> Short sessions reduce resistance and build momentum.</li>
+          <li><strong>Use deadlines wisely:</strong> If the required words/day feels too high, adjust the deadline or project scope.</li>
+        </ul>
+      </article>
+
+      <article class="section-block">
+        <h3>Why a writing goal tracker is important</h3>
+        <p>
+          Writing success often comes down to consistency and planning. A writing goal tracker reduces uncertainty by showing what to do today,
+          what remains, and how your habit is improving. This makes writing feel more controlled, structured, and achievable—especially for long-term projects.
+        </p>
+        <p>
+          Use this tracker as a daily companion: set your target, write in focused sessions, log results, and keep the streak alive.
+        </p>
+      </article>
+    </section>
+
+    <!-- RIGHT SIDE / SIDEBAR -->
+    <aside class="age-sidebar" aria-label="Quick search and related tools">
+      <div class="sidebar-card">
+        <div class="sidebar-title-bar">
+          <span>Quick Search</span>
+          <i class="fas fa-magnifying-glass"></i>
+        </div>
+
+        <div class="tool-search">
+          <small>Quick links to other tools on WordCalculator.net</small>
+          <div class="sidebar-search-input-wrapper">
+            <i class="fa-solid fa-magnifying-glass sidebar-search-icon" aria-hidden="true"></i>
+            <input
+              type="search"
+              id="toolSearchInput"
+              class="sidebar-search-input"
+              placeholder="Search tools by name..."
+              autocomplete="off"
+              aria-label="Search tools by name"
+            />
+          </div>
+          <ul id="toolSearchSuggestions" class="sidebar-search-suggestions" aria-label="Tool suggestions"></ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Popular</h4>
+          <ul class="sidebar-links">
+            <li><a href="age-calculator.html">Age Calculator</a></li>
+            <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+            <li><a href="calorie-calculator.html">Calorie Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Text &amp; Writing</h4>
+          <ul class="sidebar-links">
+            <li><a href="https://wordcalculator.net">Word &amp; Character Counter</a></li>
+            <li><a href="case-converter.html">Case Converter</a></li>
+            <li><a href="grammar-spell-checker.html">Grammar &amp; Spell Checker</a></li>
+            <li><a href="readability-analyzer.html">Readability Analyzer</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>SEO &amp; Content</h4>
+          <ul class="sidebar-links">
+            <li><a href="keyword-density-analyzer.html">Keyword Density Analyzer</a></li>
+            <li><a href="title-meta-preview.html">Title &amp; Meta Preview</a></li>
+            <li><a href="url-slug-generator.html">URL Slug Generator</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Finance &amp; Time</h4>
+          <ul class="sidebar-links">
+            <li><a href="loan-emi-calculator.html">Loan &amp; EMI Calculator</a></li>
+            <li><a href="interest-calculator.html">Interest Calculator</a></li>
+            <li><a href="focus-timer.html">Focus Timer</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="pro-footer" id="about" aria-label="Website footer">
+    <div class="pf-wrap">
+      <div class="pf-brand">
+        <div class="pf-logo">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <div class="pf-brand-text">
+            WordCalculator<span>.net</span>
+          </div>
+        </div>
+        <p class="pf-tag">A focused, distraction-free toolkit for precise writing.</p>
+        <div class="pf-social">
+          <a href="https://facebook.com/wordcalculator" aria-label="Facebook" rel="noopener" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/wordcalculator" aria-label="X (Twitter)" rel="noopener" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://linkedin.com/company/wordcalculator" aria-label="LinkedIn" rel="noopener" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://youtube.com/@wordcalculator" aria-label="YouTube" rel="noopener" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="pf-cols">
+        <div class="pf-col">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="https://wordcalculator.net">Editor</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="grammar-spell-checker.html">Grammar Check</a></li>
+            <li><a href="keyword-density-analyzer.html">Keyword Density</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="guides.html">Tips &amp; Guides</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="bug-report.html">Report a Bug</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html">Cookie Policy</a></li>
+            <li><a href="security.html">Security</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pf-bottom">
+      <div class="pf-bottom-wrap">
+        <div>© <span id="pf-year"></span> WordCalculator.net — All rights reserved.</div>
+        <div class="pf-links">
+          <a href="sitemap.html">Sitemap</a>
+          <a href="status.html">Status</a>
+          <a href="accessibility.html">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Auth Modal ===== -->
+  <div class="modal-overlay" id="authOverlay" aria-hidden="true"></div>
+  <div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <div class="modal-head">
+      <h3 id="authTitle"><i class="fas fa-user-lock"></i> Account</h3>
+      <button class="modal-close" id="authCloseBtn" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body">
+      Sign-in and account features are coming soon. For now, all tools are free to use without registration.
+    </div>
+  </div>
+
+  <!-- ===== Notice Modal (success / improvement) ===== -->
+  <div class="modal-overlay" id="noticeOverlay" aria-hidden="true"></div>
+  <div class="modal" id="noticeModal" role="dialog" aria-modal="true" aria-labelledby="noticeTitle">
+    <div class="modal-head">
+      <h3 id="noticeTitle"><i class="fa-solid fa-message"></i> Today’s feedback</h3>
+      <button class="modal-close" id="noticeCloseBtn" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body" id="noticeBody"></div>
+  </div>
+
+  <!-- ==================== JS ==================== -->
+
+  <!-- Tools Directory Js -->
+  <script src="tools-directory.js"></script>
+
+  <script>
+    const $  = (s)=>document.querySelector(s);
+    const $$ = (s)=>Array.from(document.querySelectorAll(s));
+
+    document.addEventListener("DOMContentLoaded", ()=>{
+      initYear();
+      initMobileMenu();
+      initAuthModal();
+      initToolQuickSearch();
+      initWritingGoalTracker();
+    });
+
+    function initYear(){
+      const el=$("#pf-year");
+      if(el) el.textContent=new Date().getFullYear();
+    }
+
+    function initMobileMenu(){
+      const mobileMenuBtn=$("#mobileMenuBtn");
+      const mobileCloseBtn=$("#mobileCloseBtn");
+      const mobileNav=$("#mobileNav");
+      const mobileOverlay=$("#mobileOverlay");
+      if(!mobileMenuBtn||!mobileNav||!mobileOverlay) return;
+
+      const open=()=>{
+        mobileNav.classList.add("active");
+        mobileOverlay.classList.add("active");
+        document.body.style.overflow="hidden";
+      };
+      const close=()=>{
+        mobileNav.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        document.body.style.overflow="";
+      };
+
+      mobileMenuBtn.addEventListener("click",open);
+      if(mobileCloseBtn) mobileCloseBtn.addEventListener("click",close);
+      mobileOverlay.addEventListener("click",close);
+      $$(".mobile-link").forEach(link=>link.addEventListener("click",close));
+
+      const openAuthBtnMobile=$("#openAuthBtnMobile");
+      if(openAuthBtnMobile){
+        openAuthBtnMobile.addEventListener("click",()=>{
+          close();
+          openAuthModal();
+        });
+      }
+    }
+
+    function initAuthModal(){
+      const openBtn=$("#openAuthBtn");
+      const overlay=$("#authOverlay");
+      const modal=$("#authModal");
+      const closeBtn=$("#authCloseBtn");
+      if(!overlay || !modal) return;
+
+      const open=()=>{
+        overlay.style.display="block";
+        modal.style.display="block";
+        document.body.style.overflow="hidden";
+      };
+      const close=()=>{
+        overlay.style.display="none";
+        modal.style.display="none";
+        document.body.style.overflow="";
+      };
+
+      if(openBtn) openBtn.addEventListener("click",open);
+      if(closeBtn) closeBtn.addEventListener("click",close);
+      overlay.addEventListener("click",close);
+      document.addEventListener("keydown",(e)=>{ if(e.key==="Escape") close(); });
+    }
+    function openAuthModal(){
+      const overlay=$("#authOverlay");
+      const modal=$("#authModal");
+      if(!overlay||!modal) return;
+      overlay.style.display="block";
+      modal.style.display="block";
+      document.body.style.overflow="hidden";
+    }
+
+    /* ===== Notice modal ===== */
+    function openNoticeModal(html){
+      const overlay=$("#noticeOverlay");
+      const modal=$("#noticeModal");
+      const body=$("#noticeBody");
+      if(!overlay||!modal||!body) return;
+      body.innerHTML = html;
+      overlay.style.display="block";
+      modal.style.display="block";
+      document.body.style.overflow="hidden";
+    }
+    function closeNoticeModal(){
+      const overlay=$("#noticeOverlay");
+      const modal=$("#noticeModal");
+      if(!overlay||!modal) return;
+      overlay.style.display="none";
+      modal.style.display="none";
+      document.body.style.overflow="";
+    }
+    (function initNoticeModal(){
+      const overlay=$("#noticeOverlay");
+      const closeBtn=$("#noticeCloseBtn");
+      if(overlay) overlay.addEventListener("click",closeNoticeModal);
+      if(closeBtn) closeBtn.addEventListener("click",closeNoticeModal);
+      document.addEventListener("keydown",(e)=>{ if(e.key==="Escape") closeNoticeModal(); });
+    })();
+
+    /* ===== Writing Goal Tracker ===== */
+    const WG_KEY = "wc_writing_goal_tracker_v1";
+
+    function initWritingGoalTracker(){
+      const elDaily = $("#wgDailyGoal");
+      const elProject = $("#wgProjectGoal");
+      const elDeadline = $("#wgDeadline");
+      const elToday = $("#wgWordsToday");
+      const elProgBar = $("#wgProgressBar");
+      const elProgText = $("#wgProgressText");
+      const elRemaining = $("#wgRemaining");
+      const elStreak = $("#wgStreak");
+      const elReq = $("#wgReqPerDay");
+      const elProjProg = $("#wgProjectProgress");
+      const elLogBody = $("#wgLogBody");
+      const elLogSummary = $("#wgLogSummary");
+      const elSession = $("#wgSessionWords");
+
+      const btnSave = $("#wgSaveBtn");
+      const btnResetToday = $("#wgTodayResetBtn");
+      const btnClearAll = $("#wgClearAllBtn");
+      const btnAddSession = $("#wgAddSessionBtn");
+      const btnUndo = $("#wgUndoBtn");
+      const btnEval = $("#wgEvaluateBtn");
+
+      const insightSearch = $("#wgInsightSearch");
+      const insightCount = $("#wgInsightCount");
+
+      const state = loadState();
+
+      // hydrate
+      elDaily.value = String(state.dailyGoal ?? 500);
+      elProject.value = String(state.projectGoal ?? 0);
+      elDeadline.value = state.deadline ?? "";
+      elToday.value = String(state.wordsToday ?? 0);
+
+      renderAll();
+
+      // events
+      elDaily.addEventListener("input",()=>{ state.dailyGoal = safeInt(elDaily.value, 500); saveState(state); renderAll(); });
+      elProject.addEventListener("input",()=>{ state.projectGoal = safeInt(elProject.value, 0); saveState(state); renderAll(); });
+      elDeadline.addEventListener("input",()=>{ state.deadline = elDeadline.value || ""; saveState(state); renderAll(); });
+      elToday.addEventListener("input",()=>{ state.wordsToday = safeInt(elToday.value, 0); saveState(state); renderAll(); });
+
+      if(btnSave){
+        btnSave.addEventListener("click",()=>{
+          state.dailyGoal = safeInt(elDaily.value, 500);
+          state.projectGoal = safeInt(elProject.value, 0);
+          state.deadline = elDeadline.value || "";
+          state.wordsToday = safeInt(elToday.value, 0);
+          saveState(state);
+          openNoticeModal(buildNotice("good",
+            "Saved successfully",
+            "Your goals and progress were saved on this device. You can close the page and continue later without losing data."
+          ));
+        });
+      }
+
+      if(btnResetToday){
+        btnResetToday.addEventListener("click",()=>{
+          const todayKey = todayISO();
+          state.wordsToday = 0;
+          state.sessions = (state.sessions || []).filter(s => s.day !== todayKey);
+          state.lastActiveDay = todayKey;
+          saveState(state);
+          elToday.value = "0";
+          renderAll();
+          openNoticeModal(buildNotice("warn",
+            "Today was reset",
+            "Today’s word count and today’s sessions were cleared. Your overall settings remain unchanged."
+          ));
+        });
+      }
+
+      if(btnClearAll){
+        btnClearAll.addEventListener("click",()=>{
+          localStorage.removeItem(WG_KEY);
+          const fresh = loadState(true);
+          state.dailyGoal = fresh.dailyGoal;
+          state.projectGoal = fresh.projectGoal;
+          state.deadline = fresh.deadline;
+          state.wordsToday = fresh.wordsToday;
+          state.sessions = fresh.sessions;
+          state.streak = fresh.streak;
+          state.lastActiveDay = fresh.lastActiveDay;
+          elDaily.value = String(state.dailyGoal);
+          elProject.value = String(state.projectGoal);
+          elDeadline.value = state.deadline;
+          elToday.value = String(state.wordsToday);
+          renderAll();
+          openNoticeModal(buildNotice("warn",
+            "All data cleared",
+            "All tracker data was removed from this device. You can start fresh at any time."
+          ));
+        });
+      }
+
+      if(btnAddSession){
+        btnAddSession.addEventListener("click",()=>{
+          const w = safeInt(elSession.value, 0);
+          if(!w || w <= 0){
+            openNoticeModal(buildNotice("warn","Add a session",
+              "Please enter a session word count greater than 0. Example: 150, 250, 500."
+            ));
+            return;
+          }
+          ensureDayRollover(state);
+
+          const item = { id: cryptoId(), day: todayISO(), time: new Date().toISOString(), words: w };
+          state.sessions = state.sessions || [];
+          state.sessions.unshift(item);
+
+          state.wordsToday = safeInt(state.wordsToday, 0) + w;
+          elToday.value = String(state.wordsToday);
+          elSession.value = "";
+
+          saveState(state);
+          renderAll();
+
+          // feedback if crossed goal
+          if(state.dailyGoal > 0 && state.wordsToday >= state.dailyGoal){
+            openNoticeModal(buildNotice("good",
+              "Congratulations 🎉",
+              "You reached your daily goal today. Keep the streak alive — tomorrow’s progress starts with a small session."
+            ));
+          }
+        });
+      }
+
+      if(btnUndo){
+        btnUndo.addEventListener("click",()=>{
+          ensureDayRollover(state);
+          const todayKey = todayISO();
+          const sessions = state.sessions || [];
+          const idx = sessions.findIndex(s => s.day === todayKey);
+          if(idx === -1){
+            openNoticeModal(buildNotice("warn","Nothing to undo","There is no session logged for today."));
+            return;
+          }
+          const removed = sessions.splice(idx, 1)[0];
+          state.wordsToday = Math.max(0, safeInt(state.wordsToday, 0) - safeInt(removed.words, 0));
+          elToday.value = String(state.wordsToday);
+          state.sessions = sessions;
+          saveState(state);
+          renderAll();
+        });
+      }
+
+      if(btnEval){
+        btnEval.addEventListener("click",()=>{
+          ensureDayRollover(state);
+          const dailyGoal = Math.max(1, safeInt(state.dailyGoal, 500));
+          const wordsToday = safeInt(state.wordsToday, 0);
+
+          const pct = Math.min(100, Math.round((wordsToday / dailyGoal) * 100));
+          const remaining = Math.max(0, dailyGoal - wordsToday);
+
+          if(wordsToday >= dailyGoal){
+            openNoticeModal(buildNotice("good",
+              "Excellent work today",
+              `You completed <strong>${pct}%</strong> of your daily goal and hit the target. Consider logging one small session tomorrow to keep momentum.`
+            ));
+          }else if(wordsToday === 0){
+            openNoticeModal(buildNotice("warn",
+              "Let’s improve",
+              `You haven’t written yet today. Try a 10–15 minute session and log the words — small starts build streaks. You have <strong>${remaining}</strong> words remaining to hit today’s goal.`
+            ));
+          }else{
+            const tip = buildImprovementTips(wordsToday, dailyGoal);
+            openNoticeModal(buildNotice("warn",
+              "Good start — keep going",
+              `You completed <strong>${pct}%</strong> of your daily goal. You need <strong>${remaining}</strong> more words to finish today. ${tip}`
+            ));
+          }
+        });
+      }
+
+      if(insightSearch && insightCount){
+        const insights = [
+          "Start small: a 10–15 minute session is enough to maintain consistency.",
+          "Use session logging to build momentum and reduce resistance.",
+          "If required words/day feels too high, adjust deadline or project scope.",
+          "Consistency beats intensity. Aim for a steady streak.",
+          "If you miss a day, restart the streak immediately — do not wait for motivation."
+        ];
+        insightSearch.addEventListener("input",()=>{
+          const q = (insightSearch.value||"").trim().toLowerCase();
+          if(!q){ insightCount.textContent = ""; return; }
+          const matches = insights.filter(x => x.toLowerCase().includes(q));
+          insightCount.textContent = matches.length ? (matches.length + " matching insights") : "No matches";
+        });
+      }
+
+      function renderAll(){
+        ensureDayRollover(state);
+
+        const dailyGoal = Math.max(1, safeInt(state.dailyGoal, 500));
+        const wordsToday = Math.max(0, safeInt(state.wordsToday, 0));
+
+        const pct = Math.min(100, Math.round((wordsToday / dailyGoal) * 100));
+        if(elProgBar) elProgBar.style.width = pct + "%";
+        if(elProgText) elProgText.textContent = pct + "% completed";
+        if(elRemaining) elRemaining.textContent = String(Math.max(0, dailyGoal - wordsToday));
+
+        // streak
+        if(elStreak) elStreak.textContent = String(safeInt(state.streak, 0));
+
+        // deadline planner
+        const projectGoal = Math.max(0, safeInt(state.projectGoal, 0));
+        const deadline = (state.deadline || "").trim();
+
+        const totalWrittenAll = totalWordsAll(state.sessions || []);
+        if(projectGoal > 0){
+          const projPct = Math.min(100, Math.round((totalWrittenAll / projectGoal) * 100));
+          if(elProjProg) elProjProg.textContent = projPct + "%";
+        }else{
+          if(elProjProg) elProjProg.textContent = "—";
+        }
+
+        if(projectGoal > 0 && deadline){
+          const daysLeft = daysUntil(deadline);
+          const remainingWords = Math.max(0, projectGoal - totalWrittenAll);
+          if(daysLeft <= 0){
+            if(elReq) elReq.textContent = remainingWords === 0 ? "0" : "Deadline passed";
+          }else{
+            const req = Math.ceil(remainingWords / daysLeft);
+            if(elReq) elReq.textContent = String(req);
+          }
+        }else{
+          if(elReq) elReq.textContent = "—";
+        }
+
+        // session log
+        renderLog(state.sessions || []);
+
+        saveState(state);
+      }
+
+      function renderLog(sessions){
+        const todayKey = todayISO();
+        const todaySessions = sessions.filter(s => s.day === todayKey);
+        if(elLogSummary){
+          elLogSummary.textContent = todaySessions.length === 1 ? "1 session" : (todaySessions.length + " sessions");
+        }
+        if(!elLogBody) return;
+        elLogBody.innerHTML = "";
+
+        if(!todaySessions.length){
+          elLogBody.innerHTML = `<div class="wg-log-item"><span class="wg-log-muted">No sessions logged today.</span><span class="wg-log-muted">—</span></div>`;
+          return;
+        }
+
+        todaySessions.forEach(s=>{
+          const d = new Date(s.time);
+          const time = d.toLocaleTimeString([], {hour:"2-digit", minute:"2-digit"});
+          const row = document.createElement("div");
+          row.className = "wg-log-item";
+          row.innerHTML = `<span><strong>${escapeHtml(String(s.words))}</strong> words <span class="wg-log-muted">(${escapeHtml(time)})</span></span><span class="wg-log-muted">${escapeHtml(todayKey)}</span>`;
+          elLogBody.appendChild(row);
+        });
+      }
+
+      function ensureDayRollover(state){
+        const todayKey = todayISO();
+
+        if(!state.lastActiveDay){
+          state.lastActiveDay = todayKey;
+          state.streak = 0;
+          state.wordsToday = safeInt(state.wordsToday, 0);
+          state.sessions = state.sessions || [];
+          saveState(state);
+          return;
+        }
+
+        if(state.lastActiveDay === todayKey) return;
+
+        // day changed: decide streak update based on yesterday completion
+        const yesterdayKey = addDaysISO(todayKey, -1);
+        const wroteYesterday = (state.sessions || []).some(s => s.day === yesterdayKey && safeInt(s.words,0) > 0);
+
+        if(wroteYesterday){
+          state.streak = safeInt(state.streak, 0) + 1;
+        }else{
+          state.streak = 0;
+        }
+
+        // reset today's counters
+        state.wordsToday = 0;
+        state.lastActiveDay = todayKey;
+        saveState(state);
+
+        if($("#wgWordsToday")) $("#wgWordsToday").value = "0";
+      }
+    }
+
+    function loadState(forceFresh){
+      if(forceFresh){
+        return { dailyGoal: 500, projectGoal: 0, deadline: "", wordsToday: 0, sessions: [], streak: 0, lastActiveDay: todayISO() };
+      }
+      try{
+        const raw = localStorage.getItem(WG_KEY);
+        if(!raw) return { dailyGoal: 500, projectGoal: 0, deadline: "", wordsToday: 0, sessions: [], streak: 0, lastActiveDay: todayISO() };
+        const data = JSON.parse(raw);
+        return {
+          dailyGoal: safeInt(data.dailyGoal, 500),
+          projectGoal: safeInt(data.projectGoal, 0),
+          deadline: typeof data.deadline === "string" ? data.deadline : "",
+          wordsToday: safeInt(data.wordsToday, 0),
+          sessions: Array.isArray(data.sessions) ? data.sessions : [],
+          streak: safeInt(data.streak, 0),
+          lastActiveDay: typeof data.lastActiveDay === "string" ? data.lastActiveDay : todayISO()
+        };
+      }catch{
+        return { dailyGoal: 500, projectGoal: 0, deadline: "", wordsToday: 0, sessions: [], streak: 0, lastActiveDay: todayISO() };
+      }
+    }
+
+    function saveState(state){
+      try{ localStorage.setItem(WG_KEY, JSON.stringify(state)); }catch{}
+    }
+
+    function safeInt(v, fallback){
+      const n = parseInt(String(v||"").trim(), 10);
+      return Number.isFinite(n) ? n : fallback;
+    }
+
+    function todayISO(){
+      const d = new Date();
+      const y = d.getFullYear();
+      const m = String(d.getMonth()+1).padStart(2,"0");
+      const day = String(d.getDate()).padStart(2,"0");
+      return `${y}-${m}-${day}`;
+    }
+
+    function addDaysISO(iso, delta){
+      const d = new Date(iso + "T00:00:00");
+      d.setDate(d.getDate() + delta);
+      const y = d.getFullYear();
+      const m = String(d.getMonth()+1).padStart(2,"0");
+      const day = String(d.getDate()).padStart(2,"0");
+      return `${y}-${m}-${day}`;
+    }
+
+    function daysUntil(deadlineISO){
+      const now = new Date();
+      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      const target = new Date(deadlineISO + "T00:00:00");
+      const diff = target - today;
+      return Math.ceil(diff / (1000*60*60*24));
+    }
+
+    function totalWordsAll(sessions){
+      return (sessions || []).reduce((sum, s)=> sum + Math.max(0, safeInt(s.words, 0)), 0);
+    }
+
+    function cryptoId(){
+      try{
+        const a = new Uint32Array(2);
+        crypto.getRandomValues(a);
+        return "id_" + a[0].toString(16) + a[1].toString(16);
+      }catch{
+        return "id_" + Math.random().toString(16).slice(2);
+      }
+    }
+
+    function escapeHtml(str){
+      return String(str)
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+    }
+
+    function buildNotice(type, title, message){
+      const klass = type === "good" ? "good" : "warn";
+      const tagText = type === "good" ? "Success" : "Improve";
+      return `
+        <div class="notice-tag ${klass}">
+          <i class="fa-solid ${type==="good" ? "fa-circle-check" : "fa-triangle-exclamation"}"></i>
+          <strong>${escapeHtml(tagText)}:</strong> ${escapeHtml(title)}
+        </div>
+        <div>${message}</div>
+        <div class="notice-actions">
+          <button type="button" onclick="(${closeNoticeModal.toString()})()">Close</button>
+        </div>
+      `;
+    }
+
+    function buildImprovementTips(wordsToday, dailyGoal){
+      const pct = (wordsToday / dailyGoal);
+      if(pct < 0.25){
+        return "Try one short session now (10–15 minutes). Momentum matters more than perfection.";
+      }
+      if(pct < 0.6){
+        return "Schedule one more focused session and log it. Two smaller sessions often beat one long session.";
+      }
+      return "You are close — finish with a quick sprint and log the result to complete your daily goal.";
+    }
+
+    /* ===== Tool directory & Quick Search (with icons) ===== */
+    const toolDirectory = allTools;
+    
+    function initToolQuickSearch(){
+      const input=$("#toolSearchInput");
+      const suggestionsBox=$("#toolSearchSuggestions");
+      if(!input||!suggestionsBox||!Array.isArray(toolDirectory)) return;
+
+      let currentResults=[];
+
+      function renderSuggestions(query){
+        const value=(query||"").trim().toLowerCase();
+        suggestionsBox.innerHTML="";
+        if(!value){
+          suggestionsBox.classList.remove("visible");
+          return;
+        }
+
+        const allMatches=toolDirectory.filter(tool=>tool.name.toLowerCase().includes(value));
+        if(!allMatches.length){
+          const li=document.createElement("li");
+          li.textContent="No tools found";
+          suggestionsBox.appendChild(li);
+          suggestionsBox.classList.add("visible");
+          return;
+        }
+
+        function rankTool(tool){
+          const name=tool.name.toLowerCase();
+          const pos=name.indexOf(value);
+          const starts=name.startsWith(value)?0:1;
+          const lenDiff=Math.abs(name.length-value.length);
+          return starts*100 + pos*2 + lenDiff;
+        }
+
+        currentResults=allMatches.slice().sort((a,b)=>rankTool(a)-rankTool(b));
+        currentResults.slice(0,10).forEach(tool=>{
+          const li=document.createElement("li");
+          const iconEl=document.createElement("i");
+          iconEl.className=tool.icon || "fa-solid fa-wand-magic-sparkles";
+          const nameSpan=document.createElement("span");
+          nameSpan.className="tool-name";
+          nameSpan.textContent=tool.name;
+          li.appendChild(iconEl);
+          li.appendChild(nameSpan);
+          li.addEventListener("click",()=>{
+            if(tool.url) window.location.href=tool.url;
+          });
+          suggestionsBox.appendChild(li);
+        });
+
+        suggestionsBox.classList.add("visible");
+      }
+
+      input.addEventListener("input",(e)=>renderSuggestions(e.target.value));
+
+      input.addEventListener("keydown",(e)=>{
+        if(e.key==="Enter"){
+          const value=input.value.trim().toLowerCase();
+          if(!value) return;
+          const first=currentResults.length ? currentResults[0] : toolDirectory.find(
+            (tool)=>tool.name.toLowerCase().includes(value)
+          );
+          if(first && first.url) window.location.href=first.url;
+        }
+      });
+
+      document.addEventListener("click",(e)=>{
+        if(!input.contains(e.target) && !suggestionsBox.contains(e.target)){
+          suggestionsBox.classList.remove("visible");
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ==================== ADVANCED SEO ==================== -->
+  <title>Focus Timer (Pomodoro) — Boost Productivity with Work/Break Cycles</title>
+  <meta name="description" content="Free Focus Timer (Pomodoro) with customizable focus, short break, and long break intervals. Track cycles, stay consistent, and improve productivity. Mobile-friendly and fast." />
+  <meta name="keywords" content="focus timer, pomodoro timer, pomodoro technique, productivity timer, work break timer, study timer, deep work timer, focus session timer" />
+  <meta name="author" content="WordCalculator.net" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#020617" />
+  <link rel="canonical" href="https://wordcalculator.net/focus-timer.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wordcalculator.net/focus-timer.html" />
+  <meta property="og:title" content="Focus Timer (Pomodoro) — Work/Break Cycles for Productivity" />
+  <meta property="og:description" content="Custom Pomodoro timer with focus, short break, and long break settings. Track cycles and stay productive." />
+  <meta property="og:image" content="https://wordcalculator.net/images/focus-timer-og.jpg" />
+  <meta property="og:site_name" content="WordCalculator.net" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://wordcalculator.net/focus-timer.html" />
+  <meta name="twitter:title" content="Focus Timer (Pomodoro) — Work/Break Cycles for Productivity" />
+  <meta name="twitter:description" content="Free Pomodoro focus timer with cycle tracking and mobile-first design." />
+  <meta name="twitter:image" content="https://wordcalculator.net/images/focus-timer-twitter.jpg" />
+  <meta name="twitter:creator" content="@wordcalculator" />
+
+  <!-- WebApplication schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Focus Timer (Pomodoro)",
+    "url":"https://wordcalculator.net/focus-timer.html",
+    "description":"A customizable Pomodoro focus timer with short and long breaks, cycle tracking, and a clean mobile-friendly interface.",
+    "applicationCategory":"UtilitiesApplication",
+    "operatingSystem":"Any",
+    "browserRequirements":"Requires JavaScript",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "featureList":[
+      "Custom focus / short break / long break durations",
+      "Auto-switch between phases",
+      "Cycle tracking with long-break rule",
+      "Local on-device save (localStorage)",
+      "Mobile-first, fast-loading design"
+    ],
+    "author":{"@type":"Organization","name":"WordCalculator.net"}
+  }
+  </script>
+
+  <!-- Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://wordcalculator.net/"},
+      {"@type":"ListItem","position":2,"name":"Tools","item":"https://wordcalculator.net/tools.html"},
+      {"@type":"ListItem","position":3,"name":"Focus Timer (Pomodoro)","item":"https://wordcalculator.net/focus-timer.html"}
+    ]
+  }
+  </script>
+
+  <!-- FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"What is the Pomodoro Technique?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"The Pomodoro Technique is a time-management method that alternates focused work sessions with short breaks. After several focus sessions, you take a longer break."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"What durations should I use for Pomodoro?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"A common setup is 25 minutes focus, 5 minutes short break, and 15 minutes long break after 4 focus sessions. You can customize durations based on your workflow."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Does this timer save my settings?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. Your settings and cycle progress are stored locally in your browser using localStorage, so they remain on your device."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- ==================== /SEO ==================== -->
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+    /* ===== Base / Theme ===== */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--blue:#3f82bd;--text:#1f2937;--muted:#6b7280;--border:#e5e7eb;--primary:#2563eb;--bg:#f7f8fb;--card:#fff;--danger:#b91c1c}
+    html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    body{font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+
+    /* ===== Header / Nav (same as other tools) ===== */
+    .wc-header{background:#020617;color:#fff;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+    .wc-wrap{max-width:1200px;margin:0 auto;padding:10px 12px;display:flex;align-items:center;gap:14px}
+    .wc-logo{display:inline-flex;align-items:center;gap:8px}
+    .wc-slab,.slab{display:inline-flex;width:24px;height:24px;align-items:center;justify-content:center;font-weight:800;font-size:14px;border-radius:2px;color:#fff}
+    .slab-w{background:#1f2327}.slab-o{background:#a7c1db;color:#1e2a3a}.slab-r{background:#7d96ae}.slab-d{background:#2f5d8a}
+    .wc-brand-text{display:inline-flex;flex-direction:column;line-height:1.05;font-size:19px;font-weight:800}
+    .wc-brand-text small{font-size:10px;opacity:.95}
+    .wc-nav{margin-left:10px;display:flex;align-items:center;gap:8px;flex:1}
+    .wc-link{color:#f4f8fc;font-weight:700;font-size:14px;padding:6px 10px;border-radius:8px;transition:.15s;background:transparent;border:0;cursor:pointer}
+    .wc-link:hover{background:rgba(255,255,255,.14)}
+    .wc-signin-btn{background:rgba(148,163,184,.18);border:1px solid rgba(148,163,184,.5)}
+    .wc-signin-btn:hover{background:#38bdf8;color:#020617;border-color:#38bdf8}
+    .mobile-menu-btn{margin-left:auto;background:transparent;border:0;color:#fff;font-size:20px;display:none;cursor:pointer}
+    .mobile-nav{position:fixed;top:0;right:-100%;width:320px;height:100vh;background:#1f2933;box-shadow:-2px 0 10px rgba(0,0,0,.18);transition:right .3s;z-index:100}
+    .mobile-nav.active{right:0}
+    .mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;z-index:90}
+    .mobile-overlay.active{display:block}
+    .mobile-nav-header{display:flex;justify-content:space-between;align-items:center;padding:16px;border-bottom:1px solid #34495e}
+    .mobile-close-btn{background:transparent;border:0;color:#fff;font-size:20px;cursor:pointer}
+    .mobile-nav-links{padding:16px}
+    .mobile-link{display:block;color:#ecf0f1;padding:12px 0;border-bottom:1px solid #34495e;font-weight:700;background:transparent;border:0;width:100%;text-align:left;cursor:pointer}
+
+    /* ===== Breadcrumb ===== */
+    .crumb-wrap{max-width:1200px;margin:8px auto 0;padding:0 15px 4px}
+    .crumbs{font-size:13px;color:#111827}
+    .crumbs a{color:#2563eb}
+    .crumbs a:hover{text-decoration:underline}
+    .crumb-separator{margin:0 4px;color:#6b7280}
+    .crumb-current{font-weight:700}
+
+    /* ===== Main Layout ===== */
+    .age-main{max-width:1200px;margin:22px auto 40px;padding:0 15px;display:grid;grid-template-columns:minmax(0,3fr) minmax(260px,1.25fr);gap:20px;align-items:flex-start}
+    .age-left{display:flex;flex-direction:column;gap:18px}
+    .age-top-grid{display:grid;grid-template-columns:1fr;gap:16px;align-items:stretch}
+    .card{background:transparent;border:none;box-shadow:none;padding:0}
+
+    /* ===== Main card shell ===== */
+    .area-shell{
+      border:1px solid #e2e8f0;
+      background:#f4f4f4;
+      padding:12px;
+      width:100%;
+      margin:0 0 10px 0;
+      border-radius:12px;
+      box-shadow:0 10px 24px rgba(15,23,42,0.06);
+      overflow:hidden;
+    }
+    .area-title-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin:-12px -12px 8px;
+      padding:8px 12px;
+      background:#0f172a;
+      color:#f9fafb;
+      border-bottom:1px solid #1f2937;
+      gap:10px;
+    }
+    .area-title{
+      font-size:18px;
+      font-weight:800;
+      color:#f9fafb;
+      font-family:Arial,Helvetica,sans-serif;
+    }
+
+    /* ===== Pomodoro UI ===== */
+    .ft-wrap{
+      display:grid;
+      grid-template-columns:1.05fr 0.95fr;
+      gap:12px;
+      align-items:stretch;
+    }
+    .ft-card{
+      background:#ffffff;
+      border:1px solid #e2e8f0;
+      border-radius:12px;
+      padding:12px;
+      box-shadow:0 8px 20px rgba(15,23,42,.045);
+    }
+    .ft-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:8px;
+    }
+    .ft-sub{
+      font-size:12px;
+      color:#6b7280;
+      margin-top:2px;
+    }
+    .ft-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:3px 10px;
+      border-radius:999px;
+      background:#0f172a;
+      color:#f9fafb;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      border:1px solid rgba(148,163,184,.35);
+      white-space:nowrap;
+    }
+    .ft-badge i{opacity:.9}
+
+    .ft-timer{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:8px 6px 2px;
+    }
+    .ft-ring{
+      width:220px;
+      max-width:100%;
+      aspect-ratio:1 / 1;
+      border-radius:999px;
+      border:10px solid #e5e7eb;
+      background:
+        conic-gradient(#0f172a 0deg, #0f172a var(--deg), #e5e7eb var(--deg), #e5e7eb 360deg);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:inset 0 0 0 8px rgba(255,255,255,0.8), 0 10px 24px rgba(15,23,42,0.08);
+    }
+    .ft-ring-inner{
+      width:78%;
+      height:78%;
+      border-radius:999px;
+      background:linear-gradient(180deg,#ffffff,#f3f4f6);
+      border:1px solid #e5e7eb;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      gap:2px;
+      box-shadow:inset 0 1px 2px rgba(15,23,42,0.08);
+    }
+    .ft-time{
+      font-family:Consolas,monospace;
+      font-size:36px;
+      font-weight:800;
+      letter-spacing:0.03em;
+      color:#111827;
+      line-height:1;
+    }
+    .ft-phase{
+      font-size:12px;
+      font-weight:800;
+      color:#0f172a;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+
+    .ft-controls{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      justify-content:center;
+      margin-top:8px;
+    }
+    .ft-btn{
+      border-radius:999px;
+      border:1px solid #cbd5e1;
+      background:#f9fafb;
+      padding:7px 12px;
+      font-size:12px;
+      font-weight:800;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      font-family:Arial,Helvetica,sans-serif;
+      box-shadow:0 1px 2px rgba(15,23,42,0.08);
+      transition:background .12s,transform .1s,box-shadow .12s,border-color .12s;
+    }
+    .ft-btn:hover{
+      background:#ffffff;
+      border-color:#3f82bd;
+      transform:translateY(-1px);
+      box-shadow:0 6px 14px rgba(15,23,42,0.10);
+    }
+    .ft-btn.primary{
+      background:#2563eb;
+      border-color:#2563eb;
+      color:#f9fafb;
+      box-shadow:0 6px 18px rgba(37,99,235,0.35);
+    }
+    .ft-btn.primary:hover{
+      background:#1d4ed8;
+      border-color:#1d4ed8;
+    }
+    .ft-btn.danger{
+      background:#fee2e2;
+      border-color:#ef4444;
+      color:#7f1d1d;
+      box-shadow:0 6px 18px rgba(239,68,68,0.18);
+    }
+    .ft-btn.danger:hover{
+      background:#fecaca;
+      border-color:#b91c1c;
+    }
+
+    .ft-stats{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:8px;
+      margin-top:10px;
+    }
+    .ft-stat{
+      background:#f9fafb;
+      border:1px solid #e5e7eb;
+      border-radius:10px;
+      padding:8px;
+    }
+    .ft-stat small{display:block;color:#6b7280;font-size:11px}
+    .ft-stat strong{display:block;color:#111827;font-size:14px;font-weight:800;margin-top:2px}
+
+    .ft-field{
+      margin-top:10px;
+    }
+    .ft-field label{
+      display:block;
+      font-size:12px;
+      font-weight:800;
+      margin-bottom:3px;
+      font-family:Arial,Helvetica,sans-serif;
+    }
+    .ft-input{
+      width:100%;
+      padding:8px 10px;
+      border-radius:8px;
+      border:1px solid #a0a0a0;
+      background:#ffffff;
+      font-size:13px;
+      font-family:Consolas,monospace;
+      outline:none;
+      transition:border-color .15s ease,background-color .15s ease,box-shadow .15s ease;
+    }
+    .ft-input:focus{
+      border-color:#3f82bd;
+      background-color:#ffffff;
+      box-shadow:0 0 0 1px rgba(63,130,189,0.12);
+    }
+    .ft-row{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+    }
+    .ft-help{
+      font-size:11px;
+      color:#6b7280;
+      margin-top:4px;
+      font-family:Arial,Helvetica,sans-serif;
+    }
+    .ft-toggles{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:10px;
+      align-items:center;
+    }
+    .ft-check{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-size:12px;
+      color:#111827;
+      user-select:none;
+    }
+    .ft-check input{width:16px;height:16px}
+
+    /* ===== Info blocks ===== */
+    .section-block{
+      background:var(--card);
+      border-radius:12px;
+      border:1px solid #e2e8f0;
+      padding:14px 16px 12px;
+      box-shadow:0 8px 20px rgba(15,23,42,.035);
+    }
+    .section-block h3{
+      font-size:16px;
+      font-weight:800;
+      margin-bottom:6px;
+      color:#0f172a;
+    }
+    .section-block h4{
+      font-size:14px;
+      font-weight:700;
+      margin-top:10px;
+      margin-bottom:4px;
+      color:#111827;
+    }
+    .section-block p{
+      font-size:13px;
+      color:#4b5563;
+      margin-bottom:6px;
+    }
+    .section-block ul{
+      padding-left:18px;
+      font-size:13px;
+      color:#4b5563;
+    }
+    .section-block ul li+li{margin-top:2px;}
+
+    /* ===== Sidebar ===== */
+    .age-sidebar{display:flex;flex-direction:column;gap:16px}
+    .sidebar-card{
+      background:var(--card);
+      border-radius:12px;
+      border:1px solid #e2e8f0;
+      padding:12px 12px 10px;
+      box-shadow:0 10px 24px rgba(15,23,42,.06);
+      font-size:13px;
+    }
+    .sidebar-title-bar{
+      margin:-12px -12px 8px;
+      padding:7px 10px;
+      background:#0f172a;
+      color:#f9fafb;
+      font-size:14px;
+      font-weight:800;
+      border-radius:12px 12px 0 0;
+      box-shadow:inset 0 -1px 0 rgba(148,163,184,.35);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+    }
+    .sidebar-group{margin-top:10px;}
+    .sidebar-group h4{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:0.06em;
+      color:#6b7280;
+      margin-bottom:3px;
+      font-weight:700;
+    }
+    .sidebar-links{list-style:none;font-size:13px}
+    .sidebar-links li+li{margin-top:3px}
+    .sidebar-links a{color:#1d4ed8}
+    .sidebar-links a:hover{text-decoration:underline}
+
+    /* ===== QUICK SEARCH ===== */
+    .tool-search{margin:6px 0 4px;}
+    .sidebar-search-input-wrapper{
+      position:relative;
+      display:flex;
+      align-items:center;
+      margin-top:4px;
+    }
+    .sidebar-search-icon{
+      position:absolute;
+      left:10px;
+      font-size:12px;
+      opacity:0.7;
+    }
+    .sidebar-search-input{
+      width:100%;
+      padding:8px 10px 8px 28px;
+      border-radius:8px;
+      border:1px solid #d5d9e0;
+      background-color:#f9fafb;
+      font-size:13px;
+      outline:none;
+      transition:border-color .15s ease,background-color .15s ease,box-shadow .15s ease;
+    }
+    .sidebar-search-input:focus{
+      border-color:#3f82bd;
+      background-color:#ffffff;
+      box-shadow:0 0 0 1px rgba(63,130,189,0.12);
+    }
+    .sidebar-search-suggestions{
+      list-style:none;
+      margin-top:8px;
+      padding:4px 0;
+      max-height:220px;
+      overflow-y:auto;
+      border-radius:10px;
+      border:1px solid #e3e7ee;
+      background-color:#ffffff;
+      box-shadow:0 8px 20px rgba(15,23,42,0.12);
+      display:none;
+    }
+    .sidebar-search-suggestions.visible{display:block;}
+    .sidebar-search-suggestions li{
+      font-size:13px;
+      padding:7px 10px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+    .sidebar-search-suggestions li + li{
+      border-top:1px solid #f1f3f8;
+    }
+    .sidebar-search-suggestions li span.tool-name{
+      flex:1;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .sidebar-search-suggestions li i{
+      font-size:11px;
+      opacity:0.7;
+    }
+    .sidebar-search-suggestions li:hover{
+      background-color:#f3f4f8;
+    }
+
+    /* ===== Footer ===== */
+    .pro-footer{background:#020617;color:#cbd5e1;margin-top:40px}
+    .pf-wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding:34px 15px;
+      display:grid;
+      grid-template-columns:320px 1fr;
+      gap:26px;
+    }
+    .pf-logo{display:flex;align-items:center;gap:10px}
+    .pf-brand-text{font-size:18px;font-weight:800;color:#e2e8f0}
+    .pf-brand-text span{color:#38bdf8}
+    .pf-tag{margin-top:8px;color:#94a3b8;font-size:13px}
+    .pf-social{display:flex;gap:10px;margin-top:10px}
+    .pf-social a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:34px;height:34px;
+      border:1px solid #1e293b;
+      border-radius:10px;
+      background:#0b1220;
+      color:#cbd5e1;
+      transition:background .15s,color .15s,border-color .15s,transform .15s,box-shadow .15s;
+    }
+    .pf-social a:hover{
+      background:#38bdf8;
+      border-color:#38bdf8;
+      color:#0b1220;
+      transform:translateY(-1px);
+      box-shadow:0 4px 12px rgba(56,189,248,.4);
+    }
+    .pf-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .pf-col h5{color:#e2e8f0;font-weight:800;font-size:14px;margin-bottom:10px}
+    .pf-col ul{list-style:none}
+    .pf-col li{margin:8px 0}
+    .pf-col a{color:#94a3b8}
+    .pf-col a:hover{color:#e2e8f0}
+    .pf-bottom{border-top:1px solid #1e293b;background:#0b1220}
+    .pf-bottom-wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding:12px 15px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      color:#8893a7;
+      font-size:13px;
+    }
+    .pf-links{display:flex;gap:10px}
+    .pf-links a{color:#94a3b8}
+    .pf-links a:hover{color:#e2e8f0}
+
+    /* ===== Modal ===== */
+    .modal-overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(15,23,42,0.7);
+      display:none;
+      z-index:200;
+    }
+    .modal{
+      position:fixed;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      width:440px;
+      max-width:96vw;
+      background:#ffffff;
+      border:1px solid #e5e7eb;
+      border-radius:14px;
+      box-shadow:0 18px 40px rgba(15,23,42,0.35);
+      display:none;
+      z-index:210;
+    }
+    .modal-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:10px 12px;
+      border-bottom:1px solid #e5e7eb;
+    }
+    .modal-head h3{font-size:15px;font-weight:800;color:#111827}
+    .modal-close{
+      background:#f3f4f6;
+      border:1px solid #e5e7eb;
+      border-radius:8px;
+      padding:6px 8px;
+      cursor:pointer;
+    }
+    .modal-body{padding:12px;font-size:13px;color:#4b5563}
+
+    /* ===== Responsive ===== */
+    @media (max-width:1100px){
+      .pf-wrap{grid-template-columns:1fr;}
+      .pf-cols{grid-template-columns:repeat(2,1fr);}
+      .age-main{grid-template-columns:minmax(0,1.9fr) minmax(260px,1.2fr);}
+    }
+    @media (max-width:992px){
+      .wc-nav{display:none;}
+      .mobile-menu-btn{display:inline-block;}
+      .age-main{grid-template-columns:1fr;}
+      .age-sidebar{order:-1;}
+      .ft-wrap{grid-template-columns:1fr;}
+      .ft-ring{width:210px}
+    }
+    @media (max-width:640px){
+      .pf-cols{grid-template-columns:1fr;}
+      .ft-row{grid-template-columns:1fr;}
+      .ft-ring{width:200px}
+    }
+    @media (prefers-reduced-motion:reduce){
+      *{animation:none !important;transition:none !important;scroll-behavior:auto !important;}
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="wc-header">
+    <div class="wc-wrap">
+      <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+        <span class="slab slab-w">W</span>
+        <span class="slab slab-o">O</span>
+        <span class="slab slab-r">R</span>
+        <span class="slab slab-d">D</span>
+        <span class="wc-brand-text">
+          Calculator
+          <small class="wc-tagline">Every Word Counts</small>
+        </span>
+      </a>
+
+      <nav class="wc-nav" aria-label="Primary">
+        <a href="https://wordcalculator.net" class="wc-link">Home</a>
+        <a href="blog.html" class="wc-link">Blog</a>
+        <a href="tools.html" class="wc-link">Tools</a>
+        <a href="about.html" class="wc-link">About Us</a>
+		<a href="signin.html" class="wc-link">Sign In</a>
+      </nav>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <div class="mobile-nav-header">
+        <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <span class="wc-brand-text">Calculator</span>
+        </a>
+        <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="https://wordcalculator.net" class="nav-link mobile-link">Home</a>
+        <a href="blog.html" class="nav-link mobile-link">Blog</a>
+        <a href="tools.html" class="nav-link mobile-link">Tools</a>
+        <a href="about.html" class="nav-link mobile-link">About Us</a>
+		<a href="signin.html" class="nav-link mobile-link">Sign In</a>
+      </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+  </header>
+
+  <!-- ===== Breadcrumbs ===== -->
+  <div class="crumb-wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="https://wordcalculator.net">Home</a>
+      <span class="crumb-separator">/</span>
+      <a href="tools.html">Tools</a>
+      <span class="crumb-separator">/</span>
+      <span class="crumb-current">Focus Timer (Pomodoro)</span>
+    </nav>
+  </div>
+
+  <!-- ==================== MAIN ==================== -->
+  <main class="age-main">
+    <!-- LEFT SIDE -->
+    <section class="age-left">
+      <div class="age-top-grid">
+        <article class="card" aria-labelledby="focusTimerTitle">
+          <div class="area-shell">
+            <div class="area-title-row">
+              <h1 id="focusTimerTitle" class="area-title">Focus Timer (Pomodoro)</h1>
+              <span class="ft-badge"><i class="fa-solid fa-hourglass-start"></i> Work / Break</span>
+            </div>
+
+            <div class="ft-wrap" aria-label="Pomodoro focus timer interface">
+              <!-- TIMER -->
+              <div class="ft-card">
+                <div class="ft-head">
+                  <div>
+                    <div style="font-weight:800;color:#0f172a;">Timer</div>
+                    <div class="ft-sub" id="ftPhaseHint">Ready to start a focus session.</div>
+                  </div>
+                  <span class="ft-badge" id="ftPhaseBadge"><i class="fa-solid fa-bolt"></i> Focus</span>
+                </div>
+
+                <div class="ft-timer">
+                  <div class="ft-ring" id="ftRing" style="--deg:0deg;">
+                    <div class="ft-ring-inner">
+                      <div class="ft-time" id="ftTime">25:00</div>
+                      <div class="ft-phase" id="ftPhase">Focus</div>
+                    </div>
+                  </div>
+
+                  <div class="ft-controls" aria-label="Timer controls">
+                    <button type="button" class="ft-btn primary" id="ftStartPauseBtn">
+                      <i class="fa-solid fa-play"></i> Start
+                    </button>
+                    <button type="button" class="ft-btn" id="ftResetBtn">
+                      <i class="fa-solid fa-rotate-left"></i> Reset
+                    </button>
+                    <button type="button" class="ft-btn" id="ftSkipBtn">
+                      <i class="fa-solid fa-forward-step"></i> Skip
+                    </button>
+                    <button type="button" class="ft-btn danger" id="ftClearBtn">
+                      <i class="fa-solid fa-trash-can"></i> Clear
+                    </button>
+                  </div>
+
+                  <div class="ft-stats" aria-label="Cycle stats">
+                    <div class="ft-stat">
+                      <small>Focus sessions completed</small>
+                      <strong id="ftFocusDone">0</strong>
+                    </div>
+                    <div class="ft-stat">
+                      <small>Current cycle</small>
+                      <strong><span id="ftCycleCount">0</span> / <span id="ftLongEvery">4</span></strong>
+                    </div>
+                    <div class="ft-stat">
+                      <small>Total time focused (min)</small>
+                      <strong id="ftFocusMinutes">0</strong>
+                    </div>
+                    <div class="ft-stat">
+                      <small>Auto switch</small>
+                      <strong id="ftAutoStatus">On</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SETTINGS -->
+              <div class="ft-card">
+                <div class="ft-head">
+                  <div>
+                    <div style="font-weight:800;color:#0f172a;">Settings</div>
+                    <div class="ft-sub">Customize durations and behavior. Saved on this device.</div>
+                  </div>
+                  <span class="ft-badge"><i class="fa-solid fa-sliders"></i> Customize</span>
+                </div>
+
+                <div class="ft-row">
+                  <div class="ft-field">
+                    <label for="ftFocusMin">Focus (minutes)</label>
+                    <input id="ftFocusMin" class="ft-input" type="number" min="1" max="180" step="1" value="25" inputmode="numeric" />
+                    <div class="ft-help">Typical: 25–50 minutes</div>
+                  </div>
+                  <div class="ft-field">
+                    <label for="ftShortMin">Short break (minutes)</label>
+                    <input id="ftShortMin" class="ft-input" type="number" min="1" max="60" step="1" value="5" inputmode="numeric" />
+                    <div class="ft-help">Typical: 5–10 minutes</div>
+                  </div>
+                </div>
+
+                <div class="ft-row" style="margin-top:8px;">
+                  <div class="ft-field">
+                    <label for="ftLongMin">Long break (minutes)</label>
+                    <input id="ftLongMin" class="ft-input" type="number" min="1" max="90" step="1" value="15" inputmode="numeric" />
+                    <div class="ft-help">Typical: 15–30 minutes</div>
+                  </div>
+                  <div class="ft-field">
+                    <label for="ftLongEvery">Long break after (focus sessions)</label>
+                    <input id="ftLongEveryInput" class="ft-input" type="number" min="2" max="12" step="1" value="4" inputmode="numeric" />
+                    <div class="ft-help">Typical: 4 focus sessions</div>
+                  </div>
+                </div>
+
+                <div class="ft-toggles">
+                  <label class="ft-check">
+                    <input type="checkbox" id="ftAutoSwitch" checked />
+                    Auto-switch phases
+                  </label>
+                  <label class="ft-check">
+                    <input type="checkbox" id="ftSound" checked />
+                    Sound alert
+                  </label>
+                </div>
+
+                <div class="ft-controls" style="justify-content:flex-start;margin-top:12px;">
+                  <button type="button" class="ft-btn primary" id="ftSaveSettingsBtn">
+                    <i class="fa-solid fa-floppy-disk"></i> Save settings
+                  </button>
+                  <button type="button" class="ft-btn" id="ftApplyBtn">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Apply now
+                  </button>
+                </div>
+
+                <div class="ft-help" style="margin-top:10px;">
+                  Tip: If you change durations while the timer is running, click "Apply now" to update the current phase time.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Small helper block -->
+          <div class="section-block" style="margin-top:12px;">
+            <h4>Quick tips</h4>
+            <ul>
+              <li>Start a focus session and work on one task until the timer ends.</li>
+              <li>Take a short break after each focus session to reset your attention.</li>
+              <li>After several sessions, take a long break to avoid fatigue.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <!-- ==================== Usage Content ==================== -->
+      <article class="section-block">
+        <h3>How to use the Focus Timer (Pomodoro)</h3>
+        <p>
+          This Focus Timer follows the Pomodoro Technique: you work in focused intervals and take structured breaks.
+          The goal is to reduce distractions, maintain energy, and produce consistent output without burnout.
+        </p>
+
+        <h4>Step-by-step workflow</h4>
+        <ul>
+          <li><strong>Set durations:</strong> Choose focus, short break, long break, and how often the long break happens.</li>
+          <li><strong>Start:</strong> Click Start and commit to one task during the focus phase.</li>
+          <li><strong>Break:</strong> When the phase ends, take the break seriously—stand up, hydrate, and reset.</li>
+          <li><strong>Repeat:</strong> After completing the configured number of focus sessions, take a longer break.</li>
+          <li><strong>Track progress:</strong> Use cycles completed and total focused minutes to monitor consistency.</li>
+        </ul>
+
+        <h4>Why this timer is useful</h4>
+        <ul>
+          <li><strong>Better focus:</strong> A visible countdown makes it easier to ignore distractions.</li>
+          <li><strong>Reduced fatigue:</strong> Planned breaks protect your attention and energy.</li>
+          <li><strong>More consistency:</strong> Short, repeatable sessions build sustainable work habits.</li>
+          <li><strong>Clear structure:</strong> Ideal for studying, writing, coding, and deep work tasks.</li>
+        </ul>
+
+        <h4>Recommended setups</h4>
+        <ul>
+          <li><strong>Classic:</strong> 25 / 5 / 15 with a long break after 4 focus sessions.</li>
+          <li><strong>Deep work:</strong> 50 / 10 / 25 for longer concentration blocks.</li>
+          <li><strong>Light tasks:</strong> 15 / 3 / 10 for quick turnaround tasks.</li>
+        </ul>
+
+        <h4>How it works</h4>
+        <p>
+          The timer counts down the current phase and visually shows progress on the ring. When a phase ends, it can automatically
+          switch to the next phase (if auto-switch is enabled). Your settings and cycle stats are saved locally in your browser
+          so you can continue later on the same device.
+        </p>
+      </article>
+    </section>
+
+    <!-- RIGHT SIDE / SIDEBAR -->
+    <aside class="age-sidebar" aria-label="Quick search and related tools">
+      <div class="sidebar-card">
+        <div class="sidebar-title-bar">
+          <span>Quick Search</span>
+          <i class="fas fa-magnifying-glass"></i>
+        </div>
+
+        <div class="tool-search">
+          <small>Quick links to other tools on WordCalculator.net</small>
+          <div class="sidebar-search-input-wrapper">
+            <i class="fa-solid fa-magnifying-glass sidebar-search-icon" aria-hidden="true"></i>
+            <input
+              type="search"
+              id="toolSearchInput"
+              class="sidebar-search-input"
+              placeholder="Search tools by name..."
+              autocomplete="off"
+              aria-label="Search tools by name"
+            />
+          </div>
+          <ul id="toolSearchSuggestions" class="sidebar-search-suggestions" aria-label="Tool suggestions"></ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Popular</h4>
+          <ul class="sidebar-links">
+            <li><a href="age-calculator.html">Age Calculator</a></li>
+            <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+            <li><a href="calorie-calculator.html">Calorie Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Text &amp; Writing</h4>
+          <ul class="sidebar-links">
+            <li><a href="https://wordcalculator.net">Word &amp; Character Counter</a></li>
+            <li><a href="case-converter.html">Case Converter</a></li>
+            <li><a href="grammar-spell-checker.html">Grammar &amp; Spell Checker</a></li>
+            <li><a href="readability-analyzer.html">Readability Analyzer</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>SEO &amp; Content</h4>
+          <ul class="sidebar-links">
+            <li><a href="keyword-density-analyzer.html">Keyword Density Analyzer</a></li>
+            <li><a href="title-meta-preview.html">Title &amp; Meta Preview</a></li>
+            <li><a href="url-slug-generator.html">URL Slug Generator</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Finance &amp; Time</h4>
+          <ul class="sidebar-links">
+            <li><a href="loan-emi-calculator.html">Loan &amp; EMI Calculator</a></li>
+            <li><a href="interest-calculator.html">Interest Calculator</a></li>
+            <li><a href="focus-timer.html">Focus Timer</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="pro-footer" id="about" aria-label="Website footer">
+    <div class="pf-wrap">
+      <div class="pf-brand">
+        <div class="pf-logo">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <div class="pf-brand-text">
+            WordCalculator<span>.net</span>
+          </div>
+        </div>
+        <p class="pf-tag">A focused, distraction-free toolkit for precise writing.</p>
+        <div class="pf-social">
+          <a href="https://facebook.com/wordcalculator" aria-label="Facebook" rel="noopener" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/wordcalculator" aria-label="X (Twitter)" rel="noopener" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://linkedin.com/company/wordcalculator" aria-label="LinkedIn" rel="noopener" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://youtube.com/@wordcalculator" aria-label="YouTube" rel="noopener" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="pf-cols">
+        <div class="pf-col">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="https://wordcalculator.net">Editor</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="grammar-spell-checker.html">Grammar Check</a></li>
+            <li><a href="keyword-density-analyzer.html">Keyword Density</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="guides.html">Tips &amp; Guides</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="bug-report.html">Report a Bug</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html">Cookie Policy</a></li>
+            <li><a href="security.html">Security</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pf-bottom">
+      <div class="pf-bottom-wrap">
+        <div>© <span id="pf-year"></span> WordCalculator.net — All rights reserved.</div>
+        <div class="pf-links">
+          <a href="sitemap.html">Sitemap</a>
+          <a href="status.html">Status</a>
+          <a href="accessibility.html">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Auth Modal ===== -->
+  <div class="modal-overlay" id="authOverlay" aria-hidden="true"></div>
+  <div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <div class="modal-head">
+      <h3 id="authTitle"><i class="fas fa-user-lock"></i> Account</h3>
+      <button class="modal-close" id="authCloseBtn" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body">
+      Sign-in and account features are coming soon. For now, all tools are free to use without registration.
+    </div>
+  </div>
+
+  <!-- ===== Notice Modal ===== -->
+  <div class="modal-overlay" id="noticeOverlay" aria-hidden="true"></div>
+  <div class="modal" id="noticeModal" role="dialog" aria-modal="true" aria-labelledby="noticeTitle">
+    <div class="modal-head">
+      <h3 id="noticeTitle"><i class="fa-solid fa-bell"></i> Timer</h3>
+      <button class="modal-close" id="noticeCloseBtn" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body" id="noticeBody">—</div>
+  </div>
+
+  <!-- Tools Directory Js -->
+  <script src="tools-directory.js"></script>
+  
+  <script>
+    const $  = (s)=>document.querySelector(s);
+    const $$ = (s)=>Array.from(document.querySelectorAll(s));
+
+    document.addEventListener("DOMContentLoaded", ()=>{
+      initYear();
+      initMobileMenu();
+      initAuthModal();
+      initNoticeModal();
+      initToolQuickSearch();
+      initFocusTimer();
+    });
+
+    function initYear(){
+      const el=$("#pf-year");
+      if(el) el.textContent=new Date().getFullYear();
+    }
+
+    function initMobileMenu(){
+      const mobileMenuBtn=$("#mobileMenuBtn");
+      const mobileCloseBtn=$("#mobileCloseBtn");
+      const mobileNav=$("#mobileNav");
+      const mobileOverlay=$("#mobileOverlay");
+      if(!mobileMenuBtn||!mobileNav||!mobileOverlay) return;
+
+      const open=()=>{
+        mobileNav.classList.add("active");
+        mobileOverlay.classList.add("active");
+        document.body.style.overflow="hidden";
+      };
+      const close=()=>{
+        mobileNav.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        document.body.style.overflow="";
+      };
+
+      mobileMenuBtn.addEventListener("click",open);
+      if(mobileCloseBtn) mobileCloseBtn.addEventListener("click",close);
+      mobileOverlay.addEventListener("click",close);
+      $$(".mobile-link").forEach(link=>link.addEventListener("click",close));
+
+      const openAuthBtnMobile=$("#openAuthBtnMobile");
+      if(openAuthBtnMobile){
+        openAuthBtnMobile.addEventListener("click",()=>{
+          close();
+          openAuthModal();
+        });
+      }
+    }
+
+    function initAuthModal(){
+      const openBtn=$("#openAuthBtn");
+      const overlay=$("#authOverlay");
+      const modal=$("#authModal");
+      const closeBtn=$("#authCloseBtn");
+      if(!overlay || !modal) return;
+
+      const open=()=>{
+        overlay.style.display="block";
+        modal.style.display="block";
+        document.body.style.overflow="hidden";
+      };
+      const close=()=>{
+        overlay.style.display="none";
+        modal.style.display="none";
+        document.body.style.overflow="";
+      };
+
+      if(openBtn) openBtn.addEventListener("click",open);
+      if(closeBtn) closeBtn.addEventListener("click",close);
+      overlay.addEventListener("click",close);
+      document.addEventListener("keydown",(e)=>{ if(e.key==="Escape") close(); });
+    }
+    function openAuthModal(){
+      const overlay=$("#authOverlay");
+      const modal=$("#authModal");
+      if(!overlay||!modal) return;
+      overlay.style.display="block";
+      modal.style.display="block";
+      document.body.style.overflow="hidden";
+    }
+
+    /* ===== Notice modal ===== */
+    function initNoticeModal(){
+      const overlay=$("#noticeOverlay");
+      const closeBtn=$("#noticeCloseBtn");
+      if(overlay) overlay.addEventListener("click",closeNotice);
+      if(closeBtn) closeBtn.addEventListener("click",closeNotice);
+      document.addEventListener("keydown",(e)=>{ if(e.key==="Escape") closeNotice(); });
+    }
+    function openNotice(html){
+      const overlay=$("#noticeOverlay");
+      const modal=$("#noticeModal");
+      const body=$("#noticeBody");
+      if(!overlay||!modal||!body) return;
+      body.innerHTML = html;
+      overlay.style.display="block";
+      modal.style.display="block";
+      document.body.style.overflow="hidden";
+    }
+    function closeNotice(){
+      const overlay=$("#noticeOverlay");
+      const modal=$("#noticeModal");
+      if(!overlay||!modal) return;
+      overlay.style.display="none";
+      modal.style.display="none";
+      document.body.style.overflow="";
+    }
+
+    /* ===== Audio Unlock for iOS/Safari ===== */
+    let audioUnlocked = false;
+
+    function unlockAudio() {
+      if (audioUnlocked) return;
+      
+      try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (AudioContext) {
+          const ctx = new AudioContext();
+          
+          const buffer = ctx.createBuffer(1, 1, 22050);
+          const source = ctx.createBufferSource();
+          source.buffer = buffer;
+          source.connect(ctx.destination);
+          
+          source.start(0);
+          audioUnlocked = true;
+          
+          setTimeout(() => {
+            if (ctx.state !== 'closed') {
+              ctx.close();
+            }
+          }, 100);
+        }
+      } catch (error) {
+        // Could not unlock audio
+      }
+    }
+
+    document.addEventListener('click', unlockAudio, { once: true });
+    document.addEventListener('keydown', unlockAudio, { once: true });
+    document.addEventListener('touchstart', unlockAudio, { once: true });
+
+    /* ===== Enhanced Sound Function with Fallback ===== */
+    function playBeep() {
+      try {
+        // 1. Primary method: Web Audio API
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (AudioContext) {
+          const ctx = new AudioContext();
+          const oscillator = ctx.createOscillator();
+          const gainNode = ctx.createGain();
+          
+          oscillator.connect(gainNode);
+          gainNode.connect(ctx.destination);
+          
+          oscillator.type = 'sine';
+          oscillator.frequency.value = 880;
+          gainNode.gain.value = 0.05;
+          
+          oscillator.start();
+          setTimeout(() => {
+            oscillator.stop();
+            setTimeout(() => {
+              if (ctx.state !== 'closed') {
+                ctx.close();
+              }
+            }, 100);
+          }, 180);
+          return;
+        }
+      } catch (error) {
+        // Web Audio failed, try fallback
+      }
+      
+      // 2. Fallback method: Alternative Web Audio
+      try {
+        const audioContext = new (window.AudioContext || window.webkitAudioContext || {})();
+        if (audioContext.createOscillator) {
+          const oscillator = audioContext.createOscillator();
+          const gainNode = audioContext.createGain();
+          
+          oscillator.connect(gainNode);
+          gainNode.connect(audioContext.destination);
+          
+          oscillator.frequency.value = 880;
+          gainNode.gain.value = 0.03;
+          
+          oscillator.start();
+          setTimeout(() => {
+            oscillator.stop();
+            setTimeout(() => {
+              if (audioContext.state !== 'closed') {
+                audioContext.close();
+              }
+            }, 100);
+          }, 150);
+          return;
+        }
+      } catch (error) {
+        // Both Web Audio methods failed
+      }
+      
+      // 3. Final fallback: Silent audio playback
+      try {
+        const silentAudio = new Audio();
+        silentAudio.src = 'data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=';
+        silentAudio.volume = 0;
+        silentAudio.play().catch(() => {});
+        
+        if (typeof console !== 'undefined' && console.log) {
+          console.log('\x07');
+        }
+      } catch (error) {
+        // All audio methods failed - timer will still work without sound
+      }
+    }
+
+    /* ===== Focus Timer (Pomodoro) ===== */
+    const FT_KEY = "wc_focus_timer_pomodoro_v1";
+
+    function initFocusTimer(){
+      const ring=$("#ftRing");
+      const timeEl=$("#ftTime");
+      const phaseEl=$("#ftPhase");
+      const badge=$("#ftPhaseBadge");
+      const hint=$("#ftPhaseHint");
+
+      const startPauseBtn=$("#ftStartPauseBtn");
+      const resetBtn=$("#ftResetBtn");
+      const skipBtn=$("#ftSkipBtn");
+      const clearBtn=$("#ftClearBtn");
+
+      const focusDoneEl=$("#ftFocusDone");
+      const cycleCountEl=$("#ftCycleCount");
+      const longEveryEl=$("#ftLongEvery");
+      const focusMinutesEl=$("#ftFocusMinutes");
+      const autoStatusEl=$("#ftAutoStatus");
+
+      const focusMin=$("#ftFocusMin");
+      const shortMin=$("#ftShortMin");
+      const longMin=$("#ftLongMin");
+      const longEveryInput=$("#ftLongEveryInput");
+      const autoSwitch=$("#ftAutoSwitch");
+      const sound=$("#ftSound");
+      const saveSettingsBtn=$("#ftSaveSettingsBtn");
+      const applyBtn=$("#ftApplyBtn");
+
+      let state = loadFTState();
+
+      // hydrate settings
+      focusMin.value = String(state.settings.focusMin);
+      shortMin.value = String(state.settings.shortMin);
+      longMin.value  = String(state.settings.longMin);
+      longEveryInput.value = String(state.settings.longEvery);
+      autoSwitch.checked = !!state.settings.autoSwitch;
+      sound.checked = !!state.settings.sound;
+
+      // apply longEvery display
+      longEveryEl.textContent = String(state.settings.longEvery);
+
+      // hydrate timer
+      let running = false;
+      let tickId = null;
+      let endAt = 0;
+
+      function phaseLabel(p){
+        if(p==="FOCUS") return "Focus";
+        if(p==="SHORT") return "Short Break";
+        return "Long Break";
+      }
+      function phaseIcon(p){
+        if(p==="FOCUS") return "fa-bolt";
+        if(p==="SHORT") return "fa-mug-hot";
+        return "fa-couch";
+      }
+      function phaseBadgeText(p){
+        if(p==="FOCUS") return "Focus";
+        if(p==="SHORT") return "Short";
+        return "Long";
+      }
+      function phaseDurationSec(p){
+        const s = state.settings;
+        if(p==="FOCUS") return s.focusMin * 60;
+        if(p==="SHORT") return s.shortMin * 60;
+        return s.longMin * 60;
+      }
+
+      function setPhase(p, resetTimerToFull){
+        state.timer.phase = p;
+        const dur = phaseDurationSec(p);
+        if(resetTimerToFull){
+          state.timer.remainingSec = dur;
+        }else{
+          state.timer.remainingSec = clampInt(state.timer.remainingSec, 0, dur);
+        }
+        state.timer.phaseTotalSec = dur;
+
+        phaseEl.textContent = phaseLabel(p);
+        badge.innerHTML = `<i class="fa-solid ${phaseIcon(p)}"></i> ${phaseBadgeText(p)}`;
+        hint.textContent = p==="FOCUS"
+          ? "Focus on one task. Avoid context switching."
+          : "Take a real break. Stand up, breathe, reset.";
+
+        render();
+        saveFTState(state);
+      }
+
+      function render(){
+        const sec = clampInt(state.timer.remainingSec, 0, 999999);
+        timeEl.textContent = formatMMSS(sec);
+
+        const total = Math.max(1, state.timer.phaseTotalSec || phaseDurationSec(state.timer.phase));
+        const done = total - sec;
+        const pct = clamp01(done / total);
+        const deg = Math.round(pct * 360);
+        ring.style.setProperty("--deg", deg + "deg");
+
+        focusDoneEl.textContent = String(state.stats.focusSessionsDone);
+        cycleCountEl.textContent = String(state.stats.cycleInBlock);
+        longEveryEl.textContent = String(state.settings.longEvery);
+        focusMinutesEl.textContent = String(state.stats.totalFocusMin);
+        autoStatusEl.textContent = state.settings.autoSwitch ? "On" : "Off";
+
+        startPauseBtn.innerHTML = running
+          ? `<i class="fa-solid fa-pause"></i> Pause`
+          : `<i class="fa-solid fa-play"></i> Start`;
+      }
+
+      function start(){
+        if(running) return;
+        running = true;
+
+        const now = Date.now();
+        endAt = now + (state.timer.remainingSec * 1000);
+
+        tickId = setInterval(()=>{
+          const msLeft = endAt - Date.now();
+          const secLeft = Math.max(0, Math.ceil(msLeft / 1000));
+          state.timer.remainingSec = secLeft;
+          render();
+
+          if(secLeft <= 0){
+            completePhase();
+          }
+        }, 250);
+
+        render();
+      }
+
+      function pause(){
+        if(!running) return;
+        running = false;
+        if(tickId) clearInterval(tickId);
+        tickId = null;
+
+        const msLeft = endAt - Date.now();
+        state.timer.remainingSec = Math.max(0, Math.ceil(msLeft / 1000));
+        saveFTState(state);
+        render();
+      }
+
+      function resetPhase(){
+        pause();
+        setPhase(state.timer.phase, true);
+      }
+
+      function applySettingsToCurrent(){
+        setPhase(state.timer.phase, false);
+      }
+
+      function completePhase(){
+        pause();
+
+        if(state.timer.phase === "FOCUS"){
+          state.stats.focusSessionsDone += 1;
+          state.stats.cycleInBlock += 1;
+          state.stats.totalFocusMin += state.settings.focusMin;
+
+          const longEvery = Math.max(2, state.settings.longEvery);
+          if(state.stats.cycleInBlock >= longEvery){
+            state.stats.cycleInBlock = 0;
+            setPhase("LONG", true);
+            notify("Long break time", "Great work. Take a longer break to recharge.");
+          }else{
+            setPhase("SHORT", true);
+            notify("Short break time", "Nice session. Take a short break and come back refreshed.");
+          }
+        }else{
+          setPhase("FOCUS", true);
+          notify("Focus time", "Break is over. Start your next focus session.");
+        }
+
+        saveFTState(state);
+        render();
+
+        if(state.settings.autoSwitch){
+          start();
+        }
+      }
+
+      function skip(){
+        pause();
+        if(state.timer.phase === "FOCUS"){
+          setPhase("SHORT", true);
+          notify("Skipped", "Focus session skipped. Try completing at least one full session to build momentum.");
+        }else{
+          setPhase("FOCUS", true);
+          notify("Skipped", "Break skipped. Starting focus phase.");
+        }
+        saveFTState(state);
+        render();
+
+        if(state.settings.autoSwitch){
+          start();
+        }
+      }
+
+      function clearAll(){
+        pause();
+        localStorage.removeItem(FT_KEY);
+        state = loadFTState(true);
+
+        focusMin.value = String(state.settings.focusMin);
+        shortMin.value = String(state.settings.shortMin);
+        longMin.value  = String(state.settings.longMin);
+        longEveryInput.value = String(state.settings.longEvery);
+        autoSwitch.checked = !!state.settings.autoSwitch;
+        sound.checked = !!state.settings.sound;
+
+        setPhase("FOCUS", true);
+        state.stats.focusSessionsDone = 0;
+        state.stats.cycleInBlock = 0;
+        state.stats.totalFocusMin = 0;
+        saveFTState(state);
+        render();
+
+        notify("Cleared", "Timer data was cleared on this device.");
+      }
+
+      function notify(title, msg){
+        if(state.settings.sound){
+          playBeep();
+        }
+        openNotice(`
+          <div style="display:inline-flex;align-items:center;gap:8px;padding:3px 10px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;font-size:11px;margin-bottom:10px;">
+            <i class="fa-solid fa-bell"></i>
+            <strong>${escapeHtml(title)}</strong>
+          </div>
+          <div>${escapeHtml(msg)}</div>
+          <div style="margin-top:10px;display:flex;justify-content:flex-end;">
+            <button type="button" onclick="(${closeNotice.toString()})()" style="border-radius:999px;border:1px solid #cbd5e1;background:#f9fafb;padding:6px 10px;font-size:12px;cursor:pointer;">Close</button>
+          </div>
+        `);
+      }
+
+      setPhase(state.timer.phase || "FOCUS", false);
+      render();
+
+      startPauseBtn.addEventListener("click", ()=>{ running ? pause() : start(); });
+      resetBtn.addEventListener("click", resetPhase);
+      skipBtn.addEventListener("click", skip);
+      clearBtn.addEventListener("click", clearAll);
+
+      saveSettingsBtn.addEventListener("click", ()=>{
+        state.settings = readSettingsFromUI();
+        saveFTState(state);
+        longEveryEl.textContent = String(state.settings.longEvery);
+        notify("Saved", "Settings were saved on this device.");
+        render();
+      });
+
+      applyBtn.addEventListener("click", ()=>{
+        state.settings = readSettingsFromUI();
+        saveFTState(state);
+        longEveryEl.textContent = String(state.settings.longEvery);
+        applySettingsToCurrent();
+        render();
+      });
+
+      autoSwitch.addEventListener("change", ()=>{
+        state.settings.autoSwitch = !!autoSwitch.checked;
+        saveFTState(state);
+        render();
+      });
+
+      sound.addEventListener("change", ()=>{
+        state.settings.sound = !!sound.checked;
+        saveFTState(state);
+      });
+
+      function readSettingsFromUI(){
+        const s = {
+          focusMin: clampInt(parseInt(focusMin.value,10)||25, 1, 180),
+          shortMin: clampInt(parseInt(shortMin.value,10)||5, 1, 60),
+          longMin:  clampInt(parseInt(longMin.value,10)||15, 1, 90),
+          longEvery: clampInt(parseInt(longEveryInput.value,10)||4, 2, 12),
+          autoSwitch: !!autoSwitch.checked,
+          sound: !!sound.checked
+        };
+        focusMin.value = String(s.focusMin);
+        shortMin.value = String(s.shortMin);
+        longMin.value  = String(s.longMin);
+        longEveryInput.value = String(s.longEvery);
+        return s;
+      }
+    }
+
+    function loadFTState(forceFresh){
+      if(forceFresh){
+        return {
+          settings: { focusMin:25, shortMin:5, longMin:15, longEvery:4, autoSwitch:true, sound:true },
+          timer: { phase:"FOCUS", remainingSec:25*60, phaseTotalSec:25*60 },
+          stats: { focusSessionsDone:0, cycleInBlock:0, totalFocusMin:0 }
+        };
+      }
+      try{
+        const raw = localStorage.getItem(FT_KEY);
+        if(!raw) return loadFTState(true);
+        const d = JSON.parse(raw);
+
+        const settings = d.settings || {};
+        const s = {
+          focusMin: clampInt(parseInt(settings.focusMin,10)||25, 1, 180),
+          shortMin: clampInt(parseInt(settings.shortMin,10)||5, 1, 60),
+          longMin:  clampInt(parseInt(settings.longMin,10)||15, 1, 90),
+          longEvery: clampInt(parseInt(settings.longEvery,10)||4, 2, 12),
+          autoSwitch: !!settings.autoSwitch,
+          sound: settings.sound !== false
+        };
+
+        const timer = d.timer || {};
+        const phase = (timer.phase==="FOCUS"||timer.phase==="SHORT"||timer.phase==="LONG") ? timer.phase : "FOCUS";
+        const totalSec = (phase==="FOCUS" ? s.focusMin*60 : phase==="SHORT" ? s.shortMin*60 : s.longMin*60);
+        const rem = clampInt(parseInt(timer.remainingSec,10)||totalSec, 0, totalSec);
+
+        const stats = d.stats || {};
+        const st = {
+          focusSessionsDone: clampInt(parseInt(stats.focusSessionsDone,10)||0, 0, 999999),
+          cycleInBlock: clampInt(parseInt(stats.cycleInBlock,10)||0, 0, 999999),
+          totalFocusMin: clampInt(parseInt(stats.totalFocusMin,10)||0, 0, 99999999)
+        };
+
+        return {
+          settings: s,
+          timer: { phase: phase, remainingSec: rem, phaseTotalSec: totalSec },
+          stats: st
+        };
+      }catch{
+        return loadFTState(true);
+      }
+    }
+
+    function saveFTState(state){
+      try{ localStorage.setItem(FT_KEY, JSON.stringify(state)); }catch{}
+    }
+
+    function clampInt(n, min, max){
+      n = Number.isFinite(n) ? n : min;
+      return Math.max(min, Math.min(max, n));
+    }
+    function clamp01(x){ return Math.max(0, Math.min(1, x)); }
+
+    function formatMMSS(totalSec){
+      const m = Math.floor(totalSec/60);
+      const s = totalSec%60;
+      return String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");
+    }
+    function escapeHtml(str){
+      return String(str)
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+    }
+
+    /* ===== Tool directory & Quick Search ===== */
+    const toolDirectory = allTools;
+
+    function initToolQuickSearch(){
+      const input=$("#toolSearchInput");
+      const suggestionsBox=$("#toolSearchSuggestions");
+      if(!input||!suggestionsBox||!Array.isArray(toolDirectory)) return;
+
+      let currentResults=[];
+
+      function renderSuggestions(query){
+        const value=(query||"").trim().toLowerCase();
+        suggestionsBox.innerHTML="";
+        if(!value){
+          suggestionsBox.classList.remove("visible");
+          return;
+        }
+
+        const allMatches=toolDirectory.filter(tool=>tool.name.toLowerCase().includes(value));
+        if(!allMatches.length){
+          const li=document.createElement("li");
+          li.textContent="No tools found";
+          suggestionsBox.appendChild(li);
+          suggestionsBox.classList.add("visible");
+          return;
+        }
+
+        function rankTool(tool){
+          const name=tool.name.toLowerCase();
+          const pos=name.indexOf(value);
+          const starts=name.startsWith(value)?0:1;
+          const lenDiff=Math.abs(name.length-value.length);
+          return starts*100 + pos*2 + lenDiff;
+        }
+
+        currentResults=allMatches.slice().sort((a,b)=>rankTool(a)-rankTool(b));
+        currentResults.slice(0,10).forEach(tool=>{
+          const li=document.createElement("li");
+          const iconEl=document.createElement("i");
+          iconEl.className=tool.icon || "fa-solid fa-wand-magic-sparkles";
+          const nameSpan=document.createElement("span");
+          nameSpan.className="tool-name";
+          nameSpan.textContent=tool.name;
+          li.appendChild(iconEl);
+          li.appendChild(nameSpan);
+          li.addEventListener("click",()=>{
+            if(tool.url) window.location.href=tool.url;
+          });
+          suggestionsBox.appendChild(li);
+        });
+
+        suggestionsBox.classList.add("visible");
+      }
+
+      input.addEventListener("input",(e)=>renderSuggestions(e.target.value));
+
+      input.addEventListener("keydown",(e)=>{
+        if(e.key==="Enter"){
+          const value=input.value.trim().toLowerCase();
+          if(!value) return;
+          const first=currentResults.length ? currentResults[0] : toolDirectory.find(
+            (tool)=>tool.name.toLowerCase().includes(value)
+          );
+          if(first && first.url) window.location.href=first.url;
+        }
+      });
+
+      document.addEventListener("click",(e)=>{
+        if(!input.contains(e.target) && !suggestionsBox.contains(e.target)){
+          suggestionsBox.classList.remove("visible");
+        }
+      });
+    }
+  </script>
+</body>
+</html>

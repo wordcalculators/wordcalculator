@@ -1,0 +1,1730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ==================== ADVANCED SEO ==================== -->
+  <title>Advanced URL Slug Generator — Create SEO-Friendly Slugs Instantly</title>
+  <meta name="description" content="Generate perfect URL slugs with our advanced tool. Convert titles to SEO-friendly slugs with multiple options: lowercase, hyphenate, remove stop words, transliterate, and more." />
+  <meta name="keywords" content="URL slug generator, slugify online, SEO slug generator, clean URL converter, web address generator, permalink creator, slug maker, URL formatter, SEO tool" />
+  <meta name="author" content="WordCalculator.net" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#020617" />
+  <link rel="canonical" href="https://wordcalculator.net/url-slug-generator.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wordcalculator.net/url-slug-generator.html" />
+  <meta property="og:title" content="Advanced URL Slug Generator — Create SEO-Friendly Slugs Instantly" />
+  <meta property="og:description" content="Generate perfect URL slugs with advanced options: lowercase, hyphenate, remove stop words, transliterate, and optimize for SEO." />
+  <meta property="og:image" content="https://wordcalculator.net/images/url-slug-generator-og.jpg" />
+  <meta property="og:site_name" content="WordCalculator.net" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://wordcalculator.net/url-slug-generator.html" />
+  <meta name="twitter:title" content="Advanced URL Slug Generator — Create SEO-Friendly Slugs Instantly" />
+  <meta name="twitter:description" content="Generate perfect URL slugs with advanced options: lowercase, hyphenate, remove stop words, transliterate, and optimize for SEO." />
+  <meta name="twitter:image" content="https://wordcalculator.net/images/url-slug-generator-twitter.jpg" />
+
+  <!-- WebApplication schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Advanced URL Slug Generator",
+    "url":"https://wordcalculator.net/url-slug-generator.html",
+    "description":"Advanced tool to generate SEO-friendly URL slugs with multiple customization options including case conversion, stop word removal, transliteration, and length control.",
+    "applicationCategory":"UtilitiesApplication",
+    "operatingSystem":"Any",
+    "browserRequirements":"Requires JavaScript",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "author":{"@type":"Organization","name":"WordCalculator.net"},
+    "featureList": [
+      "Smart Slug Generation",
+      "Multiple Case Options",
+      "Stop Word Removal",
+      "Transliteration Support",
+      "Length Control",
+      "Real-time Preview",
+      "Copy to Clipboard"
+    ]
+  }
+  </script>
+
+  <!-- Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://wordcalculator.net/"},
+      {"@type":"ListItem","position":2,"name":"Tools","item":"https://wordcalculator.net/tools.html"},
+      {"@type":"ListItem","position":3,"name":"URL Slug Generator","item":"https://wordcalculator.net/url-slug-generator.html"}
+    ]
+  }
+  </script>
+
+  <!-- FAQ schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"What is the best length for a URL slug?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"The ideal URL slug length is 3-5 words or 30-60 characters. Shorter slugs are more user-friendly, memorable, and perform better in search results."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Should URL slugs include stop words like 'the', 'and', 'of'?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"For SEO, it's generally better to remove common stop words. However, if they improve readability, you can keep them. Our tool offers both options."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Are uppercase letters allowed in URL slugs?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Technically yes, but lowercase is strongly recommended. Uppercase can cause duplicate content issues and are harder to type consistently."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"What characters should be avoided in URL slugs?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Avoid special characters (@, #, $, %, &, *, etc.), spaces (use hyphens), and non-ASCII characters. Stick to letters, numbers, and hyphens."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Can I use numbers in URL slugs?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes, numbers are allowed and can be useful for dates, versions, or product codes. However, avoid slugs that consist only of numbers."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- ==================== /SEO ==================== -->
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+    /* ===== Base / Theme ===== */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --text:#1f2937;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --primary:#2563eb;
+      --bg:#f7f8fb;
+      --card:#fff;
+      --danger:#b91c1c;
+      --success:#16a34a;
+      --warning:#ca8a04;
+      --accent-gradient:linear-gradient(135deg,#22c55e,#6366f1);
+    }
+    html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    body{
+      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+
+    /* ===== Header / Nav ===== */
+    .wc-header{background:#020617;color:#fff;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+    .wc-wrap{
+      max-width:1200px;margin:0 auto;padding:10px 12px;
+      display:flex;align-items:center;gap:14px;
+    }
+    .wc-logo{display:inline-flex;align-items:center;gap:8px}
+    .slab{
+      display:inline-flex;width:24px;height:24px;align-items:center;justify-content:center;
+      font-weight:800;font-size:14px;border-radius:2px;color:#fff;
+    }
+    .slab-w{background:#1f2327}
+    .slab-o{background:#a7c1db;color:#1e2a3a}
+    .slab-r{background:#7d96ae}
+    .slab-d{background:#2f5d8a}
+    .wc-brand-text{display:inline-flex;flex-direction:column;line-height:1.05;font-size:19px;font-weight:800}
+    .wc-brand-text small{font-size:10px;opacity:.95}
+    .wc-nav{margin-left:10px;display:flex;align-items:center;gap:8px;flex:1}
+    .wc-link{
+      color:#f4f8fc;font-weight:700;font-size:14px;padding:6px 10px;border-radius:8px;
+      transition:.15s;background:transparent;border:0;cursor:pointer;
+    }
+    .wc-link:hover{background:rgba(255,255,255,.14)}
+    .wc-signin-btn{background:rgba(148,163,184,.18);border:1px solid rgba(148,163,184,.5)}
+    .wc-signin-btn:hover{background:#38bdf8;color:#020617;border-color:#38bdf8}
+    .mobile-menu-btn{margin-left:auto;background:transparent;border:0;color:#fff;font-size:20px;display:none;cursor:pointer}
+    .mobile-nav{
+      position:fixed;top:0;right:-100%;width:320px;height:100vh;background:#1f2933;
+      box-shadow:-2px 0 10px rgba(0,0,0,.18);transition:right .3s;z-index:100;
+    }
+    .mobile-nav.active{right:0}
+    .mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;z-index:90}
+    .mobile-overlay.active{display:block}
+    .mobile-nav-header{display:flex;justify-content:space-between;align-items:center;padding:16px;border-bottom:1px solid #34495e}
+    .mobile-close-btn{background:transparent;border:0;color:#fff;font-size:20px;cursor:pointer}
+    .mobile-nav-links{padding:16px}
+    .mobile-link{
+      display:block;color:#ecf0f1;padding:12px 0;border-bottom:1px solid #34495e;
+      font-weight:700;background:transparent;border:0;width:100%;text-align:left;cursor:pointer;
+    }
+
+    /* ===== Breadcrumb ===== */
+    .crumb-wrap{max-width:1200px;margin:8px auto 0;padding:0 15px 4px}
+    .crumbs{font-size:13px;color:#111827}
+    .crumbs a{color:#2563eb}
+    .crumbs a:hover{text-decoration:underline}
+    .crumb-separator{margin:0 4px;color:#6b7280}
+    .crumb-current{font-weight:700}
+
+    /* ===== Main Layout ===== */
+    .age-main{
+      max-width:1200px;margin:22px auto 40px;padding:0 15px;
+    }
+    .layout{
+      display:grid;
+      grid-template-columns:minmax(0,3fr) minmax(260px,1.2fr);
+      grid-template-areas:
+        "tool sidebar"
+        "content sidebar";
+      gap:20px;
+      align-items:flex-start;
+    }
+    .tool{grid-area:tool}
+    .sidebar{grid-area:sidebar}
+    .content{grid-area:content}
+
+    /* ===== Cards ===== */
+    .tool-card,.sidebar-card,.section-block{
+      background:var(--card);
+      border-radius:12px;
+      border:1px solid #e2e8f0;
+      box-shadow:0 10px 24px rgba(15,23,42,.06);
+    }
+
+    /* ===== Slug Generator Card ===== */
+    .converter-card{padding:0 0 14px;overflow:hidden}
+    .converter-header{
+      padding:10px 14px;background:#020617;color:#f9fafb;
+      display:flex;justify-content:space-between;align-items:center;gap:10px;
+    }
+    .converter-header-left{display:flex;flex-direction:column;gap:2px}
+    .converter-title{font-size:18px;font-weight:800}
+    .converter-subtitle{font-size:12px;opacity:.9}
+    .badge{
+      font-size:11px;padding:3px 8px;border-radius:999px;
+      background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);
+      display:inline-flex;align-items:center;gap:6px;
+      white-space:nowrap;
+    }
+    .converter-body{padding:14px;display:flex;flex-direction:column;gap:12px}
+
+    /* Workspace */
+    .workspace{
+      border-radius:12px;border:1px solid #e5e7eb;background:#ffffff;
+      box-shadow:0 10px 24px rgba(15,23,42,.06);
+      overflow:hidden;
+    }
+    .workspace-top{
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      padding:10px 12px;background:#f8fafc;border-bottom:1px solid #e5e7eb;
+      flex-wrap:wrap;
+    }
+    .btn{
+      padding:7px 11px;border-radius:8px;border:1px solid transparent;
+      background:#2563eb;color:#f9fafb;font-size:13px;font-weight:700;
+      cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+      transition:background .15s,box-shadow .15s,transform .1s;
+      white-space:nowrap;
+    }
+    .btn:hover{background:#1d4ed8;box-shadow:0 8px 18px rgba(37,99,235,.35);transform:translateY(-1px)}
+    .btn-ghost{background:#ffffff;color:#111827;border-color:#e5e7eb}
+    .btn-ghost:hover{background:#f3f4f6;box-shadow:none}
+    .btn[disabled]{opacity:.5;cursor:not-allowed;box-shadow:none;transform:none}
+    .btn-success{background:#16a34a}
+    .btn-success:hover{background:#15803d;box-shadow:0 8px 18px rgba(22,163,74,.25)}
+    .btn-danger{background:#ef4444}
+    .btn-danger:hover{background:#dc2626;box-shadow:0 8px 18px rgba(220,38,38,.25)}
+    .btn-warning{background:#eab308}
+    .btn-warning:hover{background:#ca8a04;box-shadow:0 8px 18px rgba(234,179,8,.25)}
+
+    .status{
+      font-size:12px;color:#475569;
+      display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+    }
+    .pill{
+      font-size:11px;padding:3px 8px;border-radius:999px;
+      background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;
+      font-weight:800;
+    }
+    .error-text{font-size:12px;color:var(--danger);font-weight:700}
+    .success-text{font-size:12px;color:var(--success);font-weight:700}
+
+    .text-area-wrap{
+      padding:12px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .label-row{
+      display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+      font-size:12px;color:#334155;font-weight:800;
+    }
+    .label-row small{font-weight:700;color:#64748b}
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .input-wrapper i {
+      position: absolute;
+      left: 12px;
+      color: #6b7280;
+      font-size: 14px;
+    }
+    input[type="text"] {
+      width:100%;
+      height:44px;
+      border:1px solid #e5e7eb;
+      border-radius:12px;
+      padding:0 12px 0 38px;
+      outline:none;
+      font-size:14px;
+      background:#ffffff;
+      transition:border-color .15s,box-shadow .15s;
+      font-family: inherit;
+    }
+    input[type="text"]:focus{
+      border-color:#3f82bd;
+      box-shadow:0 0 0 3px rgba(63,130,189,0.12);
+    }
+    
+    /* Advanced Options Panel */
+    .options-panel {
+      padding: 14px 12px;
+      background: #f8fafc;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .options-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #334155;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .option-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .option-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #475569;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .option-label i {
+      font-size: 11px;
+      color: #6b7280;
+    }
+    .option-controls {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .option-btn {
+      padding: 5px 10px;
+      border-radius: 6px;
+      border: 1px solid #d1d5db;
+      background: #ffffff;
+      color: #374151;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .option-btn.active {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #2563eb;
+    }
+    .option-btn:hover:not(.active) {
+      background: #f3f4f6;
+    }
+    .range-control {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .range-slider {
+      flex: 1;
+      height: 6px;
+      border-radius: 3px;
+      background: #e5e7eb;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    .range-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #2563eb;
+      cursor: pointer;
+    }
+    .range-value {
+      font-size: 11px;
+      font-weight: 700;
+      color: #374151;
+      min-width: 30px;
+      text-align: center;
+    }
+    
+    /* Slug Preview */
+    .slug-preview-wrapper {
+      margin-top: 10px;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      background: #f8fafc;
+    }
+    .slug-preview-label {
+      font-size: 12px;
+      font-weight: 800;
+      color: #334155;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .slug-output {
+      font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+      font-size: 14px;
+      padding: 10px 12px;
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      word-break: break-all;
+      color: #111827;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      line-height: 1.4;
+    }
+    .slug-metrics {
+      display: flex;
+      gap: 10px;
+      margin-top: 8px;
+      font-size: 11px;
+      color: #6b7280;
+    }
+    .slug-metric {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .slug-metric i {
+      font-size: 10px;
+    }
+    .slug-url-preview {
+      margin-top: 10px;
+      padding: 10px 12px;
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      border-radius: 8px;
+      font-size: 13px;
+      color: #0369a1;
+      font-family: monospace;
+      word-break: break-all;
+    }
+    .slug-url-preview .domain {
+      color: #64748b;
+    }
+
+    .actions{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      justify-content:center;
+      padding:0 12px 12px;
+    }
+
+    /* ===== Sidebar / Quick Search ===== */
+    .sidebar-card{padding:12px 12px 10px;font-size:13px}
+    .sidebar-title-bar{
+      margin:-12px -12px 8px;padding:7px 10px;background:#0f172a;color:#f9fafb;
+      font-size:14px;font-weight:800;border-radius:12px 12px 0 0;
+      box-shadow:inset 0 -1px 0 rgba(148,163,184,.35);
+      display:flex;align-items:center;justify-content:space-between;gap:8px;
+    }
+    .tool-search{margin:6px 0 4px}
+    .sidebar-search-input-wrapper{position:relative;display:flex;align-items:center;margin-top:4px}
+    .sidebar-search-icon{position:absolute;left:10px;font-size:12px;opacity:0.7}
+    .sidebar-search-input{
+      width:100%;padding:8px 10px 8px 28px;border-radius:8px;border:1px solid #d5d9e0;
+      background-color:#f9fafb;font-size:13px;outline:none;
+      transition:border-color .15s ease,background-color .15s ease,box-shadow .15s ease;
+    }
+    .sidebar-search-input:focus{border-color:#3f82bd;background-color:#ffffff;box-shadow:0 0 0 1px rgba(63,130,189,0.12)}
+    .sidebar-search-suggestions{
+      list-style:none;margin-top:8px;padding:4px 0;max-height:220px;overflow-y:auto;border-radius:10px;
+      border:1px solid #e3e7ee;background-color:#ffffff;box-shadow:0 8px 20px rgba(15,23,42,0.12);display:none;
+    }
+    .sidebar-search-suggestions.visible{display:block}
+    .sidebar-search-suggestions li{
+      font-size:13px;padding:7px 10px;cursor:pointer;display:flex;align-items:center;gap:8px;
+    }
+    .sidebar-search-suggestions li + li{border-top:1px solid #f1f3f8}
+    .sidebar-search-suggestions li span.tool-name{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .sidebar-search-suggestions li i{font-size:12px;opacity:0.75}
+    .sidebar-search-suggestions li:hover{background-color:#f3f4f8}
+    .sidebar-group{margin-top:10px}
+    .sidebar-group h4{
+      font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#6b7280;margin-bottom:3px;font-weight:700;
+    }
+    .sidebar-links{list-style:none;font-size:13px}
+    .sidebar-links li+li{margin-top:3px}
+    .sidebar-links a{color:#1d4ed8}
+    .sidebar-links a:hover{text-decoration:underline}
+
+    /* ===== Content ===== */
+    .section-block{padding:14px 16px 12px;margin-bottom:16px}
+    .section-block h2,.section-block h3{font-size:18px;font-weight:900;margin-bottom:6px;color:#0f172a}
+    .section-block h4{font-size:14px;font-weight:800;margin-top:10px;margin-bottom:4px;color:#111827}
+    .section-block p{font-size:13px;color:#4b5563;margin-bottom:8px}
+    .section-block ul{padding-left:18px;font-size:13px;color:#4b5563}
+    .section-block ul li+li{margin-top:4px}
+    .section-block table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px}
+    .section-block table th,.section-block table td{border:1px solid #e5e7eb;padding:7px 8px;text-align:left;vertical-align:top}
+    .section-block table th{background:#f3f4f6;font-weight:900}
+    .highlight-box {
+      background: #f0f9ff;
+      border-left: 4px solid #2563eb;
+      padding: 12px 14px;
+      margin: 12px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .highlight-box h5 {
+      font-size: 13px;
+      font-weight: 800;
+      color: #1e40af;
+      margin-bottom: 6px;
+    }
+    .code-block {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 12px;
+      border-radius: 8px;
+      font-family: 'Consolas', monospace;
+      font-size: 12px;
+      margin: 10px 0;
+      overflow-x: auto;
+    }
+
+    /* ===== Footer ===== */
+    .pro-footer{background:#020617;color:#cbd5e1;margin-top:40px}
+    .pf-wrap{
+      max-width:1200px;margin:0 auto;padding:34px 15px;
+      display:grid;grid-template-columns:320px 1fr;gap:26px;
+    }
+    .pf-logo{display:flex;align-items:center;gap:10px}
+    .pf-brand-text{font-size:18px;font-weight:800;color:#e2e8f0}
+    .pf-brand-text span{color:#38bdf8}
+    .pf-tag{margin-top:8px;color:#94a3b8;font-size:13px}
+    .pf-social{display:flex;gap:10px;margin-top:10px}
+    .pf-social a{
+      display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;
+      border:1px solid #1e293b;border-radius:10px;background:#0b1220;color:#cbd5e1;
+      transition:background .15s,color .15s,border-color .15s,transform .15s,box-shadow .15s;
+    }
+    .pf-social a:hover{
+      background:#38bdf8;border-color:#38bdf8;color:#0b1220;transform:translateY(-1px);
+      box-shadow:0 4px 12px rgba(56,189,248,.4);
+    }
+    .pf-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .pf-col h5{color:#e2e8f0;font-weight:900;font-size:14px;margin-bottom:10px}
+    .pf-col ul{list-style:none}
+    .pf-col li{margin:8px 0}
+    .pf-col a{color:#94a3b8}
+    .pf-col a:hover{color:#e2e8f0}
+    .pf-bottom{border-top:1px solid #1e293b;background:#0b1220}
+    .pf-bottom-wrap{
+      max-width:1200px;margin:0 auto;padding:12px 15px;
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      color:#8893a7;font-size:13px;
+    }
+    .pf-links{display:flex;gap:10px}
+    .pf-links a{color:#94a3b8}
+    .pf-links a:hover{color:#e2e8f0}
+
+    /* ===== Modal ===== */
+    .modal-overlay{position:fixed;inset:0;background:rgba(15,23,42,0.7);display:none;z-index:200}
+    .modal{
+      position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
+      width:420px;max-width:96vw;background:#ffffff;border:1px solid #e5e7eb;
+      border-radius:14px;box-shadow:0 18px 40px rgba(15,23,42,0.35);display:none;z-index:210;
+    }
+    .modal-head{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-bottom:1px solid #e5e7eb}
+    .modal-head h3{font-size:15px;font-weight:900;color:#111827}
+    .modal-close{background:#f3f4f6;border:1px solid #e5e7eb;border-radius:8px;padding:6px 8px;cursor:pointer}
+    .modal-body{padding:12px;font-size:13px;color:#4b5563}
+
+    /* ===== Responsive ===== */
+    @media (max-width:1100px){
+      .pf-wrap{grid-template-columns:1fr}
+      .pf-cols{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:992px){
+      .wc-nav{display:none}
+      .mobile-menu-btn{display:inline-block}
+      .layout{
+        grid-template-columns:1fr;
+        grid-template-areas:"tool" "sidebar" "content";
+      }
+      .options-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width:640px){
+      .pf-cols{grid-template-columns:1fr}
+      .actions{justify-content:flex-start}
+      .slug-output{font-size:13px;padding:8px 10px}
+      .option-controls {
+        flex-wrap: wrap;
+      }
+      input[type="text"] {
+        height: 42px;
+        font-size: 13px;
+      }
+    }
+    @media (prefers-reduced-motion:reduce){
+      *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== Header ===== -->
+  <header class="wc-header">
+    <div class="wc-wrap">
+      <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+        <span class="slab slab-w">W</span>
+        <span class="slab slab-o">O</span>
+        <span class="slab slab-r">R</span>
+        <span class="slab slab-d">D</span>
+        <span class="wc-brand-text">
+          Calculator
+          <small class="wc-tagline">Every Word Counts</small>
+        </span>
+      </a>
+
+      <nav class="wc-nav" aria-label="Primary">
+        <a href="https://wordcalculator.net" class="wc-link">Home</a>
+        <a href="blog.html" class="wc-link">Blog</a>
+        <a href="tools.html" class="wc-link">Tools</a>
+        <a href="about.html" class="wc-link">About Us</a>
+        <a href="signin.html" class="wc-link">Sign In</a>
+      </nav>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <div class="mobile-nav-header">
+        <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <span class="wc-brand-text">Calculator</span>
+        </a>
+        <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="https://wordcalculator.net" class="nav-link mobile-link">Home</a>
+        <a href="blog.html" class="nav-link mobile-link">Blog</a>
+        <a href="tools.html" class="nav-link mobile-link">Tools</a>
+        <a href="about.html" class="nav-link mobile-link">About Us</a>
+        <a href="signin.html" class="nav-link mobile-link">Sign In</a>
+      </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+  </header>
+
+  <!-- ===== Breadcrumbs ===== -->
+  <div class="crumb-wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="https://wordcalculator.net">Home</a>
+      <span class="crumb-separator">/</span>
+      <a href="tools.html">Tools</a>
+      <span class="crumb-separator">/</span>
+      <span class="crumb-current">URL Slug Generator</span>
+    </nav>
+  </div>
+
+  <!-- ==================== MAIN ==================== -->
+  <main class="age-main">
+    <div class="layout">
+      <!-- TOOL -->
+      <section class="tool" aria-label="URL Slug Generator tool">
+        <article class="tool-card converter-card">
+          <header class="converter-header">
+            <div class="converter-header-left">
+              <h1 class="converter-title">Advanced URL Slug Generator</h1>
+              <p class="converter-subtitle">Create SEO-friendly, readable URL slugs with advanced customization options</p>
+            </div>
+            <div class="badge">
+              <i class="fa-solid fa-bolt"></i>
+              Free • No Registration
+            </div>
+          </header>
+
+          <div class="converter-body">
+            <section class="workspace" aria-label="Generate URL slug">
+              <div class="workspace-top">
+                <div class="status" aria-label="Text stats">
+                  <span class="pill" id="charsPill">0 chars</span>
+                  <span class="pill" id="wordsPill">0 words</span>
+                  <span class="pill" id="slugLengthPill">0 slug chars</span>
+                  <span id="statusText">Enter title or text to generate slug.</span>
+                  <span id="errorText" class="error-text" style="display:none;"></span>
+                  <span id="successText" class="success-text" style="display:none;"></span>
+                </div>
+
+                <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+                  <button type="button" class="btn btn-ghost" id="clearBtn">
+                    <i class="fa-solid fa-broom"></i> Clear All
+                  </button>
+                  <button type="button" class="btn btn-success" id="copyBtn">
+                    <i class="fa-solid fa-copy"></i> Copy Slug
+                  </button>
+                  <button type="button" class="btn btn-warning" id="advancedToggleBtn">
+                    <i class="fa-solid fa-sliders"></i> Advanced
+                  </button>
+                </div>
+              </div>
+
+              <div class="text-area-wrap">
+                <div class="label-row">
+                  <span><i class="fa-solid fa-keyboard"></i> Enter Title or Text</span>
+                  <small>Example: "How to Create SEO-Friendly URLs in 2024"</small>
+                </div>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                  <input type="text" id="textInput" placeholder="Type or paste your title here...">
+                </div>
+              </div>
+
+              <!-- Advanced Options Panel -->
+              <div class="options-panel" id="optionsPanel" style="display: none;">
+                <div class="options-title">
+                  <i class="fa-solid fa-gear"></i> Advanced Slug Settings
+                </div>
+                <div class="options-grid">
+                  <div class="option-group">
+                    <div class="option-label">
+                      <i class="fa-solid fa-text-height"></i> Case Style
+                    </div>
+                    <div class="option-controls">
+                      <button class="option-btn active" id="caseLower">lowercase</button>
+                      <button class="option-btn" id="casePreserve">Preserve Case</button>
+                      <button class="option-btn" id="caseUpper">UPPERCASE</button>
+                    </div>
+                  </div>
+                  
+                  <div class="option-group">
+                    <div class="option-label">
+                      <i class="fa-solid fa-filter"></i> Stop Words
+                    </div>
+                    <div class="option-controls">
+                      <button class="option-btn active" id="stopRemove">Remove Common</button>
+                      <button class="option-btn" id="stopKeep">Keep All</button>
+                    </div>
+                  </div>
+                  
+                  <div class="option-group">
+                    <div class="option-label">
+                      <i class="fa-solid fa-language"></i> Transliteration
+                    </div>
+                    <div class="option-controls">
+                      <button class="option-btn active" id="translitOn">Convert Accents</button>
+                      <button class="option-btn" id="translitOff">Keep Original</button>
+                    </div>
+                  </div>
+                  
+                  <div class="option-group">
+                    <div class="option-label">
+                      <i class="fa-solid fa-ruler"></i> Max Length
+                    </div>
+                    <div class="range-control">
+                      <input type="range" class="range-slider" id="lengthSlider" min="20" max="100" value="60">
+                      <span class="range-value" id="lengthValue">60</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slug Preview -->
+              <div class="slug-preview-wrapper">
+                <div class="slug-preview-label">
+                  <i class="fa-solid fa-link"></i> Generated Slug Preview
+                </div>
+                <div class="slug-output" id="slugOutput">
+                  your-generated-slug-will-appear-here
+                </div>
+                <div class="slug-metrics">
+                  <div class="slug-metric">
+                    <i class="fa-solid fa-hashtag"></i>
+                    <span id="wordCount">0 words</span>
+                  </div>
+                  <div class="slug-metric">
+                    <i class="fa-solid fa-gauge"></i>
+                    <span id="slugScore">Optimal</span>
+                  </div>
+                  <div class="slug-metric">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span id="seoScore">SEO Ready</span>
+                  </div>
+                </div>
+                <div class="slug-url-preview">
+                  <span class="domain">https://example.com/blog/</span><span id="slugPreview">your-generated-slug-will-appear-here</span>
+                </div>
+              </div>
+
+              <div class="actions" aria-label="Slug actions">
+                <button type="button" class="btn btn-ghost" id="generateBtn">
+                  <i class="fa-solid fa-wand-magic-sparkles"></i> Generate Slug
+                </button>
+                <button type="button" class="btn btn-ghost" id="slugHistoryBtn">
+                  <i class="fa-solid fa-clock-rotate-left"></i> History
+                </button>
+                <button type="button" class="btn btn-ghost" id="resetOptionsBtn">
+                  <i class="fa-solid fa-rotate-left"></i> Reset Options
+                </button>
+                <button type="button" class="btn btn-ghost" id="bulkGenerateBtn">
+                  <i class="fa-solid fa-list-check"></i> Bulk Generate
+                </button>
+              </div>
+            </section>
+          </div>
+        </article>
+      </section>
+
+      <!-- SIDEBAR / QUICK SEARCH -->
+      <aside class="sidebar" aria-label="Quick search and related tools">
+        <div class="sidebar-card">
+          <div class="sidebar-title-bar">
+            <span>Quick Search</span>
+            <i class="fas fa-magnifying-glass"></i>
+          </div>
+
+          <div class="tool-search">
+            <small>Quick links to other tools on WordCalculator.net</small>
+            <div class="sidebar-search-input-wrapper">
+              <i class="fa-solid fa-magnifying-glass sidebar-search-icon" aria-hidden="true"></i>
+              <input
+                type="search"
+                id="toolSearchInput"
+                class="sidebar-search-input"
+                placeholder="Search tools by name..."
+                autocomplete="off"
+                aria-label="Search tools by name"
+              />
+            </div>
+            <ul id="toolSearchSuggestions" class="sidebar-search-suggestions" aria-label="Tool suggestions"></ul>
+          </div>
+
+          <div class="sidebar-group">
+            <h4>Popular</h4>
+            <ul class="sidebar-links">
+              <li><a href="age-calculator.html">Age Calculator</a></li>
+              <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+              <li><a href="calorie-calculator.html">Calorie Calculator</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-group">
+            <h4>Text &amp; Writing</h4>
+            <ul class="sidebar-links">
+              <li><a href="https://wordcalculator.net">Word &amp; Character Counter</a></li>
+              <li><a href="case-converter.html">Case Converter</a></li>
+              <li><a href="grammar-spell-checker.html">Grammar &amp; Spell Checker</a></li>
+              <li><a href="readability-analyzer.html">Readability Analyzer</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-group">
+            <h4>SEO &amp; Content</h4>
+            <ul class="sidebar-links">
+              <li><a href="keyword-density-analyzer.html">Keyword Density Analyzer</a></li>
+              <li><a href="title-meta-preview.html">Title &amp; Meta Preview</a></li>
+              <li><a href="url-slug-generator.html">URL Slug Generator</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-group">
+            <h4>Finance &amp; Time</h4>
+            <ul class="sidebar-links">
+              <li><a href="loan-emi-calculator.html">Loan &amp; EMI Calculator</a></li>
+              <li><a href="interest-calculator.html">Interest Calculator</a></li>
+              <li><a href="focus-timer.html">Focus Timer</a></li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <!-- CONTENT / SEO TEXT -->
+      <section class="content" aria-label="URL Slug Generator guide and FAQ">
+        <article class="section-block">
+          <h2>Complete Guide to URL Slug Generation and SEO Optimization</h2>
+          <p>
+            URL slugs are critical components of your website's structure that significantly impact user experience, search engine rankings, and content discoverability. A well-crafted slug not only helps search engines understand your content but also makes URLs more memorable and shareable for users.
+          </p>
+          
+          <div class="highlight-box">
+            <h5>Why URL Slugs Matter for SEO</h5>
+            <p>Search engines use URL slugs as a ranking signal. Clear, descriptive slugs containing relevant keywords can improve click-through rates and help search engines better categorize and rank your content.</p>
+          </div>
+
+          <h3>How Our Advanced Slug Generator Works</h3>
+          <p>
+            Our tool applies multiple processing layers to transform your titles into optimal URL slugs:
+          </p>
+          <ul>
+            <li><strong>Intelligent Text Processing:</strong> Automatically converts spaces to hyphens, removes special characters, and handles edge cases</li>
+            <li><strong>Case Normalization:</strong> Converts to lowercase by default (recommended for SEO)</li>
+            <li><strong>Stop Word Management:</strong> Optionally removes common words (the, and, of) to create cleaner slugs</li>
+            <li><strong>Transliteration Support:</strong> Converts accented characters to ASCII equivalents (é → e, ñ → n)</li>
+            <li><strong>Length Optimization:</strong> Ensures slugs stay within optimal character limits</li>
+          </ul>
+
+          <h3>Best Practices for URL Slugs</h3>
+          <p>Following these guidelines will help you create slugs that perform well both for users and search engines:</p>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Do</th>
+                <th>Don't</th>
+                <th>Why</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Use lowercase letters</td>
+                <td>Mix uppercase and lowercase</td>
+                <td>Avoids case-sensitivity issues and duplicate content</td>
+              </tr>
+              <tr>
+                <td>Keep it short (3-5 words)</td>
+                <td>Create excessively long slugs</td>
+                <td>Improves readability and sharing</td>
+              </tr>
+              <tr>
+                <td>Use hyphens as separators</td>
+                <td>Use underscores or spaces</td>
+                <td>Search engines treat hyphens as word separators</td>
+              </tr>
+              <tr>
+                <td>Include target keywords</td>
+                <td>Use generic terms only</td>
+                <td>Helps with relevance and ranking</td>
+              </tr>
+              <tr>
+                <td>Make it readable and logical</td>
+                <td>Use random strings or numbers</td>
+                <td>Users can understand the content from the URL</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Advanced Features Explained</h3>
+          
+          <h4>Case Style Options</h4>
+          <p>
+            <strong>Lowercase (Recommended):</strong> Most search engines treat URLs as case-insensitive, but using lowercase prevents duplicate content issues and is easier to type consistently.
+          </p>
+          <p>
+            <strong>Preserve Case:</strong> Useful for brands or proper nouns where case matters, though not generally recommended for SEO.
+          </p>
+          <p>
+            <strong>Uppercase:</strong> Rarely used except for specific branding requirements or acronyms.
+          </p>
+
+          <h4>Stop Word Removal</h4>
+          <p>
+            Stop words are common words that search engines often ignore. Removing them from slugs can make URLs more concise without losing meaning. However, keep them if they improve readability.
+          </p>
+
+          <h4>Transliteration</h4>
+          <p>
+            Converts non-ASCII characters to their closest ASCII equivalents. This ensures compatibility across all systems and browsers, and prevents encoding issues.
+          </p>
+
+          <h4>Length Control</h4>
+          <p>
+            The ideal slug length is 30-60 characters. Longer slugs may get truncated in search results and are harder to remember. Our tool automatically optimizes length while preserving meaning.
+          </p>
+
+          <h3>Technical Implementation Examples</h3>
+          <p>Here's how our slug generation algorithm works internally:</p>
+          
+          <div class="code-block">
+// Example slug generation process<br>
+1. Input: "How to Create SEO-Friendly URLs in 2024"<br>
+2. Lowercase: "how to create seo-friendly urls in 2024"<br>
+3. Remove special chars: "how to create seo friendly urls in 2024"<br>
+4. Hyphenate: "how-to-create-seo-friendly-urls-in-2024"<br>
+5. Remove stop words: "create-seo-friendly-urls-2024"<br>
+6. Final slug: "create-seo-friendly-urls-2024"<br>
+          </div>
+
+          <h3>Common Use Cases and Examples</h3>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Original Title</th>
+                <th>Generated Slug</th>
+                <th>Analysis</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>10 Best WordPress Plugins for SEO in 2024</td>
+                <td>best-wordpress-plugins-seo-2024</td>
+                <td>Removed numbers, kept keywords, optimal length</td>
+              </tr>
+              <tr>
+                <td>How to Bake a Chocolate Cake: A Step-by-Step Guide</td>
+                <td>bake-chocolate-cake-step-by-step-guide</td>
+                <td>Removed stop words, maintained readability</td>
+              </tr>
+              <tr>
+                <td>The Ultimate Guide to Digital Marketing Strategies</td>
+                <td>ultimate-guide-digital-marketing-strategies</td>
+                <td>Concise, keyword-rich, SEO-friendly</td>
+              </tr>
+              <tr>
+                <td>Python Programming: Advanced Techniques and Best Practices</td>
+                <td>python-programming-advanced-techniques-best-practices</td>
+                <td>Technical content, preserved key terms</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>SEO Impact and Ranking Factors</h3>
+          <p>
+            URL slugs contribute to several SEO ranking factors:
+          </p>
+          <ul>
+            <li><strong>Keyword Relevance:</strong> Slugs containing target keywords help search engines understand page content</li>
+            <li><strong>User Experience:</strong> Readable slugs improve CTR and reduce bounce rates</li>
+            <li><strong>Link Building:</strong> Clean URLs are more likely to be shared and linked to</li>
+            <li><strong>Technical SEO:</strong> Proper slug structure prevents duplicate content and canonical issues</li>
+          </ul>
+
+          <div class="highlight-box">
+            <h5>Pro Tip: URL Structure Hierarchy</h5>
+            <p>For large websites, consider using hierarchical slugs: /category/subcategory/target-keyword. This helps both users and search engines understand your site structure.</p>
+          </div>
+
+          <h3>Frequently Asked Questions</h3>
+          
+          <h4>Should I include dates in URL slugs?</h4>
+          <p>Generally avoid dates unless content is time-sensitive (news, events). Dates can make content appear outdated and limit evergreen potential.</p>
+          
+          <h4>What's better: short slugs or descriptive slugs?</h4>
+          <p>Balance is key. Aim for 3-5 descriptive words that include your main keyword while remaining concise.</p>
+          
+          <h4>Can I change slugs after publishing?</h4>
+          <p>Yes, but always set up 301 redirects from old URLs to new ones to preserve SEO value and prevent broken links.</p>
+          
+          <h4>How do slugs affect international SEO?</h4>
+          <p>For multilingual sites, consider language-specific slugs or use subdirectories (/en/, /es/) with translated slugs.</p>
+          
+          <h4>Should I use keywords in slugs even if they repeat?</h4>
+          <p>Avoid keyword stuffing. Use primary keyword once, naturally within the context of the slug.</p>
+
+          <h3>Troubleshooting Common Issues</h3>
+          <ul>
+            <li><strong>Duplicate Slugs:</strong> Ensure each page has a unique slug. Add differentiating words if necessary.</li>
+            <li><strong>Special Characters:</strong> Our tool automatically removes them, but check for any remaining problematic characters.</li>
+            <li><strong>Too Long/Too Short:</strong> Use the length slider to find the optimal balance for your content.</li>
+            <li><strong>Readability Issues:</strong> If the slug becomes unclear after processing, consider manually adjusting it.</li>
+          </ul>
+
+          <h3>Integration with CMS Platforms</h3>
+          <p>
+            Our slugs are compatible with all major content management systems:
+          </p>
+          <ul>
+            <li><strong>WordPress:</strong> Use as-is in the permalink field</li>
+            <li><strong>Shopify:</strong> Works for product and page handles</li>
+            <li><strong>Webflow/Squarespace:</strong> Compatible with URL slug fields</li>
+            <li><strong>Custom Development:</strong> Use our API-ready format for programmatic integration</li>
+          </ul>
+
+          <p>
+            By following these guidelines and using our advanced slug generator, you can create URLs that are optimized for both search engines and users, improving your website's visibility, usability, and overall SEO performance.
+          </p>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="pro-footer" id="about" aria-label="Website footer">
+    <div class="pf-wrap">
+      <div class="pf-brand">
+        <div class="pf-logo">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <div class="pf-brand-text">
+            WordCalculator<span>.net</span>
+          </div>
+        </div>
+        <p class="pf-tag">A focused, distraction-free toolkit for precise writing.</p>
+        <div class="pf-social">
+          <a href="https://facebook.com/wordcalculator" aria-label="Facebook" rel="noopener" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/wordcalculator" aria-label="X (Twitter)" rel="noopener" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://linkedin.com/company/wordcalculator" aria-label="LinkedIn" rel="noopener" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://youtube.com/@wordcalculator" aria-label="YouTube" rel="noopener" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="pf-cols">
+        <div class="pf-col">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="https://wordcalculator.net">Editor</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="grammar-spell-checker.html">Grammar Check</a></li>
+            <li><a href="keyword-density-analyzer.html">Keyword Density</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="guides.html">Tips &amp; Guides</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="bug-report.html">Report a Bug</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html">Cookie Policy</a></li>
+            <li><a href="security.html">Security</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pf-bottom">
+      <div class="pf-bottom-wrap">
+        <div>© <span id="pf-year"></span> WordCalculator.net — All rights reserved.</div>
+        <div class="pf-links">
+          <a href="sitemap.html">Sitemap</a>
+          <a href="status.html">Status</a>
+          <a href="accessibility.html">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Auth Modal ===== -->
+  <div class="modal-overlay" id="authOverlay" aria-hidden="true"></div>
+  <div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <div class="modal-head">
+      <h3 id="authTitle"><i class="fas fa-user-lock"></i> Account</h3>
+      <button class="modal-close" id="authCloseBtn" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body">
+      Sign-in and account features are coming soon. For now, all tools are free to use without registration.
+    </div>
+  </div>
+
+  <!-- ==================== JS ==================== -->
+   
+  <!-- Tools Directory Js -->
+  <script src="tools-directory.js"></script>
+
+  <script>
+    const $  = (s)=>document.querySelector(s);
+    const $$ = (s)=>Array.from(document.querySelectorAll(s));
+
+    document.addEventListener("DOMContentLoaded", ()=>{
+      initYear();
+      initMobileMenu();
+      initAuthModal();
+      initToolQuickSearch();
+      initAdvancedSlugGenerator();
+    });
+
+    function initYear(){
+      const el=$("#pf-year");
+      if(el) el.textContent=new Date().getFullYear();
+    }
+
+    function initMobileMenu(){
+      const mobileMenuBtn=$("#mobileMenuBtn");
+      const mobileCloseBtn=$("#mobileCloseBtn");
+      const mobileNav=$("#mobileNav");
+      const mobileOverlay=$("#mobileOverlay");
+      if(!mobileMenuBtn||!mobileNav||!mobileOverlay) return;
+
+      const open=()=>{
+        mobileNav.classList.add("active");
+        mobileOverlay.classList.add("active");
+        document.body.style.overflow="hidden";
+      };
+      const close=()=>{
+        mobileNav.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        document.body.style.overflow="";
+      };
+
+      mobileMenuBtn.addEventListener("click",open);
+      if(mobileCloseBtn) mobileCloseBtn.addEventListener("click",close);
+      mobileOverlay.addEventListener("click",close);
+      $$(".mobile-link").forEach(link=>link.addEventListener("click",close));
+
+      const openAuthBtnMobile=$("#openAuthBtnMobile");
+      if(openAuthBtnMobile){
+        openAuthBtnMobile.addEventListener("click",()=>{
+          close();
+          openAuthModal();
+        });
+      }
+    }
+
+    function initAuthModal(){
+      const openBtn=$("#openAuthBtn");
+      const overlay=$("#authOverlay");
+      const modal=$("#authModal");
+      const closeBtn=$("#authCloseBtn");
+      if(!overlay || !modal) return;
+
+      const open=()=>{
+        overlay.style.display="block";
+        modal.style.display="block";
+        document.body.style.overflow="hidden";
+      };
+      const close=()=>{
+        overlay.style.display="none";
+        modal.style.display="none";
+        document.body.style.overflow="";
+      };
+
+      if(openBtn) openBtn.addEventListener("click",open);
+      if(closeBtn) closeBtn.addEventListener("click",close);
+      overlay.addEventListener("click",close);
+      document.addEventListener("keydown",(e)=>{
+        if(e.key==="Escape") close();
+      });
+    }
+
+    function openAuthModal(){
+      const overlay=$("#authOverlay");
+      const modal=$("#authModal");
+      if(!overlay||!modal) return;
+      overlay.style.display="block";
+      modal.style.display="block";
+      document.body.style.overflow="hidden";
+    }
+
+    /* ===== Advanced Slug Generator ===== */
+    function initAdvancedSlugGenerator(){
+      // DOM Elements
+      const input = $("#textInput");
+      const slugOutput = $("#slugOutput");
+      const slugPreview = $("#slugPreview");
+      const copyBtn = $("#copyBtn");
+      const clearBtn = $("#clearBtn");
+      const generateBtn = $("#generateBtn");
+      const advancedToggleBtn = $("#advancedToggleBtn");
+      const optionsPanel = $("#optionsPanel");
+      const resetOptionsBtn = $("#resetOptionsBtn");
+      const bulkGenerateBtn = $("#bulkGenerateBtn");
+      const slugHistoryBtn = $("#slugHistoryBtn");
+
+      // Option buttons
+      const caseLower = $("#caseLower");
+      const casePreserve = $("#casePreserve");
+      const caseUpper = $("#caseUpper");
+      const stopRemove = $("#stopRemove");
+      const stopKeep = $("#stopKeep");
+      const translitOn = $("#translitOn");
+      const translitOff = $("#translitOff");
+      const lengthSlider = $("#lengthSlider");
+      const lengthValue = $("#lengthValue");
+
+      // Stats elements
+      const charsPill = $("#charsPill");
+      const wordsPill = $("#wordsPill");
+      const slugLengthPill = $("#slugLengthPill");
+      const wordCount = $("#wordCount");
+      const slugScore = $("#slugScore");
+      const seoScore = $("#seoScore");
+      const statusText = $("#statusText");
+      const errorText = $("#errorText");
+      const successText = $("#successText");
+
+      // Default options
+      let options = {
+        case: 'lowercase',
+        stopWords: 'remove',
+        transliteration: 'on',
+        maxLength: 60
+      };
+
+      // Stop words list
+      const stopWords = new Set([
+        'a', 'an', 'the', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 
+        'be', 'been', 'being', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'should', 'could', 'can', 'may', 
+        'might', 'must', 'shall', 'about', 'above', 'after', 'against', 'all', 'am', 'any', 'as', 'at', 'because', 'before', 
+        'below', 'between', 'both', 'by', 'down', 'during', 'each', 'few', 'from', 'further', 'here', 'how', 'if', 'into', 
+        'its', 'more', 'most', 'no', 'not', 'off', 'on', 'once', 'only', 'other', 'our', 'out', 'over', 'own', 'same', 'she', 
+        'should', 'so', 'some', 'such', 'than', 'that', 'their', 'them', 'then', 'there', 'these', 'they', 'this', 'those', 
+        'through', 'too', 'under', 'until', 'up', 'very', 'what', 'when', 'where', 'which', 'while', 'who', 'whom', 'why', 
+        'with', 'you', 'your'
+      ]);
+
+      // Transliteration map
+      const translitMap = {
+        'á':'a','à':'a','â':'a','ä':'a','ã':'a','å':'a','æ':'ae',
+        'ç':'c','č':'c','ć':'c',
+        'đ':'d','ð':'d',
+        'é':'e','è':'e','ê':'e','ë':'e','ě':'e',
+        'í':'i','ì':'i','î':'i','ï':'i',
+        'ñ':'n','ń':'n',
+        'ó':'o','ò':'o','ô':'o','ö':'o','õ':'o','ø':'o',
+        'š':'s','ś':'s',
+        'ú':'u','ù':'u','û':'u','ü':'u',
+        'ý':'y','ÿ':'y',
+        'ž':'z','ż':'z',
+        'ß':'ss','þ':'th'
+      };
+
+      function showError(msg){
+        if(!msg){
+          errorText.style.display="none";
+          errorText.textContent="";
+          return;
+        }
+        errorText.style.display="inline";
+        errorText.textContent=msg;
+      }
+
+      function showSuccess(msg){
+        if(!msg){
+          successText.style.display="none";
+          successText.textContent="";
+          return;
+        }
+        successText.style.display="inline";
+        successText.textContent=msg;
+        setTimeout(()=>{
+          successText.style.display="none";
+        }, 2000);
+      }
+
+      function setStatus(msg){
+        statusText.textContent = msg || "";
+      }
+
+      function getText(){
+        return String(input.value || "").trim();
+      }
+
+      function countWords(str){
+        const cleaned = String(str).trim();
+        if(!cleaned) return 0;
+        return cleaned.split(/\s+/).filter(Boolean).length;
+      }
+
+      function updateStats(){
+        const t = getText();
+        const chars = t.length;
+        const words = countWords(t);
+        const slug = generateSlug(t);
+        const slugChars = slug.length;
+        const slugWords = slug.split('-').filter(w => w.length > 0).length;
+
+        charsPill.textContent = `${chars} char${chars===1?"":"s"}`;
+        wordsPill.textContent = `${words} word${words===1?"":"s"}`;
+        slugLengthPill.textContent = `${slugChars} slug char${slugChars===1?"":"s"}`;
+        wordCount.textContent = `${slugWords} word${slugWords===1?"":"s"}`;
+
+        // Calculate slug score
+        let score = "Good";
+        let seoStatus = "Ready";
+        
+        if(slugChars < 20) {
+          score = "Too Short";
+          seoStatus = "Needs Work";
+        } else if(slugChars > 80) {
+          score = "Too Long";
+          seoStatus = "Needs Work";
+        } else if(slugChars >= 30 && slugChars <= 60) {
+          score = "Optimal";
+          seoStatus = "SEO Ready";
+        }
+        
+        slugScore.textContent = score;
+        seoScore.textContent = seoStatus;
+
+        if(!t){
+          setStatus("Enter title or text to generate slug.");
+          slugOutput.textContent = "your-generated-slug-will-appear-here";
+          slugPreview.textContent = "your-generated-slug-will-appear-here";
+        }else{
+          setStatus(`Slug generated with ${options.case} case${options.stopWords==='remove'?" (stop words removed)":""}`);
+          slugOutput.textContent = slug;
+          slugPreview.textContent = slug;
+        }
+      }
+
+      function generateSlug(text){
+        let slug = String(text || "");
+        
+        // Step 1: Transliteration
+        if(options.transliteration === 'on'){
+          slug = slug.split('').map(char => {
+            const lowerChar = char.toLowerCase();
+            return translitMap[lowerChar] || char;
+          }).join('');
+        }
+        
+        // Step 2: Apply case
+        switch(options.case){
+          case 'lowercase':
+            slug = slug.toLowerCase();
+            break;
+          case 'uppercase':
+            slug = slug.toUpperCase();
+            break;
+          // preserve case does nothing
+        }
+        
+        // Step 3: Remove special characters, keep letters, numbers, spaces, and hyphens
+        slug = slug.replace(/[^\w\s-]/g, '');
+        
+        // Step 4: Replace spaces and underscores with hyphens
+        slug = slug.replace(/[\s_]+/g, '-');
+        
+        // Step 5: Remove stop words if enabled
+        if(options.stopWords === 'remove'){
+          const words = slug.split('-');
+          const filteredWords = words.filter(word => {
+            if(!word) return false;
+            return !stopWords.has(word.toLowerCase()) || word.length > 3;
+          });
+          slug = filteredWords.join('-');
+        }
+        
+        // Step 6: Trim hyphens from start and end
+        slug = slug.replace(/^-+|-+$/g, '');
+        
+        // Step 7: Reduce multiple hyphens to single
+        slug = slug.replace(/-+/g, '-');
+        
+        // Step 8: Apply max length
+        if(slug.length > options.maxLength){
+          slug = slug.substring(0, options.maxLength);
+          // Don't end with a hyphen
+          if(slug.endsWith('-')){
+            slug = slug.substring(0, slug.length - 1);
+          }
+          // Try to break at last hyphen
+          const lastHyphen = slug.lastIndexOf('-');
+          if(lastHyphen > 0){
+            slug = slug.substring(0, lastHyphen);
+          }
+        }
+        
+        return slug || "untitled";
+      }
+
+      async function copySlug(){
+        showError("");
+        const slug = slugOutput.textContent;
+        if(!slug || slug === "your-generated-slug-will-appear-here"){
+          showError("Please generate a slug first.");
+          return;
+        }
+
+        try{
+          if(navigator.clipboard && navigator.clipboard.writeText){
+            await navigator.clipboard.writeText(slug);
+          }else{
+            const textArea = document.createElement("textarea");
+            textArea.value = slug;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textArea);
+          }
+          showSuccess("Slug copied to clipboard!");
+          copyBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+          copyBtn.classList.add("btn-success");
+          setTimeout(()=>{
+            copyBtn.innerHTML = '<i class="fa-solid fa-copy"></i> Copy Slug';
+            copyBtn.classList.remove("btn-success");
+          }, 1500);
+        }catch(e){
+          showError("Copy failed. Please select the slug and copy manually.");
+        }
+      }
+
+      function clearAll(){
+        showError("");
+        input.value = "";
+        resetOptions();
+        setStatus("Cleared. Enter new text to generate slug.");
+        updateStats();
+      }
+
+      function resetOptions(){
+        options = {
+          case: 'lowercase',
+          stopWords: 'remove',
+          transliteration: 'on',
+          maxLength: 60
+        };
+        
+        // Update UI
+        caseLower.classList.add("active");
+        casePreserve.classList.remove("active");
+        caseUpper.classList.remove("active");
+        
+        stopRemove.classList.add("active");
+        stopKeep.classList.remove("active");
+        
+        translitOn.classList.add("active");
+        translitOff.classList.remove("active");
+        
+        lengthSlider.value = 60;
+        lengthValue.textContent = "60";
+        
+        updateStats();
+        showSuccess("Options reset to defaults");
+      }
+
+      function toggleOptionsPanel(){
+        const isVisible = optionsPanel.style.display === "block";
+        optionsPanel.style.display = isVisible ? "none" : "block";
+        advancedToggleBtn.innerHTML = isVisible 
+          ? '<i class="fa-solid fa-sliders"></i> Advanced' 
+          : '<i class="fa-solid fa-times"></i> Close';
+        advancedToggleBtn.classList.toggle("btn-warning", !isVisible);
+      }
+
+      function updateOptionButtons(activeBtn, group){
+        const buttons = $$(`#${group} .option-btn`);
+        buttons.forEach(btn => btn.classList.remove("active"));
+        activeBtn.classList.add("active");
+        
+        // Update options object
+        switch(group){
+          case 'case':
+            options.case = activeBtn.id.replace('case', '').toLowerCase();
+            break;
+          case 'stopWords':
+            options.stopWords = activeBtn.id.replace('stop', '').toLowerCase();
+            break;
+          case 'translit':
+            options.transliteration = activeBtn.id.replace('translit', '').toLowerCase();
+            break;
+        }
+        
+        updateStats();
+      }
+
+      // Event Listeners
+      input.addEventListener("input", ()=>{
+        showError("");
+        updateStats();
+      });
+
+      copyBtn.addEventListener("click", copySlug);
+      clearBtn.addEventListener("click", clearAll);
+      generateBtn.addEventListener("click", ()=>{
+        updateStats();
+        showSuccess("Slug regenerated with current settings");
+      });
+      
+      advancedToggleBtn.addEventListener("click", toggleOptionsPanel);
+      resetOptionsBtn.addEventListener("click", resetOptions);
+      
+      bulkGenerateBtn.addEventListener("click", ()=>{
+        showSuccess("Bulk mode coming soon!");
+      });
+      
+      slugHistoryBtn.addEventListener("click", ()=>{
+        showSuccess("History feature coming soon!");
+      });
+
+      // Option button events
+      caseLower.addEventListener("click", ()=> updateOptionButtons(caseLower, 'case'));
+      casePreserve.addEventListener("click", ()=> updateOptionButtons(casePreserve, 'case'));
+      caseUpper.addEventListener("click", ()=> updateOptionButtons(caseUpper, 'case'));
+      
+      stopRemove.addEventListener("click", ()=> updateOptionButtons(stopRemove, 'stopWords'));
+      stopKeep.addEventListener("click", ()=> updateOptionButtons(stopKeep, 'stopWords'));
+      
+      translitOn.addEventListener("click", ()=> updateOptionButtons(translitOn, 'translit'));
+      translitOff.addEventListener("click", ()=> updateOptionButtons(translitOff, 'translit'));
+
+      // Slider event
+      lengthSlider.addEventListener("input", (e)=>{
+        options.maxLength = parseInt(e.target.value);
+        lengthValue.textContent = options.maxLength;
+        updateStats();
+      });
+
+      // Initialize
+      updateStats();
+    }
+
+    /* ===== Tool directory & Quick Search (with icons) ===== */
+    const toolDirectory = allTools;
+
+    function initToolQuickSearch(){
+      const input=$("#toolSearchInput");
+      const suggestionsBox=$("#toolSearchSuggestions");
+      if(!input||!suggestionsBox||!Array.isArray(toolDirectory)) return;
+
+      let currentResults=[];
+
+      function renderSuggestions(query){
+        const value=(query||"").trim().toLowerCase();
+        suggestionsBox.innerHTML="";
+        if(!value){
+          suggestionsBox.classList.remove("visible");
+          return;
+        }
+
+        const allMatches=toolDirectory.filter(tool=>tool.name.toLowerCase().includes(value));
+        if(!allMatches.length){
+          const li=document.createElement("li");
+          li.innerHTML = `<i class="fa-solid fa-circle-info"></i><span class="tool-name">No tools found</span>`;
+          suggestionsBox.appendChild(li);
+          suggestionsBox.classList.add("visible");
+          return;
+        }
+
+        function rankTool(tool){
+          const name=tool.name.toLowerCase();
+          const pos=name.indexOf(value);
+          const starts=name.startsWith(value)?0:1;
+          const lenDiff=Math.abs(name.length-value.length);
+          return starts*100 + pos*2 + lenDiff;
+        }
+
+        currentResults=allMatches.slice().sort((a,b)=>rankTool(a)-rankTool(b));
+        currentResults.slice(0,10).forEach(tool=>{
+          const li=document.createElement("li");
+          const iconEl=document.createElement("i");
+          iconEl.className=tool.icon || "fa-solid fa-wand-magic-sparkles";
+          const nameSpan=document.createElement("span");
+          nameSpan.className="tool-name";
+          nameSpan.textContent=tool.name;
+          li.appendChild(iconEl);
+          li.appendChild(nameSpan);
+          li.addEventListener("click",()=>{
+            if(tool.url) window.location.href=tool.url;
+          });
+          suggestionsBox.appendChild(li);
+        });
+
+        suggestionsBox.classList.add("visible");
+      }
+
+      input.addEventListener("input",(e)=>renderSuggestions(e.target.value));
+
+      input.addEventListener("keydown",(e)=>{
+        if(e.key==="Enter"){
+          const value=input.value.trim().toLowerCase();
+          if(!value) return;
+          const first=currentResults.length ? currentResults[0] : toolDirectory.find(
+            (tool)=>tool.name.toLowerCase().includes(value)
+          );
+          if(first && first.url) window.location.href=first.url;
+        }
+      });
+
+      document.addEventListener("click",(e)=>{
+        if(!input.contains(e.target) && !suggestionsBox.contains(e.target)){
+          suggestionsBox.classList.remove("visible");
+        }
+      });
+    }
+  </script>
+</body>
+</html>

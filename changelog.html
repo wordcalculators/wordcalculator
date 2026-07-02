@@ -1,0 +1,1830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO & Meta Data -->
+  <title>Changelog - WordCalculator</title>
+  <link rel="canonical" href="https://wordcalculator.net/changelog.html" />
+  <meta name="description" content="Stay updated with the latest changes, improvements, and new features in WordCalculator tools and platform." />
+  <meta name="keywords" content="WordCalculator updates, changelog, tool updates, new features, improvements" />
+  <meta name="author" content="WordCalculator" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wordcalculator.net/changelog.html" />
+  <meta property="og:title" content="Changelog - WordCalculator" />
+  <meta property="og:description" content="Stay updated with the latest changes, improvements, and new features in WordCalculator tools and platform." />
+  <meta property="og:image" content="https://wordcalculator.net/images/changelog-og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="WordCalculator.net" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://wordcalculator.net/changelog.html" />
+  <meta name="twitter:title" content="Changelog - WordCalculator" />
+  <meta name="twitter:description" content="Stay updated with the latest changes, improvements, and new features in WordCalculator tools and platform." />
+  <meta name="twitter:image" content="https://wordcalculator.net/images/changelog-twitter.jpg" />
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+    /* RESET & BASE STYLES */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --primary-dark: #020617;
+      --primary: #1E293B;
+      --primary-light: #334155;
+      --accent: #3B82F6;
+      --accent-hover: #2563EB;
+      --accent-dark: #1D4ED8;
+      --green: #10B981;
+      --green-light: #D1FAE5;
+      --yellow: #F59E0B;
+      --yellow-light: #FEF3C7;
+      --red: #EF4444;
+      --red-light: #FEE2E2;
+      --gray-50: #F9FAFB;
+      --gray-100: #F3F4F6;
+      --gray-200: #E5E7EB;
+      --gray-300: #D1D5DB;
+      --gray-400: #9CA3AF;
+      --gray-500: #6B7280;
+      --gray-600: #4B5563;
+      --gray-700: #374151;
+      --gray-800: #1F2937;
+      --gray-900: #111827;
+      --bg: #ffffff;
+      --card: #ffffff;
+      --border: #E5E7EB;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    html {
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: var(--bg);
+      color: var(--gray-900);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, select {
+      font-family: inherit;
+      font-size: inherit;
+    }
+
+    /* HEADER - WordCalculator Style */
+    .wc-header {
+      background: #020617;
+      color: #fff;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+    }
+
+    .wc-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .wc-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .wc-slab {
+      display: inline-flex;
+      width: 24px;
+      height: 24px;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 14px;
+      border-radius: 2px;
+      color: #fff;
+    }
+
+    .slab-w { background: #1f2327; }
+    .slab-o { background: #a7c1db; color: #1e2a3a; }
+    .slab-r { background: #7d96ae; }
+    .slab-d { background: #2f5d8a; }
+
+    .wc-brand-text {
+      display: inline-flex;
+      flex-direction: column;
+      line-height: 1.05;
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .wc-brand-text small {
+      font-size: 10px;
+      opacity: 0.95;
+    }
+
+    .wc-nav {
+      margin-left: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .wc-link {
+      color: #f4f8fc;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 6px 10px;
+      border-radius: 8px;
+      transition: 0.15s;
+      white-space: nowrap;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .wc-link:hover {
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .wc-link.active {
+      background: #fff;
+      color: #111;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .wc-signin-btn {
+      background: rgba(148, 163, 184, 0.18);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .wc-signin-btn:hover {
+      background: #38bdf8;
+      color: #020617;
+      border-color: #38bdf8;
+    }
+
+    .mobile-menu-btn {
+      margin-left: auto;
+      background: transparent;
+      border: 0;
+      color: #fff;
+      font-size: 20px;
+      display: none;
+      cursor: pointer;
+    }
+
+    /* Mobile Navigation */
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 320px;
+      height: 100vh;
+      background: #1f2933;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.18);
+      transition: right 0.3s;
+      z-index: 100;
+    }
+
+    .mobile-nav.active { right: 0; }
+    .mobile-nav-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      border-bottom: 1px solid #34495e;
+    }
+    .mobile-close-btn {
+      background: transparent;
+      border: 0;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .mobile-nav-links { padding: 16px; }
+    .mobile-link {
+      display: block;
+      color: #ecf0f1;
+      padding: 12px 0;
+      border-bottom: 1px solid #34495e;
+      font-weight: 700;
+      background: transparent;
+      border: 0;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+    }
+    .mobile-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 90;
+    }
+    .mobile-overlay.active { display: block; }
+
+    /* Breadcrumbs */
+    .crumb-wrap {
+      max-width: 1200px;
+      margin: 8px auto 0;
+      padding: 0 15px 4px;
+    }
+    .crumbs {
+      font-size: 13px;
+      color: #111827;
+    }
+    .crumbs a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    .crumbs a:hover { text-decoration: underline; }
+    .crumb-separator { margin: 0 4px; color: #6b7280; }
+    .crumb-current { font-weight: 700; }
+
+    /* MAIN CONTENT - Changelog Page */
+    .changelog-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 15px;
+    }
+
+    /* Hero Section */
+    .changelog-hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      border-radius: 16px;
+      margin-bottom: 60px;
+    }
+
+    .hero-title {
+      font-size: 48px;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: var(--gray-900);
+    }
+
+    .hero-subtitle {
+      font-size: 20px;
+      color: var(--gray-600);
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    /* Version Timeline */
+    .changelog-timeline {
+      max-width: 800px;
+      margin: 0 auto 80px;
+      position: relative;
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: 30px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--gray-200);
+      z-index: 1;
+    }
+
+    /* Version Card */
+    .version-card {
+      position: relative;
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 40px;
+      margin-bottom: 40px;
+      margin-left: 60px;
+      transition: all 0.3s;
+      z-index: 2;
+    }
+
+    .version-card:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+
+    .version-marker {
+      position: absolute;
+      left: -45px;
+      top: 40px;
+      width: 30px;
+      height: 30px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 4px solid white;
+      z-index: 3;
+    }
+
+    .version-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 25px;
+    }
+
+    .version-info {
+      flex: 1;
+    }
+
+    .version-number {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--gray-900);
+      margin-bottom: 5px;
+    }
+
+    .version-date {
+      font-size: 14px;
+      color: var(--gray-500);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .version-type {
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .type-major {
+      background: var(--green-light);
+      color: var(--green);
+    }
+
+    .type-minor {
+      background: var(--blue-light);
+      color: var(--accent);
+    }
+
+    .type-patch {
+      background: var(--gray-100);
+      color: var(--gray-600);
+    }
+
+    .type-new {
+      background: var(--yellow-light);
+      color: var(--yellow);
+    }
+
+    .version-description {
+      font-size: 17px;
+      color: var(--gray-700);
+      margin-bottom: 30px;
+      line-height: 1.7;
+    }
+
+    /* Changes List */
+    .changes-section {
+      margin-bottom: 25px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: var(--gray-900);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title i {
+      color: var(--accent);
+    }
+
+    .changes-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .change-item {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--gray-100);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .change-item:last-child {
+      border-bottom: none;
+    }
+
+    .change-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .icon-added {
+      background: var(--green-light);
+      color: var(--green);
+    }
+
+    .icon-improved {
+      background: var(--blue-light);
+      color: var(--accent);
+    }
+
+    .icon-fixed {
+      background: var(--red-light);
+      color: var(--red);
+    }
+
+    .icon-changed {
+      background: var(--yellow-light);
+      color: var(--yellow);
+    }
+
+    .change-text {
+      font-size: 15px;
+      color: var(--gray-700);
+      line-height: 1.6;
+    }
+
+    .tool-badge {
+      display: inline-block;
+      background: var(--gray-100);
+      color: var(--gray-600);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+
+    /* Year Separator */
+    .year-separator {
+      text-align: center;
+      margin: 60px 0 40px;
+      position: relative;
+    }
+
+    .year-text {
+      display: inline-block;
+      background: white;
+      padding: 10px 30px;
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--gray-900);
+      border: 2px solid var(--gray-200);
+      border-radius: 50px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .year-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 1px;
+      background: var(--gray-200);
+      z-index: 1;
+    }
+
+    /* Stats Section */
+    .changelog-stats {
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      border-radius: 20px;
+      padding: 60px 40px;
+      margin-bottom: 80px;
+      text-align: center;
+    }
+
+    .stats-title {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 40px;
+      color: var(--gray-900);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 30px 20px;
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      transition: transform 0.3s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .stat-number {
+      font-size: 40px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: var(--gray-600);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Subscribe Section */
+    .subscribe-section {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .subscribe-title {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: var(--gray-900);
+    }
+
+    .subscribe-description {
+      font-size: 18px;
+      color: var(--gray-600);
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    .subscribe-form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      gap: 10px;
+    }
+
+    .subscribe-input {
+      flex: 1;
+      padding: 16px 20px;
+      border: 2px solid var(--gray-300);
+      border-radius: 10px;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+
+    .subscribe-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+    .subscribe-btn {
+      padding: 16px 32px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .subscribe-btn:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    /* Footer - WordCalculator Style */
+    .pro-footer {
+      background: #020617;
+      color: #cbd5e1;
+      margin-top: 60px;
+    }
+
+    .pf-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 34px 15px;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 26px;
+    }
+
+    .pf-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pf-brand-text {
+      font-size: 18px;
+      font-weight: 800;
+      color: #e2e8f0;
+    }
+
+    .pf-brand-text span {
+      color: #38bdf8;
+    }
+
+    .pf-tag {
+      margin-top: 8px;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    .pf-social {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .pf-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+      background: #0b1220;
+      color: #cbd5e1;
+      transition: all 0.15s;
+    }
+
+    .pf-social a:hover {
+      background: #38bdf8;
+      border-color: #38bdf8;
+      color: #0b1220;
+    }
+
+    .pf-cols {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .pf-col h5 {
+      color: #e2e8f0;
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .pf-col ul {
+      list-style: none;
+    }
+
+    .pf-col li {
+      margin: 8px 0;
+    }
+
+    .pf-col a {
+      color: #94a3b8;
+    }
+
+    .pf-col a:hover {
+      color: #e2e8f0;
+    }
+
+    .pf-bottom {
+      border-top: 1px solid #1e293b;
+      background: #0b1220;
+    }
+
+    .pf-bottom-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: #8893a7;
+      font-size: 13px;
+    }
+
+    .pf-links {
+      display: flex;
+      gap: 10px;
+    }
+
+    .pf-links a {
+      color: #94a3b8;
+    }
+
+    .pf-links a:hover {
+      color: #e2e8f0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1100px) {
+      .pf-wrap {
+        grid-template-columns: 1fr;
+      }
+      .pf-cols {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 992px) {
+      .wc-nav {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: inline-block;
+      }
+      .hero-title {
+        font-size: 36px;
+      }
+      .hero-subtitle {
+        font-size: 18px;
+      }
+      .version-card {
+        margin-left: 0;
+        padding: 30px;
+      }
+      .version-marker {
+        display: none;
+      }
+      .timeline-line {
+        display: none;
+      }
+      .version-header {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .subscribe-form {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      .pf-cols {
+        grid-template-columns: 1fr;
+      }
+      .version-number {
+        font-size: 24px;
+      }
+      .changelog-stats {
+        padding: 40px 20px;
+      }
+      .stats-title {
+        font-size: 28px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-title {
+        font-size: 28px;
+      }
+      .hero-subtitle {
+        font-size: 16px;
+      }
+      .version-card {
+        padding: 20px;
+      }
+      .subscribe-title {
+        font-size: 24px;
+      }
+      .subscribe-description {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header - WordCalculator Style -->
+  <header class="wc-header">
+    <div class="wc-wrap">
+      <a class="wc-logo" href="https://wordcalculator.net" aria-label="WordCalculator Home">
+        <span class="wc-slab slab-w">W</span>
+        <span class="wc-slab slab-o">O</span>
+        <span class="wc-slab slab-r">R</span>
+        <span class="wc-slab slab-d">D</span>
+        <span class="wc-brand-text">
+          Calculator
+          <small class="wc-tagline">Every Word Counts</small>
+        </span>
+      </a>
+
+      <nav class="wc-nav" aria-label="Primary Navigation">
+        <a href="https://wordcalculator.net" class="wc-link">Home</a>
+        <a href="blog.html" class="wc-link">Blog</a>
+        <a href="tools.html" class="wc-link">Tools</a>
+        <a href="about.html" class="wc-link">About Us</a>
+		<a href="signin.html" class="wc-link">Sign In</a>  
+      </nav>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+      <div class="mobile-nav-header">
+        <a class="wc-logo" href="https://wordcalculator.net">
+          <span class="wc-slab slab-w">W</span>
+          <span class="wc-slab slab-o">O</span>
+          <span class="wc-slab slab-r">R</span>
+          <span class="wc-slab slab-d">D</span>
+          <span class="wc-brand-text">Calculator</span>
+        </a>
+        <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="https://wordcalculator.net" class="mobile-link">Home</a>
+        <a href="blog.html" class="mobile-link">Blog</a>
+        <a href="tools.html" class="mobile-link">Tools</a>
+        <a href="about.html" class="mobile-link">About Us</a>
+		<a href="signin.html" class="mobile-link">Sign In</a>
+      </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="crumb-wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="https://wordcalculator.net">Home</a>
+      <span class="crumb-separator">/</span>
+      <span class="crumb-current">Changelog</span>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <main class="changelog-container">
+    <!-- Hero Section -->
+    <section class="changelog-hero">
+      <h1 class="hero-title">Changelog</h1>
+      <p class="hero-subtitle">Stay updated with the latest changes, improvements, and new features in WordCalculator.</p>
+    </section>
+
+    <!-- Year 2026 -->
+    <div class="year-separator">
+      <div class="year-line"></div>
+      <div class="year-text">2026</div>
+    </div>
+
+    <!-- Changelog Timeline -->
+    <div class="changelog-timeline">
+      <div class="timeline-line"></div>
+
+      <!-- Version 3.2.0 -->
+      <div class="version-card">
+        <div class="version-marker"></div>
+        <div class="version-header">
+          <div class="version-info">
+            <div class="version-number">Version 3.2.0</div>
+            <div class="version-date">
+              <i class="far fa-calendar"></i>
+              December 10, 2026
+              <span class="version-type type-major">Major Update</span>
+            </div>
+          </div>
+        </div>
+        
+        <p class="version-description">AI-powered features and enhanced collaboration tools for teams.</p>
+        
+        <div class="changes-section">
+          <h3 class="section-title"><i class="fas fa-plus-circle"></i> New Features</h3>
+          <ul class="changes-list">
+            <li class="change-item">
+              <div class="change-icon icon-added">
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="change-text">
+                Added <strong>AI Writing Assistant</strong> with content suggestions
+                <span class="tool-badge">AI Tools</span>
+              </div>
+            </li>
+            <li class="change-item">
+              <div class="change-icon icon-added">
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="change-text">
+                Introduced <strong>Team Collaboration</strong> features for shared projects
+                <span class="tool-badge">Collaboration</span>
+              </div>
+            </li>
+            <li class="change-item">
+              <div class="change-icon icon-added">
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="change-text">
+                Added <strong>Content Calendar</strong> for planning and scheduling
+                <span class="tool-badge">Planning</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="changes-section">
+          <h3 class="section-title"><i class="fas fa-wrench"></i> Improvements</h3>
+          <ul class="changes-list">
+            <li class="change-item">
+              <div class="change-icon icon-improved">
+                <i class="fas fa-arrow-up"></i>
+              </div>
+              <div class="change-text">
+                Enhanced AI algorithms for better content recommendations
+                <span class="tool-badge">AI Tools</span>
+              </div>
+            </li>
+            <li class="change-item">
+              <div class="change-icon icon-improved">
+                <i class="fas fa-arrow-up"></i>
+              </div>
+              <div class="change-text">
+                Improved real-time collaboration with live editing
+                <span class="tool-badge">Collaboration</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Version 3.1.3 -->
+      <div class="version-card">
+        <div class="version-marker"></div>
+        <div class="version-header">
+          <div class="version-info">
+            <div class="version-number">Version 3.1.3</div>
+            <div class="version-date">
+              <i class="far fa-calendar"></i>
+              November 22, 2026
+              <span class="version-type type-patch">Patch Update</span>
+            </div>
+          </div>
+        </div>
+        
+        <p class="version-description">Performance improvements and bug fixes for better stability.</p>
+        
+        <div class="changes-section">
+          <h3 class="section-title"><i class="fas fa-bug"></i> Bug Fixes</h3>
+          <ul class="changes-list">
+            <li class="change-item">
+              <div class="change-icon icon-fixed">
+                <i class="fas fa-check"></i>
+              </div>
+              <div class="change-text">
+                Fixed memory leak in advanced text processing tools
+                <span class="tool-badge">Performance</span>
+              </div>
+            </li>
+            <li class="change-item">
+              <div class="change-icon icon-fixed">
+                <i class="fas fa-check"></i>
+              </div>
+              <div class="change-text">
+                Resolved export issues with large documents
+                <span class="tool-badge">Export</span>
+              </div>
+            </li>
+            <li class="change-item">
+              <div class="change-icon icon-fixed">
+                <i class="fas fa-check"></i>
+              </div>
+              <div class="change-text">
+                Fixed mobile touch gestures in editor tools
+                <span class="tool-badge">Mobile</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="changes-section">
+          <h3 class="section-title"><i class="fas fa-wrench"></i> Improvements</h3>
+          <ul class="changes-list">
+            <li class="change-item">
+              <div class="change-icon icon-improved">
+                <i class="fas fa-arrow-up"></i>
+              </div>
+              <div class="change-text">
+                Reduced page load time by 25% across all tools
+                <span class="tool-badge">Performance</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Version 3.1.0 -->
+      <div class="version-card">
+        <div class="version-marker"></div>
+        <div class="version-header">
+          <div class="version-info">
+            <div class="version-number">Version 3.1.0</div>
+            <div class="version-date">
+              <i class="far fa-calendar"></i>
+              October 15, 2026
+              <span class="version-type type-minor">Minor Update</span>
+            </div>
+          </div>
+        </div>
+        
+        <p class="version-description">New export options and enhanced analytics dashboard.</p>
+        
+        <div class="changes-section">
+          <h3 class="section-title"><i class="fas fa-plus-circle"></i> New Features</h3>
+          <ul class="changes-list">
+            <li class="change-item">
+              <div class="change-icon icon-added">
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="change-text">
+                Added <strong>PDF Export</strong> for all text analysis tools
+                <span class="tool-badge">Export</span>
+              </div>
+            </li>
+            <li class="change-item">
+              <div class="change-icon icon-added">
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="change-text">
+                Introduced <strong>Advanced Analytics Dashboard</strong> with custom reports
+                <span class="tool-badge">Analytics</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="changes-section">
+          <h3 class="section-title"><i class="fas fa-wrench"></i> Improvements</h3>
+          <ul class="changes-list">
+            <li class="change-item">
+              <div class="change-icon icon-improved">
+                <i class="fas fa-arrow-up"></i>
+              </div>
+              <div class="change-text">
+                Enhanced data visualization in analytics reports
+                <span class="tool-badge">Analytics</span>
+              </div>
+            </li>
+            <li class="change-item">
+              <div class="change-icon icon-improved">
+                <i class="fas fa-arrow-up"></i>
+              </div>
+              <div class="change-text">
+                Improved export quality for all document formats
+                <span class="tool-badge">Export</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Version 3.0.0 -->
+      <div class="version-card">
+        <div class="version-marker"></div>
+        <div class="version-header">
+          <div class="version-info">
+            <div class="version-number">Version 3.0.0</div>
+            <div class="version-date">
+              <i class="far fa-calendar"></i>
+              September 1, 2026
+              <span class="version-type type-major">Major Update</span>
+            </div>
+          </div>
+        </div>
+        
+        <p class="version-description">Complete platform redesign with new user interface and 50+ tools.</p>
+        
+        <div class="changes-section">
+          <h3 class="section-title"><i class="fas fa-plus-circle"></i> New Features</h3>
+          <ul class="changes-list">
+            <li class="change-item">
+              <div class="change-icon icon-added">
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="change-text">
+                Launched <strong>WordCalculator 3.0</strong> with completely redesigned interface
+                <span class="tool-badge">Platform</span>
+              </div>
+            </li>
+            <li class="change-item">
+              <div class="change-icon icon-added">
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="change-text">
+                Added 15+ new tools including <strong>Video Script Writer</strong> and <strong>Social Media Scheduler</strong>
+                <span class="tool-badge">New Tools</span>
+              </div>
+            </li>
+            <li class="change-item">
+              <div class="change-icon icon-added">
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="change-text">
+                Introduced <strong>Project Workspaces</strong> for organizing multiple documents
+                <span class="tool-badge">Organization</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="changes-section">
+          <h3 class="section-title"><i class="fas fa-wrench"></i> Improvements</h3>
+          <ul class="changes-list">
+            <li class="change-item">
+              <div class="change-icon icon-improved">
+                <i class="fas fa-arrow-up"></i>
+              </div>
+              <div class="change-text">
+                Complete UI/UX redesign for better user experience
+                <span class="tool-badge">UI/UX</span>
+              </div>
+            </li>
+            <li class="change-item">
+              <div class="change-icon icon-improved">
+                <i class="fas fa-arrow-up"></i>
+              </div>
+              <div class="change-text">
+                Enhanced mobile app with offline functionality
+                <span class="tool-badge">Mobile App</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Year 2025 -->
+    <div class="year-separator">
+      <div class="year-line"></div>
+      <div class="year-text">2025</div>
+    </div>
+
+    <div class="changelog-timeline">
+      <div class="timeline-line"></div>
+
+      <!-- Version 2.5.0 -->
+      <div class="version-card">
+        <div class="version-marker"></div>
+        <div class="version-header">
+          <div class="version-info">
+            <div class="version-number">Version 2.5.0</div>
+            <div class="version-date">
+              <i class="far fa-calendar"></i>
+              August 20, 2025
+              <span class="version-type type-major">Major Update</span>
+            </div>
+          </div>
+        </div>
+        
+        <p class="version-description">Mobile app launch and integration with popular writing platforms.</p>
+        
+        <div class="changes-section">
+          <h3 class="section-title"><i class="fas fa-plus-circle"></i> New Features</h3>
+          <ul class="changes-list">
+            <li class="change-item">
+              <div class="change-icon icon-added">
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="change-text">
+                Launched <strong>WordCalculator Mobile App</strong> for iOS and Android
+                <span class="tool-badge">Mobile App</span>
+              </div>
+            </li>
+            <li class="change-item">
+              <div class="change-icon icon-added">
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="change-text">
+                Added integration with <strong>Google Docs</strong> and <strong>Microsoft Word Online</strong>
+                <span class="tool-badge">Integrations</span>
+              </div>
+            </li>
+            <li class="change-item">
+              <div class="change-icon icon-added">
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="change-text">
+                Introduced <strong>Browser Extension</strong> for Chrome and Firefox
+                <span class="tool-badge">Extensions</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="changes-section">
+          <h3 class="section-title"><i class="fas fa-wrench"></i> Improvements</h3>
+          <ul class="changes-list">
+            <li class="change-item">
+              <div class="change-icon icon-improved">
+                <i class="fas fa-arrow-up"></i>
+              </div>
+              <div class="change-text">
+                Enhanced sync functionality between web and mobile app
+                <span class="tool-badge">Sync</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Version 2.3.2 -->
+      <div class="version-card">
+        <div class="version-marker"></div>
+        <div class="version-header">
+          <div class="version-info">
+            <div class="version-number">Version 2.3.2</div>
+            <div class="version-date">
+              <i class="far fa-calendar"></i>
+              July 5, 2025
+              <span class="version-type type-patch">Patch Update</span>
+            </div>
+          </div>
+        </div>
+        
+        <p class="version-description">Security enhancements and performance optimizations.</p>
+        
+        <div class="changes-section">
+          <h3 class="section-title"><i class="fas fa-wrench"></i> Improvements</h3>
+          <ul class="changes-list">
+            <li class="change-item">
+              <div class="change-icon icon-improved">
+                <i class="fas fa-arrow-up"></i>
+              </div>
+              <div class="change-text">
+                Enhanced security with HTTPS enforcement and improved encryption
+                <span class="tool-badge">Security</span>
+              </div>
+            </li>
+            <li class="change-item">
+              <div class="change-icon icon-improved">
+                <i class="fas fa-arrow-up"></i>
+              </div>
+              <div class="change-text">
+                Optimized database queries for faster tool loading
+                <span class="tool-badge">Performance</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="changes-section">
+          <h3 class="section-title"><i class="fas fa-bug"></i> Bug Fixes</h3>
+          <ul class="changes-list">
+            <li class="change-item">
+              <div class="change-icon icon-fixed">
+                <i class="fas fa-check"></i>
+              </div>
+              <div class="change-text">
+                Fixed authentication issues with social login
+                <span class="tool-badge">Authentication</span>
+              </div>
+            </li>
+            <li class="change-item">
+              <div class="change-icon icon-fixed">
+                <i class="fas fa-check"></i>
+              </div>
+              <div class="change-text">
+                Resolved data export formatting issues
+                <span class="tool-badge">Export</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Version 2.3.0 -->
+      <div class="version-card">
+        <div class="version-marker"></div>
+        <div class="version-header">
+          <div class="version-info">
+            <div class="version-number">Version 2.3.0</div>
+            <div class="version-date">
+              <i class="far fa-calendar"></i>
+              June 10, 2025
+              <span class="version-type type-minor">Minor Update</span>
+            </div>
+          </div>
+        </div>
+        
+        <p class="version-description">New social sharing features and enhanced user profiles.</p>
+        
+        <div class="changes-section">
+          <h3 class="section-title"><i class="fas fa-plus-circle"></i> New Features</h3>
+          <ul class="changes-list">
+            <li class="change-item">
+              <div class="change-icon icon-added">
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="change-text">
+                Added <strong>Social Media Share</strong> for tool results
+                <span class="tool-badge">Social</span>
+              </div>
+            </li>
+            <li class="change-item">
+              <div class="change-icon icon-added">
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="change-text">
+                Introduced <strong>Enhanced User Profiles</strong> with achievement badges
+                <span class="tool-badge">Profiles</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="changes-section">
+          <h3 class="section-title"><i class="fas fa-wrench"></i> Improvements</h3>
+          <ul class="changes-list">
+            <li class="change-item">
+              <div class="change-icon icon-improved">
+                <i class="fas fa-arrow-up"></i>
+              </div>
+              <div class="change-text">
+                Improved social sharing previews for better engagement
+                <span class="tool-badge">Social</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Version 2.2.0 -->
+      <div class="version-card">
+        <div class="version-marker"></div>
+        <div class="version-header">
+          <div class="version-info">
+            <div class="version-number">Version 2.2.0</div>
+            <div class="version-date">
+              <i class="far fa-calendar"></i>
+              May 15, 2025
+              <span class="version-type type-major">Major Update</span>
+            </div>
+          </div>
+        </div>
+        
+        <p class="version-description">Advanced analytics and reporting features for professionals.</p>
+        
+        <div class="changes-section">
+          <h3 class="section-title"><i class="fas fa-plus-circle"></i> New Features</h3>
+          <ul class="changes-list">
+            <li class="change-item">
+              <div class="change-icon icon-added">
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="change-text">
+                Added <strong>Advanced Analytics Dashboard</strong> for tracking tool usage
+                <span class="tool-badge">Analytics</span>
+              </div>
+            </li>
+            <li class="change-item">
+              <div class="change-icon icon-added">
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="change-text">
+                Introduced <strong>Custom Report Generator</strong> with multiple formats
+                <span class="tool-badge">Reporting</span>
+              </div>
+            </li>
+            <li class="change-item">
+              <div class="change-icon icon-added">
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="change-text">
+                Added <strong>API Access</strong> for developers and businesses
+                <span class="tool-badge">API</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="changes-section">
+          <h3 class="section-title"><i class="fas fa-wrench"></i> Improvements</h3>
+          <ul class="changes-list">
+            <li class="change-item">
+              <div class="change-icon icon-improved">
+                <i class="fas fa-arrow-up"></i>
+              </div>
+              <div class="change-text">
+                Enhanced data visualization in analytics reports
+                <span class="tool-badge">Analytics</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Version 2.1.0 -->
+      <div class="version-card">
+        <div class="version-marker"></div>
+        <div class="version-header">
+          <div class="version-info">
+            <div class="version-number">Version 2.1.0</div>
+            <div class="version-date">
+              <i class="far fa-calendar"></i>
+              March 15, 2025
+              <span class="version-type type-major">Major Update</span>
+            </div>
+          </div>
+        </div>
+        
+        <p class="version-description">Major update with new tools and improved user experience across the platform.</p>
+        
+        <div class="changes-section">
+          <h3 class="section-title"><i class="fas fa-plus-circle"></i> New Features</h3>
+          <ul class="changes-list">
+            <li class="change-item">
+              <div class="change-icon icon-added">
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="change-text">
+                Added new <strong>Plagiarism Checker</strong> tool
+                <span class="tool-badge">Writing Tools</span>
+              </div>
+            </li>
+            <li class="change-item">
+              <div class="change-icon icon-added">
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="change-text">
+                Introduced <strong>Advanced Keyword Research</strong> tool with competition analysis
+                <span class="tool-badge">SEO Tools</span>
+              </div>
+            </li>
+            <li class="change-item">
+              <div class="change-icon icon-added">
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="change-text">
+                Added <strong>Dark Mode</strong> support across all tools
+                <span class="tool-badge">Platform</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="changes-section">
+          <h3 class="section-title"><i class="fas fa-wrench"></i> Improvements</h3>
+          <ul class="changes-list">
+            <li class="change-item">
+              <div class="change-icon icon-improved">
+                <i class="fas fa-arrow-up"></i>
+              </div>
+              <div class="change-text">
+                Improved calculation speed by 40% across all calculator tools
+                <span class="tool-badge">Performance</span>
+              </div>
+            </li>
+            <li class="change-item">
+              <div class="change-icon icon-improved">
+                <i class="fas fa-arrow-up"></i>
+              </div>
+              <div class="change-text">
+                Enhanced mobile responsiveness for better experience on smartphones
+                <span class="tool-badge">Mobile</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Year 2024 -->
+    <div class="year-separator">
+      <div class="year-line"></div>
+      <div class="year-text">2024</div>
+    </div>
+
+    <!-- Previous versions would go here -->
+    <!-- Showing one version from 2024 for completeness -->
+
+    <div class="changelog-timeline">
+      <div class="timeline-line"></div>
+
+      <!-- Version 1.8.0 -->
+      <div class="version-card">
+        <div class="version-marker"></div>
+        <div class="version-header">
+          <div class="version-info">
+            <div class="version-number">Version 1.8.0</div>
+            <div class="version-date">
+              <i class="far fa-calendar"></i>
+              December 20, 2024
+              <span class="version-type type-major">Major Update</span>
+            </div>
+          </div>
+        </div>
+        
+        <p class="version-description">Enhanced tool categories and user account features.</p>
+        
+        <div class="changes-section">
+          <h3 class="section-title"><i class="fas fa-plus-circle"></i> New Features</h3>
+          <ul class="changes-list">
+            <li class="change-item">
+              <div class="change-icon icon-added">
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="change-text">
+                Added <strong>User Accounts</strong> with save and history features
+                <span class="tool-badge">Accounts</span>
+              </div>
+            </li>
+            <li class="change-item">
+              <div class="change-icon icon-added">
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="change-text">
+                Introduced <strong>Favorite Tools</strong> for quick access
+                <span class="tool-badge">Personalization</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Section -->
+    <section class="changelog-stats">
+      <h2 class="stats-title">Our Progress Over the Years</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Tools Available</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">25</div>
+          <div class="stat-label">Major Updates</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100+</div>
+          <div class="stat-label">Bug Fixes</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">2020</div>
+          <div class="stat-label">Year Started</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Subscribe Section -->
+    <section class="subscribe-section">
+      <h2 class="subscribe-title">Stay Updated</h2>
+      <p class="subscribe-description">Subscribe to get notified about new updates, features, and improvements to WordCalculator tools.</p>
+      
+      <form class="subscribe-form" id="subscribeForm">
+        <input type="email" class="subscribe-input" placeholder="Enter your email address" required>
+        <button type="submit" class="subscribe-btn">
+          Subscribe <i class="fas fa-bell"></i>
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer - WordCalculator Style -->
+  <footer class="pro-footer">
+    <div class="pf-wrap">
+      <div class="pf-brand">
+        <div class="pf-logo">
+          <span class="wc-slab slab-w">W</span>
+          <span class="wc-slab slab-o">O</span>
+          <span class="wc-slab slab-r">R</span>
+          <span class="wc-slab slab-d">D</span>
+          <div class="pf-brand-text">
+            WordCalculator<span>.net</span>
+          </div>
+        </div>
+        <p class="pf-tag">A focused, distraction-free toolkit for precise writing.</p>
+        <div class="pf-social">
+          <a href="https://facebook.com/wordcalculator" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/wordcalculator" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://linkedin.com/company/wordcalculator" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://youtube.com/@wordcalculator" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="pf-cols">
+        <div class="pf-col">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="https://wordcalculator.net">Editor</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="grammar-spell-checker.html">Grammar Check</a></li>
+            <li><a href="seo-keyword-ideas.html">SEO Keyword Ideas</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="guides.html">Tips & Guides</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="bug-report.html">Report a Bug</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html">Cookie Policy</a></li>
+            <li><a href="security.html">Security</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pf-bottom">
+      <div class="pf-bottom-wrap">
+        <div>© <span id="pf-year">2026</span> WordCalculator.net — All rights reserved.</div>
+        <div class="pf-links">
+          <a href="sitemap.html">Sitemap</a>
+          <a href="status.html">Status</a>
+          <a href="accessibility.html">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // DOM Elements
+    const elements = {
+      mobileMenuBtn: document.getElementById('mobileMenuBtn'),
+      mobileNav: document.getElementById('mobileNav'),
+      mobileCloseBtn: document.getElementById('mobileCloseBtn'),
+      mobileOverlay: document.getElementById('mobileOverlay'),
+      pfYear: document.getElementById('pf-year'),
+      subscribeForm: document.getElementById('subscribeForm')
+    };
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      initMobileNavigation();
+      initCurrentYear();
+      initSubscribeForm();
+      initVersionCards();
+    });
+
+    // Mobile Navigation
+    function initMobileNavigation() {
+      if (!elements.mobileMenuBtn) return;
+
+      elements.mobileMenuBtn.addEventListener('click', () => {
+        elements.mobileNav.classList.add('active');
+        elements.mobileOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+
+      elements.mobileCloseBtn.addEventListener('click', closeMobileNav);
+      elements.mobileOverlay.addEventListener('click', closeMobileNav);
+
+      function closeMobileNav() {
+        elements.mobileNav.classList.remove('active');
+        elements.mobileOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Initialize Current Year
+    function initCurrentYear() {
+      if (elements.pfYear) {
+        elements.pfYear.textContent = new Date().getFullYear();
+      }
+    }
+
+    // Subscribe Form
+    function initSubscribeForm() {
+      if (!elements.subscribeForm) return;
+
+      elements.subscribeForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const emailInput = this.querySelector('.subscribe-input');
+        const email = emailInput.value.trim();
+
+        if (email && validateEmail(email)) {
+          console.log(`Changelog subscription for: ${email}`);
+          alert(`Thank you! You've subscribed to our changelog updates with: ${email}`);
+          emailInput.value = '';
+        } else {
+          alert('Please enter a valid email address.');
+        }
+      });
+
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      }
+    }
+
+    // Version Cards Animation
+    function initVersionCards() {
+      const versionCards = document.querySelectorAll('.version-card');
+      
+      // Add intersection observer for scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      // Set initial styles and observe
+      versionCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        card.style.transitionDelay = `${index * 0.1}s`;
+        
+        observer.observe(card);
+      });
+    }
+
+    // Auto-expand latest version
+    window.addEventListener('load', () => {
+      const firstVersionCard = document.querySelector('.version-card');
+      if (firstVersionCard) {
+        firstVersionCard.style.opacity = '1';
+        firstVersionCard.style.transform = 'translateY(0)';
+      }
+    });
+  </script>
+</body>
+</html>

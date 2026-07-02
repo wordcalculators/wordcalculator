@@ -1,0 +1,2398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Viewport optimized for mobile to prevent auto-zoom on inputs -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!-- ========================================== -->
+  <!-- ADVANCED SEO & META DATA START -->
+  <!-- ========================================== -->
+
+  <!-- Primary Meta Tags -->
+  <title>Loan & EMI Calculator — Calculate Monthly Payments & Interest</title>
+  <meta name="description" content="Free online Loan & EMI Calculator. Calculate monthly payments, total interest, amortization schedule, and payoff date for home, car, and personal loans." />
+  <meta name="keywords" content="loan calculator, emi calculator, mortgage calculator, loan payment calculator, amortization schedule, car loan calculator, personal loan calculator, interest calculator" />
+  <meta name="author" content="WordCalculator.net" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#020617" />
+  
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://wordcalculator.net/loan-emi-calculator.html" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wordcalculator.net/loan-emi-calculator.html" />
+  <meta property="og:title" content="Loan & EMI Calculator — Plan Your Repayments Easily" />
+  <meta property="og:description" content="Calculate your loan EMI, total interest payable, and view the complete amortization schedule instantly." />
+  <meta property="og:image" content="https://wordcalculator.net/images/loan-calculator-og.jpg" />
+  <meta property="og:site_name" content="WordCalculator.net" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://wordcalculator.net/loan-emi-calculator.html" />
+  <meta name="twitter:title" content="Loan & EMI Calculator — Plan Your Repayments Easily" />
+  <meta name="twitter:description" content="Calculate your loan EMI, total interest payable, and view the complete amortization schedule instantly." />
+  <meta name="twitter:image" content="https://wordcalculator.net/images/loan-calculator-twitter.jpg" />
+  <meta name="twitter:creator" content="@wordcalculator" />
+
+  <!-- STRUCTURED DATA: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Loan & EMI Calculator",
+    "url": "https://wordcalculator.net/loan-emi-calculator.html",
+    "description": "A comprehensive financial calculator to estimate monthly loan payments (EMI), total interest, and payoff dates with a detailed amortization schedule.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Calculate EMI for Home, Car, and Personal Loans",
+      "View Amortization Schedule",
+      "Calculate Total Interest Payable",
+      "Support for Extra Payments"
+    ],
+    "author": {
+      "@type": "Organization",
+      "name": "WordCalculator.net"
+    }
+  }
+  </script>
+
+  <!-- STRUCTURED DATA: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://wordcalculator.net/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://wordcalculator.net/tools.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Loan & EMI Calculator",
+        "item": "https://wordcalculator.net/loan-emi-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- STRUCTURED DATA: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is EMI calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "EMI (Equated Monthly Installment) is calculated using the formula: P x R x (1+R)^N / [(1+R)^N-1], where P is Principal, R is the monthly interest rate, and N is the number of months."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I calculate the impact of extra payments?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, our calculator includes an option to add extra payments per period, showing you how much interest and time you can save on your loan."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- ========================================== -->
+  <!-- ADVANCED SEO END -->
+  <!-- ========================================== -->
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    rel="stylesheet"
+  />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+    /* Reset */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --blue: #2563eb;
+      --text: #0f172a;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --bg: #f7f8fb;
+      --card: #ffffff;
+      --ok: #16a34a;
+    }
+
+    html {
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    /* Header (shared) */
+    .wc-header {
+      background: #020617;
+      color: #fff;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+    }
+
+    .wc-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .wc-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .wc-slab,
+    .slab {
+      display: inline-flex;
+      width: 24px;
+      height: 24px;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 14px;
+      border-radius: 2px;
+      color: #fff;
+    }
+
+    .slab-w,
+    .wc-slab.slab-w {
+      background: #1f2327;
+    }
+
+    .slab-o,
+    .wc-slab.slab-o {
+      background: #a7c1db;
+      color: #1e2a3a;
+    }
+
+    .slab-r,
+    .wc-slab.slab-r {
+      background: #7d96ae;
+    }
+
+    .slab-d,
+    .wc-slab.slab-d {
+      background: #2f5d8a;
+    }
+
+    .wc-brand-text {
+      display: inline-flex;
+      flex-direction: column;
+      line-height: 1.05;
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .wc-brand-text small {
+      font-size: 10px;
+      opacity: 0.95;
+    }
+
+    .wc-nav {
+      margin-left: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .wc-link {
+      color: #f4f8fc;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 6px 10px;
+      border-radius: 8px;
+      transition: 0.15s;
+      white-space: nowrap;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .wc-link:hover {
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .wc-link.active {
+      background: #ffffff;
+      color: #111827;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .wc-signin-btn {
+      background: rgba(148, 163, 184, 0.18);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .wc-signin-btn:hover {
+      background: #38bdf8;
+      color: #020617;
+      border-color: #38bdf8;
+    }
+
+    .mobile-menu-btn {
+      margin-left: auto;
+      background: transparent;
+      border: 0;
+      color: #fff;
+      font-size: 20px;
+      display: none;
+      cursor: pointer;
+    }
+
+    /* Mobile nav */
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 320px;
+      height: 100vh;
+      background: #1f2933;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.18);
+      transition: right 0.3s;
+      z-index: 100;
+    }
+
+    .mobile-nav.active {
+      right: 0;
+    }
+
+    .mobile-nav-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      border-bottom: 1px solid #34495e;
+    }
+
+    .mobile-close-btn {
+      background: transparent;
+      border: 0;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .mobile-nav-links {
+      padding: 16px;
+    }
+
+    .mobile-link {
+      display: block;
+      color: #ecf0f1;
+      padding: 12px 0;
+      border-bottom: 1px solid #34495e;
+      font-weight: 700;
+    }
+
+    .mobile-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 90;
+    }
+
+    .mobile-overlay.active {
+      display: block;
+    }
+
+    /* Breadcrumbs */
+    .breadcrumbs {
+      max-width: 1200px;
+      margin: 12px auto 4px;
+      padding: 0 15px;
+      font-size: 13px;
+      color: #4b5563;
+    }
+
+    .breadcrumbs a {
+      color: #2563eb;
+      font-weight: 500;
+    }
+
+    .breadcrumbs a:hover {
+      text-decoration: underline;
+    }
+
+    .breadcrumbs span.current {
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .breadcrumbs-separator {
+      margin: 0 4px;
+      color: #9ca3af;
+    }
+
+    /* Main layout */
+    .loan-main {
+      max-width: 1200px;
+      margin: 16px auto 40px;
+      padding: 0 15px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(260px, 1.25fr);
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .loan-left {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .loan-top-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 360px) minmax(0, 1.6fr);
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+      padding: 14px 14px 12px;
+    }
+
+    .card-header {
+      margin: -14px -14px 12px;
+      padding: 8px 12px;
+      background: #0f172a;
+      color: #f9fafb;
+      border-radius: 12px 12px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      box-shadow: inset 0 -1px 0 rgba(148, 163, 184, 0.35);
+      /* --- FIX: allow wrapping when space is tight --- */
+      flex-wrap: wrap;
+    }
+
+    /* --- FIX: let the left text block shrink & wrap instead of forcing overflow --- */
+    .card-header > div:first-child {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    /* --- FIX: prevent grid/cell items from causing horizontal overflow --- */
+    .loan-top-grid > *,
+    .card,
+    .card-header > * {
+      min-width: 0;
+    }
+
+    /* --- FIX: consistent minimum height on mobile so both top cards align nicely --- */
+    @media (max-width: 992px) {
+      .card .card-header { min-height: 84px; }
+    }
+
+    .card-header h2 {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .card-header small {
+      font-size: 11px;
+      color: #cbd5e1;
+    }
+
+    /* BMI-style print chip for consistency */
+    .btn-chip {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      font-size: 12px;
+      font-weight: 600;
+      color: #111827;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s, border-color 0.15s, box-shadow 0.15s,
+        transform 0.15s;
+    }
+
+    .btn-chip i {
+      font-size: 12px;
+    }
+
+    .btn-chip:hover {
+      background: #111827;
+      color: #f9fafb;
+      border-color: #111827;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.25);
+      transform: translateY(-1px);
+    }
+
+    .loan-form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      font-size: 13px;
+    }
+
+    .field-row {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .field-row label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #4b5563;
+    }
+
+    .field-inline {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .text-input,
+    .select-input {
+      padding: 7px 8px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font-size: 13px;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .text-input:focus,
+    .select-input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.12);
+    }
+
+    .text-input {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .select-input {
+      min-width: 120px;
+    }
+
+    .unit-label {
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    /* First payment date controls */
+    .date-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .date-select {
+      padding: 7px 8px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font-size: 13px;
+      background: #ffffff;
+      min-width: 90px;
+    }
+
+    .date-select:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.12);
+    }
+
+    .year-input {
+      width: 90px;
+      padding: 7px 8px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font-size: 13px;
+      background: #ffffff;
+    }
+
+    .year-input:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.12);
+    }
+
+    .calendar-btn {
+      padding: 7px 9px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      background: #f9fafb;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: #4b5563;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .calendar-btn:hover {
+      background: #eff6ff;
+      border-color: #bfdbfe;
+      color: #1d4ed8;
+    }
+
+    .hidden-date-input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      height: 0;
+      width: 0;
+    }
+
+    .loan-actions {
+      margin-top: 6px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--ok);
+      background: var(--ok);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn-primary:hover {
+      background: #15803d;
+      box-shadow: 0 8px 18px rgba(22, 163, 74, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      font-size: 12px;
+      font-weight: 600;
+      color: #4b5563;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .btn-ghost:hover {
+      background: #e5e7eb;
+      border-color: #d1d5db;
+    }
+
+    .loan-note {
+      margin-top: 4px;
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    .loan-error {
+      margin-top: 4px;
+      font-size: 12px;
+      color: #b91c1c;
+    }
+
+    /* Result card */
+    .loan-result-main-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: 4px;
+    }
+
+    .loan-result-sub {
+      font-size: 13px;
+      color: #4b5563;
+      margin-bottom: 10px;
+    }
+
+    .loan-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .summary-box {
+      padding: 10px 10px 8px;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      font-size: 13px;
+    }
+
+    .summary-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #6b7280;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .summary-value {
+      font-size: 16px;
+      font-weight: 800;
+      color: #111827;
+    }
+
+    .summary-muted {
+      font-size: 11px;
+      color: #6b7280;
+      margin-top: 2px;
+    }
+
+    .schedule-title {
+      margin-top: 8px;
+      margin-bottom: 4px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    /* FIX: Scroll wrapper for table on mobile */
+    .schedule-table-wrapper {
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+      overflow-x: auto; /* Enable horizontal scroll */
+      -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+      background: #ffffff;
+    }
+
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      min-width: 500px; /* Ensure table doesn't squish too much */
+    }
+
+    .schedule-table thead {
+      background: #f1f5f9;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+      padding: 6px 8px;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .schedule-table th:first-child,
+    .schedule-table td:first-child {
+      text-align: left;
+    }
+
+    .schedule-table th:nth-child(2),
+    .schedule-table td:nth-child(2) {
+      text-align: left;
+    }
+
+    .schedule-table tfoot td {
+      font-weight: 700;
+      background: #f9fafb;
+    }
+
+    .loan-result-footnote {
+      margin-top: 6px;
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    /* Info section */
+    .section-block {
+      background: var(--card);
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      padding: 14px 16px 12px;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.035);
+    }
+
+    .section-block h3 {
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: #0f172a;
+    }
+
+    .section-block h4 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-top: 10px;
+      margin-bottom: 4px;
+      color: #111827;
+    }
+
+    .section-block p {
+      font-size: 13px;
+      color: #4b5563;
+      margin-bottom: 6px;
+    }
+
+    .section-block ul {
+      padding-left: 18px;
+      font-size: 13px;
+      color: #4b5563;
+    }
+
+    .section-block ul li + li {
+      margin-top: 2px;
+    }
+
+    /* Sidebar */
+    .loan-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .sidebar-card {
+      background: var(--card);
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      padding: 12px 12px 10px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+      font-size: 13px;
+    }
+
+    .sidebar-title-bar {
+      margin: -12px -12px 8px;
+      padding: 7px 10px;
+      background: #0f172a;
+      color: #f9fafb;
+      font-size: 14px;
+      font-weight: 800;
+      border-radius: 12px 12px 0 0;
+      box-shadow: inset 0 -1px 0 rgba(148, 163, 184, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .sidebar-title-bar i {
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    .sidebar-card small {
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    .sidebar-group {
+      margin-top: 8px;
+    }
+
+    .sidebar-group h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #6b7280;
+      margin-bottom: 3px;
+      font-weight: 700;
+    }
+
+    .sidebar-links {
+      list-style: none;
+      font-size: 13px;
+    }
+
+    .sidebar-links li + li {
+      margin-top: 3px;
+    }
+
+    .sidebar-links a {
+      color: #1d4ed8;
+    }
+
+    .sidebar-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* QUICK SEARCH */
+    .tool-search {
+      margin: 8px 0;
+    }
+
+    .sidebar-search-input-wrapper{
+      position:relative;
+      display:flex;
+      align-items:center;
+      margin-top:4px;
+    }
+    .sidebar-search-icon{
+      position:absolute;
+      left:10px;
+      font-size:12px;
+      opacity:0.7;
+    }
+    .sidebar-search-input{
+      width:100%;
+      padding:8px 10px 8px 28px;
+      border-radius:8px;
+      border:1px solid #d5d9e0;
+      background-color:#f9fafb;
+      font-size:13px;
+      outline:none;
+      transition:border-color .15s ease,background-color .15s ease,box-shadow .15s ease;
+    }
+    .sidebar-search-input:focus{
+      border-color:#3f82bd;
+      background-color:#ffffff;
+      box-shadow:0 0 0 1px rgba(63,130,189,0.12);
+    }
+
+    .sidebar-search-suggestions{
+      list-style:none;
+      margin-top:8px;
+      padding:4px 0;
+      max-height:220px;
+      overflow-y:auto;
+      border-radius:10px;
+      border:1px solid #e3e7ee;
+      background-color:#ffffff;
+      box-shadow:0 8px 20px rgba(15,23,42,0.12);
+      display:none;
+    }
+    .sidebar-search-suggestions.visible{
+      display:block;
+    }
+    .sidebar-search-suggestions li{
+      font-size:13px;
+      padding:7px 10px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+    .sidebar-search-suggestions li + li{
+      border-top:1px solid #f1f3f8;
+    }
+    .sidebar-search-suggestions li span.tool-name{
+      flex:1;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .sidebar-search-suggestions li i{
+      font-size:11px;
+      opacity:0.7;
+    }
+    .sidebar-search-suggestions li:hover{
+      background-color:#f3f4f8;
+    }
+
+    /* Footer */
+    .pro-footer {
+      background: #020617;
+      color: #cbd5e1;
+      margin-top: 40px;
+    }
+
+    .pf-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 34px 15px;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 26px;
+    }
+
+    .pf-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pf-brand-text {
+      font-size: 18px;
+      font-weight: 800;
+      color: #e2e8f0;
+    }
+
+    .pf-brand-text span {
+      color: #38bdf8;
+    }
+
+    .pf-tag {
+      margin-top: 8px;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    .pf-social {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .pf-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+      background: #0b1220;
+      color: #cbd5e1;
+      transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.15s,
+        box-shadow 0.15s;
+    }
+
+    .pf-social a:hover {
+      background: #38bdf8;
+      border-color: #38bdf8;
+      color: #0b1220;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4);
+    }
+
+    .pf-cols {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .pf-col h5 {
+      color: #e2e8f0;
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .pf-col ul {
+      list-style: none;
+    }
+
+    .pf-col li {
+      margin: 8px 0;
+    }
+
+    .pf-col a {
+      color: #94a3b8;
+    }
+
+    .pf-col a:hover {
+      color: #e2e8f0;
+    }
+
+    .pf-bottom {
+      border-top: 1px solid #1e293b;
+      background: #0b1220;
+    }
+
+    .pf-bottom-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: #8893a7;
+      font-size: 13px;
+    }
+
+    .pf-links {
+      display: flex;
+      gap: 10px;
+    }
+
+    .pf-links a {
+      color: #94a3b8;
+    }
+
+    .pf-links a:hover {
+      color: #e2e8f0;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.7);
+      display: none;
+      z-index: 200;
+    }
+
+    .modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 420px;
+      max-width: 96vw;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.35);
+      display: none;
+      z-index: 210;
+    }
+
+    .modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 12px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .modal-head h3 {
+      font-size: 15px;
+      font-weight: 800;
+      color: #111827;
+    }
+
+    .modal-close {
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 6px 8px;
+      cursor: pointer;
+    }
+
+    .modal-body {
+      padding: 12px;
+      font-size: 13px;
+      color: #4b5563;
+    }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .pf-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .pf-cols {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .loan-main {
+        grid-template-columns: minmax(0, 1.9fr) minmax(260px, 1.2fr);
+      }
+    }
+
+    @media (max-width: 992px) {
+      .wc-nav {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: inline-block;
+      }
+
+      .wc-brand-text {
+        font-size: 18px;
+      }
+
+      .wc-slab {
+        width: 22px;
+        height: 22px;
+        font-size: 13px;
+      }
+
+      .loan-main {
+        grid-template-columns: 1fr;
+      }
+
+      /* FIX: Sidebar stays below content on mobile */
+      .loan-sidebar {
+        order: 2;
+      }
+
+      .loan-top-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      /* IOS Zoom Fix: Force 16px font size on inputs */
+      .text-input,
+      .select-input,
+      .date-select,
+      .year-input {
+        font-size: 16px !important;
+      }
+
+      .pf-cols {
+        grid-template-columns: 1fr;
+      }
+
+      .loan-summary-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .loan-main {
+        padding: 0 10px; /* Adjust padding for small screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="wc-header">
+    <div class="wc-wrap">
+      <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+        <span class="wc-slab slab-w">W</span>
+        <span class="wc-slab slab-o">O</span>
+        <span class="wc-slab slab-r">R</span>
+        <span class="wc-slab slab-d">D</span>
+        <span class="wc-brand-text">
+          Calculator
+          <small class="wc-tagline">Every Word Counts</small>
+        </span>
+      </a>
+
+      <nav class="wc-nav" aria-label="Primary">
+        <a href="https://wordcalculator.net" class="wc-link">Home</a>
+        <a href="blog.html" class="wc-link">Blog</a>
+        <a href="tools.html" class="wc-link">Tools</a>
+        <a href="about.html" class="wc-link">About Us</a>
+		<a href="signin.html" class="wc-link">Sign In</a>
+      </nav>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+      <div class="mobile-nav-header">
+        <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+          <span class="wc-slab slab-w">W</span>
+          <span class="wc-slab slab-o">O</span>
+          <span class="wc-slab slab-r">R</span>
+          <span class="wc-slab slab-d">D</span>
+          <span class="wc-brand-text">Calculator</span>
+        </a>
+        <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="https://wordcalculator.net" class="nav-link mobile-link">Home</a>
+        <a href="blog.html" class="nav-link mobile-link">Blog</a>
+        <a href="tools.html" class="nav-link mobile-link">Tools</a>
+        <a href="about.html" class="nav-link mobile-link">About Us</a>
+        <a href="signin.html" class="nav-link mobile-link">Sign In</a>
+      </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="https://wordcalculator.net">Home</a>
+    <span class="breadcrumbs-separator">/</span>
+    <a href="tools.html">Tools</a>
+    <span class="breadcrumbs-separator">/</span>
+    <span class="current">Loan &amp; EMI Calculator</span>
+  </nav>
+
+  <!-- Main -->
+  <main class="loan-main">
+    <!-- Left section -->
+    <section class="loan-left">
+      <div class="loan-top-grid">
+        <!-- Loan form -->
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <h2>Loan &amp; EMI Calculator</h2>
+              <small>Estimate monthly or weekly payments for a fixed-rate loan.</small>
+            </div>
+          </div>
+
+          <div class="loan-form-grid">
+            <div class="field-row">
+              <label for="loanAmount">Loan amount</label>
+              <div class="field-inline">
+                <span class="unit-label">$</span>
+                <input
+                  id="loanAmount"
+                  type="number"
+                  class="text-input"
+                  min="0"
+                  step="0.01"
+                  value="5000"
+                />
+              </div>
+            </div>
+
+            <div class="field-row">
+              <label for="interestRate">Annual interest rate</label>
+              <div class="field-inline">
+                <input
+                  id="interestRate"
+                  type="number"
+                  class="text-input"
+                  min="0"
+                  max="100"
+                  step="0.01"
+                  value="6"
+                />
+                <span class="unit-label">% APR</span>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <label for="loanTerm">Loan term</label>
+              <div class="field-inline">
+                <input
+                  id="loanTerm"
+                  type="number"
+                  class="text-input"
+                  min="1"
+                  max="40"
+                  step="1"
+                  value="3"
+                />
+                <select id="loanTermUnit" class="select-input">
+                  <option value="years" selected>Years</option>
+                  <option value="months">Months</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <label for="paymentFrequency">Payment frequency</label>
+              <select id="paymentFrequency" class="select-input">
+                <option value="monthly" selected>Monthly</option>
+                <option value="biweekly">Every 2 weeks</option>
+                <option value="weekly">Weekly</option>
+              </select>
+            </div>
+
+            <div class="field-row">
+              <label>First payment date (optional)</label>
+              <div class="date-row">
+                <select id="fpMonth" class="date-select"></select>
+                <input
+                  id="fpDay"
+                  class="year-input"
+                  type="number"
+                  placeholder="Day"
+                  min="1"
+                  max="31"
+                />
+                <input
+                  id="fpYear"
+                  class="year-input"
+                  type="number"
+                  placeholder="Year"
+                />
+                <button
+                  type="button"
+                  class="calendar-btn"
+                  id="fpCalendarBtn"
+                  aria-label="Pick first payment date"
+                >
+                  <i class="fas fa-calendar-alt"></i>
+                </button>
+                <input type="date" id="fpDateInput" class="hidden-date-input" />
+              </div>
+            </div>
+
+            <div class="field-row">
+              <label for="extraPayment">Optional extra payment per period</label>
+              <div class="field-inline">
+                <span class="unit-label">$</span>
+                <input
+                  id="extraPayment"
+                  type="number"
+                  class="text-input"
+                  min="0"
+                  step="0.01"
+                  value="0"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="loan-actions">
+            <button type="button" class="btn-primary" id="loanCalcBtn">
+              <i class="fas fa-calculator"></i>
+              Calculate payments
+            </button>
+            <button type="button" class="btn-ghost" id="loanResetBtn">Reset</button>
+          </div>
+
+          <p class="loan-note">
+            This calculator assumes a fixed interest rate and regular payments over the
+            entire term. For more complex scenarios, check your lender&rsquo;s official
+            amortization schedule.
+          </p>
+          <p class="loan-error" id="loanError" style="display: none;"></p>
+        </article>
+
+        <!-- Result card -->
+        <article class="card" id="loanResultCard">
+          <div class="card-header">
+            <div>
+              <h2>Result</h2>
+              <small>Estimated payment breakdown and schedule.</small>
+            </div>
+            <button type="button" class="btn-chip" id="printResultBtn">
+              <i class="fas fa-print"></i>
+              <span>Print</span>
+            </button>
+          </div>
+
+          <div id="loanResultBody">
+            <div class="loan-result-main-title" id="loanMainTitle">
+              Estimated payment: ——
+            </div>
+            <p class="loan-result-sub" id="loanResultSummary">
+              Enter your loan details and select a payment frequency to see the
+              estimated payment, total interest, payoff date, and an amortization
+              schedule.
+            </p>
+
+            <div class="loan-summary-grid">
+              <div class="summary-box">
+                <div class="summary-label">Payment amount</div>
+                <div class="summary-value" id="summaryPayment">—</div>
+                <div class="summary-muted" id="summaryPaymentFreq">
+                  Per period
+                </div>
+              </div>
+              <div class="summary-box">
+                <div class="summary-label">Total interest</div>
+                <div class="summary-value" id="summaryInterest">—</div>
+                <div class="summary-muted" id="summaryInterestNote">
+                  Over the full term
+                </div>
+              </div>
+              <div class="summary-box">
+                <div class="summary-label">Payoff date</div>
+                <div class="summary-value" id="summaryPayoffDate">—</div>
+                <div class="summary-muted" id="summaryPayoffNote">
+                  Estimated number of payments
+                </div>
+              </div>
+            </div>
+
+            <div class="schedule-title">
+              Amortization schedule (first 12 payments)
+            </div>
+            <!-- FIX: Added wrapper to allow horizontal scroll on mobile -->
+            <div class="schedule-table-wrapper">
+              <table class="schedule-table" id="scheduleTable">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Date</th>
+                    <th>Payment</th>
+                    <th>Principal</th>
+                    <th>Interest</th>
+                    <th>Balance</th>
+                  </tr>
+                </thead>
+                <tbody id="scheduleBody">
+                  <tr>
+                    <td colspan="6" style="text-align: left; padding: 8px;">
+                      The first 12 payments of the amortization schedule will appear
+                      here after you calculate.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p class="loan-result-footnote">
+              These numbers are estimates only and assume a fixed interest rate and no
+              additional fees for the entire term. Real-world loans may include fees,
+              changing interest rates, or different compounding rules. Always confirm
+              terms with your lender before borrowing.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <!-- Informational content -->
+      <article class="section-block">
+        <h3>How this loan &amp; EMI calculator works</h3>
+        <p>
+          This tool uses the standard amortization formula for fixed-rate loans. After
+          you enter the principal, annual interest rate, and repayment term, the
+          calculator converts the interest rate and term into the frequency you choose
+          (monthly, every two weeks, or weekly). It then solves for the constant
+          payment that will reduce the balance to zero at the end of the term.
+        </p>
+        <p>
+          For each period, the payment is split into interest and principal. Interest
+          is calculated on the outstanding balance. The rest of the payment goes toward
+          principal and gradually lowers the balance, which is why interest becomes a
+          smaller portion of the payment over time.
+        </p>
+
+        <h4>Typical uses</h4>
+        <ul>
+          <li>Estimating the EMI for a personal, auto, or student loan.</li>
+          <li>
+            Comparing different loan offers by changing the interest rate or term.
+          </li>
+          <li>
+            Testing the impact of an extra payment each month on the payoff date and
+            total interest.
+          </li>
+        </ul>
+
+        <h4>About extra payments</h4>
+        <p>
+          The optional extra payment field lets you see how paying a little more each
+          period can shorten the loan and reduce total interest. The calculator assumes
+          the extra amount is applied directly to principal with every scheduled
+          payment. Many lenders allow this, but some use different rules. Always check
+          your loan agreement or ask the lender how extra payments are applied.
+        </p>
+
+        <h4>Related tools</h4>
+        <p>
+          If you are still deciding how much to borrow, you may find it useful to
+          estimate your
+          <a href="calorie-calculator.html">daily budget</a> or track your time with
+          the <a href="focus-timer.html">Focus Timer</a> while you plan. For health
+          and lifestyle goals, the
+          <a href="bmi-calculator.html">BMI Calculator</a> can help you understand how
+          weight and height interact over the long term.
+        </p>
+      </article>
+
+      <article class="section-block">
+        <h3>Key concepts behind loan payments</h3>
+
+        <h4>Principal and interest</h4>
+        <p>
+          The principal is the amount you borrow. Interest is the cost you pay for
+          using that money. With amortized loans, the payment amount stays the same,
+          but the mix of principal and interest changes from one period to the next.
+          Early payments are interest-heavy; later payments are mostly principal.
+        </p>
+
+        <h4>APR vs nominal rate</h4>
+        <p>
+          Many lenders quote an Annual Percentage Rate (APR), which folds certain
+          mandatory fees into the advertised cost of borrowing. This calculator uses
+          the nominal interest rate, not full APR. If your loan has large fees, the
+          payment amount will still be correct, but the economic cost of the loan may
+          be higher than the interest rate alone suggests.
+        </p>
+
+        <h4>Compounding frequency</h4>
+        <p>
+          Some loans compound interest monthly, others daily. For simplicity, this
+          calculator assumes that interest is compounded at the same frequency as the
+          payments. That matches many consumer installment loans and keeps the
+          amortization schedule easy to interpret. For mortgages or other complex
+          products, refer to the lender&rsquo;s official documentation.
+        </p>
+
+        <h4>Using this calculator responsibly</h4>
+        <p>
+          Online calculators are a planning tool, not a substitute for professional
+          advice. Before signing any agreement, review the disclosure documents and
+          confirm the payment schedule, interest rate, and fees directly with your
+          lender or a qualified financial professional.
+        </p>
+      </article>
+    </section>
+
+    <!-- Sidebar -->
+    <aside class="loan-sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-title-bar">
+          <span>Quick Search</span>
+          <i class="fas fa-magnifying-glass"></i>
+        </div>
+		<small>Quick links to other tools on WordCalculator.net</small>
+        <!-- HOMEPAGE-STYLE QUICK SEARCH -->
+        <div class="tool-search">
+          <div class="sidebar-search-input-wrapper">
+            <i class="fa-solid fa-magnifying-glass sidebar-search-icon" aria-hidden="true"></i>
+            <input
+              type="search"
+              id="toolSearchInput"
+              class="sidebar-search-input"
+              placeholder="Search tools by name..."
+              autocomplete="off"
+              aria-label="Search tools by name"
+            />
+          </div>
+          <ul id="toolSearchSuggestions" class="sidebar-search-suggestions" aria-label="Tool suggestions"></ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Popular</h4>
+          <ul class="sidebar-links">
+            <li><a href="loan-emi-calculator.html">Loan &amp; EMI Calculator</a></li>
+            <li><a href="age-calculator.html">Age Calculator</a></li>
+            <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+            <li><a href="calorie-calculator.html">Calorie Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Text &amp; Writing</h4>
+          <ul class="sidebar-links">
+            <li>
+              <a href="https://wordcalculator.net">Word &amp; Character Counter</a>
+            </li>
+            <li><a href="case-converter.html">Case Converter</a></li>
+            <li>
+              <a href="grammar-spell-checker.html">Grammar &amp; Spell Checker</a>
+            </li>
+            <li><a href="readability-analyzer.html">Readability Analyzer</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>SEO &amp; Content</h4>
+          <ul class="sidebar-links">
+            <li>
+              <a href="keyword-density-analyzer.html">Keyword Density Analyzer</a>
+            </li>
+            <li><a href="title-meta-preview.html">Title &amp; Meta Preview</a></li>
+            <li><a href="url-slug-generator.html">URL Slug Generator</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Finance &amp; Time</h4>
+          <ul class="sidebar-links">
+            <li><a href="loan-emi-calculator.html">Loan &amp; EMI Calculator</a></li>
+            <li><a href="interest-calculator.html">Interest Calculator</a></li>
+            <li><a href="focus-timer.html">Focus Timer</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer class="pro-footer" id="about" aria-label="Website footer">
+    <div class="pf-wrap">
+      <div class="pf-brand">
+        <div class="pf-logo">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <div class="pf-brand-text">
+            WordCalculator<span>.net</span>
+          </div>
+        </div>
+        <p class="pf-tag">
+          A focused, distraction-free toolkit for precise writing and clear numbers.
+        </p>
+        <div class="pf-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="pf-cols">
+        <div class="pf-col">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="https://wordcalculator.net">Editor</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="#">Grammar Check</a></li>
+            <li><a href="#">Keyword Density</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="guides.html">Tips &amp; Guides</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="bug-report.html">Report a Bug</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="careers.html">Careers</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="cookies.html">Cookie Policy</a></li>
+            <li><a href="security.html">Security</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pf-bottom">
+      <div class="pf-bottom-wrap">
+        <div>
+          © <span id="pf-year"></span> WordCalculator.net — All rights reserved.
+        </div>
+        <div class="pf-links">
+          <a href="sitemap.html">Sitemap</a>
+          <a href="status.html">Status</a>
+          <a href="accessibility.html">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Auth modal -->
+  <div class="modal-overlay" id="authOverlay" aria-hidden="true"></div>
+  <div
+    class="modal"
+    id="authModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="authTitle"
+  >
+    <div class="modal-head">
+      <h3 id="authTitle"><i class="fas fa-user-lock"></i> Account</h3>
+      <button class="modal-close" id="authCloseBtn" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body">
+      Sign-in, registration, and saved preferences are coming soon. For now, all
+      calculators are free to use without creating an account.
+    </div>
+  </div>
+
+  <!-- Tools Directory Js -->
+  <script src="tools-directory.js"></script>
+
+  <script>
+    const $ = (sel) => document.querySelector(sel);
+    const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+
+    document.addEventListener("DOMContentLoaded", () => {
+      initYear();
+      initMobileMenu();
+      initAuthModal();
+      initFirstPaymentDateControls();
+      initLoanCalculator();
+      initToolQuickSearch();
+      initPrintButton();
+    });
+
+    function initYear() {
+      const yearEl = document.getElementById("pf-year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    }
+
+    /* Mobile nav */
+    function initMobileMenu() {
+      const mobileMenuBtn = $("#mobileMenuBtn");
+      const mobileCloseBtn = $("#mobileCloseBtn");
+      const mobileNav = $("#mobileNav");
+      const mobileOverlay = $("#mobileOverlay");
+      if (!mobileMenuBtn || !mobileNav || !mobileOverlay) return;
+
+      const open = () => {
+        mobileNav.classList.add("active");
+        mobileOverlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+      };
+      const close = () => {
+        mobileNav.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+      };
+
+      mobileMenuBtn.addEventListener("click", open);
+      if (mobileCloseBtn) mobileCloseBtn.addEventListener("click", close);
+      mobileOverlay.addEventListener("click", close);
+
+      $$(".mobile-link").forEach((link) => {
+        link.addEventListener("click", close);
+      });
+
+      const openAuthBtnMobile = $("#openAuthBtnMobile");
+      if (openAuthBtnMobile) {
+        openAuthBtnMobile.addEventListener("click", () => {
+          close();
+          openAuthModal();
+        });
+      }
+    }
+
+    /* Auth modal */
+    function initAuthModal() {
+      const openBtn = $("#openAuthBtn");
+      const overlay = $("#authOverlay");
+      const modal = $("#authModal");
+      const closeBtn = $("#authCloseBtn");
+      if (!overlay || !modal) return;
+
+      const open = () => {
+        overlay.style.display = "block";
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden";
+      };
+
+      const close = () => {
+        overlay.style.display = "none";
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+      };
+
+      if (openBtn) openBtn.addEventListener("click", open);
+      if (closeBtn) closeBtn.addEventListener("click", close);
+      overlay.addEventListener("click", close);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") close();
+      });
+    }
+
+    function openAuthModal() {
+      const overlay = $("#authOverlay");
+      const modal = $("#authModal");
+      if (!overlay || !modal) return;
+      overlay.style.display = "block";
+      modal.style.display = "block";
+      document.body.style.overflow = "hidden";
+    }
+
+    /* First payment date controls (month dropdown + manual day/year + calendar) */
+    function initFirstPaymentDateControls() {
+      const monthNames = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ];
+
+      const monthSel = document.getElementById("fpMonth");
+      const dayInput = document.getElementById("fpDay");
+      const yearInput = document.getElementById("fpYear");
+      const dateInput = document.getElementById("fpDateInput");
+      const calendarBtn = document.getElementById("fpCalendarBtn");
+
+      if (!monthSel || !dayInput || !yearInput || !dateInput || !calendarBtn) {
+        return;
+      }
+
+      monthSel.innerHTML = "";
+      monthNames.forEach((name, index) => {
+        const opt = document.createElement("option");
+        opt.value = index;
+        opt.textContent = name;
+        monthSel.appendChild(opt);
+      });
+
+      const today = new Date();
+      monthSel.value = today.getMonth().toString();
+      dayInput.value = String(today.getDate());
+      yearInput.value = String(today.getFullYear());
+      syncDateInput();
+
+      function syncDateInput() {
+        const y = parseInt(yearInput.value || "0", 10);
+        const m = parseInt(monthSel.value || "0", 10);
+        const d = parseInt(dayInput.value || "0", 10);
+        if (!y || !d || isNaN(m)) {
+          dateInput.value = "";
+          return;
+        }
+        const safeDay = Math.min(
+          d,
+          new Date(y, m + 1, 0).getDate()
+        );
+        if (safeDay !== d) {
+          dayInput.value = String(safeDay);
+        }
+        const iso = `${String(y).padStart(4, "0")}-${String(m + 1).padStart(
+          2,
+          "0"
+        )}-${String(safeDay).padStart(2, "0")}`;
+        dateInput.value = iso;
+      }
+
+      monthSel.addEventListener("change", syncDateInput);
+      dayInput.addEventListener("input", syncDateInput);
+      yearInput.addEventListener("input", syncDateInput);
+
+      calendarBtn.addEventListener("click", () => {
+        try {
+          if (dateInput.showPicker) {
+            dateInput.showPicker();
+          } else {
+            dateInput.focus();
+          }
+        } catch {
+          dateInput.focus();
+        }
+      });
+
+      dateInput.addEventListener("change", () => {
+        if (!dateInput.value) return;
+        const [y, m, d] = dateInput.value.split("-").map(Number);
+        yearInput.value = String(y);
+        monthSel.value = String(m - 1);
+        dayInput.value = String(d);
+      });
+    }
+
+    /* Helper: format schedule dates as 'Jan 20, 2025' */
+    function formatScheduleDate(date) {
+      const monthsShort = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ];
+
+      const day = String(date.getDate()).padStart(2, "0");
+      const month = monthsShort[date.getMonth()];
+      const year = date.getFullYear();
+
+      return `${month} ${day}, ${year}`;
+    }
+
+    /* Loan calculator */
+    function initLoanCalculator() {
+      const calcBtn = $("#loanCalcBtn");
+      const resetBtn = $("#loanResetBtn");
+      if (calcBtn) calcBtn.addEventListener("click", calculateLoan);
+      if (resetBtn) resetBtn.addEventListener("click", resetLoanForm);
+    }
+
+    function calculateLoan() {
+      const errorEl = $("#loanError");
+      errorEl.style.display = "none";
+      errorEl.textContent = "";
+
+      const amount = parseFloat($("#loanAmount").value || "0");
+      const rate = parseFloat($("#interestRate").value || "0");
+      const term = parseFloat($("#loanTerm").value || "0");
+      const termUnit = $("#loanTermUnit").value;
+      const freq = $("#paymentFrequency").value;
+      const extra = parseFloat($("#extraPayment").value || "0");
+
+      if (!amount || amount <= 0) {
+        showLoanError("Please enter a positive loan amount.");
+        return;
+      }
+      if (rate < 0 || rate > 100 || isNaN(rate)) {
+        showLoanError("Please enter a valid annual interest rate between 0 and 100.");
+        return;
+      }
+      if (!term || term <= 0) {
+        showLoanError("Please enter a positive loan term.");
+        return;
+      }
+
+      let periodsPerYear = 12;
+      let paymentLabel = "per month";
+
+      if (freq === "biweekly") {
+        periodsPerYear = 26;
+        paymentLabel = "every 2 weeks";
+      } else if (freq === "weekly") {
+        periodsPerYear = 52;
+        paymentLabel = "per week";
+      }
+
+      let totalPeriods =
+        termUnit === "years" ? term * periodsPerYear : term * (periodsPerYear / 12);
+
+      totalPeriods = Math.round(totalPeriods);
+      if (!totalPeriods || totalPeriods <= 0) {
+        showLoanError("The combination of term and frequency did not produce a valid number of payments.");
+        return;
+      }
+
+      const annualRate = rate / 100;
+      const periodicRate = annualRate / periodsPerYear;
+
+      let payment;
+      if (periodicRate === 0) {
+        payment = amount / totalPeriods;
+      } else {
+        const factor = Math.pow(1 + periodicRate, totalPeriods);
+        payment = (amount * periodicRate * factor) / (factor - 1);
+      }
+      const paymentWithExtra = payment + (extra > 0 ? extra : 0);
+
+      const scheduleData = buildAmortizationSchedule(
+        amount,
+        periodicRate,
+        paymentWithExtra,
+        totalPeriods
+      );
+
+      updateLoanResult(
+        paymentWithExtra,
+        scheduleData.totalInterest,
+        scheduleData.payoffDate,
+        scheduleData.paymentsCount,
+        paymentLabel,
+        scheduleData.rows
+      );
+    }
+
+    function showLoanError(msg) {
+      const errorEl = $("#loanError");
+      errorEl.textContent = msg;
+      errorEl.style.display = "block";
+    }
+
+    function getFirstPaymentDateOrDefault() {
+      const dateInput = $("#fpDateInput");
+      if (dateInput && dateInput.value) {
+        const [y, m, d] = dateInput.value.split("-").map(Number);
+        return new Date(y, m - 1, d);
+      }
+      const today = new Date();
+      return new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    }
+
+    function buildAmortizationSchedule(
+      principal,
+      periodicRate,
+      paymentAmount,
+      maxPeriods
+    ) {
+      const rows = [];
+      let balance = principal;
+      let totalInterest = 0;
+      let paymentsCount = 0;
+      let currentDate = getFirstPaymentDateOrDefault();
+
+      let stepDays = 30;
+      if ($("#paymentFrequency").value === "biweekly") {
+        stepDays = 14;
+      } else if ($("#paymentFrequency").value === "weekly") {
+        stepDays = 7;
+      }
+
+      function advanceDate(date) {
+        const newDate = new Date(date.getTime());
+        newDate.setDate(newDate.getDate() + stepDays);
+        return newDate;
+      }
+
+      for (let i = 0; i < maxPeriods && balance > 0.01 && i < 6000; i++) {
+        const interest = periodicRate * balance;
+        let principalPart = paymentAmount - interest;
+
+        if (principalPart > balance) {
+          principalPart = balance;
+        }
+
+        const payment = principalPart + interest;
+        balance -= principalPart;
+        if (balance < 0) balance = 0;
+
+        totalInterest += interest;
+        paymentsCount++;
+
+        if (rows.length < 12) {
+          const displayDate = formatScheduleDate(currentDate);
+          rows.push({
+            index: i + 1,
+            date: displayDate,
+            payment: payment,
+            principal: principalPart,
+            interest: interest,
+            balance: balance,
+          });
+        }
+
+        currentDate = advanceDate(currentDate);
+      }
+
+      const payoffDate = currentDate;
+
+      return {
+        rows,
+        totalInterest,
+        paymentsCount,
+        payoffDate,
+      };
+    }
+
+    function updateLoanResult(
+      paymentAmount,
+      totalInterest,
+      payoffDate,
+      paymentsCount,
+      paymentLabel,
+      scheduleRows
+    ) {
+      const mainTitle = $("#loanMainTitle");
+      const resultSummary = $("#loanResultSummary");
+      const summaryPayment = $("#summaryPayment");
+      const summaryPaymentFreq = $("#summaryPaymentFreq");
+      const summaryInterest = $("#summaryInterest");
+      const summaryInterestNote = $("#summaryInterestNote");
+      const summaryPayoffDate = $("#summaryPayoffDate");
+      const summaryPayoffNote = $("#summaryPayoffNote");
+      const scheduleBody = $("#scheduleBody");
+
+      const paymentText = `$${paymentAmount.toFixed(2)}`;
+      mainTitle.textContent = `Estimated payment: ${paymentText} ${paymentLabel}`;
+
+      resultSummary.textContent =
+        "Based on your inputs, this is the estimated payment needed to pay off the loan on schedule, along with the first 12 rows of the amortization table.";
+
+      summaryPayment.textContent = paymentText;
+      summaryPaymentFreq.textContent = `Per ${paymentLabel.replace("per ", "")}`;
+      summaryInterest.textContent = `$${totalInterest.toFixed(2)}`;
+      summaryInterestNote.textContent = "Estimated interest paid over the full term";
+
+      const payoffDateLabel = payoffDate
+        ? formatScheduleDate(payoffDate)
+        : "—";
+
+      summaryPayoffDate.textContent = payoffDateLabel;
+      summaryPayoffNote.textContent = `${paymentsCount} total payment(s)`;
+
+      if (!scheduleRows.length) {
+        scheduleBody.innerHTML =
+          '<tr><td colspan="6" style="text-align:left;padding:8px;">Schedule data could not be generated.</td></tr>';
+        return;
+      }
+
+      const rowsHtml = scheduleRows
+        .map((row) => {
+          return `
+          <tr>
+            <td>${row.index}</td>
+            <td>${row.date}</td>
+            <td>$${row.payment.toFixed(2)}</td>
+            <td>$${row.principal.toFixed(2)}</td>
+            <td>$${row.interest.toFixed(2)}</td>
+            <td>$${row.balance.toFixed(2)}</td>
+          </tr>
+        `;
+        })
+        .join("");
+
+      scheduleBody.innerHTML = rowsHtml;
+    }
+
+    function resetLoanForm() {
+      $("#loanAmount").value = 5000;
+      $("#interestRate").value = 6;
+      $("#loanTerm").value = 3;
+      $("#loanTermUnit").value = "years";
+      $("#paymentFrequency").value = "monthly";
+      $("#extraPayment").value = 0;
+      $("#loanError").style.display = "none";
+
+      initFirstPaymentDateControls();
+
+      $("#loanMainTitle").textContent = "Estimated payment: ——";
+      $("#loanResultSummary").textContent =
+        "Enter your loan details and select a payment frequency to see the estimated payment, total interest, payoff date, and an amortization schedule.";
+      $("#summaryPayment").textContent = "—";
+      $("#summaryPaymentFreq").textContent = "Per period";
+      $("#summaryInterest").textContent = "—";
+      $("#summaryInterestNote").textContent = "Over the full term";
+      $("#summaryPayoffDate").textContent = "—";
+      $("#summaryPayoffNote").textContent =
+        "Estimated number of payments";
+
+      $("#scheduleBody").innerHTML =
+        '<tr><td colspan="6" style="text-align:left;padding:8px;">The first 12 payments of the amortization schedule will appear here after you calculate.</td></tr>';
+    }
+
+    /* ===== Tool directory & Quick Search (with icons) ===== */
+    const toolDirectory = allTools;
+
+    /* HOMEPAGE-STYLE QUICK SEARCH JS WITH BETTER MATCH ORDER */
+    function initToolQuickSearch() {
+      const input = document.getElementById("toolSearchInput");
+      const suggestionsBox = document.getElementById("toolSearchSuggestions");
+      if (!input || !suggestionsBox || !Array.isArray(toolDirectory)) return;
+
+      let currentResults = [];
+
+      function renderSuggestions(query) {
+        const value = (query || "").trim().toLowerCase();
+        suggestionsBox.innerHTML = "";
+
+        if (!value) {
+          suggestionsBox.classList.remove("visible");
+          return;
+        }
+
+        // Filter all tools containing the query text
+        const allMatches = toolDirectory.filter((tool) =>
+          tool.name.toLowerCase().indexOf(value) !== -1
+        );
+
+        if (!allMatches.length) {
+          const li = document.createElement("li");
+          li.textContent = "No tools found";
+          suggestionsBox.appendChild(li);
+          suggestionsBox.classList.add("visible");
+          return;
+        }
+
+        // Rank: nearer / stronger matches come first
+        function rankTool(tool) {
+          const name = tool.name.toLowerCase();
+          const pos = name.indexOf(value);
+          const starts = name.startsWith(value) ? 0 : 1;
+          const lenDiff = Math.abs(name.length - value.length);
+          // Lower score = better rank
+          return starts * 100 + pos * 2 + lenDiff;
+        }
+
+        currentResults = allMatches.slice().sort((a, b) => rankTool(a) - rankTool(b));
+
+        currentResults.slice(0, 10).forEach((tool) => {
+          const li = document.createElement("li");
+
+          const iconEl = document.createElement("i");
+          iconEl.className = tool.icon || "fa-solid fa-wand-magic-sparkles";
+
+          const nameSpan = document.createElement("span");
+          nameSpan.className = "tool-name";
+          nameSpan.textContent = tool.name;
+
+          li.appendChild(iconEl);
+          li.appendChild(nameSpan);
+
+          li.addEventListener("click", () => {
+            if (tool.url) {
+              window.location.href = tool.url;
+            }
+          });
+
+          suggestionsBox.appendChild(li);
+        });
+
+        suggestionsBox.classList.add("visible");
+      }
+
+      input.addEventListener("input", (e) => {
+        renderSuggestions(e.target.value);
+      });
+
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          const value = input.value.trim().toLowerCase();
+          if (!value) return;
+
+          const first = currentResults.length
+            ? currentResults[0]
+            : toolDirectory.find((tool) =>
+                tool.name.toLowerCase().indexOf(value) !== -1
+              );
+
+          if (first && first.url) {
+            window.location.href = first.url;
+          }
+        }
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!input.contains(e.target) && !suggestionsBox.contains(e.target)) {
+          suggestionsBox.classList.remove("visible");
+        }
+      });
+    }
+
+    /* Print result card in a separate window */
+    function initPrintButton() {
+      const btn = $("#printResultBtn");
+      if (!btn) return;
+      btn.addEventListener("click", () => {
+        const card = document.getElementById("loanResultCard");
+        if (!card) return;
+
+        const win = window.open("", "_blank", "width=900,height=700");
+        if (!win) return;
+
+        win.document.write(`
+          <html>
+          <head>
+            <title>Loan & EMI Calculator Result</title>
+            <style>
+              body {
+                font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+                background: #f3f4f6;
+                padding: 20px;
+              }
+              .print-card {
+                max-width: 800px;
+                margin: 0 auto;
+                background: #ffffff;
+                border-radius: 12px;
+                border: 1px solid #e5e7eb;
+                box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+                overflow: hidden;
+              }
+              .print-card-header {
+                padding: 10px 14px;
+                background: #0f172a;
+                color: #f9fafb;
+                font-size: 16px;
+                font-weight: 800;
+              }
+              .print-body {
+                padding: 14px 16px 14px;
+                font-size: 14px;
+                color: #111827;
+              }
+              .print-body table {
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 12px;
+              }
+              .print-body th,
+              .print-body td {
+                border-bottom: 1px solid #e5e7eb;
+                padding: 6px 8px;
+                text-align: right;
+              }
+              .print-body th:first-child,
+              .print-body td:first-child {
+                text-align: left;
+              }
+              .print-body th:nth-child(2),
+              .print-body td:nth-child(2) {
+                text-align: left;
+              }
+              .btn-chip {
+                display: none !important;
+              }
+            </style>
+          </head>
+          <body>
+            <div class="print-card">
+              <div class="print-card-header">Loan & EMI Calculator Result</div>
+              <div class="print-body">
+                ${document.getElementById("loanResultBody").innerHTML}
+              </div>
+            </div>
+            <script>
+              window.onload = function() { window.print(); };
+            <\/script>
+          </body>
+          </html>
+        `);
+        win.document.close();
+      });
+    }
+  </script>
+</body>
+</html>

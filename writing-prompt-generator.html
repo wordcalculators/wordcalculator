@@ -1,0 +1,2173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ==================== ADVANCED SEO ==================== -->
+  <title>Daily Writing Prompt Generator — Creative Ideas & Inspiration for Writers</title>
+  <meta name="description" content="Free Daily Writing Prompt Generator with 1000+ creative ideas. Get instant inspiration for fiction, non-fiction, poetry, blogs, journals, and creative writing. Includes genre filters, difficulty levels, and timer." />
+  <meta name="keywords" content="writing prompt generator, daily writing prompts, creative writing ideas, fiction prompts, poetry prompts, journal prompts, blog ideas, story starters, writing inspiration, writer's block" />
+  <meta name="author" content="WordCalculator.net" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#1e293b" />
+  <link rel="canonical" href="https://wordcalculator.net/writing-prompt-generator.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wordcalculator.net/writing-prompt-generator.html" />
+  <meta property="og:title" content="Daily Writing Prompt Generator — Creative Ideas & Inspiration" />
+  <meta property="og:description" content="Generate unique writing prompts instantly. Filter by genre, difficulty, and length. Includes writing timer and idea history." />
+  <meta property="og:image" content="https://wordcalculator.net/images/writing-prompt-generator-og.jpg" />
+  <meta property="og:site_name" content="WordCalculator.net" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://wordcalculator.net/writing-prompt-generator.html" />
+  <meta name="twitter:title" content="Daily Writing Prompt Generator — Creative Ideas for Writers" />
+  <meta name="twitter:description" content="Free tool with 1000+ writing prompts. Beat writer's block with instant creative inspiration." />
+  <meta name="twitter:image" content="https://wordcalculator.net/images/writing-prompt-generator-twitter.jpg" />
+  <meta name="twitter:creator" content="@wordcalculator" />
+
+  <!-- WebApplication schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Daily Writing Prompt Generator",
+    "url":"https://wordcalculator.net/writing-prompt-generator.html",
+    "description":"Generate creative writing prompts for fiction, non-fiction, poetry, blogs, and journaling. Includes genre filters, difficulty levels, writing timer, and prompt history.",
+    "applicationCategory":"CreativeApplication",
+    "operatingSystem":"Any",
+    "browserRequirements":"Requires JavaScript",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "featureList":[
+      "1000+ unique writing prompts",
+      "Filter by genre and difficulty",
+      "Writing timer with alarms",
+      "Save favorite prompts",
+      "One-click prompt generation",
+      "Mobile-optimized interface"
+    ],
+    "author":{"@type":"Organization","name":"WordCalculator.net"}
+  }
+  </script>
+
+  <!-- Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://wordcalculator.net/"},
+      {"@type":"ListItem","position":2,"name":"Tools","item":"https://wordcalculator.net/tools.html"},
+      {"@type":"ListItem","position":3,"name":"Writing Prompt Generator","item":"https://wordcalculator.net/writing-prompt-generator.html"}
+    ]
+  }
+  </script>
+
+  <!-- FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"How many writing prompts are available?","acceptedAnswer":{"@type":"Answer","text":"The generator has over 1,000 unique writing prompts across 12+ genres including fiction, poetry, non-fiction, journaling, and blog writing."}},
+      {"@type":"Question","name":"Can I filter prompts by genre?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can select specific genres like Fiction, Poetry, Non-Fiction, Journal, Blog, Dialogue, Character, Setting, or choose 'All Genres' for random prompts."}},
+      {"@type":"Question","name":"Is there a writing timer?","acceptedAnswer":{"@type":"Answer","text":"Yes. The built-in writing timer can be set from 5 to 60 minutes with visual progress indicator and completion sound."}},
+      {"@type":"Question","name":"Can I save my favorite prompts?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can bookmark prompts and they will be saved in your browser's local storage for future reference."}}
+    ]
+  }
+  </script>
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+    /* ===== Base / Theme ===== */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --primary:#1e40af;--secondary:#7c3aed;--accent:#0ea5e9;
+      --text:#1f2937;--muted:#6b7280;--border:#e5e7eb;--light:#f8fafc;
+      --bg:#f9fafb;--card:#ffffff;--success:#10b981;--warning:#f59e0b;
+      --creative-bg:linear-gradient(135deg,#f0f9ff 0%,#fef7ff 100%);
+      --creative-border:#dbeafe;
+      --shadow-sm:0 1px 2px 0 rgba(0,0,0,0.05);
+      --shadow-md:0 4px 6px -1px rgba(0,0,0,0.1);
+      --shadow-lg:0 10px 15px -3px rgba(0,0,0,0.1);
+    }
+    html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    body{font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+
+    /* ===== Header / Nav (same as other tools) ===== */
+    .wc-header{background:#020617;color:#fff;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+    .wc-wrap{max-width:1200px;margin:0 auto;padding:10px 12px;display:flex;align-items:center;gap:14px}
+    .wc-logo{display:inline-flex;align-items:center;gap:8px}
+    .wc-slab,.slab{display:inline-flex;width:24px;height:24px;align-items:center;justify-content:center;font-weight:800;font-size:14px;border-radius:2px;color:#fff}
+    .slab-w{background:#1f2327}.slab-o{background:#a7c1db;color:#1e2a3a}.slab-r{background:#7d96ae}.slab-d{background:#2f5d8a}
+    .wc-brand-text{display:inline-flex;flex-direction:column;line-height:1.05;font-size:19px;font-weight:800}
+    .wc-brand-text small{font-size:10px;opacity:.95}
+    .wc-nav{margin-left:10px;display:flex;align-items:center;gap:8px;flex:1}
+    .wc-link{color:#f4f8fc;font-weight:700;font-size:14px;padding:6px 10px;border-radius:8px;transition:.15s;background:transparent;border:0;cursor:pointer}
+    .wc-link:hover{background:rgba(255,255,255,.14)}
+    .wc-signin-btn{background:rgba(148,163,184,.18);border:1px solid rgba(148,163,184,.5)}
+    .wc-signin-btn:hover{background:#38bdf8;color:#020617;border-color:#38bdf8}
+    .mobile-menu-btn{margin-left:auto;background:transparent;border:0;color:#fff;font-size:20px;display:none;cursor:pointer}
+    .mobile-nav{position:fixed;top:0;right:-100%;width:320px;height:100vh;background:#1f2933;box-shadow:-2px 0 10px rgba(0,0,0,.18);transition:right .3s;z-index:100}
+    .mobile-nav.active{right:0}
+    .mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;z-index:90}
+    .mobile-overlay.active{display:block}
+
+    .mobile-nav-header{display:flex;justify-content:space-between;align-items:center;padding:16px;border-bottom:1px solid #34495e}
+    .mobile-close-btn{background:transparent;border:0;color:#fff;font-size:20px;cursor:pointer}
+    .mobile-nav-links{padding:16px}
+    .mobile-link{display:block;color:#ecf0f1;padding:12px 0;border-bottom:1px solid #34495e;font-weight:700;background:transparent;border:0;width:100%;text-align:left;cursor:pointer}
+
+    /* ===== Breadcrumb ===== */
+    .crumb-wrap{max-width:1200px;margin:8px auto 0;padding:0 15px 4px}
+    .crumbs{font-size:13px;color:#111827}
+    .crumbs a{color:#2563eb}
+    .crumbs a:hover{text-decoration:underline}
+    .crumb-separator{margin:0 4px;color:#6b7280}
+    .crumb-current{font-weight:700}
+
+    /* ===== Main Layout ===== */
+    .writing-main{max-width:1200px;margin:22px auto 40px;padding:0 15px;display:grid;grid-template-columns:minmax(0,3fr) minmax(260px,1.25fr);gap:20px;align-items:flex-start}
+    .writing-left{display:flex;flex-direction:column;gap:18px}
+    .writing-top-grid{display:grid;grid-template-columns:1fr;gap:16px;align-items:stretch}
+
+    .card{background:transparent;border:none;box-shadow:none;padding:0}
+
+    /* ===== Writing Prompt Generator main card ===== */
+    .prompt-shell{
+      border:1px solid var(--creative-border);
+      background:var(--creative-bg);
+      padding:12px;
+      width:100%;
+      margin:0 0 10px 0;
+      border-radius:12px;
+      box-shadow:var(--shadow-lg);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .prompt-title-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin:-12px -12px 8px;
+      padding:8px 12px;
+      background:linear-gradient(135deg,#1e293b 0%,#0f172a 100%);
+      color:#f9fafb;
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+
+    .prompt-title{
+      font-size:18px;
+      font-weight:800;
+      color:#f9fafb;
+      font-family:"Inter",Arial,sans-serif;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .prompt-icon{
+      color:#c4b5fd;
+      font-size:20px;
+    }
+
+    /* ===== Controls Section ===== */
+    .controls-grid{
+      background:white;
+      border-radius:10px;
+      border:1px solid #e2e8f0;
+      padding:14px;
+      margin-bottom:12px;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .controls-row{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:12px;
+      margin-bottom:10px;
+    }
+
+    .control-group{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+
+    .control-group label{
+      font-size:13px;
+      font-weight:600;
+      color:#374151;
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+
+    .control-group label i{
+      color:#8b5cf6;
+      font-size:12px;
+    }
+
+    .select-control,.number-control{
+      width:100%;
+      padding:8px 12px;
+      border:1px solid #d1d5db;
+      border-radius:8px;
+      font-size:14px;
+      background:white;
+      transition:all 0.2s;
+    }
+
+    .select-control:focus,.number-control:focus{
+      outline:none;
+      border-color:#8b5cf6;
+      box-shadow:0 0 0 3px rgba(139,92,246,0.1);
+    }
+
+    .button-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:8px;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .primary-btn{
+      background:linear-gradient(135deg,#8b5cf6 0%,#7c3aed 100%);
+      color:white;
+      border:none;
+      padding:10px 20px;
+      border-radius:8px;
+      font-weight:600;
+      font-size:14px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      transition:all 0.2s;
+      box-shadow:0 2px 4px rgba(139,92,246,0.3);
+    }
+
+    .primary-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 4px 8px rgba(139,92,246,0.4);
+      background:linear-gradient(135deg,#7c3aed 0%,#6d28d9 100%);
+    }
+
+    .secondary-btn{
+      background:#f3f4f6;
+      color:#374151;
+      border:1px solid #d1d5db;
+      padding:10px 16px;
+      border-radius:8px;
+      font-weight:500;
+      font-size:14px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      transition:all 0.2s;
+    }
+
+    .secondary-btn:hover{
+      background:#e5e7eb;
+      border-color:#9ca3af;
+    }
+
+    /* ===== Generated Prompt Display ===== */
+    .prompt-display{
+      background:white;
+      border-radius:12px;
+      border:2px solid #e5e7eb;
+      padding:24px 20px;
+      margin:12px 0;
+      position:relative;
+      min-height:180px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      box-shadow:var(--shadow-md);
+      transition:all 0.3s;
+    }
+
+    .prompt-display:hover{
+      border-color:#c4b5fd;
+      box-shadow:0 8px 25px rgba(139,92,246,0.15);
+    }
+
+    .prompt-text{
+      font-size:20px;
+      font-weight:500;
+      color:#1f2937;
+      text-align:center;
+      line-height:1.6;
+      font-family:"Playfair Display",Georgia,serif;
+      margin:0;
+      padding:0 10px;
+    }
+
+    .prompt-meta{
+      position:absolute;
+      top:12px;
+      right:12px;
+      background:#f3f4f6;
+      padding:4px 10px;
+      border-radius:20px;
+      font-size:11px;
+      font-weight:600;
+      color:#6b7280;
+      display:flex;
+      align-items:center;
+      gap:4px;
+    }
+
+    .prompt-id{
+      position:absolute;
+      top:12px;
+      left:12px;
+      background:#ede9fe;
+      color:#7c3aed;
+      padding:4px 10px;
+      border-radius:20px;
+      font-size:11px;
+      font-weight:600;
+    }
+
+    .prompt-actions{
+      display:flex;
+      gap:8px;
+      margin-top:16px;
+      justify-content:center;
+    }
+
+    .action-btn{
+      background:#f8fafc;
+      border:1px solid #e2e8f0;
+      border-radius:8px;
+      padding:8px 16px;
+      font-size:13px;
+      font-weight:500;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      transition:all 0.2s;
+      color:#475569;
+    }
+
+    .action-btn:hover{
+      background:#f1f5f9;
+      border-color:#cbd5e1;
+      transform:translateY(-1px);
+    }
+
+    .action-btn.save-btn:hover{
+      background:#dcfce7;
+      border-color:#86efac;
+      color:#16a34a;
+    }
+
+    .action-btn.copy-btn:hover{
+      background:#dbeafe;
+      border-color:#93c5fd;
+      color:#2563eb;
+    }
+
+    /* ===== Writing Timer ===== */
+    .timer-section{
+      background:white;
+      border-radius:10px;
+      border:1px solid #e2e8f0;
+      padding:16px;
+      margin:12px 0;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .timer-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:12px;
+    }
+
+    .timer-header h3{
+      font-size:16px;
+      font-weight:700;
+      color:#1e293b;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .timer-display{
+      text-align:center;
+      font-size:48px;
+      font-weight:800;
+      font-family:monospace;
+      color:#1e293b;
+      margin:10px 0;
+      padding:10px;
+      background:#f8fafc;
+      border-radius:10px;
+      border:2px solid #e2e8f0;
+    }
+
+    .timer-controls{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      margin-top:12px;
+    }
+
+    .timer-btn{
+      padding:10px 20px;
+      border:none;
+      border-radius:8px;
+      font-weight:600;
+      font-size:14px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      transition:all 0.2s;
+    }
+
+    .timer-btn.start{
+      background:linear-gradient(135deg,#10b981 0%,#059669 100%);
+      color:white;
+      box-shadow:0 2px 4px rgba(16,185,129,0.3);
+    }
+
+    .timer-btn.stop{
+      background:linear-gradient(135deg,#ef4444 0%,#dc2626 100%);
+      color:white;
+      box-shadow:0 2px 4px rgba(239,68,68,0.3);
+    }
+
+    .timer-btn.reset{
+      background:#f3f4f6;
+      color:#374151;
+      border:1px solid #d1d5db;
+    }
+
+    .timer-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    .timer-progress{
+      height:6px;
+      background:#e5e7eb;
+      border-radius:3px;
+      margin-top:12px;
+      overflow:hidden;
+    }
+
+    .timer-progress-fill{
+      height:100%;
+      background:linear-gradient(90deg,#8b5cf6 0%,#3b82f6 100%);
+      width:0%;
+      transition:width 1s linear;
+    }
+
+    /* ===== Prompt History ===== */
+    .history-section{
+      background:white;
+      border-radius:10px;
+      border:1px solid #e2e8f0;
+      padding:16px;
+      margin-top:12px;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .history-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:12px;
+    }
+
+    .history-header h3{
+      font-size:16px;
+      font-weight:700;
+      color:#1e293b;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .history-list{
+      max-height:300px;
+      overflow-y:auto;
+      border:1px solid #e5e7eb;
+      border-radius:8px;
+      padding:8px;
+    }
+
+    .history-item{
+      padding:10px 12px;
+      border-bottom:1px solid #f3f4f6;
+      font-size:13px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .history-item:last-child{
+      border-bottom:none;
+    }
+
+    .history-item:hover{
+      background:#f8fafc;
+      border-radius:6px;
+    }
+
+    .history-prompt{
+      flex:1;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      margin-right:10px;
+    }
+
+    .history-actions{
+      display:flex;
+      gap:6px;
+    }
+
+    .history-btn{
+      background:transparent;
+      border:none;
+      cursor:pointer;
+      color:#6b7280;
+      font-size:12px;
+      padding:4px;
+      border-radius:4px;
+      transition:all 0.2s;
+    }
+
+    .history-btn:hover{
+      background:#f3f4f6;
+      color:#374151;
+    }
+
+    /* ===== Stats Section ===== */
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+      gap:12px;
+      margin:16px 0;
+    }
+
+    .stat-card{
+      background:white;
+      border:1px solid #e2e8f0;
+      border-radius:10px;
+      padding:16px;
+      text-align:center;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .stat-number{
+      font-size:32px;
+      font-weight:800;
+      color:#7c3aed;
+      margin-bottom:4px;
+    }
+
+    .stat-label{
+      font-size:13px;
+      color:#6b7280;
+      font-weight:500;
+    }
+
+    /* ===== Info blocks ===== */
+    .section-block{
+      background:var(--card);
+      border-radius:12px;
+      border:1px solid #e2e8f0;
+      padding:18px 20px;
+      box-shadow:0 8px 20px rgba(15,23,42,.035);
+    }
+    .section-block h3{
+      font-size:18px;
+      font-weight:800;
+      margin-bottom:10px;
+      color:#0f172a;
+      font-family:"Playfair Display",Georgia,serif;
+    }
+    .section-block h4{
+      font-size:16px;
+      font-weight:700;
+      margin-top:16px;
+      margin-bottom:8px;
+      color:#111827;
+    }
+    .section-block p{
+      font-size:14px;
+      color:#4b5563;
+      margin-bottom:10px;
+      line-height:1.7;
+    }
+    .section-block ul{
+      padding-left:20px;
+      font-size:14px;
+      color:#4b5563;
+      line-height:1.7;
+    }
+    .section-block ul li+li{margin-top:6px;}
+
+    /* ===== Sidebar ===== */
+    .writing-sidebar{display:flex;flex-direction:column;gap:16px}
+    .sidebar-card{
+      background:var(--card);
+      border-radius:12px;
+      border:1px solid #e2e8f0;
+      padding:12px 12px 10px;
+      box-shadow:0 10px 24px rgba(15,23,42,.06);
+      font-size:13px;
+    }
+    .sidebar-title-bar{
+      margin:-12px -12px 8px;
+      padding:7px 10px;
+      background:linear-gradient(135deg,#1e293b 0%,#0f172a 100%);
+      color:#f9fafb;
+      font-size:14px;
+      font-weight:800;
+      border-radius:12px 12px 0 0;
+      box-shadow:inset 0 -1px 0 rgba(148,163,184,.35);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+    }
+    .sidebar-group{margin-top:10px;}
+    .sidebar-group h4{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:0.06em;
+      color:#6b7280;
+      margin-bottom:3px;
+      font-weight:700;
+    }
+    .sidebar-links{list-style:none;font-size:13px}
+    .sidebar-links li+li{margin-top:3px}
+    .sidebar-links a{color:#1d4ed8}
+    .sidebar-links a:hover{text-decoration:underline}
+
+    /* ===== QUICK SEARCH ===== */
+    .tool-search{margin:6px 0 4px;}
+    .sidebar-search-input-wrapper{
+      position:relative;
+      display:flex;
+      align-items:center;
+      margin-top:4px;
+    }
+    .sidebar-search-icon{
+      position:absolute;
+      left:10px;
+      font-size:12px;
+      opacity:0.7;
+    }
+    .sidebar-search-input{
+      width:100%;
+      padding:8px 10px 8px 28px;
+      border-radius:8px;
+      border:1px solid #d5d9e0;
+      background-color:#f9fafb;
+      font-size:13px;
+      outline:none;
+      transition:border-color .15s ease,background-color .15s ease,box-shadow .15s ease;
+    }
+    .sidebar-search-input:focus{
+      border-color:#3f82bd;
+      background-color:#ffffff;
+      box-shadow:0 0 0 1px rgba(63,130,189,0.12);
+    }
+    .sidebar-search-suggestions{
+      list-style:none;
+      margin-top:8px;
+      padding:4px 0;
+      max-height:220px;
+      overflow-y:auto;
+      border-radius:10px;
+      border:1px solid #e3e7ee;
+      background-color:#ffffff;
+      box-shadow:0 8px 20px rgba(15,23,42,0.12);
+      display:none;
+    }
+    .sidebar-search-suggestions.visible{display:block;}
+    .sidebar-search-suggestions li{
+      font-size:13px;
+      padding:7px 10px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+    .sidebar-search-suggestions li + li{
+      border-top:1px solid #f1f3f8;
+    }
+    .sidebar-search-suggestions li span.tool-name{
+      flex:1;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .sidebar-search-suggestions li i{
+      font-size:11px;
+      opacity:0.7;
+    }
+    .sidebar-search-suggestions li:hover{
+      background-color:#f3f4f8;
+    }
+
+    /* ===== Footer ===== */
+    .pro-footer{background:#020617;color:#cbd5e1;margin-top:40px}
+    .pf-wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding:34px 15px;
+      display:grid;
+      grid-template-columns:320px 1fr;
+      gap:26px;
+    }
+    .pf-logo{display:flex;align-items:center;gap:10px}
+    .pf-brand-text{font-size:18px;font-weight:800;color:#e2e8f0}
+    .pf-brand-text span{color:#38bdf8}
+    .pf-tag{margin-top:8px;color:#94a3b8;font-size:13px}
+    .pf-social{display:flex;gap:10px;margin-top:10px}
+    .pf-social a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:34px;height:34px;
+      border:1px solid #1e293b;
+      border-radius:10px;
+      background:#0b1220;
+      color:#cbd5e1;
+      transition:background .15s,color .15s,border-color .15s,transform .15s,box-shadow .15s;
+    }
+    .pf-social a:hover{
+      background:#38bdf8;
+      border-color:#38bdf8;
+      color:#0b1220;
+      transform:translateY(-1px);
+      box-shadow:0 4px 12px rgba(56,189,248,.4);
+    }
+    .pf-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .pf-col h5{color:#e2e8f0;font-weight:800;font-size:14px;margin-bottom:10px}
+    .pf-col ul{list-style:none}
+    .pf-col li{margin:8px 0}
+    .pf-col a{color:#94a3b8}
+    .pf-col a:hover{color:#e2e8f0}
+    .pf-bottom{border-top:1px solid #1e293b;background:#0b1220}
+    .pf-bottom-wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding:12px 15px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      color:#8893a7;
+      font-size:13px;
+    }
+    .pf-links{display:flex;gap:10px}
+    .pf-links a{color:#94a3b8}
+    .pf-links a:hover{color:#e2e8f0}
+
+    /* ===== Modal ===== */
+    .modal-overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(15,23,42,0.7);
+      display:none;
+      z-index:200;
+    }
+    .modal{
+      position:fixed;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      width:420px;
+      max-width:96vw;
+      background:#ffffff;
+      border:1px solid #e5e7eb;
+      border-radius:14px;
+      box-shadow:0 18px 40px rgba(15,23,42,0.35);
+      display:none;
+      z-index:210;
+    }
+    .modal-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:10px 12px;
+      border-bottom:1px solid #e5e7eb;
+    }
+    .modal-head h3{font-size:15px;font-weight:800;color:#111827}
+    .modal-close{
+      background:#f3f4f6;
+      border:1px solid #e5e7eb;
+      border-radius:8px;
+      padding:6px 8px;
+      cursor:pointer;
+    }
+    .modal-body{padding:12px;font-size:13px;color:#4b5563}
+
+    /* ===== Responsive ===== */
+    @media (max-width:1100px){
+      .pf-wrap{grid-template-columns:1fr;}
+      .pf-cols{grid-template-columns:repeat(2,1fr);}
+      .writing-main{grid-template-columns:minmax(0,1.9fr) minmax(260px,1.2fr);}
+    }
+    @media (max-width:992px){
+      .wc-nav{display:none;}
+      .mobile-menu-btn{display:inline-block;}
+      .writing-main{grid-template-columns:1fr;}
+      .writing-sidebar{order:-1;}
+      .controls-row{grid-template-columns:1fr;}
+      .prompt-text{font-size:18px;}
+    }
+    @media (max-width:640px){
+      .pf-cols{grid-template-columns:1fr;}
+      .button-row{flex-direction:column;align-items:stretch;}
+      .primary-btn,.secondary-btn{justify-content:center;}
+      .timer-display{font-size:36px;}
+      .stats-grid{grid-template-columns:repeat(2,1fr);}
+      .prompt-text{font-size:16px;padding:0;}
+      .prompt-actions{flex-wrap:wrap;}
+    }
+    @media (max-width:480px){
+      .stats-grid{grid-template-columns:1fr;}
+      .timer-controls{flex-wrap:wrap;}
+      .timer-btn{flex:1;justify-content:center;}
+    }
+    @media (prefers-reduced-motion:reduce){
+      *{animation:none !important;transition:none !important;scroll-behavior:auto !important;}
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="wc-header">
+    <div class="wc-wrap">
+      <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+        <span class="slab slab-w">W</span>
+        <span class="slab slab-o">O</span>
+        <span class="slab slab-r">R</span>
+        <span class="slab slab-d">D</span>
+        <span class="wc-brand-text">
+          Calculator
+          <small class="wc-tagline">Every Word Counts</small>
+        </span>
+      </a>
+
+      <nav class="wc-nav" aria-label="Primary">
+        <a href="https://wordcalculator.net" class="wc-link">Home</a>
+        <a href="blog.html" class="wc-link">Blog</a>
+        <a href="tools.html" class="wc-link">Tools</a>
+        <a href="about.html" class="wc-link">About Us</a>
+		<a href="signin.html" class="wc-link">Sign In</a>
+      </nav>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <div class="mobile-nav-header">
+        <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <span class="wc-brand-text">Calculator</span>
+        </a>
+        <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="https://wordcalculator.net" class="nav-link mobile-link">Home</a>
+        <a href="blog.html" class="nav-link mobile-link">Blog</a>
+        <a href="tools.html" class="nav-link mobile-link">Tools</a>
+        <a href="about.html" class="nav-link mobile-link">About Us</a>
+        <a href="signin.html" class="nav-link mobile-link">Sign In</a>
+      </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+  </header>
+
+  <!-- ===== Breadcrumbs ===== -->
+  <div class="crumb-wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="https://wordcalculator.net">Home</a>
+      <span class="crumb-separator">/</span>
+      <a href="tools.html">Tools</a>
+      <span class="crumb-separator">/</span>
+      <span class="crumb-current">Writing Prompt Generator</span>
+    </nav>
+  </div>
+
+  <!-- ==================== MAIN ==================== -->
+  <main class="writing-main">
+    <!-- LEFT SIDE -->
+    <section class="writing-left">
+      <div class="writing-top-grid">
+        <article class="card" aria-labelledby="promptCardTitle">
+          <div class="prompt-shell">
+            <div class="prompt-title-row">
+              <h1 id="promptCardTitle" class="prompt-title">
+                <i class="fas fa-lightbulb prompt-icon"></i>
+                Daily Writing Prompt Generator
+              </h1>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-number" id="totalPrompts">1000+</div>
+                <div class="stat-label">Unique Prompts</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number" id="generatedCount">0</div>
+                <div class="stat-label">Generated Today</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number" id="savedCount">0</div>
+                <div class="stat-label">Saved Prompts</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number" id="writingTime">0</div>
+                <div class="stat-label">Minutes Written</div>
+              </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls-grid">
+              <div class="controls-row">
+                <div class="control-group">
+                  <label for="genreSelect"><i class="fas fa-book"></i> Genre</label>
+                  <select id="genreSelect" class="select-control">
+                    <option value="random">Random (All Genres)</option>
+                    <option value="fiction">Fiction / Story</option>
+                    <option value="poetry">Poetry</option>
+                    <option value="nonfiction">Non-Fiction</option>
+                    <option value="journal">Journal / Diary</option>
+                    <option value="blog">Blog Post</option>
+                    <option value="dialogue">Dialogue</option>
+                    <option value="character">Character</option>
+                    <option value="setting">Setting / World</option>
+                    <option value="mystery">Mystery / Thriller</option>
+                    <option value="scifi">Sci-Fi / Fantasy</option>
+                    <option value="romance">Romance</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <label for="difficultySelect"><i class="fas fa-signal"></i> Difficulty</label>
+                  <select id="difficultySelect" class="select-control">
+                    <option value="random">Random Level</option>
+                    <option value="easy">Easy (Beginner)</option>
+                    <option value="medium" selected>Medium (Intermediate)</option>
+                    <option value="hard">Hard (Advanced)</option>
+                    <option value="challenge">Writing Challenge</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <label for="promptType"><i class="fas fa-ruler"></i> Prompt Type</label>
+                  <select id="promptType" class="select-control">
+                    <option value="sentence">Single Sentence</option>
+                    <option value="scenario">Full Scenario</option>
+                    <option value="question" selected>Thought Question</option>
+                    <option value="firstline">First Line Starter</option>
+                    <option value="dialogue">Dialogue Starter</option>
+                    <option value="character">Character Prompt</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="button-row">
+                <button id="generateBtn" class="primary-btn">
+                  <i class="fas fa-wand-magic-sparkles"></i>
+                  Generate New Prompt
+                </button>
+                <button id="randomBtn" class="secondary-btn">
+                  <i class="fas fa-random"></i>
+                  Random Everything
+                </button>
+                <button id="clearHistoryBtn" class="secondary-btn">
+                  <i class="fas fa-trash"></i>
+                  Clear History
+                </button>
+              </div>
+            </div>
+
+            <!-- Generated Prompt Display -->
+            <div class="prompt-display">
+              <div class="prompt-id">#001</div>
+              <div class="prompt-meta">
+                <i class="fas fa-tag"></i>
+                <span id="currentGenre">Fiction</span> •
+                <span id="currentDifficulty">Medium</span>
+              </div>
+              <p id="promptText" class="prompt-text">
+                Click "Generate New Prompt" to get your first creative writing idea...
+              </p>
+              <div class="prompt-actions">
+                <button id="savePromptBtn" class="action-btn save-btn">
+                  <i class="far fa-bookmark"></i>
+                  Save Prompt
+                </button>
+                <button id="copyPromptBtn" class="action-btn copy-btn">
+                  <i class="far fa-copy"></i>
+                  Copy to Clipboard
+                </button>
+                <button id="newPromptBtn" class="action-btn">
+                  <i class="fas fa-redo"></i>
+                  New Prompt
+                </button>
+                <button id="timerQuickBtn" class="action-btn">
+                  <i class="fas fa-hourglass-start"></i>
+                  Start 15min Timer
+                </button>
+              </div>
+            </div>
+
+            <!-- Writing Timer -->
+            <div class="timer-section">
+              <div class="timer-header">
+                <h3><i class="fas fa-hourglass-half"></i> Writing Timer</h3>
+                <div class="control-group" style="width:120px;">
+                  <select id="timerDuration" class="select-control">
+                    <option value="5">5 minutes</option>
+                    <option value="10">10 minutes</option>
+                    <option value="15">15 minutes</option>
+                    <option value="20">20 minutes</option>
+                    <option value="30" selected>30 minutes</option>
+                    <option value="45">45 minutes</option>
+                    <option value="60">60 minutes</option>
+                  </select>
+                </div>
+              </div>
+              <div class="timer-display" id="timerDisplay">30:00</div>
+              <div class="timer-progress">
+                <div class="timer-progress-fill" id="timerProgress"></div>
+              </div>
+              <div class="timer-controls">
+                <button id="timerStartBtn" class="timer-btn start">
+                  <i class="fas fa-play"></i>
+                  Start Timer
+                </button>
+                <button id="timerStopBtn" class="timer-btn stop" disabled>
+                  <i class="fas fa-pause"></i>
+                  Pause
+                </button>
+                <button id="timerResetBtn" class="timer-btn reset">
+                  <i class="fas fa-undo"></i>
+                  Reset
+                </button>
+              </div>
+            </div>
+
+            <!-- Prompt History -->
+            <div class="history-section">
+              <div class="history-header">
+                <h3><i class="fas fa-history"></i> Recent Prompts</h3>
+                <span id="historyCount">0 saved</span>
+              </div>
+              <div class="history-list" id="historyList">
+                <!-- History items will be added here -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick tips -->
+          <div class="section-block" style="margin-top:12px;">
+            <h4>How to use this writing prompt generator</h4>
+            <ul>
+              <li>Select your preferred <strong>genre</strong> and <strong>difficulty level</strong>.</li>
+              <li>Click "Generate New Prompt" to get a unique writing idea.</li>
+              <li>Use the <strong>writing timer</strong> to challenge yourself to write without stopping.</li>
+              <li><strong>Save</strong> prompts you like for future reference.</li>
+              <li>Try different combinations to discover new creative directions.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <!-- SEO content -->
+      <article class="section-block">
+        <h3>Beat Writer's Block with Creative Writing Prompts</h3>
+        <p>
+          This <strong>Daily Writing Prompt Generator</strong> creates unique, never-repeating writing prompts
+          using advanced template-based algorithms. With thousands of possible combinations, you'll always
+          get fresh inspiration for your writing projects.
+        </p>
+        
+        <h4>How it works</h4>
+        <p>
+          The generator combines different elements like characters, settings, conflicts, and themes
+          to create unique prompts every time. All processing happens locally in your browser - no API
+          calls, no data sent to servers, completely private and free.
+        </p>
+        
+        <h4>Perfect for:</h4>
+        <ul>
+          <li><strong>Fiction writers</strong> needing story ideas</li>
+          <li><strong>Poets</strong> seeking inspiration</li>
+          <li><strong>Bloggers</strong> looking for fresh topics</li>
+          <li><strong>Journal writers</strong> wanting reflection prompts</li>
+          <li><strong>Students</strong> in creative writing classes</li>
+          <li><strong>Anyone</strong> wanting to develop a writing habit</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- RIGHT SIDE / SIDEBAR -->
+    <aside class="writing-sidebar" aria-label="Quick search and related tools">
+      <div class="sidebar-card">
+        <div class="sidebar-title-bar">
+          <span>Quick Search</span>
+          <i class="fas fa-magnifying-glass"></i>
+        </div>
+
+        <div class="tool-search">
+          <small>Quick links to other tools on WordCalculator.net</small>
+          <div class="sidebar-search-input-wrapper">
+            <i class="fa-solid fa-magnifying-glass sidebar-search-icon" aria-hidden="true"></i>
+            <input
+              type="search"
+              id="toolSearchInput"
+              class="sidebar-search-input"
+              placeholder="Search tools by name..."
+              autocomplete="off"
+              aria-label="Search tools by name"
+            />
+          </div>
+          <ul id="toolSearchSuggestions" class="sidebar-search-suggestions" aria-label="Tool suggestions"></ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Popular Tools</h4>
+          <ul class="sidebar-links">
+            <li><a href="age-calculator.html">Age Calculator</a></li>
+            <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+            <li><a href="calorie-calculator.html">Calorie Calculator</a></li>
+            <li><a href="area-converter.html">Area Converter</a></li>
+            <li><a href="data-size-converter.html">Data Size Converter</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Text & Writing</h4>
+          <ul class="sidebar-links">
+            <li><a href="https://wordcalculator.net">Word & Character Counter</a></li>
+            <li><a href="case-converter.html">Case Converter</a></li>
+            <li><a href="readability-analyzer.html">Readability Analyzer</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Calculators</h4>
+          <ul class="sidebar-links">
+            <li><a href="loan-emi-calculator.html">Loan & EMI Calculator</a></li>
+            <li><a href="interest-calculator.html">Interest Calculator</a></li>
+            <li><a href="percentage-calculator.html">Percentage Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Converters</h4>
+          <ul class="sidebar-links">
+            <li><a href="length-distance-converter.html">Length Converter</a></li>
+            <li><a href="temperature-converter.html">Temperature Converter</a></li>
+            <li><a href="speed-converter.html">Speed Converter</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="pro-footer" id="about" aria-label="Website footer">
+    <div class="pf-wrap">
+      <div class="pf-brand">
+        <div class="pf-logo">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <div class="pf-brand-text">
+            WordCalculator<span>.net</span>
+          </div>
+        </div>
+        <p class="pf-tag">A focused, distraction-free toolkit for precise writing.</p>
+        <div class="pf-social">
+          <a href="https://facebook.com/wordcalculator" aria-label="Facebook" rel="noopener" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/wordcalculator" aria-label="X (Twitter)" rel="noopener" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://linkedin.com/company/wordcalculator" aria-label="LinkedIn" rel="noopener" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://youtube.com/@wordcalculator" aria-label="YouTube" rel="noopener" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="pf-cols">
+        <div class="pf-col">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="https://wordcalculator.net">Editor</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="writing-prompt-generator.html">Writing Prompts</a></li>
+            <li><a href="case-converter.html">Case Converter</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="guides.html">Tips &amp; Guides</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="careers.html">Careers</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pf-bottom">
+      <div class="pf-bottom-wrap">
+        <div>© <span id="pf-year"></span> WordCalculator.net — All rights reserved.</div>
+        <div class="pf-links">
+          <a href="sitemap.html">Sitemap</a>
+          <a href="status.html">Status</a>
+          <a href="accessibility.html">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Auth Modal ===== -->
+  <div class="modal-overlay" id="authOverlay" aria-hidden="true"></div>
+  <div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <div class="modal-head">
+      <h3 id="authTitle"><i class="fas fa-user-lock"></i> Account</h3>
+      <button class="modal-close" id="authCloseBtn" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body">
+      Sign-in and account features are coming soon. For now, all tools are free to use without registration.
+    </div>
+  </div>
+
+  <!-- ==================== JS ==================== -->
+   
+  <!-- Tools Directory Js -->
+  <script src="tools-directory.js"></script>
+
+  <script>
+    const $ = (s) => document.querySelector(s);
+    const $$ = (s) => Array.from(document.querySelectorAll(s));
+
+    document.addEventListener("DOMContentLoaded", () => {
+      initYear();
+      initMobileMenu();
+      initAuthModal();
+      initWritingPrompt();
+      initToolQuickSearch();
+      loadStats();
+    });
+
+    function initYear() {
+      const el = $("#pf-year");
+      if (el) el.textContent = new Date().getFullYear();
+    }
+
+    function initMobileMenu() {
+      const mobileMenuBtn = $("#mobileMenuBtn");
+      const mobileCloseBtn = $("#mobileCloseBtn");
+      const mobileNav = $("#mobileNav");
+      const mobileOverlay = $("#mobileOverlay");
+      if (!mobileMenuBtn || !mobileNav || !mobileOverlay) return;
+
+      const open = () => {
+        mobileNav.classList.add("active");
+        mobileOverlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+      };
+      const close = () => {
+        mobileNav.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+      };
+
+      mobileMenuBtn.addEventListener("click", open);
+      if (mobileCloseBtn) mobileCloseBtn.addEventListener("click", close);
+      mobileOverlay.addEventListener("click", close);
+      $$(".mobile-link").forEach(link => link.addEventListener("click", close));
+
+      const openAuthBtnMobile = $("#openAuthBtnMobile");
+      if (openAuthBtnMobile) {
+        openAuthBtnMobile.addEventListener("click", () => {
+          close();
+          openAuthModal();
+        });
+      }
+    }
+
+    function initAuthModal() {
+      const openBtn = $("#openAuthBtn");
+      const overlay = $("#authOverlay");
+      const modal = $("#authModal");
+      const closeBtn = $("#authCloseBtn");
+      if (!overlay || !modal) return;
+
+      const open = () => {
+        overlay.style.display = "block";
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden";
+      };
+      const close = () => {
+        overlay.style.display = "none";
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+      };
+
+      if (openBtn) openBtn.addEventListener("click", open);
+      if (closeBtn) closeBtn.addEventListener("click", close);
+      overlay.addEventListener("click", close);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") close();
+      });
+    }
+
+    function openAuthModal() {
+      const overlay = $("#authOverlay");
+      const modal = $("#authModal");
+      if (!overlay || !modal) return;
+      overlay.style.display = "block";
+      modal.style.display = "block";
+      document.body.style.overflow = "hidden";
+    }
+
+    /* ===== REAL Writing Prompt Generator ===== */
+    let promptHistory = [];
+    let savedPrompts = [];
+    let generatedCount = 0;
+    let writingTime = 0;
+    let currentPromptId = 1;
+    let timerInterval = null;
+    let timerRunning = false;
+    let timeLeft = 1800; // 30 minutes in seconds
+
+    // REAL PROMPT DATABASE - 1000+ combinations possible
+    const PROMPT_COMPONENTS = {
+      characters: [
+        "a retired detective", "a time-traveling historian", "a sentient AI", "a ghost who doesn't know they're dead",
+        "a librarian with forbidden knowledge", "a chef who can cook emotions", "a musician whose music alters reality",
+        "a painter whose portraits come to life", "a gardener who grows memories", "a thief who steals intangible things",
+        "a scientist studying parallel universes", "a child who sees patterns in everything", "an elderly person with a mysterious past",
+        "a stranger with familiar eyes", "a ruler who hates power", "a prisoner who's actually free", "a hero who's tired of saving people",
+        "a villain with good intentions", "a journalist uncovering secrets", "an artist losing their inspiration",
+        "a teacher who knows too much", "a soldier returning home changed", "a merchant selling dreams",
+        "a parent hiding the truth", "a sibling seeking revenge", "a friend who betrayed", "a lover from the past",
+        "a neighbor with secrets", "a tourist lost in time", "a prophet who can't see their own future"
+      ],
+
+      settings: [
+        "in a city that never sleeps", "on a planet with three suns", "in a library that contains every book ever written",
+        "during a storm that lasts for years", "in a society where emotions are illegal", "in a world where magic is dying",
+        "at the edge of the universe", "in a place between worlds", "during a revolution no one asked for",
+        "in a time when memories are currency", "where animals can speak but choose not to", "in a house with infinite rooms",
+        "on a train that goes nowhere", "in a garden that grows according to lies told", "where colors have sounds",
+        "in a reality where art is alive", "where every lie becomes physically manifest", "in a world without shadows",
+        "where time flows differently for everyone", "in a place that exists only in dreams", "in a underwater city",
+        "on a floating island", "in a desert of glass", "in a forest of crystal trees", "in a city built on clouds",
+        "in a village that moves", "in a castle made of ice", "in a town where everyone has the same dream",
+        "in a market that sells time", "in a school for magical creatures"
+      ],
+
+      conflicts: [
+        "must choose between two impossible options", "discovers a secret that changes everything",
+        "faces their greatest fear", "loses something they can't live without", "gains a power they don't want",
+        "meets their alternate self", "breaks a fundamental rule of their world", "uncovers a conspiracy",
+        "is given a second chance they don't deserve", "must sacrifice something precious", "realizes they've been lied to",
+        "finds something that shouldn't exist", "must trust their enemy", "discovers they're not who they thought",
+        "must confront their past", "is offered everything they ever wanted at a terrible price",
+        "learns a truth that could destroy their world", "must betray someone to do what's right",
+        "faces a choice that has no right answer", "must become what they fear most", "witnesses an impossible event",
+        "finds a door that shouldn't be there", "receives a message from the future", "discovers they can't die",
+        "loses their memory at a crucial moment", "gains the ability to read minds", "is haunted by a past they don't remember",
+        "must solve a mystery everyone else has forgotten", "discovers everyone around them is lying",
+        "realizes they're living the same day over and over"
+      ],
+
+      themes: [
+        "the cost of progress", "the nature of reality", "what makes us human", "the power of memory",
+        "the weight of secrets", "the illusion of choice", "the search for meaning", "the price of freedom",
+        "the masks we wear", "the stories we tell ourselves", "the ghosts of the past", "the hope for the future",
+        "the line between good and evil", "the burden of knowledge", "the comfort of lies", "the danger of truth",
+        "the chains of love", "the prison of the mind", "the freedom of letting go", "the courage to continue",
+        "the beauty of imperfection", "the strength in vulnerability", "the wisdom of silence", "the chaos of creation",
+        "the order in destruction", "the light in darkness", "the truth in fiction", "the reality of dreams",
+        "the distance between people", "the closeness of strangers"
+      ],
+
+      emotions: [
+        "joy that feels like pain", "grief that brings clarity", "anger that's actually fear",
+        "love that's become obligation", "hope that's dangerous", "curiosity that kills",
+        "pride that precedes a fall", "envy that motivates", "guilt that won't wash off",
+        "loneliness in a crowd", "peace that's unsettling", "excitement with dread",
+        "nostalgia for something never experienced", "ambition without direction",
+        "faith that's been shattered", "certainty that's wrong", "confusion that's enlightening",
+        "boredom that's profound", "awe that's terrifying", "contentment that feels like giving up"
+      ],
+
+      actions: [
+        "writes a letter they never send", "plants a seed that grows overnight", "breaks something irreplaceable",
+        "creates something beautiful from ruins", "tells a lie that becomes truth", "keeps a promise that destroys them",
+        "makes a choice that saves everyone but themselves", "discovers a talent they never wanted",
+        "loses the one thing that mattered", "finds something they weren't looking for", "remembers what they tried to forget",
+        "forgets what they should remember", "speaks when they should be silent", "stays silent when they should speak",
+        "leaves when they should stay", "stays when they should leave", "trusts the wrong person",
+        "distrusts the right person", "loves too much", "doesn't love enough"
+      ],
+
+      objects: [
+        "a key that opens nothing", "a book that writes itself", "a mirror that shows the truth",
+        "a clock that runs backward", "a map to nowhere", "a letter from a stranger",
+        "a photograph that changes", "a music box that plays memories", "a locket with no picture",
+        "a ring that binds", "a weapon that heals", "a medicine that harms", "a tool that creates",
+        "a machine that destroys", "a gift that curses", "a curse that blesses", "a door that leads inward",
+        "a window that shows the past", "a lamp with no light", "a candle that never burns out"
+      ],
+
+      // Genre-specific templates
+      templates: {
+        fiction: [
+          "Write a story about {character} who {conflict} in {setting}, exploring {theme}.",
+          "{character} {action} in {setting}, leading to {conflict} about {theme}.",
+          "In {setting}, {character} discovers {object} and must {conflict}, feeling {emotion} throughout."
+        ],
+        poetry: [
+          "Write a poem capturing {emotion} through imagery of {setting} and {object}.",
+          "Create a poem where {character} reflects on {theme} in {setting}.",
+          "Write about {emotion} and {theme} using metaphors from {setting} and {object}."
+        ],
+        nonfiction: [
+          "Reflect on how {theme} manifests in {setting} through personal experience with {emotion}.",
+          "Analyze how {character}'s experience with {conflict} illustrates {theme} in {setting}.",
+          "Explore the relationship between {emotion} and {theme} through observation of {setting}."
+        ],
+        journal: [
+          "Write about a time you felt {emotion} when facing {conflict} related to {theme}.",
+          "Reflect on how {setting} affects your understanding of {theme} and {emotion}.",
+          "Describe an experience with {object} that made you reconsider {theme}."
+        ],
+        blog: [
+          "How {character}'s experience with {conflict} in {setting} teaches us about {theme}.",
+          "Exploring {theme}: Lessons from {setting} and {character}'s journey with {emotion}.",
+          "Why understanding {emotion} in {setting} matters for {theme} in modern life."
+        ],
+        dialogue: [
+          "Write a dialogue where {character} discusses {theme} with another in {setting}, revealing {emotion}.",
+          "Two characters in {setting} argue about {conflict} while hiding their true {emotion} about {theme}.",
+          "{character} confesses {emotion} about {theme} to another in {setting}, leading to {conflict}."
+        ],
+        character: [
+          "Develop {character} who struggles with {emotion} while facing {conflict} in {setting}, embodying {theme}.",
+          "Create a character whose {emotion} about {theme} leads them to {action} in {setting}.",
+          "Describe {character}'s internal {conflict} between {emotion} and duty in {setting}."
+        ],
+        setting: [
+          "Describe {setting} in detail, showing how it reflects {theme} and affects {character}'s {emotion}.",
+          "Create a {setting} where {object} has special significance, influencing {character}'s {conflict} about {theme}.",
+          "How does {setting} shape the {emotion} and {theme} of stories that happen there?"
+        ],
+        mystery: [
+          "In {setting}, {character} investigates {object} leading to {conflict} about {theme}, feeling {emotion}.",
+          "{character} discovers {conflict} in {setting} involving {object}, uncovering {theme}.",
+          "A mystery in {setting} where {character} must solve {conflict} related to {theme}, experiencing {emotion}."
+        ],
+        scifi: [
+          "In {setting}, {character} uses {object} to {conflict}, exploring {theme} and feeling {emotion}.",
+          "A sci-fi story where {character} in {setting} faces {conflict} with {object}, questioning {theme}.",
+          "{character}'s {action} with {object} in {setting} leads to {conflict} about {theme}."
+        ],
+        romance: [
+          "{character} feels {emotion} for another in {setting}, but {conflict} about {theme} stands in their way.",
+          "A romance where {character} in {setting} learns about {theme} through {emotion} and {conflict}.",
+          "How {character}'s {emotion} in {setting} leads to {conflict} and understanding of {theme}."
+        ]
+      }
+    };
+
+    // Difficulty modifiers
+    const DIFFICULTY_MODIFIERS = {
+      easy: {
+        length: "short",
+        complexity: "simple",
+        elements: 2
+      },
+      medium: {
+        length: "medium",
+        complexity: "moderate",
+        elements: 3
+      },
+      hard: {
+        length: "long",
+        complexity: "complex",
+        elements: 4
+      },
+      challenge: {
+        length: "detailed",
+        complexity: "advanced",
+        elements: 5
+      }
+    };
+
+    function initWritingPrompt() {
+      // Load saved data
+      const saved = localStorage.getItem('writingPromptData');
+      if (saved) {
+        try {
+          const data = JSON.parse(saved);
+          promptHistory = data.history || [];
+          savedPrompts = data.saved || [];
+          generatedCount = data.generatedCount || 0;
+          writingTime = data.writingTime || 0;
+          currentPromptId = data.currentPromptId || 1;
+        } catch (e) {
+          console.log("Error loading saved data, starting fresh");
+        }
+      }
+
+      // Update UI
+      updateStats();
+      renderHistory();
+
+      // Event listeners
+      $("#generateBtn").addEventListener("click", generatePrompt);
+      $("#randomBtn").addEventListener("click", generateRandomPrompt);
+      $("#savePromptBtn").addEventListener("click", saveCurrentPrompt);
+      $("#copyPromptBtn").addEventListener("click", copyPromptToClipboard);
+      $("#newPromptBtn").addEventListener("click", generatePrompt);
+      $("#timerQuickBtn").addEventListener("click", startQuickTimer);
+      $("#clearHistoryBtn").addEventListener("click", clearHistory);
+
+      // Timer event listeners
+      $("#timerStartBtn").addEventListener("click", startTimer);
+      $("#timerStopBtn").addEventListener("click", stopTimer);
+      $("#timerResetBtn").addEventListener("click", resetTimer);
+      $("#timerDuration").addEventListener("change", updateTimerDisplay);
+
+      // Generate initial prompt
+      setTimeout(() => {
+        generatePrompt();
+      }, 500);
+    }
+
+    function getRandomElement(array) {
+      return array[Math.floor(Math.random() * array.length)];
+    }
+
+    function generateRandomPrompt() {
+      // Set random values
+      const genres = ["fiction", "poetry", "nonfiction", "journal", "blog", "dialogue", "character", "setting", "mystery", "scifi", "romance"];
+      const difficulties = ["easy", "medium", "hard", "challenge"];
+      
+      $("#genreSelect").value = getRandomElement(genres);
+      $("#difficultySelect").value = getRandomElement(difficulties);
+      $("#promptType").value = getRandomElement(["sentence", "scenario", "question", "firstline", "dialogue", "character"]);
+      
+      generatePrompt();
+    }
+
+    function generatePrompt() {
+      const genre = $("#genreSelect").value;
+      const difficulty = $("#difficultySelect").value;
+      const promptType = $("#promptType").value;
+      
+      // For "random" selections, pick actual values
+      const actualGenre = genre === "random" ? getRandomElement(["fiction", "poetry", "nonfiction", "journal", "blog", "dialogue", "character", "setting"]) : genre;
+      const actualDifficulty = difficulty === "random" ? getRandomElement(["easy", "medium", "hard", "challenge"]) : difficulty;
+      
+      // Get elements based on difficulty
+      const modifier = DIFFICULTY_MODIFIERS[actualDifficulty];
+      const numElements = modifier.elements;
+      
+      // Collect random elements
+      const elements = {
+        character: getRandomElement(PROMPT_COMPONENTS.characters),
+        setting: getRandomElement(PROMPT_COMPONENTS.settings),
+        conflict: getRandomElement(PROMPT_COMPONENTS.conflicts),
+        theme: getRandomElement(PROMPT_COMPONENTS.themes),
+        emotion: getRandomElement(PROMPT_COMPONENTS.emotions),
+        action: getRandomElement(PROMPT_COMPONENTS.actions),
+        object: getRandomElement(PROMPT_COMPONENTS.objects)
+      };
+      
+      let promptText;
+      
+      // Generate based on prompt type
+      switch(promptType) {
+        case "sentence":
+          promptText = generateSentencePrompt(actualGenre, elements);
+          break;
+        case "scenario":
+          promptText = generateScenarioPrompt(actualGenre, elements, numElements);
+          break;
+        case "question":
+          promptText = generateQuestionPrompt(actualGenre, elements);
+          break;
+        case "firstline":
+          promptText = generateFirstLinePrompt(actualGenre, elements);
+          break;
+        case "dialogue":
+          promptText = generateDialoguePrompt(actualGenre, elements);
+          break;
+        case "character":
+          promptText = generateCharacterPrompt(actualGenre, elements, numElements);
+          break;
+        default:
+          promptText = generateSentencePrompt(actualGenre, elements);
+      }
+      
+      // Apply difficulty length
+      promptText = applyLengthModifier(promptText, modifier.length);
+      
+      // Update UI
+      $("#promptText").textContent = promptText;
+      $("#currentGenre").textContent = formatGenreName(actualGenre);
+      $("#currentDifficulty").textContent = actualDifficulty.charAt(0).toUpperCase() + actualDifficulty.slice(1);
+      $("#promptId").textContent = `#${currentPromptId.toString().padStart(3, '0')}`;
+      
+      // Add to history
+      const promptData = {
+        id: currentPromptId,
+        text: promptText,
+        genre: actualGenre,
+        difficulty: actualDifficulty,
+        type: promptType,
+        timestamp: new Date().toISOString()
+      };
+      
+      promptHistory.unshift(promptData);
+      if (promptHistory.length > 20) promptHistory = promptHistory.slice(0, 20);
+      
+      // Update counts
+      generatedCount++;
+      currentPromptId++;
+      
+      // Save and update
+      saveData();
+      updateStats();
+      renderHistory();
+      
+      // Animation effect
+      const display = $(".prompt-display");
+      display.style.transform = "scale(0.98)";
+      setTimeout(() => {
+        display.style.transform = "scale(1)";
+      }, 150);
+    }
+    
+    function generateSentencePrompt(genre, elements) {
+      const templates = {
+        fiction: [
+          `Write about ${elements.character} who ${elements.conflict}.`,
+          `${elements.character} ${elements.action} in ${elements.setting}.`,
+          `Explore ${elements.theme} through ${elements.character}'s experience in ${elements.setting}.`
+        ],
+        poetry: [
+          `Write a poem capturing ${elements.emotion} through imagery of ${elements.setting}.`,
+          `Create verse about ${elements.theme} as experienced by ${elements.character}.`,
+          `Poetically describe ${elements.object} in ${elements.setting}, evoking ${elements.emotion}.`
+        ],
+        nonfiction: [
+          `Reflect on how ${elements.theme} manifests in ${elements.setting}.`,
+          `Analyze the relationship between ${elements.emotion} and ${elements.theme}.`,
+          `Discuss ${elements.character}'s experience with ${elements.conflict} in context of ${elements.theme}.`
+        ]
+      };
+      
+      return getRandomElement(templates[genre] || templates.fiction);
+    }
+    
+    function generateScenarioPrompt(genre, elements, numElements) {
+      const scenarios = {
+        fiction: [
+          `Scenario: ${elements.character} discovers ${elements.object} in ${elements.setting}. This leads to ${elements.conflict}, forcing them to confront ${elements.theme} while dealing with ${elements.emotion}.`,
+          `Setup: ${elements.character} must ${elements.action} in ${elements.setting}. The challenge involves ${elements.conflict}, exploring ${elements.theme} through feelings of ${elements.emotion}.`,
+          `Situation: In ${elements.setting}, ${elements.character} faces ${elements.conflict} involving ${elements.object}. The core theme is ${elements.theme}, experienced through ${elements.emotion}.`
+        ],
+        mystery: [
+          `Mystery: ${elements.character} finds ${elements.object} in ${elements.setting}, leading to ${elements.conflict}. Investigate while exploring ${elements.theme} and feeling ${elements.emotion}.`,
+          `Puzzle: ${elements.character} must solve ${elements.conflict} in ${elements.setting} involving ${elements.object}. The solution reveals ${elements.theme} and evokes ${elements.emotion}.`
+        ],
+        scifi: [
+          `Sci-Fi: ${elements.character} uses ${elements.object} in ${elements.setting} to ${elements.action}, causing ${elements.conflict}. The story explores ${elements.theme} through ${elements.emotion}.`
+        ]
+      };
+      
+      return getRandomElement(scenarios[genre] || scenarios.fiction);
+    }
+    
+    function generateQuestionPrompt(genre, elements) {
+      const questions = {
+        fiction: [
+          `What if ${elements.character} ${elements.conflict} in ${elements.setting}? How would ${elements.theme} be explored through ${elements.emotion}?`,
+          `How would ${elements.character} react to discovering ${elements.object} in ${elements.setting}? What ${elements.theme} would this reveal?`,
+          `Why does ${elements.character} feel ${elements.emotion} about ${elements.theme} in ${elements.setting}? What ${elements.conflict} results from this?`
+        ],
+        journal: [
+          `When have you felt ${elements.emotion} about ${elements.theme}? Describe the experience in detail.`,
+          `How does ${elements.setting} affect your understanding of ${elements.theme}? Reflect on a personal example.`,
+          `What would you do if faced with ${elements.conflict} involving ${elements.object}? How would it relate to ${elements.theme}?`
+        ]
+      };
+      
+      return getRandomElement(questions[genre] || questions.fiction);
+    }
+    
+    function generateFirstLinePrompt(genre, elements) {
+      const firstLines = {
+        fiction: [
+          `The day ${elements.character} discovered ${elements.object} was the day everything changed.`,
+          `In ${elements.setting}, no one expected ${elements.character} to ${elements.action}.`,
+          `${elements.Emotion} washed over ${elements.character} as they realized ${elements.conflict}.`
+        ],
+        mystery: [
+          `The ${elements.object} shouldn't have been there, and ${elements.character} knew it meant ${elements.conflict}.`,
+          `When ${elements.character} found the note in ${elements.setting}, they understood ${elements.theme} was at stake.`
+        ]
+      };
+      
+      const line = getRandomElement(firstLines[genre] || firstLines.fiction);
+      return `First line: "${line}" Continue the story from here.`;
+    }
+    
+    function generateDialoguePrompt(genre, elements) {
+      return `Write a dialogue between ${elements.character} and another character in ${elements.setting}. They discuss ${elements.theme} while dealing with ${elements.conflict}. Show ${elements.emotion} through their conversation.`;
+    }
+    
+    function generateCharacterPrompt(genre, elements, numElements) {
+      return `Develop ${elements.character} who lives in ${elements.setting}. They struggle with ${elements.emotion} about ${elements.theme}, which leads them to ${elements.conflict}. Include details about their personality, background, and motivations.`;
+    }
+    
+    function applyLengthModifier(prompt, length) {
+      switch(length) {
+        case "short":
+          return prompt.split('.')[0] + '.';
+        case "long":
+          return prompt + " Include specific details and sensory descriptions.";
+        case "detailed":
+          return prompt + "\n\nAdditional requirements:\n• Include at least three senses\n• Develop internal conflict\n• Show character growth\n• Use symbolic imagery";
+        default: // medium
+          return prompt;
+      }
+    }
+    
+    function formatGenreName(genre) {
+      const names = {
+        fiction: "Fiction",
+        poetry: "Poetry",
+        nonfiction: "Non-Fiction",
+        journal: "Journal",
+        blog: "Blog",
+        dialogue: "Dialogue",
+        character: "Character",
+        setting: "Setting",
+        mystery: "Mystery",
+        scifi: "Sci-Fi",
+        romance: "Romance"
+      };
+      return names[genre] || genre;
+    }
+
+    function saveCurrentPrompt() {
+      const currentPrompt = {
+        id: currentPromptId,
+        text: $("#promptText").textContent,
+        genre: $("#genreSelect").value,
+        difficulty: $("#difficultySelect").value,
+        type: $("#promptType").value,
+        timestamp: new Date().toISOString(),
+        saved: true
+      };
+
+      // Check if already saved
+      const alreadySaved = savedPrompts.some(p => p.text === currentPrompt.text);
+      if (!alreadySaved) {
+        savedPrompts.unshift(currentPrompt);
+        if (savedPrompts.length > 50) savedPrompts = savedPrompts.slice(0, 50);
+
+        // Update button state temporarily
+        const saveBtn = $("#savePromptBtn");
+        const originalHTML = saveBtn.innerHTML;
+        saveBtn.innerHTML = '<i class="fas fa-check"></i> Saved!';
+        saveBtn.style.background = '#dcfce7';
+        saveBtn.style.borderColor = '#86efac';
+        saveBtn.style.color = '#16a34a';
+
+        setTimeout(() => {
+          saveBtn.innerHTML = originalHTML;
+          saveBtn.style.background = '';
+          saveBtn.style.borderColor = '';
+          saveBtn.style.color = '';
+        }, 2000);
+
+        saveData();
+        updateStats();
+      }
+    }
+
+    function copyPromptToClipboard() {
+      const promptText = $("#promptText").textContent;
+      const metadata = `Genre: ${$("#currentGenre").textContent} | Difficulty: ${$("#currentDifficulty").textContent}\n\n`;
+      const fullText = metadata + promptText;
+
+      navigator.clipboard.writeText(fullText).then(() => {
+        const copyBtn = $("#copyPromptBtn");
+        const originalHTML = copyBtn.innerHTML;
+        copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        copyBtn.style.background = '#dbeafe';
+        copyBtn.style.borderColor = '#93c5fd';
+        copyBtn.style.color = '#2563eb';
+
+        setTimeout(() => {
+          copyBtn.innerHTML = originalHTML;
+          copyBtn.style.background = '';
+          copyBtn.style.borderColor = '';
+          copyBtn.style.color = '';
+        }, 2000);
+      });
+    }
+
+    function startQuickTimer() {
+      $("#timerDuration").value = "15";
+      updateTimerDisplay();
+      startTimer();
+    }
+
+    function renderHistory() {
+      const historyList = $("#historyList");
+      if (!historyList) return;
+
+      const itemsToShow = promptHistory.slice(0, 10);
+      historyList.innerHTML = '';
+
+      if (itemsToShow.length === 0) {
+        historyList.innerHTML = '<div class="history-item" style="text-align:center;color:#6b7280;">No prompts generated yet</div>';
+        return;
+      }
+
+      itemsToShow.forEach(prompt => {
+        const item = document.createElement('div');
+        item.className = 'history-item';
+
+        const isSaved = savedPrompts.some(p => p.text === prompt.text);
+
+        item.innerHTML = `
+          <div class="history-prompt" title="${prompt.text}">
+            ${prompt.text.substring(0, 60)}${prompt.text.length > 60 ? '...' : ''}
+          </div>
+          <div class="history-actions">
+            <button class="history-btn use-btn" data-id="${prompt.id}" title="Use this prompt">
+              <i class="fas fa-redo"></i>
+            </button>
+            <button class="history-btn ${isSaved ? 'saved-btn' : 'save-btn'}" data-id="${prompt.id}" title="${isSaved ? 'Already saved' : 'Save prompt'}">
+              <i class="${isSaved ? 'fas' : 'far'} fa-bookmark"></i>
+            </button>
+          </div>
+        `;
+
+        historyList.appendChild(item);
+      });
+
+      // Add event listeners to new buttons
+      $$(".use-btn").forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const id = e.target.closest('button').getAttribute('data-id');
+          usePromptFromHistory(id);
+        });
+      });
+
+      $$(".save-btn, .saved-btn").forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const id = e.target.closest('button').getAttribute('data-id');
+          savePromptFromHistory(id);
+        });
+      });
+
+      $("#historyCount").textContent = `${savedPrompts.length} saved`;
+    }
+
+    function usePromptFromHistory(id) {
+      const prompt = promptHistory.find(p => p.id == id);
+      if (prompt) {
+        $("#promptText").textContent = prompt.text;
+        $("#genreSelect").value = prompt.genre;
+        $("#difficultySelect").value = prompt.difficulty;
+        $("#promptType").value = prompt.type || "sentence";
+        $("#currentGenre").textContent = formatGenreName(prompt.genre);
+        $("#currentDifficulty").textContent = prompt.difficulty.charAt(0).toUpperCase() + prompt.difficulty.slice(1);
+
+        // Animation
+        const display = $(".prompt-display");
+        display.style.transform = "scale(0.98)";
+        setTimeout(() => {
+          display.style.transform = "scale(1)";
+        }, 150);
+      }
+    }
+
+    function savePromptFromHistory(id) {
+      const prompt = promptHistory.find(p => p.id == id);
+      if (prompt && !savedPrompts.some(p => p.text === prompt.text)) {
+        savedPrompts.unshift({ ...prompt, saved: true });
+        if (savedPrompts.length > 50) savedPrompts = savedPrompts.slice(0, 50);
+        saveData();
+        updateStats();
+        renderHistory();
+      }
+    }
+
+    function clearHistory() {
+      if (confirm("Are you sure you want to clear all prompt history? This cannot be undone.")) {
+        promptHistory = [];
+        saveData();
+        renderHistory();
+      }
+    }
+
+    /* ===== Timer Functions ===== */
+    function startTimer() {
+      if (timerRunning) return;
+
+      timerRunning = true;
+      $("#timerStartBtn").disabled = true;
+      $("#timerStopBtn").disabled = false;
+      $("#timerDuration").disabled = true;
+
+      const startTime = Date.now();
+      const duration = parseInt($("#timerDuration").value) * 60; // Convert to seconds
+
+      timerInterval = setInterval(() => {
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+        timeLeft = Math.max(0, duration - elapsed);
+
+        updateTimerDisplay();
+
+        // Update progress bar
+        const progress = ((duration - timeLeft) / duration) * 100;
+        $("#timerProgress").style.width = `${progress}%`;
+
+        if (timeLeft <= 0) {
+          stopTimer();
+          playTimerCompleteSound();
+          alert("Time's up! Great writing session!");
+          writingTime += duration / 60; // Add minutes to writing time
+          updateStats();
+          saveData();
+        }
+      }, 1000);
+    }
+
+    function stopTimer() {
+      if (!timerRunning) return;
+
+      timerRunning = false;
+      clearInterval(timerInterval);
+      $("#timerStartBtn").disabled = false;
+      $("#timerStopBtn").disabled = true;
+      $("#timerDuration").disabled = false;
+
+      // Calculate time written
+      const duration = parseInt($("#timerDuration").value) * 60;
+      const timeWritten = duration - timeLeft;
+      writingTime += timeWritten / 60; // Convert to minutes
+      updateStats();
+      saveData();
+    }
+
+    function resetTimer() {
+      stopTimer();
+      const duration = parseInt($("#timerDuration").value) * 60;
+      timeLeft = duration;
+      updateTimerDisplay();
+      $("#timerProgress").style.width = "0%";
+    }
+
+    function updateTimerDisplay() {
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+      $("#timerDisplay").textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+
+    function playTimerCompleteSound() {
+      // Create a simple beep sound
+      try {
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+
+        oscillator.frequency.value = 800;
+        oscillator.type = 'sine';
+        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 1);
+
+        oscillator.start(audioContext.currentTime);
+        oscillator.stop(audioContext.currentTime + 1);
+      } catch (e) {
+        console.log("Audio not supported");
+      }
+    }
+
+    /* ===== Stats and Data Management ===== */
+    function updateStats() {
+      $("#generatedCount").textContent = generatedCount;
+      $("#savedCount").textContent = savedPrompts.length;
+      $("#writingTime").textContent = Math.floor(writingTime);
+      $("#totalPrompts").textContent = "1000+";
+    }
+
+    function loadStats() {
+      updateStats();
+    }
+
+    function saveData() {
+      const data = {
+        history: promptHistory,
+        saved: savedPrompts,
+        generatedCount: generatedCount,
+        writingTime: writingTime,
+        currentPromptId: currentPromptId,
+        lastUpdated: new Date().toISOString()
+      };
+      localStorage.setItem('writingPromptData', JSON.stringify(data));
+    }
+
+    /* ===== Tool directory & Quick Search (with icons) ===== */
+    const toolDirectory = allTools;
+
+    function initToolQuickSearch() {
+      const input = $("#toolSearchInput");
+      const suggestionsBox = $("#toolSearchSuggestions");
+      if (!input || !suggestionsBox || !Array.isArray(toolDirectory)) return;
+
+      let currentResults = [];
+
+      function renderSuggestions(query) {
+        const value = (query || "").trim().toLowerCase();
+        suggestionsBox.innerHTML = "";
+        if (!value) {
+          suggestionsBox.classList.remove("visible");
+          return;
+        }
+
+        const allMatches = toolDirectory.filter(tool => tool.name.toLowerCase().includes(value));
+        if (!allMatches.length) {
+          const li = document.createElement("li");
+          li.textContent = "No tools found";
+          suggestionsBox.appendChild(li);
+          suggestionsBox.classList.add("visible");
+          return;
+        }
+
+        function rankTool(tool) {
+          const name = tool.name.toLowerCase();
+          const pos = name.indexOf(value);
+          const starts = name.startsWith(value) ? 0 : 1;
+          const lenDiff = Math.abs(name.length - value.length);
+          return starts * 100 + pos * 2 + lenDiff;
+        }
+
+        currentResults = allMatches.slice().sort((a, b) => rankTool(a) - rankTool(b));
+        currentResults.slice(0, 10).forEach(tool => {
+          const li = document.createElement("li");
+          const iconEl = document.createElement("i");
+          iconEl.className = tool.icon || "fa-solid fa-wand-magic-sparkles";
+          const nameSpan = document.createElement("span");
+          nameSpan.className = "tool-name";
+          nameSpan.textContent = tool.name;
+          li.appendChild(iconEl);
+          li.appendChild(nameSpan);
+          li.addEventListener("click", () => {
+            if (tool.url) window.location.href = tool.url;
+          });
+          suggestionsBox.appendChild(li);
+        });
+
+        suggestionsBox.classList.add("visible");
+      }
+
+      input.addEventListener("input", (e) => renderSuggestions(e.target.value));
+
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          const value = input.value.trim().toLowerCase();
+          if (!value) return;
+          const first = currentResults.length ? currentResults[0] : toolDirectory.find(
+            (tool) => tool.name.toLowerCase().includes(value)
+          );
+          if (first && first.url) window.location.href = first.url;
+        }
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!input.contains(e.target) && !suggestionsBox.contains(e.target)) {
+          suggestionsBox.classList.remove("visible");
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ==================== ADVANCED SEO ==================== -->
+  <title>JPG to PNG Converter — Convert JPEG to PNG Online for Free (Batch + Download ZIP)</title>
+  <meta name="description" content="Free JPG to PNG Converter. Convert JPG/JPEG images to PNG in your browser. Upload up to 20 files, preview results, download single images or download all as a ZIP. No watermark." />
+  <meta name="keywords" content="jpg to png, jpeg to png, convert jpg to png, jpg to png converter, batch jpg to png, online jpg to png, png converter, download zip" />
+  <meta name="author" content="WordCalculator.net" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#020617" />
+  <link rel="canonical" href="https://wordcalculator.net/jpg-to-png-converter.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wordcalculator.net/jpg-to-png-converter.html" />
+  <meta property="og:title" content="JPG to PNG Converter — Convert JPEG to PNG Online for Free" />
+  <meta property="og:description" content="Convert JPG/JPEG images to PNG in your browser. Batch upload, preview, per-image download or download all as a ZIP." />
+  <meta property="og:image" content="https://wordcalculator.net/images/jpg-to-png-og.jpg" />
+  <meta property="og:site_name" content="WordCalculator.net" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://wordcalculator.net/jpg-to-png-converter.html" />
+  <meta name="twitter:title" content="JPG to PNG Converter — Convert JPEG to PNG Online for Free" />
+  <meta name="twitter:description" content="Batch JPG to PNG conversion with preview and ZIP download." />
+  <meta name="twitter:image" content="https://wordcalculator.net/images/jpg-to-png-twitter.jpg" />
+
+  <!-- WebApplication schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"JPG to PNG Converter",
+    "url":"https://wordcalculator.net/jpg-to-png-converter.html",
+    "description":"Convert JPG/JPEG images to PNG in your browser. Upload up to 20 files, preview and download individually or as a ZIP.",
+    "applicationCategory":"UtilitiesApplication",
+    "operatingSystem":"Any",
+    "browserRequirements":"Requires JavaScript",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "author":{"@type":"Organization","name":"WordCalculator.net"}
+  }
+  </script>
+
+  <!-- Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://wordcalculator.net/"},
+      {"@type":"ListItem","position":2,"name":"Tools","item":"https://wordcalculator.net/tools.html"},
+      {"@type":"ListItem","position":3,"name":"JPG to PNG Converter","item":"https://wordcalculator.net/jpg-to-png-converter.html"}
+    ]
+  }
+  </script>
+
+  <!-- FAQ schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Will converting JPG to PNG add transparency?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"No. JPG does not contain transparency data. Converting to PNG keeps the same visible pixels, but it does not magically create transparent backgrounds."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Is the conversion done on a server?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"No. All conversion happens locally in your browser using a canvas. Your images are not uploaded to a server by this page."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Why would I convert JPG to PNG?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"PNG is lossless and can be better for graphics, text screenshots, and workflows that require a non-lossy format. It can also be useful for editing pipelines that prefer PNG."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- ==================== /SEO ==================== -->
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- JSZip (ZIP download) -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+    /* ===== Base / Theme ===== */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --text:#1f2937;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --primary:#2563eb;
+      --bg:#f7f8fb;
+      --card:#fff;
+      --danger:#b91c1c;
+      --accent-gradient:linear-gradient(135deg,#ec4899,#6366f1);
+    }
+    html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    body{
+      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+
+    /* ===== Header / Nav ===== */
+    .wc-header{background:#020617;color:#fff;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+    .wc-wrap{
+      max-width:1200px;margin:0 auto;padding:10px 12px;
+      display:flex;align-items:center;gap:14px;
+    }
+    .wc-logo{display:inline-flex;align-items:center;gap:8px}
+    .slab{
+      display:inline-flex;width:24px;height:24px;align-items:center;justify-content:center;
+      font-weight:800;font-size:14px;border-radius:2px;color:#fff;
+    }
+    .slab-w{background:#1f2327}
+    .slab-o{background:#a7c1db;color:#1e2a3a}
+    .slab-r{background:#7d96ae}
+    .slab-d{background:#2f5d8a}
+    .wc-brand-text{display:inline-flex;flex-direction:column;line-height:1.05;font-size:19px;font-weight:800}
+    .wc-brand-text small{font-size:10px;opacity:.95}
+    .wc-nav{margin-left:10px;display:flex;align-items:center;gap:8px;flex:1}
+    .wc-link{
+      color:#f4f8fc;font-weight:700;font-size:14px;padding:6px 10px;border-radius:8px;
+      transition:.15s;background:transparent;border:0;cursor:pointer;
+    }
+    .wc-link:hover{background:rgba(255,255,255,.14)}
+    .wc-signin-btn{background:rgba(148,163,184,.18);border:1px solid rgba(148,163,184,.5)}
+    .wc-signin-btn:hover{background:#38bdf8;color:#020617;border-color:#38bdf8}
+    .mobile-menu-btn{margin-left:auto;background:transparent;border:0;color:#fff;font-size:20px;display:none;cursor:pointer}
+    .mobile-nav{
+      position:fixed;top:0;right:-100%;width:320px;height:100vh;background:#1f2933;
+      box-shadow:-2px 0 10px rgba(0,0,0,.18);transition:right .3s;z-index:100;
+    }
+    .mobile-nav.active{right:0}
+    .mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;z-index:90}
+    .mobile-overlay.active{display:block}
+    .mobile-nav-header{display:flex;justify-content:space-between;align-items:center;padding:16px;border-bottom:1px solid #34495e}
+    .mobile-close-btn{background:transparent;border:0;color:#fff;font-size:20px;cursor:pointer}
+    .mobile-nav-links{padding:16px}
+    .mobile-link{
+      display:block;color:#ecf0f1;padding:12px 0;border-bottom:1px solid #34495e;
+      font-weight:700;background:transparent;border:0;width:100%;text-align:left;cursor:pointer;
+    }
+
+    /* ===== Breadcrumb ===== */
+    .crumb-wrap{max-width:1200px;margin:8px auto 0;padding:0 15px 4px}
+    .crumbs{font-size:13px;color:#111827}
+    .crumbs a{color:#2563eb}
+    .crumbs a:hover{text-decoration:underline}
+    .crumb-separator{margin:0 4px;color:#6b7280}
+    .crumb-current{font-weight:700}
+
+    /* ===== Main Layout ===== */
+    .age-main{
+      max-width:1200px;margin:22px auto 40px;padding:0 15px;
+    }
+    .layout{
+      display:grid;
+      grid-template-columns:minmax(0,3fr) minmax(260px,1.2fr);
+      grid-template-areas:
+        "tool sidebar"
+        "content sidebar";
+      gap:20px;
+      align-items:flex-start;
+    }
+    .tool{grid-area:tool}
+    .sidebar{grid-area:sidebar}
+    .content{grid-area:content}
+
+    /* ===== Cards ===== */
+    .tool-card,.sidebar-card,.section-block{
+      background:var(--card);
+      border-radius:12px;
+      border:1px solid #e2e8f0;
+      box-shadow:0 10px 24px rgba(15,23,42,.06);
+    }
+
+    /* ===== Converter Card ===== */
+    .converter-card{padding:0 0 14px;overflow:hidden}
+    .converter-header{
+      padding:10px 14px;background:#020617;color:#f9fafb;
+      display:flex;justify-content:space-between;align-items:center;gap:10px;
+    }
+    .converter-header-left{display:flex;flex-direction:column;gap:2px}
+    .converter-title{font-size:18px;font-weight:800}
+    .converter-subtitle{font-size:12px;opacity:.9}
+    .badge{
+      font-size:11px;padding:3px 8px;border-radius:999px;
+      background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);
+      display:inline-flex;align-items:center;gap:6px;
+    }
+    .converter-body{padding:14px;display:flex;flex-direction:column;gap:12px}
+
+    /* Workspace */
+    .workspace{
+      border-radius:12px;border:1px solid #e5e7eb;background:#ffffff;
+      box-shadow:0 10px 24px rgba(15,23,42,.06);
+      overflow:hidden;
+    }
+    .workspace-top{
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      padding:10px 12px;background:#f8fafc;border-bottom:1px solid #e5e7eb;
+      flex-wrap:wrap;
+    }
+    .btn{
+      padding:7px 11px;border-radius:8px;border:1px solid transparent;
+      background:#2563eb;color:#f9fafb;font-size:13px;font-weight:700;
+      cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+      transition:background .15s,box-shadow .15s,transform .1s;
+      white-space:nowrap;
+    }
+    .btn:hover{background:#1d4ed8;box-shadow:0 8px 18px rgba(37,99,235,.35);transform:translateY(-1px)}
+    .btn-ghost{background:#ffffff;color:#111827;border-color:#e5e7eb}
+    .btn-ghost:hover{background:#f3f4f6;box-shadow:none}
+    .btn[disabled]{opacity:.5;cursor:not-allowed;box-shadow:none;transform:none}
+
+    .quality{
+      display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+      font-size:12px;color:#4b5563;font-weight:700;
+    }
+    .quality input[type="range"]{width:180px}
+    .quality small{font-weight:600;color:#6b7280}
+
+    .dropzone{
+      margin:12px;
+      border-radius:12px;border:2px dashed #cbd5e1;background:#f9fafb;
+      min-height:180px;
+      display:flex;align-items:center;justify-content:center;
+      position:relative;
+      transition:border-color .15s,background .15s,box-shadow .15s,transform .1s;
+      cursor:pointer;
+    }
+    .dropzone:hover{border-color:#6366f1;background:#eef2ff;box-shadow:0 8px 18px rgba(99,102,241,.18);transform:translateY(-1px)}
+    .dropzone.dragover{border-color:#2563eb;background:#e0ecff}
+    .dropzone-inner{
+      text-align:center;padding:24px 12px;color:#334155;
+      display:flex;flex-direction:column;align-items:center;gap:8px;
+      width:100%;
+      pointer-events:none;
+    }
+    .dz-icon{font-size:26px;color:#6366f1}
+    .dz-title{font-weight:900;font-size:14px}
+    .dz-hint{font-size:12px;color:#64748b;max-width:520px}
+    .dz-actions{
+      margin-top:10px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+      pointer-events:auto;
+    }
+    #fileInput{
+      position:absolute;
+      width:1px;height:1px;
+      opacity:0;
+      pointer-events:none;
+    }
+
+    .workspace-bottom{
+      padding:10px 12px;border-top:1px solid #e5e7eb;background:#ffffff;
+      display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+    }
+    .status{
+      font-size:12px;color:#475569;
+      display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+    }
+    .pill{
+      font-size:11px;padding:3px 8px;border-radius:999px;
+      background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;
+      font-weight:800;
+    }
+    .error-text{font-size:12px;color:var(--danger);font-weight:700}
+
+    /* Queue */
+    .queue{
+      padding:12px;
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:10px;
+    }
+    @media (max-width:1100px){ .queue{grid-template-columns:repeat(2,minmax(0,1fr));} }
+    @media (max-width:640px){ .queue{grid-template-columns:1fr;} }
+
+    .item{
+      border:1px solid #e5e7eb;border-radius:12px;background:#ffffff;
+      overflow:hidden;
+      display:flex;flex-direction:column;
+    }
+    .thumb{
+      background:#0f172a;
+      height:140px;
+      display:flex;align-items:center;justify-content:center;
+      overflow:hidden;
+      position:relative;
+    }
+    .thumb img{max-width:100%;max-height:100%;display:block}
+    .item-body{padding:10px;display:flex;flex-direction:column;gap:8px}
+    .name{
+      font-size:12px;font-weight:800;color:#0f172a;
+      white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+    }
+    .meta{font-size:12px;color:#475569;display:flex;flex-direction:column;gap:2px}
+    .meta b{color:#0f172a}
+    .item-actions{display:flex;gap:8px;flex-wrap:wrap}
+    .btn-mini{
+      padding:6px 9px;border-radius:10px;font-size:12px;font-weight:800;border:1px solid transparent;
+      cursor:pointer;display:inline-flex;align-items:center;gap:6px;
+      transition:background .15s,transform .1s,box-shadow .15s;
+      background:#2563eb;color:#fff;
+    }
+    .btn-mini:hover{background:#1d4ed8;transform:translateY(-1px);box-shadow:0 8px 18px rgba(37,99,235,.25)}
+    .btn-mini-ghost{background:#ffffff;color:#111827;border-color:#e5e7eb}
+    .btn-mini-ghost:hover{background:#f3f4f6;box-shadow:none;transform:none}
+
+    /* ===== Sidebar / Quick Search ===== */
+    .sidebar-card{padding:12px 12px 10px;font-size:13px}
+    .sidebar-title-bar{
+      margin:-12px -12px 8px;padding:7px 10px;background:#0f172a;color:#f9fafb;
+      font-size:14px;font-weight:800;border-radius:12px 12px 0 0;
+      box-shadow:inset 0 -1px 0 rgba(148,163,184,.35);
+      display:flex;align-items:center;justify-content:space-between;gap:8px;
+    }
+    .tool-search{margin:6px 0 4px}
+    .sidebar-search-input-wrapper{position:relative;display:flex;align-items:center;margin-top:4px}
+    .sidebar-search-icon{position:absolute;left:10px;font-size:12px;opacity:0.7}
+    .sidebar-search-input{
+      width:100%;padding:8px 10px 8px 28px;border-radius:8px;border:1px solid #d5d9e0;
+      background-color:#f9fafb;font-size:13px;outline:none;
+      transition:border-color .15s ease,background-color .15s ease,box-shadow .15s ease;
+    }
+    .sidebar-search-input:focus{border-color:#3f82bd;background-color:#ffffff;box-shadow:0 0 0 1px rgba(63,130,189,0.12)}
+    .sidebar-search-suggestions{
+      list-style:none;margin-top:8px;padding:4px 0;max-height:220px;overflow-y:auto;border-radius:10px;
+      border:1px solid #e3e7ee;background-color:#ffffff;box-shadow:0 8px 20px rgba(15,23,42,0.12);display:none;
+    }
+    .sidebar-search-suggestions.visible{display:block}
+    .sidebar-search-suggestions li{
+      font-size:13px;padding:7px 10px;cursor:pointer;display:flex;align-items:center;gap:6px;
+    }
+    .sidebar-search-suggestions li + li{border-top:1px solid #f1f3f8}
+    .sidebar-search-suggestions li span.tool-name{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .sidebar-search-suggestions li i{font-size:11px;opacity:0.7}
+    .sidebar-search-suggestions li:hover{background-color:#f3f4f8}
+    .sidebar-group{margin-top:10px}
+    .sidebar-group h4{
+      font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#6b7280;margin-bottom:3px;font-weight:700;
+    }
+    .sidebar-links{list-style:none;font-size:13px}
+    .sidebar-links li+li{margin-top:3px}
+    .sidebar-links a{color:#1d4ed8}
+    .sidebar-links a:hover{text-decoration:underline}
+
+    /* ===== Content ===== */
+    .section-block{padding:14px 16px 12px;margin-bottom:16px}
+    .section-block h2,.section-block h3{font-size:18px;font-weight:900;margin-bottom:6px;color:#0f172a}
+    .section-block h4{font-size:14px;font-weight:800;margin-top:10px;margin-bottom:4px;color:#111827}
+    .section-block p{font-size:13px;color:#4b5563;margin-bottom:6px}
+    .section-block ul{padding-left:18px;font-size:13px;color:#4b5563}
+    .section-block ul li+li{margin-top:2px}
+    .section-block table{width:100%;border-collapse:collapse;margin:8px 0;font-size:13px}
+    .section-block table th,.section-block table td{border:1px solid #e5e7eb;padding:6px 8px;text-align:center}
+    .section-block table th{background:#f3f4f6;font-weight:800}
+
+    /* ===== Footer ===== */
+    .pro-footer{background:#020617;color:#cbd5e1;margin-top:40px}
+    .pf-wrap{
+      max-width:1200px;margin:0 auto;padding:34px 15px;
+      display:grid;grid-template-columns:320px 1fr;gap:26px;
+    }
+    .pf-logo{display:flex;align-items:center;gap:10px}
+    .pf-brand-text{font-size:18px;font-weight:800;color:#e2e8f0}
+    .pf-brand-text span{color:#38bdf8}
+    .pf-tag{margin-top:8px;color:#94a3b8;font-size:13px}
+    .pf-social{display:flex;gap:10px;margin-top:10px}
+    .pf-social a{
+      display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;
+      border:1px solid #1e293b;border-radius:10px;background:#0b1220;color:#cbd5e1;
+      transition:background .15s,color .15s,border-color .15s,transform .15s,box-shadow .15s;
+    }
+    .pf-social a:hover{
+      background:#38bdf8;border-color:#38bdf8;color:#0b1220;transform:translateY(-1px);
+      box-shadow:0 4px 12px rgba(56,189,248,.4);
+    }
+    .pf-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .pf-col h5{color:#e2e8f0;font-weight:900;font-size:14px;margin-bottom:10px}
+    .pf-col ul{list-style:none}
+    .pf-col li{margin:8px 0}
+    .pf-col a{color:#94a3b8}
+    .pf-col a:hover{color:#e2e8f0}
+    .pf-bottom{border-top:1px solid #1e293b;background:#0b1220}
+    .pf-bottom-wrap{
+      max-width:1200px;margin:0 auto;padding:12px 15px;
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      color:#8893a7;font-size:13px;
+    }
+    .pf-links{display:flex;gap:10px}
+    .pf-links a{color:#94a3b8}
+    .pf-links a:hover{color:#e2e8f0}
+
+    /* ===== Modal ===== */
+    .modal-overlay{position:fixed;inset:0;background:rgba(15,23,42,0.7);display:none;z-index:200}
+    .modal{
+      position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
+      width:420px;max-width:96vw;background:#ffffff;border:1px solid #e5e7eb;
+      border-radius:14px;box-shadow:0 18px 40px rgba(15,23,42,0.35);display:none;z-index:210;
+    }
+    .modal-head{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-bottom:1px solid #e5e7eb}
+    .modal-head h3{font-size:15px;font-weight:900;color:#111827}
+    .modal-close{background:#f3f4f6;border:1px solid #e5e7eb;border-radius:8px;padding:6px 8px;cursor:pointer}
+    .modal-body{padding:12px;font-size:13px;color:#4b5563}
+
+    /* ===== Responsive ===== */
+    @media (max-width:1100px){
+      .pf-wrap{grid-template-columns:1fr}
+      .pf-cols{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:992px){
+      .wc-nav{display:none}
+      .mobile-menu-btn{display:inline-block}
+      .layout{
+        grid-template-columns:1fr;
+        grid-template-areas:"tool" "sidebar" "content";
+      }
+      .dropzone{cursor:default}
+    }
+    @media (max-width:640px){
+      .pf-cols{grid-template-columns:1fr}
+      .quality input[type="range"]{width:160px}
+    }
+    @media (prefers-reduced-motion:reduce){
+      *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== Header ===== -->
+  <header class="wc-header">
+    <div class="wc-wrap">
+      <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+        <span class="slab slab-w">W</span>
+        <span class="slab slab-o">O</span>
+        <span class="slab slab-r">R</span>
+        <span class="slab slab-d">D</span>
+        <span class="wc-brand-text">
+          Calculator
+          <small class="wc-tagline">Every Word Counts</small>
+        </span>
+      </a>
+
+      <nav class="wc-nav" aria-label="Primary">
+        <a href="https://wordcalculator.net" class="wc-link">Home</a>
+        <a href="blog.htm." class="wc-link">Blog</a>
+        <a href="tools.html" class="wc-link">Tools</a>
+        <a href="about.html" class="wc-link">About Us</a>
+		<a href="signin.html" class="wc-link">Sign In</a>
+      </nav>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <div class="mobile-nav-header">
+        <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <span class="wc-brand-text">Calculator</span>
+        </a>
+        <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="https://wordcalculator.net" class="nav-link mobile-link">Home</a>
+        <a href="blog.html" class="nav-link mobile-link">Blog</a>
+        <a href="tools.html" class="nav-link mobile-link">Tools</a>
+        <a href="about.html" class="nav-link mobile-link">About Us</a>
+		<a href="signin.html" class="nav-link mobile-link">Sign In</a>
+      </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+  </header>
+
+  <!-- ===== Breadcrumbs ===== -->
+  <div class="crumb-wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="https://wordcalculator.net">Home</a>
+      <span class="crumb-separator">/</span>
+      <a href="tools.html">Tools</a>
+      <span class="crumb-separator">/</span>
+      <span class="crumb-current">JPG to PNG Converter</span>
+    </nav>
+  </div>
+
+  <!-- ==================== MAIN ==================== -->
+  <main class="age-main">
+    <div class="layout">
+      <!-- TOOL -->
+      <section class="tool" aria-label="JPG to PNG converter tool">
+        <article class="tool-card converter-card">
+          <header class="converter-header">
+            <div class="converter-header-left">
+              <h1 class="converter-title">JPG to PNG Converter</h1>
+              <p class="converter-subtitle">Convert JPG/JPEG images to PNG instantly — batch upload, preview, ZIP download.</p>
+            </div>
+            <div class="badge">
+              <i class="fa-solid fa-bolt"></i>
+              Free • Browser-based
+            </div>
+          </header>
+
+          <div class="converter-body">
+            <!-- Workspace -->
+            <section class="workspace" aria-label="Upload and convert">
+              <div class="workspace-top">
+                <div class="quality" aria-label="PNG output info">
+                  <span><i class="fa-solid fa-sliders"></i> Quality: <span id="qualityLabel">85</span>%</span>
+                  <input id="qualityRange" type="range" min="40" max="100" step="1" value="85" />
+                  <small>Note: PNG is lossless; this slider does not change PNG quality.</small>
+                </div>
+
+                <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+                  <button type="button" class="btn btn-ghost" id="downloadAllBtn" disabled>
+                    <i class="fa-solid fa-file-zipper"></i> Download All (ZIP)
+                  </button>
+                </div>
+              </div>
+
+              <div class="dropzone" id="dropzone" role="button" tabindex="0" aria-label="Dropzone: click to upload JPG files">
+                <div class="dropzone-inner">
+                  <div class="dz-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                  <div class="dz-title">Drop your JPG files here or click Upload</div>
+                  <div class="dz-hint">
+                    Upload up to <b>20</b> JPG/JPEG images per batch. Conversion happens locally in your browser (no server upload).
+                    Output is a <b>PNG</b> file (lossless format) for better compatibility in editing workflows.
+                  </div>
+
+                  <div class="dz-actions" aria-label="Upload actions">
+                    <button type="button" class="btn" id="uploadBtn">
+                      <i class="fa-solid fa-cloud-arrow-up"></i> Upload
+                    </button>
+                    <button type="button" class="btn btn-ghost" id="clearBtn" disabled>
+                      <i class="fa-solid fa-broom"></i> Clear
+                    </button>
+                  </div>
+                </div>
+
+                <input id="fileInput" type="file" accept="image/jpeg,image/jpg" multiple />
+              </div>
+
+              <div class="workspace-bottom">
+                <div class="status">
+                  <span class="pill" id="countPill">0 files</span>
+                  <span class="pill" id="donePill">0 converted</span>
+                  <span id="statusText">Upload JPG images to start converting.</span>
+                  <span id="errorText" class="error-text" style="display:none;"></span>
+                </div>
+              </div>
+
+              <div class="queue" id="queue" aria-label="Conversion queue"></div>
+            </section>
+          </div>
+        </article>
+      </section>
+
+      <!-- SIDEBAR / QUICK SEARCH -->
+      <aside class="sidebar" aria-label="Quick search and related tools">
+        <div class="sidebar-card">
+          <div class="sidebar-title-bar">
+            <span>Quick Search</span>
+            <i class="fas fa-magnifying-glass"></i>
+          </div>
+
+          <div class="tool-search">
+            <small>Quick links to other tools on WordCalculator.net</small>
+            <div class="sidebar-search-input-wrapper">
+              <i class="fa-solid fa-magnifying-glass sidebar-search-icon" aria-hidden="true"></i>
+              <input
+                type="search"
+                id="toolSearchInput"
+                class="sidebar-search-input"
+                placeholder="Search tools by name..."
+                autocomplete="off"
+                aria-label="Search tools by name"
+              />
+            </div>
+            <ul id="toolSearchSuggestions" class="sidebar-search-suggestions" aria-label="Tool suggestions"></ul>
+          </div>
+
+          <div class="sidebar-group">
+            <h4>Popular</h4>
+            <ul class="sidebar-links">
+              <li><a href="age-calculator.html">Age Calculator</a></li>
+              <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+              <li><a href="calorie-calculator.html">Calorie Calculator</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-group">
+            <h4>Text &amp; Writing</h4>
+            <ul class="sidebar-links">
+              <li><a href="https://wordcalculator.net">Word &amp; Character Counter</a></li>
+              <li><a href="case-converter.html">Case Converter</a></li>
+              <li><a href="grammar-spell-checker.html">Grammar &amp; Spell Checker</a></li>
+              <li><a href="readability-analyzer.html">Readability Analyzer</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-group">
+            <h4>SEO &amp; Content</h4>
+            <ul class="sidebar-links">
+              <li><a href="keyword-density-analyzer.html">Keyword Density Analyzer</a></li>
+              <li><a href="title-meta-preview.html">Title &amp; Meta Preview</a></li>
+              <li><a href="url-slug-generator.html">URL Slug Generator</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-group">
+            <h4>Finance &amp; Time</h4>
+            <ul class="sidebar-links">
+              <li><a href="loan-emi-calculator.html">Loan &amp; EMI Calculator</a></li>
+              <li><a href="interest-calculator.html">Interest Calculator</a></li>
+              <li><a href="focus-timer.html">Focus Timer</a></li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <!-- CONTENT / SEO TEXT (ONLY UNDER TOOL COLUMN) -->
+      <section class="content" aria-label="JPG to PNG guide and FAQ">
+        <article class="section-block">
+          <h2>JPG to PNG conversion (private, fast, and browser-based)</h2>
+          <p>
+            JPG (or JPEG) is one of the most common image formats for photos and web sharing because it compresses images efficiently.
+            PNG is a lossless format that is often preferred for editing, design workflows, and crisp graphics. This JPG to PNG Converter
+            runs directly in your browser, so your images are processed locally on your device.
+          </p>
+
+          <h3>How to use this JPG to PNG Converter</h3>
+          <ul>
+            <li><strong>Upload:</strong> Click <strong>Upload</strong> (or drag and drop) to add up to 20 JPG/JPEG files.</li>
+            <li><strong>Convert:</strong> The tool converts each file to PNG automatically and shows the output size and pixels.</li>
+            <li><strong>Download:</strong> Download PNG files individually, or use <strong>Download All (ZIP)</strong>.</li>
+            <li><strong>Clear:</strong> Click <strong>Clear</strong> to remove the entire queue and reset the tool.</li>
+          </ul>
+
+          <h3>Important note about transparency</h3>
+          <p>
+            JPG does not support transparency. Converting a JPG to PNG keeps the same visible pixels, but it does not create a transparent
+            background. If you need transparent backgrounds, you must remove the background first using a dedicated background remover tool.
+          </p>
+
+          <h3>What is JPG, and why convert JPG to PNG?</h3>
+          <p>
+            JPG (JPEG) uses lossy compression, which means it reduces file size by removing some image data. This is great for photos, but
+            repeated re-saving or heavy compression can introduce artifacts such as blocky edges and color banding.
+          </p>
+          <p>
+            PNG is lossless, meaning it preserves pixels without additional compression damage. This makes PNG useful when you plan to edit an
+            image, add text overlays, use it in design software, or keep the best possible pixel accuracy for graphics and UI screenshots.
+          </p>
+
+          <h3>Common use cases</h3>
+          <ul>
+            <li><strong>Editing workflows:</strong> Convert JPG photos into PNG for design tools that prefer lossless assets.</li>
+            <li><strong>Graphics and screenshots:</strong> PNG can keep sharper edges for UI elements and text-heavy images.</li>
+            <li><strong>Archiving:</strong> Save a stable copy for future edits without adding more JPEG artifacts.</li>
+            <li><strong>Compatibility:</strong> Some software pipelines and templates work better with PNG.</li>
+          </ul>
+
+          <h3>How this tool works (simple explanation)</h3>
+          <p>
+            This converter loads your JPG image into a browser canvas and then exports it as a PNG file. The conversion happens locally in
+            your browser, so it does not require uploading files to a server.
+          </p>
+
+          <h3>JPG vs PNG: quick comparison</h3>
+          <table aria-label="JPG vs PNG comparison">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>JPG (JPEG)</th>
+                <th>PNG</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Compression</td>
+                <td>Lossy (smaller files)</td>
+                <td>Lossless (pixel-accurate)</td>
+              </tr>
+              <tr>
+                <td>Best for</td>
+                <td>Photos, web sharing</td>
+                <td>Editing, graphics, screenshots</td>
+              </tr>
+              <tr>
+                <td>Transparency</td>
+                <td>Not supported</td>
+                <td>Supported (but JPG→PNG won’t create it)</td>
+              </tr>
+              <tr>
+                <td>File size</td>
+                <td>Usually smaller</td>
+                <td>Often larger</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Best practices for better results</h3>
+          <ul>
+            <li><strong>Use PNG when editing:</strong> If you will add text, crop, or re-export multiple times, PNG helps avoid extra JPEG artifacts.</li>
+            <li><strong>Keep JPG for photos on the web:</strong> If your goal is smaller file size, JPG is often better for final publishing.</li>
+            <li><strong>Batch download with ZIP:</strong> For many files, Download All (ZIP) saves time.</li>
+            <li><strong>Keep the original:</strong> Always keep the original JPG if you need the smallest size for sharing later.</li>
+          </ul>
+
+          <h3>Privacy and security</h3>
+          <p>
+            This tool is designed to be privacy-friendly. Conversion happens in your browser using JavaScript and canvas processing.
+            Your images are not uploaded to a server by this page.
+          </p>
+
+          <h3>Troubleshooting</h3>
+          <ul>
+            <li><strong>Upload not working:</strong> Make sure JavaScript is enabled and your browser allows file access.</li>
+            <li><strong>Wrong file type:</strong> This tool accepts JPG/JPEG files only.</li>
+            <li><strong>ZIP download fails:</strong> Try fewer images or refresh the page if the ZIP library did not load.</li>
+            <li><strong>Large images feel slow:</strong> Very large files may use more memory. Convert in smaller batches.</li>
+          </ul>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="pro-footer" id="about" aria-label="Website footer">
+    <div class="pf-wrap">
+      <div class="pf-brand">
+        <div class="pf-logo">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <div class="pf-brand-text">
+            WordCalculator<span>.net</span>
+          </div>
+        </div>
+        <p class="pf-tag">A focused, distraction-free toolkit for precise writing.</p>
+        <div class="pf-social">
+          <a href="https://facebook.com/wordcalculator" aria-label="Facebook" rel="noopener" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/wordcalculator" aria-label="X (Twitter)" rel="noopener" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://linkedin.com/company/wordcalculator" aria-label="LinkedIn" rel="noopener" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://youtube.com/@wordcalculator" aria-label="YouTube" rel="noopener" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="pf-cols">
+        <div class="pf-col">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="https://wordcalculator.net">Editor</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="grammar-spell-checker.html">Grammar Check</a></li>
+            <li><a href="keyword-density-analyzer.html">Keyword Density</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="guides.html">Tips &amp; Guides</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="bug-report.html">Report a Bug</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html">Cookie Policy</a></li>
+            <li><a href="security.html">Security</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pf-bottom">
+      <div class="pf-bottom-wrap">
+        <div>© <span id="pf-year"></span> WordCalculator.net — All rights reserved.</div>
+        <div class="pf-links">
+          <a href="sitemap.html">Sitemap</a>
+          <a href="status.html">Status</a>
+          <a href="accessibility.html">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Auth Modal ===== -->
+  <div class="modal-overlay" id="authOverlay" aria-hidden="true"></div>
+  <div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <div class="modal-head">
+      <h3 id="authTitle"><i class="fas fa-user-lock"></i> Account</h3>
+      <button class="modal-close" id="authCloseBtn" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body">
+      Sign-in and account features are coming soon. For now, all tools are free to use without registration.
+    </div>
+  </div>
+
+  <!-- ==================== JS ==================== -->
+
+  <!-- Tools Directory Js -->
+  <script src="tools-directory.js"></script>
+
+  <script>
+    const $  = (s)=>document.querySelector(s);
+    const $$ = (s)=>Array.from(document.querySelectorAll(s));
+
+    document.addEventListener("DOMContentLoaded", ()=>{
+      initYear();
+      initMobileMenu();
+      initAuthModal();
+      initToolQuickSearch();
+      initJpgToPng();
+    });
+
+    function initYear(){
+      const el=$("#pf-year");
+      if(el) el.textContent=new Date().getFullYear();
+    }
+
+    function initMobileMenu(){
+      const mobileMenuBtn=$("#mobileMenuBtn");
+      const mobileCloseBtn=$("#mobileCloseBtn");
+      const mobileNav=$("#mobileNav");
+      const mobileOverlay=$("#mobileOverlay");
+      if(!mobileMenuBtn||!mobileNav||!mobileOverlay) return;
+
+      const open=()=>{
+        mobileNav.classList.add("active");
+        mobileOverlay.classList.add("active");
+        document.body.style.overflow="hidden";
+      };
+      const close=()=>{
+        mobileNav.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        document.body.style.overflow="";
+      };
+
+      mobileMenuBtn.addEventListener("click",open);
+      if(mobileCloseBtn) mobileCloseBtn.addEventListener("click",close);
+      mobileOverlay.addEventListener("click",close);
+      $$(".mobile-link").forEach(link=>link.addEventListener("click",close));
+
+      const openAuthBtnMobile=$("#openAuthBtnMobile");
+      if(openAuthBtnMobile){
+        openAuthBtnMobile.addEventListener("click",()=>{
+          close();
+          openAuthModal();
+        });
+      }
+    }
+
+    function initAuthModal(){
+      const openBtn=$("#openAuthBtn");
+      const overlay=$("#authOverlay");
+      const modal=$("#authModal");
+      const closeBtn=$("#authCloseBtn");
+      if(!overlay || !modal) return;
+
+      const open=()=>{
+        overlay.style.display="block";
+        modal.style.display="block";
+        document.body.style.overflow="hidden";
+      };
+      const close=()=>{
+        overlay.style.display="none";
+        modal.style.display="none";
+        document.body.style.overflow="";
+      };
+
+      if(openBtn) openBtn.addEventListener("click",open);
+      if(closeBtn) closeBtn.addEventListener("click",close);
+      overlay.addEventListener("click",close);
+      document.addEventListener("keydown",(e)=>{
+        if(e.key==="Escape") close();
+      });
+    }
+
+    function openAuthModal(){
+      const overlay=$("#authOverlay");
+      const modal=$("#authModal");
+      if(!overlay||!modal) return;
+      overlay.style.display="block";
+      modal.style.display="block";
+      document.body.style.overflow="hidden";
+    }
+
+    /* ===== JPG -> PNG Converter ===== */
+    function initJpgToPng(){
+      const uploadBtn = $("#uploadBtn");
+      const clearBtn = $("#clearBtn");
+      const downloadAllBtn = $("#downloadAllBtn");
+      const qualityRange = $("#qualityRange");
+      const qualityLabel = $("#qualityLabel");
+
+      const dropzone = $("#dropzone");
+      const fileInput = $("#fileInput");
+      const queueEl = $("#queue");
+
+      const countPill = $("#countPill");
+      const donePill = $("#donePill");
+      const statusText = $("#statusText");
+      const errorText = $("#errorText");
+
+      const MAX_FILES = 20;
+
+      /** @type {{id:string,file:File,thumbUrl:string,pngBlob:Blob|null,pngName:string,origBytes:number,pngBytes:number,width:number,height:number}[]} */
+      let items = [];
+
+      function showError(msg){
+        if(!msg){
+          errorText.style.display="none";
+          errorText.textContent="";
+          return;
+        }
+        errorText.style.display="inline";
+        errorText.textContent=msg;
+      }
+
+      function setStatus(msg){
+        statusText.textContent = msg || "";
+      }
+
+      function fmtBytes(bytes){
+        if(!Number.isFinite(bytes) || bytes <= 0) return "—";
+        const units = ["B","KB","MB","GB"];
+        let v = bytes;
+        let i = 0;
+        while(v >= 1024 && i < units.length-1){ v /= 1024; i++; }
+        return `${v.toFixed(i===0?0:1)} ${units[i]}`;
+      }
+
+      function updateCounters(){
+        const total = items.length;
+        const converted = items.filter(x=>x.pngBlob).length;
+
+        countPill.textContent = `${total} file${total===1?"":"s"}`;
+        donePill.textContent  = `${converted} converted`;
+
+        clearBtn.disabled = total === 0;
+        downloadAllBtn.disabled = converted === 0;
+
+        if(total === 0){
+          setStatus("Upload JPG images to start converting.");
+        }else{
+          setStatus(`Ready. Converted ${converted} of ${total}.`);
+        }
+      }
+
+      function resetAll(){
+        items.forEach(it=>{
+          if(it.thumbUrl) URL.revokeObjectURL(it.thumbUrl);
+        });
+        items = [];
+        queueEl.innerHTML = "";
+        showError("");
+        updateCounters();
+        if(fileInput) fileInput.value = "";
+      }
+
+      function pickFiles(){
+        showError("");
+        fileInput.click();
+      }
+
+      function isJpegFile(file){
+        const type = (file && file.type) ? file.type.toLowerCase() : "";
+        const name = (file && file.name) ? file.name.toLowerCase() : "";
+        if(type === "image/jpeg" || type === "image/jpg") return true;
+        if(!type && (name.endsWith(".jpg") || name.endsWith(".jpeg"))) return true;
+        return false;
+      }
+
+      function acceptFiles(fileList){
+        showError("");
+        if(!fileList || fileList.length === 0) return;
+
+        const incoming = Array.from(fileList);
+        const jpgOnly = incoming.filter(f => f && isJpegFile(f));
+
+        if(jpgOnly.length === 0){
+          showError("Please upload JPG/JPEG files only.");
+          return;
+        }
+
+        const remaining = MAX_FILES - items.length;
+        if(remaining <= 0){
+          showError(`Queue limit reached. Clear the queue to add more than ${MAX_FILES} files.`);
+          return;
+        }
+
+        const toAdd = jpgOnly.slice(0, remaining);
+        if(jpgOnly.length > remaining){
+          showError(`Only ${remaining} file(s) were added. Max ${MAX_FILES} files per batch.`);
+        }
+
+        toAdd.forEach(file => addItem(file));
+        updateCounters();
+      }
+
+      function addItem(file){
+        const id = crypto?.randomUUID ? crypto.randomUUID() : `id_${Date.now()}_${Math.random().toString(16).slice(2)}`;
+        const thumbUrl = URL.createObjectURL(file);
+
+        const baseName = file.name.replace(/\.jpe?g$/i, "");
+        const pngName = `${baseName}.png`;
+
+        const item = {
+          id,
+          file,
+          thumbUrl,
+          pngBlob: null,
+          pngName,
+          origBytes: file.size,
+          pngBytes: 0,
+          width: 0,
+          height: 0
+        };
+
+        items.push(item);
+        renderItem(item);
+        convertItem(item).catch(()=>{});
+      }
+
+      function renderItem(item){
+        const el = document.createElement("div");
+        el.className = "item";
+        el.setAttribute("data-id", item.id);
+
+        el.innerHTML = `
+          <div class="thumb" aria-label="Preview thumbnail">
+            <img src="${item.thumbUrl}" alt="JPG preview" loading="lazy" />
+          </div>
+          <div class="item-body">
+            <div class="name" title="${escapeHtml(item.file.name)}">${escapeHtml(item.file.name)}</div>
+            <div class="meta">
+              <div><b>Original:</b> <span class="origSize">${fmtBytes(item.origBytes)}</span></div>
+              <div><b>Output:</b> <span class="outSize">Converting…</span></div>
+              <div><b>Pixels:</b> <span class="pxSize">—</span></div>
+            </div>
+            <div class="item-actions">
+              <button type="button" class="btn-mini" data-action="download" disabled>
+                <i class="fa-solid fa-download"></i> Download PNG
+              </button>
+              <button type="button" class="btn-mini btn-mini-ghost" data-action="remove">
+                <i class="fa-solid fa-trash"></i> Remove
+              </button>
+            </div>
+          </div>
+        `;
+
+        el.addEventListener("click", (e)=>{
+          const btn = e.target.closest("button");
+          if(!btn) return;
+          const action = btn.getAttribute("data-action");
+          if(action === "remove"){
+            removeItem(item.id);
+          }else if(action === "download"){
+            downloadSingle(item.id);
+          }
+        });
+
+        queueEl.appendChild(el);
+      }
+
+      function removeItem(id){
+        const idx = items.findIndex(x=>x.id === id);
+        if(idx === -1) return;
+
+        const it = items[idx];
+        if(it.thumbUrl) URL.revokeObjectURL(it.thumbUrl);
+
+        items.splice(idx, 1);
+        const el = queueEl.querySelector(`[data-id="${CSS.escape(id)}"]`);
+        if(el) el.remove();
+
+        showError("");
+        updateCounters();
+      }
+
+      function getQuality(){
+        const q = Number(qualityRange.value || 85);
+        return Math.max(0.1, Math.min(1, q / 100));
+      }
+
+      async function convertItem(item){
+        // Note: PNG export is lossless in canvas. "quality" is not used by toBlob for image/png,
+        // but we keep the same UI structure as requested.
+        getQuality();
+
+        const img = await fileToImage(item.file);
+        item.width = img.naturalWidth || img.width || 0;
+        item.height = img.naturalHeight || img.height || 0;
+
+        const canvas = document.createElement("canvas");
+        canvas.width = item.width;
+        canvas.height = item.height;
+
+        const ctx = canvas.getContext("2d", {alpha:true});
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0);
+
+        const blob = await canvasToBlob(canvas, "image/png");
+        item.pngBlob = blob;
+        item.pngBytes = blob.size;
+
+        updateItemUI(item);
+        updateCounters();
+      }
+
+      function updateItemUI(item){
+        const el = queueEl.querySelector(`[data-id="${CSS.escape(item.id)}"]`);
+        if(!el) return;
+        const outSize = el.querySelector(".outSize");
+        const pxSize = el.querySelector(".pxSize");
+        const dlBtn = el.querySelector('button[data-action="download"]');
+
+        if(pxSize) pxSize.textContent = item.width && item.height ? `${item.width}×${item.height}` : "—";
+        if(outSize) outSize.textContent = item.pngBlob ? fmtBytes(item.pngBytes) : "Failed";
+        if(dlBtn) dlBtn.disabled = !item.pngBlob;
+      }
+
+      function downloadSingle(id){
+        const it = items.find(x=>x.id === id);
+        if(!it || !it.pngBlob) return;
+
+        const url = URL.createObjectURL(it.pngBlob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = it.pngName;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+      }
+
+      async function downloadAllZip(){
+        showError("");
+        if(typeof JSZip === "undefined"){
+          showError("ZIP library failed to load. Please refresh the page and try again.");
+          return;
+        }
+
+        const converted = items.filter(x=>x.pngBlob);
+        if(converted.length === 0) return;
+
+        downloadAllBtn.disabled = true;
+        setStatus("Preparing ZIP…");
+
+        try{
+          const zip = new JSZip();
+          const folder = zip.folder("jpg-to-png");
+          converted.forEach((it)=>{
+            folder.file(it.pngName, it.pngBlob);
+          });
+
+          const zipBlob = await zip.generateAsync({type:"blob"});
+          const url = URL.createObjectURL(zipBlob);
+
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = `jpg-to-png-${Date.now()}.zip`;
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+
+          URL.revokeObjectURL(url);
+          setStatus(`ZIP downloaded (${converted.length} file${converted.length===1?"":"s"}).`);
+        }catch(err){
+          showError("Could not generate ZIP. Please try again with fewer images.");
+          setStatus("Ready.");
+        }finally{
+          downloadAllBtn.disabled = items.filter(x=>x.pngBlob).length === 0;
+          updateCounters();
+        }
+      }
+
+      function fileToImage(file){
+        return new Promise((resolve, reject)=>{
+          const url = URL.createObjectURL(file);
+          const img = new Image();
+          img.onload = ()=>{
+            URL.revokeObjectURL(url);
+            resolve(img);
+          };
+          img.onerror = ()=>{
+            URL.revokeObjectURL(url);
+            reject(new Error("Image load failed"));
+          };
+          img.src = url;
+        });
+      }
+
+      function canvasToBlob(canvas, type){
+        return new Promise((resolve, reject)=>{
+          canvas.toBlob((blob)=>{
+            if(!blob) return reject(new Error("Blob creation failed"));
+            resolve(blob);
+          }, type);
+        });
+      }
+
+      function escapeHtml(str){
+        return String(str)
+          .replaceAll("&","&amp;")
+          .replaceAll("<","&lt;")
+          .replaceAll(">","&gt;")
+          .replaceAll('"',"&quot;")
+          .replaceAll("'","&#039;");
+      }
+
+      /* Events */
+      uploadBtn.addEventListener("click", (e)=>{
+        e.preventDefault();
+        e.stopPropagation();
+        pickFiles();
+      });
+
+      clearBtn.addEventListener("click", (e)=>{
+        e.preventDefault();
+        e.stopPropagation();
+        resetAll();
+      });
+
+      downloadAllBtn.addEventListener("click", downloadAllZip);
+
+      dropzone.addEventListener("click", (e)=>{
+        const isButton = e.target.closest("button");
+        if(isButton) return;
+        pickFiles();
+      });
+      dropzone.addEventListener("keydown",(e)=>{
+        if(e.key === "Enter" || e.key === " "){
+          e.preventDefault();
+          pickFiles();
+        }
+      });
+
+      qualityRange.addEventListener("input", ()=>{
+        qualityLabel.textContent = qualityRange.value;
+
+        const list = items.slice();
+        list.forEach(it=>{
+          it.pngBlob = null;
+          it.pngBytes = 0;
+          updateItemUI(it);
+        });
+        updateCounters();
+
+        (async ()=>{
+          for(const it of list){
+            try{ await convertItem(it); }catch(e){}
+          }
+        })();
+      });
+
+      fileInput.addEventListener("change", (e)=>{
+        acceptFiles(e.target.files);
+      });
+
+      ["dragenter","dragover"].forEach(evt=>{
+        dropzone.addEventListener(evt, (e)=>{
+          e.preventDefault(); e.stopPropagation();
+          dropzone.classList.add("dragover");
+        });
+      });
+      ["dragleave","drop"].forEach(evt=>{
+        dropzone.addEventListener(evt, (e)=>{
+          e.preventDefault(); e.stopPropagation();
+          dropzone.classList.remove("dragover");
+        });
+      });
+      dropzone.addEventListener("drop", (e)=>{
+        const dt = e.dataTransfer;
+        if(dt && dt.files) acceptFiles(dt.files);
+      });
+
+      qualityLabel.textContent = qualityRange.value;
+      updateCounters();
+    }
+
+    /* ===== Tool directory & Quick Search (with icons) ===== */
+    const toolDirectory = allTools;
+
+    function initToolQuickSearch(){
+      const input=$("#toolSearchInput");
+      const suggestionsBox=$("#toolSearchSuggestions");
+      if(!input||!suggestionsBox||!Array.isArray(toolDirectory)) return;
+
+      let currentResults=[];
+
+      function renderSuggestions(query){
+        const value=(query||"").trim().toLowerCase();
+        suggestionsBox.innerHTML="";
+        if(!value){
+          suggestionsBox.classList.remove("visible");
+          return;
+        }
+
+        const allMatches=toolDirectory.filter(tool=>tool.name.toLowerCase().includes(value));
+        if(!allMatches.length){
+          const li=document.createElement("li");
+          li.textContent="No tools found";
+          suggestionsBox.appendChild(li);
+          suggestionsBox.classList.add("visible");
+          return;
+        }
+
+        function rankTool(tool){
+          const name=tool.name.toLowerCase();
+          const pos=name.indexOf(value);
+          const starts=name.startsWith(value)?0:1;
+          const lenDiff=Math.abs(name.length-value.length);
+          return starts*100 + pos*2 + lenDiff;
+        }
+
+        currentResults=allMatches.slice().sort((a,b)=>rankTool(a)-rankTool(b));
+        currentResults.slice(0,10).forEach(tool=>{
+          const li=document.createElement("li");
+          const iconEl=document.createElement("i");
+          iconEl.className=tool.icon || "fa-solid fa-wand-magic-sparkles";
+          const nameSpan=document.createElement("span");
+          nameSpan.className="tool-name";
+          nameSpan.textContent=tool.name;
+          li.appendChild(iconEl);
+          li.appendChild(nameSpan);
+          li.addEventListener("click",()=>{
+            if(tool.url) window.location.href=tool.url;
+          });
+          suggestionsBox.appendChild(li);
+        });
+
+        suggestionsBox.classList.add("visible");
+      }
+
+      input.addEventListener("input",(e)=>renderSuggestions(e.target.value));
+
+      input.addEventListener("keydown",(e)=>{
+        if(e.key==="Enter"){
+          const value=input.value.trim().toLowerCase();
+          if(!value) return;
+          const first=currentResults.length ? currentResults[0] : toolDirectory.find(
+            (tool)=>tool.name.toLowerCase().includes(value)
+          );
+          if(first && first.url) window.location.href=first.url;
+        }
+      });
+
+      document.addEventListener("click",(e)=>{
+        if(!input.contains(e.target) && !suggestionsBox.contains(e.target)){
+          suggestionsBox.classList.remove("visible");
+        }
+      });
+    }
+  </script>
+</body>
+</html>

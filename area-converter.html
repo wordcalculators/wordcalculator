@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ==================== ADVANCED SEO ==================== -->
+  <title>Area Converter — Convert Square Meter (m²), Square Foot (ft²), Acre, Hectare & More</title>
+  <meta name="description" content="Free Area Converter with a built-in scientific calculator. Instantly convert square meters, square feet, acres, hectares, square miles, yards, inches and more — including US survey units. Precise, fast and mobile-friendly." />
+  <meta name="keywords" content="area converter, square meter to square foot, sqm to sqft, acres to square feet, hectare to acre, sq ft to acres, square mile to km2, square yard, us survey foot, barn, circular mil" />
+  <meta name="author" content="WordCalculator.net" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#020617" />
+  <link rel="canonical" href="https://wordcalculator.net/area-converter.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wordcalculator.net/area-converter.html" />
+  <meta property="og:title" content="Area Converter — Convert m², ft², acre, hectare & more" />
+  <meta property="og:description" content="Convert any area unit instantly. Includes scientific calculator toggle and US survey units." />
+  <meta property="og:image" content="https://wordcalculator.net/images/area-converter-og.jpg" />
+  <meta property="og:site_name" content="WordCalculator.net" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://wordcalculator.net/area-converter.html" />
+  <meta name="twitter:title" content="Area Converter — Convert m², ft², acre, hectare & more" />
+  <meta name="twitter:description" content="Free Area Converter with accurate factors and a built-in scientific calculator." />
+  <meta name="twitter:image" content="https://wordcalculator.net/images/area-converter-twitter.jpg" />
+  <meta name="twitter:creator" content="@wordcalculator" />
+
+  <!-- WebApplication schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Area Converter",
+    "url":"https://wordcalculator.net/area-converter.html",
+    "description":"Convert between square meters, square feet, acres, hectares, square miles, square yards and more. Includes a collapsible scientific calculator.",
+    "applicationCategory":"UtilitiesApplication",
+    "operatingSystem":"Any",
+    "browserRequirements":"Requires JavaScript",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "featureList":[
+      "Instant area unit conversion",
+      "Scientific calculator (toggle on/off)",
+      "US survey units supported",
+      "Readable factors for every unit",
+      "Mobile-first, fast-loading page"
+    ],
+    "author":{"@type":"Organization","name":"WordCalculator.net"}
+  }
+  </script>
+
+  <!-- Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://wordcalculator.net/"},
+      {"@type":"ListItem","position":2,"name":"Tools","item":"https://wordcalculator.net/tools.html"},
+      {"@type":"ListItem","position":3,"name":"Area Converter","item":"https://wordcalculator.net/area-converter.html"}
+    ]
+  }
+  </script>
+
+  <!-- FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"How do I convert square meters to square feet?","acceptedAnswer":{"@type":"Answer","text":"Enter the value in the From field, choose square meter [m^2] in the left list and square foot [ft^2] in the right list. The converter updates instantly. 1 m^2 = 10.7639104167 ft^2."}},
+      {"@type":"Question","name":"What is the difference between acre and hectare?","acceptedAnswer":{"@type":"Answer","text":"An acre is an imperial/US unit equal to 4,046.8564224 m^2, while a hectare is a metric unit equal to 10,000 m^2. 1 hectare = 2.4710538147 acres."}},
+      {"@type":"Question","name":"Do you support US survey units?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can select square foot (US survey), square mile (US survey), square rod (US survey), and acre (US survey). These use historical US survey definitions and differ slightly from international values."}}
+    ]
+  }
+  </script>
+  <!-- ==================== /SEO ==================== -->
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+    /* ===== Base / Theme ===== */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--blue:#3f82bd;--text:#1f2937;--muted:#6b7280;--border:#e5e7eb;--primary:#2563eb;--bg:#f7f8fb;--card:#fff;--danger:#b91c1c}
+    html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    body{font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+
+    /* ===== Header / Nav (same as other tools) ===== */
+    .wc-header{background:#020617;color:#fff;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+    .wc-wrap{max-width:1200px;margin:0 auto;padding:10px 12px;display:flex;align-items:center;gap:14px}
+    .wc-logo{display:inline-flex;align-items:center;gap:8px}
+    .wc-slab,.slab{display:inline-flex;width:24px;height:24px;align-items:center;justify-content:center;font-weight:800;font-size:14px;border-radius:2px;color:#fff}
+    .slab-w{background:#1f2327}.slab-o{background:#a7c1db;color:#1e2a3a}.slab-r{background:#7d96ae}.slab-d{background:#2f5d8a}
+    .wc-brand-text{display:inline-flex;flex-direction:column;line-height:1.05;font-size:19px;font-weight:800}
+    .wc-brand-text small{font-size:10px;opacity:.95}
+    .wc-nav{margin-left:10px;display:flex;align-items:center;gap:8px;flex:1}
+    .wc-link{color:#f4f8fc;font-weight:700;font-size:14px;padding:6px 10px;border-radius:8px;transition:.15s;background:transparent;border:0;cursor:pointer}
+    .wc-link:hover{background:rgba(255,255,255,.14)}
+    .wc-signin-btn{background:rgba(148,163,184,.18);border:1px solid rgba(148,163,184,.5)}
+    .wc-signin-btn:hover{background:#38bdf8;color:#020617;border-color:#38bdf8}
+    .mobile-menu-btn{margin-left:auto;background:transparent;border:0;color:#fff;font-size:20px;display:none;cursor:pointer}
+    .mobile-nav{position:fixed;top:0;right:-100%;width:320px;height:100vh;background:#1f2933;box-shadow:-2px 0 10px rgba(0,0,0,.18);transition:right .3s;z-index:100}
+    .mobile-nav.active{right:0}
+    .mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;z-index:90}
+    .mobile-overlay.active{display:block}
+
+    .mobile-nav-header{display:flex;justify-content:space-between;align-items:center;padding:16px;border-bottom:1px solid #34495e}
+    .mobile-close-btn{background:transparent;border:0;color:#fff;font-size:20px;cursor:pointer}
+    .mobile-nav-links{padding:16px}
+    .mobile-link{display:block;color:#ecf0f1;padding:12px 0;border-bottom:1px solid #34495e;font-weight:700;background:transparent;border:0;width:100%;text-align:left;cursor:pointer}
+
+    /* ===== Breadcrumb ===== */
+    .crumb-wrap{max-width:1200px;margin:8px auto 0;padding:0 15px 4px}
+    .crumbs{font-size:13px;color:#111827}
+    .crumbs a{color:#2563eb}
+    .crumbs a:hover{text-decoration:underline}
+    .crumb-separator{margin:0 4px;color:#6b7280}
+    .crumb-current{font-weight:700}
+
+    /* ===== Main Layout ===== */
+    .age-main{max-width:1200px;margin:22px auto 40px;padding:0 15px;display:grid;grid-template-columns:minmax(0,3fr) minmax(260px,1.25fr);gap:20px;align-items:flex-start}
+    .age-left{display:flex;flex-direction:column;gap:18px}
+    .age-top-grid{display:grid;grid-template-columns:1fr;gap:16px;align-items:stretch}
+
+    .card{background:var(--card);border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 10px 24px rgba(15,23,42,0.06);padding:14px 14px 12px}
+    .card-header{
+      margin:-14px -14px 12px;
+      padding:8px 12px;
+      background:#0f172a;
+      color:#f9fafb;
+      border-radius:12px 12px 0 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      box-shadow:inset 0 -1px 0 rgba(148,163,184,0.35)
+    }
+    .card-header h1,.card-header h2{font-size:15px;font-weight:800;letter-spacing:-0.01em}
+    .card-header small{font-size:11px;color:#cbd5e1}
+    
+    /* ===== Area Converter main card (matching other tools) ===== */
+    .area-shell{
+      border:1px solid #e2e8f0;
+      background:#f4f4f4;
+      padding:12px;
+      width:100%;
+      margin:0 0 10px 0;
+      border-radius:12px;
+      box-shadow:0 10px 24px rgba(15,23,42,0.06);
+      overflow:hidden;
+    }
+
+    .area-title-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin:-12px -12px 8px;
+      padding:8px 12px;
+      background:#0f172a;
+      color:#f9fafb;
+      border-bottom:1px solid #1f2937;
+    }
+
+    .area-title{
+      font-size:18px;
+      font-weight:800;
+      color:#f9fafb;
+      font-family:Arial,Helvetica,sans-serif;
+    }
+
+    .calc-icon-btn{
+      width:30px;
+      height:30px;
+      border:1px solid #64748b;
+      border-radius:999px;
+      background:linear-gradient(135deg,#e5e7eb,#cbd5e1);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      font-size:15px;
+      color:#0f172a;
+      box-shadow:0 1px 2px rgba(0,0,0,0.18);
+      transition:background .15s,transform .15s,box-shadow .15s;
+    }
+    .calc-icon-btn:hover{
+      background:linear-gradient(135deg,#f9fafb,#e5e7eb);
+      transform:translateY(-1px);
+      box-shadow:0 3px 8px rgba(15,23,42,0.18);
+    }
+
+    /* ===== Scientific calculator (professional style) ===== */
+    .calc-panel{
+      border-radius:10px;
+      border:1px solid #cbd5e1;
+      background:linear-gradient(180deg,#f9fafb,#e5e7eb);
+      padding:10px;
+      margin-bottom:10px;
+      display:none;
+      box-shadow:0 6px 16px rgba(15,23,42,0.16);
+    }
+    .calc-panel.active{display:block;}
+
+    .calc-top-row{
+      display:flex;
+      align-items:center;
+      margin-bottom:8px;
+      padding:4px;
+      background:#0b1120;
+      border-radius:8px;
+      box-shadow:inset 0 0 0 1px rgba(15,23,42,0.7);
+    }
+    .calc-input{
+      flex:1;
+      border:0;
+      background:transparent;
+      color:#e5e7eb;
+      text-align:right;
+      padding:6px 8px;
+      font-size:15px;
+      font-family:Consolas,monospace;
+    }
+    .calc-input:focus{outline:none;}
+    .calc-close-btn{
+      margin-left:6px;
+      width:24px;
+      height:24px;
+      border-radius:999px;
+      border:1px solid #fecaca;
+      background:#f97373;
+      color:#111827;
+      font-size:13px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 1px 3px rgba(0,0,0,0.25);
+    }
+    .calc-close-btn:hover{background:#fca5a5;}
+
+    .calc-subrow{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:8px;
+      margin:8px 2px 10px;
+      font-size:12px;
+      color:#111827;
+    }
+
+    .calc-mode-toggle{
+      border-radius:999px;
+      padding:2px;
+      background:#e5e7eb;
+      display:inline-flex;
+      border:1px solid #cbd5e1;
+      cursor:pointer;
+    }
+    .calc-mode-seg{
+      padding:3px 10px;
+      font-size:11px;
+      font-family:Arial,Helvetica,sans-serif;
+      border-radius:999px;
+      color:#111827;
+    }
+    .calc-mode-seg.active{
+      background:#0f172a;
+      color:#f9fafb;
+      font-weight:700;
+      box-shadow:0 0 0 1px rgba(15,23,42,0.6);
+    }
+
+    .calc-grid{
+      display:grid;
+      grid-template-columns:repeat(6,minmax(0,1fr));
+      grid-auto-rows:30px;
+      gap:4px;
+      justify-content:center;
+      margin-bottom:6px;
+    }
+    .calc-btn{
+      border-radius:6px;
+      border:1px solid #cbd5e1;
+      background:#f9fafb;
+      font-size:12px;
+      cursor:pointer;
+      font-family:Arial,Helvetica,sans-serif;
+      box-shadow:0 1px 0 rgba(255,255,255,0.7),0 1px 2px rgba(15,23,42,0.08);
+      transition:background .12s,transform .1s,box-shadow .12s;
+    }
+    .calc-btn.op{background:#e5e7eb;}
+    .calc-btn.equal{
+      background:#facc15;
+      font-weight:700;
+    }
+    .calc-btn:hover{
+      background:#ffffff;
+      transform:translateY(-1px);
+      box-shadow:0 2px 6px rgba(15,23,42,0.18);
+    }
+    .calc-btn.equal:hover{
+      background:#fde047;
+    }
+
+    .calc-footer-note{
+      font-size:11px;
+      color:#4b5563;
+      margin-top:4px;
+    }
+    .calc-insert-btn{
+      margin-top:6px;
+      border-radius:999px;
+      border:1px solid #2563eb;
+      background:#2563eb;
+      color:#f9fafb;
+      padding:5px 10px;
+      font-size:11px;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      box-shadow:0 4px 10px rgba(37,99,235,0.35);
+      transition:background .12s,transform .1s,box-shadow .12s;
+    }
+    .calc-insert-btn:hover{
+      background:#1d4ed8;
+      transform:translateY(-1px);
+      box-shadow:0 6px 18px rgba(37,99,235,0.45);
+    }
+
+    /* ===== Result banner ===== */
+    .result-banner{
+      margin:6px 0 8px;
+      padding:4px 8px;
+      border:1px solid #cbd5e1;
+      background:#fdf2f2;
+      font-size:13px;
+      font-family:Arial,Helvetica,sans-serif;
+      border-radius:8px;
+    }
+    .result-banner strong{
+      color:#b00000;
+      margin-right:4px;
+    }
+
+    /* ===== From / To boxes & lists ===== */
+    .form-grid{
+      border:1px solid #e2e8f0;
+      background:#f9fafb;
+      padding:8px;
+      border-radius:10px;
+    }
+    .top-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-bottom:6px;
+      font-family:Arial,Helvetica,sans-serif;
+    }
+    .field label{
+      display:block;
+      font-size:12px;
+      font-weight:700;
+      margin-bottom:2px;
+    }
+    .num-input{
+      width:100%;
+      padding:6px 6px;
+      border:1px solid #a0a0a0;
+      border-radius:6px;
+      background:#ffffff;
+      font-size:14px;
+      font-family:Consolas,monospace;
+    }
+    .num-input[readonly]{
+      background:#f3f4f6;
+      color:#111;
+    }
+    .list-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:4px;
+    }
+    .listbox{
+      width:100%;
+      height:260px;
+      border:1px solid #a0a0a0;
+      border-radius:6px;
+      background:#ffffff;
+      font-size:13px;
+      font-family:Arial,Helvetica,sans-serif;
+    }
+    .listbox option{padding:2px 3px;}
+
+    .muted{
+      font-size:11px;
+      color:#555;
+      margin-top:6px;
+      font-family:Arial,Helvetica,sans-serif;
+    }
+
+    /* ===== Info blocks ===== */
+    .section-block{
+      background:var(--card);
+      border-radius:12px;
+      border:1px solid #e2e8f0;
+      padding:14px 16px 12px;
+      box-shadow:0 8px 20px rgba(15,23,42,.035);
+    }
+    .section-block h3{
+      font-size:16px;
+      font-weight:800;
+      margin-bottom:6px;
+      color:#0f172a;
+    }
+    .section-block h4{
+      font-size:14px;
+      font-weight:700;
+      margin-top:10px;
+      margin-bottom:4px;
+      color:#111827;
+    }
+    .section-block p{
+      font-size:13px;
+      color:#4b5563;
+      margin-bottom:6px;
+    }
+    .section-block ul{
+      padding-left:18px;
+      font-size:13px;
+      color:#4b5563;
+    }
+    .section-block ul li+li{margin-top:2px;}
+
+    /* ===== Sidebar ===== */
+    .age-sidebar{display:flex;flex-direction:column;gap:16px}
+    .sidebar-card{
+      background:var(--card);
+      border-radius:12px;
+      border:1px solid #e2e8f0;
+      padding:12px 12px 10px;
+      box-shadow:0 10px 24px rgba(15,23,42,.06);
+      font-size:13px;
+    }
+    .sidebar-title-bar{
+      margin:-12px -12px 8px;
+      padding:7px 10px;
+      background:#0f172a;
+      color:#f9fafb;
+      font-size:14px;
+      font-weight:800;
+      border-radius:12px 12px 0 0;
+      box-shadow:inset 0 -1px 0 rgba(148,163,184,.35);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+    }
+    .sidebar-group{margin-top:10px;}
+    .sidebar-group h4{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:0.06em;
+      color:#6b7280;
+      margin-bottom:3px;
+      font-weight:700;
+    }
+    .sidebar-links{list-style:none;font-size:13px}
+    .sidebar-links li+li{margin-top:3px}
+    .sidebar-links a{color:#1d4ed8}
+    .sidebar-links a:hover{text-decoration:underline}
+
+    /* ===== QUICK SEARCH ===== */
+    .tool-search{margin:6px 0 4px;}
+    .sidebar-search-input-wrapper{
+      position:relative;
+      display:flex;
+      align-items:center;
+      margin-top:4px;
+    }
+    .sidebar-search-icon{
+      position:absolute;
+      left:10px;
+      font-size:12px;
+      opacity:0.7;
+    }
+    .sidebar-search-input{
+      width:100%;
+      padding:8px 10px 8px 28px;
+      border-radius:8px;
+      border:1px solid #d5d9e0;
+      background-color:#f9fafb;
+      font-size:13px;
+      outline:none;
+      transition:border-color .15s ease,background-color .15s ease,box-shadow .15s ease;
+    }
+    .sidebar-search-input:focus{
+      border-color:#3f82bd;
+      background-color:#ffffff;
+      box-shadow:0 0 0 1px rgba(63,130,189,0.12);
+    }
+    .sidebar-search-suggestions{
+      list-style:none;
+      margin-top:8px;
+      padding:4px 0;
+      max-height:220px;
+      overflow-y:auto;
+      border-radius:10px;
+      border:1px solid #e3e7ee;
+      background-color:#ffffff;
+      box-shadow:0 8px 20px rgba(15,23,42,0.12);
+      display:none;
+    }
+    .sidebar-search-suggestions.visible{display:block;}
+    .sidebar-search-suggestions li{
+      font-size:13px;
+      padding:7px 10px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+    .sidebar-search-suggestions li + li{
+      border-top:1px solid #f1f3f8;
+    }
+    .sidebar-search-suggestions li span.tool-name{
+      flex:1;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .sidebar-search-suggestions li i{
+      font-size:11px;
+      opacity:0.7;
+    }
+    .sidebar-search-suggestions li:hover{
+      background-color:#f3f4f8;
+    }
+
+    /* ===== Footer ===== */
+    .pro-footer{background:#020617;color:#cbd5e1;margin-top:40px}
+    .pf-wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding:34px 15px;
+      display:grid;
+      grid-template-columns:320px 1fr;
+      gap:26px;
+    }
+    .pf-logo{display:flex;align-items:center;gap:10px}
+    .pf-brand-text{font-size:18px;font-weight:800;color:#e2e8f0}
+    .pf-brand-text span{color:#38bdf8}
+    .pf-tag{margin-top:8px;color:#94a3b8;font-size:13px}
+    .pf-social{display:flex;gap:10px;margin-top:10px}
+    .pf-social a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:34px;height:34px;
+      border:1px solid #1e293b;
+      border-radius:10px;
+      background:#0b1220;
+      color:#cbd5e1;
+      transition:background .15s,color .15s,border-color .15s,transform .15s,box-shadow .15s;
+    }
+    .pf-social a:hover{
+      background:#38bdf8;
+      border-color:#38bdf8;
+      color:#0b1220;
+      transform:translateY(-1px);
+      box-shadow:0 4px 12px rgba(56,189,248,.4);
+    }
+    .pf-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .pf-col h5{color:#e2e8f0;font-weight:800;font-size:14px;margin-bottom:10px}
+    .pf-col ul{list-style:none}
+    .pf-col li{margin:8px 0}
+    .pf-col a{color:#94a3b8}
+    .pf-col a:hover{color:#e2e8f0}
+    .pf-bottom{border-top:1px solid #1e293b;background:#0b1220}
+    .pf-bottom-wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding:12px 15px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      color:#8893a7;
+      font-size:13px;
+    }
+    .pf-links{display:flex;gap:10px}
+    .pf-links a{color:#94a3b8}
+    .pf-links a:hover{color:#e2e8f0}
+
+    /* ===== Modal ===== */
+    .modal-overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(15,23,42,0.7);
+      display:none;
+      z-index:200;
+    }
+    .modal{
+      position:fixed;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      width:420px;
+      max-width:96vw;
+      background:#ffffff;
+      border:1px solid #e5e7eb;
+      border-radius:14px;
+      box-shadow:0 18px 40px rgba(15,23,42,0.35);
+      display:none;
+      z-index:210;
+    }
+    .modal-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:10px 12px;
+      border-bottom:1px solid #e5e7eb;
+    }
+    .modal-head h3{font-size:15px;font-weight:800;color:#111827}
+    .modal-close{
+      background:#f3f4f6;
+      border:1px solid #e5e7eb;
+      border-radius:8px;
+      padding:6px 8px;
+      cursor:pointer;
+    }
+    .modal-body{padding:12px;font-size:13px;color:#4b5563}
+
+    /* ===== Responsive ===== */
+    @media (max-width:1100px){
+      .pf-wrap{grid-template-columns:1fr;}
+      .pf-cols{grid-template-columns:repeat(2,1fr);}
+      .age-main{grid-template-columns:minmax(0,1.9fr) minmax(260px,1.2fr);}
+    }
+    @media (max-width:992px){
+      .wc-nav{display:none;}
+      .mobile-menu-btn{display:inline-block;}
+      .age-main{grid-template-columns:1fr;}
+      .age-sidebar{order:-1;}
+    }
+    @media (max-width:640px){
+      .pf-cols{grid-template-columns:1fr;}
+    }
+    @media (prefers-reduced-motion:reduce){
+      *{animation:none !important;transition:none !important;scroll-behavior:auto !important;}
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="wc-header">
+    <div class="wc-wrap">
+      <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+        <span class="slab slab-w">W</span>
+        <span class="slab slab-o">O</span>
+        <span class="slab slab-r">R</span>
+        <span class="slab slab-d">D</span>
+        <span class="wc-brand-text">
+          Calculator
+          <small class="wc-tagline">Every Word Counts</small>
+        </span>
+      </a>
+
+      <nav class="wc-nav" aria-label="Primary">
+        <a href="https://wordcalculator.net" class="wc-link">Home</a>
+        <a href="blog.blog" class="wc-link">Blog</a>
+        <a href="tools.html" class="wc-link">Tools</a>
+        <a href="about.html" class="wc-link">About Us</a>
+		<a href="signin.html" class="wc-link">Sign In</a>
+      </nav>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <div class="mobile-nav-header">
+        <a class="wc-logo" href="https://wordcalculator.net" aria-label="Go to Home">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <span class="wc-brand-text">Calculator</span>
+        </a>
+        <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="https://wordcalculator.net" class="nav-link mobile-link">Home</a>
+        <a href="blog.html" class="nav-link mobile-link">Blog</a>
+        <a href="tools.html" class="nav-link mobile-link">Tools</a>
+        <a href="about.html" class="nav-link mobile-link">About Us</a>
+		<a href="signin.html" class="nav-link mobile-link">Sign In</a>
+      </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+  </header>
+
+  <!-- ===== Breadcrumbs ===== -->
+  <div class="crumb-wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="https://wordcalculator.net">Home</a>
+      <span class="crumb-separator">/</span>
+      <a href="tools.html">Tools</a>
+      <span class="crumb-separator">/</span>
+      <span class="crumb-current">Area Converter</span>
+    </nav>
+  </div>
+
+  <!-- ==================== MAIN ==================== -->
+  <main class="age-main">
+    <!-- LEFT SIDE -->
+    <section class="age-left">
+      <div class="age-top-grid">
+        <article class="card" aria-labelledby="areaCardTitle">
+          <div class="card-header">
+            <div>
+              <h1 id="areaCardTitle">Area Converter</h1>
+              <small>Convert between square meters, square feet, acres, hectares and more.</small>
+            </div>
+            <button type="button" class="calc-icon-btn" id="toggleCalcBtn" aria-expanded="false" aria-controls="calcPanel">
+              <i class="fas fa-calculator"></i>
+            </button>
+          </div>
+
+          <!-- Calculator -->
+          <div id="calcPanel" class="calc-panel" aria-hidden="true">
+            <div class="calc-top-row">
+              <input id="calcInput" class="calc-input" type="text" value="0" />
+              <button type="button" id="calcCloseBtn" class="calc-close-btn">×</button>
+            </div>
+
+            <div class="calc-subrow">
+              <span>Scientific calculator</span>
+              <div class="calc-mode-toggle" id="calcModeToggle" role="button">
+                <span class="calc-mode-seg active" data-mode="DEG" id="modeDeg">Deg</span>
+                <span class="calc-mode-seg" data-mode="RAD" id="modeRad">Rad</span>
+              </div>
+            </div>
+
+            <div class="calc-grid" aria-label="Scientific calculator keys">
+              <button class="calc-btn op" data-insert="sin(">sin</button>
+              <button class="calc-btn op" data-insert="cos(">cos</button>
+              <button class="calc-btn op" data-insert="tan(">tan</button>
+              <button class="calc-btn op" data-insert="ln(">ln</button>
+              <button class="calc-btn op" data-insert="log(">log</button>
+              <button class="calc-btn op" data-insert="√(">√x</button>
+
+              <button class="calc-btn op" data-insert="^">x^y</button>
+              <button class="calc-btn op" data-insert="(">(</button>
+              <button class="calc-btn op" data-insert=")">)</button>
+              <button class="calc-btn op" data-insert="π">π</button>
+              <button class="calc-btn op" data-insert="e">e</button>
+              <button class="calc-btn op" data-action="del">Back</button>
+
+              <button class="calc-btn" data-insert="7">7</button>
+              <button class="calc-btn" data-insert="8">8</button>
+              <button class="calc-btn" data-insert="9">9</button>
+              <button class="calc-btn op" data-insert="+">+</button>
+              <button class="calc-btn op" data-insert="-">−</button>
+              <button class="calc-btn op" data-action="ac">AC</button>
+
+              <button class="calc-btn" data-insert="4">4</button>
+              <button class="calc-btn" data-insert="5">5</button>
+              <button class="calc-btn" data-insert="6">6</button>
+              <button class="calc-btn op" data-insert="×">×</button>
+              <button class="calc-btn op" data-insert="÷">÷</button>
+              <button class="calc-btn op" data-action="ans">MR</button>
+
+              <button class="calc-btn" data-insert="1">1</button>
+              <button class="calc-btn" data-insert="2">2</button>
+              <button class="calc-btn" data-insert="3">3</button>
+              <button class="calc-btn" data-insert=".">.</button>
+              <button class="calc-btn" data-insert="0">0</button>
+              <button class="calc-btn equal" data-action="eq">=</button>
+            </div>
+
+            <button type="button" id="calcInsertBtn" class="calc-insert-btn">
+              <i class="fas fa-arrow-down"></i> Use result in "From"
+            </button>
+            <div class="calc-footer-note">
+              Trig functions use the selected Deg/Rad mode. log = log10, ln = natural log.
+            </div>
+          </div>
+
+          <!-- Result line -->
+          <div class="result-banner">
+            <strong>Result:</strong>
+            <span id="resultLineText">1 square meter = 10.7639104167 square foot</span>
+          </div>
+
+          <!-- Classic From / To layout with two big lists -->
+          <div class="form-grid" aria-label="Area converter interface">
+            <div class="top-row">
+              <div class="field">
+                <label for="fromValue">From:</label>
+                <input id="fromValue" class="num-input" type="number" step="any" inputmode="decimal" value="1" />
+              </div>
+              <div class="field">
+                <label for="toValue">To:</label>
+                <input id="toValue" class="num-input" type="text" readonly value="10.7639104167" />
+              </div>
+            </div>
+
+            <div class="list-row">
+              <select id="fromUnitList" class="listbox" size="14" aria-label="From unit list"></select>
+              <select id="toUnitList" class="listbox" size="14" aria-label="To unit list (shows factor for 1 From unit)"></select>
+            </div>
+
+            <p class="muted">
+              Choose a unit on the left (From). The list on the right shows how much
+              <strong>1 From unit</strong> equals in every other unit — just like the reference Area Converter.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <!-- Info section -->
+      <article class="section-block">
+        <h3>How this area converter works</h3>
+        <p>
+          The Area Converter uses square meter (m²) as the internal base unit. Your input is first converted
+          into m² using high-precision factors, then divided by the factor for the target unit. The right-hand
+          list shows how much <em>1 From unit</em> equals in every other unit so you can scan all equivalents at once.
+        </p>
+        <h4>Common conversion facts</h4>
+        <ul>
+          <li>1 m² = 10.7639104167 ft²</li>
+          <li>1 hectare = 10,000 m² = 2.4710538147 acres</li>
+          <li>1 acre = 4,046.8564224 m²</li>
+          <li>1 square mile = 2,589,988.110336 m²</li>
+        </ul>
+      </article>
+
+      <!-- Long SEO content block -->
+      <article class="section-block">
+        <h3>Online area converter – when do you actually need it?</h3>
+        <p>
+          An <strong>area converter</strong> is useful whenever two people are speaking in different units.
+          Architects may think in square meters, real-estate agents in square feet, and farmers in acres or
+          hectares. Instead of memorising dozens of factors, this page lets you type a number once, select a
+          unit, and instantly see all the equivalent values at a glance.
+        </p>
+        <p>
+          The tool is designed for everyday users as well as technical teams. Students, engineers,
+          surveyors, real-estate professionals and DIY homeowners can all use the same clean interface.
+          If you need to run a quick calculation first you can open the built-in scientific calculator,
+          evaluate an expression such as <em>(8.5 × 4.2)</em>, then send the result directly into the
+          "From" box with a single click.
+        </p>
+
+        <h4>Popular area conversions you can do here</h4>
+        <ul>
+          <li><strong>Square meter to square foot (m² to ft²)</strong> – helpful when comparing international floor plans.</li>
+          <li><strong>Square foot to acre</strong> – often used for residential plots and land listings.</li>
+          <li><strong>Hectare to acre</strong> – common in agriculture, forestry and land development projects.</li>
+          <li><strong>Square mile to square kilometer</strong> – useful in geography, mapping and environmental reports.</li>
+          <li><strong>Square yard, square inch and square centimetre</strong> – convenient for fabric cutting, tiling and small-scale layouts.</li>
+          <li><strong>US survey units</strong> such as square foot (US survey), square mile (US survey) and acre (US survey).</li>
+        </ul>
+
+        <h4>How to read the right-hand list of units</h4>
+        <p>
+          The left list controls which unit you are converting <strong>from</strong>. When you click any entry there,
+          the list on the right is refreshed to show how much <strong>1 of that unit</strong> equals in every other unit
+          in the database. For example, if you select "square meter [m²]" on the left, the right list will show:
+        </p>
+        <ul>
+          <li>1 m² = 10.7639104167 square foot</li>
+          <li>1 m² = 0.0002471054 acre</li>
+          <li>1 m² = 0.0001 hectare</li>
+          <li>…and so on for each supported unit.</li>
+        </ul>
+        <p>
+          This "reference table" style matches traditional engineering converters and makes it easy to spot
+          relationships between units without running multiple separate calculations.
+        </p>
+
+        <h4>Accuracy, rounding and scientific notation</h4>
+        <p>
+          All conversion factors are stored with high precision. For practical use, the result field and the
+          right-hand list are formatted so that very large or very small values remain readable. When the
+          number becomes extremely small or large, it is shown using scientific notation
+          (for example <em>3.953686e-13</em> is displayed as <em>3.953686×10⁻¹³</em>). This is especially
+          helpful for micro-scale units such as square micrometers or electron cross section.
+        </p>
+
+        <h4>Tips for using this converter effectively</h4>
+        <ul>
+          <li><strong>Keep the From value simple.</strong> If you need to multiply or divide measurements, use the calculator icon first and then send the result into the converter.</li>
+          <li><strong>Double-check the unit names.</strong> Many units look similar (for example square foot vs square foot (US survey)), so always read the full label before trusting a result.</li>
+          <li><strong>Use nearby tools when needed.</strong> If you are working on room sizes or floor plans, you can pair this page with the <a href="length-distance-converter.html">Length &amp; Distance Converter</a> to convert linear dimensions as well.</li>
+          <li><strong>Copy or print your results.</strong> You can select the result text like normal text and paste it into a spreadsheet, email or report for later use.</li>
+        </ul>
+
+        <h4>Who benefits from an area unit converter?</h4>
+        <ul>
+          <li><strong>Students</strong> who meet both metric and imperial units in maths, physics, geography or engineering homework.</li>
+          <li><strong>Architects and interior designers</strong> working with international clients who send plans in different systems.</li>
+          <li><strong>Real-estate agents and investors</strong> comparing land and apartment sizes across countries.</li>
+          <li><strong>Farmers and land managers</strong> moving between local acres, hectares and government reporting units.</li>
+          <li><strong>DIY users</strong> planning tiling, flooring, painting or garden layouts where accurate area matters.</li>
+        </ul>
+
+        <h4>Final note</h4>
+        <p>
+          This area converter is intended for general planning and educational purposes. For legal contracts,
+          land registration or official surveying work you should always check the requirements of the relevant
+          authority and, if needed, confirm numbers with a licensed professional or official documentation.
+          However, for quick everyday conversions, this page gives you a fast, reliable and distraction-free way
+          to move between any common area unit.
+        </p>
+      </article>
+    </section>
+
+    <!-- RIGHT SIDE / SIDEBAR -->
+    <aside class="age-sidebar" aria-label="Quick search and related tools">
+      <div class="sidebar-card">
+        <div class="sidebar-title-bar">
+          <span>Quick Search</span>
+          <i class="fas fa-magnifying-glass"></i>
+        </div>
+
+        <!-- HOMEPAGE-STYLE QUICK SEARCH -->
+        <div class="tool-search">
+          <small>Quick links to other tools on WordCalculator.net</small>
+          <div class="sidebar-search-input-wrapper">
+            <i class="fa-solid fa-magnifying-glass sidebar-search-icon" aria-hidden="true"></i>
+            <input
+              type="search"
+              id="toolSearchInput"
+              class="sidebar-search-input"
+              placeholder="Search tools by name..."
+              autocomplete="off"
+              aria-label="Search tools by name"
+            />
+          </div>
+          <ul id="toolSearchSuggestions" class="sidebar-search-suggestions" aria-label="Tool suggestions"></ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Popular</h4>
+          <ul class="sidebar-links">
+            <li><a href="age-calculator.html">Age Calculator</a></li>
+            <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+            <li><a href="calorie-calculator.html">Calorie Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Text &amp; Writing</h4>
+          <ul class="sidebar-links">
+            <li><a href="https://wordcalculator.net">Word &amp; Character Counter</a></li>
+            <li><a href="case-converter.html">Case Converter</a></li>
+            <li><a href="grammar-spell-checker.html">Grammar &amp; Spell Checker</a></li>
+            <li><a href="readability-analyzer.html">Readability Analyzer</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>SEO &amp; Content</h4>
+          <ul class="sidebar-links">
+            <li><a href="keyword-density-analyzer.html">Keyword Density Analyzer</a></li>
+            <li><a href="title-meta-preview.html">Title &amp; Meta Preview</a></li>
+            <li><a href="url-slug-generator.html">URL Slug Generator</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h4>Finance &amp; Time</h4>
+          <ul class="sidebar-links">
+            <li><a href="loan-emi-calculator.html">Loan &amp; EMI Calculator</a></li>
+            <li><a href="interest-calculator.html">Interest Calculator</a></li>
+            <li><a href="focus-timer.html">Focus Timer</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="pro-footer" id="about" aria-label="Website footer">
+    <div class="pf-wrap">
+      <div class="pf-brand">
+        <div class="pf-logo">
+          <span class="slab slab-w">W</span>
+          <span class="slab slab-o">O</span>
+          <span class="slab slab-r">R</span>
+          <span class="slab slab-d">D</span>
+          <div class="pf-brand-text">
+            WordCalculator<span>.net</span>
+          </div>
+        </div>
+        <p class="pf-tag">A focused, distraction-free toolkit for precise writing.</p>
+        <div class="pf-social">
+          <a href="https://facebook.com/wordcalculator" aria-label="Facebook" rel="noopener" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/wordcalculator" aria-label="X (Twitter)" rel="noopener" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://linkedin.com/company/wordcalculator" aria-label="LinkedIn" rel="noopener" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://youtube.com/@wordcalculator" aria-label="YouTube" rel="noopener" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="pf-cols">
+        <div class="pf-col">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="https://wordcalculator.net">Editor</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="grammar-spell-checker.html">Grammar Check</a></li>
+            <li><a href="keyword-density-analyzer.html">Keyword Density</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="guides.html">Tips &amp; Guides</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="bug-report.html">Report a Bug</a></li>
+          </ul>
+        </div>
+        <div class="pf-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html">Cookie Policy</a></li>
+            <li><a href="security.html">Security</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pf-bottom">
+      <div class="pf-bottom-wrap">
+        <div>© <span id="pf-year"></span> WordCalculator.net — All rights reserved.</div>
+        <div class="pf-links">
+          <a href="sitemap.html">Sitemap</a>
+          <a href="status.html">Status</a>
+          <a href="accessibility.html">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Auth Modal ===== -->
+  <div class="modal-overlay" id="authOverlay" aria-hidden="true"></div>
+  <div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <div class="modal-head">
+      <h3 id="authTitle"><i class="fas fa-user-lock"></i> Account</h3>
+      <button class="modal-close" id="authCloseBtn" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body">
+      Sign-in and account features are coming soon. For now, all tools are free to use without registration.
+    </div>
+  </div>
+
+  <!-- Tools Directory Js -->
+  <script src="tools-directory.js"></script>
+
+  <script>
+    const $ = (sel) => document.querySelector(sel);
+    const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+
+    document.addEventListener("DOMContentLoaded", () => {
+      initYear();
+      initMobileMenu();
+      initAuthModal();
+
+      initAreaUnits();
+      initAreaUI();
+      initCalculator();
+      initToolQuickSearch();
+
+      $("#fromValue").value = "1";
+      setFromUnit("m2");
+      setToUnit("ft2");
+      renderAll();
+    });
+
+    function initYear() {
+      const yearEl = document.getElementById("pf-year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    }
+
+    /* Mobile nav */
+    function initMobileMenu() {
+      const mobileMenuBtn = $("#mobileMenuBtn");
+      const mobileCloseBtn = $("#mobileCloseBtn");
+      const mobileNav = $("#mobileNav");
+      const mobileOverlay = $("#mobileOverlay");
+
+      if (!mobileMenuBtn || !mobileNav || !mobileOverlay) return;
+
+      const open = () => {
+        mobileNav.classList.add("active");
+        mobileOverlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+      };
+      const close = () => {
+        mobileNav.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+      };
+
+      mobileMenuBtn.addEventListener("click", open);
+      if (mobileCloseBtn) mobileCloseBtn.addEventListener("click", close);
+      mobileOverlay.addEventListener("click", close);
+
+      $$(".mobile-link").forEach((link) => {
+        link.addEventListener("click", close);
+      });
+    }
+
+    /* Auth modal */
+    function initAuthModal() {
+      const overlay = $("#authOverlay");
+      const modal = $("#authModal");
+      const closeBtn = $("#authCloseBtn");
+
+      if (!overlay || !modal) return;
+
+      const open = () => {
+        overlay.style.display = "block";
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden";
+      };
+
+      const close = () => {
+        overlay.style.display = "none";
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+      };
+
+      if (closeBtn) closeBtn.addEventListener("click", close);
+      overlay.addEventListener("click", close);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") close();
+      });
+    }
+
+    /* ===== Area units & conversion factors ===== */
+    const AREA = {
+      m2:{label:"square meter [m^2]", f:1},
+      km2:{label:"square kilometer [km^2]", f:1e6},
+      cm2:{label:"square centimeter [cm^2]", f:1e-4},
+      mm2:{label:"square millimeter [mm^2]", f:1e-6},
+      um2:{label:"square micrometer [µm^2]", f:1e-12},
+      ha:{label:"hectare [ha]", f:10000},
+      ac:{label:"acre [ac]", f:4046.8564224},
+      mi2:{label:"square mile [mi^2]", f:2589988.110336},
+      yd2:{label:"square yard [yd^2]", f:0.83612736},
+      ft2:{label:"square foot [ft^2]", f:0.09290304},
+      in2:{label:"square inch [in^2]", f:0.00064516},
+      hm2:{label:"square hectometer [hm^2]", f:10000},
+      dam2:{label:"square dekameter [dam^2]", f:100},
+      dm2:{label:"square decimeter [dm^2]", f:0.01},
+      nm2:{label:"square nanometer [nm^2]", f:1e-18},
+      mi2_us:{label:"square mile (US survey)", f:2589998.470319521},
+      ft2_us:{label:"square foot (US survey)", f:0.09290341161327482},
+      cin:{label:"circular inch", f:0.0005067074790974977},
+      township:{label:"township", f:36*2589998.470319521},
+      section:{label:"section", f:2589998.470319521},
+      acre_us:{label:"acre (US survey) [ac]", f:4046.872609874252},
+      rood:{label:"rood", f:1011.7141056},
+      ch2:{label:"square chain [ch^2]", f:404.68564224},
+      rd2:{label:"square rod", f:25.29285264},
+      rd2_us:{label:"square rod (US survey)", f:25.292953811714074},
+      perch:{label:"square perch", f:25.29285264},
+      pole:{label:"square pole", f:25.29285264},
+      mil2:{label:"square mil [mil^2]", f:6.4516e-10},
+      cmil:{label:"circular mil", f:5.067074790974977e-10},
+      homestead:{label:"homestead", f:160*4046.8564224},
+      sabin:{label:"sabin", f:0.09290304},
+      arpent:{label:"arpent", f:3418.9},
+      cuerda:{label:"cuerda", f:3930.395625},
+      plaza:{label:"plaza", f:10000},
+      vara_cast:{label:"varas castellanas cuad", f:0.698737169025},
+      electron:{label:"Electron cross section", f:6.6524587321e-29}
+    };
+
+    const UNIT_ORDER = [
+      "m2","km2","cm2","mm2","um2","ha","ac","mi2","yd2","ft2","in2",
+      "hm2","dam2","dm2","nm2",
+      "mi2_us","ft2_us","cin","township","section","acre_us","rood","ch2",
+      "rd2","rd2_us","perch","pole","mil2","cmil","homestead","sabin",
+      "arpent","cuerda","plaza","vara_cast","electron"
+    ];
+
+    let fromKey="m2";
+    let toKey="ft2";
+
+    function initAreaUnits(){
+      const fromList=$("#fromUnitList");
+      const toList=$("#toUnitList");
+      fromList.innerHTML = UNIT_ORDER.map(k=>`<option value="${k}">${AREA[k].label}</option>`).join("");
+      refreshToList();
+      fromList.addEventListener("change",()=>{
+        fromKey=fromList.value;
+        refreshToList();
+        renderAll();
+      });
+      toList.addEventListener("change",()=>{
+        toKey=toList.value;
+        renderAll();
+      });
+    }
+
+    function setFromUnit(k){
+      fromKey=k;
+      $("#fromUnitList").value=k;
+      refreshToList();
+    }
+    function setToUnit(k){
+      toKey=k;
+      $("#toUnitList").value=k;
+    }
+
+    function refreshToList(){
+      const toList=$("#toUnitList");
+      const baseF=AREA[fromKey].f;
+      toList.innerHTML = UNIT_ORDER.map(k=>{
+        const factor = baseF / AREA[k].f;
+        return `<option value="${k}" ${k===toKey?"selected":""}>${AREA[k].label} (${formatFactor(factor)})</option>`;
+      }).join("");
+    }
+
+    function initAreaUI(){
+      $("#fromValue").addEventListener("input",renderAll);
+    }
+
+    function renderAll(){
+      const val=parseFloat($("#fromValue").value);
+      const out=$("#toValue");
+      const line=$("#resultLineText");
+      if(!isFinite(val)){
+        out.value="";
+        line.textContent="—";
+        return;
+      }
+      const res=convert(val,fromKey,toKey);
+      out.value=formatResult(res);
+      line.textContent = `${formatResult(val)} ${AREA[fromKey].label.replace(/\s*\[(.*?)\]\s*/,"")} = ${formatResult(res)} ${AREA[toKey].label.replace(/\s*\[(.*?)\]\s*/,"")}`;
+      refreshToList();
+    }
+
+    function convert(v,fromK,toK){
+      const m2=v*AREA[fromK].f;
+      return m2/AREA[toK].f;
+    }
+
+    function formatResult(n){
+      const abs=Math.abs(n);
+      if(abs!==0 && (abs<1e-6 || abs>=1e9)){
+        return n.toExponential(10).replace(/e\+?(-?\d+)/,"×10^$1");
+      }
+      return Number(n).toLocaleString(undefined,{maximumSignificantDigits:12});
+    }
+    function formatFactor(n){
+      if(n<1){
+        let s=n.toFixed(12);
+        s=s.replace(/0+$/,"").replace(/\.$/,"");
+        return s;
+      }
+      return Number(n).toLocaleString(undefined,{maximumSignificantDigits:12});
+    }
+
+    /* ===== Calculator ===== */
+    let calcMode="DEG";
+    let calcAns=0;
+
+    function initCalculator(){
+      const panel=$("#calcPanel");
+      const toggleBtn=$("#toggleCalcBtn");
+      const closeBtn=$("#calcCloseBtn");
+      const modeToggle=$("#calcModeToggle");
+      const degSeg=$("#modeDeg");
+      const radSeg=$("#modeRad");
+      const input=$("#calcInput");
+
+      const open=()=>{
+        panel.classList.add("active");
+        panel.setAttribute("aria-hidden","false");
+        toggleBtn.setAttribute("aria-expanded","true");
+      };
+      const close=()=>{
+        panel.classList.remove("active");
+        panel.setAttribute("aria-hidden","true");
+        toggleBtn.setAttribute("aria-expanded","false");
+      };
+
+      toggleBtn.addEventListener("click",()=>{
+        if(panel.classList.contains("active")) close(); else open();
+      });
+      closeBtn.addEventListener("click",close);
+
+      modeToggle.addEventListener("click",()=>{
+        if(calcMode==="DEG"){
+          calcMode="RAD";
+          radSeg.classList.add("active");
+          degSeg.classList.remove("active");
+        } else {
+          calcMode="DEG";
+          degSeg.classList.add("active");
+          radSeg.classList.remove("active");
+        }
+      });
+
+      $$("#calcPanel .calc-btn").forEach(btn=>{
+        const ins=btn.getAttribute("data-insert");
+        const act=btn.getAttribute("data-action");
+
+        if(ins){
+          btn.addEventListener("click",()=>{
+            const text = (ins==="√(" ? "sqrt(" : ins);
+            insertIntoCalc(text);
+          });
+        }
+        if(act==="del"){
+          btn.addEventListener("click",()=>{
+            input.value=input.value.slice(0,-1)||"0";
+          });
+        }
+        if(act==="ac"){
+          btn.addEventListener("click",()=>{ input.value="0"; });
+        }
+        if(act==="ans"){
+          btn.addEventListener("click",()=>{ insertIntoCalc(String(calcAns)); });
+        }
+        if(act==="eq"){
+          btn.addEventListener("click",()=>{
+            try{
+              const v=safeEvalExpression(input.value.trim());
+              calcAns=v;
+              input.value=String(v);
+            }catch{
+              input.value="Error";
+            }
+          });
+        }
+      });
+
+      $("#calcInsertBtn").addEventListener("click",()=>{
+        const v=parseFloat(calcAns);
+        if(isFinite(v)){
+          $("#fromValue").value=String(v);
+          renderAll();
+        }
+      });
+
+      function insertIntoCalc(text){
+        if(input.value==="0" || input.value==="Error") input.value="";
+        const start=input.selectionStart||input.value.length;
+        const end=input.selectionEnd||input.value.length;
+        input.setRangeText(text,start,end,"end");
+        input.focus();
+      }
+    }
+
+    function safeEvalExpression(expr){
+      let e=expr.replace(/×/g,"*").replace(/÷/g,"/").replace(/\^/g,"**").replace(/π/g,String(Math.PI)).replace(/\be\b/g,String(Math.E));
+      e=e.replace(/\bsqrt\(/g,"__SQRT(").replace(/\bln\(/g,"__LN(").replace(/\blog\(/g,"__LOG10(").replace(/\bsin\(/g,"__SIN(").replace(/\bcos\(/g,"__COS(").replace(/\btan\(/g,"__TAN(");
+      const toRad=(x)=>calcMode==="DEG"?(x*Math.PI/180):x;
+      const __SQRT=Math.sqrt;
+      const __LN=Math.log;
+      const __LOG10=(x)=>Math.log10(x);
+      const __SIN=(x)=>Math.sin(toRad(x));
+      const __COS=(x)=>Math.cos(toRad(x));
+      const __TAN=(x)=>Math.tan(toRad(x));
+      // eslint-disable-next-line no-new-func
+      const fn=new Function("__SQRT","__LN","__LOG10","__SIN","__COS","__TAN","return ("+e+");");
+      const v=fn(__SQRT,__LN,__LOG10,__SIN,__COS,__TAN);
+      if(!isFinite(v)) throw new Error("Invalid");
+      return v;
+    }
+
+    /* ===== Tool Quick Search (Age Calculator Style) ===== */
+    function initToolQuickSearch() {
+      const input = document.getElementById("toolSearchInput");
+      const suggestionsBox = document.getElementById("toolSearchSuggestions");
+      if (!input || !suggestionsBox || !Array.isArray(allTools)) return;
+
+      let currentResults = [];
+
+      function renderSuggestions(query) {
+        const value = (query || "").trim().toLowerCase();
+        suggestionsBox.innerHTML = "";
+
+        if (!value) {
+          suggestionsBox.classList.remove("visible");
+          return;
+        }
+
+        // Filter all tools containing the query text
+        const allMatches = allTools.filter((tool) =>
+          tool.name.toLowerCase().indexOf(value) !== -1
+        );
+
+        if (!allMatches.length) {
+          const li = document.createElement("li");
+          li.textContent = "No tools found";
+          suggestionsBox.appendChild(li);
+          suggestionsBox.classList.add("visible");
+          return;
+        }
+
+        // Rank: nearer / stronger matches come first
+        function rankTool(tool) {
+          const name = tool.name.toLowerCase();
+          const pos = name.indexOf(value);
+          const starts = name.startsWith(value) ? 0 : 1;
+          const lenDiff = Math.abs(name.length - value.length);
+          // Lower score = better rank
+          return starts * 100 + pos * 2 + lenDiff;
+        }
+
+        currentResults = allMatches.slice().sort((a, b) => rankTool(a) - rankTool(b));
+
+        currentResults.slice(0, 10).forEach((tool) => {
+          const li = document.createElement("li");
+
+          const iconEl = document.createElement("i");
+          iconEl.className = tool.icon || "fa-solid fa-wand-magic-sparkles";
+
+          const nameSpan = document.createElement("span");
+          nameSpan.className = "tool-name";
+          nameSpan.textContent = tool.name;
+
+          li.appendChild(iconEl);
+          li.appendChild(nameSpan);
+
+          li.addEventListener("click", () => {
+            if (tool.url) {
+              window.location.href = tool.url;
+            }
+          });
+
+          suggestionsBox.appendChild(li);
+        });
+
+        suggestionsBox.classList.add("visible");
+      }
+
+      input.addEventListener("input", (e) => {
+        renderSuggestions(e.target.value);
+      });
+
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          const value = input.value.trim().toLowerCase();
+          if (!value) return;
+
+          const first = currentResults.length
+            ? currentResults[0]
+            : allTools.find((tool) =>
+                tool.name.toLowerCase().indexOf(value) !== -1
+              );
+
+          if (first && first.url) {
+            window.location.href = first.url;
+          }
+        }
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!input.contains(e.target) && !suggestionsBox.contains(e.target)) {
+          suggestionsBox.classList.remove("visible");
+        }
+      });
+    }
+  </script>
+</body>
+</html>
